@@ -1,0 +1,52 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_DOCU.TAB_DOCUDto
+
+@{
+    ViewData["Title"] = "Detalles de TAB_DOCU";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TABLE10</dt>
+            <dd class="col-sm-9">@Model.TABLE10SDESCRIPT</dd>
+            <dt class="col-sm-3">NDOC_CODE</dt>
+            <dd class="col-sm-9">@Model.NDOC_CODE</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NCOVER</dt>
+            <dd class="col-sm-9">@Model.NCOVER</dd>
+            <dt class="col-sm-3">NMODULEC</dt>
+            <dd class="col-sm-9">@Model.NMODULEC</dd>
+            <dt class="col-sm-3">NCAUSECOD</dt>
+            <dd class="col-sm-9">@Model.NCAUSECOD</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">SSHORT_DES</dt>
+            <dd class="col-sm-9">@Model.SSHORT_DES</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SCLAIMPAY</dt>
+            <dd class="col-sm-9">@Model.SCLAIMPAY</dd>
+            <dt class="col-sm-3">NDAYS_PRESC</dt>
+            <dd class="col-sm-9">@Model.NDAYS_PRESC</dd>
+            <dt class="col-sm-3">STEXT</dt>
+            <dd class="col-sm-9">@Model.STEXT</dd>
+            <dt class="col-sm-3">SREQUIERED</dt>
+            <dd class="col-sm-9">@Model.SREQUIERED</dd>
+            <dt class="col-sm-3">NPERSON_TYP</dt>
+            <dd class="col-sm-9">@Model.NPERSON_TYP</dd>
+            <dt class="col-sm-3">TABLE9217</dt>
+            <dd class="col-sm-9">@Model.TABLE9217SDESCRIPT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

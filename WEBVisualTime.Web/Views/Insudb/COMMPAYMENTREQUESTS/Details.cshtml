@@ -1,0 +1,112 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COMMPAYMENTREQUESTS.COMMPAYMENTREQUESTSDto
+
+@{
+    ViewData["Title"] = "Detalles de COMMPAYMENTREQUESTS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NID_COMMPAYREQ</dt>
+            <dd class="col-sm-9">@Model.NID_COMMPAYREQ</dd>
+            <dt class="col-sm-3">DREGISTRATIONDATE</dt>
+            <dd class="col-sm-9">@Model.DREGISTRATIONDATE</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">CLIENTSCLIENT_HOLDER</dt>
+            <dd class="col-sm-9">@Model.CLIENTSCLIENT_HOLDERSACCOUNT_IN</dd>
+            <dt class="col-sm-3">SCLIENAME_HOLDER</dt>
+            <dd class="col-sm-9">@Model.SCLIENAME_HOLDER</dd>
+            <dt class="col-sm-3">CLIENTSCLIENT_INSURED</dt>
+            <dd class="col-sm-9">@Model.CLIENTSCLIENT_INSUREDSACCOUNT_IN</dd>
+            <dt class="col-sm-3">SCLIENAME_INSURED</dt>
+            <dd class="col-sm-9">@Model.SCLIENAME_INSURED</dd>
+            <dt class="col-sm-3">CLIENTSCLIENT_AFFECT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSCLIENT_AFFECTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">SCLIENAME_AFFECT</dt>
+            <dd class="col-sm-9">@Model.SCLIENAME_AFFECT</dd>
+            <dt class="col-sm-3">NAGE_AFFECT</dt>
+            <dd class="col-sm-9">@Model.NAGE_AFFECT</dd>
+            <dt class="col-sm-3">TABLE12</dt>
+            <dd class="col-sm-9">@Model.TABLE12SDESCRIPT</dd>
+            <dt class="col-sm-3">DINSURENTRYDATE</dt>
+            <dd class="col-sm-9">@Model.DINSURENTRYDATE</dd>
+            <dt class="col-sm-3">DOCCURDAT</dt>
+            <dd class="col-sm-9">@Model.DOCCURDAT</dd>
+            <dt class="col-sm-3">PRECLAIM</dt>
+            <dd class="col-sm-9">@Model.PRECLAIMSCERTYPE</dd>
+            <dt class="col-sm-3">TABLE8604</dt>
+            <dd class="col-sm-9">@Model.TABLE8604SDESCRIPT</dd>
+            <dt class="col-sm-3">CLAIM</dt>
+            <dd class="col-sm-9">@Model.CLAIMSCERTYPE</dd>
+            <dt class="col-sm-3">DREJECTEDDATE</dt>
+            <dd class="col-sm-9">@Model.DREJECTEDDATE</dd>
+            <dt class="col-sm-3">NAMOUNTREJECTED_PRECLAIM</dt>
+            <dd class="col-sm-9">@Model.NAMOUNTREJECTED_PRECLAIM</dd>
+            <dt class="col-sm-3">TABLE11NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.TABLE11NCURRENCYSDESCRIPT</dd>
+            <dt class="col-sm-3">DIAGNOSIS_PRECLAIM</dt>
+            <dd class="col-sm-9">@Model.DIAGNOSIS_PRECLAIM</dd>
+            <dt class="col-sm-3">REASONREJECT_PRECLAIM</dt>
+            <dd class="col-sm-9">@Model.REASONREJECT_PRECLAIM</dd>
+            <dt class="col-sm-3">SCLARIFICATIONREQUESTED</dt>
+            <dd class="col-sm-9">@Model.SCLARIFICATIONREQUESTED</dd>
+            <dt class="col-sm-3">SJUSTIFICATIONREQUESTED</dt>
+            <dd class="col-sm-9">@Model.SJUSTIFICATIONREQUESTED</dd>
+            <dt class="col-sm-3">USERSNUSERCODE_RESPONSIBLE</dt>
+            <dd class="col-sm-9">@Model.USERSNUSERCODE_RESPONSIBLESACCESSWO</dd>
+            <dt class="col-sm-3">DRESULTDATE</dt>
+            <dd class="col-sm-9">@Model.DRESULTDATE</dd>
+            <dt class="col-sm-3">SIND_RESULT</dt>
+            <dd class="col-sm-9">@Model.SIND_RESULT</dd>
+            <dt class="col-sm-3">SIND_ASSUMEIVA</dt>
+            <dd class="col-sm-9">@Model.SIND_ASSUMEIVA</dd>
+            <dt class="col-sm-3">TABLE11NCURRENCY_PAY</dt>
+            <dd class="col-sm-9">@Model.TABLE11NCURRENCY_PAYSDESCRIPT</dd>
+            <dt class="col-sm-3">NAMOUNT_PAY</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_PAY</dd>
+            <dt class="col-sm-3">NPERCENTPAY</dt>
+            <dd class="col-sm-9">@Model.NPERCENTPAY</dd>
+            <dt class="col-sm-3">SOBSERVATIONSRESULT</dt>
+            <dd class="col-sm-9">@Model.SOBSERVATIONSRESULT</dd>
+            <dt class="col-sm-3">SCLIENAME_AUTHORIZER1</dt>
+            <dd class="col-sm-9">@Model.SCLIENAME_AUTHORIZER1</dd>
+            <dt class="col-sm-3">SPOSITION_AUTHORIZER1</dt>
+            <dd class="col-sm-9">@Model.SPOSITION_AUTHORIZER1</dd>
+            <dt class="col-sm-3">SCLIENAME_AUTHORIZER2</dt>
+            <dd class="col-sm-9">@Model.SCLIENAME_AUTHORIZER2</dd>
+            <dt class="col-sm-3">SPOSITION_AUTHORIZER2</dt>
+            <dd class="col-sm-9">@Model.SPOSITION_AUTHORIZER2</dd>
+            <dt class="col-sm-3">DLETTERDATE</dt>
+            <dd class="col-sm-9">@Model.DLETTERDATE</dd>
+            <dt class="col-sm-3">NNUMBERLETTER</dt>
+            <dd class="col-sm-9">@Model.NNUMBERLETTER</dd>
+            <dt class="col-sm-3">SADDRESSEDTO</dt>
+            <dd class="col-sm-9">@Model.SADDRESSEDTO</dd>
+            <dt class="col-sm-3">TABLE9275</dt>
+            <dd class="col-sm-9">@Model.TABLE9275SDESCRIPT</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">NMOVEMENT</dt>
+            <dd class="col-sm-9">@Model.NMOVEMENT</dd>
+            <dt class="col-sm-3">USERSNUSER_AMEND</dt>
+            <dd class="col-sm-9">@Model.USERSNUSER_AMENDSACCESSWO</dd>
+            <dt class="col-sm-3">USERSNUSER_DERIVEDBY</dt>
+            <dd class="col-sm-9">@Model.USERSNUSER_DERIVEDBYSACCESSWO</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">USERSNUSERCODE</dt>
+            <dd class="col-sm-9">@Model.USERSNUSERCODESACCESSWO</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NNULLCODE</dt>
+            <dd class="col-sm-9">@Model.NNULLCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NID_COMMPAYREQ" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

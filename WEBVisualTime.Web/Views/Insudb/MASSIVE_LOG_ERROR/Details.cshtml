@@ -1,0 +1,52 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MASSIVE_LOG_ERROR.MASSIVE_LOG_ERRORDto
+
+@{
+    ViewData["Title"] = "Detalles de MASSIVE_LOG_ERROR";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SKEY</dt>
+            <dd class="col-sm-9">@Model.SKEY</dd>
+            <dt class="col-sm-3">NKEY</dt>
+            <dd class="col-sm-9">@Model.NKEY</dd>
+            <dt class="col-sm-3">NROW</dt>
+            <dd class="col-sm-9">@Model.NROW</dd>
+            <dt class="col-sm-3">NSEQ</dt>
+            <dd class="col-sm-9">@Model.NSEQ</dd>
+            <dt class="col-sm-3">NCONSEC</dt>
+            <dd class="col-sm-9">@Model.NCONSEC</dd>
+            <dt class="col-sm-3">SACTION</dt>
+            <dd class="col-sm-9">@Model.SACTION</dd>
+            <dt class="col-sm-3">NCODERROR</dt>
+            <dd class="col-sm-9">@Model.NCODERROR</dd>
+            <dt class="col-sm-3">SERRORTYP</dt>
+            <dd class="col-sm-9">@Model.SERRORTYP</dd>
+            <dt class="col-sm-3">STYP_CONDI</dt>
+            <dd class="col-sm-9">@Model.STYP_CONDI</dd>
+            <dt class="col-sm-3">NSECTION</dt>
+            <dd class="col-sm-9">@Model.NSECTION</dd>
+            <dt class="col-sm-3">SCODISPL</dt>
+            <dd class="col-sm-9">@Model.SCODISPL</dd>
+            <dt class="col-sm-3">SERRORMESSEROW</dt>
+            <dd class="col-sm-9">@Model.SERRORMESSEROW</dd>
+            <dt class="col-sm-3">SBREAK</dt>
+            <dd class="col-sm-9">@Model.SBREAK</dd>
+            <dt class="col-sm-3">NCOD_AGREE</dt>
+            <dd class="col-sm-9">@Model.NCOD_AGREE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NACTION</dt>
+            <dd class="col-sm-9">@Model.NACTION</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SKEY" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

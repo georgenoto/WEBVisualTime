@@ -1,0 +1,43 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_WIN.CreateCLAIM_WINDto
+
+@{
+    ViewData["Title"] = "Crear CLAIM_WIN";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SV_CONCLAIM" class="form-label"></label>
+                <input asp-for="SV_CONCLAIM" class="form-control" />
+                <span asp-validation-for="SV_CONCLAIM" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SV_WINCLAIM" class="form-label"></label>
+                <input asp-for="SV_WINCLAIM" class="form-control" />
+                <span asp-validation-for="SV_WINCLAIM" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

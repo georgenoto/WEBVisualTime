@@ -1,0 +1,86 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MARGENREP.UpdateMARGENREPDto
+
+@{
+    ViewData["Title"] = "Editar MARGENREP";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NBRANCH" />
+            <input type="hidden" asp-for="NPRODUCT" />
+            <input type="hidden" asp-for="NREPTYPE" />
+            <div class="mb-3">
+                <label asp-for="SLOGO" class="form-label"></label>
+                <input asp-for="SLOGO" class="form-control" />
+                <span asp-validation-for="SLOGO" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SLOG" class="form-label"></label>
+                <input asp-for="SLOG" class="form-control" />
+                <span asp-validation-for="SLOG" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="X1" class="form-label"></label>
+                <input asp-for="X1" class="form-control" type="number" step="any" />
+                <span asp-validation-for="X1" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Y1" class="form-label"></label>
+                <input asp-for="Y1" class="form-control" type="number" step="any" />
+                <span asp-validation-for="Y1" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NIMAGENX" class="form-label"></label>
+                <input asp-for="NIMAGENX" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NIMAGENX" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NIMAGENY" class="form-label"></label>
+                <input asp-for="NIMAGENY" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NIMAGENY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPOSIMGX" class="form-label"></label>
+                <input asp-for="NPOSIMGX" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NPOSIMGX" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPOSIMGY" class="form-label"></label>
+                <input asp-for="NPOSIMGY" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NPOSIMGY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NRADIOCURVA" class="form-label"></label>
+                <input asp-for="NRADIOCURVA" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NRADIOCURVA" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NSPACE" class="form-label"></label>
+                <input asp-for="NSPACE" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NSPACE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

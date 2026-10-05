@@ -1,0 +1,55 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.PROD_ADDCAP.PROD_ADDCAPDto
+
+@{
+    ViewData["Title"] = "Eliminar PROD_ADDCAP";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBRANCH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBRANCH)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPRODUCT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPRODUCT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOVERGEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOVERGEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBRANCHADD)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBRANCHADD)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPRODUCTADD)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPRODUCTADD)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NID)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DEFFECDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DEFFECDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DNULLDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DNULLDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NROLE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NROLE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCAPITAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCAPITAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOVERADD)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOVERADD)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NROLEADD)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NROLEADD)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYP_CUMUL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYP_CUMUL)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NBRANCH" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

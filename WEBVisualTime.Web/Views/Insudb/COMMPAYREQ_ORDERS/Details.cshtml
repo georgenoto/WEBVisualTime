@@ -1,0 +1,48 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COMMPAYREQ_ORDERS.COMMPAYREQ_ORDERSDto
+
+@{
+    ViewData["Title"] = "Detalles de COMMPAYREQ_ORDERS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">COMMPAYMENTREQUESTS</dt>
+            <dd class="col-sm-9">@Model.COMMPAYMENTREQUESTSSCLIENAME_HOLDER</dd>
+            <dt class="col-sm-3">CLAIM_ORDERNCLAIM</dt>
+            <dd class="col-sm-9">@Model.CLAIM_ORDERNCLAIMSTYPECARE</dd>
+            <dt class="col-sm-3">CLAIM_ORDERNCASE_NUM</dt>
+            <dd class="col-sm-9">@Model.CLAIM_ORDERNCASE_NUMSTYPECARE</dd>
+            <dt class="col-sm-3">CLAIM_ORDERNDEMAN_TYPE</dt>
+            <dd class="col-sm-9">@Model.CLAIM_ORDERNDEMAN_TYPESTYPECARE</dd>
+            <dt class="col-sm-3">CLAIM_ORDERNORDER_NUM</dt>
+            <dd class="col-sm-9">@Model.CLAIM_ORDERNORDER_NUMSTYPECARE</dd>
+            <dt class="col-sm-3">MASTERCL_ORDER</dt>
+            <dd class="col-sm-9">@Model.MASTERCL_ORDERSNAMECLIENT</dd>
+            <dt class="col-sm-3">TABLE9265</dt>
+            <dd class="col-sm-9">@Model.TABLE9265SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE8604</dt>
+            <dd class="col-sm-9">@Model.TABLE8604SDESCRIPT</dd>
+            <dt class="col-sm-3">DIAGNOSIS_ORDER</dt>
+            <dd class="col-sm-9">@Model.DIAGNOSIS_ORDER</dd>
+            <dt class="col-sm-3">REASONREJECT_ORDER</dt>
+            <dd class="col-sm-9">@Model.REASONREJECT_ORDER</dd>
+            <dt class="col-sm-3">TABLE11</dt>
+            <dd class="col-sm-9">@Model.TABLE11SDESCRIPT</dd>
+            <dt class="col-sm-3">NAMOUNTREJECTED_ORDER</dt>
+            <dd class="col-sm-9">@Model.NAMOUNTREJECTED_ORDER</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">TABLE9241</dt>
+            <dd class="col-sm-9">@Model.TABLE9241SDESCRIPT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NID_COMMPAYREQ" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

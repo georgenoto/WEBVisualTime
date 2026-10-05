@@ -1,0 +1,50 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.REFINAN_DRA.REFINAN_DRADto
+
+@{
+    ViewData["Title"] = "Detalles de REFINAN_DRA";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TABLE10</dt>
+            <dd class="col-sm-9">@Model.TABLE10SDESCRIPT</dd>
+            <dt class="col-sm-3">NCOMMISSION</dt>
+            <dd class="col-sm-9">@Model.NCOMMISSION</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NCONTRAT</dt>
+            <dd class="col-sm-9">@Model.NCONTRAT</dd>
+            <dt class="col-sm-3">NCONTRAT_D</dt>
+            <dd class="col-sm-9">@Model.NCONTRAT_D</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NDRAFT_D</dt>
+            <dd class="col-sm-9">@Model.NDRAFT_D</dd>
+            <dt class="col-sm-3">DSTARTDATE</dt>
+            <dd class="col-sm-9">@Model.DSTARTDATE</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">DEXPIRDAT</dt>
+            <dd class="col-sm-9">@Model.DEXPIRDAT</dd>
+            <dt class="col-sm-3">NPREMIUM</dt>
+            <dd class="col-sm-9">@Model.NPREMIUM</dd>
+            <dt class="col-sm-3">SSTAT_FINPR</dt>
+            <dd class="col-sm-9">@Model.SSTAT_FINPR</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">CLIENT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">TABLE252</dt>
+            <dd class="col-sm-9">@Model.TABLE252SDESCRIPT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCONTRAT" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

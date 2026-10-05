@@ -1,0 +1,55 @@
+using Microsoft.AspNetCore.Mvc;
+using WEBVisualTime.Servicios.Insudb.DTOs.ADDRESS_CONFIG;
+using WEBVisualTime.Servicios.Insudb.Services;
+
+namespace WEBVisualTime.WebApi.Insudb.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class ADDRESS_CONFIGController : ControllerBase
+{
+    private readonly IADDRESS_CONFIGService _service;
+
+    public ADDRESS_CONFIGController(IADDRESS_CONFIGService service)
+    {
+        _service = service;
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<ADDRESS_CONFIGDto>>> GetAll()
+    {
+        var result = await _service.GetAllAsync();
+        return Ok(result);
+    }
+
+[HttpGet("{id}")]
+    public async Task<ActionResult<ADDRESS_CONFIGDto>> GetById(int id)
+    {
+        var result = await _service.GetByIdAsync(id);
+        if (result == null) return NotFound();
+        return Ok(result);
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<ADDRESS_CONFIGDto>> Create([FromBody] CreateADDRESS_CONFIGDto createDto)
+    {
+        var result = await _service.CreateAsync(createDto);
+        return CreatedAtAction(nameof(GetById), new { id = result.COUNTRY }, result);
+    }
+
+    [HttpPut("{{id}}")]
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateADDRESS_CONFIGDto updateDto)
+    {
+        var success = await _service.UpdateAsync(id, updateDto);
+        if (!success) return NotFound();
+        return NoContent();
+    }
+
+    [HttpDelete("{{id}}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var success = await _service.DeleteAsync(id);
+        if (!success) return NotFound();
+        return NoContent();
+    }
+}

@@ -1,0 +1,126 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.RELCONCEPTS.RELCONCEPTSDto
+
+@{
+    ViewData["Title"] = "Detalles de RELCONCEPTS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SSEL</dt>
+            <dd class="col-sm-9">@Model.SSEL</dd>
+            <dt class="col-sm-3">NBORDEREAUX</dt>
+            <dd class="col-sm-9">@Model.NBORDEREAUX</dd>
+            <dt class="col-sm-3">NTRANSAC</dt>
+            <dd class="col-sm-9">@Model.NTRANSAC</dd>
+            <dt class="col-sm-3">CASH_CONCEPTSNCONCEPT</dt>
+            <dd class="col-sm-9">@Model.CASH_CONCEPTSNCONCEPTSSTATREGT</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NPROPONUM</dt>
+            <dd class="col-sm-9">@Model.NPROPONUM</dd>
+            <dt class="col-sm-3">NCERTIF</dt>
+            <dd class="col-sm-9">@Model.NCERTIF</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">TABLE11NORICURR</dt>
+            <dd class="col-sm-9">@Model.TABLE11NORICURRSDESCRIPT</dd>
+            <dt class="col-sm-3">NORIAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NORIAMOUNT</dd>
+            <dt class="col-sm-3">TABLE11NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.TABLE11NCURRENCYSDESCRIPT</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">DVALDATE</dt>
+            <dd class="col-sm-9">@Model.DVALDATE</dd>
+            <dt class="col-sm-3">TABLE5642</dt>
+            <dd class="col-sm-9">@Model.TABLE5642SDESCRIPT</dd>
+            <dt class="col-sm-3">NCLAIM</dt>
+            <dd class="col-sm-9">@Model.NCLAIM</dd>
+            <dt class="col-sm-3">NCASE_NUM</dt>
+            <dd class="col-sm-9">@Model.NCASE_NUM</dd>
+            <dt class="col-sm-3">BANK_AGREENBANK_CODE</dt>
+            <dd class="col-sm-9">@Model.BANK_AGREENBANK_CODESFORMAT</dd>
+            <dt class="col-sm-3">NBANK_AGREE</dt>
+            <dd class="col-sm-9">@Model.NBANK_AGREE</dd>
+            <dt class="col-sm-3">NAGREEMENT</dt>
+            <dd class="col-sm-9">@Model.NAGREEMENT</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">NSUPORT_ID</dt>
+            <dd class="col-sm-9">@Model.NSUPORT_ID</dd>
+            <dt class="col-sm-3">TABLE5570</dt>
+            <dd class="col-sm-9">@Model.TABLE5570SDESCRIPT</dd>
+            <dt class="col-sm-3">DCOLLECTION</dt>
+            <dd class="col-sm-9">@Model.DCOLLECTION</dd>
+            <dt class="col-sm-3">NCASH_ID</dt>
+            <dd class="col-sm-9">@Model.NCASH_ID</dd>
+            <dt class="col-sm-3">NMOV_TYPE</dt>
+            <dd class="col-sm-9">@Model.NMOV_TYPE</dd>
+            <dt class="col-sm-3">NTYP_ACCO</dt>
+            <dd class="col-sm-9">@Model.NTYP_ACCO</dd>
+            <dt class="col-sm-3">NINTERMED</dt>
+            <dd class="col-sm-9">@Model.NINTERMED</dd>
+            <dt class="col-sm-3">CASH_CONCEPTSNCOMPANY</dt>
+            <dd class="col-sm-9">@Model.CASH_CONCEPTSNCOMPANYSSTATREGT</dd>
+            <dt class="col-sm-3">BANK_AGREESTYPE_BANKAGREE</dt>
+            <dd class="col-sm-9">@Model.BANK_AGREESTYPE_BANKAGREESFORMAT</dd>
+            <dt class="col-sm-3">BANK_AGREENACCOUNT</dt>
+            <dd class="col-sm-9">@Model.BANK_AGREENACCOUNTSFORMAT</dd>
+            <dt class="col-sm-3">NDEMAN_TYPE</dt>
+            <dd class="col-sm-9">@Model.NDEMAN_TYPE</dd>
+            <dt class="col-sm-3">NBULLETINS</dt>
+            <dd class="col-sm-9">@Model.NBULLETINS</dd>
+            <dt class="col-sm-3">NLOAN</dt>
+            <dd class="col-sm-9">@Model.NLOAN</dd>
+            <dt class="col-sm-3">NBORDEREAUXUSED</dt>
+            <dd class="col-sm-9">@Model.NBORDEREAUXUSED</dd>
+            <dt class="col-sm-3">NAMOUNTDEC</dt>
+            <dd class="col-sm-9">@Model.NAMOUNTDEC</dd>
+            <dt class="col-sm-3">NLOANS</dt>
+            <dd class="col-sm-9">@Model.NLOANS</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NRELRECOVER</dt>
+            <dd class="col-sm-9">@Model.NRELRECOVER</dd>
+            <dt class="col-sm-3">NRETENTIONTAXCODE</dt>
+            <dd class="col-sm-9">@Model.NRETENTIONTAXCODE</dd>
+            <dt class="col-sm-3">NRETENTIONCODE</dt>
+            <dd class="col-sm-9">@Model.NRETENTIONCODE</dd>
+            <dt class="col-sm-3">NRETENTIONSERIES</dt>
+            <dd class="col-sm-9">@Model.NRETENTIONSERIES</dd>
+            <dt class="col-sm-3">DAUTORIZATIONDATE</dt>
+            <dd class="col-sm-9">@Model.DAUTORIZATIONDATE</dd>
+            <dt class="col-sm-3">DENDINGDATE</dt>
+            <dd class="col-sm-9">@Model.DENDINGDATE</dd>
+            <dt class="col-sm-3">NRETENTION</dt>
+            <dd class="col-sm-9">@Model.NRETENTION</dd>
+            <dt class="col-sm-3">NTAXRETENTION</dt>
+            <dd class="col-sm-9">@Model.NTAXRETENTION</dd>
+            <dt class="col-sm-3">NRETENTIONBASE</dt>
+            <dd class="col-sm-9">@Model.NRETENTIONBASE</dd>
+            <dt class="col-sm-3">NAUTORIZATIONNUMBER</dt>
+            <dd class="col-sm-9">@Model.NAUTORIZATIONNUMBER</dd>
+            <dt class="col-sm-3">NBILLNUM</dt>
+            <dd class="col-sm-9">@Model.NBILLNUM</dd>
+            <dt class="col-sm-3">NTAXAMOU</dt>
+            <dd class="col-sm-9">@Model.NTAXAMOU</dd>
+            <dt class="col-sm-3">NPOLICY</dt>
+            <dd class="col-sm-9">@Model.NPOLICY</dd>
+            <dt class="col-sm-3">NREQUEST_NU</dt>
+            <dd class="col-sm-9">@Model.NREQUEST_NU</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBORDEREAUX" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

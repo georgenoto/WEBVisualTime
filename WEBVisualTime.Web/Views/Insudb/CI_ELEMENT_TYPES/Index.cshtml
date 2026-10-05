@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CI_ELEMENT_TYPES.CI_ELEMENT_TYPESDto>
+
+@{
+    ViewData["Title"] = "CI_ELEMENT_TYPES";
+    ViewData["ColumnHeaders"] = new[] { "NAME", "SHORT_NAME", "EL_TYPE_OF", "PRODUCT", "RELEASE", "PACK_GEN", "VIEW_GEN", "SUPERTYPE", "PARENT", "ADDED_TYPE", "EXTENSIBLE" };
+    ViewData["ColumnProperties"] = new[] { "NAME", "SHORT_NAME", "EL_TYPE_OF", "PRODUCT", "RELEASE", "PACK_GEN", "VIEW_GEN", "SUPERTYPE", "PARENT", "ADDED_TYPE", "EXTENSIBLE" };
+    ViewData["KeyName"] = "NAME";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

@@ -1,0 +1,59 @@
+namespace WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_CES;
+
+public class CLAIM_CESDto
+{
+    public long NCLAIM { get; set; }
+    public string? CL_M_COVERNCLAIMSAUT_ADJUST { get; set; }
+    public int NCASE_NUM { get; set; }
+    public string? CL_M_COVERNCASE_NUMSAUT_ADJUST { get; set; }
+    public int NDEMAN_TYPE { get; set; }
+    public string? CL_M_COVERNDEMAN_TYPESAUT_ADJUST { get; set; }
+    public int NID { get; set; }
+    public int NTRANSAC { get; set; }
+    public string? CL_M_COVERNTRANSACSAUT_ADJUST { get; set; }
+    public int NNUMBER { get; set; }
+    public string? CONTRPROCNNUMBERSCAP_NOM_RI { get; set; }
+    public long NCESS_NU { get; set; }
+    public int NBRANCH_REI { get; set; }
+    public string? CONTRPROCNBRANCH_REISCAP_NOM_RI { get; set; }
+    public int NNUM_CESS { get; set; }
+    public int NCURRENCY { get; set; }
+    public string? CL_M_COVERNCURRENCYSAUT_ADJUST { get; set; }
+    public decimal? NCED_AMNT { get; set; }
+    public decimal? NCED_PER { get; set; }
+    public int NCESS_CONC { get; set; }
+    public string? TABLE140SDESCRIPT { get; set; }
+    public int NCOMPANY { get; set; }
+    public string? COMPANYSACCOUNT { get; set; }
+    public long NCESS_TYPE { get; set; }
+    public string? TABLE534SDESCRIPT { get; set; }
+    public DateTime? DCOMPDATE { get; set; }
+    public DateTime? DEND_DATE { get; set; }
+    public DateTime? DINIT_DATE { get; set; }
+    public DateTime? DOCCURDATE { get; set; }
+    public long? NPOLICY { get; set; }
+    public string? SPRINT_C { get; set; }
+    public int? NUSERCODE { get; set; }
+    public DateTime? DEFFECDATE { get; set; }
+    public string? CONTRPROCDEFFECDATESCAP_NOM_RI { get; set; }
+    public int NBRANCH_LED { get; set; }
+    public string? TABLE75SDESCRIPT { get; set; }
+    public int NMODULEC { get; set; }
+    public string? CL_M_COVERNMODULECSAUT_ADJUST { get; set; }
+    public int NINSUR_AREA { get; set; }
+    public string? TABLE5001SDESCRIPT { get; set; }
+    public string? SCLIENT { get; set; }
+    public string? CL_M_COVERSCLIENTSAUT_ADJUST { get; set; }
+    public int NCOVER { get; set; }
+    public string? CL_M_COVERNCOVERSAUT_ADJUST { get; set; }
+    public long NYEARMONTH { get; set; }
+    public int? NGROUP_INSU { get; set; }
+    public int NTYPE { get; set; }
+    public string? CONTRPROCNTYPESCAP_NOM_RI { get; set; }
+    public string? SSTACLAIM { get; set; }
+    public decimal? NRET_AMNT { get; set; }
+    public decimal? NCLA_AMNT { get; set; }
+    public DateTime? DCLAIM_PAY { get; set; }
+    public DateTime? DLEDGERDAT { get; set; }
+    public DateTime? DPOSTED { get; set; }
+}

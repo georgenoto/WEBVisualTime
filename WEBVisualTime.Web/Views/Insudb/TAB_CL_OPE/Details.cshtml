@@ -1,0 +1,36 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_CL_OPE.TAB_CL_OPEDto
+
+@{
+    ViewData["Title"] = "Detalles de TAB_CL_OPE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TABLE140NOPER_TYPE</dt>
+            <dd class="col-sm-9">@Model.TABLE140NOPER_TYPESDESCRIPT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">TABLE140NGEN_OPERA</dt>
+            <dd class="col-sm-9">@Model.TABLE140NGEN_OPERASDESCRIPT</dd>
+            <dt class="col-sm-3">NIND_REV</dt>
+            <dd class="col-sm-9">@Model.NIND_REV</dd>
+            <dt class="col-sm-3">TABLE294NPAY_IND</dt>
+            <dd class="col-sm-9">@Model.TABLE294NPAY_INDSDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE294NREC_ESP_IN</dt>
+            <dd class="col-sm-9">@Model.TABLE294NREC_ESP_INSDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE294NRECOVER_IN</dt>
+            <dd class="col-sm-9">@Model.TABLE294NRECOVER_INSDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE294NRESERVE_IN</dt>
+            <dd class="col-sm-9">@Model.TABLE294NRESERVE_INSDESCRIPT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NOPER_TYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

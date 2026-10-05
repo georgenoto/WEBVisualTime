@@ -1,0 +1,58 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.HEALTHCLAIMFORM.CreateHEALTHCLAIMFORMDto
+
+@{
+    ViewData["Title"] = "Crear HEALTHCLAIMFORM";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="CLIENTE" class="form-label"></label>
+                <input asp-for="CLIENTE" class="form-control" />
+                <span asp-validation-for="CLIENTE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="IDRECLAMACION" class="form-label"></label>
+                <input asp-for="IDRECLAMACION" class="form-control" type="number" />
+                <span asp-validation-for="IDRECLAMACION" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCASENUM" class="form-label"></label>
+                <input asp-for="NCASENUM" class="form-control" type="number" />
+                <span asp-validation-for="NCASENUM" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="FORMULARIO" class="form-label"></label>
+                <input asp-for="FORMULARIO" class="form-control" />
+                <span asp-validation-for="FORMULARIO" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="FECHACOMPUTADOR" class="form-label"></label>
+                <input asp-for="FECHACOMPUTADOR" class="form-control" type="datetime-local" />
+                <span asp-validation-for="FECHACOMPUTADOR" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="USERID" class="form-label"></label>
+                <input asp-for="USERID" class="form-control" />
+                <span asp-validation-for="USERID" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CONTENT" class="form-label"></label>
+                <input asp-for="CONTENT" class="form-control" />
+                <span asp-validation-for="CONTENT" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

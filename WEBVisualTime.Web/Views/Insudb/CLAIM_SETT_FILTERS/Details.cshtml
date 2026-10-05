@@ -1,0 +1,74 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_SETT_FILTERS.CLAIM_SETT_FILTERSDto
+
+@{
+    ViewData["Title"] = "Detalles de CLAIM_SETT_FILTERS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CLAIM_SETTLEMENT</dt>
+            <dd class="col-sm-9">@Model.CLAIM_SETTLEMENTSCLIENT2</dd>
+            <dt class="col-sm-3">NCLAIMANTTYPE</dt>
+            <dd class="col-sm-9">@Model.NCLAIMANTTYPE</dd>
+            <dt class="col-sm-3">NCLAIM</dt>
+            <dd class="col-sm-9">@Model.NCLAIM</dd>
+            <dt class="col-sm-3">NCASE_NUM</dt>
+            <dd class="col-sm-9">@Model.NCASE_NUM</dd>
+            <dt class="col-sm-3">NDEMAN_TYPE</dt>
+            <dd class="col-sm-9">@Model.NDEMAN_TYPE</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">SCLIENT2</dt>
+            <dd class="col-sm-9">@Model.SCLIENT2</dd>
+            <dt class="col-sm-3">NORDER_NUM</dt>
+            <dd class="col-sm-9">@Model.NORDER_NUM</dd>
+            <dt class="col-sm-3">NPROVIDER</dt>
+            <dd class="col-sm-9">@Model.NPROVIDER</dd>
+            <dt class="col-sm-3">NTYPEPROV</dt>
+            <dd class="col-sm-9">@Model.NTYPEPROV</dd>
+            <dt class="col-sm-3">DFROM</dt>
+            <dd class="col-sm-9">@Model.DFROM</dd>
+            <dt class="col-sm-3">DTO</dt>
+            <dd class="col-sm-9">@Model.DTO</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">TABLE9242</dt>
+            <dd class="col-sm-9">@Model.TABLE9242SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9249</dt>
+            <dd class="col-sm-9">@Model.TABLE9249SDESCRIPT</dd>
+            <dt class="col-sm-3">NPHYSICIAN</dt>
+            <dd class="col-sm-9">@Model.NPHYSICIAN</dd>
+            <dt class="col-sm-3">NCLINIC</dt>
+            <dd class="col-sm-9">@Model.NCLINIC</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NBORDEREAUX_CL</dt>
+            <dd class="col-sm-9">@Model.NBORDEREAUX_CL</dd>
+            <dt class="col-sm-3">NMASTERORDERTYPE</dt>
+            <dd class="col-sm-9">@Model.NMASTERORDERTYPE</dd>
+            <dt class="col-sm-3">NMASTERORDER</dt>
+            <dd class="col-sm-9">@Model.NMASTERORDER</dd>
+            <dt class="col-sm-3">DMASTERORDERFROM</dt>
+            <dd class="col-sm-9">@Model.DMASTERORDERFROM</dd>
+            <dt class="col-sm-3">DMASTERORDERTO</dt>
+            <dd class="col-sm-9">@Model.DMASTERORDERTO</dd>
+            <dt class="col-sm-3">SCLIENT_BENEF</dt>
+            <dd class="col-sm-9">@Model.SCLIENT_BENEF</dd>
+            <dt class="col-sm-3">DLEDGERDAT</dt>
+            <dd class="col-sm-9">@Model.DLEDGERDAT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NSETTLEMENT_NUM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

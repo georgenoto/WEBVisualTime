@@ -1,0 +1,30 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.ODWA_HELP_NODES.ODWA_HELP_NODESDto
+
+@{
+    ViewData["Title"] = "Detalles de ODWA_HELP_NODES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9">@Model.ID</dd>
+            <dt class="col-sm-3">PARENT_NODE</dt>
+            <dd class="col-sm-9">@Model.PARENT_NODE</dd>
+            <dt class="col-sm-3">SEQ_IN_PARENT</dt>
+            <dd class="col-sm-9">@Model.SEQ_IN_PARENT</dd>
+            <dt class="col-sm-3">TREE_LEVEL</dt>
+            <dd class="col-sm-9">@Model.TREE_LEVEL</dd>
+            <dt class="col-sm-3">DISPLAY_LABEL</dt>
+            <dd class="col-sm-9">@Model.DISPLAY_LABEL</dd>
+            <dt class="col-sm-3">HIM_ID</dt>
+            <dd class="col-sm-9">@Model.HIM_ID</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

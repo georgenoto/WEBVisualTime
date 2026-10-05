@@ -1,0 +1,41 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_DFLT_USER_PREFS.CDI_DFLT_USER_PREFSDto
+
+@{
+    ViewData["Title"] = "Eliminar CDI_DFLT_USER_PREFS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.P_SNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.P_SNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.P_CGVERSION)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.P_CGVERSION)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.VALUE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.VALUE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.INTERNAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.INTERNAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.TYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DESCRIPTION)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DESCRIPTION)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.P_SNAME" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,70 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.DRAFT_HIST.DRAFT_HISTDto
+
+@{
+    ViewData["Title"] = "Detalles de DRAFT_HIST";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NCONTRAT</dt>
+            <dd class="col-sm-9">@Model.NCONTRAT</dd>
+            <dt class="col-sm-3">NTRANSAC</dt>
+            <dd class="col-sm-9">@Model.NTRANSAC</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NDRAFT</dt>
+            <dd class="col-sm-9">@Model.NDRAFT</dd>
+            <dt class="col-sm-3">NDSCTO_PAG</dt>
+            <dd class="col-sm-9">@Model.NDSCTO_PAG</dd>
+            <dt class="col-sm-3">NEXPENSIVE</dt>
+            <dd class="col-sm-9">@Model.NEXPENSIVE</dd>
+            <dt class="col-sm-3">NINTEREST</dt>
+            <dd class="col-sm-9">@Model.NINTEREST</dd>
+            <dt class="col-sm-3">SINTERMEI</dt>
+            <dd class="col-sm-9">@Model.SINTERMEI</dd>
+            <dt class="col-sm-3">DSTAT_DATE</dt>
+            <dd class="col-sm-9">@Model.DSTAT_DATE</dd>
+            <dt class="col-sm-3">TABLE260</dt>
+            <dd class="col-sm-9">@Model.TABLE260SDESCRIPT</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">TABLE7</dt>
+            <dd class="col-sm-9">@Model.TABLE7SDESCRIPT</dd>
+            <dt class="col-sm-3">SDOCNUMBE</dt>
+            <dd class="col-sm-9">@Model.SDOCNUMBE</dd>
+            <dt class="col-sm-3">TABLE182</dt>
+            <dd class="col-sm-9">@Model.TABLE182SDESCRIPT</dd>
+            <dt class="col-sm-3">SCHANGE_ACC</dt>
+            <dd class="col-sm-9">@Model.SCHANGE_ACC</dd>
+            <dt class="col-sm-3">SAUX_ACCOUN</dt>
+            <dd class="col-sm-9">@Model.SAUX_ACCOUN</dd>
+            <dt class="col-sm-3">NCASHNUM</dt>
+            <dd class="col-sm-9">@Model.NCASHNUM</dd>
+            <dt class="col-sm-3">NPAYREJECT</dt>
+            <dd class="col-sm-9">@Model.NPAYREJECT</dd>
+            <dt class="col-sm-3">COLLECTOR</dt>
+            <dd class="col-sm-9">@Model.NCOLLECTOR</dd>
+            <dt class="col-sm-3">DLEDGERDAT</dt>
+            <dd class="col-sm-9">@Model.DLEDGERDAT</dd>
+            <dt class="col-sm-3">DPOSTED</dt>
+            <dd class="col-sm-9">@Model.DPOSTED</dd>
+            <dt class="col-sm-3">SCESSICOI</dt>
+            <dd class="col-sm-9">@Model.SCESSICOI</dd>
+            <dt class="col-sm-3">NBILLNUM</dt>
+            <dd class="col-sm-9">@Model.NBILLNUM</dd>
+            <dt class="col-sm-3">SIND_REVER</dt>
+            <dd class="col-sm-9">@Model.SIND_REVER</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCONTRAT" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

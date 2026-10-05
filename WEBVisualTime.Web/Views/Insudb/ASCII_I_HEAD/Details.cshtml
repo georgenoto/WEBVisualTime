@@ -1,0 +1,40 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.ASCII_I_HEAD.ASCII_I_HEADDto
+
+@{
+    ViewData["Title"] = "Detalles de ASCII_I_HEAD";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SASCII_NAME</dt>
+            <dd class="col-sm-9">@Model.SASCII_NAME</dd>
+            <dt class="col-sm-3">TABLE7</dt>
+            <dd class="col-sm-9">@Model.TABLE7SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE293</dt>
+            <dd class="col-sm-9">@Model.TABLE293SDESCRIPT</dd>
+            <dt class="col-sm-3">DSTAT_DATE</dt>
+            <dd class="col-sm-9">@Model.DSTAT_DATE</dd>
+            <dt class="col-sm-3">SACC_NUMBER</dt>
+            <dd class="col-sm-9">@Model.SACC_NUMBER</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">SSTATMOV</dt>
+            <dd class="col-sm-9">@Model.SSTATMOV</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">TABLE193</dt>
+            <dd class="col-sm-9">@Model.TABLE193SDESCRIPT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SASCII_NAME" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

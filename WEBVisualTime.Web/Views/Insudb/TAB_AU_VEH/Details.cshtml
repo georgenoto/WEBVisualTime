@@ -1,0 +1,46 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_AU_VEH.TAB_AU_VEHDto
+
+@{
+    ViewData["Title"] = "Detalles de TAB_AU_VEH";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SVEHCODE</dt>
+            <dd class="col-sm-9">@Model.SVEHCODE</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">NNATIONAL</dt>
+            <dd class="col-sm-9">@Model.NNATIONAL</dd>
+            <dt class="col-sm-3">NVEHBRAND</dt>
+            <dd class="col-sm-9">@Model.NVEHBRAND</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">SVEHMODEL</dt>
+            <dd class="col-sm-9">@Model.SVEHMODEL</dd>
+            <dt class="col-sm-3">TABLE226</dt>
+            <dd class="col-sm-9">@Model.TABLE226SDESCRIPT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NVEHPLACE</dt>
+            <dd class="col-sm-9">@Model.NVEHPLACE</dd>
+            <dt class="col-sm-3">NVEHPMA</dt>
+            <dd class="col-sm-9">@Model.NVEHPMA</dd>
+            <dt class="col-sm-3">NSOAP_VEHTYPE</dt>
+            <dd class="col-sm-9">@Model.NSOAP_VEHTYPE</dd>
+            <dt class="col-sm-3">SAACHCODE</dt>
+            <dd class="col-sm-9">@Model.SAACHCODE</dd>
+            <dt class="col-sm-3">NGROUPVEH</dt>
+            <dd class="col-sm-9">@Model.NGROUPVEH</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SVEHCODE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

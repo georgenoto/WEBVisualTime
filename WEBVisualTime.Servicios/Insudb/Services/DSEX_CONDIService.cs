@@ -1,0 +1,64 @@
+using System.Linq.Expressions;
+using WEBVisualTime.Entidades.Insudb;
+using WEBVisualTime.Datos.Repositories;
+using WEBVisualTime.Servicios.Insudb.DTOs.DSEX_CONDI;
+using WEBVisualTime.Servicios.Insudb.Mappings;
+
+namespace WEBVisualTime.Servicios.Insudb.Services;
+
+public class DSEX_CONDIService : IDSEX_CONDIService
+{
+    private readonly IRepository<DSEX_CONDI> _repository;
+
+    public DSEX_CONDIService(IRepository<DSEX_CONDI> repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task<IEnumerable<DSEX_CONDIDto>> GetAllAsync()
+    {
+        var entities = await _repository.GetAllAsync();
+        return entities.Select(e => e.ToDto());
+    }
+
+    public async Task<DSEX_CONDIDto?> GetByIdAsync(int id)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        return entity?.ToDto();
+    }
+
+    public async Task<IEnumerable<DSEX_CONDIDto>> FindAsync(Expression<Func<DSEX_CONDI, bool>> predicate)
+    {
+        var entities = await _repository.FindAsync(predicate);
+        return entities.Select(e => e.ToDto());
+    }
+
+    public async Task<DSEX_CONDIDto> CreateAsync(CreateDSEX_CONDIDto createDto)
+    {
+        var entity = createDto.ToEntity();
+        await _repository.AddAsync(entity);
+        await _repository.SaveChangesAsync();
+        return entity.ToDto();
+    }
+
+    public async Task<bool> UpdateAsync(int id, UpdateDSEX_CONDIDto updateDto)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        if (entity == null) return false;
+
+        entity.UpdateEntity(updateDto);
+        _repository.Update(entity);
+        await _repository.SaveChangesAsync();
+        return true;
+    }
+
+    public async Task<bool> DeleteAsync(int id)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        if (entity == null) return false;
+
+        _repository.Remove(entity);
+        await _repository.SaveChangesAsync();
+        return true;
+    }
+}

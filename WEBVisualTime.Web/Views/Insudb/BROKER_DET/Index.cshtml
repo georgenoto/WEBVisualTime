@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.BROKER_DET.BROKER_DETDto>
+
+@{
+    ViewData["Title"] = "BROKER_DET";
+    ViewData["ColumnHeaders"] = new[] { "NCOMPANY_BR", "NCOMPANY", "DEFFECDATE", "DNULLDATE", "NID", "DCOMPDATE", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "NCOMPANY_BR", "NCOMPANY", "DEFFECDATE", "DNULLDATE", "NID", "DCOMPDATE", "NUSERCODE" };
+    ViewData["KeyName"] = "NCOMPANY_BR";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

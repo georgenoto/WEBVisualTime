@@ -1,0 +1,173 @@
+#nullable enable
+using System.ComponentModel.DataAnnotations.Schema;
+namespace WEBVisualTime.Entidades.Insudb;
+
+public partial class TAB_COVROL
+{
+    public int NBRANCH { get; set; }
+
+    [ForeignKey("NBRANCH")]
+    public Insudb.PRODMASTER? PRODMASTERNBRANCH { get; set; }
+    public int NPRODUCT { get; set; }
+
+    [ForeignKey("NPRODUCT")]
+    public Insudb.PRODMASTER? PRODMASTERNPRODUCT { get; set; }
+    public int NMODULEC { get; set; }
+    public int NCOVER { get; set; }
+    public int NROLCAP { get; set; }
+
+    [ForeignKey("NROLCAP")]
+    public Insudb.TABLE12? TABLE12NROLCAP { get; set; }
+    public int NROLE { get; set; }
+
+    [ForeignKey("NROLE")]
+    public Insudb.TABLE12? TABLE12NROLE { get; set; }
+    public DateTime DEFFECDATE { get; set; }
+    public string? SREQUIRED { get; set; }
+    public string? SDEFAULTI { get; set; }
+    public string? SROUPREMI { get; set; }
+    public int? NAGEMININSM { get; set; }
+    public int? NAGEMAXINSM { get; set; }
+    public int? NAGEMAXPERM { get; set; }
+    public int? NAGEMININSF { get; set; }
+    public int? NAGEMAXINSF { get; set; }
+    public int? NAGEMAXPERF { get; set; }
+    public DateTime? DNULLDATE { get; set; }
+    public int NUSERCODE { get; set; }
+
+    [ForeignKey("NUSERCODE")]
+    public Insudb.USERS? USERS { get; set; }
+    public DateTime? DCOMPDATE { get; set; }
+    public int? NCACALCOV { get; set; }
+    public decimal? NCACALFIX { get; set; }
+    public int? NCACALMUL { get; set; }
+    public decimal? NCAPBASPE { get; set; }
+    public decimal? NCAPMAXIM { get; set; }
+    public decimal? NCAPMINIM { get; set; }
+    public int? NCOVER_IN { get; set; }
+    public int NROLPREM { get; set; }
+
+    [ForeignKey("NROLPREM")]
+    public Insudb.TABLE12? TABLE12NROLPREM { get; set; }
+    public decimal? NPREMIRAT { get; set; }
+    public long? NNOTENUM { get; set; }
+    public int? NDURATIND { get; set; }
+    public string? SRECHAPRI { get; set; }
+    public string? SRENEWALI { get; set; }
+    public string? SROUCHACA { get; set; }
+    public string? SROUCHAPR { get; set; }
+    public int? NDURATPAY { get; set; }
+    public string? SREVINDEX { get; set; }
+    public string? SROUPRCAL { get; set; }
+    public decimal? NFRANCFIX { get; set; }
+    public string? SFRANCAPL { get; set; }
+
+    [ForeignKey("SFRANCAPL")]
+    public Insudb.TABLE33? TABLE33 { get; set; }
+    public decimal? NFRANCMAX { get; set; }
+    public decimal? NFRANCMIN { get; set; }
+    public decimal? NFRANCRAT { get; set; }
+    public string? SROUFRANC { get; set; }
+    public string? SFRANTYPE { get; set; }
+
+    [ForeignKey("SFRANTYPE")]
+    public Insudb.TABLE64? TABLE64 { get; set; }
+    public string? SFDREQUIRE { get; set; }
+    public string? SFDCHANTYP { get; set; }
+    public int? NFDUSERLEV { get; set; }
+    public decimal? NFDRATEADD { get; set; }
+    public decimal? NFDRATESUB { get; set; }
+    public decimal? NCAMAXPER { get; set; }
+    public int? NCAMAXCOV { get; set; }
+    public string? SROUTINECC { get; set; }
+    public decimal? NRATECC { get; set; }
+    public decimal? NAMOUNTCC { get; set; }
+    public string? SAPPLYCC { get; set; }
+    public int? NCHPRELEV { get; set; }
+    public int? NCHCAPLEV { get; set; }
+    public decimal? NRATECAPADD { get; set; }
+    public decimal? NRATECAPSUB { get; set; }
+    public string? SCHTYPCAP { get; set; }
+    public decimal? NRATEPREADD { get; set; }
+    public decimal? NRATEPRESUB { get; set; }
+    public string? SCHANGETYP { get; set; }
+    public string? SSTATREGT { get; set; }
+    public string? SROUT_PAY { get; set; }
+    public int NTYPDURPAY { get; set; }
+
+    [ForeignKey("NTYPDURPAY")]
+    public Insudb.TABLE5589? TABLE5589NTYPDURPAY { get; set; }
+    public string? SCAREN_TYPE { get; set; }
+
+    [ForeignKey("SCAREN_TYPE")]
+    public Insudb.TABLE52? TABLE52 { get; set; }
+    public int NTYPDURINS { get; set; }
+
+    [ForeignKey("NTYPDURINS")]
+    public Insudb.TABLE5589? TABLE5589NTYPDURINS { get; set; }
+    public int? NCAREN_QUAN { get; set; }
+    public string? SCLACCIDI { get; set; }
+    public string? SCLDEATHI { get; set; }
+    public string? SCLINCAPI { get; set; }
+    public string? SCLINVALI { get; set; }
+    public string? SCLVEHACI { get; set; }
+    public string? SCLIILLNESS { get; set; }
+    public string? SCACALTYP { get; set; }
+    public string? SCLSURVII { get; set; }
+    public int NCAMAXROL { get; set; }
+
+    [ForeignKey("NCAMAXROL")]
+    public Insudb.TABLE12? TABLE12NCAMAXROL { get; set; }
+    public int? NMAX_ROLE { get; set; }
+    public decimal? NMAXRENT { get; set; }
+    public decimal? NPREMIFIX { get; set; }
+    public int? NCOVACTIV_REL { get; set; }
+    public int NROLACTIV_REL { get; set; }
+
+    [ForeignKey("NROLACTIV_REL")]
+    public Insudb.TABLE12? TABLE12NROLACTIV_REL { get; set; }
+    public decimal? NPREMIMAX { get; set; }
+    public string? SLEG { get; set; }
+    public int? NUNITM { get; set; }
+    public int? NUNITF { get; set; }
+    public int NID_TABLE { get; set; }
+
+    [ForeignKey("NID_TABLE")]
+    public Insudb.TABLE5800? TABLE5800 { get; set; }
+    public int? NQMONTH_VIG { get; set; }
+    public int? NQBETWEENMOD { get; set; }
+    public int? NQMAX_MOD { get; set; }
+    public decimal? NPREMIMIN { get; set; }
+    public int? NTYP_AGEMINM { get; set; }
+    public int? NTYP_AGEMINF { get; set; }
+    public string? SROU_COND_CAP { get; set; }
+    public decimal? NPERCCOSTFP { get; set; }
+    public long? NRECCOSTFP { get; set; }
+    public int? NTYPEAGE { get; set; }
+    public string? SROURATE { get; set; }
+    public long NFIELDDATE { get; set; }
+
+    [ForeignKey("NFIELDDATE")]
+    public Insudb.TABLE8106? TABLE8106 { get; set; }
+    public string? SDEVPRIMEXCESS { get; set; }
+    public string? SPROVCOV { get; set; }
+    public int? NMAXCAP_PROVCOV { get; set; }
+    public int? NDURDAY { get; set; }
+    public decimal? NAMOUNTMIN_INCAP { get; set; }
+    public decimal? NAMOUNTMIN_DECAP { get; set; }
+    public int? NFREQUEN { get; set; }
+    public int? NMAXEVEN_QUAN { get; set; }
+    public string? SMAX_EVEN { get; set; }
+    public string? SROUTMAX_EVEN { get; set; }
+    public decimal? NREDUCAPAGE { get; set; }
+    public int? NAGELIMITCAP { get; set; }
+    public decimal? NPERCCOAS { get; set; }
+    public string? SROUT_REDUCTCAP { get; set; }
+    public string? SEXEMPTION { get; set; }
+    public int NTYPE_DUREXEMP { get; set; }
+
+    [ForeignKey("NTYPE_DUREXEMP")]
+    public Insudb.TABLE5589? TABLE5589NTYPE_DUREXEMP { get; set; }
+    public int? NEXEMPDUR { get; set; }
+    public int? NTYPE_SEX { get; set; }
+}

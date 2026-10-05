@@ -1,0 +1,50 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.EVAL_MASTER.EVAL_MASTERDto
+
+@{
+    ViewData["Title"] = "Detalles de EVAL_MASTER";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NEVAL</dt>
+            <dd class="col-sm-9">@Model.NEVAL</dd>
+            <dt class="col-sm-3">CLIENT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">CERTIFICATNBRANCH</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNBRANCHSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPRODUCTSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPOLICY</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPOLICYSCUMUL_CODE</dd>
+            <dt class="col-sm-3">DSTARTDATE</dt>
+            <dd class="col-sm-9">@Model.DSTARTDATE</dd>
+            <dt class="col-sm-3">CERTIFICATNCERTIF</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNCERTIFSCUMUL_CODE</dd>
+            <dt class="col-sm-3">DEXPIRDAT</dt>
+            <dd class="col-sm-9">@Model.DEXPIRDAT</dd>
+            <dt class="col-sm-3">TABLE5572</dt>
+            <dd class="col-sm-9">@Model.TABLE5572SDESCRIPT</dd>
+            <dt class="col-sm-3">NCAPITAL</dt>
+            <dd class="col-sm-9">@Model.NCAPITAL</dd>
+            <dt class="col-sm-3">NNOTEREST</dt>
+            <dd class="col-sm-9">@Model.NNOTEREST</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NCUMUL</dt>
+            <dd class="col-sm-9">@Model.NCUMUL</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">CERTIFICATSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATSCERTYPESCUMUL_CODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NEVAL" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

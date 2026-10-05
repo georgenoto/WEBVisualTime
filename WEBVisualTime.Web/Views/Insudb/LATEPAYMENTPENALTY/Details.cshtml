@@ -1,0 +1,36 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.LATEPAYMENTPENALTY.LATEPAYMENTPENALTYDto
+
+@{
+    ViewData["Title"] = "Detalles de LATEPAYMENTPENALTY";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TABLE10</dt>
+            <dd class="col-sm-9">@Model.TABLE10SDESCRIPT</dd>
+            <dt class="col-sm-3">PRODMASTER</dt>
+            <dd class="col-sm-9">@Model.PRODMASTERSDESCRIPT</dd>
+            <dt class="col-sm-3">NDAY_INI</dt>
+            <dd class="col-sm-9">@Model.NDAY_INI</dd>
+            <dt class="col-sm-3">DEFFECTDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECTDATE</dd>
+            <dt class="col-sm-3">NDAY_END</dt>
+            <dd class="col-sm-9">@Model.NDAY_END</dd>
+            <dt class="col-sm-3">NDAYSPENALTY</dt>
+            <dd class="col-sm-9">@Model.NDAYSPENALTY</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

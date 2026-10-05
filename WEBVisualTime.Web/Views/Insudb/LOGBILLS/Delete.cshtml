@@ -1,0 +1,59 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.LOGBILLS.LOGBILLSDto
+
+@{
+    ViewData["Title"] = "Eliminar LOGBILLS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINSUR_AREA)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINSUR_AREA)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NOPERTYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NOPERTYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPOLICY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPOLICY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCERTIF)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCERTIF)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBORDEREAUX)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBORDEREAUX)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCURRENCY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCURRENCY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAMOUNT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAMOUNT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DSTATDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DSTATDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSTATUSCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSTATUSCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSTATUSDESC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSTATUSDESC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SBILLNUMSFE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SBILLNUMSFE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBILLNUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBILLNUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SPROCESSED)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SPROCESSED)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NRECEIPTCORP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NRECEIPTCORP)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NINSUR_AREA" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

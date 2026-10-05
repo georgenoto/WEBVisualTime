@@ -1,0 +1,63 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_DFLT_USER_PREFS.CreateCDI_DFLT_USER_PREFSDto
+
+@{
+    ViewData["Title"] = "Crear CDI_DFLT_USER_PREFS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="P_SNAME" class="form-label"></label>
+                <input asp-for="P_SNAME" class="form-control" />
+                <span asp-validation-for="P_SNAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="P_CGVERSION" class="form-label"></label>
+                <input asp-for="P_CGVERSION" class="form-control" />
+                <span asp-validation-for="P_CGVERSION" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SNAME" class="form-label"></label>
+                <input asp-for="SNAME" class="form-control" />
+                <span asp-validation-for="SNAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAME" class="form-label"></label>
+                <input asp-for="NAME" class="form-control" />
+                <span asp-validation-for="NAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="VALUE" class="form-label"></label>
+                <input asp-for="VALUE" class="form-control" />
+                <span asp-validation-for="VALUE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="INTERNAL" class="form-label"></label>
+                <input asp-for="INTERNAL" class="form-control" />
+                <span asp-validation-for="INTERNAL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="TYPE" class="form-label"></label>
+                <input asp-for="TYPE" class="form-control" />
+                <span asp-validation-for="TYPE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DESCRIPTION" class="form-label"></label>
+                <input asp-for="DESCRIPTION" class="form-control" />
+                <span asp-validation-for="DESCRIPTION" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

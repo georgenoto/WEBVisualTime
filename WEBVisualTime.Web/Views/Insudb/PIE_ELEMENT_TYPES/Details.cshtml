@@ -1,0 +1,36 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.PIE_ELEMENT_TYPES.PIE_ELEMENT_TYPESDto
+
+@{
+    ViewData["Title"] = "Detalles de PIE_ELEMENT_TYPES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">DISPLAY_NAME</dt>
+            <dd class="col-sm-9">@Model.DISPLAY_NAME</dd>
+            <dt class="col-sm-3">NAME</dt>
+            <dd class="col-sm-9">@Model.NAME</dd>
+            <dt class="col-sm-3">RM_ID</dt>
+            <dd class="col-sm-9">@Model.RM_ID</dd>
+            <dt class="col-sm-3">PLURAL</dt>
+            <dd class="col-sm-9">@Model.PLURAL</dd>
+            <dt class="col-sm-3">GIF_FILE</dt>
+            <dd class="col-sm-9">@Model.GIF_FILE</dd>
+            <dt class="col-sm-3">ROOT_PROCEDURE</dt>
+            <dd class="col-sm-9">@Model.ROOT_PROCEDURE</dd>
+            <dt class="col-sm-3">SHORT_NAME</dt>
+            <dd class="col-sm-9">@Model.SHORT_NAME</dd>
+            <dt class="col-sm-3">DETAIL_PROCEDURE</dt>
+            <dd class="col-sm-9">@Model.DETAIL_PROCEDURE</dd>
+            <dt class="col-sm-3">DISPLAY_SEQUENCE</dt>
+            <dd class="col-sm-9">@Model.DISPLAY_SEQUENCE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SHORT_NAME" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

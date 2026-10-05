@@ -1,0 +1,40 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.GROUPVARIABLES.GROUPVARIABLESDto
+
+@{
+    ViewData["Title"] = "Detalles de GROUPVARIABLES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">GROUPPARAMS</dt>
+            <dd class="col-sm-9">@Model.GROUPPARAMSSDESCRIPT</dd>
+            <dt class="col-sm-3">SVARIABLE</dt>
+            <dd class="col-sm-9">@Model.SVARIABLE</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">STABLENAME</dt>
+            <dd class="col-sm-9">@Model.STABLENAME</dd>
+            <dt class="col-sm-3">SCOLUMNAME</dt>
+            <dd class="col-sm-9">@Model.SCOLUMNAME</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NTYPVARIABLE</dt>
+            <dd class="col-sm-9">@Model.NTYPVARIABLE</dd>
+            <dt class="col-sm-3">STABVALUE</dt>
+            <dd class="col-sm-9">@Model.STABVALUE</dd>
+            <dt class="col-sm-3">SALIASTABLE</dt>
+            <dd class="col-sm-9">@Model.SALIASTABLE</dd>
+            <dt class="col-sm-3">SALIASCOLUMN</dt>
+            <dd class="col-sm-9">@Model.SALIASCOLUMN</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NLETT_GROUP" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

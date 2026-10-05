@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.T_ERR_MASSIVE.T_ERR_MASSIVEDto>
+
+@{
+    ViewData["Title"] = "T_ERR_MASSIVE";
+    ViewData["ColumnHeaders"] = new[] { "SKEY", "NBRANCH", "NPRODUCT", "NPOLICY", "NCERTIF", "NERROR", "SDESCRIPT", "NUSERCODE", "DCOMPDATE", "SCERTYPE", "SCLIENT", "NSEQ", "STYPE" };
+    ViewData["ColumnProperties"] = new[] { "SKEY", "NBRANCH", "NPRODUCT", "NPOLICY", "NCERTIF", "NERROR", "SDESCRIPT", "NUSERCODE", "DCOMPDATE", "SCERTYPE", "SCLIENT", "NSEQ", "STYPE" };
+    ViewData["KeyName"] = "SKEY";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

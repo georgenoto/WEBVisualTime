@@ -1,0 +1,87 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COMMPAYREQ_POLICIES.COMMPAYREQ_POLICIESDto
+
+@{
+    ViewData["Title"] = "Eliminar COMMPAYREQ_POLICIES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NID_COMMPAYREQ)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NID_COMMPAYREQ)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCONSEC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCONSEC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCERTYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCERTYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBRANCH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBRANCH)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPRODUCT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPRODUCT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPOLICY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPOLICY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCERTIF)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCERTIF)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NMODULEC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NMODULEC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NGROUP_INSU)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NGROUP_INSU)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SPOLITYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SPOLITYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NIND_POLICY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NIND_POLICY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NIND_CURRENT_POLICY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NIND_CURRENT_POLICY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINTERMED)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINTERMED)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINTERTYP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINTERTYP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENAME_INTERMEDIA)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENAME_INTERMEDIA)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DSTARTDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DSTARTDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DEXPIRDAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DEXPIRDAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCURRENCY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCURRENCY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCAPITAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCAPITAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBALANCECAPITAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBALANCECAPITAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBALANCEDEDUC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBALANCEDEDUC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPREMIUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPREMIUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPREMIUMN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPREMIUMN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPREMIUMNPAID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPREMIUMNPAID)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCLAIMSAMOUNTBASE_SETT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCLAIMSAMOUNTBASE_SETT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCLAIMSAMOUNTBASE_PEND)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCLAIMSAMOUNTBASE_PEND)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NRATECLAIMS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NRATECLAIMS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NRATEPROFIT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NRATEPROFIT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NRATEPROJECTED_CLAIMS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NRATEPROJECTED_CLAIMS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NID_COMMPAYREQ" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

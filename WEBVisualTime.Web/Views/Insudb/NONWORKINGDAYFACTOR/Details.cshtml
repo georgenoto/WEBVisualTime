@@ -1,0 +1,26 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.NONWORKINGDAYFACTOR.NONWORKINGDAYFACTORDto
+
+@{
+    ViewData["Title"] = "Detalles de NONWORKINGDAYFACTOR";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NIDFACTOR</dt>
+            <dd class="col-sm-9">@Model.NIDFACTOR</dd>
+            <dt class="col-sm-3">APPUSER</dt>
+            <dd class="col-sm-9">@Model.APPUSERSUSERNAME</dd>
+            <dt class="col-sm-3">NFACTOR</dt>
+            <dd class="col-sm-9">@Model.NFACTOR</dd>
+            <dt class="col-sm-3">DCREATIONDATE</dt>
+            <dd class="col-sm-9">@Model.DCREATIONDATE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NIDFACTOR" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

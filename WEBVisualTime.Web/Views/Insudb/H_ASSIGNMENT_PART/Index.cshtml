@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.H_ASSIGNMENT_PART.H_ASSIGNMENT_PARTDto>
+
+@{
+    ViewData["Title"] = "H_ASSIGNMENT_PART";
+    ViewData["ColumnHeaders"] = new[] { "NID_NUMREG", "NINSUR_AREA", "NINTERTYP", "NTYPE_ASSIGN", "DATE_ASSIG_INI", "DATE_ASSIG_END", "NINTERMED", "NTEMPASSI", "STEMPASSI", "SSTATREGT", "DCOMPDATE", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "NID_NUMREG", "NINSUR_AREA", "NINTERTYP", "NTYPE_ASSIGN", "DATE_ASSIG_INI", "DATE_ASSIG_END", "NINTERMED", "NTEMPASSI", "STEMPASSI", "SSTATREGT", "DCOMPDATE", "NUSERCODE" };
+    ViewData["KeyName"] = "NID_NUMREG";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

@@ -1,0 +1,364 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CHEQUES.CreateCHEQUESDto
+
+@{
+    ViewData["Title"] = "Crear CHEQUES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="NCONCEPT" class="form-label"></label>
+                <select asp-for="NCONCEPT" class="form-select" asp-items="@(ViewData["NCONCEPT"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NCONCEPT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT" class="form-label"></label>
+                <input asp-for="NAMOUNT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCLIENT" class="form-label"></label>
+                <select asp-for="SCLIENT" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "CLIENT")" data-current-value="@Model.SCLIENT">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="SCLIENT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NBRANCH_LED" class="form-label"></label>
+                <select asp-for="NBRANCH_LED" class="form-select" asp-items="@(ViewData["NBRANCH_LED"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NBRANCH_LED" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCLAIM" class="form-label"></label>
+                <select asp-for="NCLAIM" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "CLAIM")" data-current-value="@Model.NCLAIM">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NCLAIM" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NVOUCHER_LE" class="form-label"></label>
+                <input asp-for="NVOUCHER_LE" class="form-control" type="number" />
+                <span asp-validation-for="NVOUCHER_LE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NVOUCHER" class="form-label"></label>
+                <input asp-for="NVOUCHER" class="form-control" type="number" />
+                <span asp-validation-for="NVOUCHER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DDAT_PROPOS" class="form-label"></label>
+                <input asp-for="DDAT_PROPOS" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DDAT_PROPOS" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SDESCRIPT" class="form-label"></label>
+                <input asp-for="SDESCRIPT" class="form-control" />
+                <span asp-validation-for="SDESCRIPT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DISSUE_DAT" class="form-label"></label>
+                <input asp-for="DISSUE_DAT" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DISSUE_DAT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DLEDGER_DAT" class="form-label"></label>
+                <input asp-for="DLEDGER_DAT" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DLEDGER_DAT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NNULLCODE" class="form-label"></label>
+                <select asp-for="NNULLCODE" class="form-select" asp-items="@(ViewData["NNULLCODE"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NNULLCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DNULLDATE" class="form-label"></label>
+                <input asp-for="DNULLDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DNULLDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SPAY_FREQ" class="form-label"></label>
+                <input asp-for="SPAY_FREQ" class="form-control" />
+                <span asp-validation-for="SPAY_FREQ" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NQ_PAYS" class="form-label"></label>
+                <input asp-for="NQ_PAYS" class="form-control" type="number" />
+                <span asp-validation-for="NQ_PAYS" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NRECEIPT" class="form-label"></label>
+                <input asp-for="NRECEIPT" class="form-control" type="number" />
+                <span asp-validation-for="NRECEIPT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SREQUEST_TY" class="form-label"></label>
+                <select asp-for="SREQUEST_TY" class="form-select" asp-items="@(ViewData["SREQUEST_TY"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="SREQUEST_TY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NSTA_CHEQUE" class="form-label"></label>
+                <select asp-for="NSTA_CHEQUE" class="form-select" asp-items="@(ViewData["NSTA_CHEQUE"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NSTA_CHEQUE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DSTAT_DATE" class="form-label"></label>
+                <input asp-for="DSTAT_DATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DSTAT_DATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NTRANSAC" class="form-label"></label>
+                <input asp-for="NTRANSAC" class="form-control" type="number" />
+                <span asp-validation-for="NTRANSAC" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSER_SOL" class="form-label"></label>
+                <input asp-for="NUSER_SOL" class="form-control" type="number" />
+                <span asp-validation-for="NUSER_SOL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NYEAR_MONTH" class="form-label"></label>
+                <input asp-for="NYEAR_MONTH" class="form-control" type="number" />
+                <span asp-validation-for="NYEAR_MONTH" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NACC_BANK" class="form-label"></label>
+                <select asp-for="NACC_BANK" class="form-select" asp-items="@(ViewData["NACC_BANK"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NACC_BANK" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NBORDEREAUX" class="form-label"></label>
+                <select asp-for="NBORDEREAUX" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "COLFORMREF")" data-current-value="@Model.NBORDEREAUX">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NBORDEREAUX" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NNOTENUM" class="form-label"></label>
+                <input asp-for="NNOTENUM" class="form-control" type="number" />
+                <span asp-validation-for="NNOTENUM" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAFECT" class="form-label"></label>
+                <input asp-for="NAFECT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAFECT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NEXENT" class="form-label"></label>
+                <input asp-for="NEXENT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NEXENT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NTAXCODE" class="form-label"></label>
+                <input asp-for="NTAXCODE" class="form-control" type="number" />
+                <span asp-validation-for="NTAXCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NTAX_AMOUNT" class="form-label"></label>
+                <input asp-for="NTAX_AMOUNT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NTAX_AMOUNT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NOFFICE" class="form-label"></label>
+                <select asp-for="NOFFICE" class="form-select" asp-items="@(ViewData["NOFFICE"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NOFFICE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCASHNUM" class="form-label"></label>
+                <input asp-for="NCASHNUM" class="form-control" type="number" />
+                <span asp-validation-for="NCASHNUM" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NINSUR_AREA" class="form-label"></label>
+                <select asp-for="NINSUR_AREA" class="form-select" asp-items="@(ViewData["NINSUR_AREA"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NINSUR_AREA" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPAYORDBORD" class="form-label"></label>
+                <input asp-for="NPAYORDBORD" class="form-control" type="number" />
+                <span asp-validation-for="NPAYORDBORD" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCOMPANY" class="form-label"></label>
+                <select asp-for="NCOMPANY" class="form-select" asp-items="@(ViewData["NCOMPANY"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NCOMPANY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SINTER_PAY" class="form-label"></label>
+                <input asp-for="SINTER_PAY" class="form-control" />
+                <span asp-validation-for="SINTER_PAY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_LOCAL" class="form-label"></label>
+                <input asp-for="NAMOUNT_LOCAL" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_LOCAL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NBRANCH" class="form-label"></label>
+                <input asp-for="NBRANCH" class="form-control" type="number" />
+                <span asp-validation-for="NBRANCH" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPRODUCT" class="form-label"></label>
+                <input asp-for="NPRODUCT" class="form-control" type="number" />
+                <span asp-validation-for="NPRODUCT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPOLICY" class="form-label"></label>
+                <input asp-for="NPOLICY" class="form-control" type="number" />
+                <span asp-validation-for="NPOLICY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SFILE_FIN700" class="form-label"></label>
+                <input asp-for="SFILE_FIN700" class="form-control" />
+                <span asp-validation-for="SFILE_FIN700" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DDATE_FIN700" class="form-label"></label>
+                <input asp-for="DDATE_FIN700" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DDATE_FIN700" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NTYPESUPPORT" class="form-label"></label>
+                <select asp-for="NTYPESUPPORT" class="form-select" asp-items="@(ViewData["NTYPESUPPORT"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NTYPESUPPORT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NDOCSUPPORT" class="form-label"></label>
+                <input asp-for="NDOCSUPPORT" class="form-control" type="number" />
+                <span asp-validation-for="NDOCSUPPORT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NTAX_PERCENT" class="form-label"></label>
+                <input asp-for="NTAX_PERCENT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NTAX_PERCENT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCURRENCYORI" class="form-label"></label>
+                <input asp-for="NCURRENCYORI" class="form-control" type="number" />
+                <span asp-validation-for="NCURRENCYORI" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCURRENCYPAY" class="form-label"></label>
+                <input asp-for="NCURRENCYPAY" class="form-control" type="number" />
+                <span asp-validation-for="NCURRENCYPAY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNTPAY" class="form-label"></label>
+                <input asp-for="NAMOUNTPAY" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNTPAY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DPOSTED" class="form-label"></label>
+                <input asp-for="DPOSTED" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DPOSTED" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NOFFICEAGEN" class="form-label"></label>
+                <select asp-for="NOFFICEAGEN" class="form-select" asp-items="@(ViewData["NOFFICEAGEN"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NOFFICEAGEN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAGENCY" class="form-label"></label>
+                <select asp-for="NAGENCY" class="form-select cascade-select" data-cascade-parent="NOFFICEAGEN" data-cascade-url="@Url.Action("GetByNOFFICEAGEN", "AGENCIES")" data-current-value="@Model.NAGENCY">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NAGENCY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NORDPAY_REL" class="form-label"></label>
+                <input asp-for="NORDPAY_REL" class="form-control" type="number" />
+                <span asp-validation-for="NORDPAY_REL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NNUM_RELPAY" class="form-label"></label>
+                <input asp-for="NNUM_RELPAY" class="form-control" type="number" />
+                <span asp-validation-for="NNUM_RELPAY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SINDPROCES" class="form-label"></label>
+                <input asp-for="SINDPROCES" class="form-control" />
+                <span asp-validation-for="SINDPROCES" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SACCOUNTHOLDER" class="form-label"></label>
+                <input asp-for="SACCOUNTHOLDER" class="form-control" />
+                <span asp-validation-for="SACCOUNTHOLDER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NBANKEXT" class="form-label"></label>
+                <input asp-for="NBANKEXT" class="form-control" type="number" />
+                <span asp-validation-for="NBANKEXT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SBANKACCOUNT" class="form-label"></label>
+                <input asp-for="SBANKACCOUNT" class="form-control" />
+                <span asp-validation-for="SBANKACCOUNT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPAY_COMM" class="form-label"></label>
+                <input asp-for="NPAY_COMM" class="form-control" type="number" />
+                <span asp-validation-for="NPAY_COMM" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NACC_TYPE" class="form-label"></label>
+                <input asp-for="NACC_TYPE" class="form-control" type="number" />
+                <span asp-validation-for="NACC_TYPE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NID_EXTERNALSYSTEM" class="form-label"></label>
+                <input asp-for="NID_EXTERNALSYSTEM" class="form-control" type="number" />
+                <span asp-validation-for="NID_EXTERNALSYSTEM" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NEXTERNAL_CONCEPT" class="form-label"></label>
+                <input asp-for="NEXTERNAL_CONCEPT" class="form-control" type="number" />
+                <span asp-validation-for="NEXTERNAL_CONCEPT" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>initCascadeSelects();</script>
+}

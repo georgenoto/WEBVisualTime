@@ -1,0 +1,98 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MENU_SSCHE_CODE.CreateMENU_SSCHE_CODEDto
+
+@{
+    ViewData["Title"] = "Crear MENU_SSCHE_CODE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="SSCHE_CODE" class="form-label"></label>
+                <input asp-for="SSCHE_CODE" class="form-control" />
+                <span asp-validation-for="SSCHE_CODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCOD_LVL0" class="form-label"></label>
+                <input asp-for="SCOD_LVL0" class="form-control" />
+                <span asp-validation-for="SCOD_LVL0" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SLVL0" class="form-label"></label>
+                <input asp-for="SLVL0" class="form-control" />
+                <span asp-validation-for="SLVL0" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCOD_LVL1" class="form-label"></label>
+                <input asp-for="SCOD_LVL1" class="form-control" />
+                <span asp-validation-for="SCOD_LVL1" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SLVL1" class="form-label"></label>
+                <input asp-for="SLVL1" class="form-control" />
+                <span asp-validation-for="SLVL1" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCOD_LVL2" class="form-label"></label>
+                <input asp-for="SCOD_LVL2" class="form-control" />
+                <span asp-validation-for="SCOD_LVL2" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SLVL2" class="form-label"></label>
+                <input asp-for="SLVL2" class="form-control" />
+                <span asp-validation-for="SLVL2" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCOD_LVL3" class="form-label"></label>
+                <input asp-for="SCOD_LVL3" class="form-control" />
+                <span asp-validation-for="SCOD_LVL3" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SLVL3" class="form-label"></label>
+                <input asp-for="SLVL3" class="form-control" />
+                <span asp-validation-for="SLVL3" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCOD_LVL4" class="form-label"></label>
+                <input asp-for="SCOD_LVL4" class="form-control" />
+                <span asp-validation-for="SCOD_LVL4" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SLVL4" class="form-label"></label>
+                <input asp-for="SLVL4" class="form-control" />
+                <span asp-validation-for="SLVL4" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCOUNT_LVL" class="form-label"></label>
+                <input asp-for="NCOUNT_LVL" class="form-control" type="number" />
+                <span asp-validation-for="NCOUNT_LVL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SPERMITTED" class="form-label"></label>
+                <input asp-for="SPERMITTED" class="form-control" />
+                <span asp-validation-for="SPERMITTED" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NORDER" class="form-label"></label>
+                <input asp-for="NORDER" class="form-control" type="number" />
+                <span asp-validation-for="NORDER" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

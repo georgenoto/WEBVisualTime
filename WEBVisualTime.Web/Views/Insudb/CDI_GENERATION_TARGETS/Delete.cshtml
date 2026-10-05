@@ -1,0 +1,41 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_GENERATION_TARGETS.CDI_GENERATION_TARGETSDto
+
+@{
+    ViewData["Title"] = "Eliminar CDI_GENERATION_TARGETS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SEQ)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SEQ)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LANGUAGE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LANGUAGE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.REGISTRY_NAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.REGISTRY_NAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.MEMBER_BEGIN_MARKER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MEMBER_BEGIN_MARKER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CLOSE_MEMBER_MARKER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.CLOSE_MEMBER_MARKER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.MEMBER_END_MARKER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MEMBER_END_MARKER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLS_LANG)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLS_LANG)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NAME" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

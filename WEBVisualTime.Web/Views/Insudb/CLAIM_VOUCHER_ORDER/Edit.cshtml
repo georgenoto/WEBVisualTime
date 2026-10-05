@@ -1,0 +1,45 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_VOUCHER_ORDER.UpdateCLAIM_VOUCHER_ORDERDto
+
+@{
+    ViewData["Title"] = "Editar CLAIM_VOUCHER_ORDER";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NCLAIM_VOUCHER" />
+            <input type="hidden" asp-for="NORDER_NUM" />
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NBORDEREAUX_CL" class="form-label"></label>
+                <input asp-for="NBORDEREAUX_CL" class="form-control" type="number" />
+                <span asp-validation-for="NBORDEREAUX_CL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NSETTLEMENT_NUM" class="form-label"></label>
+                <input asp-for="NSETTLEMENT_NUM" class="form-control" type="number" />
+                <span asp-validation-for="NSETTLEMENT_NUM" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

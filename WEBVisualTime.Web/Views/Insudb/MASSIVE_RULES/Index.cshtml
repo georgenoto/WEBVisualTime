@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.MASSIVE_RULES.MASSIVE_RULESDto>
+
+@{
+    ViewData["Title"] = "MASSIVE_RULES";
+    ViewData["ColumnHeaders"] = new[] { "NIDRULE", "NERRORNUM", "TABLE153", "SDESCRIPT", "SBREAK", "SENABLED", "NBRANCH", "NPRODUCT", "DCOMPDATE", "NUSERCODE", "NACTIONPROC", "SVIP", "TABLE8204", "TABLE8205" };
+    ViewData["ColumnProperties"] = new[] { "NIDRULE", "NERRORNUM", "TABLE153SDESCRIPT", "SDESCRIPT", "SBREAK", "SENABLED", "NBRANCH", "NPRODUCT", "DCOMPDATE", "NUSERCODE", "NACTIONPROC", "SVIP", "TABLE8204SDESCRIPT", "TABLE8205SDESCRIPT" };
+    ViewData["KeyName"] = "NIDRULE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

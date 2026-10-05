@@ -1,0 +1,38 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.FOLDERS.FOLDERSDto
+
+@{
+    ViewData["Title"] = "Detalles de FOLDERS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NFOLDER</dt>
+            <dd class="col-sm-9">@Model.NFOLDER</dd>
+            <dt class="col-sm-3">SFOLDERNAME</dt>
+            <dd class="col-sm-9">@Model.SFOLDERNAME</dd>
+            <dt class="col-sm-3">SROOTNAME</dt>
+            <dd class="col-sm-9">@Model.SROOTNAME</dd>
+            <dt class="col-sm-3">NIMAGE</dt>
+            <dd class="col-sm-9">@Model.NIMAGE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SCLASS</dt>
+            <dd class="col-sm-9">@Model.SCLASS</dd>
+            <dt class="col-sm-3">SFOLDERKEY</dt>
+            <dd class="col-sm-9">@Model.SFOLDERKEY</dd>
+            <dt class="col-sm-3">PROPERTYLIBRARY</dt>
+            <dd class="col-sm-9">@Model.PROPERTYLIBRARYSPROPERTY</dd>
+            <dt class="col-sm-3">SORIGI</dt>
+            <dd class="col-sm-9">@Model.SORIGI</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NFOLDER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

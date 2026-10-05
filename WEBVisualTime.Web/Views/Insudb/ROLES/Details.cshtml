@@ -1,0 +1,106 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.ROLES.ROLESDto
+
+@{
+    ViewData["Title"] = "Detalles de ROLES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CERTIFICATSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATSCERTYPESCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNBRANCH</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNBRANCHSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPRODUCTSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPOLICY</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPOLICYSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNCERTIF</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNCERTIFSCUMUL_CODE</dd>
+            <dt class="col-sm-3">TABLE12</dt>
+            <dd class="col-sm-9">@Model.TABLE12SDESCRIPT</dd>
+            <dt class="col-sm-3">CLIENT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">INTERMEDIA</dt>
+            <dd class="col-sm-9">@Model.INTERMEDIASCOL_AGREE</dd>
+            <dt class="col-sm-3">DBIRTHDATE</dt>
+            <dd class="col-sm-9">@Model.DBIRTHDATE</dd>
+            <dt class="col-sm-3">TABLE18</dt>
+            <dd class="col-sm-9">@Model.TABLE18SDESCRIPT</dd>
+            <dt class="col-sm-3">SSMOKING</dt>
+            <dd class="col-sm-9">@Model.SSMOKING</dd>
+            <dt class="col-sm-3">TABLE5639</dt>
+            <dd class="col-sm-9">@Model.TABLE5639SDESCRIPT</dd>
+            <dt class="col-sm-3">SVIP</dt>
+            <dd class="col-sm-9">@Model.SVIP</dd>
+            <dt class="col-sm-3">TABLE5561</dt>
+            <dd class="col-sm-9">@Model.TABLE5561SDESCRIPT</dd>
+            <dt class="col-sm-3">NRATING</dt>
+            <dd class="col-sm-9">@Model.NRATING</dd>
+            <dt class="col-sm-3">TABLE5592</dt>
+            <dd class="col-sm-9">@Model.TABLE5592SDESCRIPT</dd>
+            <dt class="col-sm-3">NCOVERPOS</dt>
+            <dd class="col-sm-9">@Model.NCOVERPOS</dd>
+            <dt class="col-sm-3">DCONTINUE</dt>
+            <dd class="col-sm-9">@Model.DCONTINUE</dd>
+            <dt class="col-sm-3">NCONTRAT_PAY</dt>
+            <dd class="col-sm-9">@Model.NCONTRAT_PAY</dd>
+            <dt class="col-sm-3">SCONTINUED</dt>
+            <dd class="col-sm-9">@Model.SCONTINUED</dd>
+            <dt class="col-sm-3">SPRINTNAME</dt>
+            <dd class="col-sm-9">@Model.SPRINTNAME</dd>
+            <dt class="col-sm-3">SITEM</dt>
+            <dd class="col-sm-9">@Model.SITEM</dd>
+            <dt class="col-sm-3">NWEIGHT</dt>
+            <dd class="col-sm-9">@Model.NWEIGHT</dd>
+            <dt class="col-sm-3">NHEIGHT</dt>
+            <dd class="col-sm-9">@Model.NHEIGHT</dd>
+            <dt class="col-sm-3">NIMC</dt>
+            <dd class="col-sm-9">@Model.NIMC</dd>
+            <dt class="col-sm-3">TABLE9203</dt>
+            <dd class="col-sm-9">@Model.TABLE9203SDESCRIPT</dd>
+            <dt class="col-sm-3">DPEPSEARCH</dt>
+            <dd class="col-sm-9">@Model.DPEPSEARCH</dd>
+            <dt class="col-sm-3">NUSERPEPSEARCH</dt>
+            <dd class="col-sm-9">@Model.NUSERPEPSEARCH</dd>
+            <dt class="col-sm-3">SFPHYSICAL_CREDEN</dt>
+            <dd class="col-sm-9">@Model.SFPHYSICAL_CREDEN</dd>
+            <dt class="col-sm-3">FORMATVALUESNCLASSTYPDOC</dt>
+            <dd class="col-sm-9">@Model.FORMATVALUESNCLASSTYPDOCSDESCRIPT</dd>
+            <dt class="col-sm-3">FORMATVALUESNTYPCLIENTDOC</dt>
+            <dd class="col-sm-9">@Model.FORMATVALUESNTYPCLIENTDOCSDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">SSHORT_DES</dt>
+            <dd class="col-sm-9">@Model.SSHORT_DES</dd>
+            <dt class="col-sm-3">NSEVERITYPEP</dt>
+            <dd class="col-sm-9">@Model.NSEVERITYPEP</dd>
+            <dt class="col-sm-3">NINDAUTHPEP</dt>
+            <dd class="col-sm-9">@Model.NINDAUTHPEP</dd>
+            <dt class="col-sm-3">DPEPSTATUS</dt>
+            <dd class="col-sm-9">@Model.DPEPSTATUS</dd>
+            <dt class="col-sm-3">NCAPITAL</dt>
+            <dd class="col-sm-9">@Model.NCAPITAL</dd>
+            <dt class="col-sm-3">NUSERPEPAUTHREJ</dt>
+            <dd class="col-sm-9">@Model.NUSERPEPAUTHREJ</dd>
+            <dt class="col-sm-3">NMOVEMENT</dt>
+            <dd class="col-sm-9">@Model.NMOVEMENT</dd>
+            <dt class="col-sm-3">NMOVEMENT_NULL</dt>
+            <dd class="col-sm-9">@Model.NMOVEMENT_NULL</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCERTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

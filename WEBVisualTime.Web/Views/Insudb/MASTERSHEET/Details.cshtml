@@ -1,0 +1,116 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MASTERSHEET.MASTERSHEETDto
+
+@{
+    ViewData["Title"] = "Detalles de MASTERSHEET";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">MASTERSHEETParent</dt>
+            <dd class="col-sm-9">@Model.MASTERSHEETParentSPROCESS</dd>
+            <dt class="col-sm-3">NINTERTYPE</dt>
+            <dd class="col-sm-9">@Model.NINTERTYPE</dd>
+            <dt class="col-sm-3">SPROCESS</dt>
+            <dd class="col-sm-9">@Model.SPROCESS</dd>
+            <dt class="col-sm-3">NFORMAT</dt>
+            <dd class="col-sm-9">@Model.NFORMAT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NSYSTEM</dt>
+            <dd class="col-sm-9">@Model.NSYSTEM</dd>
+            <dt class="col-sm-3">SSELECT</dt>
+            <dd class="col-sm-9">@Model.SSELECT</dd>
+            <dt class="col-sm-3">NPERIOD</dt>
+            <dd class="col-sm-9">@Model.NPERIOD</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">NUSEROPER</dt>
+            <dd class="col-sm-9">@Model.NUSEROPER</dd>
+            <dt class="col-sm-3">SAUTOMATIC</dt>
+            <dd class="col-sm-9">@Model.SAUTOMATIC</dd>
+            <dt class="col-sm-3">SSHORTDESC</dt>
+            <dd class="col-sm-9">@Model.SSHORTDESC</dd>
+            <dt class="col-sm-3">SGROUPBY</dt>
+            <dd class="col-sm-9">@Model.SGROUPBY</dd>
+            <dt class="col-sm-3">SSTATUSSHEET</dt>
+            <dd class="col-sm-9">@Model.SSTATUSSHEET</dd>
+            <dt class="col-sm-3">NOPERTYPE</dt>
+            <dd class="col-sm-9">@Model.NOPERTYPE</dd>
+            <dt class="col-sm-3">SONLINE</dt>
+            <dd class="col-sm-9">@Model.SONLINE</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">SPROCESS_END</dt>
+            <dd class="col-sm-9">@Model.SPROCESS_END</dd>
+            <dt class="col-sm-3">SPREFIX_FNAME</dt>
+            <dd class="col-sm-9">@Model.SPREFIX_FNAME</dd>
+            <dt class="col-sm-3">SHEADER</dt>
+            <dd class="col-sm-9">@Model.SHEADER</dd>
+            <dt class="col-sm-3">STOTAL</dt>
+            <dd class="col-sm-9">@Model.STOTAL</dd>
+            <dt class="col-sm-3">NPOSITION</dt>
+            <dd class="col-sm-9">@Model.NPOSITION</dd>
+            <dt class="col-sm-3">SMASSIVE</dt>
+            <dd class="col-sm-9">@Model.SMASSIVE</dd>
+            <dt class="col-sm-3">SSPACE</dt>
+            <dd class="col-sm-9">@Model.SSPACE</dd>
+            <dt class="col-sm-3">NTYPE_ALIGN</dt>
+            <dd class="col-sm-9">@Model.NTYPE_ALIGN</dd>
+            <dt class="col-sm-3">SPATH</dt>
+            <dd class="col-sm-9">@Model.SPATH</dd>
+            <dt class="col-sm-3">SSEPARATOR</dt>
+            <dd class="col-sm-9">@Model.SSEPARATOR</dd>
+            <dt class="col-sm-3">SROUTINE</dt>
+            <dd class="col-sm-9">@Model.SROUTINE</dd>
+            <dt class="col-sm-3">SNOGRID</dt>
+            <dd class="col-sm-9">@Model.SNOGRID</dd>
+            <dt class="col-sm-3">SVIEW_INTERFACE</dt>
+            <dd class="col-sm-9">@Model.SVIEW_INTERFACE</dd>
+            <dt class="col-sm-3">SVIEW_REPORT</dt>
+            <dd class="col-sm-9">@Model.SVIEW_REPORT</dd>
+            <dt class="col-sm-3">SREPORT</dt>
+            <dd class="col-sm-9">@Model.SREPORT</dd>
+            <dt class="col-sm-3">SSHEET_FATHER</dt>
+            <dd class="col-sm-9">@Model.SSHEET_FATHER</dd>
+            <dt class="col-sm-3">SFILE_UNIQUE</dt>
+            <dd class="col-sm-9">@Model.SFILE_UNIQUE</dd>
+            <dt class="col-sm-3">SQUERY</dt>
+            <dd class="col-sm-9">@Model.SQUERY</dd>
+            <dt class="col-sm-3">SXSL</dt>
+            <dd class="col-sm-9">@Model.SXSL</dd>
+            <dt class="col-sm-3">SQUERY_XSL</dt>
+            <dd class="col-sm-9">@Model.SQUERY_XSL</dd>
+            <dt class="col-sm-3">SNAME_ROUTINE</dt>
+            <dd class="col-sm-9">@Model.SNAME_ROUTINE</dd>
+            <dt class="col-sm-3">SOUT_ROUTINE</dt>
+            <dd class="col-sm-9">@Model.SOUT_ROUTINE</dd>
+            <dt class="col-sm-3">SWORKFLOWNAME</dt>
+            <dd class="col-sm-9">@Model.SWORKFLOWNAME</dd>
+            <dt class="col-sm-3">SFOLDER</dt>
+            <dd class="col-sm-9">@Model.SFOLDER</dd>
+            <dt class="col-sm-3">SQUEPROCESS</dt>
+            <dd class="col-sm-9">@Model.SQUEPROCESS</dd>
+            <dt class="col-sm-3">SQUEQUERY</dt>
+            <dd class="col-sm-9">@Model.SQUEQUERY</dd>
+            <dt class="col-sm-3">ST_INTERFACE</dt>
+            <dd class="col-sm-9">@Model.ST_INTERFACE</dd>
+            <dt class="col-sm-3">NAVERAGERECORDS</dt>
+            <dd class="col-sm-9">@Model.NAVERAGERECORDS</dd>
+            <dt class="col-sm-3">NTOTALCOLUMNS</dt>
+            <dd class="col-sm-9">@Model.NTOTALCOLUMNS</dd>
+            <dt class="col-sm-3">SDATEFORMAT</dt>
+            <dd class="col-sm-9">@Model.SDATEFORMAT</dd>
+            <dt class="col-sm-3">SDECIMAL</dt>
+            <dd class="col-sm-9">@Model.SDECIMAL</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NSHEET" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.COLSHEET.COLSHEETDto>
+
+@{
+    ViewData["Title"] = "COLSHEET";
+    ViewData["ColumnHeaders"] = new[] { "NID", "NIDREC", "SCOLUMNNAME", "NORDER", "SSELECTED", "SREQUIRE", "NUSERCODE", "DCOMPDATE", "SVALUE" };
+    ViewData["ColumnProperties"] = new[] { "NID", "NIDREC", "SCOLUMNNAME", "NORDER", "SSELECTED", "SREQUIRE", "NUSERCODE", "DCOMPDATE", "SVALUE" };
+    ViewData["KeyName"] = "NID";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

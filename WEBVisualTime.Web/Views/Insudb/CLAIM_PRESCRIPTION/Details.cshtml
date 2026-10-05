@@ -1,0 +1,32 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_PRESCRIPTION.CLAIM_PRESCRIPTIONDto
+
+@{
+    ViewData["Title"] = "Detalles de CLAIM_PRESCRIPTION";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NMONTHS</dt>
+            <dd class="col-sm-9">@Model.NMONTHS</dd>
+            <dt class="col-sm-3">NDAYS</dt>
+            <dd class="col-sm-9">@Model.NDAYS</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NCLA_LI_TYP</dt>
+            <dd class="col-sm-9">@Model.NCLA_LI_TYP</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

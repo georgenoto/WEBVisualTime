@@ -1,0 +1,63 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TYPE_AMEND.TYPE_AMENDDto
+
+@{
+    ViewData["Title"] = "Eliminar TYPE_AMEND";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBRANCH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBRANCH)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPRODUCT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPRODUCT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPE_AMEND)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPE_AMEND)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DEFFECDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DEFFECDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DNULLDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DNULLDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SIND_ORDER_SERV)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SIND_ORDER_SERV)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPEISSUE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPEISSUE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLEVEL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLEVEL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SRETARIF)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SRETARIF)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SDESCRIPT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SDESCRIPT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPE_EV_ENDOR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPE_EV_ENDOR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SRESOLUTION)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SRESOLUTION)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SGOVAPRNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SGOVAPRNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DRESDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DRESDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCONDSVS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCONDSVS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPEA_AMEND)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPEA_AMEND)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSHOWSTATUS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSHOWSTATUS)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NBRANCH" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,40 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_LANGUAGE_DEFINITIONS.CDI_LANGUAGE_DEFINITIONSDto
+
+@{
+    ViewData["Title"] = "Detalles de CDI_LANGUAGE_DEFINITIONS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">LAN_IRID</dt>
+            <dd class="col-sm-9">@Model.LAN_IRID</dd>
+            <dt class="col-sm-3">LAN_IVID</dt>
+            <dd class="col-sm-9">@Model.LAN_IVID</dd>
+            <dt class="col-sm-3">LAN_NAME</dt>
+            <dd class="col-sm-9">@Model.LAN_NAME</dd>
+            <dt class="col-sm-3">LAN_SOURCE_DIRECTORY</dt>
+            <dd class="col-sm-9">@Model.LAN_SOURCE_DIRECTORY</dd>
+            <dt class="col-sm-3">LAN_RUNTIME_DIRECTORY</dt>
+            <dd class="col-sm-9">@Model.LAN_RUNTIME_DIRECTORY</dd>
+            <dt class="col-sm-3">LAN_PROGRAMATICAL</dt>
+            <dd class="col-sm-9">@Model.LAN_PROGRAMATICAL</dd>
+            <dt class="col-sm-3">LAN_TYPE</dt>
+            <dd class="col-sm-9">@Model.LAN_TYPE</dd>
+            <dt class="col-sm-3">LAN_COMMAND_LINE</dt>
+            <dd class="col-sm-9">@Model.LAN_COMMAND_LINE</dd>
+            <dt class="col-sm-3">LAN_GENERATABLE_FLAG</dt>
+            <dd class="col-sm-9">@Model.LAN_GENERATABLE_FLAG</dd>
+            <dt class="col-sm-3">LAN_INTERNAL_NAME</dt>
+            <dd class="col-sm-9">@Model.LAN_INTERNAL_NAME</dd>
+            <dt class="col-sm-3">LAN_OBM_FLAG</dt>
+            <dd class="col-sm-9">@Model.LAN_OBM_FLAG</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.LAN_IRID" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

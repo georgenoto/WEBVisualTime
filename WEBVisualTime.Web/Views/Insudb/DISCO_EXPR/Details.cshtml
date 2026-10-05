@@ -1,0 +1,96 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.DISCO_EXPR.DISCO_EXPRDto
+
+@{
+    ViewData["Title"] = "Detalles de DISCO_EXPR";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NDISEXPRC</dt>
+            <dd class="col-sm-9">@Model.NDISEXPRC</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">TABLE5000</dt>
+            <dd class="col-sm-9">@Model.TABLE5000SDESCRIPT</dd>
+            <dt class="col-sm-3">NBILL_ITEM</dt>
+            <dd class="col-sm-9">@Model.NBILL_ITEM</dd>
+            <dt class="col-sm-3">SCHANALLO</dt>
+            <dd class="col-sm-9">@Model.SCHANALLO</dd>
+            <dt class="col-sm-3">TABLE71</dt>
+            <dd class="col-sm-9">@Model.TABLE71SDESCRIPT</dd>
+            <dt class="col-sm-3">SCOMMISSI_I</dt>
+            <dd class="col-sm-9">@Model.SCOMMISSI_I</dd>
+            <dt class="col-sm-3">TABLE75</dt>
+            <dd class="col-sm-9">@Model.TABLE75SDESCRIPT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">SDEFAULTI</dt>
+            <dd class="col-sm-9">@Model.SDEFAULTI</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">SDEVOALLO</dt>
+            <dd class="col-sm-9">@Model.SDEVOALLO</dd>
+            <dt class="col-sm-3">NDISEXMAX</dt>
+            <dd class="col-sm-9">@Model.NDISEXMAX</dd>
+            <dt class="col-sm-3">NDISEXMIN</dt>
+            <dd class="col-sm-9">@Model.NDISEXMIN</dd>
+            <dt class="col-sm-3">NDISEXPRA</dt>
+            <dd class="col-sm-9">@Model.NDISEXPRA</dd>
+            <dt class="col-sm-3">SEDPERAPL</dt>
+            <dd class="col-sm-9">@Model.SEDPERAPL</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NORDER_APL</dt>
+            <dd class="col-sm-9">@Model.NORDER_APL</dd>
+            <dt class="col-sm-3">SPRORATE</dt>
+            <dd class="col-sm-9">@Model.SPRORATE</dd>
+            <dt class="col-sm-3">SREQUIRE</dt>
+            <dd class="col-sm-9">@Model.SREQUIRE</dd>
+            <dt class="col-sm-3">SROUTINE</dt>
+            <dd class="col-sm-9">@Model.SROUTINE</dd>
+            <dt class="col-sm-3">SSHORT_DES</dt>
+            <dd class="col-sm-9">@Model.SSHORT_DES</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NAMELEVEL</dt>
+            <dd class="col-sm-9">@Model.NAMELEVEL</dd>
+            <dt class="col-sm-3">TABLE30</dt>
+            <dd class="col-sm-9">@Model.TABLE30SDESCRIPT</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">SDEFPOL</dt>
+            <dd class="col-sm-9">@Model.SDEFPOL</dd>
+            <dt class="col-sm-3">STYPMAR</dt>
+            <dd class="col-sm-9">@Model.STYPMAR</dd>
+            <dt class="col-sm-3">SIVA</dt>
+            <dd class="col-sm-9">@Model.SIVA</dd>
+            <dt class="col-sm-3">NAPLY</dt>
+            <dd class="col-sm-9">@Model.NAPLY</dd>
+            <dt class="col-sm-3">NRATE</dt>
+            <dd class="col-sm-9">@Model.NRATE</dd>
+            <dt class="col-sm-3">NDISEXSUBPER</dt>
+            <dd class="col-sm-9">@Model.NDISEXSUBPER</dd>
+            <dt class="col-sm-3">NDISEXADDPER</dt>
+            <dd class="col-sm-9">@Model.NDISEXADDPER</dd>
+            <dt class="col-sm-3">SIND_STIPENDS</dt>
+            <dd class="col-sm-9">@Model.SIND_STIPENDS</dd>
+            <dt class="col-sm-3">NDINSUR_TYPE</dt>
+            <dd class="col-sm-9">@Model.NDINSUR_TYPE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

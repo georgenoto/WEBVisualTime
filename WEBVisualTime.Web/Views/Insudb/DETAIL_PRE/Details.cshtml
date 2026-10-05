@@ -1,0 +1,96 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.DETAIL_PRE.DETAIL_PREDto
+
+@{
+    ViewData["Title"] = "Detalles de DETAIL_PRE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">PREMIUMNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.PREMIUMNPRODUCTSCESSIONS</dd>
+            <dt class="col-sm-3">PREMIUMNRECEIPT</dt>
+            <dd class="col-sm-9">@Model.PREMIUMNRECEIPTSCESSIONS</dd>
+            <dt class="col-sm-3">PREMIUMNBRANCH</dt>
+            <dd class="col-sm-9">@Model.PREMIUMNBRANCHSCESSIONS</dd>
+            <dt class="col-sm-3">PREMIUMSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.PREMIUMSCERTYPESCESSIONS</dd>
+            <dt class="col-sm-3">PREMIUMNDIGIT</dt>
+            <dd class="col-sm-9">@Model.PREMIUMNDIGITSCESSIONS</dd>
+            <dt class="col-sm-3">PREMIUMNPAYNUMBE</dt>
+            <dd class="col-sm-9">@Model.PREMIUMNPAYNUMBESCESSIONS</dd>
+            <dt class="col-sm-3">NID_BILL</dt>
+            <dd class="col-sm-9">@Model.NID_BILL</dd>
+            <dt class="col-sm-3">SADDSUINI</dt>
+            <dd class="col-sm-9">@Model.SADDSUINI</dd>
+            <dt class="col-sm-3">STYPE_DETAI</dt>
+            <dd class="col-sm-9">@Model.STYPE_DETAI</dd>
+            <dt class="col-sm-3">NDET_CODE</dt>
+            <dd class="col-sm-9">@Model.NDET_CODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NCAPITAL</dt>
+            <dd class="col-sm-9">@Model.NCAPITAL</dd>
+            <dt class="col-sm-3">NCOMMI_RATE</dt>
+            <dd class="col-sm-9">@Model.NCOMMI_RATE</dd>
+            <dt class="col-sm-3">NCOMMISION</dt>
+            <dd class="col-sm-9">@Model.NCOMMISION</dd>
+            <dt class="col-sm-3">NPREMIUM</dt>
+            <dd class="col-sm-9">@Model.NPREMIUM</dd>
+            <dt class="col-sm-3">NTAX</dt>
+            <dd class="col-sm-9">@Model.NTAX</dd>
+            <dt class="col-sm-3">NBILL_ITEM</dt>
+            <dd class="col-sm-9">@Model.NBILL_ITEM</dd>
+            <dt class="col-sm-3">TABLE71</dt>
+            <dd class="col-sm-9">@Model.TABLE71SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE75</dt>
+            <dd class="col-sm-9">@Model.TABLE75SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE5000</dt>
+            <dd class="col-sm-9">@Model.TABLE5000SDESCRIPT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NPREMANUAL</dt>
+            <dd class="col-sm-9">@Model.NPREMANUAL</dd>
+            <dt class="col-sm-3">SADDTAX</dt>
+            <dd class="col-sm-9">@Model.SADDTAX</dd>
+            <dt class="col-sm-3">NCOMANUAL</dt>
+            <dd class="col-sm-9">@Model.NCOMANUAL</dd>
+            <dt class="col-sm-3">NPREMIUMA</dt>
+            <dd class="col-sm-9">@Model.NPREMIUMA</dd>
+            <dt class="col-sm-3">NPREMIUME</dt>
+            <dd class="col-sm-9">@Model.NPREMIUME</dd>
+            <dt class="col-sm-3">NTAXAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NTAXAMOUNT</dd>
+            <dt class="col-sm-3">NRECAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NRECAMOUNT</dd>
+            <dt class="col-sm-3">NDESCAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NDESCAMOUNT</dd>
+            <dt class="col-sm-3">NREL_IDBILL</dt>
+            <dd class="col-sm-9">@Model.NREL_IDBILL</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">NREL_IDCODE</dt>
+            <dd class="col-sm-9">@Model.NREL_IDCODE</dd>
+            <dt class="col-sm-3">NSTIPEND_AMOUNT</dt>
+            <dd class="col-sm-9">@Model.NSTIPEND_AMOUNT</dd>
+            <dt class="col-sm-3">NSTIPEND_ANNUAL</dt>
+            <dd class="col-sm-9">@Model.NSTIPEND_ANNUAL</dd>
+            <dt class="col-sm-3">NTAXRATE</dt>
+            <dd class="col-sm-9">@Model.NTAXRATE</dd>
+            <dt class="col-sm-3">TABLE9207</dt>
+            <dd class="col-sm-9">@Model.TABLE9207SDESCRIPT</dd>
+            <dt class="col-sm-3">NCOM_SUPER</dt>
+            <dd class="col-sm-9">@Model.NCOM_SUPER</dd>
+            <dt class="col-sm-3">NCOMANUAL_SUPER</dt>
+            <dd class="col-sm-9">@Model.NCOMANUAL_SUPER</dd>
+            <dt class="col-sm-3">NCOMSUP_RATE</dt>
+            <dd class="col-sm-9">@Model.NCOMSUP_RATE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NPRODUCT" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

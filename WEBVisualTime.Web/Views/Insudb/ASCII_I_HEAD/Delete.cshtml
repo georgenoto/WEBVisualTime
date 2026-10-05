@@ -1,0 +1,47 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.ASCII_I_HEAD.ASCII_I_HEADDto
+
+@{
+    ViewData["Title"] = "Eliminar ASCII_I_HEAD";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SASCII_NAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SASCII_NAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBANK_CODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBANK_CODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCONCEPT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCONCEPT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DSTAT_DATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DSTAT_DATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SACC_NUMBER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SACC_NUMBER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAGENCY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAGENCY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSTATMOV)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSTATMOV)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSTATREGT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSTATREGT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SPAY_FORM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SPAY_FORM)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.SASCII_NAME" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

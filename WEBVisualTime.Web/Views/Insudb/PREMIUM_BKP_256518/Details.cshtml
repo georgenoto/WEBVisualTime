@@ -1,0 +1,40 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.PREMIUM_BKP_256518.PREMIUM_BKP_256518Dto
+
+@{
+    ViewData["Title"] = "Detalles de PREMIUM_BKP_256518";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SCERTYPE</dt>
+            <dd class="col-sm-9">@Model.SCERTYPE</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NRECEIPT</dt>
+            <dd class="col-sm-9">@Model.NRECEIPT</dd>
+            <dt class="col-sm-3">NDIGIT</dt>
+            <dd class="col-sm-9">@Model.NDIGIT</dd>
+            <dt class="col-sm-3">NPAYNUMBE</dt>
+            <dd class="col-sm-9">@Model.NPAYNUMBE</dd>
+            <dt class="col-sm-3">NPOLICY</dt>
+            <dd class="col-sm-9">@Model.NPOLICY</dd>
+            <dt class="col-sm-3">NCERTIF</dt>
+            <dd class="col-sm-9">@Model.NCERTIF</dd>
+            <dt class="col-sm-3">NPERIOD_OLD</dt>
+            <dd class="col-sm-9">@Model.NPERIOD_OLD</dd>
+            <dt class="col-sm-3">NPERIOD_NEW</dt>
+            <dd class="col-sm-9">@Model.NPERIOD_NEW</dd>
+            <dt class="col-sm-3">DFIX</dt>
+            <dd class="col-sm-9">@Model.DFIX</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCERTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

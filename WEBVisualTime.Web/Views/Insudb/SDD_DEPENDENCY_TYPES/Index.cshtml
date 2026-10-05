@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.SDD_DEPENDENCY_TYPES.SDD_DEPENDENCY_TYPESDto>
+
+@{
+    ViewData["Title"] = "SDD_DEPENDENCY_TYPES";
+    ViewData["ColumnHeaders"] = new[] { "IRID", "IVID", "TYPE", "SYSTEM_FLAG", "TRANSITIVE", "NUMBER_OF_TIMES_MODIFIED", "DATE_CREATED", "CREATED_BY", "DATE_CHANGED", "CHANGED_BY", "SUBTYPE" };
+    ViewData["ColumnProperties"] = new[] { "IRID", "IVID", "TYPE", "SYSTEM_FLAG", "TRANSITIVE", "NUMBER_OF_TIMES_MODIFIED", "DATE_CREATED", "CREATED_BY", "DATE_CHANGED", "CHANGED_BY", "SUBTYPE" };
+    ViewData["KeyName"] = "IRID";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

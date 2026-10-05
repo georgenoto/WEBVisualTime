@@ -1,0 +1,110 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.POLICY_HIS.POLICY_HISDto
+
+@{
+    ViewData["Title"] = "Detalles de POLICY_HIS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CERTIFICATSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATSCERTYPESCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNBRANCH</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNBRANCHSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPRODUCTSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPOLICY</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPOLICYSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNCERTIF</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNCERTIFSCUMUL_CODE</dd>
+            <dt class="col-sm-3">NMOVEMENT</dt>
+            <dd class="col-sm-9">@Model.NMOVEMENT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">CLAIM</dt>
+            <dd class="col-sm-9">@Model.CLAIMSCERTYPE</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">SNULL_MOVE</dt>
+            <dd class="col-sm-9">@Model.SNULL_MOVE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NRECEIPT</dt>
+            <dd class="col-sm-9">@Model.NRECEIPT</dd>
+            <dt class="col-sm-3">NTRANSACTIO</dt>
+            <dd class="col-sm-9">@Model.NTRANSACTIO</dd>
+            <dt class="col-sm-3">TABLE165</dt>
+            <dd class="col-sm-9">@Model.TABLE165SDESCRIPT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DLEDGERDAT</dt>
+            <dd class="col-sm-9">@Model.DLEDGERDAT</dd>
+            <dt class="col-sm-3">NOFICIAL_P</dt>
+            <dd class="col-sm-9">@Model.NOFICIAL_P</dd>
+            <dt class="col-sm-3">NTYPE_AMEND</dt>
+            <dd class="col-sm-9">@Model.NTYPE_AMEND</dd>
+            <dt class="col-sm-3">NSERV_ORDER</dt>
+            <dd class="col-sm-9">@Model.NSERV_ORDER</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">SINTERMEI</dt>
+            <dd class="col-sm-9">@Model.SINTERMEI</dd>
+            <dt class="col-sm-3">DFER</dt>
+            <dd class="col-sm-9">@Model.DFER</dd>
+            <dt class="col-sm-3">NPROPONUM</dt>
+            <dd class="col-sm-9">@Model.NPROPONUM</dd>
+            <dt class="col-sm-3">NAGENCY</dt>
+            <dd class="col-sm-9">@Model.NAGENCY</dd>
+            <dt class="col-sm-3">TAB_WAITPO</dt>
+            <dd class="col-sm-9">@Model.TAB_WAITPOSDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE5526</dt>
+            <dd class="col-sm-9">@Model.TABLE5526SDESCRIPT</dd>
+            <dt class="col-sm-3">NOCONVERS</dt>
+            <dd class="col-sm-9">@Model.NOCONVERSSDESCRIPT</dd>
+            <dt class="col-sm-3">NCARTPOL</dt>
+            <dd class="col-sm-9">@Model.NCARTPOL</dd>
+            <dt class="col-sm-3">NNUMCART</dt>
+            <dd class="col-sm-9">@Model.NNUMCART</dd>
+            <dt class="col-sm-3">NPOLREF</dt>
+            <dd class="col-sm-9">@Model.NPOLREF</dd>
+            <dt class="col-sm-3">NCERREF</dt>
+            <dd class="col-sm-9">@Model.NCERREF</dd>
+            <dt class="col-sm-3">NPAYFREQ</dt>
+            <dd class="col-sm-9">@Model.NPAYFREQ</dd>
+            <dt class="col-sm-3">NNULLCODE</dt>
+            <dd class="col-sm-9">@Model.NNULLCODE</dd>
+            <dt class="col-sm-3">SFILE_REPORT</dt>
+            <dd class="col-sm-9">@Model.SFILE_REPORT</dd>
+            <dt class="col-sm-3">SPROCESS_NUM</dt>
+            <dd class="col-sm-9">@Model.SPROCESS_NUM</dd>
+            <dt class="col-sm-3">DSTARPROCESS</dt>
+            <dd class="col-sm-9">@Model.DSTARPROCESS</dd>
+            <dt class="col-sm-3">DENDPROCESS</dt>
+            <dd class="col-sm-9">@Model.DENDPROCESS</dd>
+            <dt class="col-sm-3">SIND_TRANFER</dt>
+            <dd class="col-sm-9">@Model.SIND_TRANFER</dd>
+            <dt class="col-sm-3">SKEY</dt>
+            <dd class="col-sm-9">@Model.SKEY</dd>
+            <dt class="col-sm-3">NSYSTEM</dt>
+            <dd class="col-sm-9">@Model.NSYSTEM</dd>
+            <dt class="col-sm-3">SLOT</dt>
+            <dd class="col-sm-9">@Model.SLOT</dd>
+            <dt class="col-sm-3">NWAY_PAY</dt>
+            <dd class="col-sm-9">@Model.NWAY_PAY</dd>
+            <dt class="col-sm-3">NBILL_DAY</dt>
+            <dd class="col-sm-9">@Model.NBILL_DAY</dd>
+            <dt class="col-sm-3">AGREEMENT</dt>
+            <dd class="col-sm-9">@Model.AGREEMENTSSTATREGT</dd>
+            <dt class="col-sm-3">NNUMCERT</dt>
+            <dd class="col-sm-9">@Model.NNUMCERT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCERTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

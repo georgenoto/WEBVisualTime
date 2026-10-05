@@ -1,0 +1,76 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_VOUCHER.CLAIM_VOUCHERDto
+
+@{
+    ViewData["Title"] = "Detalles de CLAIM_VOUCHER";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NCLAIM_VOUCHER</dt>
+            <dd class="col-sm-9">@Model.NCLAIM_VOUCHER</dd>
+            <dt class="col-sm-3">NTYPEDOC_PAY</dt>
+            <dd class="col-sm-9">@Model.NTYPEDOC_PAY</dd>
+            <dt class="col-sm-3">SCLINUMDOCU</dt>
+            <dd class="col-sm-9">@Model.SCLINUMDOCU</dd>
+            <dt class="col-sm-3">DISSUEDAT</dt>
+            <dd class="col-sm-9">@Model.DISSUEDAT</dd>
+            <dt class="col-sm-3">SELECTRONIC_DOC</dt>
+            <dd class="col-sm-9">@Model.SELECTRONIC_DOC</dd>
+            <dt class="col-sm-3">SSENDER_NAME</dt>
+            <dd class="col-sm-9">@Model.SSENDER_NAME</dd>
+            <dt class="col-sm-3">SCUF_NUMBER</dt>
+            <dd class="col-sm-9">@Model.SCUF_NUMBER</dd>
+            <dt class="col-sm-3">SVOUCHER_SERIES</dt>
+            <dd class="col-sm-9">@Model.SVOUCHER_SERIES</dd>
+            <dt class="col-sm-3">NVOUCHER_NUM</dt>
+            <dd class="col-sm-9">@Model.NVOUCHER_NUM</dd>
+            <dt class="col-sm-3">SCONTROL_CODE</dt>
+            <dd class="col-sm-9">@Model.SCONTROL_CODE</dd>
+            <dt class="col-sm-3">TABLE9248</dt>
+            <dd class="col-sm-9">@Model.TABLE9248SDESCRIPT</dd>
+            <dt class="col-sm-3">SOBSERV</dt>
+            <dd class="col-sm-9">@Model.SOBSERV</dd>
+            <dt class="col-sm-3">NAMOUNT_DOCU</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_DOCU</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">NBALANCE</dt>
+            <dd class="col-sm-9">@Model.NBALANCE</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">TABLE9247</dt>
+            <dd class="col-sm-9">@Model.TABLE9247SDESCRIPT</dd>
+            <dt class="col-sm-3">TAB_PROVIDER</dt>
+            <dd class="col-sm-9">@Model.TAB_PROVIDERSSTATREGT</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">NSEQUENCE_ID</dt>
+            <dd class="col-sm-9">@Model.NSEQUENCE_ID</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NCODIGINT</dt>
+            <dd class="col-sm-9">@Model.NCODIGINT</dd>
+            <dt class="col-sm-3">NAMOUNT_VAT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_VAT</dd>
+            <dt class="col-sm-3">NAMOUNT_FTT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_FTT</dd>
+            <dt class="col-sm-3">NAMOUNT_VAT_RATE</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_VAT_RATE</dd>
+            <dt class="col-sm-3">NAMOUNT_FTT_RATE</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_FTT_RATE</dd>
+            <dt class="col-sm-3">NAMOUNT_BASE</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_BASE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCLAIM_VOUCHER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

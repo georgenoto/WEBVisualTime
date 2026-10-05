@@ -1,0 +1,50 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_SETT_VOUCHER.CLAIM_SETT_VOUCHERDto
+
+@{
+    ViewData["Title"] = "Detalles de CLAIM_SETT_VOUCHER";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CLAIM_SETTLEMENT</dt>
+            <dd class="col-sm-9">@Model.CLAIM_SETTLEMENTSCLIENT2</dd>
+            <dt class="col-sm-3">CLAIM_VOUCHER</dt>
+            <dd class="col-sm-9">@Model.CLAIM_VOUCHERSCLINUMDOCU</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NAMOUNT_TOTAL</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_TOTAL</dd>
+            <dt class="col-sm-3">NAMOUNT_PAY</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_PAY</dd>
+            <dt class="col-sm-3">NAMOUNT_VAT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_VAT</dd>
+            <dt class="col-sm-3">NAMOUNT_FTT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_FTT</dd>
+            <dt class="col-sm-3">NAMOUNT_AGREE</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_AGREE</dd>
+            <dt class="col-sm-3">NAMOUNT_ADJUST</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_ADJUST</dd>
+            <dt class="col-sm-3">NSETTLEMENT_PAY</dt>
+            <dd class="col-sm-9">@Model.NSETTLEMENT_PAY</dd>
+            <dt class="col-sm-3">NAMOUNT_VAT_LOSS</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_VAT_LOSS</dd>
+            <dt class="col-sm-3">NAMOUNT_FTT_LOSS</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_FTT_LOSS</dd>
+            <dt class="col-sm-3">TABLE9254</dt>
+            <dd class="col-sm-9">@Model.TABLE9254SDESCRIPT</dd>
+            <dt class="col-sm-3">NAMOUNT_BASE</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_BASE</dd>
+            <dt class="col-sm-3">NAGREE_DISCOUNT</dt>
+            <dd class="col-sm-9">@Model.NAGREE_DISCOUNT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NSETTLEMENT_NUM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

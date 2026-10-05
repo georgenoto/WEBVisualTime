@@ -1,0 +1,52 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLIENT_REQ.CLIENT_REQDto
+
+@{
+    ViewData["Title"] = "Detalles de CLIENT_REQ";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NROLE</dt>
+            <dd class="col-sm-9">@Model.NROLE</dd>
+            <dt class="col-sm-3">NTRATYPEP</dt>
+            <dd class="col-sm-9">@Model.NTRATYPEP</dd>
+            <dt class="col-sm-3">TABLE8017</dt>
+            <dd class="col-sm-9">@Model.TABLE8017SDESCRIPT</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">SBIRTHDAI</dt>
+            <dd class="col-sm-9">@Model.SBIRTHDAI</dd>
+            <dt class="col-sm-3">SCIVISTAI</dt>
+            <dd class="col-sm-9">@Model.SCIVISTAI</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">SREQUIRED</dt>
+            <dd class="col-sm-9">@Model.SREQUIRED</dd>
+            <dt class="col-sm-3">SOCCUPATI</dt>
+            <dd class="col-sm-9">@Model.SOCCUPATI</dd>
+            <dt class="col-sm-3">SSEXINSUI</dt>
+            <dd class="col-sm-9">@Model.SSEXINSUI</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">STAX_SITUA</dt>
+            <dd class="col-sm-9">@Model.STAX_SITUA</dd>
+            <dt class="col-sm-3">SADDRESS</dt>
+            <dd class="col-sm-9">@Model.SADDRESS</dd>
+            <dt class="col-sm-3">SCREDITLINE</dt>
+            <dd class="col-sm-9">@Model.SCREDITLINE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,36 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.USER_CASHNUM.USER_CASHNUMDto
+
+@{
+    ViewData["Title"] = "Detalles de USER_CASHNUM";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NCASHNUM</dt>
+            <dd class="col-sm-9">@Model.NCASHNUM</dd>
+            <dt class="col-sm-3">SSTATUS</dt>
+            <dd class="col-sm-9">@Model.SSTATUS</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">USERSNUSER</dt>
+            <dd class="col-sm-9">@Model.USERSNUSERSACCESSWO</dd>
+            <dt class="col-sm-3">USERSNUSERCODE</dt>
+            <dd class="col-sm-9">@Model.USERSNUSERCODESACCESSWO</dd>
+            <dt class="col-sm-3">USERSNCASHSUP</dt>
+            <dd class="col-sm-9">@Model.USERSNCASHSUPSACCESSWO</dd>
+            <dt class="col-sm-3">USERSNHEADSUP</dt>
+            <dd class="col-sm-9">@Model.USERSNHEADSUPSACCESSWO</dd>
+            <dt class="col-sm-3">NOFFICEAGEN</dt>
+            <dd class="col-sm-9">@Model.NOFFICEAGEN</dd>
+            <dt class="col-sm-3">NTYPECASH</dt>
+            <dd class="col-sm-9">@Model.NTYPECASH</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCASHNUM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

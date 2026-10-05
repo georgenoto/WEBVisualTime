@@ -1,0 +1,136 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CONTRPROC.CONTRPROCDto
+
+@{
+    ViewData["Title"] = "Detalles de CONTRPROC";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CONTRMASTERNNUMBER</dt>
+            <dd class="col-sm-9">@Model.CONTRMASTERNNUMBERSSTATREGT</dd>
+            <dt class="col-sm-3">CONTRMASTERNBRANCH</dt>
+            <dd class="col-sm-9">@Model.CONTRMASTERNBRANCHSSTATREGT</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">CONTRMASTERNTYPE</dt>
+            <dd class="col-sm-9">@Model.CONTRMASTERNTYPESSTATREGT</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">CONTRMASTERNTYPE_REL</dt>
+            <dd class="col-sm-9">@Model.CONTRMASTERNTYPE_RELSSTATREGT</dd>
+            <dt class="col-sm-3">TABLE97</dt>
+            <dd class="col-sm-9">@Model.TABLE97SDESCRIPT</dd>
+            <dt class="col-sm-3">SCAP_NOM_RI</dt>
+            <dd class="col-sm-9">@Model.SCAP_NOM_RI</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NEXCESS</dt>
+            <dd class="col-sm-9">@Model.NEXCESS</dd>
+            <dt class="col-sm-3">NEXPENSES</dt>
+            <dd class="col-sm-9">@Model.NEXPENSES</dd>
+            <dt class="col-sm-3">NFACT_RESER</dt>
+            <dd class="col-sm-9">@Model.NFACT_RESER</dd>
+            <dt class="col-sm-3">NFIXED_PRAT</dt>
+            <dd class="col-sm-9">@Model.NFIXED_PRAT</dd>
+            <dt class="col-sm-3">NGROUP_BENE</dt>
+            <dd class="col-sm-9">@Model.NGROUP_BENE</dd>
+            <dt class="col-sm-3">NGROUP_CO</dt>
+            <dd class="col-sm-9">@Model.NGROUP_CO</dd>
+            <dt class="col-sm-3">NINT_CLAIM</dt>
+            <dd class="col-sm-9">@Model.NINT_CLAIM</dd>
+            <dt class="col-sm-3">NINT_PREM</dt>
+            <dd class="col-sm-9">@Model.NINT_PREM</dd>
+            <dt class="col-sm-3">NLINES</dt>
+            <dd class="col-sm-9">@Model.NLINES</dd>
+            <dt class="col-sm-3">NMAX_EVEN</dt>
+            <dd class="col-sm-9">@Model.NMAX_EVEN</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NPREM_DEP</dt>
+            <dd class="col-sm-9">@Model.NPREM_DEP</dd>
+            <dt class="col-sm-3">NPROFIT_SH</dt>
+            <dd class="col-sm-9">@Model.NPROFIT_SH</dd>
+            <dt class="col-sm-3">NQUOTA_SHA</dt>
+            <dd class="col-sm-9">@Model.NQUOTA_SHA</dd>
+            <dt class="col-sm-3">NRATE_CLAIM</dt>
+            <dd class="col-sm-9">@Model.NRATE_CLAIM</dd>
+            <dt class="col-sm-3">SRESER_CLAI</dt>
+            <dd class="col-sm-9">@Model.SRESER_CLAI</dd>
+            <dt class="col-sm-3">NRETEN_MIN</dt>
+            <dd class="col-sm-9">@Model.NRETEN_MIN</dd>
+            <dt class="col-sm-3">NTAB_COMMI</dt>
+            <dd class="col-sm-9">@Model.NTAB_COMMI</dd>
+            <dt class="col-sm-3">STAB_LIMIT</dt>
+            <dd class="col-sm-9">@Model.STAB_LIMIT</dd>
+            <dt class="col-sm-3">NTRAN_PREM</dt>
+            <dd class="col-sm-9">@Model.NTRAN_PREM</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NYEAR_BEGIN</dt>
+            <dd class="col-sm-9">@Model.NYEAR_BEGIN</dd>
+            <dt class="col-sm-3">NYEAR_END</dt>
+            <dd class="col-sm-9">@Model.NYEAR_END</dd>
+            <dt class="col-sm-3">SRETCOVER</dt>
+            <dd class="col-sm-9">@Model.SRETCOVER</dd>
+            <dt class="col-sm-3">SLIMITCOV</dt>
+            <dd class="col-sm-9">@Model.SLIMITCOV</dd>
+            <dt class="col-sm-3">SCESSPRCOV</dt>
+            <dd class="col-sm-9">@Model.SCESSPRCOV</dd>
+            <dt class="col-sm-3">SEXTRAPREM</dt>
+            <dd class="col-sm-9">@Model.SEXTRAPREM</dd>
+            <dt class="col-sm-3">SGENCESS</dt>
+            <dd class="col-sm-9">@Model.SGENCESS</dd>
+            <dt class="col-sm-3">NRATE</dt>
+            <dd class="col-sm-9">@Model.NRATE</dd>
+            <dt class="col-sm-3">NCESSPRFIX</dt>
+            <dd class="col-sm-9">@Model.NCESSPRFIX</dd>
+            <dt class="col-sm-3">NMINCAPCESS</dt>
+            <dd class="col-sm-9">@Model.NMINCAPCESS</dd>
+            <dt class="col-sm-3">NNEXTMONTHP</dt>
+            <dd class="col-sm-9">@Model.NNEXTMONTHP</dd>
+            <dt class="col-sm-3">NNEXTYEARP</dt>
+            <dd class="col-sm-9">@Model.NNEXTYEARP</dd>
+            <dt class="col-sm-3">NNEXTMONTHC</dt>
+            <dd class="col-sm-9">@Model.NNEXTMONTHC</dd>
+            <dt class="col-sm-3">NNEXTYEARC</dt>
+            <dd class="col-sm-9">@Model.NNEXTYEARC</dd>
+            <dt class="col-sm-3">SROUPROFIT</dt>
+            <dd class="col-sm-9">@Model.SROUPROFIT</dd>
+            <dt class="col-sm-3">SCOMMCOV</dt>
+            <dd class="col-sm-9">@Model.SCOMMCOV</dd>
+            <dt class="col-sm-3">NINTEREST</dt>
+            <dd class="col-sm-9">@Model.NINTEREST</dd>
+            <dt class="col-sm-3">TABLE79</dt>
+            <dd class="col-sm-9">@Model.TABLE79SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE90</dt>
+            <dd class="col-sm-9">@Model.TABLE90SDESCRIPT</dd>
+            <dt class="col-sm-3">SCUMULPOL</dt>
+            <dd class="col-sm-9">@Model.SCUMULPOL</dd>
+            <dt class="col-sm-3">TABLE36</dt>
+            <dd class="col-sm-9">@Model.TABLE36SDESCRIPT</dd>
+            <dt class="col-sm-3">NNEXTMONTHPA</dt>
+            <dd class="col-sm-9">@Model.NNEXTMONTHPA</dd>
+            <dt class="col-sm-3">NNEXTYEARPA</dt>
+            <dd class="col-sm-9">@Model.NNEXTYEARPA</dd>
+            <dt class="col-sm-3">SRETZONE</dt>
+            <dd class="col-sm-9">@Model.SRETZONE</dd>
+            <dt class="col-sm-3">SCESSCIA</dt>
+            <dd class="col-sm-9">@Model.SCESSCIA</dd>
+            <dt class="col-sm-3">NIND_AGE</dt>
+            <dd class="col-sm-9">@Model.NIND_AGE</dd>
+            <dt class="col-sm-3">SROUCESS</dt>
+            <dd class="col-sm-9">@Model.SROUCESS</dd>
+            <dt class="col-sm-3">NMAXRETAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NMAXRETAMOUNT</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NNUMBER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

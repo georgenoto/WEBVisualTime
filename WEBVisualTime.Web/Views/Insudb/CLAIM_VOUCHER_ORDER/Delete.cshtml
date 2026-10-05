@@ -1,0 +1,37 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_VOUCHER_ORDER.CLAIM_VOUCHER_ORDERDto
+
+@{
+    ViewData["Title"] = "Eliminar CLAIM_VOUCHER_ORDER";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCLAIM_VOUCHER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCLAIM_VOUCHER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NORDER_NUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NORDER_NUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBORDEREAUX_CL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBORDEREAUX_CL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSETTLEMENT_NUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSETTLEMENT_NUM)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NCLAIM_VOUCHER" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

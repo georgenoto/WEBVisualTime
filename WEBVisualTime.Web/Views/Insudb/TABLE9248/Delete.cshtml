@@ -1,0 +1,37 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TABLE9248.TABLE9248Dto
+
+@{
+    ViewData["Title"] = "Eliminar TABLE9248";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSTATUS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSTATUS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SDESCRIPT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SDESCRIPT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSHORT_DES)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSHORT_DES)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSTATREGT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSTATREGT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NSTATUS" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,58 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CONTRAT_PAY.CONTRAT_PAYDto
+
+@{
+    ViewData["Title"] = "Detalles de CONTRAT_PAY";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NCONTRAT_PAY</dt>
+            <dd class="col-sm-9">@Model.NCONTRAT_PAY</dd>
+            <dt class="col-sm-3">NTYPE_CONTRAT</dt>
+            <dd class="col-sm-9">@Model.NTYPE_CONTRAT</dd>
+            <dt class="col-sm-3">STYP_COM_IND</dt>
+            <dd class="col-sm-9">@Model.STYP_COM_IND</dd>
+            <dt class="col-sm-3">NCOM_TABNUM</dt>
+            <dd class="col-sm-9">@Model.NCOM_TABNUM</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">DSTARTDATE</dt>
+            <dd class="col-sm-9">@Model.DSTARTDATE</dd>
+            <dt class="col-sm-3">TABLE8100</dt>
+            <dd class="col-sm-9">@Model.TABLE8100SDESCRIPT</dd>
+            <dt class="col-sm-3">NPERCENT</dt>
+            <dd class="col-sm-9">@Model.NPERCENT</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">TABLE8101</dt>
+            <dd class="col-sm-9">@Model.TABLE8101SDESCRIPT</dd>
+            <dt class="col-sm-3">STAXIN</dt>
+            <dd class="col-sm-9">@Model.STAXIN</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NTYP_ACCO</dt>
+            <dd class="col-sm-9">@Model.NTYP_ACCO</dd>
+            <dt class="col-sm-3">DEXPIRDAT</dt>
+            <dd class="col-sm-9">@Model.DEXPIRDAT</dd>
+            <dt class="col-sm-3">SROUTINE</dt>
+            <dd class="col-sm-9">@Model.SROUTINE</dd>
+            <dt class="col-sm-3">DLASTCALCULATED</dt>
+            <dd class="col-sm-9">@Model.DLASTCALCULATED</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCONTRAT_PAY" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

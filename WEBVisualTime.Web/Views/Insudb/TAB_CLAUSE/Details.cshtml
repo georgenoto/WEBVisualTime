@@ -1,0 +1,56 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_CLAUSE.TAB_CLAUSEDto
+
+@{
+    ViewData["Title"] = "Detalles de TAB_CLAUSE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NMODULEC</dt>
+            <dd class="col-sm-9">@Model.NMODULEC</dd>
+            <dt class="col-sm-3">NCOVER</dt>
+            <dd class="col-sm-9">@Model.NCOVER</dd>
+            <dt class="col-sm-3">NCLAUSE</dt>
+            <dd class="col-sm-9">@Model.NCLAUSE</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SDEFAULTI</dt>
+            <dd class="col-sm-9">@Model.SDEFAULTI</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">SSHORT_DES</dt>
+            <dd class="col-sm-9">@Model.SSHORT_DES</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SMODIFIED</dt>
+            <dd class="col-sm-9">@Model.SMODIFIED</dd>
+            <dt class="col-sm-3">TABLE7509</dt>
+            <dd class="col-sm-9">@Model.TABLE7509SDESCRIPT</dd>
+            <dt class="col-sm-3">STYPE_CLAUSE</dt>
+            <dd class="col-sm-9">@Model.STYPE_CLAUSE</dd>
+            <dt class="col-sm-3">SDOC_ATTACH</dt>
+            <dd class="col-sm-9">@Model.SDOC_ATTACH</dd>
+            <dt class="col-sm-3">NORDEN</dt>
+            <dd class="col-sm-9">@Model.NORDEN</dd>
+            <dt class="col-sm-3">STITCLAUSE</dt>
+            <dd class="col-sm-9">@Model.STITCLAUSE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

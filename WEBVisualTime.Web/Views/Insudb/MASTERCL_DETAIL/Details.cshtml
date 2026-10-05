@@ -1,0 +1,80 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MASTERCL_DETAIL.MASTERCL_DETAILDto
+
+@{
+    ViewData["Title"] = "Detalles de MASTERCL_DETAIL";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NMASTERORDER</dt>
+            <dd class="col-sm-9">@Model.NMASTERORDER</dd>
+            <dt class="col-sm-3">TABLE9261</dt>
+            <dd class="col-sm-9">@Model.TABLE9261SDESCRIPT</dd>
+            <dt class="col-sm-3">NID</dt>
+            <dd class="col-sm-9">@Model.NID</dd>
+            <dt class="col-sm-3">SBENEFIT</dt>
+            <dd class="col-sm-9">@Model.SBENEFIT</dd>
+            <dt class="col-sm-3">SSAME_INCISION</dt>
+            <dd class="col-sm-9">@Model.SSAME_INCISION</dd>
+            <dt class="col-sm-3">NPERCENTAGE_PROC</dt>
+            <dd class="col-sm-9">@Model.NPERCENTAGE_PROC</dd>
+            <dt class="col-sm-3">SILLNESS</dt>
+            <dd class="col-sm-9">@Model.SILLNESS</dd>
+            <dt class="col-sm-3">NCOD_REJECT</dt>
+            <dd class="col-sm-9">@Model.NCOD_REJECT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SREJECTALERT</dt>
+            <dd class="col-sm-9">@Model.SREJECTALERT</dd>
+            <dt class="col-sm-3">NAPPLY_EXCLU</dt>
+            <dd class="col-sm-9">@Model.NAPPLY_EXCLU</dd>
+            <dt class="col-sm-3">SILLNES_DETECT</dt>
+            <dd class="col-sm-9">@Model.SILLNES_DETECT</dd>
+            <dt class="col-sm-3">NACCEPT_EVALMED</dt>
+            <dd class="col-sm-9">@Model.NACCEPT_EVALMED</dd>
+            <dt class="col-sm-3">SMEDICAL_REJEC</dt>
+            <dd class="col-sm-9">@Model.SMEDICAL_REJEC</dd>
+            <dt class="col-sm-3">SREJECTOBSV</dt>
+            <dd class="col-sm-9">@Model.SREJECTOBSV</dd>
+            <dt class="col-sm-3">NORDER_NUM</dt>
+            <dd class="col-sm-9">@Model.NORDER_NUM</dd>
+            <dt class="col-sm-3">NPROCEDURE_ID</dt>
+            <dd class="col-sm-9">@Model.NPROCEDURE_ID</dd>
+            <dt class="col-sm-3">NRELPROCEDURE_ID</dt>
+            <dd class="col-sm-9">@Model.NRELPROCEDURE_ID</dd>
+            <dt class="col-sm-3">NBALANCE</dt>
+            <dd class="col-sm-9">@Model.NBALANCE</dd>
+            <dt class="col-sm-3">NAMOUNT_DOCU</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_DOCU</dd>
+            <dt class="col-sm-3">NAMOUNT_ORDEN</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_ORDEN</dd>
+            <dt class="col-sm-3">NPERCEN_COVERAGE</dt>
+            <dd class="col-sm-9">@Model.NPERCEN_COVERAGE</dd>
+            <dt class="col-sm-3">NQUANTITY</dt>
+            <dd class="col-sm-9">@Model.NQUANTITY</dd>
+            <dt class="col-sm-3">NIND_DONOTRECALCULATE</dt>
+            <dd class="col-sm-9">@Model.NIND_DONOTRECALCULATE</dd>
+            <dt class="col-sm-3">NAMOUNT_DIFFERENCETARIFF</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_DIFFERENCETARIFF</dd>
+            <dt class="col-sm-3">NIND_REOPENCL</dt>
+            <dd class="col-sm-9">@Model.NIND_REOPENCL</dd>
+            <dt class="col-sm-3">TABLE9271</dt>
+            <dd class="col-sm-9">@Model.TABLE9271SDESCRIPT</dd>
+            <dt class="col-sm-3">NTYPE_COMMPAY</dt>
+            <dd class="col-sm-9">@Model.NTYPE_COMMPAY</dd>
+            <dt class="col-sm-3">NRELPROCEDURE_NUM_ORIG</dt>
+            <dd class="col-sm-9">@Model.NRELPROCEDURE_NUM_ORIG</dd>
+            <dt class="col-sm-3">NRELPROCEDURE_NUM_GEN</dt>
+            <dd class="col-sm-9">@Model.NRELPROCEDURE_NUM_GEN</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NMASTERORDER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

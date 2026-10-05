@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TCONVERTIONS.TCONVERTIONSDto>
+
+@{
+    ViewData["Title"] = "TCONVERTIONS";
+    ViewData["ColumnHeaders"] = new[] { "NPROPONUM", "SKEY", "NPOLICY", "NINDEX", "NNUM_DOC", "SPEN_DOC", "DDATE_INIT", "NSTATUS", "DSTAT_DATE", "NNULLCODE", "NROLE", "DEFFECDATE", "DEXPIRDAT", "DLIMIT_DATE", "SOBSERV", "NSERV_ORDER", "NSTATUS_ORD", "NBORDEREAUX", "NFIRST_PREM", "NPREM_CURR", "SPREM_CHE", "SPAY_ORDER", "NEXPENSES", "SDEVOLUT", "SCERTYPE", "NBRANCH", "NPRODUCT", "NORIGIN", "SCLIENT", "NCERTIF", "NNO_CONVERS", "NPOL_QUOT", "NWAIT_CODE", "NTYPE_AMEND", "NEXCHANGE", "NORIG_PREM", "NORIG_CURR", "NOFFICEAGEN", "NOFFICE", "NAGENCY", "SAPPLYCOSTFP", "NROUTINE", "NHEALTHEXP", "SPENSTATUS_POL" };
+    ViewData["ColumnProperties"] = new[] { "NPROPONUM", "SKEY", "NPOLICY", "NINDEX", "NNUM_DOC", "SPEN_DOC", "DDATE_INIT", "NSTATUS", "DSTAT_DATE", "NNULLCODE", "NROLE", "DEFFECDATE", "DEXPIRDAT", "DLIMIT_DATE", "SOBSERV", "NSERV_ORDER", "NSTATUS_ORD", "NBORDEREAUX", "NFIRST_PREM", "NPREM_CURR", "SPREM_CHE", "SPAY_ORDER", "NEXPENSES", "SDEVOLUT", "SCERTYPE", "NBRANCH", "NPRODUCT", "NORIGIN", "SCLIENT", "NCERTIF", "NNO_CONVERS", "NPOL_QUOT", "NWAIT_CODE", "NTYPE_AMEND", "NEXCHANGE", "NORIG_PREM", "NORIG_CURR", "NOFFICEAGEN", "NOFFICE", "NAGENCY", "SAPPLYCOSTFP", "NROUTINE", "NHEALTHEXP", "SPENSTATUS_POL" };
+    ViewData["KeyName"] = "SKEY";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

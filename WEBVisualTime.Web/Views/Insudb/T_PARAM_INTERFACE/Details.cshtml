@@ -1,0 +1,28 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.T_PARAM_INTERFACE.T_PARAM_INTERFACEDto
+
+@{
+    ViewData["Title"] = "Detalles de T_PARAM_INTERFACE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SKEY</dt>
+            <dd class="col-sm-9">@Model.SKEY</dd>
+            <dt class="col-sm-3">NFIELD</dt>
+            <dd class="col-sm-9">@Model.NFIELD</dd>
+            <dt class="col-sm-3">SVALUE</dt>
+            <dd class="col-sm-9">@Model.SVALUE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SKEY" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

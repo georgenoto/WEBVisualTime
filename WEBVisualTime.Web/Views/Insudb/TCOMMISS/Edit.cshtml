@@ -1,0 +1,63 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TCOMMISS.UpdateTCOMMISSDto
+
+@{
+    ViewData["Title"] = "Editar TCOMMISS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="SKEY" class="form-label"></label>
+                <input asp-for="SKEY" class="form-control" />
+                <span asp-validation-for="SKEY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NINTERMED" class="form-label"></label>
+                <input asp-for="NINTERMED" class="form-control" type="number" />
+                <span asp-validation-for="NINTERMED" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCOMMISSION" class="form-label"></label>
+                <input asp-for="NCOMMISSION" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NCOMMISSION" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NSHARE" class="form-label"></label>
+                <input asp-for="NSHARE" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NSHARE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCURRENCY" class="form-label"></label>
+                <input asp-for="NCURRENCY" class="form-control" type="number" />
+                <span asp-validation-for="NCURRENCY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCOM_AFEC" class="form-label"></label>
+                <input asp-for="NCOM_AFEC" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NCOM_AFEC" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCOM_EXEN" class="form-label"></label>
+                <input asp-for="NCOM_EXEN" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NCOM_EXEN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPERCENT" class="form-label"></label>
+                <input asp-for="NPERCENT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NPERCENT" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

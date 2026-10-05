@@ -1,0 +1,106 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TCONVERTIONS.TCONVERTIONSDto
+
+@{
+    ViewData["Title"] = "Detalles de TCONVERTIONS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NPROPONUM</dt>
+            <dd class="col-sm-9">@Model.NPROPONUM</dd>
+            <dt class="col-sm-3">SKEY</dt>
+            <dd class="col-sm-9">@Model.SKEY</dd>
+            <dt class="col-sm-3">NPOLICY</dt>
+            <dd class="col-sm-9">@Model.NPOLICY</dd>
+            <dt class="col-sm-3">NINDEX</dt>
+            <dd class="col-sm-9">@Model.NINDEX</dd>
+            <dt class="col-sm-3">NNUM_DOC</dt>
+            <dd class="col-sm-9">@Model.NNUM_DOC</dd>
+            <dt class="col-sm-3">SPEN_DOC</dt>
+            <dd class="col-sm-9">@Model.SPEN_DOC</dd>
+            <dt class="col-sm-3">DDATE_INIT</dt>
+            <dd class="col-sm-9">@Model.DDATE_INIT</dd>
+            <dt class="col-sm-3">NSTATUS</dt>
+            <dd class="col-sm-9">@Model.NSTATUS</dd>
+            <dt class="col-sm-3">DSTAT_DATE</dt>
+            <dd class="col-sm-9">@Model.DSTAT_DATE</dd>
+            <dt class="col-sm-3">NNULLCODE</dt>
+            <dd class="col-sm-9">@Model.NNULLCODE</dd>
+            <dt class="col-sm-3">NROLE</dt>
+            <dd class="col-sm-9">@Model.NROLE</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DEXPIRDAT</dt>
+            <dd class="col-sm-9">@Model.DEXPIRDAT</dd>
+            <dt class="col-sm-3">DLIMIT_DATE</dt>
+            <dd class="col-sm-9">@Model.DLIMIT_DATE</dd>
+            <dt class="col-sm-3">SOBSERV</dt>
+            <dd class="col-sm-9">@Model.SOBSERV</dd>
+            <dt class="col-sm-3">NSERV_ORDER</dt>
+            <dd class="col-sm-9">@Model.NSERV_ORDER</dd>
+            <dt class="col-sm-3">NSTATUS_ORD</dt>
+            <dd class="col-sm-9">@Model.NSTATUS_ORD</dd>
+            <dt class="col-sm-3">NBORDEREAUX</dt>
+            <dd class="col-sm-9">@Model.NBORDEREAUX</dd>
+            <dt class="col-sm-3">NFIRST_PREM</dt>
+            <dd class="col-sm-9">@Model.NFIRST_PREM</dd>
+            <dt class="col-sm-3">NPREM_CURR</dt>
+            <dd class="col-sm-9">@Model.NPREM_CURR</dd>
+            <dt class="col-sm-3">SPREM_CHE</dt>
+            <dd class="col-sm-9">@Model.SPREM_CHE</dd>
+            <dt class="col-sm-3">SPAY_ORDER</dt>
+            <dd class="col-sm-9">@Model.SPAY_ORDER</dd>
+            <dt class="col-sm-3">NEXPENSES</dt>
+            <dd class="col-sm-9">@Model.NEXPENSES</dd>
+            <dt class="col-sm-3">SDEVOLUT</dt>
+            <dd class="col-sm-9">@Model.SDEVOLUT</dd>
+            <dt class="col-sm-3">SCERTYPE</dt>
+            <dd class="col-sm-9">@Model.SCERTYPE</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NORIGIN</dt>
+            <dd class="col-sm-9">@Model.NORIGIN</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">NCERTIF</dt>
+            <dd class="col-sm-9">@Model.NCERTIF</dd>
+            <dt class="col-sm-3">NNO_CONVERS</dt>
+            <dd class="col-sm-9">@Model.NNO_CONVERS</dd>
+            <dt class="col-sm-3">NPOL_QUOT</dt>
+            <dd class="col-sm-9">@Model.NPOL_QUOT</dd>
+            <dt class="col-sm-3">NWAIT_CODE</dt>
+            <dd class="col-sm-9">@Model.NWAIT_CODE</dd>
+            <dt class="col-sm-3">NTYPE_AMEND</dt>
+            <dd class="col-sm-9">@Model.NTYPE_AMEND</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">NORIG_PREM</dt>
+            <dd class="col-sm-9">@Model.NORIG_PREM</dd>
+            <dt class="col-sm-3">NORIG_CURR</dt>
+            <dd class="col-sm-9">@Model.NORIG_CURR</dd>
+            <dt class="col-sm-3">NOFFICEAGEN</dt>
+            <dd class="col-sm-9">@Model.NOFFICEAGEN</dd>
+            <dt class="col-sm-3">NOFFICE</dt>
+            <dd class="col-sm-9">@Model.NOFFICE</dd>
+            <dt class="col-sm-3">NAGENCY</dt>
+            <dd class="col-sm-9">@Model.NAGENCY</dd>
+            <dt class="col-sm-3">SAPPLYCOSTFP</dt>
+            <dd class="col-sm-9">@Model.SAPPLYCOSTFP</dd>
+            <dt class="col-sm-3">NROUTINE</dt>
+            <dd class="col-sm-9">@Model.NROUTINE</dd>
+            <dt class="col-sm-3">NHEALTHEXP</dt>
+            <dd class="col-sm-9">@Model.NHEALTHEXP</dd>
+            <dt class="col-sm-3">SPENSTATUS_POL</dt>
+            <dd class="col-sm-9">@Model.SPENSTATUS_POL</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SKEY" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

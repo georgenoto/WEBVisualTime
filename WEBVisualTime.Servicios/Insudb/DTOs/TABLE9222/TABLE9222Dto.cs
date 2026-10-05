@@ -1,0 +1,11 @@
+namespace WEBVisualTime.Servicios.Insudb.DTOs.TABLE9222;
+
+public class TABLE9222Dto
+{
+    public int NBENEFCATEG { get; set; }
+    public string? SDESCRIPT { get; set; }
+    public string? SSHORT_DES { get; set; }
+    public string? SSTATREGT { get; set; }
+    public DateTime? DCOMPDATE { get; set; }
+    public int? NUSERCODE { get; set; }
+}

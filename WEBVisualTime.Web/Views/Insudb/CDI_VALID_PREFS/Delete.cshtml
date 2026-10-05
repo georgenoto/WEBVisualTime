@@ -1,0 +1,35 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_VALID_PREFS.CDI_VALID_PREFSDto
+
+@{
+    ViewData["Title"] = "Eliminar CDI_VALID_PREFS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.VP_DOMAIN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.VP_DOMAIN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.VP_VALUE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.VP_VALUE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.VP_MEANING)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.VP_MEANING)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.VP_ABBREVIATION)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.VP_ABBREVIATION)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLS_LANG)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLS_LANG)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.VP_DOMAIN" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

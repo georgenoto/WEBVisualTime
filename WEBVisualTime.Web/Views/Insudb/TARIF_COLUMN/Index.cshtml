@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TARIF_COLUMN.TARIF_COLUMNDto>
+
+@{
+    ViewData["Title"] = "TARIF_COLUMN";
+    ViewData["ColumnHeaders"] = new[] { "NID_COLUMN", "STABLE", "SCOLUMN", "SNAME_COL", "NDATA_TYPE", "NSIZE", "NDECIMAL", "NUSERCODE", "DCOMPDATE", "STABLEFK" };
+    ViewData["ColumnProperties"] = new[] { "NID_COLUMN", "STABLE", "SCOLUMN", "SNAME_COL", "NDATA_TYPE", "NSIZE", "NDECIMAL", "NUSERCODE", "DCOMPDATE", "STABLEFK" };
+    ViewData["KeyName"] = "NID_COLUMN";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

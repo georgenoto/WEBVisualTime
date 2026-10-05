@@ -1,0 +1,46 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MASSIVE_RULES.MASSIVE_RULESDto
+
+@{
+    ViewData["Title"] = "Detalles de MASSIVE_RULES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NIDRULE</dt>
+            <dd class="col-sm-9">@Model.NIDRULE</dd>
+            <dt class="col-sm-3">NERRORNUM</dt>
+            <dd class="col-sm-9">@Model.NERRORNUM</dd>
+            <dt class="col-sm-3">TABLE153</dt>
+            <dd class="col-sm-9">@Model.TABLE153SDESCRIPT</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">SBREAK</dt>
+            <dd class="col-sm-9">@Model.SBREAK</dd>
+            <dt class="col-sm-3">SENABLED</dt>
+            <dd class="col-sm-9">@Model.SENABLED</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NACTIONPROC</dt>
+            <dd class="col-sm-9">@Model.NACTIONPROC</dd>
+            <dt class="col-sm-3">SVIP</dt>
+            <dd class="col-sm-9">@Model.SVIP</dd>
+            <dt class="col-sm-3">TABLE8204</dt>
+            <dd class="col-sm-9">@Model.TABLE8204SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE8205</dt>
+            <dd class="col-sm-9">@Model.TABLE8205SDESCRIPT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NIDRULE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

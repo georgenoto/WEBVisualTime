@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.COLLECTOR.COLLECTORDto>
+
+@{
+    ViewData["Title"] = "COLLECTOR";
+    ViewData["ColumnHeaders"] = new[] { "NCOLLECTOR", "CLIENT", "TABLE5551", "DINPUTDATE", "TABLE5557", "TABLE5001", "DCOMPDATE", "NUSERCODE", "TAB_COLLECTCOMM", "TABLE5501", "NINT_STATUS", "DSTATUSDATE", "NOFFICE", "NSUPERVIS" };
+    ViewData["ColumnProperties"] = new[] { "NCOLLECTOR", "CLIENTSACCOUNT_IN", "TABLE5551SDESCRIPT", "DINPUTDATE", "TABLE5557SDESCRIPT", "TABLE5001SDESCRIPT", "DCOMPDATE", "NUSERCODE", "TAB_COLLECTCOMMSDESCRIPT", "TABLE5501SDESCRIPT", "NINT_STATUS", "DSTATUSDATE", "NOFFICE", "NSUPERVIS" };
+    ViewData["KeyName"] = "NCOLLECTOR";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

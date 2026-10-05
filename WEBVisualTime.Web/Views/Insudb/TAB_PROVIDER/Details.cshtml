@@ -1,0 +1,74 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_PROVIDER.TAB_PROVIDERDto
+
+@{
+    ViewData["Title"] = "Detalles de TAB_PROVIDER";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NPROVIDER</dt>
+            <dd class="col-sm-9">@Model.NPROVIDER</dd>
+            <dt class="col-sm-3">TAB_PROV_SUBTYPESNTYPEPROV</dt>
+            <dd class="col-sm-9">@Model.TAB_PROV_SUBTYPESNTYPEPROVSDESCRIPT</dd>
+            <dt class="col-sm-3">CLIENT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DINPDATE</dt>
+            <dd class="col-sm-9">@Model.DINPDATE</dd>
+            <dt class="col-sm-3">DOUTDATE</dt>
+            <dd class="col-sm-9">@Model.DOUTDATE</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">NMAX_SERV_ORD</dt>
+            <dd class="col-sm-9">@Model.NMAX_SERV_ORD</dd>
+            <dt class="col-sm-3">TABLE5570</dt>
+            <dd class="col-sm-9">@Model.TABLE5570SDESCRIPT</dd>
+            <dt class="col-sm-3">NPER_DISC</dt>
+            <dd class="col-sm-9">@Model.NPER_DISC</dd>
+            <dt class="col-sm-3">SCONCESIONARY</dt>
+            <dd class="col-sm-9">@Model.SCONCESIONARY</dd>
+            <dt class="col-sm-3">SAGENCYDESC</dt>
+            <dd class="col-sm-9">@Model.SAGENCYDESC</dd>
+            <dt class="col-sm-3">TABLE9253</dt>
+            <dd class="col-sm-9">@Model.TABLE9253SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9259</dt>
+            <dd class="col-sm-9">@Model.TABLE9259SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9254</dt>
+            <dd class="col-sm-9">@Model.TABLE9254SDESCRIPT</dd>
+            <dt class="col-sm-3">TAB_PROV_SUBTYPESNSUBTYPEPROV</dt>
+            <dd class="col-sm-9">@Model.TAB_PROV_SUBTYPESNSUBTYPEPROVSDESCRIPT</dd>
+            <dt class="col-sm-3">DREQDATE</dt>
+            <dd class="col-sm-9">@Model.DREQDATE</dd>
+            <dt class="col-sm-3">DREGDATE</dt>
+            <dd class="col-sm-9">@Model.DREGDATE</dd>
+            <dt class="col-sm-3">NDISC_PROV</dt>
+            <dd class="col-sm-9">@Model.NDISC_PROV</dd>
+            <dt class="col-sm-3">NCURRDISC_PROV</dt>
+            <dd class="col-sm-9">@Model.NCURRDISC_PROV</dd>
+            <dt class="col-sm-3">NAMODISC_PROV</dt>
+            <dd class="col-sm-9">@Model.NAMODISC_PROV</dd>
+            <dt class="col-sm-3">TABLE9252</dt>
+            <dd class="col-sm-9">@Model.TABLE9252SDESCRIPT</dd>
+            <dt class="col-sm-3">NJOINED</dt>
+            <dd class="col-sm-9">@Model.NJOINED</dd>
+            <dt class="col-sm-3">TABLE9255</dt>
+            <dd class="col-sm-9">@Model.TABLE9255SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9256</dt>
+            <dd class="col-sm-9">@Model.TABLE9256SDESCRIPT</dd>
+            <dt class="col-sm-3">SINTERNATIONALPROVIDER</dt>
+            <dd class="col-sm-9">@Model.SINTERNATIONALPROVIDER</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NPROVIDER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

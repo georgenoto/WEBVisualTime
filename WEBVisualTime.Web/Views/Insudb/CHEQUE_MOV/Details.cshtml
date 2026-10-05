@@ -1,0 +1,48 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CHEQUE_MOV.CHEQUE_MOVDto
+
+@{
+    ViewData["Title"] = "Detalles de CHEQUE_MOV";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">COMPANY</dt>
+            <dd class="col-sm-9">@Model.COMPANYSACCOUNT</dd>
+            <dt class="col-sm-3">TABLE7NBANK_CODE</dt>
+            <dd class="col-sm-9">@Model.TABLE7NBANK_CODESDESCRIPT</dd>
+            <dt class="col-sm-3">SCHEQUENU</dt>
+            <dd class="col-sm-9">@Model.SCHEQUENU</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NCHEOPERTYP</dt>
+            <dd class="col-sm-9">@Model.NCHEOPERTYP</dd>
+            <dt class="col-sm-3">TABLE5577</dt>
+            <dd class="col-sm-9">@Model.TABLE5577SDESCRIPT</dd>
+            <dt class="col-sm-3">NID</dt>
+            <dd class="col-sm-9">@Model.NID</dd>
+            <dt class="col-sm-3">TABLE7NBANK_INTER</dt>
+            <dd class="col-sm-9">@Model.TABLE7NBANK_INTERSDESCRIPT</dd>
+            <dt class="col-sm-3">SCHEQUEINTER</dt>
+            <dd class="col-sm-9">@Model.SCHEQUEINTER</dd>
+            <dt class="col-sm-3">DNEW_DATE</dt>
+            <dd class="col-sm-9">@Model.DNEW_DATE</dd>
+            <dt class="col-sm-3">SDEPNUMBER</dt>
+            <dd class="col-sm-9">@Model.SDEPNUMBER</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NFIN_INT</dt>
+            <dd class="col-sm-9">@Model.NFIN_INT</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCOMPANY" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

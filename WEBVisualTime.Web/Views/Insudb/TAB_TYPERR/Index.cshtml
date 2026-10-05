@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAB_TYPERR.TAB_TYPERRDto>
+
+@{
+    ViewData["Title"] = "TAB_TYPERR";
+    ViewData["ColumnHeaders"] = new[] { "NTYPE_ERR", "TAB_TYPERRParent", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "STRANSITI", "DCOMPDATE", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "NTYPE_ERR", "TAB_TYPERRParentSDESCRIPT", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "STRANSITI", "DCOMPDATE", "NUSERCODE" };
+    ViewData["KeyName"] = "NTYPE_ERR";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

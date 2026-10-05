@@ -1,0 +1,30 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_MODCLI.UpdateTAB_MODCLIDto
+
+@{
+    ViewData["Title"] = "Editar TAB_MODCLI";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SITEM" />
+            <input type="hidden" asp-for="STABNAME" />
+            <div class="mb-3">
+                <label asp-for="SINDPK" class="form-label"></label>
+                <input asp-for="SINDPK" class="form-control" />
+                <span asp-validation-for="SINDPK" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

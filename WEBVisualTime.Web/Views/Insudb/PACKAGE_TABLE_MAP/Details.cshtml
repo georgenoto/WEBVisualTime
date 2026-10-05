@@ -1,0 +1,24 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.PACKAGE_TABLE_MAP.PACKAGE_TABLE_MAPDto
+
+@{
+    ViewData["Title"] = "Detalles de PACKAGE_TABLE_MAP";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">OWNER</dt>
+            <dd class="col-sm-9">@Model.OWNER</dd>
+            <dt class="col-sm-3">PACKAGE_NAME</dt>
+            <dd class="col-sm-9">@Model.PACKAGE_NAME</dd>
+            <dt class="col-sm-3">TABLE_NAME</dt>
+            <dd class="col-sm-9">@Model.TABLE_NAME</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.OWNER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

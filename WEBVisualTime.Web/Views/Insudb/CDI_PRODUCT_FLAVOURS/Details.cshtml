@@ -1,0 +1,26 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_PRODUCT_FLAVOURS.CDI_PRODUCT_FLAVOURSDto
+
+@{
+    ViewData["Title"] = "Detalles de CDI_PRODUCT_FLAVOURS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">P_SNAME</dt>
+            <dd class="col-sm-9">@Model.P_SNAME</dd>
+            <dt class="col-sm-3">P_CGVERSION</dt>
+            <dd class="col-sm-9">@Model.P_CGVERSION</dd>
+            <dt class="col-sm-3">SEQ</dt>
+            <dd class="col-sm-9">@Model.SEQ</dd>
+            <dt class="col-sm-3">DESCRIPTION</dt>
+            <dd class="col-sm-9">@Model.DESCRIPTION</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.P_SNAME" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

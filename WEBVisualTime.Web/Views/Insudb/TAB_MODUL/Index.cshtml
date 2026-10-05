@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAB_MODUL.TAB_MODULDto>
+
+@{
+    ViewData["Title"] = "TAB_MODUL";
+    ViewData["ColumnHeaders"] = new[] { "NBRANCH", "NMODULEC", "NPRODUCT", "DEFFECDATE", "SCHANALLO", "DCOMPDATE", "SDEFAULTI", "SDESCRIPT", "DNULLDATE", "SREQUIRE", "SSHORT_DES", "NUSERCODE", "SCONDSVS", "SROUTINE", "NPREMIRAT", "NCHPRELEV", "NRATEPREADD", "NRATEPRESUB", "SCHANGETYP", "STYP_RAT", "SVIGEN", "SDEPEND", "SCLAIMMANDATORYFIELDS", "TABLE9214", "TABLE9215" };
+    ViewData["ColumnProperties"] = new[] { "NBRANCH", "NMODULEC", "NPRODUCT", "DEFFECDATE", "SCHANALLO", "DCOMPDATE", "SDEFAULTI", "SDESCRIPT", "DNULLDATE", "SREQUIRE", "SSHORT_DES", "NUSERCODE", "SCONDSVS", "SROUTINE", "NPREMIRAT", "NCHPRELEV", "NRATEPREADD", "NRATEPRESUB", "SCHANGETYP", "STYP_RAT", "SVIGEN", "SDEPEND", "SCLAIMMANDATORYFIELDS", "TABLE9214SDESCRIPT", "TABLE9215SDESCRIPT" };
+    ViewData["KeyName"] = "NBRANCH";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

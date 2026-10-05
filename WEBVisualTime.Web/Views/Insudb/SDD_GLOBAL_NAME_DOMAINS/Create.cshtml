@@ -1,0 +1,63 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.SDD_GLOBAL_NAME_DOMAINS.CreateSDD_GLOBAL_NAME_DOMAINSDto
+
+@{
+    ViewData["Title"] = "Crear SDD_GLOBAL_NAME_DOMAINS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="IVID" class="form-label"></label>
+                <input asp-for="IVID" class="form-control" type="number" />
+                <span asp-validation-for="IVID" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAME" class="form-label"></label>
+                <input asp-for="NAME" class="form-control" />
+                <span asp-validation-for="NAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SYSTEM_FLAG" class="form-label"></label>
+                <input asp-for="SYSTEM_FLAG" class="form-control" />
+                <span asp-validation-for="SYSTEM_FLAG" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUMBER_OF_TIMES_MODIFIED" class="form-label"></label>
+                <input asp-for="NUMBER_OF_TIMES_MODIFIED" class="form-control" type="number" />
+                <span asp-validation-for="NUMBER_OF_TIMES_MODIFIED" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DATE_CREATED" class="form-label"></label>
+                <input asp-for="DATE_CREATED" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DATE_CREATED" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CREATED_BY" class="form-label"></label>
+                <input asp-for="CREATED_BY" class="form-control" />
+                <span asp-validation-for="CREATED_BY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DATE_CHANGED" class="form-label"></label>
+                <input asp-for="DATE_CHANGED" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DATE_CHANGED" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CHANGED_BY" class="form-label"></label>
+                <input asp-for="CHANGED_BY" class="form-control" />
+                <span asp-validation-for="CHANGED_BY" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

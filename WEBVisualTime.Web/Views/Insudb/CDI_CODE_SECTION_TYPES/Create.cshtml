@@ -1,0 +1,98 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_CODE_SECTION_TYPES.CreateCDI_CODE_SECTION_TYPESDto
+
+@{
+    ViewData["Title"] = "Crear CDI_CODE_SECTION_TYPES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="LANGUAGE_NAME" class="form-label"></label>
+                <input asp-for="LANGUAGE_NAME" class="form-control" />
+                <span asp-validation-for="LANGUAGE_NAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="TYPE_NAME" class="form-label"></label>
+                <input asp-for="TYPE_NAME" class="form-control" />
+                <span asp-validation-for="TYPE_NAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="GEN_TEMPLATE_FILE" class="form-label"></label>
+                <input asp-for="GEN_TEMPLATE_FILE" class="form-control" />
+                <span asp-validation-for="GEN_TEMPLATE_FILE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="REGEN_TEMPLATE_FILE" class="form-label"></label>
+                <input asp-for="REGEN_TEMPLATE_FILE" class="form-control" />
+                <span asp-validation-for="REGEN_TEMPLATE_FILE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="OPEN_BEGIN_MARKER" class="form-label"></label>
+                <input asp-for="OPEN_BEGIN_MARKER" class="form-control" />
+                <span asp-validation-for="OPEN_BEGIN_MARKER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CLOSE_BEGIN_MARKER" class="form-label"></label>
+                <input asp-for="CLOSE_BEGIN_MARKER" class="form-control" />
+                <span asp-validation-for="CLOSE_BEGIN_MARKER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="END_MARKER" class="form-label"></label>
+                <input asp-for="END_MARKER" class="form-control" />
+                <span asp-validation-for="END_MARKER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="FILE_FILTER" class="form-label"></label>
+                <input asp-for="FILE_FILTER" class="form-control" />
+                <span asp-validation-for="FILE_FILTER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SEQ" class="form-label"></label>
+                <input asp-for="SEQ" class="form-control" type="number" />
+                <span asp-validation-for="SEQ" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="REGISTRY_NAME" class="form-label"></label>
+                <input asp-for="REGISTRY_NAME" class="form-control" />
+                <span asp-validation-for="REGISTRY_NAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DEFAULT_FILE_NAME" class="form-label"></label>
+                <input asp-for="DEFAULT_FILE_NAME" class="form-control" />
+                <span asp-validation-for="DEFAULT_FILE_NAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CLOSE_END_MARKER" class="form-label"></label>
+                <input asp-for="CLOSE_END_MARKER" class="form-control" />
+                <span asp-validation-for="CLOSE_END_MARKER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SECTION_TYPE" class="form-label"></label>
+                <input asp-for="SECTION_TYPE" class="form-control" />
+                <span asp-validation-for="SECTION_TYPE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="FILE_TYPE" class="form-label"></label>
+                <input asp-for="FILE_TYPE" class="form-control" />
+                <span asp-validation-for="FILE_TYPE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NLS_LANG" class="form-label"></label>
+                <input asp-for="NLS_LANG" class="form-control" />
+                <span asp-validation-for="NLS_LANG" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

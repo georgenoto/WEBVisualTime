@@ -1,0 +1,30 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.SCHEMA_FOLDER.SCHEMA_FOLDERDto
+
+@{
+    ViewData["Title"] = "Detalles de SCHEMA_FOLDER";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SSCHE_CODE</dt>
+            <dd class="col-sm-9">@Model.SSCHE_CODE</dd>
+            <dt class="col-sm-3">NFOLDER</dt>
+            <dd class="col-sm-9">@Model.NFOLDER</dd>
+            <dt class="col-sm-3">NINQLEVEL</dt>
+            <dd class="col-sm-9">@Model.NINQLEVEL</dd>
+            <dt class="col-sm-3">SPERMITTED</dt>
+            <dd class="col-sm-9">@Model.SPERMITTED</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SSCHE_CODE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

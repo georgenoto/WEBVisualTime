@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.FIELDSHEET.FIELDSHEETDto>
+
+@{
+    ViewData["Title"] = "FIELDSHEET";
+    ViewData["ColumnHeaders"] = new[] { "NSHEET", "NFIELD", "DCOMPDATE", "NFIELDTYPE", "STABLE", "NUSERCODE", "SFIELDDESC", "SCOLUMNNAME", "SVALUE", "SRUTINE", "NROWORDER", "NFIELDORDER", "SVALUESLIST", "NFIELDLARGE", "NOBJTYPE", "NTABLEHOMO", "NOPERATOR", "NCONDIT", "SFIELDCOMMEN", "SFIELDREL", "SOBLIGATORY", "SLASTMOVE", "NDATATYPE", "SRPARENTH", "SLPARENTH", "NDECIMAL", "SREPORT", "LPADVAR", "RPADVAR", "NLEVEL", "NCRITER_ORDER", "NDEFTYPE", "NIDREC", "SDESCRIPT", "SUPDATEIND" };
+    ViewData["ColumnProperties"] = new[] { "NSHEET", "NFIELD", "DCOMPDATE", "NFIELDTYPE", "STABLE", "NUSERCODE", "SFIELDDESC", "SCOLUMNNAME", "SVALUE", "SRUTINE", "NROWORDER", "NFIELDORDER", "SVALUESLIST", "NFIELDLARGE", "NOBJTYPE", "NTABLEHOMO", "NOPERATOR", "NCONDIT", "SFIELDCOMMEN", "SFIELDREL", "SOBLIGATORY", "SLASTMOVE", "NDATATYPE", "SRPARENTH", "SLPARENTH", "NDECIMAL", "SREPORT", "LPADVAR", "RPADVAR", "NLEVEL", "NCRITER_ORDER", "NDEFTYPE", "NIDREC", "SDESCRIPT", "SUPDATEIND" };
+    ViewData["KeyName"] = "NSHEET";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

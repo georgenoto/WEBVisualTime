@@ -1,0 +1,28 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CTROL_DATE.CTROL_DATEDto
+
+@{
+    ViewData["Title"] = "Detalles de CTROL_DATE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TABLE526</dt>
+            <dd class="col-sm-9">@Model.TABLE526SDESCRIPT</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">DNEXTDATEPROC</dt>
+            <dd class="col-sm-9">@Model.DNEXTDATEPROC</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NTYPE_PROCE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

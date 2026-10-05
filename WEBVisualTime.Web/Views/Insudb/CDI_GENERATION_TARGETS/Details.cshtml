@@ -1,0 +1,34 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_GENERATION_TARGETS.CDI_GENERATION_TARGETSDto
+
+@{
+    ViewData["Title"] = "Detalles de CDI_GENERATION_TARGETS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NAME</dt>
+            <dd class="col-sm-9">@Model.NAME</dd>
+            <dt class="col-sm-3">SEQ</dt>
+            <dd class="col-sm-9">@Model.SEQ</dd>
+            <dt class="col-sm-3">LANGUAGE</dt>
+            <dd class="col-sm-9">@Model.LANGUAGE</dd>
+            <dt class="col-sm-3">REGISTRY_NAME</dt>
+            <dd class="col-sm-9">@Model.REGISTRY_NAME</dd>
+            <dt class="col-sm-3">MEMBER_BEGIN_MARKER</dt>
+            <dd class="col-sm-9">@Model.MEMBER_BEGIN_MARKER</dd>
+            <dt class="col-sm-3">CLOSE_MEMBER_MARKER</dt>
+            <dd class="col-sm-9">@Model.CLOSE_MEMBER_MARKER</dd>
+            <dt class="col-sm-3">MEMBER_END_MARKER</dt>
+            <dd class="col-sm-9">@Model.MEMBER_END_MARKER</dd>
+            <dt class="col-sm-3">NLS_LANG</dt>
+            <dd class="col-sm-9">@Model.NLS_LANG</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NAME" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

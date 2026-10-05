@@ -1,0 +1,54 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.LED_COMPAN.LED_COMPANDto
+
+@{
+    ViewData["Title"] = "Detalles de LED_COMPAN";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NLED_COMPAN</dt>
+            <dd class="col-sm-9">@Model.NLED_COMPAN</dd>
+            <dt class="col-sm-3">SACCOUNT_BG</dt>
+            <dd class="col-sm-9">@Model.SACCOUNT_BG</dd>
+            <dt class="col-sm-3">SACCOUNT_GP</dt>
+            <dd class="col-sm-9">@Model.SACCOUNT_GP</dd>
+            <dt class="col-sm-3">SBAL_ACTU</dt>
+            <dd class="col-sm-9">@Model.SBAL_ACTU</dd>
+            <dt class="col-sm-3">SCLOSE_MONT</dt>
+            <dd class="col-sm-9">@Model.SCLOSE_MONT</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">SSTRUCT_UNI</dt>
+            <dd class="col-sm-9">@Model.SSTRUCT_UNI</dd>
+            <dt class="col-sm-3">SSTRUCTURE</dt>
+            <dd class="col-sm-9">@Model.SSTRUCTURE</dd>
+            <dt class="col-sm-3">DCOMPAN_DAT</dt>
+            <dd class="col-sm-9">@Model.DCOMPAN_DAT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">DDATE_END</dt>
+            <dd class="col-sm-9">@Model.DDATE_END</dd>
+            <dt class="col-sm-3">DDATE_INIT</dt>
+            <dd class="col-sm-9">@Model.DDATE_INIT</dd>
+            <dt class="col-sm-3">NVOUCHER</dt>
+            <dd class="col-sm-9">@Model.NVOUCHER</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NYEAR</dt>
+            <dd class="col-sm-9">@Model.NYEAR</dd>
+            <dt class="col-sm-3">DINILEDDAT</dt>
+            <dd class="col-sm-9">@Model.DINILEDDAT</dd>
+            <dt class="col-sm-3">DENDLEDDAT</dt>
+            <dd class="col-sm-9">@Model.DENDLEDDAT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NLED_COMPAN" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

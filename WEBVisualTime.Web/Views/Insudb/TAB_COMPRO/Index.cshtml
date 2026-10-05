@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAB_COMPRO.TAB_COMPRODto>
+
+@{
+    ViewData["Title"] = "TAB_COMPRO";
+    ViewData["ColumnHeaders"] = new[] { "TABLE6", "NLINE", "NTYP_ACCO", "SDEBITSIDE", "TABLE532", "DCOMPDATE", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "TABLE6SDESCRIPT", "NLINE", "NTYP_ACCO", "SDEBITSIDE", "TABLE532SDESCRIPT", "DCOMPDATE", "NUSERCODE" };
+    ViewData["KeyName"] = "NTYPE_TRAN";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

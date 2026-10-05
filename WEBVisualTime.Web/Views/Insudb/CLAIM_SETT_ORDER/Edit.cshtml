@@ -1,0 +1,95 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_SETT_ORDER.UpdateCLAIM_SETT_ORDERDto
+
+@{
+    ViewData["Title"] = "Editar CLAIM_SETT_ORDER";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NSETTLEMENT_NUM" />
+            <input type="hidden" asp-for="NORDER_NUM" />
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_ORDEN" class="form-label"></label>
+                <input asp-for="NAMOUNT_ORDEN" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_ORDEN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_TOTAL" class="form-label"></label>
+                <input asp-for="NAMOUNT_TOTAL" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_TOTAL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_DEDUCOIN" class="form-label"></label>
+                <input asp-for="NAMOUNT_DEDUCOIN" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_DEDUCOIN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_PAY" class="form-label"></label>
+                <input asp-for="NAMOUNT_PAY" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_PAY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_VAT" class="form-label"></label>
+                <input asp-for="NAMOUNT_VAT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_VAT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_FTT" class="form-label"></label>
+                <input asp-for="NAMOUNT_FTT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_FTT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_AGREE" class="form-label"></label>
+                <input asp-for="NAMOUNT_AGREE" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_AGREE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_ADJUST" class="form-label"></label>
+                <input asp-for="NAMOUNT_ADJUST" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_ADJUST" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NSETTLEMENT_PAY" class="form-label"></label>
+                <input asp-for="NSETTLEMENT_PAY" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NSETTLEMENT_PAY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_VAT_LOSS" class="form-label"></label>
+                <input asp-for="NAMOUNT_VAT_LOSS" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_VAT_LOSS" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_FTT_LOSS" class="form-label"></label>
+                <input asp-for="NAMOUNT_FTT_LOSS" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_FTT_LOSS" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT_BASE" class="form-label"></label>
+                <input asp-for="NAMOUNT_BASE" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT_BASE" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,37 @@
+# Build outputs
+**/bin/
+**/obj/
+
+# IDE and user-specific settings
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Local credentials and environment settings
+**/appsettings.json
+**/appsettings.*.json
+!**/appsettings.example.json
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+
+# Local analysis and logs
+.analysis/
+*.log
+
+# Test artifacts
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+# OS files
+Thumbs.db
+.DS_Store

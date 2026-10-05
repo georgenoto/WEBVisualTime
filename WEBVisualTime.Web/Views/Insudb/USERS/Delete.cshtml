@@ -1,0 +1,65 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.USERS.USERSDto
+
+@{
+    ViewData["Title"] = "Eliminar USERS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SACCESSWO)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SACCESSWO)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NOFFICE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NOFFICE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SINITIALS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SINITIALS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSCHE_CODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSCHE_CODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSTATREGT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSTATREGT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.STYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.STYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NDEPARTME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NDEPARTME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SMENU)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SMENU)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCHNEXTLOGON)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCHNEXTLOGON)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SNEVERCHANGE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SNEVERCHANGE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SNEVEREXPIRES)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SNEVEREXPIRES)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SLOCKEDOUT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SLOCKEDOUT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DFROMDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DFROMDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NOFFICEAGEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NOFFICEAGEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAGENCY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAGENCY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NFAILED_LOGON_ATTEMPTS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NFAILED_LOGON_ATTEMPTS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DPASSWORD_EXPIRES)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DPASSWORD_EXPIRES)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NUSERCODE" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

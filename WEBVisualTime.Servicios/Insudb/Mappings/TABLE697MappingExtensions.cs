@@ -1,0 +1,44 @@
+using WEBVisualTime.Entidades.Insudb;
+using WEBVisualTime.Servicios.Insudb.DTOs.TABLE697;
+
+namespace WEBVisualTime.Servicios.Insudb.Mappings;
+
+public static class TABLE697MappingExtensions
+{
+    public static TABLE697Dto ToDto(this TABLE697 entity)
+    {
+        if (entity == null) return null!;
+        return new TABLE697Dto
+        {
+            NSHEET = entity.NSHEET,
+            DCOMPDATE = entity.DCOMPDATE,
+            SDESCRIPT = entity.SDESCRIPT,
+            SSHORT_DES = entity.SSHORT_DES,
+            SSTATREGT = entity.SSTATREGT,
+            NUSERCODE = entity.NUSERCODE,
+        };
+    }
+
+    public static TABLE697 ToEntity(this CreateTABLE697Dto dto)
+    {
+        if (dto == null) return null!;
+        return new TABLE697
+        {
+            DCOMPDATE = dto.DCOMPDATE,
+            SDESCRIPT = dto.SDESCRIPT,
+            SSHORT_DES = dto.SSHORT_DES,
+            SSTATREGT = dto.SSTATREGT,
+            NUSERCODE = dto.NUSERCODE,
+        };
+    }
+
+    public static void UpdateEntity(this TABLE697 entity, UpdateTABLE697Dto dto)
+    {
+        if (entity == null || dto == null) return;
+        entity.DCOMPDATE = dto.DCOMPDATE;
+        entity.SDESCRIPT = dto.SDESCRIPT;
+        entity.SSHORT_DES = dto.SSHORT_DES;
+        entity.SSTATREGT = dto.SSTATREGT;
+        entity.NUSERCODE = dto.NUSERCODE;
+    }
+}

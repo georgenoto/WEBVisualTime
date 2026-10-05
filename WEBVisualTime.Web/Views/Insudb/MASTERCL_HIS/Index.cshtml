@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.MASTERCL_HIS.MASTERCL_HISDto>
+
+@{
+    ViewData["Title"] = "MASTERCL_HIS";
+    ViewData["ColumnHeaders"] = new[] { "NMASTERORDER", "NMOVEMENT", "DMOVEMENT_DATE", "TABLE9264", "TABLE9237", "TABLE9242", "NCURREN_DOC", "NCURREN_ORDER", "NPROVIDER", "TABLE8604", "SCARECLASS", "SIND_REV", "NEXCHANGE", "TABLE9243", "NTRANSAC", "SPREAUTHORIZATION", "TABLE9212", "NCLAIM", "DCOMPDATE", "NUSERCODE", "DLEDGERDAT", "NMASTERORDER_NUM_ORIG", "NMASTERORDER_NUM_GEN" };
+    ViewData["ColumnProperties"] = new[] { "NMASTERORDER", "NMOVEMENT", "DMOVEMENT_DATE", "TABLE9264SDESCRIPT", "TABLE9237SDESCRIPT", "TABLE9242SDESCRIPT", "NCURREN_DOC", "NCURREN_ORDER", "NPROVIDER", "TABLE8604SDESCRIPT", "SCARECLASS", "SIND_REV", "NEXCHANGE", "TABLE9243SDESCRIPT", "NTRANSAC", "SPREAUTHORIZATION", "TABLE9212SDESCRIPT", "NCLAIM", "DCOMPDATE", "NUSERCODE", "DLEDGERDAT", "NMASTERORDER_NUM_ORIG", "NMASTERORDER_NUM_GEN" };
+    ViewData["KeyName"] = "NMASTERORDER";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

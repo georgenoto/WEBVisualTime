@@ -1,0 +1,42 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.SIGNSCAPOFF.SIGNSCAPOFFDto
+
+@{
+    ViewData["Title"] = "Detalles de SIGNSCAPOFF";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TABLE10</dt>
+            <dd class="col-sm-9">@Model.TABLE10SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE11</dt>
+            <dd class="col-sm-9">@Model.TABLE11SDESCRIPT</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">NORDSIGN</dt>
+            <dd class="col-sm-9">@Model.NORDSIGN</dd>
+            <dt class="col-sm-3">NCAPMINSING</dt>
+            <dd class="col-sm-9">@Model.NCAPMINSING</dd>
+            <dt class="col-sm-3">NCAPMAXSING</dt>
+            <dd class="col-sm-9">@Model.NCAPMAXSING</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SSTATREG</dt>
+            <dd class="col-sm-9">@Model.SSTATREG</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

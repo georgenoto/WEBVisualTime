@@ -1,0 +1,77 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MASTERCL_BENEF.MASTERCL_BENEFDto
+
+@{
+    ViewData["Title"] = "Eliminar MASTERCL_BENEF";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NMASTERORDER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NMASTERORDER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCONSEC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCONSEC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENT_BENEF)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENT_BENEF)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENT_REP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENT_REP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCLAIM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCLAIM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCASE_NUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCASE_NUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NDEMAN_TYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NDEMAN_TYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCLAIMBENEF_ID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCLAIMBENEF_ID)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBENE_TYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBENE_TYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NRELATION)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NRELATION)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPARTICIP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPARTICIP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NORDER_NUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NORDER_NUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENAME_BEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENAME_BEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPCLIENTDOC_BEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPCLIENTDOC_BEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLINUMDOCU_BEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLINUMDOCU_BEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SPHONE_BEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SPHONE_BEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCELLPHONE_BEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCELLPHONE_BEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SEMAIL_BEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SEMAIL_BEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENAME_REP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENAME_REP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPCLIENTDOC_REP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPCLIENTDOC_REP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLINUMDOCU_REP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLINUMDOCU_REP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SPHONE_REP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SPHONE_REP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCELLPHONE_REP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCELLPHONE_REP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SEMAIL_REP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SEMAIL_REP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NMASTERORDER" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

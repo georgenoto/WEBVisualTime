@@ -1,0 +1,40 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.INTERM_TYP.INTERM_TYPDto
+
+@{
+    ViewData["Title"] = "Detalles de INTERM_TYP";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NINTERTYP</dt>
+            <dd class="col-sm-9">@Model.NINTERTYP</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">SPARTICIN</dt>
+            <dd class="col-sm-9">@Model.SPARTICIN</dd>
+            <dt class="col-sm-3">SSHORT_DES</dt>
+            <dd class="col-sm-9">@Model.SSHORT_DES</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">TABLE400</dt>
+            <dd class="col-sm-9">@Model.TABLE400SDESCRIPT</dd>
+            <dt class="col-sm-3">SIND_FECU</dt>
+            <dd class="col-sm-9">@Model.SIND_FECU</dd>
+            <dt class="col-sm-3">SGEN_CERTIF</dt>
+            <dd class="col-sm-9">@Model.SGEN_CERTIF</dd>
+            <dt class="col-sm-3">NRECEPTYP</dt>
+            <dd class="col-sm-9">@Model.NRECEPTYP</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NINTERTYP" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

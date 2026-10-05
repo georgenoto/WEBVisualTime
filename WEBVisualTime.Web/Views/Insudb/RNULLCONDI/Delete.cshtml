@@ -1,0 +1,47 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.RNULLCONDI.RNULLCONDIDto
+
+@{
+    ViewData["Title"] = "Eliminar RNULLCONDI";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NNULLCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NNULLCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBRANCH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBRANCH)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPRODUCT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPRODUCT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SPOLITYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SPOLITYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTRATYPEI)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTRATYPEI)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SPOLICY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SPOLICY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCERTIF)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCERTIF)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DEFFECDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DEFFECDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DNULLDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DNULLDATE)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NNULLCODE" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

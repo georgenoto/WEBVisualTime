@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.INTERM_PARAM.INTERM_PARAMDto>
+
+@{
+    ViewData["Title"] = "INTERM_PARAM";
+    ViewData["ColumnHeaders"] = new[] { "NINSU_ASSIST", "NSOAP_AGENT", "NSOAP_SUPERVIS", "NBONUS_CURR", "NMAX_BONUS", "NMAX_ACCOMP", "NMINAMOUNT", "DCOMPDATE", "NUSERCODE", "NDAY_DISCLOAN" };
+    ViewData["ColumnProperties"] = new[] { "NINSU_ASSIST", "NSOAP_AGENT", "NSOAP_SUPERVIS", "NBONUS_CURR", "NMAX_BONUS", "NMAX_ACCOMP", "NMINAMOUNT", "DCOMPDATE", "NUSERCODE", "NDAY_DISCLOAN" };
+    ViewData["KeyName"] = "NINSU_ASSIST";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

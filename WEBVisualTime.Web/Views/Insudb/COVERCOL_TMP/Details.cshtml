@@ -1,0 +1,66 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COVERCOL_TMP.COVERCOL_TMPDto
+
+@{
+    ViewData["Title"] = "Detalles de COVERCOL_TMP";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SCERTYPE</dt>
+            <dd class="col-sm-9">@Model.SCERTYPE</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NPOLICY</dt>
+            <dd class="col-sm-9">@Model.NPOLICY</dd>
+            <dt class="col-sm-3">NCERTIF</dt>
+            <dd class="col-sm-9">@Model.NCERTIF</dd>
+            <dt class="col-sm-3">NIDCONSEC</dt>
+            <dd class="col-sm-9">@Model.NIDCONSEC</dd>
+            <dt class="col-sm-3">NROW</dt>
+            <dd class="col-sm-9">@Model.NROW</dd>
+            <dt class="col-sm-3">NCOLUMN</dt>
+            <dd class="col-sm-9">@Model.NCOLUMN</dd>
+            <dt class="col-sm-3">STITTLE</dt>
+            <dd class="col-sm-9">@Model.STITTLE</dd>
+            <dt class="col-sm-3">SVALUE</dt>
+            <dd class="col-sm-9">@Model.SVALUE</dd>
+            <dt class="col-sm-3">SVALUE1</dt>
+            <dd class="col-sm-9">@Model.SVALUE1</dd>
+            <dt class="col-sm-3">SVALUE2</dt>
+            <dd class="col-sm-9">@Model.SVALUE2</dd>
+            <dt class="col-sm-3">SVALUE3</dt>
+            <dd class="col-sm-9">@Model.SVALUE3</dd>
+            <dt class="col-sm-3">SVALUE4</dt>
+            <dd class="col-sm-9">@Model.SVALUE4</dd>
+            <dt class="col-sm-3">SVALUE5</dt>
+            <dd class="col-sm-9">@Model.SVALUE5</dd>
+            <dt class="col-sm-3">SVALUE6</dt>
+            <dd class="col-sm-9">@Model.SVALUE6</dd>
+            <dt class="col-sm-3">SVALUE7</dt>
+            <dd class="col-sm-9">@Model.SVALUE7</dd>
+            <dt class="col-sm-3">SVALUE8</dt>
+            <dd class="col-sm-9">@Model.SVALUE8</dd>
+            <dt class="col-sm-3">SVALUE9</dt>
+            <dd class="col-sm-9">@Model.SVALUE9</dd>
+            <dt class="col-sm-3">STYPE</dt>
+            <dd class="col-sm-9">@Model.STYPE</dd>
+            <dt class="col-sm-3">SDATATYPE</dt>
+            <dd class="col-sm-9">@Model.SDATATYPE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SMATERNITY</dt>
+            <dd class="col-sm-9">@Model.SMATERNITY</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCERTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

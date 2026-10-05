@@ -1,0 +1,136 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.REQUEST.REQUESTDto
+
+@{
+    ViewData["Title"] = "Detalles de REQUEST";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CERTIFICATSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATSCERTYPESCUMUL_CODE</dd>
+            <dt class="col-sm-3">TABLE5580</dt>
+            <dd class="col-sm-9">@Model.TABLE5580SDESCRIPT</dd>
+            <dt class="col-sm-3">CERTIFICATNBRANCH</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNBRANCHSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPRODUCTSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPOLICY</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPOLICYSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNCERTIF</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNCERTIFSCUMUL_CODE</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">STYP_SURR</dt>
+            <dd class="col-sm-9">@Model.STYP_SURR</dd>
+            <dt class="col-sm-3">TABLE193</dt>
+            <dd class="col-sm-9">@Model.TABLE193SDESCRIPT</dd>
+            <dt class="col-sm-3">SNULL_REC</dt>
+            <dd class="col-sm-9">@Model.SNULL_REC</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">TABLE13</dt>
+            <dd class="col-sm-9">@Model.TABLE13SDESCRIPT</dd>
+            <dt class="col-sm-3">NTYP_REC</dt>
+            <dd class="col-sm-9">@Model.NTYP_REC</dd>
+            <dt class="col-sm-3">SREH_LREC</dt>
+            <dd class="col-sm-9">@Model.SREH_LREC</dd>
+            <dt class="col-sm-3">NINTERESTRATE</dt>
+            <dd class="col-sm-9">@Model.NINTERESTRATE</dd>
+            <dt class="col-sm-3">TABLE5527</dt>
+            <dd class="col-sm-9">@Model.TABLE5527SDESCRIPT</dd>
+            <dt class="col-sm-3">DMOVDATE</dt>
+            <dd class="col-sm-9">@Model.DMOVDATE</dd>
+            <dt class="col-sm-3">NREQUEST_NU</dt>
+            <dd class="col-sm-9">@Model.NREQUEST_NU</dd>
+            <dt class="col-sm-3">CLIENTSCLIPAYSURR</dt>
+            <dd class="col-sm-9">@Model.CLIENTSCLIPAYSURRSACCOUNT_IN</dd>
+            <dt class="col-sm-3">CERTIFICATSCERTPAYSURR</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATSCERTPAYSURRSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNBRAPAYSURR</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNBRAPAYSURRSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPROPAYSURR</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPROPAYSURRSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPOLPAYSURR</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPOLPAYSURRSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNCERPAYSURR</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNCERPAYSURRSCUMUL_CODE</dd>
+            <dt class="col-sm-3">NAGENCY</dt>
+            <dd class="col-sm-9">@Model.NAGENCY</dd>
+            <dt class="col-sm-3">TABLE5635</dt>
+            <dd class="col-sm-9">@Model.TABLE5635SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE5636</dt>
+            <dd class="col-sm-9">@Model.TABLE5636SDESCRIPT</dd>
+            <dt class="col-sm-3">TAB_FN_INSTITUTION</dt>
+            <dd class="col-sm-9">@Model.TAB_FN_INSTITUTIONSNAME</dd>
+            <dt class="col-sm-3">CLIENTSCLIENTINSTITUTION</dt>
+            <dd class="col-sm-9">@Model.CLIENTSCLIENTINSTITUTIONSACCOUNT_IN</dd>
+            <dt class="col-sm-3">SRETURN_IND</dt>
+            <dd class="col-sm-9">@Model.SRETURN_IND</dd>
+            <dt class="col-sm-3">NRETURN_RAT</dt>
+            <dd class="col-sm-9">@Model.NRETURN_RAT</dd>
+            <dt class="col-sm-3">NORIGIN_APV</dt>
+            <dd class="col-sm-9">@Model.NORIGIN_APV</dd>
+            <dt class="col-sm-3">NCOSTAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NCOSTAMOUNT</dd>
+            <dt class="col-sm-3">NTAX</dt>
+            <dd class="col-sm-9">@Model.NTAX</dd>
+            <dt class="col-sm-3">NTAX_RENT</dt>
+            <dd class="col-sm-9">@Model.NTAX_RENT</dd>
+            <dt class="col-sm-3">NFUNDS</dt>
+            <dd class="col-sm-9">@Model.NFUNDS</dd>
+            <dt class="col-sm-3">NSIGNAL</dt>
+            <dd class="col-sm-9">@Model.NSIGNAL</dd>
+            <dt class="col-sm-3">NUNITSCHANGE</dt>
+            <dd class="col-sm-9">@Model.NUNITSCHANGE</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NSELL_COST</dt>
+            <dd class="col-sm-9">@Model.NSELL_COST</dd>
+            <dt class="col-sm-3">NBUY_COST</dt>
+            <dd class="col-sm-9">@Model.NBUY_COST</dd>
+            <dt class="col-sm-3">NSWI_COST</dt>
+            <dd class="col-sm-9">@Model.NSWI_COST</dd>
+            <dt class="col-sm-3">NVALUECHANGE</dt>
+            <dd class="col-sm-9">@Model.NVALUECHANGE</dd>
+            <dt class="col-sm-3">NSWITCHORIGIN</dt>
+            <dd class="col-sm-9">@Model.NSWITCHORIGIN</dd>
+            <dt class="col-sm-3">SSWITCHSTATUS</dt>
+            <dd class="col-sm-9">@Model.SSWITCHSTATUS</dd>
+            <dt class="col-sm-3">SIND_INSUR</dt>
+            <dd class="col-sm-9">@Model.SIND_INSUR</dd>
+            <dt class="col-sm-3">DPAYMENTDATE</dt>
+            <dd class="col-sm-9">@Model.DPAYMENTDATE</dd>
+            <dt class="col-sm-3">NTYP_PROFITWORKER</dt>
+            <dd class="col-sm-9">@Model.NTYP_PROFITWORKER</dd>
+            <dt class="col-sm-3">NCOST_COV_DEV</dt>
+            <dd class="col-sm-9">@Model.NCOST_COV_DEV</dd>
+            <dt class="col-sm-3">NRENTABILITY</dt>
+            <dd class="col-sm-9">@Model.NRENTABILITY</dd>
+            <dt class="col-sm-3">NAMOUNT_REC_DEV</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_REC_DEV</dd>
+            <dt class="col-sm-3">NAMOUNT_DEV</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_DEV</dd>
+            <dt class="col-sm-3">SSWITCHORIGIN</dt>
+            <dd class="col-sm-9">@Model.SSWITCHORIGIN</dd>
+            <dt class="col-sm-3">NPROPONUM</dt>
+            <dd class="col-sm-9">@Model.NPROPONUM</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCERTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

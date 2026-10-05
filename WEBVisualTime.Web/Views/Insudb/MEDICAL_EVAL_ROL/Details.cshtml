@@ -1,0 +1,46 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MEDICAL_EVAL_ROL.MEDICAL_EVAL_ROLDto
+
+@{
+    ViewData["Title"] = "Detalles de MEDICAL_EVAL_ROL";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ROLESSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.ROLESSCERTYPESSMOKING</dd>
+            <dt class="col-sm-3">ROLESNBRANCH</dt>
+            <dd class="col-sm-9">@Model.ROLESNBRANCHSSMOKING</dd>
+            <dt class="col-sm-3">ROLESNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.ROLESNPRODUCTSSMOKING</dd>
+            <dt class="col-sm-3">ROLESNPOLICY</dt>
+            <dd class="col-sm-9">@Model.ROLESNPOLICYSSMOKING</dd>
+            <dt class="col-sm-3">ROLESNCERTIF</dt>
+            <dd class="col-sm-9">@Model.ROLESNCERTIFSSMOKING</dd>
+            <dt class="col-sm-3">ROLESNROLE</dt>
+            <dd class="col-sm-9">@Model.ROLESNROLESSMOKING</dd>
+            <dt class="col-sm-3">ROLESSCLIENT</dt>
+            <dd class="col-sm-9">@Model.ROLESSCLIENTSSMOKING</dd>
+            <dt class="col-sm-3">TABLE9216</dt>
+            <dd class="col-sm-9">@Model.TABLE9216SDESCRIPT</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">ROLESDEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.ROLESDEFFECDATESSMOKING</dd>
+            <dt class="col-sm-3">NMONTHS</dt>
+            <dd class="col-sm-9">@Model.NMONTHS</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCERTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,47 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.GROUPVARIABLES.GROUPVARIABLESDto
+
+@{
+    ViewData["Title"] = "Eliminar GROUPVARIABLES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLETT_GROUP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLETT_GROUP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SVARIABLE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SVARIABLE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SDESCRIPT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SDESCRIPT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.STABLENAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.STABLENAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCOLUMNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCOLUMNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPVARIABLE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPVARIABLE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.STABVALUE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.STABVALUE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SALIASTABLE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SALIASTABLE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SALIASCOLUMN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SALIASCOLUMN)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NLETT_GROUP" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

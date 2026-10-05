@@ -1,0 +1,50 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CONTR_LIMCOV.CONTR_LIMCOVDto
+
+@{
+    ViewData["Title"] = "Detalles de CONTR_LIMCOV";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBRANCH_REI</dt>
+            <dd class="col-sm-9">@Model.NBRANCH_REI</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NNUMBER</dt>
+            <dd class="col-sm-9">@Model.NNUMBER</dd>
+            <dt class="col-sm-3">NTYPE</dt>
+            <dd class="col-sm-9">@Model.NTYPE</dd>
+            <dt class="col-sm-3">TABLE5001</dt>
+            <dd class="col-sm-9">@Model.TABLE5001SDESCRIPT</dd>
+            <dt class="col-sm-3">NCOVERGEN</dt>
+            <dd class="col-sm-9">@Model.NCOVERGEN</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">NLINES</dt>
+            <dd class="col-sm-9">@Model.NLINES</dd>
+            <dt class="col-sm-3">NQUOTA_SHA</dt>
+            <dd class="col-sm-9">@Model.NQUOTA_SHA</dd>
+            <dt class="col-sm-3">SROUTINE</dt>
+            <dd class="col-sm-9">@Model.SROUTINE</dd>
+            <dt class="col-sm-3">NCOVERAPP</dt>
+            <dd class="col-sm-9">@Model.NCOVERAPP</dd>
+            <dt class="col-sm-3">NPERCENT</dt>
+            <dd class="col-sm-9">@Model.NPERCENT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NMAXAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NMAXAMOUNT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH_REI" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

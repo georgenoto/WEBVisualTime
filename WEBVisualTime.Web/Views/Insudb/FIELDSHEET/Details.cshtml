@@ -1,0 +1,88 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.FIELDSHEET.FIELDSHEETDto
+
+@{
+    ViewData["Title"] = "Detalles de FIELDSHEET";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NSHEET</dt>
+            <dd class="col-sm-9">@Model.NSHEET</dd>
+            <dt class="col-sm-3">NFIELD</dt>
+            <dd class="col-sm-9">@Model.NFIELD</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NFIELDTYPE</dt>
+            <dd class="col-sm-9">@Model.NFIELDTYPE</dd>
+            <dt class="col-sm-3">STABLE</dt>
+            <dd class="col-sm-9">@Model.STABLE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SFIELDDESC</dt>
+            <dd class="col-sm-9">@Model.SFIELDDESC</dd>
+            <dt class="col-sm-3">SCOLUMNNAME</dt>
+            <dd class="col-sm-9">@Model.SCOLUMNNAME</dd>
+            <dt class="col-sm-3">SVALUE</dt>
+            <dd class="col-sm-9">@Model.SVALUE</dd>
+            <dt class="col-sm-3">SRUTINE</dt>
+            <dd class="col-sm-9">@Model.SRUTINE</dd>
+            <dt class="col-sm-3">NROWORDER</dt>
+            <dd class="col-sm-9">@Model.NROWORDER</dd>
+            <dt class="col-sm-3">NFIELDORDER</dt>
+            <dd class="col-sm-9">@Model.NFIELDORDER</dd>
+            <dt class="col-sm-3">SVALUESLIST</dt>
+            <dd class="col-sm-9">@Model.SVALUESLIST</dd>
+            <dt class="col-sm-3">NFIELDLARGE</dt>
+            <dd class="col-sm-9">@Model.NFIELDLARGE</dd>
+            <dt class="col-sm-3">NOBJTYPE</dt>
+            <dd class="col-sm-9">@Model.NOBJTYPE</dd>
+            <dt class="col-sm-3">NTABLEHOMO</dt>
+            <dd class="col-sm-9">@Model.NTABLEHOMO</dd>
+            <dt class="col-sm-3">NOPERATOR</dt>
+            <dd class="col-sm-9">@Model.NOPERATOR</dd>
+            <dt class="col-sm-3">NCONDIT</dt>
+            <dd class="col-sm-9">@Model.NCONDIT</dd>
+            <dt class="col-sm-3">SFIELDCOMMEN</dt>
+            <dd class="col-sm-9">@Model.SFIELDCOMMEN</dd>
+            <dt class="col-sm-3">SFIELDREL</dt>
+            <dd class="col-sm-9">@Model.SFIELDREL</dd>
+            <dt class="col-sm-3">SOBLIGATORY</dt>
+            <dd class="col-sm-9">@Model.SOBLIGATORY</dd>
+            <dt class="col-sm-3">SLASTMOVE</dt>
+            <dd class="col-sm-9">@Model.SLASTMOVE</dd>
+            <dt class="col-sm-3">NDATATYPE</dt>
+            <dd class="col-sm-9">@Model.NDATATYPE</dd>
+            <dt class="col-sm-3">SRPARENTH</dt>
+            <dd class="col-sm-9">@Model.SRPARENTH</dd>
+            <dt class="col-sm-3">SLPARENTH</dt>
+            <dd class="col-sm-9">@Model.SLPARENTH</dd>
+            <dt class="col-sm-3">NDECIMAL</dt>
+            <dd class="col-sm-9">@Model.NDECIMAL</dd>
+            <dt class="col-sm-3">SREPORT</dt>
+            <dd class="col-sm-9">@Model.SREPORT</dd>
+            <dt class="col-sm-3">LPADVAR</dt>
+            <dd class="col-sm-9">@Model.LPADVAR</dd>
+            <dt class="col-sm-3">RPADVAR</dt>
+            <dd class="col-sm-9">@Model.RPADVAR</dd>
+            <dt class="col-sm-3">NLEVEL</dt>
+            <dd class="col-sm-9">@Model.NLEVEL</dd>
+            <dt class="col-sm-3">NCRITER_ORDER</dt>
+            <dd class="col-sm-9">@Model.NCRITER_ORDER</dd>
+            <dt class="col-sm-3">NDEFTYPE</dt>
+            <dd class="col-sm-9">@Model.NDEFTYPE</dd>
+            <dt class="col-sm-3">NIDREC</dt>
+            <dd class="col-sm-9">@Model.NIDREC</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">SUPDATEIND</dt>
+            <dd class="col-sm-9">@Model.SUPDATEIND</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NSHEET" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

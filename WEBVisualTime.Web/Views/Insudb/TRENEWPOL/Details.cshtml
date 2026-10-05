@@ -1,0 +1,78 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TRENEWPOL.TRENEWPOLDto
+
+@{
+    ViewData["Title"] = "Detalles de TRENEWPOL";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SKEY</dt>
+            <dd class="col-sm-9">@Model.SKEY</dd>
+            <dt class="col-sm-3">NPOLICY</dt>
+            <dd class="col-sm-9">@Model.NPOLICY</dd>
+            <dt class="col-sm-3">NCERTIF</dt>
+            <dd class="col-sm-9">@Model.NCERTIF</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">DEXPIRDATE</dt>
+            <dd class="col-sm-9">@Model.DEXPIRDATE</dd>
+            <dt class="col-sm-3">NINSAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NINSAMOUNT</dd>
+            <dt class="col-sm-3">NPREMIUNAN</dt>
+            <dd class="col-sm-9">@Model.NPREMIUNAN</dd>
+            <dt class="col-sm-3">NINCIDENTYP</dt>
+            <dd class="col-sm-9">@Model.NINCIDENTYP</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NPENRECAMO</dt>
+            <dd class="col-sm-9">@Model.NPENRECAMO</dd>
+            <dt class="col-sm-3">NQPAYCLAIM</dt>
+            <dd class="col-sm-9">@Model.NQPAYCLAIM</dd>
+            <dt class="col-sm-3">NPAYCLAIMAMO</dt>
+            <dd class="col-sm-9">@Model.NPAYCLAIMAMO</dd>
+            <dt class="col-sm-3">NQPENCLAIM</dt>
+            <dd class="col-sm-9">@Model.NQPENCLAIM</dd>
+            <dt class="col-sm-3">NPENCLAIMAMO</dt>
+            <dd class="col-sm-9">@Model.NPENCLAIMAMO</dd>
+            <dt class="col-sm-3">NQRECPEN</dt>
+            <dd class="col-sm-9">@Model.NQRECPEN</dd>
+            <dt class="col-sm-3">NQCLAIM</dt>
+            <dd class="col-sm-9">@Model.NQCLAIM</dd>
+            <dt class="col-sm-3">NCAPITAL</dt>
+            <dd class="col-sm-9">@Model.NCAPITAL</dd>
+            <dt class="col-sm-3">NPREMIUM</dt>
+            <dd class="col-sm-9">@Model.NPREMIUM</dd>
+            <dt class="col-sm-3">STEXT_ERR</dt>
+            <dd class="col-sm-9">@Model.STEXT_ERR</dd>
+            <dt class="col-sm-3">DSTARTDATE</dt>
+            <dd class="col-sm-9">@Model.DSTARTDATE</dd>
+            <dt class="col-sm-3">NOFFICE</dt>
+            <dd class="col-sm-9">@Model.NOFFICE</dd>
+            <dt class="col-sm-3">NAGENCY</dt>
+            <dd class="col-sm-9">@Model.NAGENCY</dd>
+            <dt class="col-sm-3">NOFFICEAGEN</dt>
+            <dd class="col-sm-9">@Model.NOFFICEAGEN</dd>
+            <dt class="col-sm-3">NINTERMED</dt>
+            <dd class="col-sm-9">@Model.NINTERMED</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NPAYFREQ</dt>
+            <dd class="col-sm-9">@Model.NPAYFREQ</dd>
+            <dt class="col-sm-3">SCOLINVOT</dt>
+            <dd class="col-sm-9">@Model.SCOLINVOT</dd>
+            <dt class="col-sm-3">NPREMIUMPROYECT</dt>
+            <dd class="col-sm-9">@Model.NPREMIUMPROYECT</dd>
+            <dt class="col-sm-3">SWARNING</dt>
+            <dd class="col-sm-9">@Model.SWARNING</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SKEY" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

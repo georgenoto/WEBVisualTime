@@ -1,0 +1,85 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLIENT_TMP.UpdateCLIENT_TMPDto
+
+@{
+    ViewData["Title"] = "Editar CLIENT_TMP";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SCERTYPE" />
+            <input type="hidden" asp-for="NBRANCH" />
+            <input type="hidden" asp-for="NPRODUCT" />
+            <input type="hidden" asp-for="NPOLICY" />
+            <input type="hidden" asp-for="NGROUP" />
+            <input type="hidden" asp-for="NROLE" />
+            <input type="hidden" asp-for="NID" />
+            <div class="mb-3">
+                <label asp-for="STYPEAGE" class="form-label"></label>
+                <input asp-for="STYPEAGE" class="form-control" />
+                <span asp-validation-for="STYPEAGE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DBIRTHDATE" class="form-label"></label>
+                <input asp-for="DBIRTHDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DBIRTHDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NINITAGE" class="form-label"></label>
+                <input asp-for="NINITAGE" class="form-control" type="number" />
+                <span asp-validation-for="NINITAGE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NENDAGE" class="form-label"></label>
+                <input asp-for="NENDAGE" class="form-control" type="number" />
+                <span asp-validation-for="NENDAGE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NINSURED" class="form-label"></label>
+                <input asp-for="NINSURED" class="form-control" type="number" />
+                <span asp-validation-for="NINSURED" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NRENTAMOUNT" class="form-label"></label>
+                <input asp-for="NRENTAMOUNT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NRENTAMOUNT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCURRENCY" class="form-label"></label>
+                <input asp-for="NCURRENCY" class="form-control" type="number" />
+                <span asp-validation-for="NCURRENCY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SVIP" class="form-label"></label>
+                <input asp-for="SVIP" class="form-control" />
+                <span asp-validation-for="SVIP" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SSEXCLIEN" class="form-label"></label>
+                <input asp-for="SSEXCLIEN" class="form-control" />
+                <span asp-validation-for="SSEXCLIEN" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

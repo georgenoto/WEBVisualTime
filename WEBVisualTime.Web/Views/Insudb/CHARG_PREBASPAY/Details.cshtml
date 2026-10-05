@@ -1,0 +1,46 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CHARG_PREBASPAY.CHARG_PREBASPAYDto
+
+@{
+    ViewData["Title"] = "Detalles de CHARG_PREBASPAY";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NAGE_INIT</dt>
+            <dd class="col-sm-9">@Model.NAGE_INIT</dd>
+            <dt class="col-sm-3">NMONTH_INI</dt>
+            <dd class="col-sm-9">@Model.NMONTH_INI</dd>
+            <dt class="col-sm-3">NOPTION</dt>
+            <dd class="col-sm-9">@Model.NOPTION</dd>
+            <dt class="col-sm-3">NAGE_END</dt>
+            <dd class="col-sm-9">@Model.NAGE_END</dd>
+            <dt class="col-sm-3">NMONTH_END</dt>
+            <dd class="col-sm-9">@Model.NMONTH_END</dd>
+            <dt class="col-sm-3">NTYPE_CHARG</dt>
+            <dd class="col-sm-9">@Model.NTYPE_CHARG</dd>
+            <dt class="col-sm-3">NRATE</dt>
+            <dd class="col-sm-9">@Model.NRATE</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NRATE_PPIN</dt>
+            <dd class="col-sm-9">@Model.NRATE_PPIN</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SAPLYQUOT</dt>
+            <dd class="col-sm-9">@Model.SAPLYQUOT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

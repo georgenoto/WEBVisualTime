@@ -1,0 +1,77 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLIENT_HIS.CLIENT_HISDto
+
+@{
+    ViewData["Title"] = "Eliminar CLIENT_HIS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DEFFECDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DEFFECDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SFIRSTNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SFIRSTNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SLASTNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SLASTNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SLASTNAME2)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SLASTNAME2)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSEXCLIEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSEXCLIEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCIVILSTA)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCIVILSTA)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SBLOCKADE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SBLOCKADE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NHEALTH_ORG)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NHEALTH_ORG)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAFP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAFP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DWEDD)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DWEDD)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINCAPACITY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINCAPACITY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINCAP_COD)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINCAP_COD)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDRIVERDAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDRIVERDAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDRIVEXPDAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDRIVEXPDAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPDRIVER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPDRIVER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLIMITDRIV)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLIMITDRIV)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DNULLDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DNULLDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SLEGALNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SLEGALNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DINCAPACITY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DINCAPACITY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NID)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDEPENDANT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDEPENDANT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DINDEPENDANT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DINDEPENDANT)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.SCLIENT" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

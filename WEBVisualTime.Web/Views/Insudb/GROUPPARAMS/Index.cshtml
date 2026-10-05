@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.GROUPPARAMS.GROUPPARAMSDto>
+
+@{
+    ViewData["Title"] = "GROUPPARAMS";
+    ViewData["ColumnHeaders"] = new[] { "NLETT_GROUP", "DCOMPDATE", "SDESCRIPT", "NUSERCODE", "SPARAMETERS" };
+    ViewData["ColumnProperties"] = new[] { "NLETT_GROUP", "DCOMPDATE", "SDESCRIPT", "NUSERCODE", "SPARAMETERS" };
+    ViewData["KeyName"] = "NLETT_GROUP";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TRELDOC.TRELDOCDto>
+
+@{
+    ViewData["Title"] = "TRELDOC";
+    ViewData["ColumnHeaders"] = new[] { "NBORDEREAUX", "NSEQUENCE", "NCOLLECDOCTYP", "NRECEIPT", "NBRANCH", "NPRODUCT", "NPOLICY", "NCERTIF", "NCONTRAT", "NDRAFT", "NBULLETINS", "NPROPONUM", "NIDMOV", "NAMOUNT", "NINTERESTAMOUNT", "NCURRENCY", "NEXCHANGE", "DCOMPDATE", "DPAYDATE", "DVALUEDATE", "NCHANGESDAT", "NORIGIN", "DDATE_ORIGIN", "NINSTITUTION", "NCOLLECTOR", "NAMOUNTDEC", "NLOANS", "NINDREV", "NTYP_PROFITWORKER", "NAMOUNT_LOC", "NCOD_SAAPV", "SFOLIONUMBER" };
+    ViewData["ColumnProperties"] = new[] { "NBORDEREAUX", "NSEQUENCE", "NCOLLECDOCTYP", "NRECEIPT", "NBRANCH", "NPRODUCT", "NPOLICY", "NCERTIF", "NCONTRAT", "NDRAFT", "NBULLETINS", "NPROPONUM", "NIDMOV", "NAMOUNT", "NINTERESTAMOUNT", "NCURRENCY", "NEXCHANGE", "DCOMPDATE", "DPAYDATE", "DVALUEDATE", "NCHANGESDAT", "NORIGIN", "DDATE_ORIGIN", "NINSTITUTION", "NCOLLECTOR", "NAMOUNTDEC", "NLOANS", "NINDREV", "NTYP_PROFITWORKER", "NAMOUNT_LOC", "NCOD_SAAPV", "SFOLIONUMBER" };
+    ViewData["KeyName"] = "NBORDEREAUX";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

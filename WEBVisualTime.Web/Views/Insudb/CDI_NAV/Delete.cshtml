@@ -1,0 +1,45 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_NAV.CDI_NAVDto
+
+@{
+    ViewData["Title"] = "Eliminar CDI_NAV";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAV_TYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAV_TYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAV_FNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAV_FNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAV_NAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAV_NAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAV_BTNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAV_BTNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAV_CNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAV_CNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAV_REF_BTNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAV_REF_BTNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAV_REF_CNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAV_REF_CNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAV_SEQ)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAV_SEQ)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAV_ASSOC_END)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAV_ASSOC_END)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAV_DESCRIPTION)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAV_DESCRIPTION)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NAV_TYPE" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

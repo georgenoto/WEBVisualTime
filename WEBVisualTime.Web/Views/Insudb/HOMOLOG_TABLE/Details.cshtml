@@ -1,0 +1,42 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.HOMOLOG_TABLE.HOMOLOG_TABLEDto
+
+@{
+    ViewData["Title"] = "Detalles de HOMOLOG_TABLE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NSYSTEM</dt>
+            <dd class="col-sm-9">@Model.NSYSTEM</dd>
+            <dt class="col-sm-3">NTABLE</dt>
+            <dd class="col-sm-9">@Model.NTABLE</dd>
+            <dt class="col-sm-3">NID</dt>
+            <dd class="col-sm-9">@Model.NID</dd>
+            <dt class="col-sm-3">SCOLUMNNAME_VT</dt>
+            <dd class="col-sm-9">@Model.SCOLUMNNAME_VT</dd>
+            <dt class="col-sm-3">SCODVALUE_VT</dt>
+            <dd class="col-sm-9">@Model.SCODVALUE_VT</dd>
+            <dt class="col-sm-3">SVALUE_VT</dt>
+            <dd class="col-sm-9">@Model.SVALUE_VT</dd>
+            <dt class="col-sm-3">STABLENAME</dt>
+            <dd class="col-sm-9">@Model.STABLENAME</dd>
+            <dt class="col-sm-3">SCOLUMNNAME</dt>
+            <dd class="col-sm-9">@Model.SCOLUMNNAME</dd>
+            <dt class="col-sm-3">SCODVALUE</dt>
+            <dd class="col-sm-9">@Model.SCODVALUE</dd>
+            <dt class="col-sm-3">SPREDOM</dt>
+            <dd class="col-sm-9">@Model.SPREDOM</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NSYSTEM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,44 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.SITUATION.SITUATIONDto
+
+@{
+    ViewData["Title"] = "Detalles de SITUATION";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">POLICYSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.POLICYSCERTYPESACCOUNTI</dd>
+            <dt class="col-sm-3">POLICYNBRANCH</dt>
+            <dd class="col-sm-9">@Model.POLICYNBRANCHSACCOUNTI</dd>
+            <dt class="col-sm-3">POLICYNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.POLICYNPRODUCTSACCOUNTI</dd>
+            <dt class="col-sm-3">POLICYNPOLICY</dt>
+            <dd class="col-sm-9">@Model.POLICYNPOLICYSACCOUNTI</dd>
+            <dt class="col-sm-3">NSITUATION</dt>
+            <dd class="col-sm-9">@Model.NSITUATION</dd>
+            <dt class="col-sm-3">NCOD_AGREE</dt>
+            <dd class="col-sm-9">@Model.NCOD_AGREE</dd>
+            <dt class="col-sm-3">CLIENT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NPARTICIP_POLEMP</dt>
+            <dd class="col-sm-9">@Model.NPARTICIP_POLEMP</dd>
+            <dt class="col-sm-3">NPARTICIP_POLCO</dt>
+            <dd class="col-sm-9">@Model.NPARTICIP_POLCO</dd>
+            <dt class="col-sm-3">NTYPCLIENTDOC</dt>
+            <dd class="col-sm-9">@Model.NTYPCLIENTDOC</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCERTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.T_PARAM_INTERFACE.T_PARAM_INTERFACEDto>
+
+@{
+    ViewData["Title"] = "T_PARAM_INTERFACE";
+    ViewData["ColumnHeaders"] = new[] { "SKEY", "NFIELD", "SVALUE", "NUSERCODE", "DCOMPDATE" };
+    ViewData["ColumnProperties"] = new[] { "SKEY", "NFIELD", "SVALUE", "NUSERCODE", "DCOMPDATE" };
+    ViewData["KeyName"] = "SKEY";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

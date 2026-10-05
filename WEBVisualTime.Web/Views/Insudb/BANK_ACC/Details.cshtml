@@ -1,0 +1,64 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.BANK_ACC.BANK_ACCDto
+
+@{
+    ViewData["Title"] = "Detalles de BANK_ACC";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NACC_BANK</dt>
+            <dd class="col-sm-9">@Model.NACC_BANK</dd>
+            <dt class="col-sm-3">SACC_LEDGER</dt>
+            <dd class="col-sm-9">@Model.SACC_LEDGER</dd>
+            <dt class="col-sm-3">TAB_BK_AGENBANK_CODE</dt>
+            <dd class="col-sm-9">@Model.TAB_BK_AGENBANK_CODESDESCRIPT</dd>
+            <dt class="col-sm-3">TAB_BK_AGENBK_AGENCY</dt>
+            <dd class="col-sm-9">@Model.TAB_BK_AGENBK_AGENCYSDESCRIPT</dd>
+            <dt class="col-sm-3">SACC_NUMBER</dt>
+            <dd class="col-sm-9">@Model.SACC_NUMBER</dd>
+            <dt class="col-sm-3">SAUX_ACCOUN</dt>
+            <dd class="col-sm-9">@Model.SAUX_ACCOUN</dd>
+            <dt class="col-sm-3">TABLE190</dt>
+            <dd class="col-sm-9">@Model.TABLE190SDESCRIPT</dd>
+            <dt class="col-sm-3">NAVAILABLE</dt>
+            <dd class="col-sm-9">@Model.NAVAILABLE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">TABLE197</dt>
+            <dd class="col-sm-9">@Model.TABLE197SDESCRIPT</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NLED_COMPAN</dt>
+            <dd class="col-sm-9">@Model.NLED_COMPAN</dd>
+            <dt class="col-sm-3">NOFFICE</dt>
+            <dd class="col-sm-9">@Model.NOFFICE</dd>
+            <dt class="col-sm-3">NTRANSIT_1</dt>
+            <dd class="col-sm-9">@Model.NTRANSIT_1</dd>
+            <dt class="col-sm-3">NTRANSIT_2</dt>
+            <dd class="col-sm-9">@Model.NTRANSIT_2</dd>
+            <dt class="col-sm-3">NTRANSIT_3</dt>
+            <dd class="col-sm-9">@Model.NTRANSIT_3</dd>
+            <dt class="col-sm-3">NTRANSIT_4</dt>
+            <dd class="col-sm-9">@Model.NTRANSIT_4</dd>
+            <dt class="col-sm-3">NTRANSIT_5</dt>
+            <dd class="col-sm-9">@Model.NTRANSIT_5</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">COMPANY</dt>
+            <dd class="col-sm-9">@Model.COMPANYSACCOUNT</dd>
+            <dt class="col-sm-3">DREALDEP</dt>
+            <dd class="col-sm-9">@Model.DREALDEP</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NACC_BANK" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

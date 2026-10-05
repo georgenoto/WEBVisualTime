@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TREINSURAN_CESSION.TREINSURAN_CESSIONDto>
+
+@{
+    ViewData["Title"] = "TREINSURAN_CESSION";
+    ViewData["ColumnHeaders"] = new[] { "SCERTYPE", "NBRANCH", "NPRODUCT", "NPOLICY", "NCERTIF", "NMODULEC", "NCOVER", "NTYPE_REIN", "SCLIENT", "DEFFECDATE", "NCOMPANY", "NCOVAPPSCOPE", "NBRANCH_REI", "NSHARE", "NRATE", "NLIMITFROM", "NLIMIT", "NCAPITAL", "NCOMMISSI", "NPREMIUM_AGREE", "NPREMIUM", "NCOMMISSIONAMOUNT", "NTAXPERCEN", "NTAXAMOUNT", "SKEY", "DNULLDATE", "DCOMPDATE", "NUSERCODE", "NORDER", "NCURRENCY", "NNUMBER", "DISSUEDATE" };
+    ViewData["ColumnProperties"] = new[] { "SCERTYPE", "NBRANCH", "NPRODUCT", "NPOLICY", "NCERTIF", "NMODULEC", "NCOVER", "NTYPE_REIN", "SCLIENT", "DEFFECDATE", "NCOMPANY", "NCOVAPPSCOPE", "NBRANCH_REI", "NSHARE", "NRATE", "NLIMITFROM", "NLIMIT", "NCAPITAL", "NCOMMISSI", "NPREMIUM_AGREE", "NPREMIUM", "NCOMMISSIONAMOUNT", "NTAXPERCEN", "NTAXAMOUNT", "SKEY", "DNULLDATE", "DCOMPDATE", "NUSERCODE", "NORDER", "NCURRENCY", "NNUMBER", "DISSUEDATE" };
+    ViewData["KeyName"] = "SCERTYPE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

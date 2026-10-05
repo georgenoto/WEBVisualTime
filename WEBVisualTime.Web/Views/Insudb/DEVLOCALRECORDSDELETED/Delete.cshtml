@@ -1,0 +1,35 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.DEVLOCALRECORDSDELETED.DEVLOCALRECORDSDELETEDDto
+
+@{
+    ViewData["Title"] = "Eliminar DEVLOCALRECORDSDELETED";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LOCALRECDELID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LOCALRECDELID)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DELDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DELDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PKEY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.PKEY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LOCALTABLEID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LOCALTABLEID)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.LOCALRECDELID" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

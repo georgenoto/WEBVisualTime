@@ -1,0 +1,48 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_VALID_PREFS.CreateCDI_VALID_PREFSDto
+
+@{
+    ViewData["Title"] = "Crear CDI_VALID_PREFS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="VP_DOMAIN" class="form-label"></label>
+                <input asp-for="VP_DOMAIN" class="form-control" />
+                <span asp-validation-for="VP_DOMAIN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="VP_VALUE" class="form-label"></label>
+                <input asp-for="VP_VALUE" class="form-control" />
+                <span asp-validation-for="VP_VALUE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="VP_MEANING" class="form-label"></label>
+                <input asp-for="VP_MEANING" class="form-control" />
+                <span asp-validation-for="VP_MEANING" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="VP_ABBREVIATION" class="form-label"></label>
+                <input asp-for="VP_ABBREVIATION" class="form-control" />
+                <span asp-validation-for="VP_ABBREVIATION" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NLS_LANG" class="form-label"></label>
+                <input asp-for="NLS_LANG" class="form-control" />
+                <span asp-validation-for="NLS_LANG" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

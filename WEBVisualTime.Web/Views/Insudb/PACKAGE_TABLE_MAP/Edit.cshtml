@@ -1,0 +1,38 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.PACKAGE_TABLE_MAP.UpdatePACKAGE_TABLE_MAPDto
+
+@{
+    ViewData["Title"] = "Editar PACKAGE_TABLE_MAP";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="OWNER" class="form-label"></label>
+                <input asp-for="OWNER" class="form-control" />
+                <span asp-validation-for="OWNER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PACKAGE_NAME" class="form-label"></label>
+                <input asp-for="PACKAGE_NAME" class="form-control" />
+                <span asp-validation-for="PACKAGE_NAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="TABLE_NAME" class="form-label"></label>
+                <input asp-for="TABLE_NAME" class="form-control" />
+                <span asp-validation-for="TABLE_NAME" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

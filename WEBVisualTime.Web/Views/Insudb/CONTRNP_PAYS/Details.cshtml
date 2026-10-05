@@ -1,0 +1,40 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CONTRNP_PAYS.CONTRNP_PAYSDto
+
+@{
+    ViewData["Title"] = "Detalles de CONTRNP_PAYS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CONTRNPRONBRANCH_REI</dt>
+            <dd class="col-sm-9">@Model.CONTRNPRONBRANCH_REISDESCRIPT</dd>
+            <dt class="col-sm-3">CONTRNPRODEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.CONTRNPRODEFFECDATESDESCRIPT</dd>
+            <dt class="col-sm-3">CONTRNPRONNUMBER</dt>
+            <dd class="col-sm-9">@Model.CONTRNPRONNUMBERSDESCRIPT</dd>
+            <dt class="col-sm-3">CONTRNPRONTYPE</dt>
+            <dd class="col-sm-9">@Model.CONTRNPRONTYPESDESCRIPT</dd>
+            <dt class="col-sm-3">NMONTH</dt>
+            <dd class="col-sm-9">@Model.NMONTH</dd>
+            <dt class="col-sm-3">NYEAR</dt>
+            <dd class="col-sm-9">@Model.NYEAR</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">SCUENTECN</dt>
+            <dd class="col-sm-9">@Model.SCUENTECN</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH_REI" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

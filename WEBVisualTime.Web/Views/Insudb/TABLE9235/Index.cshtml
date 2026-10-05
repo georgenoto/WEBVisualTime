@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TABLE9235.TABLE9235Dto>
+
+@{
+    ViewData["Title"] = "TABLE9235";
+    ViewData["ColumnHeaders"] = new[] { "STYPDIS_PAYPERCEN", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "DCOMPDATE", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "STYPDIS_PAYPERCEN", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "DCOMPDATE", "NUSERCODE" };
+    ViewData["KeyName"] = "STYPDIS_PAYPERCEN";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

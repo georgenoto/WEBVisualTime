@@ -1,0 +1,63 @@
+namespace WEBVisualTime.Servicios.Insudb.DTOs.LIFE_COVER;
+
+public class LIFE_COVERDto
+{
+    public int NBRANCH { get; set; }
+    public int NCOVER { get; set; }
+    public int NPRODUCT { get; set; }
+    public int NMODULEC { get; set; }
+    public DateTime DEFFECDATE { get; set; }
+    public string? SADDSUINI { get; set; }
+    public string? SADDREINI { get; set; }
+    public string? SADDTAXIN { get; set; }
+    public int NCOVERGEN { get; set; }
+    public string? TAB_LIFCOVSCACALFRI { get; set; }
+    public int? NBILL_ITEM { get; set; }
+    public int NBRANCH_GEN { get; set; }
+    public string? TABLE634SDESCRIPT { get; set; }
+    public int NBRANCH_EST { get; set; }
+    public string? TABLE71SDESCRIPT { get; set; }
+    public int NBRANCH_LED { get; set; }
+    public string? TABLE75SDESCRIPT { get; set; }
+    public int NBRANCH_REI { get; set; }
+    public string? TABLE5000SDESCRIPT { get; set; }
+    public decimal? NCAEXTEXP { get; set; }
+    public string? SMORTACOF { get; set; }
+    public decimal? NCAINTEXP { get; set; }
+    public string? SMORTACOM { get; set; }
+    public int NRETARIF { get; set; }
+    public string? TABLE5559SDESCRIPT { get; set; }
+    public DateTime? DCOMPDATE { get; set; }
+    public string? SCOVERUSE { get; set; }
+    public int? NCURRENCY { get; set; }
+    public decimal? NINTEREST { get; set; }
+    public DateTime? DNULLDATE { get; set; }
+    public long? NNOTENUM { get; set; }
+    public decimal? NPREXTEXP { get; set; }
+    public decimal? NPRINTEXP { get; set; }
+    public string? SROURESER { get; set; }
+    public string? SROUSURRE { get; set; }
+    public string? SSTATREGT { get; set; }
+    public int? NUSERCODE { get; set; }
+    public string? SCONTROL { get; set; }
+    public decimal? NPER_TABMOR { get; set; }
+    public string? SCALREIN { get; set; }
+    public string? SDEPEND { get; set; }
+    public string? SSURV { get; set; }
+    public string? SREINORIGCOND { get; set; }
+    public string? SCONDSVS { get; set; }
+    public string? SROUCLATEC { get; set; }
+    public string? SROUTRESRISK { get; set; }
+    public decimal? NRATECLA { get; set; }
+    public long? NFIXAMOCLA { get; set; }
+    public long? NMINAMOCLA { get; set; }
+    public long? NMAXAMOCLA { get; set; }
+    public decimal? NDISCCLA { get; set; }
+    public decimal? NDISC_AMOCLA { get; set; }
+    public int? NFRANCDAYS { get; set; }
+    public string? SRESOLUTION { get; set; }
+    public string? SGOVAPRNAME { get; set; }
+    public DateTime? DRESDATE { get; set; }
+    public string? STECPREMIND { get; set; }
+    public string? SRISPREMIND { get; set; }
+}

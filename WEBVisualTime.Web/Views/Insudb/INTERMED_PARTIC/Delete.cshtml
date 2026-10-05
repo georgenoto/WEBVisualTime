@@ -1,0 +1,41 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.INTERMED_PARTIC.INTERMED_PARTICDto
+
+@{
+    ViewData["Title"] = "Eliminar INTERMED_PARTIC";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINTERMED)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINTERMED)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSUPERIN_NUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSUPERIN_NUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DSUPERIN_NUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DSUPERIN_NUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NWARRAN_POL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NWARRAN_POL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCIRCULAR_DOC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCIRCULAR_DOC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DEXPSUPERIN_NUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DEXPSUPERIN_NUM)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NINTERMED" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

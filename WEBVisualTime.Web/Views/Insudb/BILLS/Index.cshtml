@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.BILLS.BILLSDto>
+
+@{
+    ViewData["Title"] = "BILLS";
+    ViewData["ColumnHeaders"] = new[] { "TABLE5001", "SBILLTYPE", "SBILLING", "NBILLNUM", "NCURRENCY", "CLIENT", "NAMOUNT", "NAMO_AFEC", "NAMO_EXEN", "NIVA", "NCRE_NOTE", "NNEWBILL", "DCOMPDATE", "NUSERCODE", "TABLE5564", "DSTATDATE", "DVALDATE", "SKEYADDRESS", "NRECOWNER", "SBILL_IND", "SORIGIN", "NPREVBILL", "DISSUEDAT", "SBILLFULLNUM", "SAUTHORIZATION", "NRUCPRINT", "NIDTRANSACTION", "SBILLNUMSFE", "NBORDEREAUX", "NPOLICY", "NNULLCODE", "NCERTIF", "NRECEIPTCORP" };
+    ViewData["ColumnProperties"] = new[] { "TABLE5001SDESCRIPT", "SBILLTYPE", "SBILLING", "NBILLNUM", "NCURRENCY", "CLIENTSACCOUNT_IN", "NAMOUNT", "NAMO_AFEC", "NAMO_EXEN", "NIVA", "NCRE_NOTE", "NNEWBILL", "DCOMPDATE", "NUSERCODE", "TABLE5564SDESCRIPT", "DSTATDATE", "DVALDATE", "SKEYADDRESS", "NRECOWNER", "SBILL_IND", "SORIGIN", "NPREVBILL", "DISSUEDAT", "SBILLFULLNUM", "SAUTHORIZATION", "NRUCPRINT", "NIDTRANSACTION", "SBILLNUMSFE", "NBORDEREAUX", "NPOLICY", "NNULLCODE", "NCERTIF", "NRECEIPTCORP" };
+    ViewData["KeyName"] = "NINSUR_AREA";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

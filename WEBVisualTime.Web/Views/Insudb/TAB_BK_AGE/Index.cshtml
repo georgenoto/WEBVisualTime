@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAB_BK_AGE.TAB_BK_AGEDto>
+
+@{
+    ViewData["Title"] = "TAB_BK_AGE";
+    ViewData["ColumnHeaders"] = new[] { "TABLE7", "NBK_AGENCY", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "SN_ABA" };
+    ViewData["ColumnProperties"] = new[] { "TABLE7SDESCRIPT", "NBK_AGENCY", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "SN_ABA" };
+    ViewData["KeyName"] = "NBANK_CODE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

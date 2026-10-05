@@ -1,0 +1,82 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.HIS_ASC_II.HIS_ASC_IIDto
+
+@{
+    ViewData["Title"] = "Detalles de HIS_ASC_II";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NID_UPLOAD</dt>
+            <dd class="col-sm-9">@Model.NID_UPLOAD</dd>
+            <dt class="col-sm-3">NID</dt>
+            <dd class="col-sm-9">@Model.NID</dd>
+            <dt class="col-sm-3">SBANK_ORI</dt>
+            <dd class="col-sm-9">@Model.SBANK_ORI</dd>
+            <dt class="col-sm-3">NPERIOD_YEAR</dt>
+            <dd class="col-sm-9">@Model.NPERIOD_YEAR</dd>
+            <dt class="col-sm-3">NPERIOD_MONTH</dt>
+            <dd class="col-sm-9">@Model.NPERIOD_MONTH</dd>
+            <dt class="col-sm-3">NORDER</dt>
+            <dd class="col-sm-9">@Model.NORDER</dd>
+            <dt class="col-sm-3">SUNIQ_CODE</dt>
+            <dd class="col-sm-9">@Model.SUNIQ_CODE</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">SCURRENCY</dt>
+            <dd class="col-sm-9">@Model.SCURRENCY</dd>
+            <dt class="col-sm-3">SPAY_MET</dt>
+            <dd class="col-sm-9">@Model.SPAY_MET</dd>
+            <dt class="col-sm-3">SCONCEPT</dt>
+            <dd class="col-sm-9">@Model.SCONCEPT</dd>
+            <dt class="col-sm-3">SREFERENCE</dt>
+            <dd class="col-sm-9">@Model.SREFERENCE</dd>
+            <dt class="col-sm-3">SDOC_TYPE</dt>
+            <dd class="col-sm-9">@Model.SDOC_TYPE</dd>
+            <dt class="col-sm-3">SCLIENAME</dt>
+            <dd class="col-sm-9">@Model.SCLIENAME</dd>
+            <dt class="col-sm-3">SPHON_BEN</dt>
+            <dd class="col-sm-9">@Model.SPHON_BEN</dd>
+            <dt class="col-sm-3">SBANKACCOUNT</dt>
+            <dd class="col-sm-9">@Model.SBANKACCOUNT</dd>
+            <dt class="col-sm-3">SBANKEXT</dt>
+            <dd class="col-sm-9">@Model.SBANKEXT</dd>
+            <dt class="col-sm-3">SSTATUS</dt>
+            <dd class="col-sm-9">@Model.SSTATUS</dd>
+            <dt class="col-sm-3">SREASON</dt>
+            <dd class="col-sm-9">@Model.SREASON</dd>
+            <dt class="col-sm-3">SDETAIL</dt>
+            <dd class="col-sm-9">@Model.SDETAIL</dd>
+            <dt class="col-sm-3">NCHEQUE</dt>
+            <dd class="col-sm-9">@Model.NCHEQUE</dd>
+            <dt class="col-sm-3">NORDER_ACH</dt>
+            <dd class="col-sm-9">@Model.NORDER_ACH</dd>
+            <dt class="col-sm-3">DATE_UPLOAD</dt>
+            <dd class="col-sm-9">@Model.DATE_UPLOAD</dd>
+            <dt class="col-sm-3">DATE_PAY</dt>
+            <dd class="col-sm-9">@Model.DATE_PAY</dd>
+            <dt class="col-sm-3">NTRANSF</dt>
+            <dd class="col-sm-9">@Model.NTRANSF</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SSTATMOV</dt>
+            <dd class="col-sm-9">@Model.SSTATMOV</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NREQUEST_NU</dt>
+            <dd class="col-sm-9">@Model.NREQUEST_NU</dd>
+            <dt class="col-sm-3">SKEY</dt>
+            <dd class="col-sm-9">@Model.SKEY</dd>
+            <dt class="col-sm-3">NDOCUMENT</dt>
+            <dd class="col-sm-9">@Model.NDOCUMENT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NID_UPLOAD" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

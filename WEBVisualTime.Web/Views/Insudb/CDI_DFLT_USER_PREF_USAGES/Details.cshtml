@@ -1,0 +1,98 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_DFLT_USER_PREF_USAGES.CDI_DFLT_USER_PREF_USAGESDto
+
+@{
+    ViewData["Title"] = "Detalles de CDI_DFLT_USER_PREF_USAGES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">P_SNAME</dt>
+            <dd class="col-sm-9">@Model.P_SNAME</dd>
+            <dt class="col-sm-3">P_CGVERSION</dt>
+            <dd class="col-sm-9">@Model.P_CGVERSION</dd>
+            <dt class="col-sm-3">PF_SEQ</dt>
+            <dd class="col-sm-9">@Model.PF_SEQ</dd>
+            <dt class="col-sm-3">DUP_SNAME</dt>
+            <dd class="col-sm-9">@Model.DUP_SNAME</dd>
+            <dt class="col-sm-3">VALUE</dt>
+            <dd class="col-sm-9">@Model.VALUE</dd>
+            <dt class="col-sm-3">DUP_INTERNAL</dt>
+            <dd class="col-sm-9">@Model.DUP_INTERNAL</dd>
+            <dt class="col-sm-3">DUP_TYPE</dt>
+            <dd class="col-sm-9">@Model.DUP_TYPE</dd>
+            <dt class="col-sm-3">DESCRIPTION_MSGID</dt>
+            <dd class="col-sm-9">@Model.DESCRIPTION_MSGID</dd>
+            <dt class="col-sm-3">MANDATORY</dt>
+            <dd class="col-sm-9">@Model.MANDATORY</dd>
+            <dt class="col-sm-3">CHR_DOMAIN</dt>
+            <dd class="col-sm-9">@Model.CHR_DOMAIN</dd>
+            <dt class="col-sm-3">CHR_MAXLEN</dt>
+            <dd class="col-sm-9">@Model.CHR_MAXLEN</dd>
+            <dt class="col-sm-3">NUM_HIVAL</dt>
+            <dd class="col-sm-9">@Model.NUM_HIVAL</dd>
+            <dt class="col-sm-3">NUM_LOVAL</dt>
+            <dd class="col-sm-9">@Model.NUM_LOVAL</dd>
+            <dt class="col-sm-3">DOM</dt>
+            <dd class="col-sm-9">@Model.DOM</dd>
+            <dt class="col-sm-3">TAB</dt>
+            <dd class="col-sm-9">@Model.TAB</dd>
+            <dt class="col-sm-3">CON</dt>
+            <dd class="col-sm-9">@Model.CON</dd>
+            <dt class="col-sm-3">COL</dt>
+            <dd class="col-sm-9">@Model.COL</dd>
+            <dt class="col-sm-3">MOD</dt>
+            <dd class="col-sm-9">@Model.MOD</dd>
+            <dt class="col-sm-3">DTU</dt>
+            <dd class="col-sm-9">@Model.DTU</dd>
+            <dt class="col-sm-3">CONU</dt>
+            <dd class="col-sm-9">@Model.CONU</dd>
+            <dt class="col-sm-3">IGRP</dt>
+            <dd class="col-sm-9">@Model.IGRP</dd>
+            <dt class="col-sm-3">DCU</dt>
+            <dd class="col-sm-9">@Model.DCU</dd>
+            <dt class="col-sm-3">ABT</dt>
+            <dd class="col-sm-9">@Model.ABT</dd>
+            <dt class="col-sm-3">VAT</dt>
+            <dd class="col-sm-9">@Model.VAT</dd>
+            <dt class="col-sm-3">OBT</dt>
+            <dd class="col-sm-9">@Model.OBT</dd>
+            <dt class="col-sm-3">TME</dt>
+            <dd class="col-sm-9">@Model.TME</dd>
+            <dt class="col-sm-3">ARL</dt>
+            <dd class="col-sm-9">@Model.ARL</dd>
+            <dt class="col-sm-3">TAT</dt>
+            <dd class="col-sm-9">@Model.TAT</dd>
+            <dt class="col-sm-3">TOP</dt>
+            <dd class="col-sm-9">@Model.TOP</dd>
+            <dt class="col-sm-3">OPP</dt>
+            <dd class="col-sm-9">@Model.OPP</dd>
+            <dt class="col-sm-3">VVA</dt>
+            <dd class="col-sm-9">@Model.VVA</dd>
+            <dt class="col-sm-3">ABTABT</dt>
+            <dd class="col-sm-9">@Model.ABTABT</dd>
+            <dt class="col-sm-3">TCO</dt>
+            <dd class="col-sm-9">@Model.TCO</dd>
+            <dt class="col-sm-3">GES</dt>
+            <dd class="col-sm-9">@Model.GES</dd>
+            <dt class="col-sm-3">PCK</dt>
+            <dd class="col-sm-9">@Model.PCK</dd>
+            <dt class="col-sm-3">LOV</dt>
+            <dd class="col-sm-9">@Model.LOV</dd>
+            <dt class="col-sm-3">SUB</dt>
+            <dd class="col-sm-9">@Model.SUB</dd>
+            <dt class="col-sm-3">ACI</dt>
+            <dd class="col-sm-9">@Model.ACI</dd>
+            <dt class="col-sm-3">NLS_LANG</dt>
+            <dd class="col-sm-9">@Model.NLS_LANG</dd>
+            <dt class="col-sm-3">DESCRIPTION</dt>
+            <dd class="col-sm-9">@Model.DESCRIPTION</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.P_SNAME" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

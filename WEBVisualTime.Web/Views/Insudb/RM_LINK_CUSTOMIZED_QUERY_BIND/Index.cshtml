@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.RM_LINK_CUSTOMIZED_QUERY_BIND.RM_LINK_CUSTOMIZED_QUERY_BINDDto>
+
+@{
+    ViewData["Title"] = "RM_LINK_CUSTOMIZED_QUERY_BIND";
+    ViewData["ColumnHeaders"] = new[] { "QUERY_NAME", "BIND_NAME", "BIND_PROPERTY_NAME", "BIND_SEQUENCE" };
+    ViewData["ColumnProperties"] = new[] { "QUERY_NAME", "BIND_NAME", "BIND_PROPERTY_NAME", "BIND_SEQUENCE" };
+    ViewData["KeyName"] = "QUERY_NAME";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.REINSU_FRE.REINSU_FREDto>
+
+@{
+    ViewData["Title"] = "REINSU_FRE";
+    ViewData["ColumnHeaders"] = new[] { "SBUSSITYPE", "DEFFECDATE", "NCOMPANY", "SFREE", "NTYPE_REL", "NNUMBER", "DCOMPDATE", "NTYPE", "NCLAIM_AM", "NYEAR_CONTR", "NPREMIUM_AM", "NBRANCH", "NCURRENCY", "TABLE97", "NPERIODY", "NUSERCODE", "NYEAR", "NYEAR_SER" };
+    ViewData["ColumnProperties"] = new[] { "SBUSSITYPE", "DEFFECDATE", "NCOMPANY", "SFREE", "NTYPE_REL", "NNUMBER", "DCOMPDATE", "NTYPE", "NCLAIM_AM", "NYEAR_CONTR", "NPREMIUM_AM", "NBRANCH", "NCURRENCY", "TABLE97SDESCRIPT", "NPERIODY", "NUSERCODE", "NYEAR", "NYEAR_SER" };
+    ViewData["KeyName"] = "DEFFECDATE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

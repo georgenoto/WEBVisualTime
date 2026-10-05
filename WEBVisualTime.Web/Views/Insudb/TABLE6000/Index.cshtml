@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TABLE6000.TABLE6000Dto>
+
+@{
+    ViewData["Title"] = "TABLE6000";
+    ViewData["ColumnHeaders"] = new[] { "NTYPEOFADDRESS", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "NUSERCODE", "SSTATREGT" };
+    ViewData["ColumnProperties"] = new[] { "NTYPEOFADDRESS", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "NUSERCODE", "SSTATREGT" };
+    ViewData["KeyName"] = "NTYPEOFADDRESS";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

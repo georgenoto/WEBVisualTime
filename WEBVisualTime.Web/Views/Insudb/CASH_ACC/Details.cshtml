@@ -1,0 +1,48 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CASH_ACC.CASH_ACCDto
+
+@{
+    ViewData["Title"] = "Detalles de CASH_ACC";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NACC_CASH</dt>
+            <dd class="col-sm-9">@Model.NACC_CASH</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">LEDGER_ACCNLED_COMPAN</dt>
+            <dd class="col-sm-9">@Model.LEDGER_ACCNLED_COMPANSADJU_EXCI</dd>
+            <dt class="col-sm-3">LEDGER_ACCSACCOUNT</dt>
+            <dd class="col-sm-9">@Model.LEDGER_ACCSACCOUNTSADJU_EXCI</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">LEDGER_ACCSAUX_ACCOUN</dt>
+            <dd class="col-sm-9">@Model.LEDGER_ACCSAUX_ACCOUNSADJU_EXCI</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NAVAILABLE</dt>
+            <dd class="col-sm-9">@Model.NAVAILABLE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">NCASHNUM</dt>
+            <dd class="col-sm-9">@Model.NCASHNUM</dd>
+            <dt class="col-sm-3">NMIN_AMOUNT</dt>
+            <dd class="col-sm-9">@Model.NMIN_AMOUNT</dd>
+            <dt class="col-sm-3">COMPANY</dt>
+            <dd class="col-sm-9">@Model.COMPANYSACCOUNT</dd>
+            <dt class="col-sm-3">NTYPECASH</dt>
+            <dd class="col-sm-9">@Model.NTYPECASH</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NACC_CASH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

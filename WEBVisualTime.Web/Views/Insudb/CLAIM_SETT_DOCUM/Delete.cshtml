@@ -1,0 +1,43 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_SETT_DOCUM.CLAIM_SETT_DOCUMDto
+
+@{
+    ViewData["Title"] = "Eliminar CLAIM_SETT_DOCUM";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSEQ_IDLEDGERDOCUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSEQ_IDLEDGERDOCUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCONSEC_DOC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCONSEC_DOC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DRECEPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DRECEPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SDESCRIPT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SDESCRIPT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSTATUS_DOC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSTATUS_DOC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NDOC_CODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NDOC_CODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSETTLEMENT_NUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSETTLEMENT_NUM)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NCONSEC_DOC" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

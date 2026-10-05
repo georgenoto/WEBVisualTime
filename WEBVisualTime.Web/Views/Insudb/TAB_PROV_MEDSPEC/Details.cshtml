@@ -1,0 +1,32 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_PROV_MEDSPEC.TAB_PROV_MEDSPECDto
+
+@{
+    ViewData["Title"] = "Detalles de TAB_PROV_MEDSPEC";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TAB_PROVIDER</dt>
+            <dd class="col-sm-9">@Model.TAB_PROVIDERSSTATREGT</dd>
+            <dt class="col-sm-3">TABLE8603</dt>
+            <dd class="col-sm-9">@Model.TABLE8603SDESCRIPT</dd>
+            <dt class="col-sm-3">NMAIN_MEDSPECIALIALTY</dt>
+            <dd class="col-sm-9">@Model.NMAIN_MEDSPECIALIALTY</dd>
+            <dt class="col-sm-3">SREG_MEDICALPROF</dt>
+            <dd class="col-sm-9">@Model.SREG_MEDICALPROF</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NPROVIDER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

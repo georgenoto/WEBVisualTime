@@ -1,0 +1,85 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.FINANCE_CO.FINANCE_CODto
+
+@{
+    ViewData["Title"] = "Eliminar FINANCE_CO";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAMOUNT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAMOUNT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NFRECUENCY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NFRECUENCY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAMOUNT_D)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAMOUNT_D)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCONTRAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCONTRAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCURRENCY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCURRENCY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DEFFECDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DEFFECDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDATE_PRINT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDATE_PRINT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NDSCTO_AMO)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NDSCTO_AMO)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSTAT_CONTR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSTAT_CONTR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DFIRST_DRAF)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DFIRST_DRAF)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINITIAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINITIAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINITIAL_OR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINITIAL_OR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINTEREST)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINTEREST)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DLEDGER_DAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DLEDGER_DAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NNOTENUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NNOTENUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DNULLDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DNULLDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NOFFICE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NOFFICE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SOPT_COMMI)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SOPT_COMMI)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SPAYMENT_IN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SPAYMENT_IN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NQ_DRAFT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NQ_DRAFT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SWAIT_CONTR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SWAIT_CONTR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBILL_DAY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBILL_DAY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NWAY_PAY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NWAY_PAY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOD_AGREE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOD_AGREE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.STYPE_CONTR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.STYPE_CONTR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPOLICY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPOLICY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SORIGIN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SORIGIN)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NCONTRAT" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

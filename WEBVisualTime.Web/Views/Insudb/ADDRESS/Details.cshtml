@@ -1,0 +1,136 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.ADDRESS.ADDRESSDto
+
+@{
+    ViewData["Title"] = "Detalles de ADDRESS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NRECOWNER</dt>
+            <dd class="col-sm-9">@Model.NRECOWNER</dd>
+            <dt class="col-sm-3">SKEYADDRESS</dt>
+            <dd class="col-sm-9">@Model.SKEYADDRESS</dd>
+            <dt class="col-sm-3">SRECTYPE</dt>
+            <dd class="col-sm-9">@Model.SRECTYPE</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">SSTREET</dt>
+            <dd class="col-sm-9">@Model.SSTREET</dd>
+            <dt class="col-sm-3">SSTREET1</dt>
+            <dd class="col-sm-9">@Model.SSTREET1</dd>
+            <dt class="col-sm-3">SZONE</dt>
+            <dd class="col-sm-9">@Model.SZONE</dd>
+            <dt class="col-sm-3">CLIENT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">SCERTYPE</dt>
+            <dd class="col-sm-9">@Model.SCERTYPE</dd>
+            <dt class="col-sm-3">SE_MAIL</dt>
+            <dd class="col-sm-9">@Model.SE_MAIL</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NLAT_SECOND</dt>
+            <dd class="col-sm-9">@Model.NLAT_SECOND</dd>
+            <dt class="col-sm-3">NLON_SECOND</dt>
+            <dd class="col-sm-9">@Model.NLON_SECOND</dd>
+            <dt class="col-sm-3">NLAT_COORD</dt>
+            <dd class="col-sm-9">@Model.NLAT_COORD</dd>
+            <dt class="col-sm-3">NLON_COORD</dt>
+            <dd class="col-sm-9">@Model.NLON_COORD</dd>
+            <dt class="col-sm-3">NCONTRAT</dt>
+            <dd class="col-sm-9">@Model.NCONTRAT</dd>
+            <dt class="col-sm-3">NLAT_CARDIN</dt>
+            <dd class="col-sm-9">@Model.NLAT_CARDIN</dd>
+            <dt class="col-sm-3">NLAT_MINUTE</dt>
+            <dd class="col-sm-9">@Model.NLAT_MINUTE</dd>
+            <dt class="col-sm-3">NLON_CARDIN</dt>
+            <dd class="col-sm-9">@Model.NLON_CARDIN</dd>
+            <dt class="col-sm-3">NLON_MINUTE</dt>
+            <dd class="col-sm-9">@Model.NLON_MINUTE</dd>
+            <dt class="col-sm-3">NCERTIF</dt>
+            <dd class="col-sm-9">@Model.NCERTIF</dd>
+            <dt class="col-sm-3">NCLAIM</dt>
+            <dd class="col-sm-9">@Model.NCLAIM</dd>
+            <dt class="col-sm-3">NPOLICY</dt>
+            <dd class="col-sm-9">@Model.NPOLICY</dd>
+            <dt class="col-sm-3">NZIP_CODE</dt>
+            <dd class="col-sm-9">@Model.NZIP_CODE</dd>
+            <dt class="col-sm-3">NLAT_GRADE</dt>
+            <dd class="col-sm-9">@Model.NLAT_GRADE</dd>
+            <dt class="col-sm-3">TABLE66</dt>
+            <dd class="col-sm-9">@Model.TABLE66SDESCRIPT</dd>
+            <dt class="col-sm-3">NLON_GRADE</dt>
+            <dd class="col-sm-9">@Model.NLON_GRADE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NBK_AGENCY</dt>
+            <dd class="col-sm-9">@Model.NBK_AGENCY</dd>
+            <dt class="col-sm-3">NBANK_CODE</dt>
+            <dd class="col-sm-9">@Model.NBANK_CODE</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NOFFICE</dt>
+            <dd class="col-sm-9">@Model.NOFFICE</dd>
+            <dt class="col-sm-3">PROVINCE</dt>
+            <dd class="col-sm-9">@Model.PROVINCESDESCRIPT</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">TAB_LOCAT</dt>
+            <dd class="col-sm-9">@Model.TAB_LOCATSDESCRIPT</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">SBUILD</dt>
+            <dd class="col-sm-9">@Model.SBUILD</dd>
+            <dt class="col-sm-3">MUNICIPALITY</dt>
+            <dd class="col-sm-9">@Model.MUNICIPALITYSDESCRIPT</dd>
+            <dt class="col-sm-3">NFLOOR</dt>
+            <dd class="col-sm-9">@Model.NFLOOR</dd>
+            <dt class="col-sm-3">SDEPARTMENT</dt>
+            <dd class="col-sm-9">@Model.SDEPARTMENT</dd>
+            <dt class="col-sm-3">SPOPULATION</dt>
+            <dd class="col-sm-9">@Model.SPOPULATION</dd>
+            <dt class="col-sm-3">SINFOR</dt>
+            <dd class="col-sm-9">@Model.SINFOR</dd>
+            <dt class="col-sm-3">SPOBOX</dt>
+            <dd class="col-sm-9">@Model.SPOBOX</dd>
+            <dt class="col-sm-3">SDESCADD</dt>
+            <dd class="col-sm-9">@Model.SDESCADD</dd>
+            <dt class="col-sm-3">NCOD_AGREE</dt>
+            <dd class="col-sm-9">@Model.NCOD_AGREE</dd>
+            <dt class="col-sm-3">SCOSTCENTER</dt>
+            <dd class="col-sm-9">@Model.SCOSTCENTER</dd>
+            <dt class="col-sm-3">NNOTINFORMEMAIL</dt>
+            <dd class="col-sm-9">@Model.NNOTINFORMEMAIL</dd>
+            <dt class="col-sm-3">SLEDGERPROCESS</dt>
+            <dd class="col-sm-9">@Model.SLEDGERPROCESS</dd>
+            <dt class="col-sm-3">NTYPEOFADDRESS</dt>
+            <dd class="col-sm-9">@Model.NTYPEOFADDRESS</dd>
+            <dt class="col-sm-3">SINVALID_IND</dt>
+            <dd class="col-sm-9">@Model.SINVALID_IND</dd>
+            <dt class="col-sm-3">SSEND_MAIL</dt>
+            <dd class="col-sm-9">@Model.SSEND_MAIL</dd>
+            <dt class="col-sm-3">SMAIL</dt>
+            <dd class="col-sm-9">@Model.SMAIL</dd>
+            <dt class="col-sm-3">SBILL</dt>
+            <dd class="col-sm-9">@Model.SBILL</dd>
+            <dt class="col-sm-3">NDELEGATION</dt>
+            <dd class="col-sm-9">@Model.NDELEGATION</dd>
+            <dt class="col-sm-3">NNORMSTATUS</dt>
+            <dd class="col-sm-9">@Model.NNORMSTATUS</dd>
+            <dt class="col-sm-3">DNORMDATE</dt>
+            <dd class="col-sm-9">@Model.DNORMDATE</dd>
+            <dt class="col-sm-3">SZIP_CODE</dt>
+            <dd class="col-sm-9">@Model.SZIP_CODE</dd>
+            <dt class="col-sm-3">SINDSENTEMAIL</dt>
+            <dd class="col-sm-9">@Model.SINDSENTEMAIL</dd>
+            <dt class="col-sm-3">SELEVATION</dt>
+            <dd class="col-sm-9">@Model.SELEVATION</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NRECOWNER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

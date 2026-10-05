@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CDI_CODE_SECTION_TYPES.CDI_CODE_SECTION_TYPESDto>
+
+@{
+    ViewData["Title"] = "CDI_CODE_SECTION_TYPES";
+    ViewData["ColumnHeaders"] = new[] { "LANGUAGE_NAME", "TYPE_NAME", "GEN_TEMPLATE_FILE", "REGEN_TEMPLATE_FILE", "OPEN_BEGIN_MARKER", "CLOSE_BEGIN_MARKER", "END_MARKER", "FILE_FILTER", "SEQ", "REGISTRY_NAME", "DEFAULT_FILE_NAME", "CLOSE_END_MARKER", "SECTION_TYPE", "FILE_TYPE", "NLS_LANG" };
+    ViewData["ColumnProperties"] = new[] { "LANGUAGE_NAME", "TYPE_NAME", "GEN_TEMPLATE_FILE", "REGEN_TEMPLATE_FILE", "OPEN_BEGIN_MARKER", "CLOSE_BEGIN_MARKER", "END_MARKER", "FILE_FILTER", "SEQ", "REGISTRY_NAME", "DEFAULT_FILE_NAME", "CLOSE_END_MARKER", "SECTION_TYPE", "FILE_TYPE", "NLS_LANG" };
+    ViewData["KeyName"] = "LANGUAGE_NAME";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

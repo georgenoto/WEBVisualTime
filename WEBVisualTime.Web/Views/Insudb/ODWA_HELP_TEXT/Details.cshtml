@@ -1,0 +1,24 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.ODWA_HELP_TEXT.ODWA_HELP_TEXTDto
+
+@{
+    ViewData["Title"] = "Detalles de ODWA_HELP_TEXT";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ODWA_HELP_ITEMS</dt>
+            <dd class="col-sm-9">@Model.ODWA_HELP_ITEMSDESCRIPTION</dd>
+            <dt class="col-sm-3">SEQ</dt>
+            <dd class="col-sm-9">@Model.SEQ</dd>
+            <dt class="col-sm-3">TXT</dt>
+            <dd class="col-sm-9">@Model.TXT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.HIM_ID" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,80 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.OUT_MOVEME.OUT_MOVEMEDto
+
+@{
+    ViewData["Title"] = "Detalles de OUT_MOVEME";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CERTIFICATSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATSCERTYPESCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNBRANCH</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNBRANCHSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPRODUCTSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPOLICY</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPOLICYSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNCERTIF</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNCERTIFSCUMUL_CODE</dd>
+            <dt class="col-sm-3">NMOVNUMBE</dt>
+            <dd class="col-sm-9">@Model.NMOVNUMBE</dd>
+            <dt class="col-sm-3">NDIGIT</dt>
+            <dd class="col-sm-9">@Model.NDIGIT</dd>
+            <dt class="col-sm-3">NCAPITAL</dt>
+            <dd class="col-sm-9">@Model.NCAPITAL</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">DEXPIRDAT</dt>
+            <dd class="col-sm-9">@Model.DEXPIRDAT</dd>
+            <dt class="col-sm-3">NPREMIUM</dt>
+            <dd class="col-sm-9">@Model.NPREMIUM</dd>
+            <dt class="col-sm-3">SSTATUS_MOV</dt>
+            <dd class="col-sm-9">@Model.SSTATUS_MOV</dd>
+            <dt class="col-sm-3">NTAXAMOU</dt>
+            <dd class="col-sm-9">@Model.NTAXAMOU</dd>
+            <dt class="col-sm-3">NTRATYPEI</dt>
+            <dd class="col-sm-9">@Model.NTRATYPEI</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NYEAR_MONTH</dt>
+            <dd class="col-sm-9">@Model.NYEAR_MONTH</dd>
+            <dt class="col-sm-3">SZONE</dt>
+            <dd class="col-sm-9">@Model.SZONE</dd>
+            <dt class="col-sm-3">NPROVINCE</dt>
+            <dd class="col-sm-9">@Model.NPROVINCE</dd>
+            <dt class="col-sm-3">DSTARTDATE</dt>
+            <dd class="col-sm-9">@Model.DSTARTDATE</dd>
+            <dt class="col-sm-3">NINSUR_AREA</dt>
+            <dd class="col-sm-9">@Model.NINSUR_AREA</dd>
+            <dt class="col-sm-3">TABLE5002</dt>
+            <dd class="col-sm-9">@Model.TABLE5002SDESCRIPT</dd>
+            <dt class="col-sm-3">NORIGI</dt>
+            <dd class="col-sm-9">@Model.NORIGI</dd>
+            <dt class="col-sm-3">NRECEIPT</dt>
+            <dd class="col-sm-9">@Model.NRECEIPT</dd>
+            <dt class="col-sm-3">NSITUATION</dt>
+            <dd class="col-sm-9">@Model.NSITUATION</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">NGROUP</dt>
+            <dd class="col-sm-9">@Model.NGROUP</dd>
+            <dt class="col-sm-3">NMOVNUMBE_REL</dt>
+            <dd class="col-sm-9">@Model.NMOVNUMBE_REL</dd>
+            <dt class="col-sm-3">NPREMIUMTEC</dt>
+            <dd class="col-sm-9">@Model.NPREMIUMTEC</dd>
+            <dt class="col-sm-3">NMOVEMENT</dt>
+            <dd class="col-sm-9">@Model.NMOVEMENT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCERTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,38 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TRACKING.TRACKINGDto
+
+@{
+    ViewData["Title"] = "Detalles de TRACKING";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9">@Model.ID</dd>
+            <dt class="col-sm-3">FACTTIME</dt>
+            <dd class="col-sm-9">@Model.FACTTIME</dd>
+            <dt class="col-sm-3">HOSTSOURCE</dt>
+            <dd class="col-sm-9">@Model.HOSTSOURCE</dd>
+            <dt class="col-sm-3">FORMPATH</dt>
+            <dd class="col-sm-9">@Model.FORMPATH</dd>
+            <dt class="col-sm-3">URLREFERRER</dt>
+            <dd class="col-sm-9">@Model.URLREFERRER</dd>
+            <dt class="col-sm-3">USERAGENT</dt>
+            <dd class="col-sm-9">@Model.USERAGENT</dd>
+            <dt class="col-sm-3">FORMID</dt>
+            <dd class="col-sm-9">@Model.FORMID</dd>
+            <dt class="col-sm-3">PURCHASEORDER</dt>
+            <dd class="col-sm-9">@Model.PURCHASEORDER</dd>
+            <dt class="col-sm-3">REMARK</dt>
+            <dd class="col-sm-9">@Model.REMARK</dd>
+            <dt class="col-sm-3">CALLEDFROMID</dt>
+            <dd class="col-sm-9">@Model.CALLEDFROMID</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

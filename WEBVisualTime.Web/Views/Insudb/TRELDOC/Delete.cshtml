@@ -1,0 +1,89 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TRELDOC.TRELDOCDto
+
+@{
+    ViewData["Title"] = "Eliminar TRELDOC";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBORDEREAUX)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBORDEREAUX)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSEQUENCE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSEQUENCE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOLLECDOCTYP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOLLECDOCTYP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NRECEIPT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NRECEIPT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBRANCH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBRANCH)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPRODUCT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPRODUCT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPOLICY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPOLICY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCERTIF)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCERTIF)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCONTRAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCONTRAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NDRAFT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NDRAFT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBULLETINS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBULLETINS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPROPONUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPROPONUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NIDMOV)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NIDMOV)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAMOUNT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAMOUNT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINTERESTAMOUNT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINTERESTAMOUNT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCURRENCY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCURRENCY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NEXCHANGE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NEXCHANGE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DPAYDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DPAYDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DVALUEDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DVALUEDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCHANGESDAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCHANGESDAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NORIGIN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NORIGIN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDATE_ORIGIN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDATE_ORIGIN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINSTITUTION)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINSTITUTION)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOLLECTOR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOLLECTOR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAMOUNTDEC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAMOUNTDEC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLOANS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLOANS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINDREV)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINDREV)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYP_PROFITWORKER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYP_PROFITWORKER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAMOUNT_LOC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAMOUNT_LOC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOD_SAAPV)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOD_SAAPV)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SFOLIONUMBER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SFOLIONUMBER)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NBORDEREAUX" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

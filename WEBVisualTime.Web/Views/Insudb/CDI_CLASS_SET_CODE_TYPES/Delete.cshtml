@@ -1,0 +1,51 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_CLASS_SET_CODE_TYPES.CDI_CLASS_SET_CODE_TYPESDto
+
+@{
+    ViewData["Title"] = "Eliminar CDI_CLASS_SET_CODE_TYPES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LANGUAGE_NAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LANGUAGE_NAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.TYPE_NAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TYPE_NAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.GENERATE_FLAG)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.GENERATE_FLAG)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.TEMPLATE_FILE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TEMPLATE_FILE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FILE_FILTER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.FILE_FILTER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SEQ)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SEQ)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DEFAULT_FILE_NAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DEFAULT_FILE_NAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.OPEN_BEGIN_MARKER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.OPEN_BEGIN_MARKER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CLOSE_BEGIN_MARKER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.CLOSE_BEGIN_MARKER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.OPEN_END_MARKER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.OPEN_END_MARKER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CLOSE_END_MARKER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.CLOSE_END_MARKER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FILE_TYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.FILE_TYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLS_LANG)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLS_LANG)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.LANGUAGE_NAME" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

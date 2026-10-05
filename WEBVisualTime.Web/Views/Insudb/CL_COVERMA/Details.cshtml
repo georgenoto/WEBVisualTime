@@ -1,0 +1,66 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CL_COVERMA.CL_COVERMADto
+
+@{
+    ViewData["Title"] = "Detalles de CL_COVERMA";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NMODULEC</dt>
+            <dd class="col-sm-9">@Model.NMODULEC</dd>
+            <dt class="col-sm-3">NCOVER</dt>
+            <dd class="col-sm-9">@Model.NCOVER</dd>
+            <dt class="col-sm-3">NCONCEPT</dt>
+            <dd class="col-sm-9">@Model.NCONCEPT</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NDED_AMOUNT</dt>
+            <dd class="col-sm-9">@Model.NDED_AMOUNT</dd>
+            <dt class="col-sm-3">NQUANT_USED</dt>
+            <dd class="col-sm-9">@Model.NQUANT_USED</dd>
+            <dt class="col-sm-3">NRESERVE</dt>
+            <dd class="col-sm-9">@Model.NRESERVE</dd>
+            <dt class="col-sm-3">NUNIT_COST</dt>
+            <dd class="col-sm-9">@Model.NUNIT_COST</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SBUDGET</dt>
+            <dd class="col-sm-9">@Model.SBUDGET</dd>
+            <dt class="col-sm-3">DDATE_BUD</dt>
+            <dd class="col-sm-9">@Model.DDATE_BUD</dd>
+            <dt class="col-sm-3">NBILL_CON</dt>
+            <dd class="col-sm-9">@Model.NBILL_CON</dd>
+            <dt class="col-sm-3">SBILL</dt>
+            <dd class="col-sm-9">@Model.SBILL</dd>
+            <dt class="col-sm-3">DSTATRDAT</dt>
+            <dd class="col-sm-9">@Model.DSTATRDAT</dd>
+            <dt class="col-sm-3">DPAYDATE</dt>
+            <dd class="col-sm-9">@Model.DPAYDATE</dd>
+            <dt class="col-sm-3">DCANCELDAT</dt>
+            <dd class="col-sm-9">@Model.DCANCELDAT</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">NCLAIM</dt>
+            <dd class="col-sm-9">@Model.NCLAIM</dd>
+            <dt class="col-sm-3">NCASE_NUM</dt>
+            <dd class="col-sm-9">@Model.NCASE_NUM</dd>
+            <dt class="col-sm-3">NDEMAN_TYPE</dt>
+            <dd class="col-sm-9">@Model.NDEMAN_TYPE</dd>
+            <dt class="col-sm-3">NPROVIDER</dt>
+            <dd class="col-sm-9">@Model.NPROVIDER</dd>
+            <dt class="col-sm-3">NEVALSTAT</dt>
+            <dd class="col-sm-9">@Model.NEVALSTAT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NMODULEC" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

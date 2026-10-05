@@ -1,0 +1,82 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.DET_COMLIF.DET_COMLIFDto
+
+@{
+    ViewData["Title"] = "Detalles de DET_COMLIF";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TAB_COMLIF</dt>
+            <dd class="col-sm-9">@Model.TAB_COMLIFSDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE10</dt>
+            <dd class="col-sm-9">@Model.TABLE10SDESCRIPT</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NPOLICY_DUR</dt>
+            <dd class="col-sm-9">@Model.NPOLICY_DUR</dd>
+            <dt class="col-sm-3">NMIN_DURAT</dt>
+            <dd class="col-sm-9">@Model.NMIN_DURAT</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NPERCENT</dt>
+            <dd class="col-sm-9">@Model.NPERCENT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NWAY_PAY</dt>
+            <dd class="col-sm-9">@Model.NWAY_PAY</dd>
+            <dt class="col-sm-3">NSELLCHANNEL</dt>
+            <dd class="col-sm-9">@Model.NSELLCHANNEL</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NCOVER</dt>
+            <dd class="col-sm-9">@Model.NCOVER</dd>
+            <dt class="col-sm-3">NMAX_DURAT</dt>
+            <dd class="col-sm-9">@Model.NMAX_DURAT</dd>
+            <dt class="col-sm-3">NMODULEC</dt>
+            <dd class="col-sm-9">@Model.NMODULEC</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">NAGE_INIT</dt>
+            <dd class="col-sm-9">@Model.NAGE_INIT</dd>
+            <dt class="col-sm-3">NAGE_END</dt>
+            <dd class="col-sm-9">@Model.NAGE_END</dd>
+            <dt class="col-sm-3">TABLE9108</dt>
+            <dd class="col-sm-9">@Model.TABLE9108SDESCRIPT</dd>
+            <dt class="col-sm-3">SROUTINE</dt>
+            <dd class="col-sm-9">@Model.SROUTINE</dd>
+            <dt class="col-sm-3">NLIFE_SCHE</dt>
+            <dd class="col-sm-9">@Model.NLIFE_SCHE</dd>
+            <dt class="col-sm-3">TABLE5662</dt>
+            <dd class="col-sm-9">@Model.TABLE5662SDESCRIPT</dd>
+            <dt class="col-sm-3">NPERC_PAY</dt>
+            <dd class="col-sm-9">@Model.NPERC_PAY</dd>
+            <dt class="col-sm-3">TABLE5639</dt>
+            <dd class="col-sm-9">@Model.TABLE5639SDESCRIPT</dd>
+            <dt class="col-sm-3">SSMOKING</dt>
+            <dd class="col-sm-9">@Model.SSMOKING</dd>
+            <dt class="col-sm-3">NCAPITAL_INIT</dt>
+            <dd class="col-sm-9">@Model.NCAPITAL_INIT</dd>
+            <dt class="col-sm-3">NCAPITAL_END</dt>
+            <dd class="col-sm-9">@Model.NCAPITAL_END</dd>
+            <dt class="col-sm-3">NAMOUNTLIM</dt>
+            <dd class="col-sm-9">@Model.NAMOUNTLIM</dd>
+            <dt class="col-sm-3">NDRCOMM</dt>
+            <dd class="col-sm-9">@Model.NDRCOMM</dd>
+            <dt class="col-sm-3">NIDCOMM</dt>
+            <dd class="col-sm-9">@Model.NIDCOMM</dd>
+            <dt class="col-sm-3">TABLE9202</dt>
+            <dd class="col-sm-9">@Model.TABLE9202SDESCRIPT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCOMTABLI" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

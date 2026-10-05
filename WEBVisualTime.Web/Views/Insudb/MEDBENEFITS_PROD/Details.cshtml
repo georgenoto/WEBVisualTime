@@ -1,0 +1,86 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MEDBENEFITS_PROD.MEDBENEFITS_PRODDto
+
+@{
+    ViewData["Title"] = "Detalles de MEDBENEFITS_PROD";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NMODULEC</dt>
+            <dd class="col-sm-9">@Model.NMODULEC</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NCOVER</dt>
+            <dd class="col-sm-9">@Model.NCOVER</dd>
+            <dt class="col-sm-3">TABLE12</dt>
+            <dd class="col-sm-9">@Model.TABLE12SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE269</dt>
+            <dd class="col-sm-9">@Model.TABLE269SDESCRIPT</dd>
+            <dt class="col-sm-3">NQUANTITY</dt>
+            <dd class="col-sm-9">@Model.NQUANTITY</dd>
+            <dt class="col-sm-3">NAMOUNT_BENE</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_BENE</dd>
+            <dt class="col-sm-3">NPERCEN_HOSPITAL</dt>
+            <dd class="col-sm-9">@Model.NPERCEN_HOSPITAL</dd>
+            <dt class="col-sm-3">NPERCEN_AMBULATORY</dt>
+            <dd class="col-sm-9">@Model.NPERCEN_AMBULATORY</dd>
+            <dt class="col-sm-3">SCHANALLO</dt>
+            <dd class="col-sm-9">@Model.SCHANALLO</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">TABLE52</dt>
+            <dd class="col-sm-9">@Model.TABLE52SDESCRIPT</dd>
+            <dt class="col-sm-3">NCAREN_QUANT</dt>
+            <dd class="col-sm-9">@Model.NCAREN_QUANT</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">NAMOUNT_COPAY</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_COPAY</dd>
+            <dt class="col-sm-3">NFRANCFIX</dt>
+            <dd class="col-sm-9">@Model.NFRANCFIX</dd>
+            <dt class="col-sm-3">NAGESTART</dt>
+            <dd class="col-sm-9">@Model.NAGESTART</dd>
+            <dt class="col-sm-3">NAGEEND</dt>
+            <dd class="col-sm-9">@Model.NAGEEND</dd>
+            <dt class="col-sm-3">TABLE18</dt>
+            <dd class="col-sm-9">@Model.TABLE18SDESCRIPT</dd>
+            <dt class="col-sm-3">TAB_PROVIDER</dt>
+            <dd class="col-sm-9">@Model.TAB_PROVIDERSSTATREGT</dd>
+            <dt class="col-sm-3">TABLE9215</dt>
+            <dd class="col-sm-9">@Model.TABLE9215SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9221</dt>
+            <dd class="col-sm-9">@Model.TABLE9221SDESCRIPT</dd>
+            <dt class="col-sm-3">TAB_AM_ILL</dt>
+            <dd class="col-sm-9">@Model.TAB_AM_ILLSDESCRIPT</dd>
+            <dt class="col-sm-3">SCLARIFICACT</dt>
+            <dd class="col-sm-9">@Model.SCLARIFICACT</dd>
+            <dt class="col-sm-3">TABLE9220</dt>
+            <dd class="col-sm-9">@Model.TABLE9220SDESCRIPT</dd>
+            <dt class="col-sm-3">NBENEFCATEG</dt>
+            <dd class="col-sm-9">@Model.NBENEFCATEG</dd>
+            <dt class="col-sm-3">NIDMEDBENEF</dt>
+            <dd class="col-sm-9">@Model.NIDMEDBENEF</dd>
+            <dt class="col-sm-3">SBENEFCATEG_CODE</dt>
+            <dd class="col-sm-9">@Model.SBENEFCATEG_CODE</dd>
+            <dt class="col-sm-3">SPRINT_DES</dt>
+            <dd class="col-sm-9">@Model.SPRINT_DES</dd>
+            <dt class="col-sm-3">NORDER</dt>
+            <dd class="col-sm-9">@Model.NORDER</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

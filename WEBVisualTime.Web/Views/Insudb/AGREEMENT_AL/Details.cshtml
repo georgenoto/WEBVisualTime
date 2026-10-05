@@ -1,0 +1,38 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.AGREEMENT_AL.AGREEMENT_ALDto
+
+@{
+    ViewData["Title"] = "Detalles de AGREEMENT_AL";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NAGREEMENT</dt>
+            <dd class="col-sm-9">@Model.NAGREEMENT</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">DSTARTDATE</dt>
+            <dd class="col-sm-9">@Model.DSTARTDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">SLEVELINT</dt>
+            <dd class="col-sm-9">@Model.SLEVELINT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">NAGREE_TYPE</dt>
+            <dd class="col-sm-9">@Model.NAGREE_TYPE</dd>
+            <dt class="col-sm-3">INTERMEDIA</dt>
+            <dd class="col-sm-9">@Model.INTERMEDIASCOL_AGREE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NAGREEMENT" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

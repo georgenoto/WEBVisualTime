@@ -1,0 +1,70 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.FOLDERS.CreateFOLDERSDto
+
+@{
+    ViewData["Title"] = "Crear FOLDERS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="SFOLDERNAME" class="form-label"></label>
+                <input asp-for="SFOLDERNAME" class="form-control" />
+                <span asp-validation-for="SFOLDERNAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SROOTNAME" class="form-label"></label>
+                <input asp-for="SROOTNAME" class="form-control" />
+                <span asp-validation-for="SROOTNAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NIMAGE" class="form-label"></label>
+                <input asp-for="NIMAGE" class="form-control" type="number" />
+                <span asp-validation-for="NIMAGE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCLASS" class="form-label"></label>
+                <input asp-for="SCLASS" class="form-control" />
+                <span asp-validation-for="SCLASS" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SFOLDERKEY" class="form-label"></label>
+                <input asp-for="SFOLDERKEY" class="form-control" />
+                <span asp-validation-for="SFOLDERKEY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NFOLDERKEY" class="form-label"></label>
+                <select asp-for="NFOLDERKEY" class="form-select" asp-items="@(ViewData["NFOLDERKEY"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NFOLDERKEY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SORIGI" class="form-label"></label>
+                <input asp-for="SORIGI" class="form-control" />
+                <span asp-validation-for="SORIGI" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

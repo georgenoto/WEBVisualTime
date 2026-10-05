@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.BANK_ACC.BANK_ACCDto>
+
+@{
+    ViewData["Title"] = "BANK_ACC";
+    ViewData["ColumnHeaders"] = new[] { "NACC_BANK", "SACC_LEDGER", "TAB_BK_AGENBANK_CODE", "TAB_BK_AGENBK_AGENCY", "SACC_NUMBER", "SAUX_ACCOUN", "TABLE190", "NAVAILABLE", "DCOMPDATE", "TABLE197", "NCURRENCY", "DEFFECDATE", "NLED_COMPAN", "NOFFICE", "NTRANSIT_1", "NTRANSIT_2", "NTRANSIT_3", "NTRANSIT_4", "NTRANSIT_5", "NUSERCODE", "SSTATREGT", "COMPANY", "DREALDEP" };
+    ViewData["ColumnProperties"] = new[] { "NACC_BANK", "SACC_LEDGER", "TAB_BK_AGENBANK_CODESDESCRIPT", "TAB_BK_AGENBK_AGENCYSDESCRIPT", "SACC_NUMBER", "SAUX_ACCOUN", "TABLE190SDESCRIPT", "NAVAILABLE", "DCOMPDATE", "TABLE197SDESCRIPT", "NCURRENCY", "DEFFECDATE", "NLED_COMPAN", "NOFFICE", "NTRANSIT_1", "NTRANSIT_2", "NTRANSIT_3", "NTRANSIT_4", "NTRANSIT_5", "NUSERCODE", "SSTATREGT", "COMPANYSACCOUNT", "DREALDEP" };
+    ViewData["KeyName"] = "NACC_BANK";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

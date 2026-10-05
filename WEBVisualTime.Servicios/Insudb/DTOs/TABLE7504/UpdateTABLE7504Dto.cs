@@ -1,0 +1,11 @@
+namespace WEBVisualTime.Servicios.Insudb.DTOs.TABLE7504;
+
+public class UpdateTABLE7504Dto
+{
+    public string STYP_COMISS { get; set; }
+    public DateTime? DCOMPDATE { get; set; }
+    public string? SDESCRIPT { get; set; }
+    public string? SSHORT_DES { get; set; }
+    public string? SSTATREGT { get; set; }
+    public int? NUSERCODE { get; set; }
+}

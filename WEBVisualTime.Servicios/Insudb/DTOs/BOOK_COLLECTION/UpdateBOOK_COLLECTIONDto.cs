@@ -1,0 +1,61 @@
+namespace WEBVisualTime.Servicios.Insudb.DTOs.BOOK_COLLECTION;
+
+public class UpdateBOOK_COLLECTIONDto
+{
+    public string SCERTYPE { get; set; }
+    public int NBRANCH { get; set; }
+    public int NPRODUCT { get; set; }
+    public long NPOLICY { get; set; }
+    public long NCERTIF { get; set; }
+    public long NRECEIPT { get; set; }
+    public int NBRANCH_LED { get; set; }
+    public long NTRANSAC { get; set; }
+    public string SKEY { get; set; }
+    public decimal? NEXCHANGE { get; set; }
+    public long? NBORDEREAUX { get; set; }
+    public int NTRATYPEI { get; set; }
+    public DateTime? DCOLLECTION { get; set; }
+    public DateTime? DEFFECDATE { get; set; }
+    public DateTime? DEXPIRDAT { get; set; }
+    public int NTYPE { get; set; }
+    public long? NCONTRAT { get; set; }
+    public int? NDRAFT { get; set; }
+    public decimal? NINTEREST { get; set; }
+    public decimal? NINTAMMOU_AFE { get; set; }
+    public decimal? NINTAMMOU_IVA { get; set; }
+    public DateTime? DVALUEDATE { get; set; }
+    public DateTime? DPOSTED { get; set; }
+    public int? NWAY_PAY { get; set; }
+    public int? NCURRENCY { get; set; }
+    public int NOFFICE { get; set; }
+    public int NOFFICEAGEN { get; set; }
+    public int NAGENCY { get; set; }
+    public DateTime? DLEDGERDAT { get; set; }
+    public DateTime? DSTATDATE { get; set; }
+    public string? SPAY_FORM { get; set; }
+    public decimal? NCOVBAS { get; set; }
+    public decimal? NCOVADD { get; set; }
+    public decimal? NTAX { get; set; }
+    public decimal? NREC_DESC { get; set; }
+    public long? NBORDERUSED { get; set; }
+    public long? NBORDEREAUX_USERCOD { get; set; }
+    public int? NCASHNUM { get; set; }
+    public string? SCLIENTSPONSOR { get; set; }
+    public string? SCLIENT_ASEG { get; set; }
+    public decimal? NPREMIUME_MO { get; set; }
+    public decimal? NPREMIUMA_MO { get; set; }
+    public decimal? NTAXAMOUNT_MO { get; set; }
+    public decimal? NPREMIUM_MO { get; set; }
+    public decimal? NPREMIUME { get; set; }
+    public decimal? NPREMIUMA { get; set; }
+    public decimal? NTAXAMOUNT { get; set; }
+    public decimal? NPREMIUM { get; set; }
+    public DateTime? DCOMPDATE { get; set; }
+    public int? NUSERCODE { get; set; }
+    public int NTYPE_TRAN { get; set; }
+    public DateTime? DSTATDATE_NEW { get; set; }
+    public DateTime? DSTATDATE_OLD { get; set; }
+    public long? NBILLNUM { get; set; }
+    public int? NUSER_OLD { get; set; }
+    public int? NUSER { get; set; }
+}

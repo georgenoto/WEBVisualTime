@@ -1,0 +1,41 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.T_MASIVECHARGE.T_MASIVECHARGEDto
+
+@{
+    ViewData["Title"] = "Eliminar T_MASIVECHARGE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SKEY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SKEY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NROWS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NROWS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOLUMNS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOLUMNS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SFIELD)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SFIELD)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SVALUE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SVALUE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSEARCH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSEARCH)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.STABLE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.STABLE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SVALUESLIST)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SVALUESLIST)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.SKEY" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

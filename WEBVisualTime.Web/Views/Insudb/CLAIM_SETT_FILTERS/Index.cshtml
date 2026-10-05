@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_SETT_FILTERS.CLAIM_SETT_FILTERSDto>
+
+@{
+    ViewData["Title"] = "CLAIM_SETT_FILTERS";
+    ViewData["ColumnHeaders"] = new[] { "CLAIM_SETTLEMENT", "NCLAIMANTTYPE", "NCLAIM", "NCASE_NUM", "NDEMAN_TYPE", "SCLIENT", "SCLIENT2", "NORDER_NUM", "NPROVIDER", "NTYPEPROV", "DFROM", "DTO", "NBRANCH", "NPRODUCT", "NCURRENCY", "TABLE9242", "TABLE9249", "NPHYSICIAN", "NCLINIC", "DCOMPDATE", "NUSERCODE", "NBORDEREAUX_CL", "NMASTERORDERTYPE", "NMASTERORDER", "DMASTERORDERFROM", "DMASTERORDERTO", "SCLIENT_BENEF", "DLEDGERDAT" };
+    ViewData["ColumnProperties"] = new[] { "CLAIM_SETTLEMENTSCLIENT2", "NCLAIMANTTYPE", "NCLAIM", "NCASE_NUM", "NDEMAN_TYPE", "SCLIENT", "SCLIENT2", "NORDER_NUM", "NPROVIDER", "NTYPEPROV", "DFROM", "DTO", "NBRANCH", "NPRODUCT", "NCURRENCY", "TABLE9242SDESCRIPT", "TABLE9249SDESCRIPT", "NPHYSICIAN", "NCLINIC", "DCOMPDATE", "NUSERCODE", "NBORDEREAUX_CL", "NMASTERORDERTYPE", "NMASTERORDER", "DMASTERORDERFROM", "DMASTERORDERTO", "SCLIENT_BENEF", "DLEDGERDAT" };
+    ViewData["KeyName"] = "NSETTLEMENT_NUM";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

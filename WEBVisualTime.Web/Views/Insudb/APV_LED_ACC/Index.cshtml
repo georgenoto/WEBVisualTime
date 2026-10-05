@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.APV_LED_ACC.APV_LED_ACCDto>
+
+@{
+    ViewData["Title"] = "APV_LED_ACC";
+    ViewData["ColumnHeaders"] = new[] { "NTYPE_MOVE", "NTYP_PROFITWORKER", "SLEDACC", "SDESCLED", "NUSERCODE", "DCOMPDATE" };
+    ViewData["ColumnProperties"] = new[] { "NTYPE_MOVE", "NTYP_PROFITWORKER", "SLEDACC", "SDESCLED", "NUSERCODE", "DCOMPDATE" };
+    ViewData["KeyName"] = "NTYPE_MOVE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

@@ -1,0 +1,72 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.STIPEND_POL.CreateSTIPEND_POLDto
+
+@{
+    ViewData["Title"] = "Crear STIPEND_POL";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCOMMITYP" class="form-label"></label>
+                <select asp-for="SCOMMITYP" class="form-select" asp-items="@(ViewData["SCOMMITYP"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="SCOMMITYP" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCONTRAT_PAY" class="form-label"></label>
+                <input asp-for="NCONTRAT_PAY" class="form-control" type="number" />
+                <span asp-validation-for="NCONTRAT_PAY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NINTERMED" class="form-label"></label>
+                <select asp-for="NINTERMED" class="form-select" asp-items="@(ViewData["NINTERMED"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NINTERMED" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT" class="form-label"></label>
+                <input asp-for="NAMOUNT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DNULLDATE" class="form-label"></label>
+                <input asp-for="DNULLDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DNULLDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPERCENT" class="form-label"></label>
+                <input asp-for="NPERCENT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NPERCENT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NSHARE" class="form-label"></label>
+                <input asp-for="NSHARE" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NSHARE" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

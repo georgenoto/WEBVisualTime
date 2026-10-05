@@ -1,0 +1,53 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.NOTIFICA_ERP.CreateNOTIFICA_ERPDto
+
+@{
+    ViewData["Title"] = "Crear NOTIFICA_ERP";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="SPROCESO" class="form-label"></label>
+                <input asp-for="SPROCESO" class="form-control" />
+                <span asp-validation-for="SPROCESO" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SESTADO" class="form-label"></label>
+                <input asp-for="SESTADO" class="form-control" />
+                <span asp-validation-for="SESTADO" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DFECHA_PROCESO" class="form-label"></label>
+                <input asp-for="DFECHA_PROCESO" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DFECHA_PROCESO" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DOPERDATE" class="form-label"></label>
+                <input asp-for="DOPERDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DOPERDATE" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

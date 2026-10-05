@@ -1,0 +1,61 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.LED_COMPAN.LED_COMPANDto
+
+@{
+    ViewData["Title"] = "Eliminar LED_COMPAN";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLED_COMPAN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLED_COMPAN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SACCOUNT_BG)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SACCOUNT_BG)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SACCOUNT_GP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SACCOUNT_GP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SBAL_ACTU)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SBAL_ACTU)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLOSE_MONT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLOSE_MONT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSTATREGT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSTATREGT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSTRUCT_UNI)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSTRUCT_UNI)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSTRUCTURE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSTRUCTURE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPAN_DAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPAN_DAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDATE_END)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDATE_END)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDATE_INIT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDATE_INIT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NVOUCHER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NVOUCHER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCURRENCY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCURRENCY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NYEAR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NYEAR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DINILEDDAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DINILEDDAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DENDLEDDAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DENDLEDDAT)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NLED_COMPAN" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

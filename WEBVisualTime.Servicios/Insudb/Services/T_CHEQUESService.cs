@@ -1,0 +1,64 @@
+using System.Linq.Expressions;
+using WEBVisualTime.Entidades.Insudb;
+using WEBVisualTime.Datos.Repositories;
+using WEBVisualTime.Servicios.Insudb.DTOs.T_CHEQUES;
+using WEBVisualTime.Servicios.Insudb.Mappings;
+
+namespace WEBVisualTime.Servicios.Insudb.Services;
+
+public class T_CHEQUESService : IT_CHEQUESService
+{
+    private readonly IRepository<T_CHEQUES> _repository;
+
+    public T_CHEQUESService(IRepository<T_CHEQUES> repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task<IEnumerable<T_CHEQUESDto>> GetAllAsync()
+    {
+        var entities = await _repository.GetAllAsync();
+        return entities.Select(e => e.ToDto());
+    }
+
+    public async Task<T_CHEQUESDto?> GetByIdAsync(long id)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        return entity?.ToDto();
+    }
+
+    public async Task<IEnumerable<T_CHEQUESDto>> FindAsync(Expression<Func<T_CHEQUES, bool>> predicate)
+    {
+        var entities = await _repository.FindAsync(predicate);
+        return entities.Select(e => e.ToDto());
+    }
+
+    public async Task<T_CHEQUESDto> CreateAsync(CreateT_CHEQUESDto createDto)
+    {
+        var entity = createDto.ToEntity();
+        await _repository.AddAsync(entity);
+        await _repository.SaveChangesAsync();
+        return entity.ToDto();
+    }
+
+    public async Task<bool> UpdateAsync(long id, UpdateT_CHEQUESDto updateDto)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        if (entity == null) return false;
+
+        entity.UpdateEntity(updateDto);
+        _repository.Update(entity);
+        await _repository.SaveChangesAsync();
+        return true;
+    }
+
+    public async Task<bool> DeleteAsync(long id)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        if (entity == null) return false;
+
+        _repository.Remove(entity);
+        await _repository.SaveChangesAsync();
+        return true;
+    }
+}

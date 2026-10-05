@@ -1,0 +1,66 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CL_M_COVER.CL_M_COVERDto
+
+@{
+    ViewData["Title"] = "Detalles de CL_M_COVER";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NCLAIM</dt>
+            <dd class="col-sm-9">@Model.NCLAIM</dd>
+            <dt class="col-sm-3">NCASE_NUM</dt>
+            <dd class="col-sm-9">@Model.NCASE_NUM</dd>
+            <dt class="col-sm-3">NDEMAN_TYPE</dt>
+            <dd class="col-sm-9">@Model.NDEMAN_TYPE</dd>
+            <dt class="col-sm-3">NTRANSAC</dt>
+            <dd class="col-sm-9">@Model.NTRANSAC</dd>
+            <dt class="col-sm-3">NCOVER</dt>
+            <dd class="col-sm-9">@Model.NCOVER</dd>
+            <dt class="col-sm-3">NMODULEC</dt>
+            <dd class="col-sm-9">@Model.NMODULEC</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">SAUT_ADJUST</dt>
+            <dd class="col-sm-9">@Model.SAUT_ADJUST</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NDED_AMOUNT</dt>
+            <dd class="col-sm-9">@Model.NDED_AMOUNT</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">NEXP_AMOUNT</dt>
+            <dd class="col-sm-9">@Model.NEXP_AMOUNT</dd>
+            <dt class="col-sm-3">NGROUP</dt>
+            <dd class="col-sm-9">@Model.NGROUP</dd>
+            <dt class="col-sm-3">NLOC_AMOUNT</dt>
+            <dd class="col-sm-9">@Model.NLOC_AMOUNT</dd>
+            <dt class="col-sm-3">NQUANTITY</dt>
+            <dd class="col-sm-9">@Model.NQUANTITY</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NVA_TAX</dt>
+            <dd class="col-sm-9">@Model.NVA_TAX</dd>
+            <dt class="col-sm-3">NVAT_AMOUNT</dt>
+            <dd class="col-sm-9">@Model.NVAT_AMOUNT</dd>
+            <dt class="col-sm-3">NLOC_COS_RE</dt>
+            <dd class="col-sm-9">@Model.NLOC_COS_RE</dd>
+            <dt class="col-sm-3">SCESCATAS</dt>
+            <dd class="col-sm-9">@Model.SCESCATAS</dd>
+            <dt class="col-sm-3">NSETTLECODE</dt>
+            <dd class="col-sm-9">@Model.NSETTLECODE</dd>
+            <dt class="col-sm-3">SPOSTEDSEQUENCE</dt>
+            <dd class="col-sm-9">@Model.SPOSTEDSEQUENCE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCLAIM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

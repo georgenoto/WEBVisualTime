@@ -1,0 +1,55 @@
+using Microsoft.AspNetCore.Mvc;
+using WEBVisualTime.Servicios.Insudb.DTOs.LIFE;
+using WEBVisualTime.Servicios.Insudb.Services;
+
+namespace WEBVisualTime.WebApi.Insudb.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class LIFEController : ControllerBase
+{
+    private readonly ILIFEService _service;
+
+    public LIFEController(ILIFEService service)
+    {
+        _service = service;
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<LIFEDto>>> GetAll()
+    {
+        var result = await _service.GetAllAsync();
+        return Ok(result);
+    }
+
+[HttpGet("{id}")]
+    public async Task<ActionResult<LIFEDto>> GetById(string id)
+    {
+        var result = await _service.GetByIdAsync(id);
+        if (result == null) return NotFound();
+        return Ok(result);
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<LIFEDto>> Create([FromBody] CreateLIFEDto createDto)
+    {
+        var result = await _service.CreateAsync(createDto);
+        return CreatedAtAction(nameof(GetById), new { id = result.SCERTYPE }, result);
+    }
+
+    [HttpPut("{{id}}")]
+    public async Task<IActionResult> Update(string id, [FromBody] UpdateLIFEDto updateDto)
+    {
+        var success = await _service.UpdateAsync(id, updateDto);
+        if (!success) return NotFound();
+        return NoContent();
+    }
+
+    [HttpDelete("{{id}}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        var success = await _service.DeleteAsync(id);
+        if (!success) return NotFound();
+        return NoContent();
+    }
+}

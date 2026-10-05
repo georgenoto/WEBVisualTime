@@ -1,0 +1,46 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COLLECTOR.COLLECTORDto
+
+@{
+    ViewData["Title"] = "Detalles de COLLECTOR";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NCOLLECTOR</dt>
+            <dd class="col-sm-9">@Model.NCOLLECTOR</dd>
+            <dt class="col-sm-3">CLIENT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">TABLE5551</dt>
+            <dd class="col-sm-9">@Model.TABLE5551SDESCRIPT</dd>
+            <dt class="col-sm-3">DINPUTDATE</dt>
+            <dd class="col-sm-9">@Model.DINPUTDATE</dd>
+            <dt class="col-sm-3">TABLE5557</dt>
+            <dd class="col-sm-9">@Model.TABLE5557SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE5001</dt>
+            <dd class="col-sm-9">@Model.TABLE5001SDESCRIPT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">TAB_COLLECTCOMM</dt>
+            <dd class="col-sm-9">@Model.TAB_COLLECTCOMMSDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE5501</dt>
+            <dd class="col-sm-9">@Model.TABLE5501SDESCRIPT</dd>
+            <dt class="col-sm-3">NINT_STATUS</dt>
+            <dd class="col-sm-9">@Model.NINT_STATUS</dd>
+            <dt class="col-sm-3">DSTATUSDATE</dt>
+            <dd class="col-sm-9">@Model.DSTATUSDATE</dd>
+            <dt class="col-sm-3">NOFFICE</dt>
+            <dd class="col-sm-9">@Model.NOFFICE</dd>
+            <dt class="col-sm-3">NSUPERVIS</dt>
+            <dd class="col-sm-9">@Model.NSUPERVIS</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCOLLECTOR" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

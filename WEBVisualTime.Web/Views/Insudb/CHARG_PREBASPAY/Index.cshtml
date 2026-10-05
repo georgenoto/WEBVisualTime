@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CHARG_PREBASPAY.CHARG_PREBASPAYDto>
+
+@{
+    ViewData["Title"] = "CHARG_PREBASPAY";
+    ViewData["ColumnHeaders"] = new[] { "NBRANCH", "NPRODUCT", "NAGE_INIT", "NMONTH_INI", "NOPTION", "NAGE_END", "NMONTH_END", "NTYPE_CHARG", "NRATE", "NAMOUNT", "DCOMPDATE", "NRATE_PPIN", "NUSERCODE", "SAPLYQUOT" };
+    ViewData["ColumnProperties"] = new[] { "NBRANCH", "NPRODUCT", "NAGE_INIT", "NMONTH_INI", "NOPTION", "NAGE_END", "NMONTH_END", "NTYPE_CHARG", "NRATE", "NAMOUNT", "DCOMPDATE", "NRATE_PPIN", "NUSERCODE", "SAPLYQUOT" };
+    ViewData["KeyName"] = "NBRANCH";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

@@ -1,0 +1,116 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.FINANC_DRA.FINANC_DRADto
+
+@{
+    ViewData["Title"] = "Detalles de FINANC_DRA";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">TABLE253</dt>
+            <dd class="col-sm-9">@Model.TABLE253SDESCRIPT</dd>
+            <dt class="col-sm-3">NAMOUNT_NET</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_NET</dd>
+            <dt class="col-sm-3">CLAIM</dt>
+            <dd class="col-sm-9">@Model.CLAIMSCERTYPE</dd>
+            <dt class="col-sm-3">NCOMMISSION</dt>
+            <dd class="col-sm-9">@Model.NCOMMISSION</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NCONTRAT</dt>
+            <dd class="col-sm-9">@Model.NCONTRAT</dd>
+            <dt class="col-sm-3">NDRAFT</dt>
+            <dd class="col-sm-9">@Model.NDRAFT</dd>
+            <dt class="col-sm-3">DEXPIRDAT</dt>
+            <dd class="col-sm-9">@Model.DEXPIRDAT</dd>
+            <dt class="col-sm-3">NINTAMMOU</dt>
+            <dd class="col-sm-9">@Model.NINTAMMOU</dd>
+            <dt class="col-sm-3">TABLE282</dt>
+            <dd class="col-sm-9">@Model.TABLE282SDESCRIPT</dd>
+            <dt class="col-sm-3">INTERMEDIA</dt>
+            <dd class="col-sm-9">@Model.INTERMEDIASCOL_AGREE</dd>
+            <dt class="col-sm-3">DSTAT_DATE</dt>
+            <dd class="col-sm-9">@Model.DSTAT_DATE</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">NBULLETINS</dt>
+            <dd class="col-sm-9">@Model.NBULLETINS</dd>
+            <dt class="col-sm-3">NAMO_AFEC</dt>
+            <dd class="col-sm-9">@Model.NAMO_AFEC</dd>
+            <dt class="col-sm-3">NAMO_EXEN</dt>
+            <dd class="col-sm-9">@Model.NAMO_EXEN</dd>
+            <dt class="col-sm-3">NIVA</dt>
+            <dd class="col-sm-9">@Model.NIVA</dd>
+            <dt class="col-sm-3">NCOM_AFEC</dt>
+            <dd class="col-sm-9">@Model.NCOM_AFEC</dd>
+            <dt class="col-sm-3">NCOM_EXEN</dt>
+            <dd class="col-sm-9">@Model.NCOM_EXEN</dd>
+            <dt class="col-sm-3">DLIMITDATE</dt>
+            <dd class="col-sm-9">@Model.DLIMITDATE</dd>
+            <dt class="col-sm-3">COLFORMREF</dt>
+            <dd class="col-sm-9">@Model.COLFORMREFSTYPE</dd>
+            <dt class="col-sm-3">SINDCHEQUE</dt>
+            <dd class="col-sm-9">@Model.SINDCHEQUE</dd>
+            <dt class="col-sm-3">DCOLLSUS_INI</dt>
+            <dd class="col-sm-9">@Model.DCOLLSUS_INI</dd>
+            <dt class="col-sm-3">DCOLLSUS_END</dt>
+            <dd class="col-sm-9">@Model.DCOLLSUS_END</dd>
+            <dt class="col-sm-3">TABLE5566</dt>
+            <dd class="col-sm-9">@Model.TABLE5566SDESCRIPT</dd>
+            <dt class="col-sm-3">SSUS_ORIGI</dt>
+            <dd class="col-sm-9">@Model.SSUS_ORIGI</dd>
+            <dt class="col-sm-3">NCOLLECTOR</dt>
+            <dd class="col-sm-9">@Model.NCOLLECTOR</dd>
+            <dt class="col-sm-3">NBILLNUM</dt>
+            <dd class="col-sm-9">@Model.NBILLNUM</dd>
+            <dt class="col-sm-3">SBILLTYPE</dt>
+            <dd class="col-sm-9">@Model.SBILLTYPE</dd>
+            <dt class="col-sm-3">TABLE5002</dt>
+            <dd class="col-sm-9">@Model.TABLE5002SDESCRIPT</dd>
+            <dt class="col-sm-3">SDOCNUMBE</dt>
+            <dd class="col-sm-9">@Model.SDOCNUMBE</dd>
+            <dt class="col-sm-3">NRETENTIONTAXCODE</dt>
+            <dd class="col-sm-9">@Model.NRETENTIONTAXCODE</dd>
+            <dt class="col-sm-3">NRETENTIONCODE</dt>
+            <dd class="col-sm-9">@Model.NRETENTIONCODE</dd>
+            <dt class="col-sm-3">NRETENTIONSERIES</dt>
+            <dd class="col-sm-9">@Model.NRETENTIONSERIES</dd>
+            <dt class="col-sm-3">DAUTORIZATIONDATE</dt>
+            <dd class="col-sm-9">@Model.DAUTORIZATIONDATE</dd>
+            <dt class="col-sm-3">DENDINGDATE</dt>
+            <dd class="col-sm-9">@Model.DENDINGDATE</dd>
+            <dt class="col-sm-3">NRETENTION</dt>
+            <dd class="col-sm-9">@Model.NRETENTION</dd>
+            <dt class="col-sm-3">NTAXRETENTION</dt>
+            <dd class="col-sm-9">@Model.NTAXRETENTION</dd>
+            <dt class="col-sm-3">NRETENTIONBASE</dt>
+            <dd class="col-sm-9">@Model.NRETENTIONBASE</dd>
+            <dt class="col-sm-3">NAUTORIZATIONNUMBER</dt>
+            <dd class="col-sm-9">@Model.NAUTORIZATIONNUMBER</dd>
+            <dt class="col-sm-3">NEMISRIGHT</dt>
+            <dd class="col-sm-9">@Model.NEMISRIGHT</dd>
+            <dt class="col-sm-3">NIVA_SSC</dt>
+            <dd class="col-sm-9">@Model.NIVA_SSC</dd>
+            <dt class="col-sm-3">NIVA_SBK</dt>
+            <dd class="col-sm-9">@Model.NIVA_SBK</dd>
+            <dt class="col-sm-3">NIVA_OTHER</dt>
+            <dd class="col-sm-9">@Model.NIVA_OTHER</dd>
+            <dt class="col-sm-3">NIVA_OTHER_DESC</dt>
+            <dd class="col-sm-9">@Model.NIVA_OTHER_DESC</dd>
+            <dt class="col-sm-3">NIVA_OTHER_DESCOMPEN</dt>
+            <dd class="col-sm-9">@Model.NIVA_OTHER_DESCOMPEN</dd>
+            <dt class="col-sm-3">NIVA_PERCENT</dt>
+            <dd class="col-sm-9">@Model.NIVA_PERCENT</dd>
+            <dt class="col-sm-3">NBORDEREAUX_ADV</dt>
+            <dd class="col-sm-9">@Model.NBORDEREAUX_ADV</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCONTRAT" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.PAY_FRACTI.PAY_FRACTIDto>
+
+@{
+    ViewData["Title"] = "PAY_FRACTI";
+    ViewData["ColumnHeaders"] = new[] { "NBRANCH", "NPRODUCT", "TABLE36", "NQUOTA", "DEFFECDATE", "DCOMPDATE", "DNULLDATE", "NRATEPAYF", "SSTATREGT", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "NBRANCH", "NPRODUCT", "TABLE36SDESCRIPT", "NQUOTA", "DEFFECDATE", "DCOMPDATE", "DNULLDATE", "NRATEPAYF", "SSTATREGT", "NUSERCODE" };
+    ViewData["KeyName"] = "NBRANCH";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

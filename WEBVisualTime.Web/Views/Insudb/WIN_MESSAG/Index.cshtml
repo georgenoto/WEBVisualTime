@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.WIN_MESSAG.WIN_MESSAGDto>
+
+@{
+    ViewData["Title"] = "WIN_MESSAG";
+    ViewData["ColumnHeaders"] = new[] { "WINDOWS", "MESSAGE", "SACTION_ERR", "DCOMPDATE", "TABLE153", "NLEVEL", "SSTATREGT", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "WINDOWSSCODISP", "MESSAGESMESSAGED", "SACTION_ERR", "DCOMPDATE", "TABLE153SDESCRIPT", "NLEVEL", "SSTATREGT", "NUSERCODE" };
+    ViewData["KeyName"] = "SCODISPL";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

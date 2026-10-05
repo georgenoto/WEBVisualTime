@@ -1,0 +1,76 @@
+#nullable enable
+using System.ComponentModel.DataAnnotations.Schema;
+namespace WEBVisualTime.Entidades.Insudb;
+
+public partial class TAB_LIFCOV
+{
+    public int NCOVERGEN { get; set; }
+    public int? NAGEMAXI { get; set; }
+    public int NBRANCH_EST { get; set; }
+
+    [ForeignKey("NBRANCH_EST")]
+    public Insudb.TABLE71? TABLE71 { get; set; }
+    public int NBRANCH_LED { get; set; }
+
+    [ForeignKey("NBRANCH_LED")]
+    public Insudb.TABLE75? TABLE75 { get; set; }
+    public int NBRANCH_GEN { get; set; }
+
+    [ForeignKey("NBRANCH_GEN")]
+    public Insudb.TABLE634? TABLE634 { get; set; }
+    public int NBRANCH_REI { get; set; }
+
+    [ForeignKey("NBRANCH_REI")]
+    public Insudb.TABLE5000? TABLE5000 { get; set; }
+    public decimal? NCACALFIX { get; set; }
+    public string? SCACALFRI { get; set; }
+    public string? SCAPIPREM { get; set; }
+    public string? SCLACCIDI { get; set; }
+    public string? SCLDEATHI { get; set; }
+    public string? SCLINCAPI { get; set; }
+    public string? SCLINVALI { get; set; }
+    public string? SCLSURVII { get; set; }
+    public string? SCLVEHACI { get; set; }
+    public DateTime? DCOMPDATE { get; set; }
+    public string? SCOVERUSE { get; set; }
+    public int? NCURRENCY { get; set; }
+    public string? SDESCRIPT { get; set; }
+    public string? SIDURAAGE { get; set; }
+    public string? SIDURAYEAR { get; set; }
+    public string? SIDUROPEI { get; set; }
+    public string? SINSURINI { get; set; }
+    public int? NCOVER_IN { get; set; }
+    public decimal? NPREMIRAT { get; set; }
+    public string? SPDURAAGE { get; set; }
+    public int? NDURATIND { get; set; }
+    public int? NDURATPAY { get; set; }
+    public string? SREVINDEX { get; set; }
+    public string? SPDUROPEI { get; set; }
+    public string? SPDURYEAR { get; set; }
+    public string? SPREMCAPI { get; set; }
+    public string? SRECHAPRI { get; set; }
+    public string? SRENEWALI { get; set; }
+    public string? SROUCHACA { get; set; }
+    public string? SROUCHAPR { get; set; }
+    public string? SROUPRCAL { get; set; }
+    public string? SROURESER { get; set; }
+    public string? SROUSURRE { get; set; }
+    public string? SSHORT_DES { get; set; }
+    public string? SSTATREGT { get; set; }
+    public int? NUSERCODE { get; set; }
+    public string? SCLILLNESS { get; set; }
+    public string? SCONDSVS { get; set; }
+    public string? SINFORPROV { get; set; }
+    public string? SPROVIDER { get; set; }
+
+    [ForeignKey("SPROVIDER")]
+    public Insudb.CLIENT? CLIENT { get; set; }
+    public int NCLA_LI_TYP { get; set; }
+
+    [ForeignKey("NCLA_LI_TYP")]
+    public Insudb.TABLE210? TABLE210 { get; set; }
+    public string? SDESCOVER { get; set; }
+    public string? STAXHEREDITY { get; set; }
+    public DateTime? DSTARTDATE { get; set; }
+    public DateTime? DOCCURDAT { get; set; }
+}

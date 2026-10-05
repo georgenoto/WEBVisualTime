@@ -1,0 +1,60 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CONTR_CESCOV.CONTR_CESCOVDto
+
+@{
+    ViewData["Title"] = "Detalles de CONTR_CESCOV";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBRANCH_REI</dt>
+            <dd class="col-sm-9">@Model.NBRANCH_REI</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NNUMBER</dt>
+            <dd class="col-sm-9">@Model.NNUMBER</dd>
+            <dt class="col-sm-3">NTYPE</dt>
+            <dd class="col-sm-9">@Model.NTYPE</dd>
+            <dt class="col-sm-3">TABLE5001</dt>
+            <dd class="col-sm-9">@Model.TABLE5001SDESCRIPT</dd>
+            <dt class="col-sm-3">NCOVERGEN</dt>
+            <dd class="col-sm-9">@Model.NCOVERGEN</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">TABLE5552</dt>
+            <dd class="col-sm-9">@Model.TABLE5552SDESCRIPT</dd>
+            <dt class="col-sm-3">SROUCESS</dt>
+            <dd class="col-sm-9">@Model.SROUCESS</dd>
+            <dt class="col-sm-3">NRATE</dt>
+            <dd class="col-sm-9">@Model.NRATE</dd>
+            <dt class="col-sm-3">NCESSPRFIX</dt>
+            <dd class="col-sm-9">@Model.NCESSPRFIX</dd>
+            <dt class="col-sm-3">SINOTHERCOV</dt>
+            <dd class="col-sm-9">@Model.SINOTHERCOV</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NCOMPANY</dt>
+            <dd class="col-sm-9">@Model.NCOMPANY</dd>
+            <dt class="col-sm-3">NCOVERGEN_OTHER</dt>
+            <dd class="col-sm-9">@Model.NCOVERGEN_OTHER</dd>
+            <dt class="col-sm-3">NSHARE_CIA</dt>
+            <dd class="col-sm-9">@Model.NSHARE_CIA</dd>
+            <dt class="col-sm-3">NAGEMAX</dt>
+            <dd class="col-sm-9">@Model.NAGEMAX</dd>
+            <dt class="col-sm-3">NRATE_EXPREM</dt>
+            <dd class="col-sm-9">@Model.NRATE_EXPREM</dd>
+            <dt class="col-sm-3">SMORTACOF</dt>
+            <dd class="col-sm-9">@Model.SMORTACOF</dd>
+            <dt class="col-sm-3">SMORTACOM</dt>
+            <dd class="col-sm-9">@Model.SMORTACOM</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH_REI" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

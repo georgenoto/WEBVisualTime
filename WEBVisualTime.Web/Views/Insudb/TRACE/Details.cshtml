@@ -1,0 +1,26 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TRACE.TRACEDto
+
+@{
+    ViewData["Title"] = "Detalles de TRACE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9">@Model.ID</dd>
+            <dt class="col-sm-3">PROC</dt>
+            <dd class="col-sm-9">@Model.PROC</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">TEXT</dt>
+            <dd class="col-sm-9">@Model.TEXT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.SIGNSCAPOFF.SIGNSCAPOFFDto>
+
+@{
+    ViewData["Title"] = "SIGNSCAPOFF";
+    ViewData["ColumnHeaders"] = new[] { "TABLE10", "TABLE9", "TABLE11", "USERS", "NORDSIGN", "NCAPMINSING", "NCAPMAXSING", "DEFFECDATE", "DNULLDATE", "DCOMPDATE", "NUSERCODE", "SSTATREG" };
+    ViewData["ColumnProperties"] = new[] { "TABLE10SDESCRIPT", "TABLE9SDESCRIPT", "TABLE11SDESCRIPT", "USERSSACCESSWO", "NORDSIGN", "NCAPMINSING", "NCAPMAXSING", "DEFFECDATE", "DNULLDATE", "DCOMPDATE", "NUSERCODE", "SSTATREG" };
+    ViewData["KeyName"] = "NBRANCH";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

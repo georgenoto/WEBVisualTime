@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAB_PROV_MEDSPEC.TAB_PROV_MEDSPECDto>
+
+@{
+    ViewData["Title"] = "TAB_PROV_MEDSPEC";
+    ViewData["ColumnHeaders"] = new[] { "TAB_PROVIDER", "TABLE8603", "NMAIN_MEDSPECIALIALTY", "SREG_MEDICALPROF", "SSTATREGT", "DCOMPDATE", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "TAB_PROVIDERSSTATREGT", "TABLE8603SDESCRIPT", "NMAIN_MEDSPECIALIALTY", "SREG_MEDICALPROF", "SSTATREGT", "DCOMPDATE", "NUSERCODE" };
+    ViewData["KeyName"] = "NPROVIDER";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

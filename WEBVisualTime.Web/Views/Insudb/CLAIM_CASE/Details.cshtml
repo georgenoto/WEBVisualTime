@@ -1,0 +1,68 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_CASE.CLAIM_CASEDto
+
+@{
+    ViewData["Title"] = "Detalles de CLAIM_CASE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CLAIM</dt>
+            <dd class="col-sm-9">@Model.CLAIMSCERTYPE</dd>
+            <dt class="col-sm-3">NCASE_NUM</dt>
+            <dd class="col-sm-9">@Model.NCASE_NUM</dd>
+            <dt class="col-sm-3">TABLE692</dt>
+            <dd class="col-sm-9">@Model.TABLE692SDESCRIPT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">TABLE135</dt>
+            <dd class="col-sm-9">@Model.TABLE135SDESCRIPT</dd>
+            <dt class="col-sm-3">NNOTEDAMA</dt>
+            <dd class="col-sm-9">@Model.NNOTEDAMA</dd>
+            <dt class="col-sm-3">SCLAIM_AFFE</dt>
+            <dd class="col-sm-9">@Model.SCLAIM_AFFE</dd>
+            <dt class="col-sm-3">NGROWTH_RATEI</dt>
+            <dd class="col-sm-9">@Model.NGROWTH_RATEI</dd>
+            <dt class="col-sm-3">NGROWTH_RATEE</dt>
+            <dd class="col-sm-9">@Model.NGROWTH_RATEE</dd>
+            <dt class="col-sm-3">NAPV_CAPITAL</dt>
+            <dd class="col-sm-9">@Model.NAPV_CAPITAL</dd>
+            <dt class="col-sm-3">DSUMMON_LIMIT</dt>
+            <dd class="col-sm-9">@Model.DSUMMON_LIMIT</dd>
+            <dt class="col-sm-3">SHAS_SURV_PENSION_BENEFS</dt>
+            <dd class="col-sm-9">@Model.SHAS_SURV_PENSION_BENEFS</dd>
+            <dt class="col-sm-3">DSUMMON</dt>
+            <dd class="col-sm-9">@Model.DSUMMON</dd>
+            <dt class="col-sm-3">SAFP_TRANS_TYPE</dt>
+            <dd class="col-sm-9">@Model.SAFP_TRANS_TYPE</dd>
+            <dt class="col-sm-3">NSTAY_BONUS</dt>
+            <dd class="col-sm-9">@Model.NSTAY_BONUS</dd>
+            <dt class="col-sm-3">NAPV_BALANCE_BC2052</dt>
+            <dd class="col-sm-9">@Model.NAPV_BALANCE_BC2052</dd>
+            <dt class="col-sm-3">NAPV_BALANCE_AC2052</dt>
+            <dd class="col-sm-9">@Model.NAPV_BALANCE_AC2052</dd>
+            <dt class="col-sm-3">NTRANSF_AMOUNT</dt>
+            <dd class="col-sm-9">@Model.NTRANSF_AMOUNT</dd>
+            <dt class="col-sm-3">NAPV_TAX</dt>
+            <dd class="col-sm-9">@Model.NAPV_TAX</dd>
+            <dt class="col-sm-3">NAPV_BENEF_BALANCE</dt>
+            <dd class="col-sm-9">@Model.NAPV_BENEF_BALANCE</dd>
+            <dt class="col-sm-3">TABLE5524</dt>
+            <dd class="col-sm-9">@Model.TABLE5524SDESCRIPT</dd>
+            <dt class="col-sm-3">NSENDTO_LGM</dt>
+            <dd class="col-sm-9">@Model.NSENDTO_LGM</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">TABLE136</dt>
+            <dd class="col-sm-9">@Model.TABLE136SDESCRIPT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCLAIM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

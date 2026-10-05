@@ -1,0 +1,104 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_DENTITION.UpdateTAB_DENTITIONDto
+
+@{
+    ViewData["Title"] = "Editar TAB_DENTITION";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NIDDENTITION" />
+            <div class="mb-3">
+                <label asp-for="SADA" class="form-label"></label>
+                <input asp-for="SADA" class="form-control" />
+                <span asp-validation-for="SADA" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SFDI" class="form-label"></label>
+                <input asp-for="SFDI" class="form-control" />
+                <span asp-validation-for="SFDI" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NTHETH" class="form-label"></label>
+                <input asp-for="NTHETH" class="form-control" type="number" />
+                <span asp-validation-for="NTHETH" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NQUADRANT" class="form-label"></label>
+                <input asp-for="NQUADRANT" class="form-control" type="number" />
+                <span asp-validation-for="NQUADRANT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NARCADE" class="form-label"></label>
+                <input asp-for="NARCADE" class="form-control" type="number" />
+                <span asp-validation-for="NARCADE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="STOOTHNAM" class="form-label"></label>
+                <input asp-for="STOOTHNAM" class="form-control" />
+                <span asp-validation-for="STOOTHNAM" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SPALATINE" class="form-label"></label>
+                <input asp-for="SPALATINE" class="form-control" />
+                <span asp-validation-for="SPALATINE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SLINGUAL" class="form-label"></label>
+                <input asp-for="SLINGUAL" class="form-control" />
+                <span asp-validation-for="SLINGUAL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SVESTIBULAR" class="form-label"></label>
+                <input asp-for="SVESTIBULAR" class="form-control" />
+                <span asp-validation-for="SVESTIBULAR" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SMESIAL" class="form-label"></label>
+                <input asp-for="SMESIAL" class="form-control" />
+                <span asp-validation-for="SMESIAL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SDISTAL" class="form-label"></label>
+                <input asp-for="SDISTAL" class="form-control" />
+                <span asp-validation-for="SDISTAL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SINCISAL" class="form-label"></label>
+                <input asp-for="SINCISAL" class="form-control" />
+                <span asp-validation-for="SINCISAL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SOCLUSAL" class="form-label"></label>
+                <input asp-for="SOCLUSAL" class="form-control" />
+                <span asp-validation-for="SOCLUSAL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SLABIAL" class="form-label"></label>
+                <input asp-for="SLABIAL" class="form-control" />
+                <span asp-validation-for="SLABIAL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

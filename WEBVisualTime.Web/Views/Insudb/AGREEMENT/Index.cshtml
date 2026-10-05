@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.AGREEMENT.AGREEMENTDto>
+
+@{
+    ViewData["Title"] = "AGREEMENT";
+    ViewData["ColumnHeaders"] = new[] { "CLIENT", "NCOD_AGREE", "NQ_DRAFT", "NMAX_PERC_DCTO", "DINIT_DATE", "DEND_DATE", "DCOMPDATE", "SSTATREGT", "NUSERCODE", "TABLE5529", "TABLE5581", "INTERMEDIA", "TABLE5555", "SEMAIL_CONTACT", "SPHONE_CONTACT", "SCLIENAME", "SFIRSTNAME", "SLASTNAME", "NPOSITION", "SEMAILA_CONTACT", "SPHONEA_CONTACT", "SPHONEFAX", "SNAME_AGREE", "SNOCOLLECTION", "NIMAGENUM", "NPROV_GROUP", "NPROVIDER" };
+    ViewData["ColumnProperties"] = new[] { "CLIENTSACCOUNT_IN", "NCOD_AGREE", "NQ_DRAFT", "NMAX_PERC_DCTO", "DINIT_DATE", "DEND_DATE", "DCOMPDATE", "SSTATREGT", "NUSERCODE", "TABLE5529SDESCRIPT", "TABLE5581SDESCRIPT", "INTERMEDIASCOL_AGREE", "TABLE5555SDESCRIPT", "SEMAIL_CONTACT", "SPHONE_CONTACT", "SCLIENAME", "SFIRSTNAME", "SLASTNAME", "NPOSITION", "SEMAILA_CONTACT", "SPHONEA_CONTACT", "SPHONEFAX", "SNAME_AGREE", "SNOCOLLECTION", "NIMAGENUM", "NPROV_GROUP", "NPROVIDER" };
+    ViewData["KeyName"] = "NCOD_AGREE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

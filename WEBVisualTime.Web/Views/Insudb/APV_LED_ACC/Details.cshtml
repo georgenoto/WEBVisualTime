@@ -1,0 +1,30 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.APV_LED_ACC.APV_LED_ACCDto
+
+@{
+    ViewData["Title"] = "Detalles de APV_LED_ACC";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NTYPE_MOVE</dt>
+            <dd class="col-sm-9">@Model.NTYPE_MOVE</dd>
+            <dt class="col-sm-3">NTYP_PROFITWORKER</dt>
+            <dd class="col-sm-9">@Model.NTYP_PROFITWORKER</dd>
+            <dt class="col-sm-3">SLEDACC</dt>
+            <dd class="col-sm-9">@Model.SLEDACC</dd>
+            <dt class="col-sm-3">SDESCLED</dt>
+            <dd class="col-sm-9">@Model.SDESCLED</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NTYPE_MOVE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

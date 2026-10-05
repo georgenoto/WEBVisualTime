@@ -1,0 +1,26 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.REPORT_MAP.REPORT_MAPDto
+
+@{
+    ViewData["Title"] = "Detalles de REPORT_MAP";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NORDER</dt>
+            <dd class="col-sm-9">@Model.NORDER</dd>
+            <dt class="col-sm-3">NCODIG</dt>
+            <dd class="col-sm-9">@Model.NCODIG</dd>
+            <dt class="col-sm-3">NORIGIN</dt>
+            <dd class="col-sm-9">@Model.NORIGIN</dd>
+            <dt class="col-sm-3">NTYPE</dt>
+            <dd class="col-sm-9">@Model.NTYPE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NORDER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

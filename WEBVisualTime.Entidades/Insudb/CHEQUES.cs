@@ -1,0 +1,117 @@
+#nullable enable
+using System.ComponentModel.DataAnnotations.Schema;
+namespace WEBVisualTime.Entidades.Insudb;
+
+public partial class CHEQUES
+{
+    public long NREQUEST_NU { get; set; }
+    public string SCHEQUE { get; set; }
+    public int NCONSEC { get; set; }
+    public int NCONCEPT { get; set; }
+
+    [ForeignKey("NCONCEPT")]
+    public Insudb.PAY_ORD_CONCEPTS? PAY_ORD_CONCEPTSNCONCEPT { get; set; }
+    public decimal? NAMOUNT { get; set; }
+    public string SCLIENT { get; set; }
+
+    [ForeignKey("SCLIENT")]
+    public Insudb.CLIENT? CLIENT { get; set; }
+    public int NBRANCH_LED { get; set; }
+
+    [ForeignKey("NBRANCH_LED")]
+    public Insudb.TABLE75? TABLE75 { get; set; }
+    public long NCLAIM { get; set; }
+
+    [ForeignKey("NCLAIM")]
+    public Insudb.CLAIM? CLAIM { get; set; }
+    public DateTime? DCOMPDATE { get; set; }
+    public int? NVOUCHER_LE { get; set; }
+    public long? NVOUCHER { get; set; }
+    public DateTime? DDAT_PROPOS { get; set; }
+    public string? SDESCRIPT { get; set; }
+    public DateTime? DISSUE_DAT { get; set; }
+    public DateTime? DLEDGER_DAT { get; set; }
+    public int NNULLCODE { get; set; }
+
+    [ForeignKey("NNULLCODE")]
+    public Insudb.TABLE295? TABLE295 { get; set; }
+    public DateTime? DNULLDATE { get; set; }
+    public string? SPAY_FREQ { get; set; }
+    public int? NQ_PAYS { get; set; }
+    public long? NRECEIPT { get; set; }
+    public string? SREQUEST_TY { get; set; }
+
+    [ForeignKey("SREQUEST_TY")]
+    public Insudb.TABLE193? TABLE193 { get; set; }
+    public int NSTA_CHEQUE { get; set; }
+
+    [ForeignKey("NSTA_CHEQUE")]
+    public Insudb.TABLE187? TABLE187 { get; set; }
+    public DateTime? DSTAT_DATE { get; set; }
+    public int? NTRANSAC { get; set; }
+    public int? NUSER_SOL { get; set; }
+    public int? NUSERCODE { get; set; }
+    public long? NYEAR_MONTH { get; set; }
+    public int NACC_BANK { get; set; }
+
+    [ForeignKey("NACC_BANK")]
+    public Insudb.BANK_ACC? BANK_ACC { get; set; }
+    public long NBORDEREAUX { get; set; }
+
+    [ForeignKey("NBORDEREAUX")]
+    public Insudb.COLFORMREF? COLFORMREF { get; set; }
+    public long? NNOTENUM { get; set; }
+    public decimal? NAFECT { get; set; }
+    public decimal? NEXENT { get; set; }
+    public int? NTAXCODE { get; set; }
+    public decimal? NTAX_AMOUNT { get; set; }
+    public int NOFFICE { get; set; }
+
+    [ForeignKey("NOFFICE")]
+    public Insudb.TABLE9? TABLE9 { get; set; }
+    public int? NCASHNUM { get; set; }
+    public int NINSUR_AREA { get; set; }
+
+    [ForeignKey("NINSUR_AREA")]
+    public Insudb.TABLE5001? TABLE5001 { get; set; }
+    public int? NPAYORDBORD { get; set; }
+    public int NCOMPANY { get; set; }
+
+    [ForeignKey("NCOMPANY")]
+    public Insudb.PAY_ORD_CONCEPTS? PAY_ORD_CONCEPTSNCOMPANY { get; set; }
+    public string? SINTER_PAY { get; set; }
+    public decimal? NAMOUNT_LOCAL { get; set; }
+    public int? NBRANCH { get; set; }
+    public int? NPRODUCT { get; set; }
+    public long? NPOLICY { get; set; }
+    public string? SFILE_FIN700 { get; set; }
+    public DateTime? DDATE_FIN700 { get; set; }
+    public int NTYPESUPPORT { get; set; }
+
+    [ForeignKey("NTYPESUPPORT")]
+    public Insudb.TABLE5570? TABLE5570 { get; set; }
+    public long? NDOCSUPPORT { get; set; }
+    public decimal? NTAX_PERCENT { get; set; }
+    public int? NCURRENCYORI { get; set; }
+    public int? NCURRENCYPAY { get; set; }
+    public decimal? NAMOUNTPAY { get; set; }
+    public DateTime? DPOSTED { get; set; }
+    public int NOFFICEAGEN { get; set; }
+
+    [ForeignKey("NOFFICEAGEN")]
+    public Insudb.TABLE5556? TABLE5556 { get; set; }
+    public int NAGENCY { get; set; }
+
+    [ForeignKey("NAGENCY")]
+    public Insudb.AGENCIES? AGENCIES { get; set; }
+    public long? NORDPAY_REL { get; set; }
+    public long? NNUM_RELPAY { get; set; }
+    public string? SINDPROCES { get; set; }
+    public string? SACCOUNTHOLDER { get; set; }
+    public int? NBANKEXT { get; set; }
+    public string? SBANKACCOUNT { get; set; }
+    public long? NPAY_COMM { get; set; }
+    public int? NACC_TYPE { get; set; }
+    public int? NID_EXTERNALSYSTEM { get; set; }
+    public long? NEXTERNAL_CONCEPT { get; set; }
+}

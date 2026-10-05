@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.BATCH_PARAM_VALUE.BATCH_PARAM_VALUEDto>
+
+@{
+    ViewData["Title"] = "BATCH_PARAM_VALUE";
+    ViewData["ColumnHeaders"] = new[] { "BATCH_JOB", "BATCH_PARAMNAREA", "BATCH_PARAMNSEQ", "BATCH_PARAMNBATCH", "SVALUE", "NDATATYPE", "NUSERCODE", "DCOMPDATE", "SDESCRIPT" };
+    ViewData["ColumnProperties"] = new[] { "BATCH_JOBSCOMMAND", "BATCH_PARAMNAREASNAME", "BATCH_PARAMNSEQSNAME", "BATCH_PARAMNBATCHSNAME", "SVALUE", "NDATATYPE", "NUSERCODE", "DCOMPDATE", "SDESCRIPT" };
+    ViewData["KeyName"] = "SKEY";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

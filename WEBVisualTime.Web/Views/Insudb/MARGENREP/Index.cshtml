@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.MARGENREP.MARGENREPDto>
+
+@{
+    ViewData["Title"] = "MARGENREP";
+    ViewData["ColumnHeaders"] = new[] { "NBRANCH", "NPRODUCT", "NREPTYPE", "SLOGO", "SLOG", "X1", "Y1", "NIMAGENX", "NIMAGENY", "NPOSIMGX", "NPOSIMGY", "NRADIOCURVA", "NSPACE", "DCOMPDATE", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "NBRANCH", "NPRODUCT", "NREPTYPE", "SLOGO", "SLOG", "X1", "Y1", "NIMAGENX", "NIMAGENY", "NPOSIMGX", "NPOSIMGY", "NRADIOCURVA", "NSPACE", "DCOMPDATE", "NUSERCODE" };
+    ViewData["KeyName"] = "NBRANCH";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

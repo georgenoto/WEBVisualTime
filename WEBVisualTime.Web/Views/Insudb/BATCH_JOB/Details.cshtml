@@ -1,0 +1,50 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.BATCH_JOB.BATCH_JOBDto
+
+@{
+    ViewData["Title"] = "Detalles de BATCH_JOB";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SKEY</dt>
+            <dd class="col-sm-9">@Model.SKEY</dd>
+            <dt class="col-sm-3">BATCH_PROCESS</dt>
+            <dd class="col-sm-9">@Model.BATCH_PROCESSSCODISPL</dd>
+            <dt class="col-sm-3">DSTART</dt>
+            <dd class="col-sm-9">@Model.DSTART</dd>
+            <dt class="col-sm-3">DEND</dt>
+            <dd class="col-sm-9">@Model.DEND</dd>
+            <dt class="col-sm-3">NSTATUS</dt>
+            <dd class="col-sm-9">@Model.NSTATUS</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">SCOMMAND</dt>
+            <dd class="col-sm-9">@Model.SCOMMAND</dd>
+            <dt class="col-sm-3">DSUBMIT</dt>
+            <dd class="col-sm-9">@Model.DSUBMIT</dd>
+            <dt class="col-sm-3">NORAJOB</dt>
+            <dd class="col-sm-9">@Model.NORAJOB</dd>
+            <dt class="col-sm-3">NUSERSUBMIT</dt>
+            <dd class="col-sm-9">@Model.NUSERSUBMIT</dd>
+            <dt class="col-sm-3">NSHEET</dt>
+            <dd class="col-sm-9">@Model.NSHEET</dd>
+            <dt class="col-sm-3">SKEY_FATHER</dt>
+            <dd class="col-sm-9">@Model.SKEY_FATHER</dd>
+            <dt class="col-sm-3">SOUTPUTFILE</dt>
+            <dd class="col-sm-9">@Model.SOUTPUTFILE</dd>
+            <dt class="col-sm-3">SFILE</dt>
+            <dd class="col-sm-9">@Model.SFILE</dd>
+            <dt class="col-sm-3">SVERIFIED_PLA</dt>
+            <dd class="col-sm-9">@Model.SVERIFIED_PLA</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SKEY" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

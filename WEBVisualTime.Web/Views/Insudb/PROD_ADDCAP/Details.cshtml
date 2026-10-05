@@ -1,0 +1,48 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.PROD_ADDCAP.PROD_ADDCAPDto
+
+@{
+    ViewData["Title"] = "Detalles de PROD_ADDCAP";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">TAB_LIFCOV</dt>
+            <dd class="col-sm-9">@Model.TAB_LIFCOVSCACALFRI</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NBRANCHADD</dt>
+            <dd class="col-sm-9">@Model.NBRANCHADD</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NPRODUCTADD</dt>
+            <dd class="col-sm-9">@Model.NPRODUCTADD</dd>
+            <dt class="col-sm-3">NID</dt>
+            <dd class="col-sm-9">@Model.NID</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NROLE</dt>
+            <dd class="col-sm-9">@Model.NROLE</dd>
+            <dt class="col-sm-3">NCAPITAL</dt>
+            <dd class="col-sm-9">@Model.NCAPITAL</dd>
+            <dt class="col-sm-3">NCOVERADD</dt>
+            <dd class="col-sm-9">@Model.NCOVERADD</dd>
+            <dt class="col-sm-3">NROLEADD</dt>
+            <dd class="col-sm-9">@Model.NROLEADD</dd>
+            <dt class="col-sm-3">NTYP_CUMUL</dt>
+            <dd class="col-sm-9">@Model.NTYP_CUMUL</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

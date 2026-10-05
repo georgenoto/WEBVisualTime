@@ -1,0 +1,46 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.T_BANK_TRANS.T_BANK_TRANSDto
+
+@{
+    ViewData["Title"] = "Detalles de T_BANK_TRANS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">COLFORMREF</dt>
+            <dd class="col-sm-9">@Model.COLFORMREFSTYPE</dd>
+            <dt class="col-sm-3">NSEQUENCE</dt>
+            <dd class="col-sm-9">@Model.NSEQUENCE</dd>
+            <dt class="col-sm-3">NACC_BANK</dt>
+            <dd class="col-sm-9">@Model.NACC_BANK</dd>
+            <dt class="col-sm-3">NACC_TYPE</dt>
+            <dd class="col-sm-9">@Model.NACC_TYPE</dd>
+            <dt class="col-sm-3">SACCO_NUM</dt>
+            <dd class="col-sm-9">@Model.SACCO_NUM</dd>
+            <dt class="col-sm-3">NBANK_CODE</dt>
+            <dd class="col-sm-9">@Model.NBANK_CODE</dd>
+            <dt class="col-sm-3">NBK_AGENCY</dt>
+            <dd class="col-sm-9">@Model.NBK_AGENCY</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">NMOVEMENT</dt>
+            <dd class="col-sm-9">@Model.NMOVEMENT</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">SACTION</dt>
+            <dd class="col-sm-9">@Model.SACTION</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBORDEREAUX" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

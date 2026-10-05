@@ -1,0 +1,30 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_MATRIX_RH.TAB_MATRIX_RHDto
+
+@{
+    ViewData["Title"] = "Detalles de TAB_MATRIX_RH";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NTYPE_MOVE</dt>
+            <dd class="col-sm-9">@Model.NTYPE_MOVE</dd>
+            <dt class="col-sm-3">NORIGIN</dt>
+            <dd class="col-sm-9">@Model.NORIGIN</dd>
+            <dt class="col-sm-3">NTYP_PROFITWORKER</dt>
+            <dd class="col-sm-9">@Model.NTYP_PROFITWORKER</dd>
+            <dt class="col-sm-3">NTRANSAC</dt>
+            <dd class="col-sm-9">@Model.NTRANSAC</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NTYPE_MOVE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,26 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.RM_LINK_CUSTOMIZED_QUERY_BIND.RM_LINK_CUSTOMIZED_QUERY_BINDDto
+
+@{
+    ViewData["Title"] = "Detalles de RM_LINK_CUSTOMIZED_QUERY_BIND";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">QUERY_NAME</dt>
+            <dd class="col-sm-9">@Model.QUERY_NAME</dd>
+            <dt class="col-sm-3">BIND_NAME</dt>
+            <dd class="col-sm-9">@Model.BIND_NAME</dd>
+            <dt class="col-sm-3">BIND_PROPERTY_NAME</dt>
+            <dd class="col-sm-9">@Model.BIND_PROPERTY_NAME</dd>
+            <dt class="col-sm-3">BIND_SEQUENCE</dt>
+            <dd class="col-sm-9">@Model.BIND_SEQUENCE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.QUERY_NAME" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

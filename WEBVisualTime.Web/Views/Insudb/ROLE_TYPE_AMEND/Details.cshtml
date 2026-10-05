@@ -1,0 +1,28 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.ROLE_TYPE_AMEND.ROLE_TYPE_AMENDDto
+
+@{
+    ViewData["Title"] = "Detalles de ROLE_TYPE_AMEND";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TYPE_AMENDNBRANCH</dt>
+            <dd class="col-sm-9">@Model.TYPE_AMENDNBRANCHSIND_ORDER_SERV</dd>
+            <dt class="col-sm-3">TYPE_AMENDNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.TYPE_AMENDNPRODUCTSIND_ORDER_SERV</dd>
+            <dt class="col-sm-3">TYPE_AMENDDEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.TYPE_AMENDDEFFECDATESIND_ORDER_SERV</dd>
+            <dt class="col-sm-3">TYPE_AMENDNTYPE_AMEND</dt>
+            <dd class="col-sm-9">@Model.TYPE_AMENDNTYPE_AMENDSIND_ORDER_SERV</dd>
+            <dt class="col-sm-3">NROLEID</dt>
+            <dd class="col-sm-9">@Model.NROLEID</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

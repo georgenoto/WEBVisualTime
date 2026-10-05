@@ -1,0 +1,65 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_FN_INSTITUTION.CreateTAB_FN_INSTITUTIONDto
+
+@{
+    ViewData["Title"] = "Crear TAB_FN_INSTITUTION";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="NTYPEINSTITU" class="form-label"></label>
+                <select asp-for="NTYPEINSTITU" class="form-select" asp-items="@(ViewData["NTYPEINSTITU"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NTYPEINSTITU" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SNAME" class="form-label"></label>
+                <input asp-for="SNAME" class="form-control" />
+                <span asp-validation-for="SNAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SSTATREGT" class="form-label"></label>
+                <input asp-for="SSTATREGT" class="form-control" />
+                <span asp-validation-for="SSTATREGT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SINSTITUTION" class="form-label"></label>
+                <input asp-for="SINSTITUTION" class="form-control" />
+                <span asp-validation-for="SINSTITUTION" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCLIENT" class="form-label"></label>
+                <input asp-for="SCLIENT" class="form-control" />
+                <span asp-validation-for="SCLIENT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SDIGIT" class="form-label"></label>
+                <input asp-for="SDIGIT" class="form-control" />
+                <span asp-validation-for="SDIGIT" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

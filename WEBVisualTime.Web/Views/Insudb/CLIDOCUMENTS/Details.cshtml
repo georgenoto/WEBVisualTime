@@ -1,0 +1,38 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLIDOCUMENTS.CLIDOCUMENTSDto
+
+@{
+    ViewData["Title"] = "Detalles de CLIDOCUMENTS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NTYPCLIENTDOC</dt>
+            <dd class="col-sm-9">@Model.NTYPCLIENTDOC</dd>
+            <dt class="col-sm-3">SCLINUMDOCU</dt>
+            <dd class="col-sm-9">@Model.SCLINUMDOCU</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">DISSUEDAT</dt>
+            <dd class="col-sm-9">@Model.DISSUEDAT</dd>
+            <dt class="col-sm-3">DEXPIRDAT</dt>
+            <dd class="col-sm-9">@Model.DEXPIRDAT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NCLASSTYPDOC</dt>
+            <dd class="col-sm-9">@Model.NCLASSTYPDOC</dd>
+            <dt class="col-sm-3">NTYPEXP</dt>
+            <dd class="col-sm-9">@Model.NTYPEXP</dd>
+            <dt class="col-sm-3">SIDCOMPL</dt>
+            <dd class="col-sm-9">@Model.SIDCOMPL</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NTYPCLIENTDOC" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

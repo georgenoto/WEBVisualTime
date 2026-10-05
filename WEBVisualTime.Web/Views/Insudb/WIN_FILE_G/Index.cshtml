@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.WIN_FILE_G.WIN_FILE_GDto>
+
+@{
+    ViewData["Title"] = "WIN_FILE_G";
+    ViewData["ColumnHeaders"] = new[] { "WINDOWS", "TABLE634", "DCOMPDATE", "STABNAME", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "WINDOWSSCODISP", "TABLE634SDESCRIPT", "DCOMPDATE", "STABNAME", "NUSERCODE" };
+    ViewData["KeyName"] = "SCODISPL";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

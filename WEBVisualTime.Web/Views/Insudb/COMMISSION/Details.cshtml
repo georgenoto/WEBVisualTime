@@ -1,0 +1,72 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COMMISSION.COMMISSIONDto
+
+@{
+    ViewData["Title"] = "Detalles de COMMISSION";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CERTIFICATSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATSCERTYPESCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNBRANCH</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNBRANCHSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPRODUCTSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPOLICY</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPOLICYSCUMUL_CODE</dd>
+            <dt class="col-sm-3">INTERM_TYP</dt>
+            <dd class="col-sm-9">@Model.INTERM_TYPSDESCRIPT</dd>
+            <dt class="col-sm-3">INTERMEDIA</dt>
+            <dd class="col-sm-9">@Model.INTERMEDIASCOL_AGREE</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">TABLE47</dt>
+            <dd class="col-sm-9">@Model.TABLE47SDESCRIPT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NPERCENT</dt>
+            <dd class="col-sm-9">@Model.NPERCENT</dd>
+            <dt class="col-sm-3">NSHARE</dt>
+            <dd class="col-sm-9">@Model.NSHARE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NPERDISCOUNT</dt>
+            <dd class="col-sm-9">@Model.NPERDISCOUNT</dd>
+            <dt class="col-sm-3">SPLUSCOLLEC</dt>
+            <dd class="col-sm-9">@Model.SPLUSCOLLEC</dd>
+            <dt class="col-sm-3">SPLUSOFFICE</dt>
+            <dd class="col-sm-9">@Model.SPLUSOFFICE</dd>
+            <dt class="col-sm-3">SPLUSQUALITY</dt>
+            <dd class="col-sm-9">@Model.SPLUSQUALITY</dd>
+            <dt class="col-sm-3">NAGREEMENT</dt>
+            <dd class="col-sm-9">@Model.NAGREEMENT</dd>
+            <dt class="col-sm-3">NPERCENT_CE</dt>
+            <dd class="col-sm-9">@Model.NPERCENT_CE</dd>
+            <dt class="col-sm-3">CERTIFICATNCERTIF</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNCERTIFSCUMUL_CODE</dd>
+            <dt class="col-sm-3">NINSTALLCOM</dt>
+            <dd class="col-sm-9">@Model.NINSTALLCOM</dd>
+            <dt class="col-sm-3">NCATEGORY</dt>
+            <dd class="col-sm-9">@Model.NCATEGORY</dd>
+            <dt class="col-sm-3">NID_CAMPAIGN</dt>
+            <dd class="col-sm-9">@Model.NID_CAMPAIGN</dd>
+            <dt class="col-sm-3">DDATEEND_CAMP</dt>
+            <dd class="col-sm-9">@Model.DDATEEND_CAMP</dd>
+            <dt class="col-sm-3">NMOVEMENT</dt>
+            <dd class="col-sm-9">@Model.NMOVEMENT</dd>
+            <dt class="col-sm-3">NMOVEMENT_NULL</dt>
+            <dd class="col-sm-9">@Model.NMOVEMENT_NULL</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCERTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,61 @@
+using WEBVisualTime.Entidades.Insudb;
+using WEBVisualTime.Servicios.Insudb.DTOs.CLAUS_CO_G;
+
+namespace WEBVisualTime.Servicios.Insudb.Mappings;
+
+public static class CLAUS_CO_GMappingExtensions
+{
+    public static CLAUS_CO_GDto ToDto(this CLAUS_CO_G entity)
+    {
+        if (entity == null) return null!;
+        return new CLAUS_CO_GDto
+        {
+            SCERTYPE = entity.SCERTYPE,
+            NBRANCH = entity.NBRANCH,
+            NPRODUCT = entity.NPRODUCT,
+            NPOLICY = entity.NPOLICY,
+            NGROUP = entity.NGROUP,
+            NCLAUSE = entity.NCLAUSE,
+            DEFFECDATE = entity.DEFFECDATE,
+            DCOMPDATE = entity.DCOMPDATE,
+            NNOTENUM = entity.NNOTENUM,
+            DNULLDATE = entity.DNULLDATE,
+            NUSERCODE = entity.NUSERCODE,
+            STYPE_CLAUSE = entity.STYPE_CLAUSE,
+            SDOC_ATTACH = entity.SDOC_ATTACH,
+            NMODULEC = entity.NMODULEC,
+            NCOVER = entity.NCOVER,
+            NMOVEMENT = entity.NMOVEMENT,
+            NMOVEMENT_NULL = entity.NMOVEMENT_NULL,
+        };
+    }
+
+    public static CLAUS_CO_G ToEntity(this CreateCLAUS_CO_GDto dto)
+    {
+        if (dto == null) return null!;
+        return new CLAUS_CO_G
+        {
+            DCOMPDATE = dto.DCOMPDATE,
+            NNOTENUM = dto.NNOTENUM,
+            DNULLDATE = dto.DNULLDATE,
+            NUSERCODE = dto.NUSERCODE,
+            STYPE_CLAUSE = dto.STYPE_CLAUSE,
+            SDOC_ATTACH = dto.SDOC_ATTACH,
+            NMOVEMENT = dto.NMOVEMENT,
+            NMOVEMENT_NULL = dto.NMOVEMENT_NULL,
+        };
+    }
+
+    public static void UpdateEntity(this CLAUS_CO_G entity, UpdateCLAUS_CO_GDto dto)
+    {
+        if (entity == null || dto == null) return;
+        entity.DCOMPDATE = dto.DCOMPDATE;
+        entity.NNOTENUM = dto.NNOTENUM;
+        entity.DNULLDATE = dto.DNULLDATE;
+        entity.NUSERCODE = dto.NUSERCODE;
+        entity.STYPE_CLAUSE = dto.STYPE_CLAUSE;
+        entity.SDOC_ATTACH = dto.SDOC_ATTACH;
+        entity.NMOVEMENT = dto.NMOVEMENT;
+        entity.NMOVEMENT_NULL = dto.NMOVEMENT_NULL;
+    }
+}

@@ -1,0 +1,64 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MASTERCL_HIS.MASTERCL_HISDto
+
+@{
+    ViewData["Title"] = "Detalles de MASTERCL_HIS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NMASTERORDER</dt>
+            <dd class="col-sm-9">@Model.NMASTERORDER</dd>
+            <dt class="col-sm-3">NMOVEMENT</dt>
+            <dd class="col-sm-9">@Model.NMOVEMENT</dd>
+            <dt class="col-sm-3">DMOVEMENT_DATE</dt>
+            <dd class="col-sm-9">@Model.DMOVEMENT_DATE</dd>
+            <dt class="col-sm-3">TABLE9264</dt>
+            <dd class="col-sm-9">@Model.TABLE9264SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9237</dt>
+            <dd class="col-sm-9">@Model.TABLE9237SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9242</dt>
+            <dd class="col-sm-9">@Model.TABLE9242SDESCRIPT</dd>
+            <dt class="col-sm-3">NCURREN_DOC</dt>
+            <dd class="col-sm-9">@Model.NCURREN_DOC</dd>
+            <dt class="col-sm-3">NCURREN_ORDER</dt>
+            <dd class="col-sm-9">@Model.NCURREN_ORDER</dd>
+            <dt class="col-sm-3">NPROVIDER</dt>
+            <dd class="col-sm-9">@Model.NPROVIDER</dd>
+            <dt class="col-sm-3">TABLE8604</dt>
+            <dd class="col-sm-9">@Model.TABLE8604SDESCRIPT</dd>
+            <dt class="col-sm-3">SCARECLASS</dt>
+            <dd class="col-sm-9">@Model.SCARECLASS</dd>
+            <dt class="col-sm-3">SIND_REV</dt>
+            <dd class="col-sm-9">@Model.SIND_REV</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">TABLE9243</dt>
+            <dd class="col-sm-9">@Model.TABLE9243SDESCRIPT</dd>
+            <dt class="col-sm-3">NTRANSAC</dt>
+            <dd class="col-sm-9">@Model.NTRANSAC</dd>
+            <dt class="col-sm-3">SPREAUTHORIZATION</dt>
+            <dd class="col-sm-9">@Model.SPREAUTHORIZATION</dd>
+            <dt class="col-sm-3">TABLE9212</dt>
+            <dd class="col-sm-9">@Model.TABLE9212SDESCRIPT</dd>
+            <dt class="col-sm-3">NCLAIM</dt>
+            <dd class="col-sm-9">@Model.NCLAIM</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DLEDGERDAT</dt>
+            <dd class="col-sm-9">@Model.DLEDGERDAT</dd>
+            <dt class="col-sm-3">NMASTERORDER_NUM_ORIG</dt>
+            <dd class="col-sm-9">@Model.NMASTERORDER_NUM_ORIG</dd>
+            <dt class="col-sm-3">NMASTERORDER_NUM_GEN</dt>
+            <dd class="col-sm-9">@Model.NMASTERORDER_NUM_GEN</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NMASTERORDER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,68 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.LIFE_DOCU.LIFE_DOCUDto
+
+@{
+    ViewData["Title"] = "Detalles de LIFE_DOCU";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CERTIFICATSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATSCERTYPESCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNBRANCH</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNBRANCHSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPOLICY</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPOLICYSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPRODUCTSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNCERTIF</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNCERTIFSCUMUL_CODE</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NMODULEC</dt>
+            <dd class="col-sm-9">@Model.NMODULEC</dd>
+            <dt class="col-sm-3">NCRTHECNI</dt>
+            <dd class="col-sm-9">@Model.NCRTHECNI</dd>
+            <dt class="col-sm-3">NCOVER</dt>
+            <dd class="col-sm-9">@Model.NCOVER</dd>
+            <dt class="col-sm-3">DRECEP_DATE</dt>
+            <dd class="col-sm-9">@Model.DRECEP_DATE</dd>
+            <dt class="col-sm-3">TABLE12</dt>
+            <dd class="col-sm-9">@Model.TABLE12SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE275</dt>
+            <dd class="col-sm-9">@Model.TABLE275SDESCRIPT</dd>
+            <dt class="col-sm-3">CLIENT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DDATE_TO</dt>
+            <dd class="col-sm-9">@Model.DDATE_TO</dd>
+            <dt class="col-sm-3">DDATEFREE</dt>
+            <dd class="col-sm-9">@Model.DDATEFREE</dd>
+            <dt class="col-sm-3">EVAL_MASTER</dt>
+            <dd class="col-sm-9">@Model.EVAL_MASTERSCERTYPE</dd>
+            <dt class="col-sm-3">DDATEVIG</dt>
+            <dd class="col-sm-9">@Model.DDATEVIG</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">SREQUEST</dt>
+            <dd class="col-sm-9">@Model.SREQUEST</dd>
+            <dt class="col-sm-3">TABLE5719</dt>
+            <dd class="col-sm-9">@Model.TABLE5719SDESCRIPT</dd>
+            <dt class="col-sm-3">SRANDOM</dt>
+            <dd class="col-sm-9">@Model.SRANDOM</dd>
+            <dt class="col-sm-3">NID_SECUENCIA</dt>
+            <dd class="col-sm-9">@Model.NID_SECUENCIA</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCERTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,62 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.REQ_ENDOR.REQ_ENDORDto
+
+@{
+    ViewData["Title"] = "Detalles de REQ_ENDOR";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NREQENDOR</dt>
+            <dd class="col-sm-9">@Model.NREQENDOR</dd>
+            <dt class="col-sm-3">CERTIFICATSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATSCERTYPESCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNBRANCH</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNBRANCHSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPRODUCTSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPOLICY</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPOLICYSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNCERTIF</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNCERTIFSCUMUL_CODE</dd>
+            <dt class="col-sm-3">DREQSTARTENDOR</dt>
+            <dd class="col-sm-9">@Model.DREQSTARTENDOR</dd>
+            <dt class="col-sm-3">TABLE6059</dt>
+            <dd class="col-sm-9">@Model.TABLE6059SDESCRIPT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">USERSNUSERCODE</dt>
+            <dd class="col-sm-9">@Model.USERSNUSERCODESACCESSWO</dd>
+            <dt class="col-sm-3">NUNDERWRITINGCASEID</dt>
+            <dd class="col-sm-9">@Model.NUNDERWRITINGCASEID</dd>
+            <dt class="col-sm-3">NINTERMED</dt>
+            <dd class="col-sm-9">@Model.NINTERMED</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE5555</dt>
+            <dd class="col-sm-9">@Model.TABLE5555SDESCRIPT</dd>
+            <dt class="col-sm-3">SCERTYPEENDOR</dt>
+            <dd class="col-sm-9">@Model.SCERTYPEENDOR</dd>
+            <dt class="col-sm-3">NPOLICYENDOR</dt>
+            <dd class="col-sm-9">@Model.NPOLICYENDOR</dd>
+            <dt class="col-sm-3">SOBS</dt>
+            <dd class="col-sm-9">@Model.SOBS</dd>
+            <dt class="col-sm-3">SREASON_REJECT</dt>
+            <dd class="col-sm-9">@Model.SREASON_REJECT</dd>
+            <dt class="col-sm-3">USERSNUSERCODE_REJECT</dt>
+            <dd class="col-sm-9">@Model.USERSNUSERCODE_REJECTSACCESSWO</dd>
+            <dt class="col-sm-3">DREJECT</dt>
+            <dd class="col-sm-9">@Model.DREJECT</dd>
+            <dt class="col-sm-3">NID_SECUENCIA</dt>
+            <dd class="col-sm-9">@Model.NID_SECUENCIA</dd>
+            <dt class="col-sm-3">USERSNUSERCODE_REQ</dt>
+            <dd class="col-sm-9">@Model.USERSNUSERCODE_REQSACCESSWO</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NREQENDOR" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

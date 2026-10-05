@@ -1,0 +1,60 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLIENT_SF.CLIENT_SFDto
+
+@{
+    ViewData["Title"] = "Detalles de CLIENT_SF";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">SDIGIT</dt>
+            <dd class="col-sm-9">@Model.SDIGIT</dd>
+            <dt class="col-sm-3">TABLE8004</dt>
+            <dd class="col-sm-9">@Model.TABLE8004SDESCRIPT</dd>
+            <dt class="col-sm-3">DSTARTCONDITION</dt>
+            <dd class="col-sm-9">@Model.DSTARTCONDITION</dd>
+            <dt class="col-sm-3">DENDCONDITION</dt>
+            <dd class="col-sm-9">@Model.DENDCONDITION</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NPLACEBIRTH</dt>
+            <dd class="col-sm-9">@Model.NPLACEBIRTH</dd>
+            <dt class="col-sm-3">NSECOND_NATIONALITY</dt>
+            <dd class="col-sm-9">@Model.NSECOND_NATIONALITY</dd>
+            <dt class="col-sm-3">NRESIDENT_FORMER</dt>
+            <dd class="col-sm-9">@Model.NRESIDENT_FORMER</dd>
+            <dt class="col-sm-3">SUSADDRES</dt>
+            <dd class="col-sm-9">@Model.SUSADDRES</dd>
+            <dt class="col-sm-3">SUSLEGAL_PERSON</dt>
+            <dd class="col-sm-9">@Model.SUSLEGAL_PERSON</dd>
+            <dt class="col-sm-3">SUSPHONE</dt>
+            <dd class="col-sm-9">@Model.SUSPHONE</dd>
+            <dt class="col-sm-3">SUSACCOUNT</dt>
+            <dd class="col-sm-9">@Model.SUSACCOUNT</dd>
+            <dt class="col-sm-3">SSSN</dt>
+            <dd class="col-sm-9">@Model.SSSN</dd>
+            <dt class="col-sm-3">SUS_ITINNUM</dt>
+            <dd class="col-sm-9">@Model.SUS_ITINNUM</dd>
+            <dt class="col-sm-3">SUS_IRSIND</dt>
+            <dd class="col-sm-9">@Model.SUS_IRSIND</dd>
+            <dt class="col-sm-3">SPLACEBIRTH</dt>
+            <dd class="col-sm-9">@Model.SPLACEBIRTH</dd>
+            <dt class="col-sm-3">NTYPELIST</dt>
+            <dd class="col-sm-9">@Model.NTYPELIST</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCLIENT" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

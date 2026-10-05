@@ -1,0 +1,46 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.FINANC_WIN.UpdateFINANC_WINDto
+
+@{
+    ViewData["Title"] = "Editar FINANC_WIN";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="NCONTRAT" />
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <select asp-for="NUSERCODE" class="form-select" asp-items="@(ViewData["NUSERCODE"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SV_CONCONTR" class="form-label"></label>
+                <input asp-for="SV_CONCONTR" class="form-control" />
+                <span asp-validation-for="SV_CONCONTR" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SV_WINCONTR" class="form-label"></label>
+                <input asp-for="SV_WINCONTR" class="form-control" />
+                <span asp-validation-for="SV_WINCONTR" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

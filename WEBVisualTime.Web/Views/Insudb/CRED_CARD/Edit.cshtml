@@ -1,0 +1,63 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CRED_CARD.UpdateCRED_CARDDto
+
+@{
+    ViewData["Title"] = "Editar CRED_CARD";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SCLIENT" />
+            <input type="hidden" asp-for="NBANKEXT" />
+            <input type="hidden" asp-for="SCREDI_CARD" />
+            <div class="mb-3">
+                <label asp-for="NCARD_TYPE" class="form-label"></label>
+                <select asp-for="NCARD_TYPE" class="form-select" asp-items="@(ViewData["NCARD_TYPE"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NCARD_TYPE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SSTATREGT" class="form-label"></label>
+                <input asp-for="SSTATREGT" class="form-control" />
+                <span asp-validation-for="SSTATREGT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCARDEXPIR" class="form-label"></label>
+                <input asp-for="DCARDEXPIR" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCARDEXPIR" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="STYP_DIRDEB" class="form-label"></label>
+                <input asp-for="STYP_DIRDEB" class="form-control" />
+                <span asp-validation-for="STYP_DIRDEB" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCURRENCY" class="form-label"></label>
+                <input asp-for="NCURRENCY" class="form-control" type="number" />
+                <span asp-validation-for="NCURRENCY" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

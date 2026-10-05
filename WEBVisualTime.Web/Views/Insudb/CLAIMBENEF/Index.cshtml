@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CLAIMBENEF.CLAIMBENEFDto>
+
+@{
+    ViewData["Title"] = "CLAIMBENEF";
+    ViewData["ColumnHeaders"] = new[] { "CLAIM_CASENCLAIM", "CLAIM_CASENCASE_NUM", "CLAIM_CASENDEMAN_TYPE", "CLIENTSCLIENT", "TABLE184", "NID", "TABLE9", "DCOMPDATE", "SDEMANDANT", "NUSERCODE", "TABLE15", "NPARTICIP", "SBENEF_TYP", "NAMOUNT", "DINIT_DATE", "DEND_DATE", "CLIENTSCLIENT_REP", "DNEXT_PAY", "NMODULEC", "NCOVER", "NCURRENCY", "SPAY_INSTALL", "TABLE5556", "AGENCIES", "NNOTENUM", "DSHOWDATE", "TABLE7801" };
+    ViewData["ColumnProperties"] = new[] { "CLAIM_CASENCLAIMSSTACASE", "CLAIM_CASENCASE_NUMSSTACASE", "CLAIM_CASENDEMAN_TYPESSTACASE", "CLIENTSCLIENTSACCOUNT_IN", "TABLE184SDESCRIPT", "NID", "TABLE9SDESCRIPT", "DCOMPDATE", "SDEMANDANT", "NUSERCODE", "TABLE15SDESCRIPT", "NPARTICIP", "SBENEF_TYP", "NAMOUNT", "DINIT_DATE", "DEND_DATE", "CLIENTSCLIENT_REPSACCOUNT_IN", "DNEXT_PAY", "NMODULEC", "NCOVER", "NCURRENCY", "SPAY_INSTALL", "TABLE5556SDESCRIPT", "AGENCIESSPAY", "NNOTENUM", "DSHOWDATE", "TABLE7801SDESCRIPT" };
+    ViewData["KeyName"] = "NCLAIM";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

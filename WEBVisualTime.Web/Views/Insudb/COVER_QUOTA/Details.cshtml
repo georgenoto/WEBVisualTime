@@ -1,0 +1,52 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COVER_QUOTA.COVER_QUOTADto
+
+@{
+    ViewData["Title"] = "Detalles de COVER_QUOTA";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">POLICYSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.POLICYSCERTYPESACCOUNTI</dd>
+            <dt class="col-sm-3">POLICYNBRANCH</dt>
+            <dd class="col-sm-9">@Model.POLICYNBRANCHSACCOUNTI</dd>
+            <dt class="col-sm-3">POLICYNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.POLICYNPRODUCTSACCOUNTI</dd>
+            <dt class="col-sm-3">POLICYNPOLICY</dt>
+            <dd class="col-sm-9">@Model.POLICYNPOLICYSACCOUNTI</dd>
+            <dt class="col-sm-3">NGROUP</dt>
+            <dd class="col-sm-9">@Model.NGROUP</dd>
+            <dt class="col-sm-3">NMODULEC</dt>
+            <dd class="col-sm-9">@Model.NMODULEC</dd>
+            <dt class="col-sm-3">TABLE12</dt>
+            <dd class="col-sm-9">@Model.TABLE12SDESCRIPT</dd>
+            <dt class="col-sm-3">NCOVER</dt>
+            <dd class="col-sm-9">@Model.NCOVER</dd>
+            <dt class="col-sm-3">NCAPITAL</dt>
+            <dd class="col-sm-9">@Model.NCAPITAL</dd>
+            <dt class="col-sm-3">NTAXIVA</dt>
+            <dd class="col-sm-9">@Model.NTAXIVA</dd>
+            <dt class="col-sm-3">NTAX</dt>
+            <dd class="col-sm-9">@Model.NTAX</dd>
+            <dt class="col-sm-3">NPREMIUM</dt>
+            <dd class="col-sm-9">@Model.NPREMIUM</dd>
+            <dt class="col-sm-3">NINSUCOUNT</dt>
+            <dd class="col-sm-9">@Model.NINSUCOUNT</dd>
+            <dt class="col-sm-3">NINSURED</dt>
+            <dd class="col-sm-9">@Model.NINSURED</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NCERTIF</dt>
+            <dd class="col-sm-9">@Model.NCERTIF</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCERTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

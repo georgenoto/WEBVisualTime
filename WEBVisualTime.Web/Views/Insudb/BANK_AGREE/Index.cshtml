@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.BANK_AGREE.BANK_AGREEDto>
+
+@{
+    ViewData["Title"] = "BANK_AGREE";
+    ViewData["ColumnHeaders"] = new[] { "STYPE_BANKAGREE", "TABLE7", "BANK_ACC", "DCOMPDATE", "NUSERCODE", "CLIENT", "NNUMDIGIT", "SFORMAT" };
+    ViewData["ColumnProperties"] = new[] { "STYPE_BANKAGREE", "TABLE7SDESCRIPT", "BANK_ACCSACC_LEDGER", "DCOMPDATE", "NUSERCODE", "CLIENTSACCOUNT_IN", "NNUMDIGIT", "SFORMAT" };
+    ViewData["KeyName"] = "STYPE_BANKAGREE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

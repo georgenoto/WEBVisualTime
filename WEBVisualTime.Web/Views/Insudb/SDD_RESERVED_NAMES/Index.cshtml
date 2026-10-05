@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.SDD_RESERVED_NAMES.SDD_RESERVED_NAMESDto>
+
+@{
+    ViewData["Title"] = "SDD_RESERVED_NAMES";
+    ViewData["ColumnHeaders"] = new[] { "RN_RES_NAME", "RN_TYPE", "RN_COMMENT", "RN_GLOBAL", "RN_TEMPORARY", "RN_ENABLED", "RN_USR_ACCESS", "RN_CDAPI", "RN_OBJECT_IRID", "RN_OBJECT_IVID" };
+    ViewData["ColumnProperties"] = new[] { "RN_RES_NAME", "RN_TYPE", "RN_COMMENT", "RN_GLOBAL", "RN_TEMPORARY", "RN_ENABLED", "RN_USR_ACCESS", "RN_CDAPI", "RN_OBJECT_IRID", "RN_OBJECT_IVID" };
+    ViewData["KeyName"] = "RN_RES_NAME";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

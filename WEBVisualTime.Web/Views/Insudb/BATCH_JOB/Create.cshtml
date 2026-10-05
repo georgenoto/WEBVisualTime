@@ -1,0 +1,103 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.BATCH_JOB.CreateBATCH_JOBDto
+
+@{
+    ViewData["Title"] = "Crear BATCH_JOB";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="NBATCH" class="form-label"></label>
+                <select asp-for="NBATCH" class="form-select cascade-select" data-cascade-parent="NUSERCODE" data-cascade-url="@Url.Action("GetByNUSERCODE", "BATCH_PROCESS")" data-current-value="@Model.NBATCH">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NBATCH" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DSTART" class="form-label"></label>
+                <input asp-for="DSTART" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DSTART" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DEND" class="form-label"></label>
+                <input asp-for="DEND" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DEND" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NSTATUS" class="form-label"></label>
+                <input asp-for="NSTATUS" class="form-control" type="number" />
+                <span asp-validation-for="NSTATUS" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <select asp-for="NUSERCODE" class="form-select" asp-items="@(ViewData["NUSERCODE"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCOMMAND" class="form-label"></label>
+                <input asp-for="SCOMMAND" class="form-control" />
+                <span asp-validation-for="SCOMMAND" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DSUBMIT" class="form-label"></label>
+                <input asp-for="DSUBMIT" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DSUBMIT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NORAJOB" class="form-label"></label>
+                <input asp-for="NORAJOB" class="form-control" type="number" />
+                <span asp-validation-for="NORAJOB" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERSUBMIT" class="form-label"></label>
+                <input asp-for="NUSERSUBMIT" class="form-control" type="number" />
+                <span asp-validation-for="NUSERSUBMIT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NSHEET" class="form-label"></label>
+                <input asp-for="NSHEET" class="form-control" type="number" />
+                <span asp-validation-for="NSHEET" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SKEY_FATHER" class="form-label"></label>
+                <input asp-for="SKEY_FATHER" class="form-control" />
+                <span asp-validation-for="SKEY_FATHER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SOUTPUTFILE" class="form-label"></label>
+                <input asp-for="SOUTPUTFILE" class="form-control" />
+                <span asp-validation-for="SOUTPUTFILE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SFILE" class="form-label"></label>
+                <input asp-for="SFILE" class="form-control" />
+                <span asp-validation-for="SFILE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SVERIFIED_PLA" class="form-label"></label>
+                <input asp-for="SVERIFIED_PLA" class="form-control" />
+                <span asp-validation-for="SVERIFIED_PLA" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>initCascadeSelects();</script>
+}

@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CHEQ_BOOK.CHEQ_BOOKDto>
+
+@{
+    ViewData["Title"] = "CHEQ_BOOK";
+    ViewData["ColumnHeaders"] = new[] { "BANK_ACC", "DEFFECDATE", "SCHEQUE_END", "SCHEQUE_LAS", "SCHEQUE_STA", "DCOMPDATE", "DNULLDATE", "NQ_CHE_DAMA", "NQ_CHE_NULL", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "BANK_ACCSACC_LEDGER", "DEFFECDATE", "SCHEQUE_END", "SCHEQUE_LAS", "SCHEQUE_STA", "DCOMPDATE", "DNULLDATE", "NQ_CHE_DAMA", "NQ_CHE_NULL", "NUSERCODE" };
+    ViewData["KeyName"] = "NACC_BANK";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

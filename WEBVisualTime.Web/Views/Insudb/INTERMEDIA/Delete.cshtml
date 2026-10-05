@@ -1,0 +1,113 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.INTERMEDIA.INTERMEDIADto
+
+@{
+    ViewData["Title"] = "Eliminar INTERMEDIA";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINTERMED)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINTERMED)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOMTABGE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOMTABGE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOMTABLI)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOMTABLI)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DINPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DINPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINT_STATUS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINT_STATUS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINTERTYP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINTERTYP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NNULLCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NNULLCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DNULLDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DNULLDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NOFFICE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NOFFICE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSUPERVIS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSUPERVIS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTABLE_COD)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTABLE_COD)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTAX)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTAX)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCOL_AGREE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCOL_AGREE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NNOTENUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NNOTENUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NECO_SCHE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NECO_SCHE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SINTER_ID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SINTER_ID)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SAGREEINT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SAGREEINT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SLIFE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SLIFE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SNONLIFE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SNONLIFE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLIFE_SCHE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLIFE_SCHE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NGEN_SCHE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NGEN_SCHE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLEGAL_SCH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLEGAL_SCH)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSUP_GEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSUP_GEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINSU_ASSIST)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINSU_ASSIST)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NGOAL_GEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NGOAL_GEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NGOAL_LIFE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NGOAL_LIFE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINSU_ASSISTLIF)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINSU_ASSISTLIF)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAGENCY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAGENCY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NOFFICEAGEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NOFFICEAGEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSLC_TAB_NR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSLC_TAB_NR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMMIDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMMIDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SVALID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SVALID)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCONTRAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCONTRAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NRECEPTYP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NRECEPTYP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOM_CHANNEL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOM_CHANNEL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SPERSIS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SPERSIS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSER_RETENC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSER_RETENC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDATE_RETENC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDATE_RETENC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSER_LIBRET)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSER_LIBRET)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDATE_LIBRET)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDATE_LIBRET)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCODAGENT_SCAB)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCODAGENT_SCAB)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NINTERMED" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.PREMIUM_CE_INI.PREMIUM_CE_INIDto>
+
+@{
+    ViewData["Title"] = "PREMIUM_CE_INI";
+    ViewData["ColumnHeaders"] = new[] { "SCERTYPE", "NPRODUCT", "NBRANCH", "NRECEIPT", "NDIGIT", "NPAYNUMBE", "NPOLICY", "NCERTIF", "STYPE_DETAI", "NID_BILL", "NCODE_DETAI", "NBILL_ITEM", "NBRANCH_REI", "DCOMPDATE", "DEXPIRDAT", "NPREMIUM", "NPREMIUMN", "DSTARTDATE", "NTRATYPEI", "NUSERCODE", "NPREMANUAL", "NCOMANUAL", "SADDTAX", "NPREMIUMA", "NPREMIUME", "NTAXAMOUNT", "NRECAMOUNT", "NDESCAMOUNT", "NORIGI", "NREL_IDBILL", "SCLIENT", "NCAPITAL", "NCOMMI_RATE", "NCOMMISION", "NDISSUR_TYPE" };
+    ViewData["ColumnProperties"] = new[] { "SCERTYPE", "NPRODUCT", "NBRANCH", "NRECEIPT", "NDIGIT", "NPAYNUMBE", "NPOLICY", "NCERTIF", "STYPE_DETAI", "NID_BILL", "NCODE_DETAI", "NBILL_ITEM", "NBRANCH_REI", "DCOMPDATE", "DEXPIRDAT", "NPREMIUM", "NPREMIUMN", "DSTARTDATE", "NTRATYPEI", "NUSERCODE", "NPREMANUAL", "NCOMANUAL", "SADDTAX", "NPREMIUMA", "NPREMIUME", "NTAXAMOUNT", "NRECAMOUNT", "NDESCAMOUNT", "NORIGI", "NREL_IDBILL", "SCLIENT", "NCAPITAL", "NCOMMI_RATE", "NCOMMISION", "NDISSUR_TYPE" };
+    ViewData["KeyName"] = "SCERTYPE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

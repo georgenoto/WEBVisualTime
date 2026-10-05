@@ -1,0 +1,53 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COLLECTOR.COLLECTORDto
+
+@{
+    ViewData["Title"] = "Eliminar COLLECTOR";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOLLECTOR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOLLECTOR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCLIENT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCLIENT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOLLECTORTYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOLLECTORTYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DINPUTDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DINPUTDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCONTYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCONTYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINSUR_AREA)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINSUR_AREA)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLEGAL_SCH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLEGAL_SCH)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINT_STATUS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINT_STATUS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DSTATUSDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DSTATUSDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NOFFICE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NOFFICE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSUPERVIS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSUPERVIS)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NCOLLECTOR" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

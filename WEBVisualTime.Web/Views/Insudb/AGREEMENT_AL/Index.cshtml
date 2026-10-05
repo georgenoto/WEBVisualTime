@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.AGREEMENT_AL.AGREEMENT_ALDto>
+
+@{
+    ViewData["Title"] = "AGREEMENT_AL";
+    ViewData["ColumnHeaders"] = new[] { "NAGREEMENT", "SDESCRIPT", "DSTARTDATE", "DNULLDATE", "SLEVELINT", "DCOMPDATE", "SSTATREGT", "USERS", "NAGREE_TYPE", "INTERMEDIA" };
+    ViewData["ColumnProperties"] = new[] { "NAGREEMENT", "SDESCRIPT", "DSTARTDATE", "DNULLDATE", "SLEVELINT", "DCOMPDATE", "SSTATREGT", "USERSSACCESSWO", "NAGREE_TYPE", "INTERMEDIASCOL_AGREE" };
+    ViewData["KeyName"] = "NAGREEMENT";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

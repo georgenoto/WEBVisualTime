@@ -1,0 +1,50 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_WINCLI.CreateTAB_WINCLIDto
+
+@{
+    ViewData["Title"] = "Crear TAB_WINCLI";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="SCODISPL" class="form-label"></label>
+                <select asp-for="SCODISPL" class="form-select" asp-items="@(ViewData["SCODISPL"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="SCODISPL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SDEFAULTI" class="form-label"></label>
+                <input asp-for="SDEFAULTI" class="form-control" />
+                <span asp-validation-for="SDEFAULTI" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SREQUIRE" class="form-label"></label>
+                <input asp-for="SREQUIRE" class="form-control" />
+                <span asp-validation-for="SREQUIRE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

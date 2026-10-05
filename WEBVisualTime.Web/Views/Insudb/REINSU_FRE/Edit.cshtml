@@ -1,0 +1,73 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.REINSU_FRE.UpdateREINSU_FREDto
+
+@{
+    ViewData["Title"] = "Editar REINSU_FRE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="SBUSSITYPE" class="form-label"></label>
+                <input asp-for="SBUSSITYPE" class="form-control" />
+                <span asp-validation-for="SBUSSITYPE" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="DEFFECDATE" />
+            <input type="hidden" asp-for="NCOMPANY" />
+            <div class="mb-3">
+                <label asp-for="SFREE" class="form-label"></label>
+                <input asp-for="SFREE" class="form-control" />
+                <span asp-validation-for="SFREE" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="NTYPE_REL" />
+            <input type="hidden" asp-for="NNUMBER" />
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="NTYPE" />
+            <div class="mb-3">
+                <label asp-for="NCLAIM_AM" class="form-label"></label>
+                <input asp-for="NCLAIM_AM" class="form-control" type="number" />
+                <span asp-validation-for="NCLAIM_AM" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="NYEAR_CONTR" />
+            <div class="mb-3">
+                <label asp-for="NPREMIUM_AM" class="form-label"></label>
+                <input asp-for="NPREMIUM_AM" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NPREMIUM_AM" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="NBRANCH" />
+            <input type="hidden" asp-for="NCURRENCY" />
+            <input type="hidden" asp-for="NTYPE_PER" />
+            <input type="hidden" asp-for="NPERIODY" />
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NYEAR" class="form-label"></label>
+                <input asp-for="NYEAR" class="form-control" type="number" />
+                <span asp-validation-for="NYEAR" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NYEAR_SER" class="form-label"></label>
+                <input asp-for="NYEAR_SER" class="form-control" type="number" />
+                <span asp-validation-for="NYEAR_SER" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

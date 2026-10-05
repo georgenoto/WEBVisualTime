@@ -1,0 +1,40 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MASTERCL_DOCUMENTS.MASTERCL_DOCUMENTSDto
+
+@{
+    ViewData["Title"] = "Detalles de MASTERCL_DOCUMENTS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NMASTERORDER</dt>
+            <dd class="col-sm-9">@Model.NMASTERORDER</dd>
+            <dt class="col-sm-3">NCONSEC_MASTERORDERDOC</dt>
+            <dd class="col-sm-9">@Model.NCONSEC_MASTERORDERDOC</dd>
+            <dt class="col-sm-3">NCASE_NUM</dt>
+            <dd class="col-sm-9">@Model.NCASE_NUM</dd>
+            <dt class="col-sm-3">NDEMAN_TYPE</dt>
+            <dd class="col-sm-9">@Model.NDEMAN_TYPE</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">NID</dt>
+            <dd class="col-sm-9">@Model.NID</dd>
+            <dt class="col-sm-3">NDOC_CODE</dt>
+            <dd class="col-sm-9">@Model.NDOC_CODE</dd>
+            <dt class="col-sm-3">NCONSEC</dt>
+            <dd class="col-sm-9">@Model.NCONSEC</dd>
+            <dt class="col-sm-3">NAPPLY</dt>
+            <dd class="col-sm-9">@Model.NAPPLY</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NMASTERORDER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

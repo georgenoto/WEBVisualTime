@@ -1,0 +1,30 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_WINPRO.TAB_WINPRODto
+
+@{
+    ViewData["Title"] = "Detalles de TAB_WINPRO";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TABLE37</dt>
+            <dd class="col-sm-9">@Model.TABLE37SDESCRIPT</dd>
+            <dt class="col-sm-3">NSEQUENCE</dt>
+            <dd class="col-sm-9">@Model.NSEQUENCE</dd>
+            <dt class="col-sm-3">WINDOWS</dt>
+            <dd class="col-sm-9">@Model.WINDOWSSCODISP</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SREQUIRE</dt>
+            <dd class="col-sm-9">@Model.SREQUIRE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SBRANCHT" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

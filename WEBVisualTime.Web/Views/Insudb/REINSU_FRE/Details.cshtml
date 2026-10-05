@@ -1,0 +1,54 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.REINSU_FRE.REINSU_FREDto
+
+@{
+    ViewData["Title"] = "Detalles de REINSU_FRE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SBUSSITYPE</dt>
+            <dd class="col-sm-9">@Model.SBUSSITYPE</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NCOMPANY</dt>
+            <dd class="col-sm-9">@Model.NCOMPANY</dd>
+            <dt class="col-sm-3">SFREE</dt>
+            <dd class="col-sm-9">@Model.SFREE</dd>
+            <dt class="col-sm-3">NTYPE_REL</dt>
+            <dd class="col-sm-9">@Model.NTYPE_REL</dd>
+            <dt class="col-sm-3">NNUMBER</dt>
+            <dd class="col-sm-9">@Model.NNUMBER</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NTYPE</dt>
+            <dd class="col-sm-9">@Model.NTYPE</dd>
+            <dt class="col-sm-3">NCLAIM_AM</dt>
+            <dd class="col-sm-9">@Model.NCLAIM_AM</dd>
+            <dt class="col-sm-3">NYEAR_CONTR</dt>
+            <dd class="col-sm-9">@Model.NYEAR_CONTR</dd>
+            <dt class="col-sm-3">NPREMIUM_AM</dt>
+            <dd class="col-sm-9">@Model.NPREMIUM_AM</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">TABLE97</dt>
+            <dd class="col-sm-9">@Model.TABLE97SDESCRIPT</dd>
+            <dt class="col-sm-3">NPERIODY</dt>
+            <dd class="col-sm-9">@Model.NPERIODY</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NYEAR</dt>
+            <dd class="col-sm-9">@Model.NYEAR</dd>
+            <dt class="col-sm-3">NYEAR_SER</dt>
+            <dd class="col-sm-9">@Model.NYEAR_SER</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.DEFFECDATE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

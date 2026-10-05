@@ -1,0 +1,115 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLIENT_SF.CreateCLIENT_SFDto
+
+@{
+    ViewData["Title"] = "Crear CLIENT_SF";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="SDIGIT" class="form-label"></label>
+                <input asp-for="SDIGIT" class="form-control" />
+                <span asp-validation-for="SDIGIT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPOSITION" class="form-label"></label>
+                <select asp-for="NPOSITION" class="form-select" asp-items="@(ViewData["NPOSITION"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NPOSITION" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DSTARTCONDITION" class="form-label"></label>
+                <input asp-for="DSTARTCONDITION" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DSTARTCONDITION" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DENDCONDITION" class="form-label"></label>
+                <input asp-for="DENDCONDITION" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DENDCONDITION" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DNULLDATE" class="form-label"></label>
+                <input asp-for="DNULLDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DNULLDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPLACEBIRTH" class="form-label"></label>
+                <input asp-for="NPLACEBIRTH" class="form-control" type="number" />
+                <span asp-validation-for="NPLACEBIRTH" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NSECOND_NATIONALITY" class="form-label"></label>
+                <input asp-for="NSECOND_NATIONALITY" class="form-control" type="number" />
+                <span asp-validation-for="NSECOND_NATIONALITY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NRESIDENT_FORMER" class="form-label"></label>
+                <input asp-for="NRESIDENT_FORMER" class="form-control" type="number" />
+                <span asp-validation-for="NRESIDENT_FORMER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SUSADDRES" class="form-label"></label>
+                <input asp-for="SUSADDRES" class="form-control" />
+                <span asp-validation-for="SUSADDRES" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SUSLEGAL_PERSON" class="form-label"></label>
+                <input asp-for="SUSLEGAL_PERSON" class="form-control" />
+                <span asp-validation-for="SUSLEGAL_PERSON" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SUSPHONE" class="form-label"></label>
+                <input asp-for="SUSPHONE" class="form-control" />
+                <span asp-validation-for="SUSPHONE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SUSACCOUNT" class="form-label"></label>
+                <input asp-for="SUSACCOUNT" class="form-control" />
+                <span asp-validation-for="SUSACCOUNT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SSSN" class="form-label"></label>
+                <input asp-for="SSSN" class="form-control" />
+                <span asp-validation-for="SSSN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SUS_ITINNUM" class="form-label"></label>
+                <input asp-for="SUS_ITINNUM" class="form-control" />
+                <span asp-validation-for="SUS_ITINNUM" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SUS_IRSIND" class="form-label"></label>
+                <input asp-for="SUS_IRSIND" class="form-control" />
+                <span asp-validation-for="SUS_IRSIND" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SPLACEBIRTH" class="form-label"></label>
+                <input asp-for="SPLACEBIRTH" class="form-control" />
+                <span asp-validation-for="SPLACEBIRTH" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

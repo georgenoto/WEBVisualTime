@@ -1,0 +1,43 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.ROLDOCREQ.ROLDOCREQDto
+
+@{
+    ViewData["Title"] = "Eliminar ROLDOCREQ";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBRANCH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBRANCH)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPRODUCT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPRODUCT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SPOLITYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SPOLITYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCOMPON)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCOMPON)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NROLE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NROLE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCLASSTYPDOC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCLASSTYPDOC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPCLIENTDOC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPCLIENTDOC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NBRANCH" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

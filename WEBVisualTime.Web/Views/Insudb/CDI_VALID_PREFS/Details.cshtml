@@ -1,0 +1,28 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_VALID_PREFS.CDI_VALID_PREFSDto
+
+@{
+    ViewData["Title"] = "Detalles de CDI_VALID_PREFS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">VP_DOMAIN</dt>
+            <dd class="col-sm-9">@Model.VP_DOMAIN</dd>
+            <dt class="col-sm-3">VP_VALUE</dt>
+            <dd class="col-sm-9">@Model.VP_VALUE</dd>
+            <dt class="col-sm-3">VP_MEANING</dt>
+            <dd class="col-sm-9">@Model.VP_MEANING</dd>
+            <dt class="col-sm-3">VP_ABBREVIATION</dt>
+            <dd class="col-sm-9">@Model.VP_ABBREVIATION</dd>
+            <dt class="col-sm-3">NLS_LANG</dt>
+            <dd class="col-sm-9">@Model.NLS_LANG</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.VP_DOMAIN" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

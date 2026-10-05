@@ -1,0 +1,118 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.BANK_MOV.BANK_MOVDto
+
+@{
+    ViewData["Title"] = "Detalles de BANK_MOV";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SDEP_NUMBER</dt>
+            <dd class="col-sm-9">@Model.SDEP_NUMBER</dd>
+            <dt class="col-sm-3">SNULL_MOVEM</dt>
+            <dd class="col-sm-9">@Model.SNULL_MOVEM</dd>
+            <dt class="col-sm-3">SNULL_RECOR</dt>
+            <dd class="col-sm-9">@Model.SNULL_RECOR</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">DDOC_DATE</dt>
+            <dd class="col-sm-9">@Model.DDOC_DATE</dd>
+            <dt class="col-sm-3">NCASH_AMOUN</dt>
+            <dd class="col-sm-9">@Model.NCASH_AMOUN</dd>
+            <dt class="col-sm-3">NCHEQ_AMOUN</dt>
+            <dd class="col-sm-9">@Model.NCHEQ_AMOUN</dd>
+            <dt class="col-sm-3">NMOVEMENT</dt>
+            <dd class="col-sm-9">@Model.NMOVEMENT</dd>
+            <dt class="col-sm-3">NYEAR_MONTH</dt>
+            <dd class="col-sm-9">@Model.NYEAR_MONTH</dd>
+            <dt class="col-sm-3">COLFORMREF</dt>
+            <dd class="col-sm-9">@Model.COLFORMREFSTYPE</dd>
+            <dt class="col-sm-3">SDOCNUMBE</dt>
+            <dd class="col-sm-9">@Model.SDOCNUMBE</dd>
+            <dt class="col-sm-3">TABLE22</dt>
+            <dd class="col-sm-9">@Model.TABLE22SDESCRIPT</dd>
+            <dt class="col-sm-3">BANK_ACC</dt>
+            <dd class="col-sm-9">@Model.BANK_ACCSACC_LEDGER</dd>
+            <dt class="col-sm-3">CLIENT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">TABLE296</dt>
+            <dd class="col-sm-9">@Model.TABLE296SDESCRIPT</dd>
+            <dt class="col-sm-3">INTERMEDIA</dt>
+            <dd class="col-sm-9">@Model.INTERMEDIASCOL_AGREE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SNUMFORM</dt>
+            <dd class="col-sm-9">@Model.SNUMFORM</dd>
+            <dt class="col-sm-3">CLAIM</dt>
+            <dd class="col-sm-9">@Model.CLAIMSCERTYPE</dd>
+            <dt class="col-sm-3">NVOUCHER_LE</dt>
+            <dd class="col-sm-9">@Model.NVOUCHER_LE</dd>
+            <dt class="col-sm-3">FINANC_DRANCONTRAT</dt>
+            <dd class="col-sm-9">@Model.FINANC_DRANCONTRATSINDCHEQUE</dd>
+            <dt class="col-sm-3">FINANC_DRANDRAFT</dt>
+            <dd class="col-sm-9">@Model.FINANC_DRANDRAFTSINDCHEQUE</dd>
+            <dt class="col-sm-3">NCOMPANYC</dt>
+            <dd class="col-sm-9">@Model.NCOMPANYC</dd>
+            <dt class="col-sm-3">NVOUCHER</dt>
+            <dd class="col-sm-9">@Model.NVOUCHER</dd>
+            <dt class="col-sm-3">TABLE400</dt>
+            <dd class="col-sm-9">@Model.TABLE400SDESCRIPT</dd>
+            <dt class="col-sm-3">STYPE_ACC</dt>
+            <dd class="col-sm-9">@Model.STYPE_ACC</dd>
+            <dt class="col-sm-3">NCASHNUM</dt>
+            <dd class="col-sm-9">@Model.NCASHNUM</dd>
+            <dt class="col-sm-3">DPOSTED</dt>
+            <dd class="col-sm-9">@Model.DPOSTED</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">NID</dt>
+            <dd class="col-sm-9">@Model.NID</dd>
+            <dt class="col-sm-3">NINSUR_AREA</dt>
+            <dd class="col-sm-9">@Model.NINSUR_AREA</dd>
+            <dt class="col-sm-3">DCOLLECTION</dt>
+            <dd class="col-sm-9">@Model.DCOLLECTION</dd>
+            <dt class="col-sm-3">NPROPONUM</dt>
+            <dd class="col-sm-9">@Model.NPROPONUM</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">NORI_CURR</dt>
+            <dd class="col-sm-9">@Model.NORI_CURR</dd>
+            <dt class="col-sm-3">NORI_AMOUNT</dt>
+            <dd class="col-sm-9">@Model.NORI_AMOUNT</dd>
+            <dt class="col-sm-3">NSUPPORT_ID</dt>
+            <dd class="col-sm-9">@Model.NSUPPORT_ID</dd>
+            <dt class="col-sm-3">NTYPESUPPORT</dt>
+            <dd class="col-sm-9">@Model.NTYPESUPPORT</dd>
+            <dt class="col-sm-3">NCASH_ID</dt>
+            <dd class="col-sm-9">@Model.NCASH_ID</dd>
+            <dt class="col-sm-3">NCOD_AGREE</dt>
+            <dd class="col-sm-9">@Model.NCOD_AGREE</dd>
+            <dt class="col-sm-3">NBANK_AGREE</dt>
+            <dd class="col-sm-9">@Model.NBANK_AGREE</dd>
+            <dt class="col-sm-3">NINPUTCHANNEL</dt>
+            <dd class="col-sm-9">@Model.NINPUTCHANNEL</dd>
+            <dt class="col-sm-3">NBORDERUSED</dt>
+            <dd class="col-sm-9">@Model.NBORDERUSED</dd>
+            <dt class="col-sm-3">DREALDEP</dt>
+            <dd class="col-sm-9">@Model.DREALDEP</dd>
+            <dt class="col-sm-3">NAMOUNTDEC</dt>
+            <dd class="col-sm-9">@Model.NAMOUNTDEC</dd>
+            <dt class="col-sm-3">DVALUEDATE</dt>
+            <dd class="col-sm-9">@Model.DVALUEDATE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.DEFFECDATE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

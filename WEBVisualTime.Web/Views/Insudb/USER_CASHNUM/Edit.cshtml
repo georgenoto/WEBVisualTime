@@ -1,0 +1,72 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.USER_CASHNUM.UpdateUSER_CASHNUMDto
+
+@{
+    ViewData["Title"] = "Editar USER_CASHNUM";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NCASHNUM" />
+            <div class="mb-3">
+                <label asp-for="SSTATUS" class="form-label"></label>
+                <input asp-for="SSTATUS" class="form-control" />
+                <span asp-validation-for="SSTATUS" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSER" class="form-label"></label>
+                <select asp-for="NUSER" class="form-select" asp-items="@(ViewData["NUSER"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NUSER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <select asp-for="NUSERCODE" class="form-select" asp-items="@(ViewData["NUSERCODE"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCASHSUP" class="form-label"></label>
+                <select asp-for="NCASHSUP" class="form-select" asp-items="@(ViewData["NCASHSUP"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NCASHSUP" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NHEADSUP" class="form-label"></label>
+                <select asp-for="NHEADSUP" class="form-select" asp-items="@(ViewData["NHEADSUP"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NHEADSUP" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NOFFICEAGEN" class="form-label"></label>
+                <input asp-for="NOFFICEAGEN" class="form-control" type="number" />
+                <span asp-validation-for="NOFFICEAGEN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NTYPECASH" class="form-label"></label>
+                <input asp-for="NTYPECASH" class="form-control" type="number" />
+                <span asp-validation-for="NTYPECASH" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

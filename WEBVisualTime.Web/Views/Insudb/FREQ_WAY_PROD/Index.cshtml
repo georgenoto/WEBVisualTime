@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.FREQ_WAY_PROD.FREQ_WAY_PRODDto>
+
+@{
+    ViewData["Title"] = "FREQ_WAY_PROD";
+    ViewData["ColumnHeaders"] = new[] { "NBRANCH", "NPRODUCT", "TABLE5002", "TABLE36", "DEFFECDATE", "NCURRENCY", "NPRE_ISSUE", "NPRE_AMEND", "DNULLDATE", "DCOMPDATE", "NUSERCODE", "NLIMIT_EXCTAX", "NQPREM_BAS_ANN", "SIVA_COVER_IND", "SNO_SELL", "NPRE_COVEREXT", "NPRE_ISSUEMAX", "NDISC_PAYMETH" };
+    ViewData["ColumnProperties"] = new[] { "NBRANCH", "NPRODUCT", "TABLE5002SDESCRIPT", "TABLE36SDESCRIPT", "DEFFECDATE", "NCURRENCY", "NPRE_ISSUE", "NPRE_AMEND", "DNULLDATE", "DCOMPDATE", "NUSERCODE", "NLIMIT_EXCTAX", "NQPREM_BAS_ANN", "SIVA_COVER_IND", "SNO_SELL", "NPRE_COVEREXT", "NPRE_ISSUEMAX", "NDISC_PAYMETH" };
+    ViewData["KeyName"] = "NBRANCH";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

@@ -1,0 +1,64 @@
+using System.Linq.Expressions;
+using WEBVisualTime.Entidades.Insudb;
+using WEBVisualTime.Datos.Repositories;
+using WEBVisualTime.Servicios.Insudb.DTOs.DETAIL_PRE_INI;
+using WEBVisualTime.Servicios.Insudb.Mappings;
+
+namespace WEBVisualTime.Servicios.Insudb.Services;
+
+public class DETAIL_PRE_INIService : IDETAIL_PRE_INIService
+{
+    private readonly IRepository<DETAIL_PRE_INI> _repository;
+
+    public DETAIL_PRE_INIService(IRepository<DETAIL_PRE_INI> repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task<IEnumerable<DETAIL_PRE_INIDto>> GetAllAsync()
+    {
+        var entities = await _repository.GetAllAsync();
+        return entities.Select(e => e.ToDto());
+    }
+
+    public async Task<DETAIL_PRE_INIDto?> GetByIdAsync(int id)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        return entity?.ToDto();
+    }
+
+    public async Task<IEnumerable<DETAIL_PRE_INIDto>> FindAsync(Expression<Func<DETAIL_PRE_INI, bool>> predicate)
+    {
+        var entities = await _repository.FindAsync(predicate);
+        return entities.Select(e => e.ToDto());
+    }
+
+    public async Task<DETAIL_PRE_INIDto> CreateAsync(CreateDETAIL_PRE_INIDto createDto)
+    {
+        var entity = createDto.ToEntity();
+        await _repository.AddAsync(entity);
+        await _repository.SaveChangesAsync();
+        return entity.ToDto();
+    }
+
+    public async Task<bool> UpdateAsync(int id, UpdateDETAIL_PRE_INIDto updateDto)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        if (entity == null) return false;
+
+        entity.UpdateEntity(updateDto);
+        _repository.Update(entity);
+        await _repository.SaveChangesAsync();
+        return true;
+    }
+
+    public async Task<bool> DeleteAsync(int id)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        if (entity == null) return false;
+
+        _repository.Remove(entity);
+        await _repository.SaveChangesAsync();
+        return true;
+    }
+}

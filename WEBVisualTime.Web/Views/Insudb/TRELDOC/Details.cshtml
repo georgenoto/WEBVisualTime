@@ -1,0 +1,82 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TRELDOC.TRELDOCDto
+
+@{
+    ViewData["Title"] = "Detalles de TRELDOC";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBORDEREAUX</dt>
+            <dd class="col-sm-9">@Model.NBORDEREAUX</dd>
+            <dt class="col-sm-3">NSEQUENCE</dt>
+            <dd class="col-sm-9">@Model.NSEQUENCE</dd>
+            <dt class="col-sm-3">NCOLLECDOCTYP</dt>
+            <dd class="col-sm-9">@Model.NCOLLECDOCTYP</dd>
+            <dt class="col-sm-3">NRECEIPT</dt>
+            <dd class="col-sm-9">@Model.NRECEIPT</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NPOLICY</dt>
+            <dd class="col-sm-9">@Model.NPOLICY</dd>
+            <dt class="col-sm-3">NCERTIF</dt>
+            <dd class="col-sm-9">@Model.NCERTIF</dd>
+            <dt class="col-sm-3">NCONTRAT</dt>
+            <dd class="col-sm-9">@Model.NCONTRAT</dd>
+            <dt class="col-sm-3">NDRAFT</dt>
+            <dd class="col-sm-9">@Model.NDRAFT</dd>
+            <dt class="col-sm-3">NBULLETINS</dt>
+            <dd class="col-sm-9">@Model.NBULLETINS</dd>
+            <dt class="col-sm-3">NPROPONUM</dt>
+            <dd class="col-sm-9">@Model.NPROPONUM</dd>
+            <dt class="col-sm-3">NIDMOV</dt>
+            <dd class="col-sm-9">@Model.NIDMOV</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">NINTERESTAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NINTERESTAMOUNT</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">DPAYDATE</dt>
+            <dd class="col-sm-9">@Model.DPAYDATE</dd>
+            <dt class="col-sm-3">DVALUEDATE</dt>
+            <dd class="col-sm-9">@Model.DVALUEDATE</dd>
+            <dt class="col-sm-3">NCHANGESDAT</dt>
+            <dd class="col-sm-9">@Model.NCHANGESDAT</dd>
+            <dt class="col-sm-3">NORIGIN</dt>
+            <dd class="col-sm-9">@Model.NORIGIN</dd>
+            <dt class="col-sm-3">DDATE_ORIGIN</dt>
+            <dd class="col-sm-9">@Model.DDATE_ORIGIN</dd>
+            <dt class="col-sm-3">NINSTITUTION</dt>
+            <dd class="col-sm-9">@Model.NINSTITUTION</dd>
+            <dt class="col-sm-3">NCOLLECTOR</dt>
+            <dd class="col-sm-9">@Model.NCOLLECTOR</dd>
+            <dt class="col-sm-3">NAMOUNTDEC</dt>
+            <dd class="col-sm-9">@Model.NAMOUNTDEC</dd>
+            <dt class="col-sm-3">NLOANS</dt>
+            <dd class="col-sm-9">@Model.NLOANS</dd>
+            <dt class="col-sm-3">NINDREV</dt>
+            <dd class="col-sm-9">@Model.NINDREV</dd>
+            <dt class="col-sm-3">NTYP_PROFITWORKER</dt>
+            <dd class="col-sm-9">@Model.NTYP_PROFITWORKER</dd>
+            <dt class="col-sm-3">NAMOUNT_LOC</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT_LOC</dd>
+            <dt class="col-sm-3">NCOD_SAAPV</dt>
+            <dd class="col-sm-9">@Model.NCOD_SAAPV</dd>
+            <dt class="col-sm-3">SFOLIONUMBER</dt>
+            <dd class="col-sm-9">@Model.SFOLIONUMBER</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBORDEREAUX" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

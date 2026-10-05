@@ -1,0 +1,52 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.PHONES.PHONESDto
+
+@{
+    ViewData["Title"] = "Detalles de PHONES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NRECOWNER</dt>
+            <dd class="col-sm-9">@Model.NRECOWNER</dd>
+            <dt class="col-sm-3">SKEYADDRESS</dt>
+            <dd class="col-sm-9">@Model.SKEYADDRESS</dd>
+            <dt class="col-sm-3">NKEYPHONES</dt>
+            <dd class="col-sm-9">@Model.NKEYPHONES</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">TABLE8060</dt>
+            <dd class="col-sm-9">@Model.TABLE8060SSTATREGT</dd>
+            <dt class="col-sm-3">NAREA_CODE</dt>
+            <dd class="col-sm-9">@Model.NAREA_CODE</dd>
+            <dt class="col-sm-3">SPHONE</dt>
+            <dd class="col-sm-9">@Model.SPHONE</dd>
+            <dt class="col-sm-3">NORDER</dt>
+            <dd class="col-sm-9">@Model.NORDER</dd>
+            <dt class="col-sm-3">NEXTENS1</dt>
+            <dd class="col-sm-9">@Model.NEXTENS1</dd>
+            <dt class="col-sm-3">NEXTENS2</dt>
+            <dd class="col-sm-9">@Model.NEXTENS2</dd>
+            <dt class="col-sm-3">TABLE564</dt>
+            <dd class="col-sm-9">@Model.TABLE564SDESCRIPT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NCOUNTRY_CODE</dt>
+            <dd class="col-sm-9">@Model.NCOUNTRY_CODE</dd>
+            <dt class="col-sm-3">SASSOCADDR</dt>
+            <dd class="col-sm-9">@Model.SASSOCADDR</dd>
+            <dt class="col-sm-3">NPHONECLAS</dt>
+            <dd class="col-sm-9">@Model.NPHONECLAS</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NRECOWNER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

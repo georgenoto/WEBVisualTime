@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.SDD_NLS_GLOBAL_NAME_DOMAINS.SDD_NLS_GLOBAL_NAME_DOMAINSDto>
+
+@{
+    ViewData["Title"] = "SDD_NLS_GLOBAL_NAME_DOMAINS";
+    ViewData["ColumnHeaders"] = new[] { "IRID", "IVID", "NLS_NAME", "NLS_PLURAL_NAME", "NLS_LANG", "SDD_GLOBAL_NAME_DOMAINS", "NUMBER_OF_TIMES_MODIFIED", "DATE_CREATED", "CREATED_BY", "DATE_CHANGED", "CHANGED_BY" };
+    ViewData["ColumnProperties"] = new[] { "IRID", "IVID", "NLS_NAME", "NLS_PLURAL_NAME", "NLS_LANG", "SDD_GLOBAL_NAME_DOMAINSNAME", "NUMBER_OF_TIMES_MODIFIED", "DATE_CREATED", "CREATED_BY", "DATE_CHANGED", "CHANGED_BY" };
+    ViewData["KeyName"] = "IRID";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

@@ -1,0 +1,88 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COLFORMREF.COLFORMREFDto
+
+@{
+    ViewData["Title"] = "Detalles de COLFORMREF";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBORDEREAUX</dt>
+            <dd class="col-sm-9">@Model.NBORDEREAUX</dd>
+            <dt class="col-sm-3">STYPE</dt>
+            <dd class="col-sm-9">@Model.STYPE</dd>
+            <dt class="col-sm-3">TABLE7</dt>
+            <dd class="col-sm-9">@Model.TABLE7SDESCRIPT</dd>
+            <dt class="col-sm-3">INTERMEDIA</dt>
+            <dd class="col-sm-9">@Model.INTERMEDIASCOL_AGREE</dd>
+            <dt class="col-sm-3">NREL_AMOUN</dt>
+            <dd class="col-sm-9">@Model.NREL_AMOUN</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NPOLICY</dt>
+            <dd class="col-sm-9">@Model.NPOLICY</dd>
+            <dt class="col-sm-3">DCOLLECT</dt>
+            <dd class="col-sm-9">@Model.DCOLLECT</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">TABLE7502</dt>
+            <dd class="col-sm-9">@Model.TABLE7502SDESCRIPT</dd>
+            <dt class="col-sm-3">SSTATUS</dt>
+            <dd class="col-sm-9">@Model.SSTATUS</dd>
+            <dt class="col-sm-3">NCERTIF</dt>
+            <dd class="col-sm-9">@Model.NCERTIF</dd>
+            <dt class="col-sm-3">SCONWIN</dt>
+            <dd class="col-sm-9">@Model.SCONWIN</dd>
+            <dt class="col-sm-3">CLIENT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">NUSER_AMEND</dt>
+            <dd class="col-sm-9">@Model.NUSER_AMEND</dd>
+            <dt class="col-sm-3">NCASHNUM</dt>
+            <dd class="col-sm-9">@Model.NCASHNUM</dd>
+            <dt class="col-sm-3">TABLE5554</dt>
+            <dd class="col-sm-9">@Model.TABLE5554SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE5001</dt>
+            <dd class="col-sm-9">@Model.TABLE5001SDESCRIPT</dd>
+            <dt class="col-sm-3">NAGREEMENT</dt>
+            <dd class="col-sm-9">@Model.NAGREEMENT</dd>
+            <dt class="col-sm-3">DVALUEDATE</dt>
+            <dd class="col-sm-9">@Model.DVALUEDATE</dd>
+            <dt class="col-sm-3">SIND_ANNUITY</dt>
+            <dd class="col-sm-9">@Model.SIND_ANNUITY</dd>
+            <dt class="col-sm-3">DDATE_BENLAR</dt>
+            <dd class="col-sm-9">@Model.DDATE_BENLAR</dd>
+            <dt class="col-sm-3">COLLECTOR</dt>
+            <dd class="col-sm-9">@Model.NCOLLECTOR</dd>
+            <dt class="col-sm-3">SRELORIGI</dt>
+            <dd class="col-sm-9">@Model.SRELORIGI</dd>
+            <dt class="col-sm-3">DCOLLECTDATE</dt>
+            <dd class="col-sm-9">@Model.DCOLLECTDATE</dd>
+            <dt class="col-sm-3">NBILLNUM</dt>
+            <dd class="col-sm-9">@Model.NBILLNUM</dd>
+            <dt class="col-sm-3">NRETENTION</dt>
+            <dd class="col-sm-9">@Model.NRETENTION</dd>
+            <dt class="col-sm-3">NTAXRETENTION</dt>
+            <dd class="col-sm-9">@Model.NTAXRETENTION</dd>
+            <dt class="col-sm-3">NNULLCODE</dt>
+            <dd class="col-sm-9">@Model.NNULLCODE</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">NIMAGENUM</dt>
+            <dd class="col-sm-9">@Model.NIMAGENUM</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBORDEREAUX" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

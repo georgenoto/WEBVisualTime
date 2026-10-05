@@ -1,0 +1,94 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLIENT_EVALRISK.CLIENT_EVALRISKDto
+
+@{
+    ViewData["Title"] = "Detalles de CLIENT_EVALRISK";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DOTHERDATE</dt>
+            <dd class="col-sm-9">@Model.DOTHERDATE</dd>
+            <dt class="col-sm-3">TABLE9010</dt>
+            <dd class="col-sm-9">@Model.TABLE9010SDESCRIPT</dd>
+            <dt class="col-sm-3">NNUMEMPLOYERS</dt>
+            <dd class="col-sm-9">@Model.NNUMEMPLOYERS</dd>
+            <dt class="col-sm-3">TABLE9011</dt>
+            <dd class="col-sm-9">@Model.TABLE9011SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9012</dt>
+            <dd class="col-sm-9">@Model.TABLE9012SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9013</dt>
+            <dd class="col-sm-9">@Model.TABLE9013SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9014</dt>
+            <dd class="col-sm-9">@Model.TABLE9014SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9015</dt>
+            <dd class="col-sm-9">@Model.TABLE9015SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9016</dt>
+            <dd class="col-sm-9">@Model.TABLE9016SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9017</dt>
+            <dd class="col-sm-9">@Model.TABLE9017SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9018</dt>
+            <dd class="col-sm-9">@Model.TABLE9018SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9019</dt>
+            <dd class="col-sm-9">@Model.TABLE9019SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9020</dt>
+            <dd class="col-sm-9">@Model.TABLE9020SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9021</dt>
+            <dd class="col-sm-9">@Model.TABLE9021SDESCRIPT</dd>
+            <dt class="col-sm-3">NCODDICOM</dt>
+            <dd class="col-sm-9">@Model.NCODDICOM</dd>
+            <dt class="col-sm-3">SDESDICOM</dt>
+            <dd class="col-sm-9">@Model.SDESDICOM</dd>
+            <dt class="col-sm-3">TABLE9022</dt>
+            <dd class="col-sm-9">@Model.TABLE9022SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9023</dt>
+            <dd class="col-sm-9">@Model.TABLE9023SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9024</dt>
+            <dd class="col-sm-9">@Model.TABLE9024SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9025</dt>
+            <dd class="col-sm-9">@Model.TABLE9025SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9026</dt>
+            <dd class="col-sm-9">@Model.TABLE9026SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9027</dt>
+            <dd class="col-sm-9">@Model.TABLE9027SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9028</dt>
+            <dd class="col-sm-9">@Model.TABLE9028SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9029</dt>
+            <dd class="col-sm-9">@Model.TABLE9029SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9030</dt>
+            <dd class="col-sm-9">@Model.TABLE9030SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE66</dt>
+            <dd class="col-sm-9">@Model.TABLE66SDESCRIPT</dd>
+            <dt class="col-sm-3">SNOTE1</dt>
+            <dd class="col-sm-9">@Model.SNOTE1</dd>
+            <dt class="col-sm-3">SNOTE2</dt>
+            <dd class="col-sm-9">@Model.SNOTE2</dd>
+            <dt class="col-sm-3">SNOTE3</dt>
+            <dd class="col-sm-9">@Model.SNOTE3</dd>
+            <dt class="col-sm-3">SNOTE4</dt>
+            <dd class="col-sm-9">@Model.SNOTE4</dd>
+            <dt class="col-sm-3">TABLE9031</dt>
+            <dd class="col-sm-9">@Model.TABLE9031SDESCRIPT</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NLIMITCREDIT</dt>
+            <dd class="col-sm-9">@Model.NLIMITCREDIT</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCLIENT" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

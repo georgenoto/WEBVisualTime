@@ -1,0 +1,36 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_PROV_FEES.TAB_PROV_FEESDto
+
+@{
+    ViewData["Title"] = "Detalles de TAB_PROV_FEES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TAB_PROV_ZONENPROVIDER</dt>
+            <dd class="col-sm-9">@Model.NPROVIDER</dd>
+            <dt class="col-sm-3">TAB_PROV_ZONENZONE</dt>
+            <dd class="col-sm-9">@Model.TAB_PROV_ZONENZONENPROVIDER</dd>
+            <dt class="col-sm-3">TABLE8600</dt>
+            <dd class="col-sm-9">@Model.TABLE8600SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE8601</dt>
+            <dd class="col-sm-9">@Model.TABLE8601SDESCRIPT</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NDISC_FEE</dt>
+            <dd class="col-sm-9">@Model.NDISC_FEE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NPROVIDER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

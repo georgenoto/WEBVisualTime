@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.COMMPAYREQ_HIS.COMMPAYREQ_HISDto>
+
+@{
+    ViewData["Title"] = "COMMPAYREQ_HIS";
+    ViewData["ColumnHeaders"] = new[] { "COMMPAYMENTREQUESTS", "NMOVEMENT", "DMOVEMENT_DATE", "TABLE9276", "TABLE9275", "NUSERCODE", "DCOMPDATE", "SCLARIFICATIONREQUESTED", "SJUSTIFICATIONREQUESTED", "NUSERCODE_RESPONSIBLE", "DRESULTDATE", "SIND_RESULT", "SIND_ASSUMEIVA", "NCURRENCY_PAY", "NAMOUNT_PAY", "NNULLCODE" };
+    ViewData["ColumnProperties"] = new[] { "COMMPAYMENTREQUESTSSCLIENAME_HOLDER", "NMOVEMENT", "DMOVEMENT_DATE", "TABLE9276SDESCRIPT", "TABLE9275SDESCRIPT", "NUSERCODE", "DCOMPDATE", "SCLARIFICATIONREQUESTED", "SJUSTIFICATIONREQUESTED", "NUSERCODE_RESPONSIBLE", "DRESULTDATE", "SIND_RESULT", "SIND_ASSUMEIVA", "NCURRENCY_PAY", "NAMOUNT_PAY", "NNULLCODE" };
+    ViewData["KeyName"] = "NID_COMMPAYREQ";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

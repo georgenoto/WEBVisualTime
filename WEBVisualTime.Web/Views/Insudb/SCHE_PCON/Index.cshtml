@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.SCHE_PCON.SCHE_PCONDto>
+
+@{
+    ViewData["Title"] = "SCHE_PCON";
+    ViewData["ColumnHeaders"] = new[] { "SECUR_SCHE", "TABLE293", "DCOMPDATE", "NUSERCODE", "SSTATREGT" };
+    ViewData["ColumnProperties"] = new[] { "SECUR_SCHESLONGDESC", "TABLE293SDESCRIPT", "DCOMPDATE", "NUSERCODE", "SSTATREGT" };
+    ViewData["KeyName"] = "SSCHE_CODE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

@@ -1,0 +1,57 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.DOC_REQ_CLI.DOC_REQ_CLIDto
+
+@{
+    ViewData["Title"] = "Eliminar DOC_REQ_CLI";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NEVAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NEVAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NID)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPEDOC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPEDOC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSTATUSDOC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSTATUSDOC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SDESCRIPT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SDESCRIPT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDOCREQ)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDOCREQ)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDOCREC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDOCREC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDOCDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDOCDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DEXPIRDAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DEXPIRDAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCAPITAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCAPITAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NNOTENUM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NNOTENUM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDATETO)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDATETO)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DDATEFREE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DDATEFREE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SREQUEST)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SREQUEST)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NEVAL" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

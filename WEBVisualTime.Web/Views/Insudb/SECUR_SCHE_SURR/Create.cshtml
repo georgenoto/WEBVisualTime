@@ -1,0 +1,118 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.SECUR_SCHE_SURR.CreateSECUR_SCHE_SURRDto
+
+@{
+    ViewData["Title"] = "Crear SECUR_SCHE_SURR";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="SSCHE_CODE" class="form-label"></label>
+                <input asp-for="SSCHE_CODE" class="form-control" />
+                <span asp-validation-for="SSCHE_CODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NTYPERESC" class="form-label"></label>
+                <input asp-for="NTYPERESC" class="form-control" type="number" />
+                <span asp-validation-for="NTYPERESC" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SMOD_DATE_R" class="form-label"></label>
+                <input asp-for="SMOD_DATE_R" class="form-control" />
+                <span asp-validation-for="SMOD_DATE_R" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SRESC_TOT" class="form-label"></label>
+                <input asp-for="SRESC_TOT" class="form-control" />
+                <span asp-validation-for="SRESC_TOT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SRESC_PAR" class="form-label"></label>
+                <input asp-for="SRESC_PAR" class="form-control" />
+                <span asp-validation-for="SRESC_PAR" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="STYPEXECUT" class="form-label"></label>
+                <input asp-for="STYPEXECUT" class="form-control" />
+                <span asp-validation-for="STYPEXECUT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SMOD_DATE_P" class="form-label"></label>
+                <input asp-for="SMOD_DATE_P" class="form-control" />
+                <span asp-validation-for="SMOD_DATE_P" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NTYPERESCV" class="form-label"></label>
+                <input asp-for="NTYPERESCV" class="form-control" type="number" />
+                <span asp-validation-for="NTYPERESCV" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SMOD_DATE_RV" class="form-label"></label>
+                <input asp-for="SMOD_DATE_RV" class="form-control" />
+                <span asp-validation-for="SMOD_DATE_RV" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SRESC_TOTV" class="form-label"></label>
+                <input asp-for="SRESC_TOTV" class="form-control" />
+                <span asp-validation-for="SRESC_TOTV" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SRESC_PARV" class="form-label"></label>
+                <input asp-for="SRESC_PARV" class="form-control" />
+                <span asp-validation-for="SRESC_PARV" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="STYPEXECUTV" class="form-label"></label>
+                <input asp-for="STYPEXECUTV" class="form-control" />
+                <span asp-validation-for="STYPEXECUTV" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SANULREC" class="form-label"></label>
+                <input asp-for="SANULREC" class="form-control" />
+                <span asp-validation-for="SANULREC" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SMOD_DATE_PV" class="form-label"></label>
+                <input asp-for="SMOD_DATE_PV" class="form-control" />
+                <span asp-validation-for="SMOD_DATE_PV" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SREQUEST" class="form-label"></label>
+                <input asp-for="SREQUEST" class="form-control" />
+                <span asp-validation-for="SREQUEST" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SREPORT" class="form-label"></label>
+                <input asp-for="SREPORT" class="form-control" />
+                <span asp-validation-for="SREPORT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NVALUE_TYP" class="form-label"></label>
+                <input asp-for="NVALUE_TYP" class="form-control" type="number" />
+                <span asp-validation-for="NVALUE_TYP" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

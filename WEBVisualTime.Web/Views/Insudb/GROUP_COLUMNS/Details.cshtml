@@ -1,0 +1,42 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.GROUP_COLUMNS.GROUP_COLUMNSDto
+
+@{
+    ViewData["Title"] = "Detalles de GROUP_COLUMNS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TABLE697</dt>
+            <dd class="col-sm-9">@Model.TABLE697SDESCRIPT</dd>
+            <dt class="col-sm-3">NIDREC</dt>
+            <dd class="col-sm-9">@Model.NIDREC</dd>
+            <dt class="col-sm-3">SFIELD</dt>
+            <dd class="col-sm-9">@Model.SFIELD</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SCOLUMNNAME</dt>
+            <dd class="col-sm-9">@Model.SCOLUMNNAME</dd>
+            <dt class="col-sm-3">NORDER</dt>
+            <dd class="col-sm-9">@Model.NORDER</dd>
+            <dt class="col-sm-3">SVALUESLIST</dt>
+            <dd class="col-sm-9">@Model.SVALUESLIST</dd>
+            <dt class="col-sm-3">STABLE</dt>
+            <dd class="col-sm-9">@Model.STABLE</dd>
+            <dt class="col-sm-3">SREQUIRE</dt>
+            <dd class="col-sm-9">@Model.SREQUIRE</dd>
+            <dt class="col-sm-3">SCOMMENT</dt>
+            <dd class="col-sm-9">@Model.SCOMMENT</dd>
+            <dt class="col-sm-3">SUPDATEIND</dt>
+            <dd class="col-sm-9">@Model.SUPDATEIND</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NIDREC" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

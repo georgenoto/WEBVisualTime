@@ -1,0 +1,26 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.USER_OFFICE.USER_OFFICEDto
+
+@{
+    ViewData["Title"] = "Detalles de USER_OFFICE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NUSER</dt>
+            <dd class="col-sm-9">@Model.NUSER</dd>
+            <dt class="col-sm-3">TABLE5556</dt>
+            <dd class="col-sm-9">@Model.TABLE5556SDESCRIPT</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NUSER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

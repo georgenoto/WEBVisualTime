@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CONTRMASTER.CONTRMASTERDto>
+
+@{
+    ViewData["Title"] = "CONTRMASTER";
+    ViewData["ColumnHeaders"] = new[] { "NTYPE_REL", "NNUMBER", "TABLE173", "DSTARTDATE", "TABLE5000", "NCURRENCY", "SSTATREGT", "DCOMPDATE", "NUSERCODE", "DEXPIRDAT", "NCURR_PAY", "SFORMPAY" };
+    ViewData["ColumnProperties"] = new[] { "NTYPE_REL", "NNUMBER", "TABLE173SDESCRIPT", "DSTARTDATE", "TABLE5000SDESCRIPT", "NCURRENCY", "SSTATREGT", "DCOMPDATE", "NUSERCODE", "DEXPIRDAT", "NCURR_PAY", "SFORMPAY" };
+    ViewData["KeyName"] = "NTYPE_REL";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

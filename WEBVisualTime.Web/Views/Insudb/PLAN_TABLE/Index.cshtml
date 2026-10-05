@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.PLAN_TABLE.PLAN_TABLEDto>
+
+@{
+    ViewData["Title"] = "PLAN_TABLE";
+    ViewData["ColumnHeaders"] = new[] { "STATEMENT_ID", "TIMESTAMP", "REMARKS", "OPERATION", "OPTIONS", "OBJECT_NODE", "OBJECT_OWNER", "OBJECT_NAME", "OBJECT_INSTANCE", "OBJECT_TYPE", "OPTIMIZER", "SEARCH_COLUMNS", "ID", "PARENT_ID", "POSITION", "COST", "CARDINALITY", "BYTES", "OTHER_TAG", "PARTITION_START", "PARTITION_STOP", "PARTITION_ID", "OTHER", "DISTRIBUTION" };
+    ViewData["ColumnProperties"] = new[] { "STATEMENT_ID", "TIMESTAMP", "REMARKS", "OPERATION", "OPTIONS", "OBJECT_NODE", "OBJECT_OWNER", "OBJECT_NAME", "OBJECT_INSTANCE", "OBJECT_TYPE", "OPTIMIZER", "SEARCH_COLUMNS", "ID", "PARENT_ID", "POSITION", "COST", "CARDINALITY", "BYTES", "OTHER_TAG", "PARTITION_START", "PARTITION_STOP", "PARTITION_ID", "OTHER", "DISTRIBUTION" };
+    ViewData["KeyName"] = "ID";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

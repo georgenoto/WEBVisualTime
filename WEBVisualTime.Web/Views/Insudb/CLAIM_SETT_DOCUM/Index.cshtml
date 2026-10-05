@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_SETT_DOCUM.CLAIM_SETT_DOCUMDto>
+
+@{
+    ViewData["Title"] = "CLAIM_SETT_DOCUM";
+    ViewData["ColumnHeaders"] = new[] { "NSEQ_IDLEDGERDOCUM", "NCONSEC_DOC", "DRECEPDATE", "SDESCRIPT", "TABLE203", "NDOC_CODE", "NUSERCODE", "DCOMPDATE", "NSETTLEMENT_NUM" };
+    ViewData["ColumnProperties"] = new[] { "NSEQ_IDLEDGERDOCUM", "NCONSEC_DOC", "DRECEPDATE", "SDESCRIPT", "TABLE203SDESCRIPT", "NDOC_CODE", "NUSERCODE", "DCOMPDATE", "NSETTLEMENT_NUM" };
+    ViewData["KeyName"] = "NCONSEC_DOC";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

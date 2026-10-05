@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.SECUR_SCHE.SECUR_SCHEDto>
+
+@{
+    ViewData["Title"] = "SECUR_SCHE";
+    ViewData["ColumnHeaders"] = new[] { "SSCHE_CODE", "NACCESOF", "DCOMPDATE", "DDATE_FROM", "DDATE_TO", "NIND_CURREN", "NIND_LIMITS", "SLONGDESC", "NSECURLEV", "SSHORTDES", "SSTATREGT", "STIME1_FROM", "STIME1_TO", "STIME2_FROM", "STIME2_TO", "STIMEQ1_FRO", "STIMEQ1_TO", "STIMEQ2_FRO", "STIMEQ2_TO", "SUSEQUERY", "NIND_CONCE", "NUSERCODE", "NDURATION", "NDAYSADV", "SENCRYPTED" };
+    ViewData["ColumnProperties"] = new[] { "SSCHE_CODE", "NACCESOF", "DCOMPDATE", "DDATE_FROM", "DDATE_TO", "NIND_CURREN", "NIND_LIMITS", "SLONGDESC", "NSECURLEV", "SSHORTDES", "SSTATREGT", "STIME1_FROM", "STIME1_TO", "STIME2_FROM", "STIME2_TO", "STIMEQ1_FRO", "STIMEQ1_TO", "STIMEQ2_FRO", "STIMEQ2_TO", "SUSEQUERY", "NIND_CONCE", "NUSERCODE", "NDURATION", "NDAYSADV", "SENCRYPTED" };
+    ViewData["KeyName"] = "SSCHE_CODE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

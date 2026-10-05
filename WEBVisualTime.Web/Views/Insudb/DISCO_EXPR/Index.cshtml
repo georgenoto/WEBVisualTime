@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.DISCO_EXPR.DISCO_EXPRDto>
+
+@{
+    ViewData["Title"] = "DISCO_EXPR";
+    ViewData["ColumnHeaders"] = new[] { "NBRANCH", "NPRODUCT", "NDISEXPRC", "DEFFECDATE", "TABLE5000", "NBILL_ITEM", "SCHANALLO", "TABLE71", "SCOMMISSI_I", "TABLE75", "DCOMPDATE", "NCURRENCY", "SDEFAULTI", "SDESCRIPT", "SDEVOALLO", "NDISEXMAX", "NDISEXMIN", "NDISEXPRA", "SEDPERAPL", "DNULLDATE", "NORDER_APL", "SPRORATE", "SREQUIRE", "SROUTINE", "SSHORT_DES", "NUSERCODE", "NAMELEVEL", "TABLE30", "SSTATREGT", "NNOTENUM", "SDEFPOL", "STYPMAR", "SIVA", "NAPLY", "NRATE", "NDISEXSUBPER", "NDISEXADDPER", "SIND_STIPENDS", "NDINSUR_TYPE" };
+    ViewData["ColumnProperties"] = new[] { "NBRANCH", "NPRODUCT", "NDISEXPRC", "DEFFECDATE", "TABLE5000SDESCRIPT", "NBILL_ITEM", "SCHANALLO", "TABLE71SDESCRIPT", "SCOMMISSI_I", "TABLE75SDESCRIPT", "DCOMPDATE", "NCURRENCY", "SDEFAULTI", "SDESCRIPT", "SDEVOALLO", "NDISEXMAX", "NDISEXMIN", "NDISEXPRA", "SEDPERAPL", "DNULLDATE", "NORDER_APL", "SPRORATE", "SREQUIRE", "SROUTINE", "SSHORT_DES", "NUSERCODE", "NAMELEVEL", "TABLE30SDESCRIPT", "SSTATREGT", "NNOTENUM", "SDEFPOL", "STYPMAR", "SIVA", "NAPLY", "NRATE", "NDISEXSUBPER", "NDISEXADDPER", "SIND_STIPENDS", "NDINSUR_TYPE" };
+    ViewData["KeyName"] = "NBRANCH";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

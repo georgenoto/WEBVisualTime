@@ -1,0 +1,70 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.DOCUMENTS.DOCUMENTSDto
+
+@{
+    ViewData["Title"] = "Detalles de DOCUMENTS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CLAIMBENEFNCLAIM</dt>
+            <dd class="col-sm-9">@Model.CLAIMBENEFNCLAIMSDEMANDANT</dd>
+            <dt class="col-sm-3">NDOC_CODE</dt>
+            <dd class="col-sm-9">@Model.NDOC_CODE</dd>
+            <dt class="col-sm-3">CLAIMBENEFNCASE_NUM</dt>
+            <dd class="col-sm-9">@Model.CLAIMBENEFNCASE_NUMSDEMANDANT</dd>
+            <dt class="col-sm-3">TABLE692</dt>
+            <dd class="col-sm-9">@Model.TABLE692SDESCRIPT</dd>
+            <dt class="col-sm-3">CLAIMBENEFSCLIENT</dt>
+            <dd class="col-sm-9">@Model.CLAIMBENEFSCLIENTSDEMANDANT</dd>
+            <dt class="col-sm-3">CLAIMBENEFNID</dt>
+            <dd class="col-sm-9">@Model.CLAIMBENEFNIDSDEMANDANT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DLETFIRSDAT</dt>
+            <dd class="col-sm-9">@Model.DLETFIRSDAT</dd>
+            <dt class="col-sm-3">DLETLASTDAT</dt>
+            <dd class="col-sm-9">@Model.DLETLASTDAT</dd>
+            <dt class="col-sm-3">DRECEPDATE</dt>
+            <dd class="col-sm-9">@Model.DRECEPDATE</dd>
+            <dt class="col-sm-3">TABLE203</dt>
+            <dd class="col-sm-9">@Model.TABLE203SDESCRIPT</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">NDOCNUMBE</dt>
+            <dd class="col-sm-9">@Model.NDOCNUMBE</dd>
+            <dt class="col-sm-3">NQUANTITY</dt>
+            <dd class="col-sm-9">@Model.NQUANTITY</dd>
+            <dt class="col-sm-3">DPROPO_DATE</dt>
+            <dd class="col-sm-9">@Model.DPROPO_DATE</dd>
+            <dt class="col-sm-3">DPRESCDATE</dt>
+            <dd class="col-sm-9">@Model.DPRESCDATE</dd>
+            <dt class="col-sm-3">NCONSEC</dt>
+            <dd class="col-sm-9">@Model.NCONSEC</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">TABLE9217</dt>
+            <dd class="col-sm-9">@Model.TABLE9217SDESCRIPT</dd>
+            <dt class="col-sm-3">TAB_PROVIDER</dt>
+            <dd class="col-sm-9">@Model.TAB_PROVIDERSSTATREGT</dd>
+            <dt class="col-sm-3">NID_SECUENCIA</dt>
+            <dd class="col-sm-9">@Model.NID_SECUENCIA</dd>
+            <dt class="col-sm-3">NCLASS_DOC</dt>
+            <dd class="col-sm-9">@Model.NCLASS_DOC</dd>
+            <dt class="col-sm-3">SOBSERVATIONS</dt>
+            <dd class="col-sm-9">@Model.SOBSERVATIONS</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCLAIM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

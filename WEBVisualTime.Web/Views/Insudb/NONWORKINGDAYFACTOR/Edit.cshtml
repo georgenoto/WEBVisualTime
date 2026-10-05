@@ -1,0 +1,41 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.NONWORKINGDAYFACTOR.UpdateNONWORKINGDAYFACTORDto
+
+@{
+    ViewData["Title"] = "Editar NONWORKINGDAYFACTOR";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NIDFACTOR" />
+            <div class="mb-3">
+                <label asp-for="NIDUSER" class="form-label"></label>
+                <select asp-for="NIDUSER" class="form-select" asp-items="@(ViewData["NIDUSER"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NIDUSER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NFACTOR" class="form-label"></label>
+                <input asp-for="NFACTOR" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NFACTOR" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCREATIONDATE" class="form-label"></label>
+                <input asp-for="DCREATIONDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCREATIONDATE" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

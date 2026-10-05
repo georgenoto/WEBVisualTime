@@ -1,0 +1,28 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.PL_ASP_CLASICO.PL_ASP_CLASICODto
+
+@{
+    ViewData["Title"] = "Detalles de PL_ASP_CLASICO";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NIDPROPERTY</dt>
+            <dd class="col-sm-9">@Model.NIDPROPERTY</dd>
+            <dt class="col-sm-3">SPROPERTY</dt>
+            <dd class="col-sm-9">@Model.SPROPERTY</dd>
+            <dt class="col-sm-3">SFORMAT</dt>
+            <dd class="col-sm-9">@Model.SFORMAT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NIDPROPERTY" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

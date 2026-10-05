@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.REP_CLEAR_VTIME.REP_CLEAR_VTIMEDto>
+
+@{
+    ViewData["Title"] = "REP_CLEAR_VTIME";
+    ViewData["ColumnHeaders"] = new[] { "STABLE", "NCOUNT", "NCOUNT_BD", "NCOUNT_DEP", "NERASE", "NDROP", "SCOMMENTS", "DCOMPDATE" };
+    ViewData["ColumnProperties"] = new[] { "STABLE", "NCOUNT", "NCOUNT_BD", "NCOUNT_DEP", "NERASE", "NDROP", "SCOMMENTS", "DCOMPDATE" };
+    ViewData["KeyName"] = "STABLE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

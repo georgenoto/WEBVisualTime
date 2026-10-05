@@ -1,0 +1,52 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.BILLS_HIS.BILLS_HISDto
+
+@{
+    ViewData["Title"] = "Detalles de BILLS_HIS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SBILLTYPE</dt>
+            <dd class="col-sm-9">@Model.SBILLTYPE</dd>
+            <dt class="col-sm-3">NBILLNUM</dt>
+            <dd class="col-sm-9">@Model.NBILLNUM</dd>
+            <dt class="col-sm-3">DSTATDATE</dt>
+            <dd class="col-sm-9">@Model.DSTATDATE</dd>
+            <dt class="col-sm-3">NTRANSAC</dt>
+            <dd class="col-sm-9">@Model.NTRANSAC</dd>
+            <dt class="col-sm-3">NBILLMOVCODE</dt>
+            <dd class="col-sm-9">@Model.NBILLMOVCODE</dd>
+            <dt class="col-sm-3">STEXT</dt>
+            <dd class="col-sm-9">@Model.STEXT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NBILLNUM_OLD</dt>
+            <dd class="col-sm-9">@Model.NBILLNUM_OLD</dd>
+            <dt class="col-sm-3">DSTATDATE_OLD</dt>
+            <dd class="col-sm-9">@Model.DSTATDATE_OLD</dd>
+            <dt class="col-sm-3">NUSER</dt>
+            <dd class="col-sm-9">@Model.NUSER</dd>
+            <dt class="col-sm-3">NUSER_OLD</dt>
+            <dd class="col-sm-9">@Model.NUSER_OLD</dd>
+            <dt class="col-sm-3">NIDTRANSACTION</dt>
+            <dd class="col-sm-9">@Model.NIDTRANSACTION</dd>
+            <dt class="col-sm-3">NIDTRANSACTION_OLD</dt>
+            <dd class="col-sm-9">@Model.NIDTRANSACTION_OLD</dd>
+            <dt class="col-sm-3">SBILLNUMSFE</dt>
+            <dd class="col-sm-9">@Model.SBILLNUMSFE</dd>
+            <dt class="col-sm-3">SBILLNUMSFE_OLD</dt>
+            <dd class="col-sm-9">@Model.SBILLNUMSFE_OLD</dd>
+            <dt class="col-sm-3">SNOTEDESCRIPTS</dt>
+            <dd class="col-sm-9">@Model.SNOTEDESCRIPTS</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SBILLTYPE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

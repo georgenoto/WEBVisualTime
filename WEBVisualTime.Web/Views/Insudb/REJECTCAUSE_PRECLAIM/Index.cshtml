@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.REJECTCAUSE_PRECLAIM.REJECTCAUSE_PRECLAIMDto>
+
+@{
+    ViewData["Title"] = "REJECTCAUSE_PRECLAIM";
+    ViewData["ColumnHeaders"] = new[] { "PRECLAIM", "TABLE9239", "DCOMPDATE", "NUSERCODE", "SMESSAGE_REJECT" };
+    ViewData["ColumnProperties"] = new[] { "PRECLAIMSCERTYPE", "TABLE9239SDESCRIPT", "DCOMPDATE", "NUSERCODE", "SMESSAGE_REJECT" };
+    ViewData["KeyName"] = "NIDPRECLAIM";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

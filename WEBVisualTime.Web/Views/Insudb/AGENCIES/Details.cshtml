@@ -1,0 +1,30 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.AGENCIES.AGENCIESDto
+
+@{
+    ViewData["Title"] = "Detalles de AGENCIES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TABLE5555</dt>
+            <dd class="col-sm-9">@Model.TABLE5555SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE5556</dt>
+            <dd class="col-sm-9">@Model.TABLE5556SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SPAY</dt>
+            <dd class="col-sm-9">@Model.SPAY</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NAGENCY" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

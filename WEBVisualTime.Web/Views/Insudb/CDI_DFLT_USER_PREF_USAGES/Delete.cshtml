@@ -1,0 +1,105 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_DFLT_USER_PREF_USAGES.CDI_DFLT_USER_PREF_USAGESDto
+
+@{
+    ViewData["Title"] = "Eliminar CDI_DFLT_USER_PREF_USAGES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.P_SNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.P_SNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.P_CGVERSION)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.P_CGVERSION)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PF_SEQ)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.PF_SEQ)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DUP_SNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DUP_SNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.VALUE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.VALUE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DUP_INTERNAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DUP_INTERNAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DUP_TYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DUP_TYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DESCRIPTION_MSGID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DESCRIPTION_MSGID)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.MANDATORY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MANDATORY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CHR_DOMAIN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.CHR_DOMAIN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CHR_MAXLEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.CHR_MAXLEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUM_HIVAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUM_HIVAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUM_LOVAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUM_LOVAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DOM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DOM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.TAB)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TAB)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CON)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.CON)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.COL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.COL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.MOD)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MOD)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DTU)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DTU)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CONU)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.CONU)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.IGRP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.IGRP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCU)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCU)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ABT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ABT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.VAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.VAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.OBT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.OBT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.TME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ARL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ARL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.TAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.TOP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TOP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.OPP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.OPP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.VVA)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.VVA)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ABTABT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ABTABT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.TCO)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TCO)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.GES)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.GES)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PCK)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.PCK)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LOV)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LOV)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SUB)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SUB)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ACI)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ACI)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLS_LANG)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLS_LANG)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DESCRIPTION)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DESCRIPTION)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.P_SNAME" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

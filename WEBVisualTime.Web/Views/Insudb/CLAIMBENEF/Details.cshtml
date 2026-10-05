@@ -1,0 +1,72 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIMBENEF.CLAIMBENEFDto
+
+@{
+    ViewData["Title"] = "Detalles de CLAIMBENEF";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CLAIM_CASENCLAIM</dt>
+            <dd class="col-sm-9">@Model.CLAIM_CASENCLAIMSSTACASE</dd>
+            <dt class="col-sm-3">CLAIM_CASENCASE_NUM</dt>
+            <dd class="col-sm-9">@Model.CLAIM_CASENCASE_NUMSSTACASE</dd>
+            <dt class="col-sm-3">CLAIM_CASENDEMAN_TYPE</dt>
+            <dd class="col-sm-9">@Model.CLAIM_CASENDEMAN_TYPESSTACASE</dd>
+            <dt class="col-sm-3">CLIENTSCLIENT</dt>
+            <dd class="col-sm-9">@Model.CLIENTSCLIENTSACCOUNT_IN</dd>
+            <dt class="col-sm-3">TABLE184</dt>
+            <dd class="col-sm-9">@Model.TABLE184SDESCRIPT</dd>
+            <dt class="col-sm-3">NID</dt>
+            <dd class="col-sm-9">@Model.NID</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SDEMANDANT</dt>
+            <dd class="col-sm-9">@Model.SDEMANDANT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">TABLE15</dt>
+            <dd class="col-sm-9">@Model.TABLE15SDESCRIPT</dd>
+            <dt class="col-sm-3">NPARTICIP</dt>
+            <dd class="col-sm-9">@Model.NPARTICIP</dd>
+            <dt class="col-sm-3">SBENEF_TYP</dt>
+            <dd class="col-sm-9">@Model.SBENEF_TYP</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">DINIT_DATE</dt>
+            <dd class="col-sm-9">@Model.DINIT_DATE</dd>
+            <dt class="col-sm-3">DEND_DATE</dt>
+            <dd class="col-sm-9">@Model.DEND_DATE</dd>
+            <dt class="col-sm-3">CLIENTSCLIENT_REP</dt>
+            <dd class="col-sm-9">@Model.CLIENTSCLIENT_REPSACCOUNT_IN</dd>
+            <dt class="col-sm-3">DNEXT_PAY</dt>
+            <dd class="col-sm-9">@Model.DNEXT_PAY</dd>
+            <dt class="col-sm-3">NMODULEC</dt>
+            <dd class="col-sm-9">@Model.NMODULEC</dd>
+            <dt class="col-sm-3">NCOVER</dt>
+            <dd class="col-sm-9">@Model.NCOVER</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">SPAY_INSTALL</dt>
+            <dd class="col-sm-9">@Model.SPAY_INSTALL</dd>
+            <dt class="col-sm-3">TABLE5556</dt>
+            <dd class="col-sm-9">@Model.TABLE5556SDESCRIPT</dd>
+            <dt class="col-sm-3">AGENCIES</dt>
+            <dd class="col-sm-9">@Model.AGENCIESSPAY</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">DSHOWDATE</dt>
+            <dd class="col-sm-9">@Model.DSHOWDATE</dd>
+            <dt class="col-sm-3">TABLE7801</dt>
+            <dd class="col-sm-9">@Model.TABLE7801SDESCRIPT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCLAIM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

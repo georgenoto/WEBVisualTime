@@ -1,0 +1,54 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.LIFE_SPECI.LIFE_SPECIDto
+
+@{
+    ViewData["Title"] = "Detalles de LIFE_SPECI";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NAGEEND</dt>
+            <dd class="col-sm-9">@Model.NAGEEND</dd>
+            <dt class="col-sm-3">NAGESTART</dt>
+            <dd class="col-sm-9">@Model.NAGESTART</dd>
+            <dt class="col-sm-3">NCAPEND</dt>
+            <dd class="col-sm-9">@Model.NCAPEND</dd>
+            <dt class="col-sm-3">NCONSEC</dt>
+            <dd class="col-sm-9">@Model.NCONSEC</dd>
+            <dt class="col-sm-3">NCAPSTART</dt>
+            <dd class="col-sm-9">@Model.NCAPSTART</dd>
+            <dt class="col-sm-3">NMODULEC</dt>
+            <dd class="col-sm-9">@Model.NMODULEC</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NCOVER</dt>
+            <dd class="col-sm-9">@Model.NCOVER</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">TABLE32</dt>
+            <dd class="col-sm-9">@Model.TABLE32SDESCRIPT</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">TABLE18</dt>
+            <dd class="col-sm-9">@Model.TABLE18SDESCRIPT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NROLE</dt>
+            <dd class="col-sm-9">@Model.NROLE</dd>
+            <dt class="col-sm-3">SRANDOM</dt>
+            <dd class="col-sm-9">@Model.SRANDOM</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCONSEC" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

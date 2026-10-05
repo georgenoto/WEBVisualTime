@@ -1,0 +1,39 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_PROV_ZONE.TAB_PROV_ZONEDto
+
+@{
+    ViewData["Title"] = "Eliminar TAB_PROV_ZONE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPROVIDER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPROVIDER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NZONE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NZONE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NORDER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NORDER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DINPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DINPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DOUTDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DOUTDATE)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NPROVIDER" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

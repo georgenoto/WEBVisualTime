@@ -1,0 +1,56 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COMMISS_PR.COMMISS_PRDto
+
+@{
+    ViewData["Title"] = "Detalles de COMMISS_PR";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">PREMIUMNRECEIPT</dt>
+            <dd class="col-sm-9">@Model.PREMIUMNRECEIPTSCESSIONS</dd>
+            <dt class="col-sm-3">PREMIUMNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.PREMIUMNPRODUCTSCESSIONS</dd>
+            <dt class="col-sm-3">PREMIUMNBRANCH</dt>
+            <dd class="col-sm-9">@Model.PREMIUMNBRANCHSCESSIONS</dd>
+            <dt class="col-sm-3">PREMIUMSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.PREMIUMSCERTYPESCESSIONS</dd>
+            <dt class="col-sm-3">PREMIUMNDIGIT</dt>
+            <dd class="col-sm-9">@Model.PREMIUMNDIGITSCESSIONS</dd>
+            <dt class="col-sm-3">PREMIUMNPAYNUMBE</dt>
+            <dd class="col-sm-9">@Model.PREMIUMNPAYNUMBESCESSIONS</dd>
+            <dt class="col-sm-3">INTERMEDIA</dt>
+            <dd class="col-sm-9">@Model.INTERMEDIASCOL_AGREE</dd>
+            <dt class="col-sm-3">PROVINCE</dt>
+            <dd class="col-sm-9">@Model.PROVINCESDESCRIPT</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NPERCENT</dt>
+            <dd class="col-sm-9">@Model.NPERCENT</dd>
+            <dt class="col-sm-3">INTERM_TYP</dt>
+            <dd class="col-sm-9">@Model.INTERM_TYPSDESCRIPT</dd>
+            <dt class="col-sm-3">NSHARE</dt>
+            <dd class="col-sm-9">@Model.NSHARE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NCOM_AFEC</dt>
+            <dd class="col-sm-9">@Model.NCOM_AFEC</dd>
+            <dt class="col-sm-3">NCOM_EXEN</dt>
+            <dd class="col-sm-9">@Model.NCOM_EXEN</dd>
+            <dt class="col-sm-3">NDISC_AMOUNT</dt>
+            <dd class="col-sm-9">@Model.NDISC_AMOUNT</dd>
+            <dt class="col-sm-3">NCATEGORY</dt>
+            <dd class="col-sm-9">@Model.NCATEGORY</dd>
+            <dt class="col-sm-3">NID_CAMPAIGN</dt>
+            <dd class="col-sm-9">@Model.NID_CAMPAIGN</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NRECEIPT" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

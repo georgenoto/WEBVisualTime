@@ -1,0 +1,38 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.T_INTERFACE.T_INTERFACEDto
+
+@{
+    ViewData["Title"] = "Detalles de T_INTERFACE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SKEY</dt>
+            <dd class="col-sm-9">@Model.SKEY</dd>
+            <dt class="col-sm-3">NROW</dt>
+            <dd class="col-sm-9">@Model.NROW</dd>
+            <dt class="col-sm-3">NCOLUMN</dt>
+            <dd class="col-sm-9">@Model.NCOLUMN</dd>
+            <dt class="col-sm-3">SVALUE</dt>
+            <dd class="col-sm-9">@Model.SVALUE</dd>
+            <dt class="col-sm-3">STABLE</dt>
+            <dd class="col-sm-9">@Model.STABLE</dd>
+            <dt class="col-sm-3">SPROCESS</dt>
+            <dd class="col-sm-9">@Model.SPROCESS</dd>
+            <dt class="col-sm-3">NFIELD</dt>
+            <dd class="col-sm-9">@Model.NFIELD</dd>
+            <dt class="col-sm-3">SVALUE_HOMO</dt>
+            <dd class="col-sm-9">@Model.SVALUE_HOMO</dd>
+            <dt class="col-sm-3">SFIELDDESC</dt>
+            <dd class="col-sm-9">@Model.SFIELDDESC</dd>
+            <dt class="col-sm-3">NDATATYPE</dt>
+            <dd class="col-sm-9">@Model.NDATATYPE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SKEY" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

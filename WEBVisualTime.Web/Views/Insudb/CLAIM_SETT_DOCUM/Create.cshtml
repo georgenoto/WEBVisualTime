@@ -1,0 +1,60 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_SETT_DOCUM.CreateCLAIM_SETT_DOCUMDto
+
+@{
+    ViewData["Title"] = "Crear CLAIM_SETT_DOCUM";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="NSEQ_IDLEDGERDOCUM" class="form-label"></label>
+                <input asp-for="NSEQ_IDLEDGERDOCUM" class="form-control" type="number" />
+                <span asp-validation-for="NSEQ_IDLEDGERDOCUM" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DRECEPDATE" class="form-label"></label>
+                <input asp-for="DRECEPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DRECEPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SDESCRIPT" class="form-label"></label>
+                <input asp-for="SDESCRIPT" class="form-control" />
+                <span asp-validation-for="SDESCRIPT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NSTATUS_DOC" class="form-label"></label>
+                <select asp-for="NSTATUS_DOC" class="form-select" asp-items="@(ViewData["NSTATUS_DOC"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NSTATUS_DOC" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NDOC_CODE" class="form-label"></label>
+                <input asp-for="NDOC_CODE" class="form-control" type="number" />
+                <span asp-validation-for="NDOC_CODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

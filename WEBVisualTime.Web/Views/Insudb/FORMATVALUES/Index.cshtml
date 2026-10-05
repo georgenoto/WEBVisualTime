@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.FORMATVALUES.FORMATVALUESDto>
+
+@{
+    ViewData["Title"] = "FORMATVALUES";
+    ViewData["ColumnHeaders"] = new[] { "NTYPCLIENTDOC", "SDESCRIPT", "SSHORT_DES", "TABLE6023", "SFORMAT", "STYPPERSON", "SROUTINE", "SSTATREGT", "DCOMPDATE", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "NTYPCLIENTDOC", "SDESCRIPT", "SSHORT_DES", "TABLE6023SDESCRIPT", "SFORMAT", "STYPPERSON", "SROUTINE", "SSTATREGT", "DCOMPDATE", "NUSERCODE" };
+    ViewData["KeyName"] = "NTYPCLIENTDOC";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

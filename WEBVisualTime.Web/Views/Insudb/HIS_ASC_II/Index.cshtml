@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.HIS_ASC_II.HIS_ASC_IIDto>
+
+@{
+    ViewData["Title"] = "HIS_ASC_II";
+    ViewData["ColumnHeaders"] = new[] { "NID_UPLOAD", "NID", "SBANK_ORI", "NPERIOD_YEAR", "NPERIOD_MONTH", "NORDER", "SUNIQ_CODE", "NAMOUNT", "SCURRENCY", "SPAY_MET", "SCONCEPT", "SREFERENCE", "SDOC_TYPE", "SCLIENAME", "SPHON_BEN", "SBANKACCOUNT", "SBANKEXT", "SSTATUS", "SREASON", "SDETAIL", "NCHEQUE", "NORDER_ACH", "DATE_UPLOAD", "DATE_PAY", "NTRANSF", "DCOMPDATE", "SSTATMOV", "SSTATREGT", "NUSERCODE", "NREQUEST_NU", "SKEY", "NDOCUMENT" };
+    ViewData["ColumnProperties"] = new[] { "NID_UPLOAD", "NID", "SBANK_ORI", "NPERIOD_YEAR", "NPERIOD_MONTH", "NORDER", "SUNIQ_CODE", "NAMOUNT", "SCURRENCY", "SPAY_MET", "SCONCEPT", "SREFERENCE", "SDOC_TYPE", "SCLIENAME", "SPHON_BEN", "SBANKACCOUNT", "SBANKEXT", "SSTATUS", "SREASON", "SDETAIL", "NCHEQUE", "NORDER_ACH", "DATE_UPLOAD", "DATE_PAY", "NTRANSF", "DCOMPDATE", "SSTATMOV", "SSTATREGT", "NUSERCODE", "NREQUEST_NU", "SKEY", "NDOCUMENT" };
+    ViewData["KeyName"] = "NID_UPLOAD";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

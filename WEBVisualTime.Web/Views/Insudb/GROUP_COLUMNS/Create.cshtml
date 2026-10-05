@@ -1,0 +1,80 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.GROUP_COLUMNS.CreateGROUP_COLUMNSDto
+
+@{
+    ViewData["Title"] = "Crear GROUP_COLUMNS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="NSHEET" class="form-label"></label>
+                <select asp-for="NSHEET" class="form-select" asp-items="@(ViewData["NSHEET"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NSHEET" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SFIELD" class="form-label"></label>
+                <input asp-for="SFIELD" class="form-control" />
+                <span asp-validation-for="SFIELD" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCOLUMNNAME" class="form-label"></label>
+                <input asp-for="SCOLUMNNAME" class="form-control" />
+                <span asp-validation-for="SCOLUMNNAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NORDER" class="form-label"></label>
+                <input asp-for="NORDER" class="form-control" type="number" />
+                <span asp-validation-for="NORDER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SVALUESLIST" class="form-label"></label>
+                <input asp-for="SVALUESLIST" class="form-control" />
+                <span asp-validation-for="SVALUESLIST" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="STABLE" class="form-label"></label>
+                <input asp-for="STABLE" class="form-control" />
+                <span asp-validation-for="STABLE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SREQUIRE" class="form-label"></label>
+                <input asp-for="SREQUIRE" class="form-control" />
+                <span asp-validation-for="SREQUIRE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCOMMENT" class="form-label"></label>
+                <input asp-for="SCOMMENT" class="form-control" />
+                <span asp-validation-for="SCOMMENT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SUPDATEIND" class="form-label"></label>
+                <input asp-for="SUPDATEIND" class="form-control" />
+                <span asp-validation-for="SUPDATEIND" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

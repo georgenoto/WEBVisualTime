@@ -1,0 +1,68 @@
+#nullable enable
+using System.ComponentModel.DataAnnotations.Schema;
+namespace WEBVisualTime.Entidades.Insudb;
+
+public partial class T_CHEQUES
+{
+    public long NBORDEREAUX { get; set; }
+
+    [ForeignKey("NBORDEREAUX")]
+    public Insudb.COLFORMREF? COLFORMREF { get; set; }
+    public int NSEQUENCE { get; set; }
+    public long? NREQUEST_NU { get; set; }
+    public string? SCHEQUE { get; set; }
+    public decimal? NAMOUNT { get; set; }
+    public string? SCLIENT { get; set; }
+    public DateTime? DDAT_PROPOS { get; set; }
+    public string? SREQUEST_TY { get; set; }
+    public int? NACC_BANK { get; set; }
+    public int? NCURRENCY { get; set; }
+    public int? NCONSEC { get; set; }
+    public int? NCONCEPT { get; set; }
+    public int? NBRANCH_LED { get; set; }
+    public long? NCLAIM { get; set; }
+    public DateTime? DCOMPDATE { get; set; }
+    public int? NVOUCHER_LE { get; set; }
+    public long? NVOUCHER { get; set; }
+    public string? SDESCRIPT { get; set; }
+    public DateTime? DISSUE_DAT { get; set; }
+    public DateTime? DLEDGER_DAT { get; set; }
+    public int? NNULLCODE { get; set; }
+    public DateTime? DNULLDATE { get; set; }
+    public string? SPAY_FREQ { get; set; }
+    public int? NQ_PAYS { get; set; }
+    public long? NRECEIPT { get; set; }
+    public int? NSTA_CHEQUE { get; set; }
+    public DateTime? DSTAT_DATE { get; set; }
+    public int? NTRANSAC { get; set; }
+    public int? NUSER_SOL { get; set; }
+    public int? NUSERCODE { get; set; }
+    public long? NYEAR_MONTH { get; set; }
+    public long? NNOTENUM { get; set; }
+    public decimal? NAFECT { get; set; }
+    public decimal? NEXENT { get; set; }
+    public int? NTAXCODE { get; set; }
+    public decimal? NTAX_AMOUNT { get; set; }
+    public int? NOFFICE { get; set; }
+    public int? NCASHNUM { get; set; }
+    public int? NINSUR_AREA { get; set; }
+    public int? NPAYORDBORD { get; set; }
+    public int? NCOMPANY { get; set; }
+    public string? SINTER_PAY { get; set; }
+    public decimal? NAMOUNT_LOCAL { get; set; }
+    public int? NBRANCH { get; set; }
+    public int? NPRODUCT { get; set; }
+    public long? NPOLICY { get; set; }
+    public string? SFILE_FIN700 { get; set; }
+    public DateTime? DDATE_FIN700 { get; set; }
+    public int? NTYPESUPPORT { get; set; }
+    public int? NDOCSUPPORT { get; set; }
+    public decimal? NTAX_PERCENT { get; set; }
+    public int? NCURRENCYORI { get; set; }
+    public int? NCURRENCY_PAY { get; set; }
+    public decimal? NAMOUNTPAY { get; set; }
+    public DateTime? DPOSTED { get; set; }
+    public int? NOFFICEAGEN { get; set; }
+    public int? NAGENCY { get; set; }
+    public string? SACTION { get; set; }
+}

@@ -1,0 +1,64 @@
+using System.Linq.Expressions;
+using WEBVisualTime.Entidades.Insudb;
+using WEBVisualTime.Datos.Repositories;
+using WEBVisualTime.Servicios.Insudb.DTOs.BRANPROD_ALLOW;
+using WEBVisualTime.Servicios.Insudb.Mappings;
+
+namespace WEBVisualTime.Servicios.Insudb.Services;
+
+public class BRANPROD_ALLOWService : IBRANPROD_ALLOWService
+{
+    private readonly IRepository<BRANPROD_ALLOW> _repository;
+
+    public BRANPROD_ALLOWService(IRepository<BRANPROD_ALLOW> repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task<IEnumerable<BRANPROD_ALLOWDto>> GetAllAsync()
+    {
+        var entities = await _repository.GetAllAsync();
+        return entities.Select(e => e.ToDto());
+    }
+
+    public async Task<BRANPROD_ALLOWDto?> GetByIdAsync(long id)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        return entity?.ToDto();
+    }
+
+    public async Task<IEnumerable<BRANPROD_ALLOWDto>> FindAsync(Expression<Func<BRANPROD_ALLOW, bool>> predicate)
+    {
+        var entities = await _repository.FindAsync(predicate);
+        return entities.Select(e => e.ToDto());
+    }
+
+    public async Task<BRANPROD_ALLOWDto> CreateAsync(CreateBRANPROD_ALLOWDto createDto)
+    {
+        var entity = createDto.ToEntity();
+        await _repository.AddAsync(entity);
+        await _repository.SaveChangesAsync();
+        return entity.ToDto();
+    }
+
+    public async Task<bool> UpdateAsync(long id, UpdateBRANPROD_ALLOWDto updateDto)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        if (entity == null) return false;
+
+        entity.UpdateEntity(updateDto);
+        _repository.Update(entity);
+        await _repository.SaveChangesAsync();
+        return true;
+    }
+
+    public async Task<bool> DeleteAsync(long id)
+    {
+        var entity = await _repository.GetByIdAsync(id);
+        if (entity == null) return false;
+
+        _repository.Remove(entity);
+        await _repository.SaveChangesAsync();
+        return true;
+    }
+}

@@ -1,0 +1,78 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TLEDAUTREJECTM.TLEDAUTREJECTMDto
+
+@{
+    ViewData["Title"] = "Detalles de TLEDAUTREJECTM";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NAREA_LED</dt>
+            <dd class="col-sm-9">@Model.NAREA_LED</dd>
+            <dt class="col-sm-3">NID</dt>
+            <dd class="col-sm-9">@Model.NID</dd>
+            <dt class="col-sm-3">NGROUP</dt>
+            <dd class="col-sm-9">@Model.NGROUP</dd>
+            <dt class="col-sm-3">NFAILNUM</dt>
+            <dd class="col-sm-9">@Model.NFAILNUM</dd>
+            <dt class="col-sm-3">DLEDGERDAT</dt>
+            <dd class="col-sm-9">@Model.DLEDGERDAT</dd>
+            <dt class="col-sm-3">NAMOUNT</dt>
+            <dd class="col-sm-9">@Model.NAMOUNT</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">DPOSTED</dt>
+            <dd class="col-sm-9">@Model.DPOSTED</dd>
+            <dt class="col-sm-3">SERRDETAIL</dt>
+            <dd class="col-sm-9">@Model.SERRDETAIL</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NPOLICY</dt>
+            <dd class="col-sm-9">@Model.NPOLICY</dd>
+            <dt class="col-sm-3">NRECEIPT</dt>
+            <dd class="col-sm-9">@Model.NRECEIPT</dd>
+            <dt class="col-sm-3">NACC_CASH</dt>
+            <dd class="col-sm-9">@Model.NACC_CASH</dd>
+            <dt class="col-sm-3">NOFFICE</dt>
+            <dd class="col-sm-9">@Model.NOFFICE</dd>
+            <dt class="col-sm-3">NTRANSAC</dt>
+            <dd class="col-sm-9">@Model.NTRANSAC</dd>
+            <dt class="col-sm-3">NCASHNUM</dt>
+            <dd class="col-sm-9">@Model.NCASHNUM</dd>
+            <dt class="col-sm-3">NCLAIM</dt>
+            <dd class="col-sm-9">@Model.NCLAIM</dd>
+            <dt class="col-sm-3">NCASE_NUM</dt>
+            <dd class="col-sm-9">@Model.NCASE_NUM</dd>
+            <dt class="col-sm-3">NDEMAN_TYPE</dt>
+            <dd class="col-sm-9">@Model.NDEMAN_TYPE</dd>
+            <dt class="col-sm-3">NTYP_ACCO</dt>
+            <dd class="col-sm-9">@Model.NTYP_ACCO</dd>
+            <dt class="col-sm-3">STYPE_ACC</dt>
+            <dd class="col-sm-9">@Model.STYPE_ACC</dd>
+            <dt class="col-sm-3">SCLIENT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT</dd>
+            <dt class="col-sm-3">NREQUEST_NU</dt>
+            <dd class="col-sm-9">@Model.NREQUEST_NU</dd>
+            <dt class="col-sm-3">SCHEQUE</dt>
+            <dd class="col-sm-9">@Model.SCHEQUE</dd>
+            <dt class="col-sm-3">SCOLUMN</dt>
+            <dd class="col-sm-9">@Model.SCOLUMN</dd>
+            <dt class="col-sm-3">NPARAMETER</dt>
+            <dd class="col-sm-9">@Model.NPARAMETER</dd>
+            <dt class="col-sm-3">NTRANSAC_TY</dt>
+            <dd class="col-sm-9">@Model.NTRANSAC_TY</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NAREA_LED" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

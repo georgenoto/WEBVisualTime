@@ -1,0 +1,28 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.DEVLOCALRECORDSDELETED.DEVLOCALRECORDSDELETEDDto
+
+@{
+    ViewData["Title"] = "Detalles de DEVLOCALRECORDSDELETED";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">LOCALRECDELID</dt>
+            <dd class="col-sm-9">@Model.LOCALRECDELID</dd>
+            <dt class="col-sm-3">NAME</dt>
+            <dd class="col-sm-9">@Model.NAME</dd>
+            <dt class="col-sm-3">DELDATE</dt>
+            <dd class="col-sm-9">@Model.DELDATE</dd>
+            <dt class="col-sm-3">PKEY</dt>
+            <dd class="col-sm-9">@Model.PKEY</dd>
+            <dt class="col-sm-3">LOCALTABLEID</dt>
+            <dd class="col-sm-9">@Model.LOCALTABLEID</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.LOCALRECDELID" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,32 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CASH_STAT.CASH_STATDto
+
+@{
+    ViewData["Title"] = "Detalles de CASH_STAT";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NCASHNUM</dt>
+            <dd class="col-sm-9">@Model.NCASHNUM</dd>
+            <dt class="col-sm-3">DSTATDATE</dt>
+            <dd class="col-sm-9">@Model.DSTATDATE</dd>
+            <dt class="col-sm-3">TABLE5562</dt>
+            <dd class="col-sm-9">@Model.TABLE5562SDESCRIPT</dd>
+            <dt class="col-sm-3">NID</dt>
+            <dd class="col-sm-9">@Model.NID</dd>
+            <dt class="col-sm-3">NCASH_ID</dt>
+            <dd class="col-sm-9">@Model.NCASH_ID</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCASHNUM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

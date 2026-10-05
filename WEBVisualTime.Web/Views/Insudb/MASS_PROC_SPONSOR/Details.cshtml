@@ -1,0 +1,88 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MASS_PROC_SPONSOR.MASS_PROC_SPONSORDto
+
+@{
+    ViewData["Title"] = "Detalles de MASS_PROC_SPONSOR";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NPROCESS</dt>
+            <dd class="col-sm-9">@Model.NPROCESS</dd>
+            <dt class="col-sm-3">SKEY</dt>
+            <dd class="col-sm-9">@Model.SKEY</dd>
+            <dt class="col-sm-3">SLOT</dt>
+            <dd class="col-sm-9">@Model.SLOT</dd>
+            <dt class="col-sm-3">STYPEEXECUTION</dt>
+            <dd class="col-sm-9">@Model.STYPEEXECUTION</dd>
+            <dt class="col-sm-3">NSTATUS</dt>
+            <dd class="col-sm-9">@Model.NSTATUS</dd>
+            <dt class="col-sm-3">DPROCESSDATE</dt>
+            <dd class="col-sm-9">@Model.DPROCESSDATE</dd>
+            <dt class="col-sm-3">NTOTALRECPROC</dt>
+            <dd class="col-sm-9">@Model.NTOTALRECPROC</dd>
+            <dt class="col-sm-3">NSUCCESSRECPROC</dt>
+            <dd class="col-sm-9">@Model.NSUCCESSRECPROC</dd>
+            <dt class="col-sm-3">NERRORRECPROC</dt>
+            <dd class="col-sm-9">@Model.NERRORRECPROC</dd>
+            <dt class="col-sm-3">NCOLLECTPREMIUM</dt>
+            <dd class="col-sm-9">@Model.NCOLLECTPREMIUM</dd>
+            <dt class="col-sm-3">NSUSCRIBEDPOLICIES</dt>
+            <dd class="col-sm-9">@Model.NSUSCRIBEDPOLICIES</dd>
+            <dt class="col-sm-3">NCANCELEDPOLICIES</dt>
+            <dd class="col-sm-9">@Model.NCANCELEDPOLICIES</dd>
+            <dt class="col-sm-3">NMODIFIEDPOLICIES</dt>
+            <dd class="col-sm-9">@Model.NMODIFIEDPOLICIES</dd>
+            <dt class="col-sm-3">NCLAIMSREPORTED</dt>
+            <dd class="col-sm-9">@Model.NCLAIMSREPORTED</dd>
+            <dt class="col-sm-3">NDECLAREDCLAIMS</dt>
+            <dd class="col-sm-9">@Model.NDECLAREDCLAIMS</dd>
+            <dt class="col-sm-3">NTOTALCLAIMSPAID</dt>
+            <dd class="col-sm-9">@Model.NTOTALCLAIMSPAID</dd>
+            <dt class="col-sm-3">NCLAIMSPAID</dt>
+            <dd class="col-sm-9">@Model.NCLAIMSPAID</dd>
+            <dt class="col-sm-3">NCANCELEDCLAIMS</dt>
+            <dd class="col-sm-9">@Model.NCANCELEDCLAIMS</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NKEY</dt>
+            <dd class="col-sm-9">@Model.NKEY</dd>
+            <dt class="col-sm-3">NCANCELEDCERTIFICATE</dt>
+            <dd class="col-sm-9">@Model.NCANCELEDCERTIFICATE</dd>
+            <dt class="col-sm-3">NMODIFIEDCERTIFICATE</dt>
+            <dd class="col-sm-9">@Model.NMODIFIEDCERTIFICATE</dd>
+            <dt class="col-sm-3">NPOLICY</dt>
+            <dd class="col-sm-9">@Model.NPOLICY</dd>
+            <dt class="col-sm-3">NSUSCRIBEDCERTIFICATE</dt>
+            <dd class="col-sm-9">@Model.NSUSCRIBEDCERTIFICATE</dd>
+            <dt class="col-sm-3">NSHEET_OUT</dt>
+            <dd class="col-sm-9">@Model.NSHEET_OUT</dd>
+            <dt class="col-sm-3">NUSERINCHARGE</dt>
+            <dd class="col-sm-9">@Model.NUSERINCHARGE</dd>
+            <dt class="col-sm-3">DRECEPTION_DAY</dt>
+            <dd class="col-sm-9">@Model.DRECEPTION_DAY</dd>
+            <dt class="col-sm-3">NCOD_AGREE</dt>
+            <dd class="col-sm-9">@Model.NCOD_AGREE</dd>
+            <dt class="col-sm-3">SFILENAME</dt>
+            <dd class="col-sm-9">@Model.SFILENAME</dd>
+            <dt class="col-sm-3">DEXECUTE</dt>
+            <dd class="col-sm-9">@Model.DEXECUTE</dd>
+            <dt class="col-sm-3">NMONTH</dt>
+            <dd class="col-sm-9">@Model.NMONTH</dd>
+            <dt class="col-sm-3">NYEAR</dt>
+            <dd class="col-sm-9">@Model.NYEAR</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SKEY" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,56 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.SECUR_SCHE_SURR.SECUR_SCHE_SURRDto
+
+@{
+    ViewData["Title"] = "Detalles de SECUR_SCHE_SURR";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SSCHE_CODE</dt>
+            <dd class="col-sm-9">@Model.SSCHE_CODE</dd>
+            <dt class="col-sm-3">NTYPERESC</dt>
+            <dd class="col-sm-9">@Model.NTYPERESC</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SMOD_DATE_R</dt>
+            <dd class="col-sm-9">@Model.SMOD_DATE_R</dd>
+            <dt class="col-sm-3">SRESC_TOT</dt>
+            <dd class="col-sm-9">@Model.SRESC_TOT</dd>
+            <dt class="col-sm-3">SRESC_PAR</dt>
+            <dd class="col-sm-9">@Model.SRESC_PAR</dd>
+            <dt class="col-sm-3">STYPEXECUT</dt>
+            <dd class="col-sm-9">@Model.STYPEXECUT</dd>
+            <dt class="col-sm-3">SMOD_DATE_P</dt>
+            <dd class="col-sm-9">@Model.SMOD_DATE_P</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NTYPERESCV</dt>
+            <dd class="col-sm-9">@Model.NTYPERESCV</dd>
+            <dt class="col-sm-3">SMOD_DATE_RV</dt>
+            <dd class="col-sm-9">@Model.SMOD_DATE_RV</dd>
+            <dt class="col-sm-3">SRESC_TOTV</dt>
+            <dd class="col-sm-9">@Model.SRESC_TOTV</dd>
+            <dt class="col-sm-3">SRESC_PARV</dt>
+            <dd class="col-sm-9">@Model.SRESC_PARV</dd>
+            <dt class="col-sm-3">STYPEXECUTV</dt>
+            <dd class="col-sm-9">@Model.STYPEXECUTV</dd>
+            <dt class="col-sm-3">SANULREC</dt>
+            <dd class="col-sm-9">@Model.SANULREC</dd>
+            <dt class="col-sm-3">SMOD_DATE_PV</dt>
+            <dd class="col-sm-9">@Model.SMOD_DATE_PV</dd>
+            <dt class="col-sm-3">SREQUEST</dt>
+            <dd class="col-sm-9">@Model.SREQUEST</dd>
+            <dt class="col-sm-3">SREPORT</dt>
+            <dd class="col-sm-9">@Model.SREPORT</dd>
+            <dt class="col-sm-3">NVALUE_TYP</dt>
+            <dd class="col-sm-9">@Model.NVALUE_TYP</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SSCHE_CODE" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

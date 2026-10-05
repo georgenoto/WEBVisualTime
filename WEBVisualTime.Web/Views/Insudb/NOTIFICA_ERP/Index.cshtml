@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.NOTIFICA_ERP.NOTIFICA_ERPDto>
+
+@{
+    ViewData["Title"] = "NOTIFICA_ERP";
+    ViewData["ColumnHeaders"] = new[] { "SPROCESO", "SKEY", "SESTADO", "DFECHA_PROCESO", "DCOMPDATE", "NUSERCODE", "DOPERDATE" };
+    ViewData["ColumnProperties"] = new[] { "SPROCESO", "SKEY", "SESTADO", "DFECHA_PROCESO", "DCOMPDATE", "NUSERCODE", "DOPERDATE" };
+    ViewData["KeyName"] = "SKEY";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.INSURED_EXPDIS.INSURED_EXPDISDto>
+
+@{
+    ViewData["Title"] = "INSURED_EXPDIS";
+    ViewData["ColumnHeaders"] = new[] { "CERTIFICATSCERTYPE", "CERTIFICATNBRANCH", "CERTIFICATNPRODUCT", "CERTIFICATNPOLICY", "CERTIFICATNCERTIF", "NGROUP_INSU", "CLIENT", "NDISEXPRC", "SDISEXPRI", "NMODULEC", "NCOVER", "DEFFECDATE", "SUNIT", "NRATE", "NAMOUNT", "DNULLDATE", "SPERM_TEMP", "DDATE_FR", "DDATE_TO", "NAGE", "NNOTENUM", "DCOMPDATE", "USERS", "NCAUSE", "SAGREE", "SINITDATE_CALC", "NACTIVITY", "NSPORT", "NMOVEMENT", "NMOVEMENT_NULL" };
+    ViewData["ColumnProperties"] = new[] { "CERTIFICATSCERTYPESCUMUL_CODE", "CERTIFICATNBRANCHSCUMUL_CODE", "CERTIFICATNPRODUCTSCUMUL_CODE", "CERTIFICATNPOLICYSCUMUL_CODE", "CERTIFICATNCERTIFSCUMUL_CODE", "NGROUP_INSU", "CLIENTSACCOUNT_IN", "NDISEXPRC", "SDISEXPRI", "NMODULEC", "NCOVER", "DEFFECDATE", "SUNIT", "NRATE", "NAMOUNT", "DNULLDATE", "SPERM_TEMP", "DDATE_FR", "DDATE_TO", "NAGE", "NNOTENUM", "DCOMPDATE", "USERSSACCESSWO", "NCAUSE", "SAGREE", "SINITDATE_CALC", "NACTIVITY", "NSPORT", "NMOVEMENT", "NMOVEMENT_NULL" };
+    ViewData["KeyName"] = "SCERTYPE";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

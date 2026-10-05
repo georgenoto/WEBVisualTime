@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.WINDOWS.WINDOWSDto>
+
+@{
+    ViewData["Title"] = "WINDOWS";
+    ViewData["ColumnHeaders"] = new[] { "SCODISPL", "NAMELEVEL", "SCODISP", "NIMG_INDEX", "SCODMEN", "DCOMPDATE", "SDESCRIPT", "SDIRECTGO", "NG_IDENTI", "NINQLEVEL", "TABLE87", "SPSEUDO", "NSEQUENCE", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "TABLE88", "SHELPPATH", "NHEIGHT", "SAUTOREP", "SQUOTE", "NTYPE_REPORT", "SINDLETTER", "NLENGTH_NOTES", "SFILEPATH", "SWINDOWURL" };
+    ViewData["ColumnProperties"] = new[] { "SCODISPL", "NAMELEVEL", "SCODISP", "NIMG_INDEX", "SCODMEN", "DCOMPDATE", "SDESCRIPT", "SDIRECTGO", "NG_IDENTI", "NINQLEVEL", "TABLE87SDESCRIPT", "SPSEUDO", "NSEQUENCE", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "TABLE88SDESCRIPT", "SHELPPATH", "NHEIGHT", "SAUTOREP", "SQUOTE", "NTYPE_REPORT", "SINDLETTER", "NLENGTH_NOTES", "SFILEPATH", "SWINDOWURL" };
+    ViewData["KeyName"] = "SCODISPL";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

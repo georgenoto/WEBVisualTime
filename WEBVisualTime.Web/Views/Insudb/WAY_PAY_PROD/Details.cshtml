@@ -1,0 +1,56 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.WAY_PAY_PROD.WAY_PAY_PRODDto
+
+@{
+    ViewData["Title"] = "Detalles de WAY_PAY_PROD";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">TABLE5002</dt>
+            <dd class="col-sm-9">@Model.TABLE5002SDESCRIPT</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NRATE_EX</dt>
+            <dd class="col-sm-9">@Model.NRATE_EX</dd>
+            <dt class="col-sm-3">NRATE_DISC</dt>
+            <dd class="col-sm-9">@Model.NRATE_DISC</dd>
+            <dt class="col-sm-3">SPREM_FIRST</dt>
+            <dd class="col-sm-9">@Model.SPREM_FIRST</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">NNULL_DAY</dt>
+            <dd class="col-sm-9">@Model.NNULL_DAY</dd>
+            <dt class="col-sm-3">SIND_PREISSU</dt>
+            <dd class="col-sm-9">@Model.SIND_PREISSU</dd>
+            <dt class="col-sm-3">SIND_PREREF</dt>
+            <dd class="col-sm-9">@Model.SIND_PREREF</dd>
+            <dt class="col-sm-3">SONERECEIPT</dt>
+            <dd class="col-sm-9">@Model.SONERECEIPT</dd>
+            <dt class="col-sm-3">SLASTRECEIPT</dt>
+            <dd class="col-sm-9">@Model.SLASTRECEIPT</dd>
+            <dt class="col-sm-3">SCOLLECTION</dt>
+            <dd class="col-sm-9">@Model.SCOLLECTION</dd>
+            <dt class="col-sm-3">SIND_PREREFMAX</dt>
+            <dd class="col-sm-9">@Model.SIND_PREREFMAX</dd>
+            <dt class="col-sm-3">SPRFIRST_EXPR</dt>
+            <dd class="col-sm-9">@Model.SPRFIRST_EXPR</dd>
+            <dt class="col-sm-3">TABLE8215</dt>
+            <dd class="col-sm-9">@Model.TABLE8215SDESCRIPT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

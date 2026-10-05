@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CL_M_COVER.CL_M_COVERDto>
+
+@{
+    ViewData["Title"] = "CL_M_COVER";
+    ViewData["ColumnHeaders"] = new[] { "NCLAIM", "NCASE_NUM", "NDEMAN_TYPE", "NTRANSAC", "NCOVER", "NMODULEC", "NCURRENCY", "NAMOUNT", "SCLIENT", "SAUT_ADJUST", "DCOMPDATE", "NDED_AMOUNT", "NEXCHANGE", "NEXP_AMOUNT", "NGROUP", "NLOC_AMOUNT", "NQUANTITY", "NUSERCODE", "NVA_TAX", "NVAT_AMOUNT", "NLOC_COS_RE", "SCESCATAS", "NSETTLECODE", "SPOSTEDSEQUENCE" };
+    ViewData["ColumnProperties"] = new[] { "NCLAIM", "NCASE_NUM", "NDEMAN_TYPE", "NTRANSAC", "NCOVER", "NMODULEC", "NCURRENCY", "NAMOUNT", "SCLIENT", "SAUT_ADJUST", "DCOMPDATE", "NDED_AMOUNT", "NEXCHANGE", "NEXP_AMOUNT", "NGROUP", "NLOC_AMOUNT", "NQUANTITY", "NUSERCODE", "NVA_TAX", "NVAT_AMOUNT", "NLOC_COS_RE", "SCESCATAS", "NSETTLECODE", "SPOSTEDSEQUENCE" };
+    ViewData["KeyName"] = "NCLAIM";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

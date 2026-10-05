@@ -1,0 +1,78 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_LANGUAGE_DEFINITIONS.CreateCDI_LANGUAGE_DEFINITIONSDto
+
+@{
+    ViewData["Title"] = "Crear CDI_LANGUAGE_DEFINITIONS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="LAN_IRID" class="form-label"></label>
+                <input asp-for="LAN_IRID" class="form-control" type="number" />
+                <span asp-validation-for="LAN_IRID" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LAN_IVID" class="form-label"></label>
+                <input asp-for="LAN_IVID" class="form-control" type="number" />
+                <span asp-validation-for="LAN_IVID" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LAN_NAME" class="form-label"></label>
+                <input asp-for="LAN_NAME" class="form-control" />
+                <span asp-validation-for="LAN_NAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LAN_SOURCE_DIRECTORY" class="form-label"></label>
+                <input asp-for="LAN_SOURCE_DIRECTORY" class="form-control" />
+                <span asp-validation-for="LAN_SOURCE_DIRECTORY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LAN_RUNTIME_DIRECTORY" class="form-label"></label>
+                <input asp-for="LAN_RUNTIME_DIRECTORY" class="form-control" />
+                <span asp-validation-for="LAN_RUNTIME_DIRECTORY" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LAN_PROGRAMATICAL" class="form-label"></label>
+                <input asp-for="LAN_PROGRAMATICAL" class="form-control" />
+                <span asp-validation-for="LAN_PROGRAMATICAL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LAN_TYPE" class="form-label"></label>
+                <input asp-for="LAN_TYPE" class="form-control" />
+                <span asp-validation-for="LAN_TYPE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LAN_COMMAND_LINE" class="form-label"></label>
+                <input asp-for="LAN_COMMAND_LINE" class="form-control" />
+                <span asp-validation-for="LAN_COMMAND_LINE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LAN_GENERATABLE_FLAG" class="form-label"></label>
+                <input asp-for="LAN_GENERATABLE_FLAG" class="form-control" />
+                <span asp-validation-for="LAN_GENERATABLE_FLAG" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LAN_INTERNAL_NAME" class="form-label"></label>
+                <input asp-for="LAN_INTERNAL_NAME" class="form-control" />
+                <span asp-validation-for="LAN_INTERNAL_NAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LAN_OBM_FLAG" class="form-label"></label>
+                <input asp-for="LAN_OBM_FLAG" class="form-control" />
+                <span asp-validation-for="LAN_OBM_FLAG" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

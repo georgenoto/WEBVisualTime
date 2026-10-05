@@ -1,0 +1,26 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COMMIS_HIS.COMMIS_HISDto
+
+@{
+    ViewData["Title"] = "Detalles de COMMIS_HIS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">INTERMEDIA</dt>
+            <dd class="col-sm-9">@Model.INTERMEDIASCOL_AGREE</dd>
+            <dt class="col-sm-3">TABLE7504</dt>
+            <dd class="col-sm-9">@Model.TABLE7504SDESCRIPT</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">NCOMTAB</dt>
+            <dd class="col-sm-9">@Model.NCOMTAB</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NINTERMED" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,56 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TYPE_AMEND.TYPE_AMENDDto
+
+@{
+    ViewData["Title"] = "Detalles de TYPE_AMEND";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TABLE10</dt>
+            <dd class="col-sm-9">@Model.TABLE10SDESCRIPT</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">TABLE6059</dt>
+            <dd class="col-sm-9">@Model.TABLE6059SDESCRIPT</dd>
+            <dt class="col-sm-3">DEFFECDATE</dt>
+            <dd class="col-sm-9">@Model.DEFFECDATE</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">SIND_ORDER_SERV</dt>
+            <dd class="col-sm-9">@Model.SIND_ORDER_SERV</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">TABLE5569</dt>
+            <dd class="col-sm-9">@Model.TABLE5569SDESCRIPT</dd>
+            <dt class="col-sm-3">NLEVEL</dt>
+            <dd class="col-sm-9">@Model.NLEVEL</dd>
+            <dt class="col-sm-3">SRETARIF</dt>
+            <dd class="col-sm-9">@Model.SRETARIF</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9232</dt>
+            <dd class="col-sm-9">@Model.TABLE9232SDESCRIPT</dd>
+            <dt class="col-sm-3">SRESOLUTION</dt>
+            <dd class="col-sm-9">@Model.SRESOLUTION</dd>
+            <dt class="col-sm-3">SGOVAPRNAME</dt>
+            <dd class="col-sm-9">@Model.SGOVAPRNAME</dd>
+            <dt class="col-sm-3">DRESDATE</dt>
+            <dd class="col-sm-9">@Model.DRESDATE</dd>
+            <dt class="col-sm-3">SCONDSVS</dt>
+            <dd class="col-sm-9">@Model.SCONDSVS</dd>
+            <dt class="col-sm-3">NTYPEA_AMEND</dt>
+            <dd class="col-sm-9">@Model.NTYPEA_AMEND</dd>
+            <dt class="col-sm-3">SSHOWSTATUS</dt>
+            <dd class="col-sm-9">@Model.SSHOWSTATUS</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

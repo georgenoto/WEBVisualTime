@@ -1,0 +1,42 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CONTRMASTER.CONTRMASTERDto
+
+@{
+    ViewData["Title"] = "Detalles de CONTRMASTER";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NTYPE_REL</dt>
+            <dd class="col-sm-9">@Model.NTYPE_REL</dd>
+            <dt class="col-sm-3">NNUMBER</dt>
+            <dd class="col-sm-9">@Model.NNUMBER</dd>
+            <dt class="col-sm-3">TABLE173</dt>
+            <dd class="col-sm-9">@Model.TABLE173SDESCRIPT</dd>
+            <dt class="col-sm-3">DSTARTDATE</dt>
+            <dd class="col-sm-9">@Model.DSTARTDATE</dd>
+            <dt class="col-sm-3">TABLE5000</dt>
+            <dd class="col-sm-9">@Model.TABLE5000SDESCRIPT</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DEXPIRDAT</dt>
+            <dd class="col-sm-9">@Model.DEXPIRDAT</dd>
+            <dt class="col-sm-3">NCURR_PAY</dt>
+            <dd class="col-sm-9">@Model.NCURR_PAY</dd>
+            <dt class="col-sm-3">SFORMPAY</dt>
+            <dd class="col-sm-9">@Model.SFORMPAY</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NTYPE_REL" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

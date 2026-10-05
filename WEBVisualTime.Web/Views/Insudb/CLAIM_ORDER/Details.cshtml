@@ -1,0 +1,130 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_ORDER.CLAIM_ORDERDto
+
+@{
+    ViewData["Title"] = "Detalles de CLAIM_ORDER";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">CLAIM</dt>
+            <dd class="col-sm-9">@Model.CLAIMSCERTYPE</dd>
+            <dt class="col-sm-3">CLAIM_CASE</dt>
+            <dd class="col-sm-9">@Model.CLAIM_CASESSTACASE</dd>
+            <dt class="col-sm-3">TABLE692</dt>
+            <dd class="col-sm-9">@Model.TABLE692SDESCRIPT</dd>
+            <dt class="col-sm-3">NORDER_NUM</dt>
+            <dd class="col-sm-9">@Model.NORDER_NUM</dd>
+            <dt class="col-sm-3">TABLE9212</dt>
+            <dd class="col-sm-9">@Model.TABLE9212SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9237</dt>
+            <dd class="col-sm-9">@Model.TABLE9237SDESCRIPT</dd>
+            <dt class="col-sm-3">DORDERDATE</dt>
+            <dd class="col-sm-9">@Model.DORDERDATE</dd>
+            <dt class="col-sm-3">TABLE9242</dt>
+            <dd class="col-sm-9">@Model.TABLE9242SDESCRIPT</dd>
+            <dt class="col-sm-3">DACCOUNTDOC</dt>
+            <dd class="col-sm-9">@Model.DACCOUNTDOC</dd>
+            <dt class="col-sm-3">TABLE11NCURREN_DOC</dt>
+            <dd class="col-sm-9">@Model.TABLE11NCURREN_DOCSDESCRIPT</dd>
+            <dt class="col-sm-3">TAB_PROVIDER</dt>
+            <dd class="col-sm-9">@Model.TAB_PROVIDERSSTATREGT</dd>
+            <dt class="col-sm-3">TABLE8604</dt>
+            <dd class="col-sm-9">@Model.TABLE8604SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE11NCURREN_ORDER</dt>
+            <dd class="col-sm-9">@Model.TABLE11NCURREN_ORDERSDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9241</dt>
+            <dd class="col-sm-9">@Model.TABLE9241SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9238</dt>
+            <dd class="col-sm-9">@Model.TABLE9238SDESCRIPT</dd>
+            <dt class="col-sm-3">SPREAUTHORIZATION</dt>
+            <dd class="col-sm-9">@Model.SPREAUTHORIZATION</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">NMOVEMENT</dt>
+            <dd class="col-sm-9">@Model.NMOVEMENT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SCARECLASS</dt>
+            <dd class="col-sm-9">@Model.SCARECLASS</dd>
+            <dt class="col-sm-3">NUSER_AMEND</dt>
+            <dd class="col-sm-9">@Model.NUSER_AMEND</dd>
+            <dt class="col-sm-3">NUSER_AUDITDOC</dt>
+            <dd class="col-sm-9">@Model.NUSER_AUDITDOC</dd>
+            <dt class="col-sm-3">NEXCHANGE</dt>
+            <dd class="col-sm-9">@Model.NEXCHANGE</dd>
+            <dt class="col-sm-3">TABLE9263</dt>
+            <dd class="col-sm-9">@Model.TABLE9263SDESCRIPT</dd>
+            <dt class="col-sm-3">NUSER_DERIVEDBY</dt>
+            <dd class="col-sm-9">@Model.NUSER_DERIVEDBY</dd>
+            <dt class="col-sm-3">MASTERCL_ORDER</dt>
+            <dd class="col-sm-9">@Model.MASTERCL_ORDERSNAMECLIENT</dd>
+            <dt class="col-sm-3">NPHYSICIAN</dt>
+            <dd class="col-sm-9">@Model.NPHYSICIAN</dd>
+            <dt class="col-sm-3">NMEDICALINSTITUTE</dt>
+            <dd class="col-sm-9">@Model.NMEDICALINSTITUTE</dd>
+            <dt class="col-sm-3">NREVALIDATIONS</dt>
+            <dd class="col-sm-9">@Model.NREVALIDATIONS</dd>
+            <dt class="col-sm-3">SPROLTREATMENT</dt>
+            <dd class="col-sm-9">@Model.SPROLTREATMENT</dd>
+            <dt class="col-sm-3">DPROLTREATFROM</dt>
+            <dd class="col-sm-9">@Model.DPROLTREATFROM</dd>
+            <dt class="col-sm-3">DPROLTREATTO</dt>
+            <dd class="col-sm-9">@Model.DPROLTREATTO</dd>
+            <dt class="col-sm-3">DORIGINALPREAUTH</dt>
+            <dd class="col-sm-9">@Model.DORIGINALPREAUTH</dd>
+            <dt class="col-sm-3">DLASTPREAUTH</dt>
+            <dd class="col-sm-9">@Model.DLASTPREAUTH</dd>
+            <dt class="col-sm-3">NIDMEDICALFEE</dt>
+            <dd class="col-sm-9">@Model.NIDMEDICALFEE</dd>
+            <dt class="col-sm-3">NCASE_NUM_ORIG</dt>
+            <dd class="col-sm-9">@Model.NCASE_NUM_ORIG</dd>
+            <dt class="col-sm-3">NDEMAN_TYPE_ORIG</dt>
+            <dd class="col-sm-9">@Model.NDEMAN_TYPE_ORIG</dd>
+            <dt class="col-sm-3">NORDER_NUM_ORIG</dt>
+            <dd class="col-sm-9">@Model.NORDER_NUM_ORIG</dd>
+            <dt class="col-sm-3">NAUDITDOCTOR</dt>
+            <dd class="col-sm-9">@Model.NAUDITDOCTOR</dd>
+            <dt class="col-sm-3">SCALLCENTER</dt>
+            <dd class="col-sm-9">@Model.SCALLCENTER</dd>
+            <dt class="col-sm-3">TABLE8607</dt>
+            <dd class="col-sm-9">@Model.TABLE8607SDESCRIPT</dd>
+            <dt class="col-sm-3">SFASTMEDICALEVAL</dt>
+            <dd class="col-sm-9">@Model.SFASTMEDICALEVAL</dd>
+            <dt class="col-sm-3">SOBSV_AUDITDOC</dt>
+            <dd class="col-sm-9">@Model.SOBSV_AUDITDOC</dd>
+            <dt class="col-sm-3">DLEDGERDAT</dt>
+            <dd class="col-sm-9">@Model.DLEDGERDAT</dd>
+            <dt class="col-sm-3">SCLIENT_BENEF</dt>
+            <dd class="col-sm-9">@Model.SCLIENT_BENEF</dd>
+            <dt class="col-sm-3">SCLIENT_REP</dt>
+            <dd class="col-sm-9">@Model.SCLIENT_REP</dd>
+            <dt class="col-sm-3">TABLE210</dt>
+            <dd class="col-sm-9">@Model.TABLE210SDESCRIPT</dd>
+            <dt class="col-sm-3">NIND_REOPENCL</dt>
+            <dd class="col-sm-9">@Model.NIND_REOPENCL</dd>
+            <dt class="col-sm-3">NCAUSEREOPENCL</dt>
+            <dd class="col-sm-9">@Model.NCAUSEREOPENCL</dd>
+            <dt class="col-sm-3">NTYPE_COMMPAY</dt>
+            <dd class="col-sm-9">@Model.NTYPE_COMMPAY</dd>
+            <dt class="col-sm-3">NORDER_NUM_GEN</dt>
+            <dd class="col-sm-9">@Model.NORDER_NUM_GEN</dd>
+            <dt class="col-sm-3">CL_COMMERTYPEPAY</dt>
+            <dd class="col-sm-9">@Model.CL_COMMERTYPEPAYSDESCRIPT</dd>
+            <dt class="col-sm-3">SHISTORICAL_CLAIM</dt>
+            <dd class="col-sm-9">@Model.SHISTORICAL_CLAIM</dd>
+            <dt class="col-sm-3">NCOUNTRY</dt>
+            <dd class="col-sm-9">@Model.NCOUNTRY</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NCLAIM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

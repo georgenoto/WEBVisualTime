@@ -1,0 +1,48 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CASH_STAT.UpdateCASH_STATDto
+
+@{
+    ViewData["Title"] = "Editar CASH_STAT";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NCASHNUM" />
+            <input type="hidden" asp-for="DSTATDATE" />
+            <div class="mb-3">
+                <label asp-for="NSTATUS" class="form-label"></label>
+                <select asp-for="NSTATUS" class="form-select" asp-items="@(ViewData["NSTATUS"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NSTATUS" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="NID" />
+            <div class="mb-3">
+                <label asp-for="NCASH_ID" class="form-label"></label>
+                <input asp-for="NCASH_ID" class="form-control" type="number" />
+                <span asp-validation-for="NCASH_ID" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

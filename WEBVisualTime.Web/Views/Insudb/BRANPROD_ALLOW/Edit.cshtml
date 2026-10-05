@@ -1,0 +1,52 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.BRANPROD_ALLOW.UpdateBRANPROD_ALLOWDto
+
+@{
+    ViewData["Title"] = "Editar BRANPROD_ALLOW";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NINTERMED" />
+            <input type="hidden" asp-for="NBRANCH" />
+            <input type="hidden" asp-for="NPRODUCT" />
+            <input type="hidden" asp-for="NMODULEC" />
+            <input type="hidden" asp-for="NINSTALLMENTS" />
+            <input type="hidden" asp-for="NSTARTMONTH" />
+            <input type="hidden" asp-for="NENDMONTH" />
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NNOTE_INT" class="form-label"></label>
+                <input asp-for="NNOTE_INT" class="form-control" type="number" />
+                <span asp-validation-for="NNOTE_INT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCATEGORY" class="form-label"></label>
+                <select asp-for="NCATEGORY" class="form-select" asp-items="@(ViewData["NCATEGORY"] as SelectList)">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="NCATEGORY" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

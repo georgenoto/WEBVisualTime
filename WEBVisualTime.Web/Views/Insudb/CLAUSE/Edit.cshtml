@@ -1,0 +1,101 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAUSE.UpdateCLAUSEDto
+
+@{
+    ViewData["Title"] = "Editar CLAUSE";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SCERTYPE" />
+            <input type="hidden" asp-for="NBRANCH" />
+            <input type="hidden" asp-for="NPRODUCT" />
+            <input type="hidden" asp-for="NPOLICY" />
+            <input type="hidden" asp-for="NCERTIF" />
+            <input type="hidden" asp-for="NCLAUSE" />
+            <input type="hidden" asp-for="DEFFECDATE" />
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="NID" />
+            <div class="mb-3">
+                <label asp-for="NNOTENUM" class="form-label"></label>
+                <input asp-for="NNOTENUM" class="form-control" type="number" />
+                <span asp-validation-for="NNOTENUM" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DNULLDATE" class="form-label"></label>
+                <input asp-for="DNULLDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DNULLDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCLIENT" class="form-label"></label>
+                <input asp-for="SCLIENT" class="form-control" />
+                <span asp-validation-for="SCLIENT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NGROUP_INSU" class="form-label"></label>
+                <input asp-for="NGROUP_INSU" class="form-control" type="number" />
+                <span asp-validation-for="NGROUP_INSU" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NMODULEC" class="form-label"></label>
+                <input asp-for="NMODULEC" class="form-control" type="number" />
+                <span asp-validation-for="NMODULEC" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCOVER" class="form-label"></label>
+                <input asp-for="NCOVER" class="form-control" type="number" />
+                <span asp-validation-for="NCOVER" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NCAUSE" class="form-label"></label>
+                <input asp-for="NCAUSE" class="form-control" type="number" />
+                <span asp-validation-for="NCAUSE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SAGREE" class="form-label"></label>
+                <input asp-for="SAGREE" class="form-control" />
+                <span asp-validation-for="SAGREE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="STYPE_CLAUSE" class="form-label"></label>
+                <input asp-for="STYPE_CLAUSE" class="form-control" />
+                <span asp-validation-for="STYPE_CLAUSE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SDOC_ATTACH" class="form-label"></label>
+                <input asp-for="SDOC_ATTACH" class="form-control" />
+                <span asp-validation-for="SDOC_ATTACH" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NMOVEMENT" class="form-label"></label>
+                <input asp-for="NMOVEMENT" class="form-control" type="number" />
+                <span asp-validation-for="NMOVEMENT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NMOVEMENT_NULL" class="form-label"></label>
+                <input asp-for="NMOVEMENT_NULL" class="form-control" type="number" />
+                <span asp-validation-for="NMOVEMENT_NULL" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

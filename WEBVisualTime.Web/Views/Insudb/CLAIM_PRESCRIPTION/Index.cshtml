@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_PRESCRIPTION.CLAIM_PRESCRIPTIONDto>
+
+@{
+    ViewData["Title"] = "CLAIM_PRESCRIPTION";
+    ViewData["ColumnHeaders"] = new[] { "NBRANCH", "NPRODUCT", "NMONTHS", "NDAYS", "NUSERCODE", "DCOMPDATE", "NCLA_LI_TYP" };
+    ViewData["ColumnProperties"] = new[] { "NBRANCH", "NPRODUCT", "NMONTHS", "NDAYS", "NUSERCODE", "DCOMPDATE", "NCLA_LI_TYP" };
+    ViewData["KeyName"] = "NBRANCH";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

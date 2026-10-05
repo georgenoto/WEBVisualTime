@@ -1,0 +1,68 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CHARG_PREBASPAY.CreateCHARG_PREBASPAYDto
+
+@{
+    ViewData["Title"] = "Crear CHARG_PREBASPAY";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="NAGE_END" class="form-label"></label>
+                <input asp-for="NAGE_END" class="form-control" type="number" />
+                <span asp-validation-for="NAGE_END" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NMONTH_END" class="form-label"></label>
+                <input asp-for="NMONTH_END" class="form-control" type="number" />
+                <span asp-validation-for="NMONTH_END" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NTYPE_CHARG" class="form-label"></label>
+                <input asp-for="NTYPE_CHARG" class="form-control" type="number" />
+                <span asp-validation-for="NTYPE_CHARG" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NRATE" class="form-label"></label>
+                <input asp-for="NRATE" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NRATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NAMOUNT" class="form-label"></label>
+                <input asp-for="NAMOUNT" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NAMOUNT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NRATE_PPIN" class="form-label"></label>
+                <input asp-for="NRATE_PPIN" class="form-control" type="number" step="any" />
+                <span asp-validation-for="NRATE_PPIN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SAPLYQUOT" class="form-label"></label>
+                <input asp-for="SAPLYQUOT" class="form-control" />
+                <span asp-validation-for="SAPLYQUOT" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

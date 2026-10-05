@@ -1,0 +1,71 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MASTERCL_HIS.MASTERCL_HISDto
+
+@{
+    ViewData["Title"] = "Eliminar MASTERCL_HIS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NMASTERORDER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NMASTERORDER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NMOVEMENT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NMOVEMENT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DMOVEMENT_DATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DMOVEMENT_DATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSTATORDER_MAST)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSTATORDER_MAST)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NATTENTCHANNEL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NATTENTCHANNEL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPEDOC_PAY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPEDOC_PAY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCURREN_DOC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCURREN_DOC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCURREN_ORDER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCURREN_ORDER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NPROVIDER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NPROVIDER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.STYPECARE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.STYPECARE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCARECLASS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCARECLASS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SIND_REV)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SIND_REV)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NEXCHANGE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NEXCHANGE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NMOVEMENT_TYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NMOVEMENT_TYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTRANSAC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTRANSAC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SPREAUTHORIZATION)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SPREAUTHORIZATION)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCLAIMANTTYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCLAIMANTTYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCLAIM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCLAIM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DLEDGERDAT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DLEDGERDAT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NMASTERORDER_NUM_ORIG)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NMASTERORDER_NUM_ORIG)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NMASTERORDER_NUM_GEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NMASTERORDER_NUM_GEN)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NMASTERORDER" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

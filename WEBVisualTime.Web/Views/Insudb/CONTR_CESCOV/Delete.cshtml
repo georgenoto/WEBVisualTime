@@ -1,0 +1,67 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CONTR_CESCOV.CONTR_CESCOVDto
+
+@{
+    ViewData["Title"] = "Eliminar CONTR_CESCOV";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NBRANCH_REI)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NBRANCH_REI)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DEFFECDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DEFFECDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NNUMBER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NNUMBER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NINSUR_AREA)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NINSUR_AREA)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOVERGEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOVERGEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DNULLDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DNULLDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTYPECAP)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTYPECAP)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SROUCESS)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SROUCESS)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NRATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NRATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCESSPRFIX)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCESSPRFIX)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SINOTHERCOV)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SINOTHERCOV)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOMPANY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOMPANY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCOVERGEN_OTHER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCOVERGEN_OTHER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSHARE_CIA)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSHARE_CIA)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NAGEMAX)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NAGEMAX)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NRATE_EXPREM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NRATE_EXPREM)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SMORTACOF)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SMORTACOF)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SMORTACOM)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SMORTACOM)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NBRANCH_REI" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

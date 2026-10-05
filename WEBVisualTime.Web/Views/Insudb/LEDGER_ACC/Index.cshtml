@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.LEDGER_ACC.LEDGER_ACCDto>
+
+@{
+    ViewData["Title"] = "LEDGER_ACC";
+    ViewData["ColumnHeaders"] = new[] { "LED_COMPAN", "SACCOUNT", "SAUX_ACCOUN", "SADJU_EXCI", "NAUX_CREATE", "NBALANCE", "SBLOCK_CRE", "SBLOCK_DEB", "SBUDGET_IND", "DCOMPDATE", "SDESCRIPT", "SORGAN_UNIT", "SSTATREGT", "NTOTAL_CRE", "NTOTAL_DEB", "STYPE_ACC", "NUSERCODE" };
+    ViewData["ColumnProperties"] = new[] { "LED_COMPANSACCOUNT_BG", "SACCOUNT", "SAUX_ACCOUN", "SADJU_EXCI", "NAUX_CREATE", "NBALANCE", "SBLOCK_CRE", "SBLOCK_DEB", "SBUDGET_IND", "DCOMPDATE", "SDESCRIPT", "SORGAN_UNIT", "SSTATREGT", "NTOTAL_CRE", "NTOTAL_DEB", "STYPE_ACC", "NUSERCODE" };
+    ViewData["KeyName"] = "NLED_COMPAN";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

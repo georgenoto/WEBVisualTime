@@ -1,0 +1,78 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CI_ELEMENT_TYPES.CreateCI_ELEMENT_TYPESDto
+
+@{
+    ViewData["Title"] = "Crear CI_ELEMENT_TYPES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="NAME" class="form-label"></label>
+                <input asp-for="NAME" class="form-control" />
+                <span asp-validation-for="NAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SHORT_NAME" class="form-label"></label>
+                <input asp-for="SHORT_NAME" class="form-control" />
+                <span asp-validation-for="SHORT_NAME" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="EL_TYPE_OF" class="form-label"></label>
+                <input asp-for="EL_TYPE_OF" class="form-control" />
+                <span asp-validation-for="EL_TYPE_OF" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PRODUCT" class="form-label"></label>
+                <input asp-for="PRODUCT" class="form-control" />
+                <span asp-validation-for="PRODUCT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="RELEASE" class="form-label"></label>
+                <input asp-for="RELEASE" class="form-control" />
+                <span asp-validation-for="RELEASE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PACK_GEN" class="form-label"></label>
+                <input asp-for="PACK_GEN" class="form-control" />
+                <span asp-validation-for="PACK_GEN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="VIEW_GEN" class="form-label"></label>
+                <input asp-for="VIEW_GEN" class="form-control" />
+                <span asp-validation-for="VIEW_GEN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SUPERTYPE" class="form-label"></label>
+                <input asp-for="SUPERTYPE" class="form-control" />
+                <span asp-validation-for="SUPERTYPE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PARENT" class="form-label"></label>
+                <input asp-for="PARENT" class="form-control" />
+                <span asp-validation-for="PARENT" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ADDED_TYPE" class="form-label"></label>
+                <input asp-for="ADDED_TYPE" class="form-control" />
+                <span asp-validation-for="ADDED_TYPE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="EXTENSIBLE" class="form-label"></label>
+                <input asp-for="EXTENSIBLE" class="form-control" />
+                <span asp-validation-for="EXTENSIBLE" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

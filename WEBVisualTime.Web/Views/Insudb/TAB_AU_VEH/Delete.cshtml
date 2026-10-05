@@ -1,0 +1,53 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_AU_VEH.TAB_AU_VEHDto
+
+@{
+    ViewData["Title"] = "Eliminar TAB_AU_VEH";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SVEHCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SVEHCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SDESCRIPT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SDESCRIPT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NNATIONAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NNATIONAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NVEHBRAND)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NVEHBRAND)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SSTATREGT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SSTATREGT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SVEHMODEL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SVEHMODEL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NVEHTYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NVEHTYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NVEHPLACE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NVEHPLACE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NVEHPMA)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NVEHPMA)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSOAP_VEHTYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSOAP_VEHTYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SAACHCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SAACHCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NGROUPVEH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NGROUPVEH)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.SVEHCODE" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,69 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TARIF_COLUMN.UpdateTARIF_COLUMNDto
+
+@{
+    ViewData["Title"] = "Editar TARIF_COLUMN";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NID_COLUMN" />
+            <div class="mb-3">
+                <label asp-for="STABLE" class="form-label"></label>
+                <input asp-for="STABLE" class="form-control" />
+                <span asp-validation-for="STABLE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SCOLUMN" class="form-label"></label>
+                <input asp-for="SCOLUMN" class="form-control" />
+                <span asp-validation-for="SCOLUMN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SNAME_COL" class="form-label"></label>
+                <input asp-for="SNAME_COL" class="form-control" />
+                <span asp-validation-for="SNAME_COL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NDATA_TYPE" class="form-label"></label>
+                <input asp-for="NDATA_TYPE" class="form-control" type="number" />
+                <span asp-validation-for="NDATA_TYPE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NSIZE" class="form-label"></label>
+                <input asp-for="NSIZE" class="form-control" type="number" />
+                <span asp-validation-for="NSIZE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NDECIMAL" class="form-label"></label>
+                <input asp-for="NDECIMAL" class="form-control" type="number" />
+                <span asp-validation-for="NDECIMAL" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NUSERCODE" class="form-label"></label>
+                <input asp-for="NUSERCODE" class="form-control" type="number" />
+                <span asp-validation-for="NUSERCODE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DCOMPDATE" class="form-label"></label>
+                <input asp-for="DCOMPDATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DCOMPDATE" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="STABLEFK" class="form-label"></label>
+                <input asp-for="STABLEFK" class="form-control" />
+                <span asp-validation-for="STABLEFK" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

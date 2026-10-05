@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.ROLE_TYPE_AMEND.ROLE_TYPE_AMENDDto>
+
+@{
+    ViewData["Title"] = "ROLE_TYPE_AMEND";
+    ViewData["ColumnHeaders"] = new[] { "TYPE_AMENDNBRANCH", "TYPE_AMENDNPRODUCT", "TYPE_AMENDDEFFECDATE", "TYPE_AMENDNTYPE_AMEND", "NROLEID" };
+    ViewData["ColumnProperties"] = new[] { "TYPE_AMENDNBRANCHSIND_ORDER_SERV", "TYPE_AMENDNPRODUCTSIND_ORDER_SERV", "TYPE_AMENDDEFFECDATESIND_ORDER_SERV", "TYPE_AMENDNTYPE_AMENDSIND_ORDER_SERV", "NROLEID" };
+    ViewData["KeyName"] = "NBRANCH";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

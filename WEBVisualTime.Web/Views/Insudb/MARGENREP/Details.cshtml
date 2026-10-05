@@ -1,0 +1,48 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MARGENREP.MARGENREPDto
+
+@{
+    ViewData["Title"] = "Detalles de MARGENREP";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NREPTYPE</dt>
+            <dd class="col-sm-9">@Model.NREPTYPE</dd>
+            <dt class="col-sm-3">SLOGO</dt>
+            <dd class="col-sm-9">@Model.SLOGO</dd>
+            <dt class="col-sm-3">SLOG</dt>
+            <dd class="col-sm-9">@Model.SLOG</dd>
+            <dt class="col-sm-3">X1</dt>
+            <dd class="col-sm-9">@Model.X1</dd>
+            <dt class="col-sm-3">Y1</dt>
+            <dd class="col-sm-9">@Model.Y1</dd>
+            <dt class="col-sm-3">NIMAGENX</dt>
+            <dd class="col-sm-9">@Model.NIMAGENX</dd>
+            <dt class="col-sm-3">NIMAGENY</dt>
+            <dd class="col-sm-9">@Model.NIMAGENY</dd>
+            <dt class="col-sm-3">NPOSIMGX</dt>
+            <dd class="col-sm-9">@Model.NPOSIMGX</dd>
+            <dt class="col-sm-3">NPOSIMGY</dt>
+            <dd class="col-sm-9">@Model.NPOSIMGY</dd>
+            <dt class="col-sm-3">NRADIOCURVA</dt>
+            <dd class="col-sm-9">@Model.NRADIOCURVA</dd>
+            <dt class="col-sm-3">NSPACE</dt>
+            <dd class="col-sm-9">@Model.NSPACE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NBRANCH" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

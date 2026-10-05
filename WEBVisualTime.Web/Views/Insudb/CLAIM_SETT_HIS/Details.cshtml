@@ -1,0 +1,46 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_SETT_HIS.CLAIM_SETT_HISDto
+
+@{
+    ViewData["Title"] = "Detalles de CLAIM_SETT_HIS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NSETTLEMENT_NUM</dt>
+            <dd class="col-sm-9">@Model.NSETTLEMENT_NUM</dd>
+            <dt class="col-sm-3">NTRANSAC</dt>
+            <dd class="col-sm-9">@Model.NTRANSAC</dd>
+            <dt class="col-sm-3">DOPERDATE</dt>
+            <dd class="col-sm-9">@Model.DOPERDATE</dd>
+            <dt class="col-sm-3">TABLE9252</dt>
+            <dd class="col-sm-9">@Model.TABLE9252SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9251</dt>
+            <dd class="col-sm-9">@Model.TABLE9251SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9250</dt>
+            <dd class="col-sm-9">@Model.TABLE9250SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9249</dt>
+            <dd class="col-sm-9">@Model.TABLE9249SDESCRIPT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">SREMARKS</dt>
+            <dd class="col-sm-9">@Model.SREMARKS</dd>
+            <dt class="col-sm-3">TABLE9266</dt>
+            <dd class="col-sm-9">@Model.TABLE9266SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9274</dt>
+            <dd class="col-sm-9">@Model.TABLE9274SDESCRIPT</dd>
+            <dt class="col-sm-3">DLEDGERDAT</dt>
+            <dd class="col-sm-9">@Model.DLEDGERDAT</dd>
+            <dt class="col-sm-3">NREQUEST_NU</dt>
+            <dd class="col-sm-9">@Model.NREQUEST_NU</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NSETTLEMENT_NUM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

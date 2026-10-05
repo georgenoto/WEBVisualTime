@@ -1,0 +1,40 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CI_ELEMENT_TYPES.CI_ELEMENT_TYPESDto
+
+@{
+    ViewData["Title"] = "Detalles de CI_ELEMENT_TYPES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NAME</dt>
+            <dd class="col-sm-9">@Model.NAME</dd>
+            <dt class="col-sm-3">SHORT_NAME</dt>
+            <dd class="col-sm-9">@Model.SHORT_NAME</dd>
+            <dt class="col-sm-3">EL_TYPE_OF</dt>
+            <dd class="col-sm-9">@Model.EL_TYPE_OF</dd>
+            <dt class="col-sm-3">PRODUCT</dt>
+            <dd class="col-sm-9">@Model.PRODUCT</dd>
+            <dt class="col-sm-3">RELEASE</dt>
+            <dd class="col-sm-9">@Model.RELEASE</dd>
+            <dt class="col-sm-3">PACK_GEN</dt>
+            <dd class="col-sm-9">@Model.PACK_GEN</dd>
+            <dt class="col-sm-3">VIEW_GEN</dt>
+            <dd class="col-sm-9">@Model.VIEW_GEN</dd>
+            <dt class="col-sm-3">SUPERTYPE</dt>
+            <dd class="col-sm-9">@Model.SUPERTYPE</dd>
+            <dt class="col-sm-3">PARENT</dt>
+            <dd class="col-sm-9">@Model.PARENT</dd>
+            <dt class="col-sm-3">ADDED_TYPE</dt>
+            <dd class="col-sm-9">@Model.ADDED_TYPE</dd>
+            <dt class="col-sm-3">EXTENSIBLE</dt>
+            <dd class="col-sm-9">@Model.EXTENSIBLE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NAME" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

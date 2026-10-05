@@ -1,0 +1,70 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.WINDOWS.WINDOWSDto
+
+@{
+    ViewData["Title"] = "Detalles de WINDOWS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">SCODISPL</dt>
+            <dd class="col-sm-9">@Model.SCODISPL</dd>
+            <dt class="col-sm-3">NAMELEVEL</dt>
+            <dd class="col-sm-9">@Model.NAMELEVEL</dd>
+            <dt class="col-sm-3">SCODISP</dt>
+            <dd class="col-sm-9">@Model.SCODISP</dd>
+            <dt class="col-sm-3">NIMG_INDEX</dt>
+            <dd class="col-sm-9">@Model.NIMG_INDEX</dd>
+            <dt class="col-sm-3">SCODMEN</dt>
+            <dd class="col-sm-9">@Model.SCODMEN</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">SDESCRIPT</dt>
+            <dd class="col-sm-9">@Model.SDESCRIPT</dd>
+            <dt class="col-sm-3">SDIRECTGO</dt>
+            <dd class="col-sm-9">@Model.SDIRECTGO</dd>
+            <dt class="col-sm-3">NG_IDENTI</dt>
+            <dd class="col-sm-9">@Model.NG_IDENTI</dd>
+            <dt class="col-sm-3">NINQLEVEL</dt>
+            <dd class="col-sm-9">@Model.NINQLEVEL</dd>
+            <dt class="col-sm-3">TABLE87</dt>
+            <dd class="col-sm-9">@Model.TABLE87SDESCRIPT</dd>
+            <dt class="col-sm-3">SPSEUDO</dt>
+            <dd class="col-sm-9">@Model.SPSEUDO</dd>
+            <dt class="col-sm-3">NSEQUENCE</dt>
+            <dd class="col-sm-9">@Model.NSEQUENCE</dd>
+            <dt class="col-sm-3">SSHORT_DES</dt>
+            <dd class="col-sm-9">@Model.SSHORT_DES</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">TABLE88</dt>
+            <dd class="col-sm-9">@Model.TABLE88SDESCRIPT</dd>
+            <dt class="col-sm-3">SHELPPATH</dt>
+            <dd class="col-sm-9">@Model.SHELPPATH</dd>
+            <dt class="col-sm-3">NHEIGHT</dt>
+            <dd class="col-sm-9">@Model.NHEIGHT</dd>
+            <dt class="col-sm-3">SAUTOREP</dt>
+            <dd class="col-sm-9">@Model.SAUTOREP</dd>
+            <dt class="col-sm-3">SQUOTE</dt>
+            <dd class="col-sm-9">@Model.SQUOTE</dd>
+            <dt class="col-sm-3">NTYPE_REPORT</dt>
+            <dd class="col-sm-9">@Model.NTYPE_REPORT</dd>
+            <dt class="col-sm-3">SINDLETTER</dt>
+            <dd class="col-sm-9">@Model.SINDLETTER</dd>
+            <dt class="col-sm-3">NLENGTH_NOTES</dt>
+            <dd class="col-sm-9">@Model.NLENGTH_NOTES</dd>
+            <dt class="col-sm-3">SFILEPATH</dt>
+            <dd class="col-sm-9">@Model.SFILEPATH</dd>
+            <dt class="col-sm-3">SWINDOWURL</dt>
+            <dd class="col-sm-9">@Model.SWINDOWURL</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.SCODISPL" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

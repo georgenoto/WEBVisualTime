@@ -1,0 +1,47 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.CDI_LANGUAGE_DEFINITIONS.CDI_LANGUAGE_DEFINITIONSDto
+
+@{
+    ViewData["Title"] = "Eliminar CDI_LANGUAGE_DEFINITIONS";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LAN_IRID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LAN_IRID)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LAN_IVID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LAN_IVID)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LAN_NAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LAN_NAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LAN_SOURCE_DIRECTORY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LAN_SOURCE_DIRECTORY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LAN_RUNTIME_DIRECTORY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LAN_RUNTIME_DIRECTORY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LAN_PROGRAMATICAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LAN_PROGRAMATICAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LAN_TYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LAN_TYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LAN_COMMAND_LINE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LAN_COMMAND_LINE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LAN_GENERATABLE_FLAG)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LAN_GENERATABLE_FLAG)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LAN_INTERNAL_NAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LAN_INTERNAL_NAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LAN_OBM_FLAG)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LAN_OBM_FLAG)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.LAN_IRID" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

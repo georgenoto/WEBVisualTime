@@ -1,0 +1,112 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.PRECLAIM.PRECLAIMDto
+
+@{
+    ViewData["Title"] = "Detalles de PRECLAIM";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NIDPRECLAIM</dt>
+            <dd class="col-sm-9">@Model.NIDPRECLAIM</dd>
+            <dt class="col-sm-3">SCERTYPE</dt>
+            <dd class="col-sm-9">@Model.SCERTYPE</dd>
+            <dt class="col-sm-3">NBRANCH</dt>
+            <dd class="col-sm-9">@Model.NBRANCH</dd>
+            <dt class="col-sm-3">NPRODUCT</dt>
+            <dd class="col-sm-9">@Model.NPRODUCT</dd>
+            <dt class="col-sm-3">NPOLICY</dt>
+            <dd class="col-sm-9">@Model.NPOLICY</dd>
+            <dt class="col-sm-3">NCERTIF</dt>
+            <dd class="col-sm-9">@Model.NCERTIF</dd>
+            <dt class="col-sm-3">DOCCURDATE</dt>
+            <dd class="col-sm-9">@Model.DOCCURDATE</dd>
+            <dt class="col-sm-3">DREPDATE</dt>
+            <dd class="col-sm-9">@Model.DREPDATE</dd>
+            <dt class="col-sm-3">SADDRESS</dt>
+            <dd class="col-sm-9">@Model.SADDRESS</dd>
+            <dt class="col-sm-3">NDAMAGES</dt>
+            <dd class="col-sm-9">@Model.NDAMAGES</dd>
+            <dt class="col-sm-3">NCURRENCY</dt>
+            <dd class="col-sm-9">@Model.NCURRENCY</dd>
+            <dt class="col-sm-3">NIDSTATPRECLAIM</dt>
+            <dd class="col-sm-9">@Model.NIDSTATPRECLAIM</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+            <dt class="col-sm-3">NPRECLAIM</dt>
+            <dd class="col-sm-9">@Model.NPRECLAIM</dd>
+            <dt class="col-sm-3">SNAMECLIENT</dt>
+            <dd class="col-sm-9">@Model.SNAMECLIENT</dd>
+            <dt class="col-sm-3">NNOTENUM</dt>
+            <dd class="col-sm-9">@Model.NNOTENUM</dd>
+            <dt class="col-sm-3">SCLIENT_AFFECT</dt>
+            <dd class="col-sm-9">@Model.SCLIENT_AFFECT</dd>
+            <dt class="col-sm-3">TABLE9</dt>
+            <dd class="col-sm-9">@Model.TABLE9SDESCRIPT</dd>
+            <dt class="col-sm-3">TABLE9237</dt>
+            <dd class="col-sm-9">@Model.TABLE9237SDESCRIPT</dd>
+            <dt class="col-sm-3">SCLINUMDOCU</dt>
+            <dd class="col-sm-9">@Model.SCLINUMDOCU</dd>
+            <dt class="col-sm-3">NCOUNTRY</dt>
+            <dd class="col-sm-9">@Model.NCOUNTRY</dd>
+            <dt class="col-sm-3">SLOCALOCCUR</dt>
+            <dd class="col-sm-9">@Model.SLOCALOCCUR</dd>
+            <dt class="col-sm-3">SACCIDENT</dt>
+            <dd class="col-sm-9">@Model.SACCIDENT</dd>
+            <dt class="col-sm-3">SPREAUTHORIZATION</dt>
+            <dd class="col-sm-9">@Model.SPREAUTHORIZATION</dd>
+            <dt class="col-sm-3">TABLE9238</dt>
+            <dd class="col-sm-9">@Model.TABLE9238SDESCRIPT</dd>
+            <dt class="col-sm-3">DSTATUS</dt>
+            <dd class="col-sm-9">@Model.DSTATUS</dd>
+            <dt class="col-sm-3">DREJECTION</dt>
+            <dd class="col-sm-9">@Model.DREJECTION</dd>
+            <dt class="col-sm-3">DREJECTNOTICE</dt>
+            <dd class="col-sm-9">@Model.DREJECTNOTICE</dd>
+            <dt class="col-sm-3">NREJECTUSER</dt>
+            <dd class="col-sm-9">@Model.NREJECTUSER</dd>
+            <dt class="col-sm-3">MASTERCL_ORDER</dt>
+            <dd class="col-sm-9">@Model.MASTERCL_ORDERSNAMECLIENT</dd>
+            <dt class="col-sm-3">NPROVIDER</dt>
+            <dd class="col-sm-9">@Model.NPROVIDER</dd>
+            <dt class="col-sm-3">NPHYSICIAN</dt>
+            <dd class="col-sm-9">@Model.NPHYSICIAN</dd>
+            <dt class="col-sm-3">NMEDICALINSTITUTE</dt>
+            <dd class="col-sm-9">@Model.NMEDICALINSTITUTE</dd>
+            <dt class="col-sm-3">SCALLCENTER</dt>
+            <dd class="col-sm-9">@Model.SCALLCENTER</dd>
+            <dt class="col-sm-3">DLEDGERDAT</dt>
+            <dd class="col-sm-9">@Model.DLEDGERDAT</dd>
+            <dt class="col-sm-3">TABLE210</dt>
+            <dd class="col-sm-9">@Model.TABLE210SDESCRIPT</dd>
+            <dt class="col-sm-3">NCAUSEREOPENCL</dt>
+            <dd class="col-sm-9">@Model.NCAUSEREOPENCL</dd>
+            <dt class="col-sm-3">NTYPE_COMMPAY</dt>
+            <dd class="col-sm-9">@Model.NTYPE_COMMPAY</dd>
+            <dt class="col-sm-3">DREOPENCL</dt>
+            <dd class="col-sm-9">@Model.DREOPENCL</dd>
+            <dt class="col-sm-3">NREOPENUSER</dt>
+            <dd class="col-sm-9">@Model.NREOPENUSER</dd>
+            <dt class="col-sm-3">DCONFREJECTION</dt>
+            <dd class="col-sm-9">@Model.DCONFREJECTION</dd>
+            <dt class="col-sm-3">DCONFREJECTNOTICE</dt>
+            <dd class="col-sm-9">@Model.DCONFREJECTNOTICE</dd>
+            <dt class="col-sm-3">NCONFREJECTUSER</dt>
+            <dd class="col-sm-9">@Model.NCONFREJECTUSER</dd>
+            <dt class="col-sm-3">DNULLDATE</dt>
+            <dd class="col-sm-9">@Model.DNULLDATE</dd>
+            <dt class="col-sm-3">NNULLCODE</dt>
+            <dd class="col-sm-9">@Model.NNULLCODE</dd>
+            <dt class="col-sm-3">SHISTORICAL_CLAIM</dt>
+            <dd class="col-sm-9">@Model.SHISTORICAL_CLAIM</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NIDPRECLAIM" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

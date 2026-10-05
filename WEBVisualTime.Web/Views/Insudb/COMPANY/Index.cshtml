@@ -1,0 +1,19 @@
+@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.COMPANY.COMPANYDto>
+
+@{
+    ViewData["Title"] = "COMPANY";
+    ViewData["ColumnHeaders"] = new[] { "NCOMPANY", "SACCOUNT", "CLIENT", "SBANKNAME", "DCOMPDATE", "TABLE66", "DINPDATE", "SSTATREGT", "NTAXRATE", "STYPE", "SREGSVS", "NUSERCODE", "SNATIONAL", "TABLE5563", "SABA_ID", "SWIFT_IT", "TAB_LOCAT", "SCITY", "NBANKCOUNTRY" };
+    ViewData["ColumnProperties"] = new[] { "NCOMPANY", "SACCOUNT", "CLIENTSACCOUNT_IN", "SBANKNAME", "DCOMPDATE", "TABLE66SDESCRIPT", "DINPDATE", "SSTATREGT", "NTAXRATE", "STYPE", "SREGSVS", "NUSERCODE", "SNATIONAL", "TABLE5563SDESCRIPT", "SABA_ID", "SWIFT_IT", "TAB_LOCATSDESCRIPT", "SCITY", "NBANKCOUNTRY" };
+    ViewData["KeyName"] = "NCOMPANY";
+    ViewData["PageSize"] = 20;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
+
+@await Html.PartialAsync("_DataTable", Model)
+
+@section Scripts {
+    <script>initDataTables();</script>
+}

@@ -1,0 +1,95 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.FIELDSHEET.FIELDSHEETDto
+
+@{
+    ViewData["Title"] = "Eliminar FIELDSHEET";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <i class="bi bi-exclamation-triangle"></i> ¿Está seguro de que desea eliminar este registro?
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NSHEET)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NSHEET)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NFIELD)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NFIELD)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DCOMPDATE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DCOMPDATE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NFIELDTYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NFIELDTYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.STABLE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.STABLE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NUSERCODE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NUSERCODE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SFIELDDESC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SFIELDDESC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SCOLUMNNAME)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SCOLUMNNAME)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SVALUE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SVALUE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SRUTINE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SRUTINE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NROWORDER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NROWORDER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NFIELDORDER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NFIELDORDER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SVALUESLIST)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SVALUESLIST)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NFIELDLARGE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NFIELDLARGE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NOBJTYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NOBJTYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NTABLEHOMO)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NTABLEHOMO)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NOPERATOR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NOPERATOR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCONDIT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCONDIT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SFIELDCOMMEN)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SFIELDCOMMEN)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SFIELDREL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SFIELDREL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SOBLIGATORY)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SOBLIGATORY)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SLASTMOVE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SLASTMOVE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NDATATYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NDATATYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SRPARENTH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SRPARENTH)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SLPARENTH)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SLPARENTH)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NDECIMAL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NDECIMAL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SREPORT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SREPORT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LPADVAR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LPADVAR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.RPADVAR)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.RPADVAR)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NLEVEL)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NLEVEL)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NCRITER_ORDER)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NCRITER_ORDER)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NDEFTYPE)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NDEFTYPE)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NIDREC)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NIDREC)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SDESCRIPT)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SDESCRIPT)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.SUPDATEIND)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SUPDATEIND)</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3 d-flex gap-2">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.NSHEET" />
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

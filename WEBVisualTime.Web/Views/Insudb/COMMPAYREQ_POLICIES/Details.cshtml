@@ -1,0 +1,80 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.COMMPAYREQ_POLICIES.COMMPAYREQ_POLICIESDto
+
+@{
+    ViewData["Title"] = "Detalles de COMMPAYREQ_POLICIES";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">COMMPAYMENTREQUESTS</dt>
+            <dd class="col-sm-9">@Model.COMMPAYMENTREQUESTSSCLIENAME_HOLDER</dd>
+            <dt class="col-sm-3">NCONSEC</dt>
+            <dd class="col-sm-9">@Model.NCONSEC</dd>
+            <dt class="col-sm-3">CERTIFICATSCERTYPE</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATSCERTYPESCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNBRANCH</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNBRANCHSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPRODUCT</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPRODUCTSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNPOLICY</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNPOLICYSCUMUL_CODE</dd>
+            <dt class="col-sm-3">CERTIFICATNCERTIF</dt>
+            <dd class="col-sm-9">@Model.CERTIFICATNCERTIFSCUMUL_CODE</dd>
+            <dt class="col-sm-3">NMODULEC</dt>
+            <dd class="col-sm-9">@Model.NMODULEC</dd>
+            <dt class="col-sm-3">NGROUP_INSU</dt>
+            <dd class="col-sm-9">@Model.NGROUP_INSU</dd>
+            <dt class="col-sm-3">SPOLITYPE</dt>
+            <dd class="col-sm-9">@Model.SPOLITYPE</dd>
+            <dt class="col-sm-3">NIND_POLICY</dt>
+            <dd class="col-sm-9">@Model.NIND_POLICY</dd>
+            <dt class="col-sm-3">NIND_CURRENT_POLICY</dt>
+            <dd class="col-sm-9">@Model.NIND_CURRENT_POLICY</dd>
+            <dt class="col-sm-3">INTERMEDIA</dt>
+            <dd class="col-sm-9">@Model.INTERMEDIASCOL_AGREE</dd>
+            <dt class="col-sm-3">INTERM_TYP</dt>
+            <dd class="col-sm-9">@Model.INTERM_TYPSDESCRIPT</dd>
+            <dt class="col-sm-3">SCLIENAME_INTERMEDIA</dt>
+            <dd class="col-sm-9">@Model.SCLIENAME_INTERMEDIA</dd>
+            <dt class="col-sm-3">DSTARTDATE</dt>
+            <dd class="col-sm-9">@Model.DSTARTDATE</dd>
+            <dt class="col-sm-3">DEXPIRDAT</dt>
+            <dd class="col-sm-9">@Model.DEXPIRDAT</dd>
+            <dt class="col-sm-3">TABLE11</dt>
+            <dd class="col-sm-9">@Model.TABLE11SDESCRIPT</dd>
+            <dt class="col-sm-3">NCAPITAL</dt>
+            <dd class="col-sm-9">@Model.NCAPITAL</dd>
+            <dt class="col-sm-3">NBALANCECAPITAL</dt>
+            <dd class="col-sm-9">@Model.NBALANCECAPITAL</dd>
+            <dt class="col-sm-3">NBALANCEDEDUC</dt>
+            <dd class="col-sm-9">@Model.NBALANCEDEDUC</dd>
+            <dt class="col-sm-3">NPREMIUM</dt>
+            <dd class="col-sm-9">@Model.NPREMIUM</dd>
+            <dt class="col-sm-3">NPREMIUMN</dt>
+            <dd class="col-sm-9">@Model.NPREMIUMN</dd>
+            <dt class="col-sm-3">NPREMIUMNPAID</dt>
+            <dd class="col-sm-9">@Model.NPREMIUMNPAID</dd>
+            <dt class="col-sm-3">NCLAIMSAMOUNTBASE_SETT</dt>
+            <dd class="col-sm-9">@Model.NCLAIMSAMOUNTBASE_SETT</dd>
+            <dt class="col-sm-3">NCLAIMSAMOUNTBASE_PEND</dt>
+            <dd class="col-sm-9">@Model.NCLAIMSAMOUNTBASE_PEND</dd>
+            <dt class="col-sm-3">NRATECLAIMS</dt>
+            <dd class="col-sm-9">@Model.NRATECLAIMS</dd>
+            <dt class="col-sm-3">NRATEPROFIT</dt>
+            <dd class="col-sm-9">@Model.NRATEPROFIT</dd>
+            <dt class="col-sm-3">NRATEPROJECTED_CLAIMS</dt>
+            <dd class="col-sm-9">@Model.NRATEPROJECTED_CLAIMS</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">USERS</dt>
+            <dd class="col-sm-9">@Model.USERSSACCESSWO</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NID_COMMPAYREQ" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

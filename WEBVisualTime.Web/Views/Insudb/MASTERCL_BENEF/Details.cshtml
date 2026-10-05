@@ -1,0 +1,70 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.MASTERCL_BENEF.MASTERCL_BENEFDto
+
+@{
+    ViewData["Title"] = "Detalles de MASTERCL_BENEF";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">NMASTERORDER</dt>
+            <dd class="col-sm-9">@Model.NMASTERORDER</dd>
+            <dt class="col-sm-3">NCONSEC</dt>
+            <dd class="col-sm-9">@Model.NCONSEC</dd>
+            <dt class="col-sm-3">SCLIENT_BENEF</dt>
+            <dd class="col-sm-9">@Model.SCLIENT_BENEF</dd>
+            <dt class="col-sm-3">SCLIENT_REP</dt>
+            <dd class="col-sm-9">@Model.SCLIENT_REP</dd>
+            <dt class="col-sm-3">NCLAIM</dt>
+            <dd class="col-sm-9">@Model.NCLAIM</dd>
+            <dt class="col-sm-3">NCASE_NUM</dt>
+            <dd class="col-sm-9">@Model.NCASE_NUM</dd>
+            <dt class="col-sm-3">NDEMAN_TYPE</dt>
+            <dd class="col-sm-9">@Model.NDEMAN_TYPE</dd>
+            <dt class="col-sm-3">NCLAIMBENEF_ID</dt>
+            <dd class="col-sm-9">@Model.NCLAIMBENEF_ID</dd>
+            <dt class="col-sm-3">NBENE_TYPE</dt>
+            <dd class="col-sm-9">@Model.NBENE_TYPE</dd>
+            <dt class="col-sm-3">NRELATION</dt>
+            <dd class="col-sm-9">@Model.NRELATION</dd>
+            <dt class="col-sm-3">NPARTICIP</dt>
+            <dd class="col-sm-9">@Model.NPARTICIP</dd>
+            <dt class="col-sm-3">NORDER_NUM</dt>
+            <dd class="col-sm-9">@Model.NORDER_NUM</dd>
+            <dt class="col-sm-3">SCLIENAME_BEN</dt>
+            <dd class="col-sm-9">@Model.SCLIENAME_BEN</dd>
+            <dt class="col-sm-3">NTYPCLIENTDOC_BEN</dt>
+            <dd class="col-sm-9">@Model.NTYPCLIENTDOC_BEN</dd>
+            <dt class="col-sm-3">SCLINUMDOCU_BEN</dt>
+            <dd class="col-sm-9">@Model.SCLINUMDOCU_BEN</dd>
+            <dt class="col-sm-3">SPHONE_BEN</dt>
+            <dd class="col-sm-9">@Model.SPHONE_BEN</dd>
+            <dt class="col-sm-3">SCELLPHONE_BEN</dt>
+            <dd class="col-sm-9">@Model.SCELLPHONE_BEN</dd>
+            <dt class="col-sm-3">SEMAIL_BEN</dt>
+            <dd class="col-sm-9">@Model.SEMAIL_BEN</dd>
+            <dt class="col-sm-3">SCLIENAME_REP</dt>
+            <dd class="col-sm-9">@Model.SCLIENAME_REP</dd>
+            <dt class="col-sm-3">NTYPCLIENTDOC_REP</dt>
+            <dd class="col-sm-9">@Model.NTYPCLIENTDOC_REP</dd>
+            <dt class="col-sm-3">SCLINUMDOCU_REP</dt>
+            <dd class="col-sm-9">@Model.SCLINUMDOCU_REP</dd>
+            <dt class="col-sm-3">SPHONE_REP</dt>
+            <dd class="col-sm-9">@Model.SPHONE_REP</dd>
+            <dt class="col-sm-3">SCELLPHONE_REP</dt>
+            <dd class="col-sm-9">@Model.SCELLPHONE_REP</dd>
+            <dt class="col-sm-3">SEMAIL_REP</dt>
+            <dd class="col-sm-9">@Model.SEMAIL_REP</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NMASTERORDER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

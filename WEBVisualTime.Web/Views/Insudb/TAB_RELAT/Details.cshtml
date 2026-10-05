@@ -1,0 +1,28 @@
+@model WEBVisualTime.Servicios.Insudb.DTOs.TAB_RELAT.TAB_RELATDto
+
+@{
+    ViewData["Title"] = "Detalles de TAB_RELAT";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">TABLE15NRELASHIP</dt>
+            <dd class="col-sm-9">@Model.TABLE15NRELASHIPSDESCRIPT</dd>
+            <dt class="col-sm-3">DCOMPDATE</dt>
+            <dd class="col-sm-9">@Model.DCOMPDATE</dd>
+            <dt class="col-sm-3">TABLE15NREL_TARGET</dt>
+            <dd class="col-sm-9">@Model.TABLE15NREL_TARGETSDESCRIPT</dd>
+            <dt class="col-sm-3">SSTATREGT</dt>
+            <dd class="col-sm-9">@Model.SSTATREGT</dd>
+            <dt class="col-sm-3">NUSERCODE</dt>
+            <dd class="col-sm-9">@Model.NUSERCODE</dd>
+        </dl>
+    </div>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.NRELASHIP" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>
