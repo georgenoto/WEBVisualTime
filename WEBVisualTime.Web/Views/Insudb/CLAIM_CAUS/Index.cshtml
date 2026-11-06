@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_CAUS.CLAIM_CAUSDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "CLAIM_CAUS";
-    ViewData["ColumnHeaders"] = new[] { "TABLE10", "NCAUSECOD", "NPRODUCT", "DCOMPDATE", "TABLE132", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "SROUTINE" };
-    ViewData["ColumnProperties"] = new[] { "TABLE10SDESCRIPT", "NCAUSECOD", "NPRODUCT", "DCOMPDATE", "TABLE132SDESCRIPT", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "SROUTINE" };
-    ViewData["KeyName"] = "NBRANCH";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "CLAIM_CAUS", "NBRANCH", new[] { "TABLE10SDESCRIPT", "NCAUSECOD", "NPRODUCT", "DCOMPDATE", "TABLE132SDESCRIPT", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "SROUTINE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("CLAIM_CAUS"),
+            new[] { "TABLE10", "NCAUSECOD", "NPRODUCT", "DCOMPDATE", "TABLE132", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "SROUTINE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

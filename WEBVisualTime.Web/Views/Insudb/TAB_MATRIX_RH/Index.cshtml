@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAB_MATRIX_RH.TAB_MATRIX_RHDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "TAB_MATRIX_RH";
-    ViewData["ColumnHeaders"] = new[] { "NTYPE_MOVE", "NORIGIN", "NTYP_PROFITWORKER", "NTRANSAC", "NUSERCODE", "DCOMPDATE" };
-    ViewData["ColumnProperties"] = new[] { "NTYPE_MOVE", "NORIGIN", "NTYP_PROFITWORKER", "NTRANSAC", "NUSERCODE", "DCOMPDATE" };
-    ViewData["KeyName"] = "NTYPE_MOVE";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "TAB_MATRIX_RH", "NTYPE_MOVE", new[] { "NTYPE_MOVE", "NORIGIN", "NTYP_PROFITWORKER", "NTRANSAC", "NUSERCODE", "DCOMPDATE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("TAB_MATRIX_RH"),
+            new[] { "NTYPE_MOVE", "NORIGIN", "NTYP_PROFITWORKER", "NTRANSAC", "NUSERCODE", "DCOMPDATE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

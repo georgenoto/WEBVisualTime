@@ -61,4 +61,9 @@ public class PREMIUM_CE_INIService : IPREMIUM_CE_INIService
         await _repository.SaveChangesAsync();
         return true;
     }
+
+    public Task<WEBVisualTime.Servicios.Services.Common.PagedResult<PREMIUM_CE_INIDto>> GetListPageAsync(
+        int page = 1, string? search = null, CancellationToken cancellationToken = default, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize)
+        => WEBVisualTime.Servicios.Services.Common.PagedQueries.ReadAsync(
+            _repository, e => e.ToDto(), page, search, cancellationToken, pageSize);
 }

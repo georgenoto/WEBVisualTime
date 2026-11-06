@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CRED_CARD.CRED_CARDDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "CRED_CARD";
-    ViewData["ColumnHeaders"] = new[] { "CLIENT", "TABLE7", "SCREDI_CARD", "TABLE183", "SSTATREGT", "DCARDEXPIR", "DCOMPDATE", "NUSERCODE", "STYP_DIRDEB", "NCURRENCY" };
-    ViewData["ColumnProperties"] = new[] { "CLIENTSACCOUNT_IN", "TABLE7SDESCRIPT", "SCREDI_CARD", "TABLE183SDESCRIPT", "SSTATREGT", "DCARDEXPIR", "DCOMPDATE", "NUSERCODE", "STYP_DIRDEB", "NCURRENCY" };
-    ViewData["KeyName"] = "SCLIENT";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "CRED_CARD", "SCLIENT", new[] { "CLIENTSACCOUNT_IN", "TABLE7SDESCRIPT", "SCREDI_CARD", "TABLE183SDESCRIPT", "SSTATREGT", "DCARDEXPIR", "DCOMPDATE", "NUSERCODE", "STYP_DIRDEB", "NCURRENCY" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("CRED_CARD"),
+            new[] { "CLIENT", "TABLE7", "SCREDI_CARD", "TABLE183", "SSTATREGT", "DCARDEXPIR", "DCOMPDATE", "NUSERCODE", "STYP_DIRDEB", "NCURRENCY" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

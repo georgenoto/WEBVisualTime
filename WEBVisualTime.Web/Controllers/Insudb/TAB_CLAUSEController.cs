@@ -21,11 +21,9 @@ public class TAB_CLAUSEController : Controller
     }
 
     // GET: TAB_CLAUSE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TAB_CLAUSE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/TAB_CLAUSE/Index.cshtml");
 
     // GET: TAB_CLAUSE/Details/{id}
     public async Task<IActionResult> Details(int id)

@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CLAUS_CO_P.CLAUS_CO_PDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "CLAUS_CO_P";
-    ViewData["ColumnHeaders"] = new[] { "POLICYSCERTYPE", "POLICYNBRANCH", "POLICYNPRODUCT", "POLICYNPOLICY", "NCLAUSE", "DEFFECDATE", "DCOMPDATE", "NNOTENUM", "DNULLDATE", "NUSERCODE", "STYPE_CLAUSE", "SDOC_ATTACH", "NMODULEC", "NCOVER", "NMOVEMENT", "NMOVEMENT_NULL" };
-    ViewData["ColumnProperties"] = new[] { "POLICYSCERTYPESACCOUNTI", "POLICYNBRANCHSACCOUNTI", "POLICYNPRODUCTSACCOUNTI", "POLICYNPOLICYSACCOUNTI", "NCLAUSE", "DEFFECDATE", "DCOMPDATE", "NNOTENUM", "DNULLDATE", "NUSERCODE", "STYPE_CLAUSE", "SDOC_ATTACH", "NMODULEC", "NCOVER", "NMOVEMENT", "NMOVEMENT_NULL" };
-    ViewData["KeyName"] = "SCERTYPE";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "CLAUS_CO_P", "SCERTYPE", new[] { "POLICYSCERTYPESACCOUNTI", "POLICYNBRANCHSACCOUNTI", "POLICYNPRODUCTSACCOUNTI", "POLICYNPOLICYSACCOUNTI", "NCLAUSE", "DEFFECDATE", "DCOMPDATE", "NNOTENUM", "DNULLDATE", "NUSERCODE", "STYPE_CLAUSE", "SDOC_ATTACH", "NMODULEC", "NCOVER", "NMOVEMENT", "NMOVEMENT_NULL" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("CLAUS_CO_P"),
+            new[] { "POLICYSCERTYPE", "POLICYNBRANCH", "POLICYNPRODUCT", "POLICYNPOLICY", "NCLAUSE", "DEFFECDATE", "DCOMPDATE", "NNOTENUM", "DNULLDATE", "NUSERCODE", "STYPE_CLAUSE", "SDOC_ATTACH", "NMODULEC", "NCOVER", "NMOVEMENT", "NMOVEMENT_NULL" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

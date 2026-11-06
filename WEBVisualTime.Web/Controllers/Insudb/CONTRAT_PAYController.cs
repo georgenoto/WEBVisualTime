@@ -25,11 +25,9 @@ public class CONTRAT_PAYController : Controller
     }
 
     // GET: CONTRAT_PAY
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CONTRAT_PAY/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CONTRAT_PAY/Index.cshtml");
 
     // GET: CONTRAT_PAY/Details/{id}
     public async Task<IActionResult> Details(long id)

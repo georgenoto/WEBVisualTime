@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAB_WINCLI.TAB_WINCLIDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "TAB_WINCLI";
-    ViewData["ColumnHeaders"] = new[] { "STYPE_CLIE", "STYPE_SEQ", "NSEQUENCE", "WINDOWS", "DCOMPDATE", "SDEFAULTI", "SREQUIRE", "NUSERCODE" };
-    ViewData["ColumnProperties"] = new[] { "STYPE_CLIE", "STYPE_SEQ", "NSEQUENCE", "WINDOWSSCODISP", "DCOMPDATE", "SDEFAULTI", "SREQUIRE", "NUSERCODE" };
-    ViewData["KeyName"] = "STYPE_CLIE";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "TAB_WINCLI", "STYPE_CLIE", new[] { "STYPE_CLIE", "STYPE_SEQ", "NSEQUENCE", "WINDOWSSCODISP", "DCOMPDATE", "SDEFAULTI", "SREQUIRE", "NUSERCODE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("TAB_WINCLI"),
+            new[] { "STYPE_CLIE", "STYPE_SEQ", "NSEQUENCE", "WINDOWS", "DCOMPDATE", "SDEFAULTI", "SREQUIRE", "NUSERCODE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

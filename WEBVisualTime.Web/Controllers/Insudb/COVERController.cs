@@ -61,11 +61,9 @@ public class COVERController : Controller
     }
 
     // GET: COVER
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/COVER/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/COVER/Index.cshtml");
 
     // GET: COVER/Details/{id}
     public async Task<IActionResult> Details(string id)

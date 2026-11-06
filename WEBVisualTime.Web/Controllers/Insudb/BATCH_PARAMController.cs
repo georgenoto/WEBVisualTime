@@ -25,11 +25,9 @@ public class BATCH_PARAMController : Controller
     }
 
     // GET: BATCH_PARAM
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/BATCH_PARAM/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/BATCH_PARAM/Index.cshtml");
 
     // GET: BATCH_PARAM/Details/{id}
     public async Task<IActionResult> Details(int id)

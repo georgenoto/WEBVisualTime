@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.SCHEMA_CUR.SCHEMA_CURDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "SCHEMA_CUR";
-    ViewData["ColumnHeaders"] = new[] { "SECUR_SCHE", "NCURRENCY", "DCOMPDATE", "SSTATREGT", "NUSERCODE" };
-    ViewData["ColumnProperties"] = new[] { "SECUR_SCHESLONGDESC", "NCURRENCY", "DCOMPDATE", "SSTATREGT", "NUSERCODE" };
-    ViewData["KeyName"] = "SSCHE_CODE";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "SCHEMA_CUR", "SSCHE_CODE", new[] { "SECUR_SCHESLONGDESC", "NCURRENCY", "DCOMPDATE", "SSTATREGT", "NUSERCODE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("SCHEMA_CUR"),
+            new[] { "SECUR_SCHE", "NCURRENCY", "DCOMPDATE", "SSTATREGT", "NUSERCODE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

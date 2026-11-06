@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.COVER_QUOTA.COVER_QUOTADto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "COVER_QUOTA";
-    ViewData["ColumnHeaders"] = new[] { "POLICYSCERTYPE", "POLICYNBRANCH", "POLICYNPRODUCT", "POLICYNPOLICY", "NGROUP", "NMODULEC", "TABLE12", "NCOVER", "NCAPITAL", "NTAXIVA", "NTAX", "NPREMIUM", "NINSUCOUNT", "NINSURED", "DCOMPDATE", "NUSERCODE", "NCERTIF" };
-    ViewData["ColumnProperties"] = new[] { "POLICYSCERTYPESACCOUNTI", "POLICYNBRANCHSACCOUNTI", "POLICYNPRODUCTSACCOUNTI", "POLICYNPOLICYSACCOUNTI", "NGROUP", "NMODULEC", "TABLE12SDESCRIPT", "NCOVER", "NCAPITAL", "NTAXIVA", "NTAX", "NPREMIUM", "NINSUCOUNT", "NINSURED", "DCOMPDATE", "NUSERCODE", "NCERTIF" };
-    ViewData["KeyName"] = "SCERTYPE";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "COVER_QUOTA", "SCERTYPE", new[] { "POLICYSCERTYPESACCOUNTI", "POLICYNBRANCHSACCOUNTI", "POLICYNPRODUCTSACCOUNTI", "POLICYNPOLICYSACCOUNTI", "NGROUP", "NMODULEC", "TABLE12SDESCRIPT", "NCOVER", "NCAPITAL", "NTAXIVA", "NTAX", "NPREMIUM", "NINSUCOUNT", "NINSURED", "DCOMPDATE", "NUSERCODE", "NCERTIF" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("COVER_QUOTA"),
+            new[] { "POLICYSCERTYPE", "POLICYNBRANCH", "POLICYNPRODUCT", "POLICYNPOLICY", "NGROUP", "NMODULEC", "TABLE12", "NCOVER", "NCAPITAL", "NTAXIVA", "NTAX", "NPREMIUM", "NINSUCOUNT", "NINSURED", "DCOMPDATE", "NUSERCODE", "NCERTIF" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

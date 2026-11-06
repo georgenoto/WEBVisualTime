@@ -61,4 +61,9 @@ public class BATCH_PARAM_VALUEService : IBATCH_PARAM_VALUEService
         await _repository.SaveChangesAsync();
         return true;
     }
+
+    public Task<WEBVisualTime.Servicios.Services.Common.PagedResult<BATCH_PARAM_VALUEDto>> GetListPageAsync(
+        int page = 1, string? search = null, CancellationToken cancellationToken = default, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize)
+        => WEBVisualTime.Servicios.Services.Common.PagedQueries.ReadAsync(
+            _repository, e => e.ToDto(), page, search, cancellationToken, pageSize);
 }

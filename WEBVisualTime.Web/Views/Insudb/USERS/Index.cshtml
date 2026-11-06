@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.USERS.USERSDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "USERS";
-    ViewData["ColumnHeaders"] = new[] { "NUSERCODE", "SACCESSWO", "TABLE9", "CLIENT", "DCOMPDATE", "SINITIALS", "SECUR_SCHE", "SSTATREGT", "TABLE105", "TABLE84", "SMENU", "SCHNEXTLOGON", "SNEVERCHANGE", "SNEVEREXPIRES", "SLOCKEDOUT", "DFROMDATE", "NOFFICEAGEN", "NAGENCY", "NFAILED_LOGON_ATTEMPTS", "DPASSWORD_EXPIRES" };
-    ViewData["ColumnProperties"] = new[] { "NUSERCODE", "SACCESSWO", "TABLE9SDESCRIPT", "CLIENTSACCOUNT_IN", "DCOMPDATE", "SINITIALS", "SECUR_SCHESLONGDESC", "SSTATREGT", "TABLE105SDESCRIPT", "TABLE84SDESCRIPT", "SMENU", "SCHNEXTLOGON", "SNEVERCHANGE", "SNEVEREXPIRES", "SLOCKEDOUT", "DFROMDATE", "NOFFICEAGEN", "NAGENCY", "NFAILED_LOGON_ATTEMPTS", "DPASSWORD_EXPIRES" };
-    ViewData["KeyName"] = "NUSERCODE";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "USERS", "NUSERCODE", new[] { "NUSERCODE", "SACCESSWO", "TABLE9SDESCRIPT", "CLIENTSACCOUNT_IN", "DCOMPDATE", "SINITIALS", "SECUR_SCHESLONGDESC", "SSTATREGT", "TABLE105SDESCRIPT", "TABLE84SDESCRIPT", "SMENU", "SCHNEXTLOGON", "SNEVERCHANGE", "SNEVEREXPIRES", "SLOCKEDOUT", "DFROMDATE", "NOFFICEAGEN", "NAGENCY", "NFAILED_LOGON_ATTEMPTS", "DPASSWORD_EXPIRES" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("USERS"),
+            new[] { "NUSERCODE", "SACCESSWO", "TABLE9", "CLIENT", "DCOMPDATE", "SINITIALS", "SECUR_SCHE", "SSTATREGT", "TABLE105", "TABLE84", "SMENU", "SCHNEXTLOGON", "SNEVERCHANGE", "SNEVEREXPIRES", "SLOCKEDOUT", "DFROMDATE", "NOFFICEAGEN", "NAGENCY", "NFAILED_LOGON_ATTEMPTS", "DPASSWORD_EXPIRES" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

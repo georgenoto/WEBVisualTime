@@ -61,4 +61,9 @@ public class SCHEMA_CURService : ISCHEMA_CURService
         await _repository.SaveChangesAsync();
         return true;
     }
+
+    public Task<WEBVisualTime.Servicios.Services.Common.PagedResult<SCHEMA_CURDto>> GetListPageAsync(
+        int page = 1, string? search = null, CancellationToken cancellationToken = default, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize)
+        => WEBVisualTime.Servicios.Services.Common.PagedQueries.ReadAsync(
+            _repository, e => e.ToDto(), page, search, cancellationToken, pageSize);
 }

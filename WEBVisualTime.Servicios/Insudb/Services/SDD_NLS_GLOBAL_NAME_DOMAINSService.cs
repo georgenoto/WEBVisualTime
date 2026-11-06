@@ -61,4 +61,9 @@ public class SDD_NLS_GLOBAL_NAME_DOMAINSService : ISDD_NLS_GLOBAL_NAME_DOMAINSSe
         await _repository.SaveChangesAsync();
         return true;
     }
+
+    public Task<WEBVisualTime.Servicios.Services.Common.PagedResult<SDD_NLS_GLOBAL_NAME_DOMAINSDto>> GetListPageAsync(
+        int page = 1, string? search = null, CancellationToken cancellationToken = default, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize)
+        => WEBVisualTime.Servicios.Services.Common.PagedQueries.ReadAsync(
+            _repository, e => e.ToDto(), page, search, cancellationToken, pageSize);
 }

@@ -21,11 +21,9 @@ public class USER_CASHNUMController : Controller
     }
 
     // GET: USER_CASHNUM
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/USER_CASHNUM/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/USER_CASHNUM/Index.cshtml");
 
     // GET: USER_CASHNUM/Details/{id}
     public async Task<IActionResult> Details(int id)

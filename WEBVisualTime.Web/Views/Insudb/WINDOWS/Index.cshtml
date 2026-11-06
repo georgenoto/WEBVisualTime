@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.WINDOWS.WINDOWSDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "WINDOWS";
-    ViewData["ColumnHeaders"] = new[] { "SCODISPL", "NAMELEVEL", "SCODISP", "NIMG_INDEX", "SCODMEN", "DCOMPDATE", "SDESCRIPT", "SDIRECTGO", "NG_IDENTI", "NINQLEVEL", "TABLE87", "SPSEUDO", "NSEQUENCE", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "TABLE88", "SHELPPATH", "NHEIGHT", "SAUTOREP", "SQUOTE", "NTYPE_REPORT", "SINDLETTER", "NLENGTH_NOTES", "SFILEPATH", "SWINDOWURL" };
-    ViewData["ColumnProperties"] = new[] { "SCODISPL", "NAMELEVEL", "SCODISP", "NIMG_INDEX", "SCODMEN", "DCOMPDATE", "SDESCRIPT", "SDIRECTGO", "NG_IDENTI", "NINQLEVEL", "TABLE87SDESCRIPT", "SPSEUDO", "NSEQUENCE", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "TABLE88SDESCRIPT", "SHELPPATH", "NHEIGHT", "SAUTOREP", "SQUOTE", "NTYPE_REPORT", "SINDLETTER", "NLENGTH_NOTES", "SFILEPATH", "SWINDOWURL" };
-    ViewData["KeyName"] = "SCODISPL";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "WINDOWS", "SCODISPL", new[] { "SCODISPL", "NAMELEVEL", "SCODISP", "NIMG_INDEX", "SCODMEN", "DCOMPDATE", "SDESCRIPT", "SDIRECTGO", "NG_IDENTI", "NINQLEVEL", "TABLE87SDESCRIPT", "SPSEUDO", "NSEQUENCE", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "TABLE88SDESCRIPT", "SHELPPATH", "NHEIGHT", "SAUTOREP", "SQUOTE", "NTYPE_REPORT", "SINDLETTER", "NLENGTH_NOTES", "SFILEPATH", "SWINDOWURL" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("WINDOWS"),
+            new[] { "SCODISPL", "NAMELEVEL", "SCODISP", "NIMG_INDEX", "SCODMEN", "DCOMPDATE", "SDESCRIPT", "SDIRECTGO", "NG_IDENTI", "NINQLEVEL", "TABLE87", "SPSEUDO", "NSEQUENCE", "SSHORT_DES", "SSTATREGT", "NUSERCODE", "TABLE88", "SHELPPATH", "NHEIGHT", "SAUTOREP", "SQUOTE", "NTYPE_REPORT", "SINDLETTER", "NLENGTH_NOTES", "SFILEPATH", "SWINDOWURL" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

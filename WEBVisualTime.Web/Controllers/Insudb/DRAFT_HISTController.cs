@@ -37,11 +37,9 @@ public class DRAFT_HISTController : Controller
     }
 
     // GET: DRAFT_HIST
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/DRAFT_HIST/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/DRAFT_HIST/Index.cshtml");
 
     // GET: DRAFT_HIST/Details/{id}
     public async Task<IActionResult> Details(long id)

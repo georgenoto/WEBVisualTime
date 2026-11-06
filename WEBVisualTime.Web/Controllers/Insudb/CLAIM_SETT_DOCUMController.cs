@@ -21,11 +21,9 @@ public class CLAIM_SETT_DOCUMController : Controller
     }
 
     // GET: CLAIM_SETT_DOCUM
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CLAIM_SETT_DOCUM/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CLAIM_SETT_DOCUM/Index.cshtml");
 
     // GET: CLAIM_SETT_DOCUM/Details/{id}
     public async Task<IActionResult> Details(long id)

@@ -14,6 +14,7 @@ using WEBVisualTime.Servicios.Insudb.DTOs.TABLE999;
 using WEBVisualTime.Servicios.Insudb.DTOs.APPUSER;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE8006;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE8007;
+using WEBVisualTime.Entidades.Common;
 
 // Exercise the real controllers and compiled Razor views with in-memory services.
 var builder = WebApplication.CreateBuilder(args);
@@ -55,6 +56,7 @@ async Task<HttpResponseMessage> PostForm(string url, string html, Dictionary<str
 foreach (var (name, key, id) in new[] { ("TABLE2000", "NAPLY", "7"), ("TABLE999", "SSTAT_ERROR", "A") })
 {
     var html = await Page($"/{name}");
+    Check(html.Contains($"<title>{name} - WEBVisualTime.Web</title>"), "Shared listings must retain the page title");
     Check(html.Contains("Original &lt;script&gt;"), "Index must HTML-encode values");
     Check(html.Contains($"/{name}/Edit/{id}"), "Existing action links must remain valid");
     var create = await Page($"/{name}/Create");
@@ -86,7 +88,7 @@ Check((await client.PutAsJsonAsync("/api/TABLE2000/987", new UpdateTABLE2000Dto 
 Check((await client.GetAsync("/api/TABLE2000/not-a-number")).StatusCode == HttpStatusCode.BadRequest, "Numeric keys must reject invalid input");
 Check((await client.PutAsJsonAsync("/api/TABLE999/NEW", new UpdateTABLE999Dto { SSTAT_ERROR = "NEW", SDESCRIPT = "String API" })).StatusCode == HttpStatusCode.NoContent, "API PUT string key");
 Check((await client.DeleteAsync("/api/TABLE999/NEW")).StatusCode == HttpStatusCode.NoContent, "API DELETE string key");
-Check((await Page("/TABLE999")).Contains("No hay registros disponibles."), "Empty catalog message");
+Check((await Page("/TABLE999")).Contains("no se encontraron registros"), "Empty catalog message");
 Check((await Page("/APPUSER/Edit/3000000000")).Contains("3000000000"), "MVC keys above Int32 must not be truncated");
 Check((await client.GetAsync("/api/APPUSER/3000000000")).IsSuccessStatusCode, "API must accept corrected Int64 keys");
 Check((await client.PutAsJsonAsync("/api/APPUSER/3000000000", new UpdateAPPUSERDto { NIDUSER=3_000_000_000L, SUSERNAME="Wide key" })).StatusCode == HttpStatusCode.NoContent, "Corrected Int64 update contract");
@@ -102,6 +104,18 @@ foreach(var table in new[]{"TABLE8006","TABLE8007"})
 }
 Check((await client.PostAsJsonAsync("/api/TABLE8006",new CreateTABLE8006Dto {NTYPEAFEC=1,DCOMPDATE=DateTime.Today,NUSERCODE=1})).StatusCode==HttpStatusCode.Conflict,"API creation must be blocked");
 Check((await client.PutAsJsonAsync("/api/TABLE8007/1",new UpdateTABLE8007Dto {NAFECBASADI=1,DCOMPDATE=DateTime.Today,NUSERCODE=1})).StatusCode==HttpStatusCode.Conflict,"API updates must be blocked");
+var middlePage=await Page("/TABLE2000?page=2");
+Check(Regex.Matches(middlePage,"<tr>").Count==21,"Lists must default to 20 records");
+Check(middlePage.Contains("name=\"pageSize\""),"Every listing must expose a page-size selector");
+var fifty=await Page("/TABLE2000?pageSize=50");
+Check(Regex.Matches(fifty,"<tr>").Count==46 && fifty.Contains("data-page-size=\"50\""),"Selecting 50 must retrieve and render up to 50 records");
+var custom=await Page("/TABLE2000?pageSize=25");
+Check(Regex.Matches(custom,"<tr>").Count==26 && custom.Contains("value=\"25\""),"A valid custom page size must be retained");
+Check((await Page("/TABLE2000?pageSize=999")).Contains("data-page-size=\"20\""),"Invalid page sizes must return to the default");
+var lastPage=await Page("/TABLE2000?page=99999");
+Check(lastPage.Contains("Página 3 de 3") && Regex.Matches(lastPage,"<tr>").Count==6,"Last page must clamp to five remaining records");
+var searched=await Page("/TABLE2000?page=2&pageSize=10&q=Seed");
+Check(searched.Contains("q=Seed") && searched.Contains("pageSize=10") && searched.Contains("Anterior") && searched.Contains("Siguiente"),"Page links must preserve filters and selected size");
 
 // Exercise the real shared service and existing mappings with an isolated repository.
 var repository = new NumberRepository();
@@ -110,6 +124,8 @@ await realService.CreateAsync(new CreateTABLE2000Dto { NAPLY = 91, SDESCRIPT = "
 Check((await realService.GetByIdAsync(91))?.SDESCRIPT == "Mapped", "Real service create/get mapping");
 await realService.UpdateAsync(91, new UpdateTABLE2000Dto { NAPLY = 91, SDESCRIPT = "Mapped update" });
 Check((await realService.FindAsync(e => e.NAPLY == 91)).Single().SDESCRIPT == "Mapped update", "Real service update/find mapping");
+var mappedPage=await realService.GetListPageAsync(1);
+Check(mappedPage.PageSize==20 && mappedPage.TotalCount==1 && mappedPage.Items.Single().SDESCRIPT=="Mapped update","Shared service must delegate paged reads and retain its mapping");
 Check(await realService.DeleteAsync(91) && !await realService.DeleteAsync(91) && repository.Saves == 3, "Real service deletion and save boundaries");
 Console.WriteLine($"PASS: {checks} HTTP assertions: numeric/string keys, MVC CRUD, Razor, HTML encoding, invalid forms, CSRF and API routes. No Oracle connection.");
 await app.StopAsync();
@@ -129,6 +145,12 @@ abstract class MemoryCatalog<TDto,TCreate,TUpdate,TKey> : IService<TDto,TCreate,
     private readonly Dictionary<TKey,TDto> records = new();
     private readonly PropertyInfo key;
     private readonly TKey defaultKey;
+    protected void Seed(TKey id,string description)
+    {
+        var dto=new TDto();key.SetValue(dto,id);
+        typeof(TDto).GetProperty("SDESCRIPT")!.SetValue(dto,description);
+        records[id]=dto;
+    }
     protected MemoryCatalog(string keyName, TKey initialKey, TKey defaultKey, string descriptionProperty = "SDESCRIPT")
     {
         key = typeof(TDto).GetProperty(keyName)!;
@@ -145,6 +167,14 @@ abstract class MemoryCatalog<TDto,TCreate,TUpdate,TKey> : IService<TDto,TCreate,
         return dto;
     }
     public virtual Task<IEnumerable<TDto>> GetAllAsync() => Task.FromResult<IEnumerable<TDto>>(records.Values.ToList());
+    public async Task<PagedResult<TDto>> GetListPageAsync(int page=1,string? search=null,CancellationToken cancellationToken=default,int pageSize=ListingPolicy.DefaultPageSize)
+    {
+        var rows=(await GetAllAsync()).Where(dto=>string.IsNullOrWhiteSpace(search) || dto.GetType().GetProperties().Any(p=>p.GetValue(dto)?.ToString()?.Contains(search,StringComparison.OrdinalIgnoreCase)==true))
+            .OrderBy(dto=>key.GetValue(dto)).ToList();
+        pageSize=ListingPolicy.NormalizePageSize(pageSize);
+        page=(int)Math.Clamp(page,1,Math.Max(1,(rows.Count+pageSize-1L)/pageSize));
+        return new(rows.Skip((page-1)*pageSize).Take(pageSize).ToList(),rows.Count,page,pageSize);
+    }
     public Task<TDto?> GetByIdAsync(TKey id) => Task.FromResult(records.GetValueOrDefault(id));
     public Task<TDto> CreateAsync(TCreate create)
     {
@@ -163,7 +193,7 @@ abstract class MemoryCatalog<TDto,TCreate,TUpdate,TKey> : IService<TDto,TCreate,
 }
 sealed class NumberCatalog : MemoryCatalog<TABLE2000Dto,CreateTABLE2000Dto,UpdateTABLE2000Dto,long>, ITABLE2000Service
 {
-    public NumberCatalog() : base("NAPLY", 7, 42) { }
+    public NumberCatalog() : base("NAPLY", 7, 42) { for(var id=100;id<=143;id++)Seed(id,"Seed "+id); }
     public Task<IEnumerable<TABLE2000Dto>> FindAsync(Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE2000,bool>> predicate) => GetAllAsync();
 }
 sealed class StringCatalog : MemoryCatalog<TABLE999Dto,CreateTABLE999Dto,UpdateTABLE999Dto,string>, ITABLE999Service
@@ -198,6 +228,12 @@ sealed class NumberRepository : WEBVisualTime.Datos.Repositories.IRepository<WEB
     public Task<IEnumerable<WEBVisualTime.Entidades.Insudb.TABLE2000>> GetAllAsync() => Task.FromResult<IEnumerable<WEBVisualTime.Entidades.Insudb.TABLE2000>>(items);
     public Task<WEBVisualTime.Entidades.Insudb.TABLE2000?> GetByIdAsync(object id) => Task.FromResult(items.FirstOrDefault(e => e.NAPLY == Convert.ToInt64(id)));
     public Task<IEnumerable<WEBVisualTime.Entidades.Insudb.TABLE2000>> FindAsync(Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE2000,bool>> predicate) => Task.FromResult(items.Where(predicate.Compile()));
+    public Task<(IReadOnlyList<WEBVisualTime.Entidades.Insudb.TABLE2000> Items,long TotalCount,int Page)> GetListPageAsync(int page,string? search=null,CancellationToken cancellationToken=default,int pageSize=ListingPolicy.DefaultPageSize)
+    {
+        var filtered=items.Where(e=>string.IsNullOrEmpty(search)||e.SDESCRIPT?.Contains(search)==true).OrderBy(e=>e.NAPLY).ToList();
+        pageSize=ListingPolicy.NormalizePageSize(pageSize);
+        return Task.FromResult(((IReadOnlyList<WEBVisualTime.Entidades.Insudb.TABLE2000>)filtered.Skip((page-1)*pageSize).Take(pageSize).ToList(),(long)filtered.Count,page));
+    }
     public Task<(IReadOnlyList<WEBVisualTime.Entidades.Insudb.TABLE2000> Items,long TotalCount,int Page)> GetPageAsync(int page,int pageSize,Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE2000,object>> orderBy,Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE2000,bool>>? predicate=null,CancellationToken cancellationToken=default)
     {
         var filtered=predicate is null ? items : items.Where(predicate.Compile()).ToList();

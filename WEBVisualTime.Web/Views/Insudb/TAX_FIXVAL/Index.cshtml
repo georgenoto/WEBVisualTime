@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAX_FIXVAL.TAX_FIXVALDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "TAX_FIXVAL";
-    ViewData["ColumnHeaders"] = new[] { "NCODE", "TABLE5602", "TABLE5570", "DEFFECDATE", "NPERCENT", "DCOMPDATE", "NUSERCODE", "DNULLDATE", "SDESCRIPT", "NBRANCH", "NCURRENCY", "NAMOUNT" };
-    ViewData["ColumnProperties"] = new[] { "NCODE", "TABLE5602SDESCRIPT", "TABLE5570SDESCRIPT", "DEFFECDATE", "NPERCENT", "DCOMPDATE", "NUSERCODE", "DNULLDATE", "SDESCRIPT", "NBRANCH", "NCURRENCY", "NAMOUNT" };
-    ViewData["KeyName"] = "NCODE";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "TAX_FIXVAL", "NCODE", new[] { "NCODE", "TABLE5602SDESCRIPT", "TABLE5570SDESCRIPT", "DEFFECDATE", "NPERCENT", "DCOMPDATE", "NUSERCODE", "DNULLDATE", "SDESCRIPT", "NBRANCH", "NCURRENCY", "NAMOUNT" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("TAX_FIXVAL"),
+            new[] { "NCODE", "TABLE5602", "TABLE5570", "DEFFECDATE", "NPERCENT", "DCOMPDATE", "NUSERCODE", "DNULLDATE", "SDESCRIPT", "NBRANCH", "NCURRENCY", "NAMOUNT" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

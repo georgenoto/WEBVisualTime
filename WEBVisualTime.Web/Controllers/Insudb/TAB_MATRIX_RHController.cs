@@ -17,11 +17,9 @@ public class TAB_MATRIX_RHController : Controller
     }
 
     // GET: TAB_MATRIX_RH
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TAB_MATRIX_RH/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/TAB_MATRIX_RH/Index.cshtml");
 
     // GET: TAB_MATRIX_RH/Details/{id}
     public async Task<IActionResult> Details(int id)

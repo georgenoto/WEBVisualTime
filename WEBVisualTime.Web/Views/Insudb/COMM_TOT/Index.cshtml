@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.COMM_TOT.COMM_TOTDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "COMM_TOT";
-    ViewData["ColumnHeaders"] = new[] { "INTERMEDIA", "NRECEIPT", "CERTIFICATSCERTYPE", "CERTIFICATNBRANCH", "CERTIFICATNPRODUCT", "CERTIFICATNPOLICY", "CERTIFICATNCERTIF", "NDIGIT", "NPAYNUMBE", "NCOMM", "NMOVNUMBE", "NTOTALPREMIUM", "NTOTALCOMM" };
-    ViewData["ColumnProperties"] = new[] { "INTERMEDIASCOL_AGREE", "NRECEIPT", "CERTIFICATSCERTYPESCUMUL_CODE", "CERTIFICATNBRANCHSCUMUL_CODE", "CERTIFICATNPRODUCTSCUMUL_CODE", "CERTIFICATNPOLICYSCUMUL_CODE", "CERTIFICATNCERTIFSCUMUL_CODE", "NDIGIT", "NPAYNUMBE", "NCOMM", "NMOVNUMBE", "NTOTALPREMIUM", "NTOTALCOMM" };
-    ViewData["KeyName"] = "NCOMM";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "COMM_TOT", "NCOMM", new[] { "INTERMEDIASCOL_AGREE", "NRECEIPT", "CERTIFICATSCERTYPESCUMUL_CODE", "CERTIFICATNBRANCHSCUMUL_CODE", "CERTIFICATNPRODUCTSCUMUL_CODE", "CERTIFICATNPOLICYSCUMUL_CODE", "CERTIFICATNCERTIFSCUMUL_CODE", "NDIGIT", "NPAYNUMBE", "NCOMM", "NMOVNUMBE", "NTOTALPREMIUM", "NTOTALCOMM" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("COMM_TOT"),
+            new[] { "INTERMEDIA", "NRECEIPT", "CERTIFICATSCERTYPE", "CERTIFICATNBRANCH", "CERTIFICATNPRODUCT", "CERTIFICATNPOLICY", "CERTIFICATNCERTIF", "NDIGIT", "NPAYNUMBE", "NCOMM", "NMOVNUMBE", "NTOTALPREMIUM", "NTOTALCOMM" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

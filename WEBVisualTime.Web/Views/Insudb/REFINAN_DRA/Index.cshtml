@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.REFINAN_DRA.REFINAN_DRADto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "REFINAN_DRA";
-    ViewData["ColumnHeaders"] = new[] { "TABLE10", "NCOMMISSION", "DCOMPDATE", "NCONTRAT", "NCONTRAT_D", "NCURRENCY", "NDRAFT_D", "DSTARTDATE", "NEXCHANGE", "DEXPIRDAT", "NPREMIUM", "SSTAT_FINPR", "SSTATREGT", "CLIENT", "USERS", "TABLE252" };
-    ViewData["ColumnProperties"] = new[] { "TABLE10SDESCRIPT", "NCOMMISSION", "DCOMPDATE", "NCONTRAT", "NCONTRAT_D", "NCURRENCY", "NDRAFT_D", "DSTARTDATE", "NEXCHANGE", "DEXPIRDAT", "NPREMIUM", "SSTAT_FINPR", "SSTATREGT", "CLIENTSACCOUNT_IN", "USERSSACCESSWO", "TABLE252SDESCRIPT" };
-    ViewData["KeyName"] = "NCONTRAT";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "REFINAN_DRA", "NCONTRAT", new[] { "TABLE10SDESCRIPT", "NCOMMISSION", "DCOMPDATE", "NCONTRAT", "NCONTRAT_D", "NCURRENCY", "NDRAFT_D", "DSTARTDATE", "NEXCHANGE", "DEXPIRDAT", "NPREMIUM", "SSTAT_FINPR", "SSTATREGT", "CLIENTSACCOUNT_IN", "USERSSACCESSWO", "TABLE252SDESCRIPT" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("REFINAN_DRA"),
+            new[] { "TABLE10", "NCOMMISSION", "DCOMPDATE", "NCONTRAT", "NCONTRAT_D", "NCURRENCY", "NDRAFT_D", "DSTARTDATE", "NEXCHANGE", "DEXPIRDAT", "NPREMIUM", "SSTAT_FINPR", "SSTATREGT", "CLIENT", "USERS", "TABLE252" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.EXCHANGE.EXCHANGEDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "EXCHANGE";
-    ViewData["ColumnHeaders"] = new[] { "NCURRENCY", "DEFFECDATE", "DCOMPDATE", "NEXCHANGE", "DNULLDATE", "NUSERCODE" };
-    ViewData["ColumnProperties"] = new[] { "NCURRENCY", "DEFFECDATE", "DCOMPDATE", "NEXCHANGE", "DNULLDATE", "NUSERCODE" };
-    ViewData["KeyName"] = "NCURRENCY";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "EXCHANGE", "NCURRENCY", new[] { "NCURRENCY", "DEFFECDATE", "DCOMPDATE", "NEXCHANGE", "DNULLDATE", "NUSERCODE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("EXCHANGE"),
+            new[] { "NCURRENCY", "DEFFECDATE", "DCOMPDATE", "NEXCHANGE", "DNULLDATE", "NUSERCODE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

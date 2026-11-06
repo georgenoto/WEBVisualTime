@@ -33,11 +33,9 @@ public class CLAIM_ACTIONS_SCHEController : Controller
     }
 
     // GET: CLAIM_ACTIONS_SCHE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CLAIM_ACTIONS_SCHE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CLAIM_ACTIONS_SCHE/Index.cshtml");
 
     // GET: CLAIM_ACTIONS_SCHE/Details/{id}
     public async Task<IActionResult> Details(string id)

@@ -25,11 +25,9 @@ public class USER_OFFICEController : Controller
     }
 
     // GET: USER_OFFICE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/USER_OFFICE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/USER_OFFICE/Index.cshtml");
 
     // GET: USER_OFFICE/Details/{id}
     public async Task<IActionResult> Details(int id)

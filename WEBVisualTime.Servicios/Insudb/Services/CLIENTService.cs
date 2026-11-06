@@ -76,4 +76,9 @@ public class CLIENTService : ICLIENTService
         await _repository.SaveChangesAsync();
         return true;
     }
+
+    public Task<WEBVisualTime.Servicios.Services.Common.PagedResult<CLIENTDto>> GetListPageAsync(
+        int page = 1, string? search = null, CancellationToken cancellationToken = default, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize)
+        => WEBVisualTime.Servicios.Services.Common.PagedQueries.ReadAsync(
+            _repository, e => e.ToDto(), page, search, cancellationToken, pageSize);
 }

@@ -17,11 +17,9 @@ public class MEDICALTEAMS_FEESController : Controller
     }
 
     // GET: MEDICALTEAMS_FEES
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/MEDICALTEAMS_FEES/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/MEDICALTEAMS_FEES/Index.cshtml");
 
     // GET: MEDICALTEAMS_FEES/Details/{id}
     public async Task<IActionResult> Details(int id)

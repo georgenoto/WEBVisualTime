@@ -25,11 +25,9 @@ public class TAB_DOCUController : Controller
     }
 
     // GET: TAB_DOCU
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TAB_DOCU/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/TAB_DOCU/Index.cshtml");
 
     // GET: TAB_DOCU/Details/{id}
     public async Task<IActionResult> Details(int id)

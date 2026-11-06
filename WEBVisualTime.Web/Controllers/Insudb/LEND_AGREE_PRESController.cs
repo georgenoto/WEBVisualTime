@@ -29,11 +29,9 @@ public class LEND_AGREE_PRESController : Controller
     }
 
     // GET: LEND_AGREE_PRES
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/LEND_AGREE_PRES/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/LEND_AGREE_PRES/Index.cshtml");
 
     // GET: LEND_AGREE_PRES/Details/{id}
     public async Task<IActionResult> Details(string id)

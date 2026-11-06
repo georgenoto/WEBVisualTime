@@ -28,7 +28,8 @@ public abstract class CatalogController<TDto, TCreateDto, TUpdateDto, TKey> : Co
         return Page("ReadOnly", definition.ReadOnlyReason!);
     }
     [HttpGet]
-    public async Task<IActionResult> Index() => Page("Index", await service.GetAllAsync());
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => ListPageLoader.LoadAsync(this, service, page, q, "~/Views/Shared/Catalog/Index.cshtml", definition);
     [HttpGet]
     public async Task<IActionResult> Details(TKey id)
     {

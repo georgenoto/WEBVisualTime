@@ -33,11 +33,9 @@ public class PREMIUM_CEController : Controller
     }
 
     // GET: PREMIUM_CE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/PREMIUM_CE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/PREMIUM_CE/Index.cshtml");
 
     // GET: PREMIUM_CE/Details/{id}
     public async Task<IActionResult> Details(string id)

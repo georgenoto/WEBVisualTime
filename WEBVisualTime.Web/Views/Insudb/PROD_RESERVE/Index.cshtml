@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.PROD_RESERVE.PROD_RESERVEDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "PROD_RESERVE";
-    ViewData["ColumnHeaders"] = new[] { "NBRANCH", "NPRODUCT", "NMODULEC", "NCOVER", "NTYPE_RESERVE", "DEFFECDATE", "DNULLDATE", "SROURESER", "DCOMPDATE", "NUSERCODE", "NPERCRESER", "NRESEAMO", "NMAXPERCENT", "SROUTINECOST", "SMORTALCO" };
-    ViewData["ColumnProperties"] = new[] { "NBRANCH", "NPRODUCT", "NMODULEC", "NCOVER", "NTYPE_RESERVE", "DEFFECDATE", "DNULLDATE", "SROURESER", "DCOMPDATE", "NUSERCODE", "NPERCRESER", "NRESEAMO", "NMAXPERCENT", "SROUTINECOST", "SMORTALCO" };
-    ViewData["KeyName"] = "NBRANCH";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "PROD_RESERVE", "NBRANCH", new[] { "NBRANCH", "NPRODUCT", "NMODULEC", "NCOVER", "NTYPE_RESERVE", "DEFFECDATE", "DNULLDATE", "SROURESER", "DCOMPDATE", "NUSERCODE", "NPERCRESER", "NRESEAMO", "NMAXPERCENT", "SROUTINECOST", "SMORTALCO" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("PROD_RESERVE"),
+            new[] { "NBRANCH", "NPRODUCT", "NMODULEC", "NCOVER", "NTYPE_RESERVE", "DEFFECDATE", "DNULLDATE", "SROURESER", "DCOMPDATE", "NUSERCODE", "NPERCRESER", "NRESEAMO", "NMAXPERCENT", "SROUTINECOST", "SMORTALCO" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

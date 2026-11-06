@@ -11,6 +11,7 @@ using WEBVisualTime.Entidades.Insudb;
 using WEBVisualTime.Servicios.Insudb.DTOs.CLIENT;
 using WEBVisualTime.Servicios.Insudb.Services;
 using WEBVisualTime.Servicios.Services.Common;
+using WEBVisualTime.Entidades.Common;
 using ClientController = WEBVisualTime.Web.Insudb.Controllers.CLIENTController;
 
 var builder=WebApplication.CreateBuilder(args);
@@ -29,7 +30,7 @@ builder.Services.AddControllersWithViews().AddApplicationPart(typeof(ClientContr
 await using var app=builder.Build();
 app.UseExceptionHandler("/Home/Error");
 app.UseRouting();
-app.MapGet("/test-unhandled",()=> { throw new InvalidOperationException("PRIVATE-DATABASE-DETAIL"); return ""; });
+app.MapGet("/test-unhandled",(Func<string>)(()=>throw new InvalidOperationException("PRIVATE-DATABASE-DETAIL")));
 app.MapControllerRoute("default","{controller=Home}/{action=Index}/{id?}");
 await app.StartAsync();
 var address=app.Services.GetRequiredService<IServer>().Features.Get<IServerAddressesFeature>()!.Addresses.Single();
@@ -43,22 +44,22 @@ async Task<string> Get(string url,HttpStatusCode expected)
     return text;
 }
 var html=await Get("/CLIENT",HttpStatusCode.OK);
-Check(html.Contains("TEST-CLIENT") && html.Contains("4186 clientes"),"CLIENT must show records and the database total");
+Check(html.Contains("TEST-CLIENT") && html.Contains("4186 registros"),"CLIENT must show records and the database total");
 Check(html.Contains("Siguiente") && !html.Contains("data-table-search"),"CLIENT must use database paging and filtering");
 Check(service.LastSize==20 && !service.GetAllCalled,"CLIENT menu must not load every record");
 await Get("/CLIENT?page=2&pageSize=50&q=Ana",HttpStatusCode.OK);
-Check(service.LastPage==2 && service.LastSize==50 && service.LastSearch=="Ana","Paging and search parameters must reach the service");
+Check(service.LastPage==2 && service.LastSize==50 && service.LastSearch=="Ana","Selected page size and search must reach the service");
 await Get("/CLIENT?page=-7&pageSize=999",HttpStatusCode.OK);
 Check(service.LastPage==1 && service.LastSize==20,"Invalid paging must be bounded");
 service.Mode="empty";
 html=await Get("/CLIENT?q=missing",HttpStatusCode.OK);
-Check(html.Contains("alert-info") && html.Contains("no se encontraron clientes") && !html.Contains("alert-danger"),"Empty results must be distinguished from errors");
+Check(html.Contains("alert-info") && html.Contains("no se encontraron registros") && !html.Contains("alert-danger"),"Empty results must be distinguished from errors");
 foreach(var mode in new[]{"database","mapping","timeout"})
 {
     service.Mode=mode;
     html=await Get("/CLIENT",mode=="mapping"?HttpStatusCode.InternalServerError:HttpStatusCode.ServiceUnavailable);
     Check(html.Contains("alert-danger") && html.Contains("Referencia:") && html.Contains("Reintentar"),"Failures must have an actionable message and reference");
-    Check(!html.Contains("PRIVATE-DATABASE-DETAIL") && !html.Contains("no se encontraron clientes"),"Failures must not leak technical details or appear as empty results");
+    Check(!html.Contains("PRIVATE-DATABASE-DETAIL") && !html.Contains("no se encontraron registros"),"Failures must not leak technical details or appear as empty results");
 }
 Check(logs.Exceptions.Count>=3,"Load failures must be logged with their exceptions");
 html=await Get("/test-unhandled",HttpStatusCode.InternalServerError);
@@ -95,6 +96,8 @@ sealed class FakeClients:ICLIENTService
 {
     public string Mode="records";
     public int LastPage,LastSize; public string? LastSearch; public bool GetAllCalled;
+    public Task<PagedResult<CLIENTDto>> GetListPageAsync(int page=1,string? search=null,CancellationToken cancellationToken=default,int pageSize=ListingPolicy.DefaultPageSize)
+        => GetPageAsync(page,ListingPolicy.NormalizePageSize(pageSize),search,cancellationToken);
     public Task<PagedResult<CLIENTDto>> GetPageAsync(int page,int size,string? search=null,CancellationToken cancellationToken=default)
     {
         LastPage=page;LastSize=size;LastSearch=search;

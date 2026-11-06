@@ -29,11 +29,9 @@ public class MODUL_CO_GController : Controller
     }
 
     // GET: MODUL_CO_G
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/MODUL_CO_G/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/MODUL_CO_G/Index.cshtml");
 
     // GET: MODUL_CO_G/Details/{id}
     public async Task<IActionResult> Details(string id)

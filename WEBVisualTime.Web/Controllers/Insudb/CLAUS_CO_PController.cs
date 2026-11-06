@@ -21,11 +21,9 @@ public class CLAUS_CO_PController : Controller
     }
 
     // GET: CLAUS_CO_P
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CLAUS_CO_P/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CLAUS_CO_P/Index.cshtml");
 
     // GET: CLAUS_CO_P/Details/{id}
     public async Task<IActionResult> Details(string id)

@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAB_TYPERR.TAB_TYPERRDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "TAB_TYPERR";
-    ViewData["ColumnHeaders"] = new[] { "NTYPE_ERR", "TAB_TYPERRParent", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "STRANSITI", "DCOMPDATE", "NUSERCODE" };
-    ViewData["ColumnProperties"] = new[] { "NTYPE_ERR", "TAB_TYPERRParentSDESCRIPT", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "STRANSITI", "DCOMPDATE", "NUSERCODE" };
-    ViewData["KeyName"] = "NTYPE_ERR";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "TAB_TYPERR", "NTYPE_ERR", new[] { "NTYPE_ERR", "TAB_TYPERRParentSDESCRIPT", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "STRANSITI", "DCOMPDATE", "NUSERCODE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("TAB_TYPERR"),
+            new[] { "NTYPE_ERR", "TAB_TYPERRParent", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "STRANSITI", "DCOMPDATE", "NUSERCODE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

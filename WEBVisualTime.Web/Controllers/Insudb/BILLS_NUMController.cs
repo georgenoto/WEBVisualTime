@@ -21,11 +21,9 @@ public class BILLS_NUMController : Controller
     }
 
     // GET: BILLS_NUM
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/BILLS_NUM/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/BILLS_NUM/Index.cshtml");
 
     // GET: BILLS_NUM/Details/{id}
     public async Task<IActionResult> Details(int id)

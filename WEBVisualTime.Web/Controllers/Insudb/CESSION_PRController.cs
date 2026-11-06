@@ -49,11 +49,9 @@ public class CESSION_PRController : Controller
     }
 
     // GET: CESSION_PR
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CESSION_PR/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CESSION_PR/Index.cshtml");
 
     // GET: CESSION_PR/Details/{id}
     public async Task<IActionResult> Details(string id)

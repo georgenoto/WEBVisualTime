@@ -21,11 +21,9 @@ public class BRANPROD_ALLOWController : Controller
     }
 
     // GET: BRANPROD_ALLOW
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/BRANPROD_ALLOW/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/BRANPROD_ALLOW/Index.cshtml");
 
     // GET: BRANPROD_ALLOW/Details/{id}
     public async Task<IActionResult> Details(long id)

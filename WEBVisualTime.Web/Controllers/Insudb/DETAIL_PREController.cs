@@ -37,11 +37,9 @@ public class DETAIL_PREController : Controller
     }
 
     // GET: DETAIL_PRE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/DETAIL_PRE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/DETAIL_PRE/Index.cshtml");
 
     // GET: DETAIL_PRE/Details/{id}
     public async Task<IActionResult> Details(int id)

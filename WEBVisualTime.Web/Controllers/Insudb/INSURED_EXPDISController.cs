@@ -29,11 +29,9 @@ public class INSURED_EXPDISController : Controller
     }
 
     // GET: INSURED_EXPDIS
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/INSURED_EXPDIS/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/INSURED_EXPDIS/Index.cshtml");
 
     // GET: INSURED_EXPDIS/Details/{id}
     public async Task<IActionResult> Details(string id)

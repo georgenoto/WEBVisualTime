@@ -25,11 +25,9 @@ public class ROLDOCREQController : Controller
     }
 
     // GET: ROLDOCREQ
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/ROLDOCREQ/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/ROLDOCREQ/Index.cshtml");
 
     // GET: ROLDOCREQ/Details/{id}
     public async Task<IActionResult> Details(int id)

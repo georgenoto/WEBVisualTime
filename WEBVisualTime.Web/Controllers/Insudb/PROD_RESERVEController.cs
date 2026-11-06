@@ -17,11 +17,9 @@ public class PROD_RESERVEController : Controller
     }
 
     // GET: PROD_RESERVE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/PROD_RESERVE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/PROD_RESERVE/Index.cshtml");
 
     // GET: PROD_RESERVE/Details/{id}
     public async Task<IActionResult> Details(int id)

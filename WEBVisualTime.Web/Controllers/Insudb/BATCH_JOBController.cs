@@ -25,11 +25,9 @@ public class BATCH_JOBController : Controller
     }
 
     // GET: BATCH_JOB
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/BATCH_JOB/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/BATCH_JOB/Index.cshtml");
 
     // GET: BATCH_JOB/Details/{id}
     public async Task<IActionResult> Details(string id)

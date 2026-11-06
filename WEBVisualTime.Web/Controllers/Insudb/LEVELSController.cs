@@ -25,11 +25,9 @@ public class LEVELSController : Controller
     }
 
     // GET: LEVELS
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/LEVELS/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/LEVELS/Index.cshtml");
 
     // GET: LEVELS/Details/{id}
     public async Task<IActionResult> Details(string id)

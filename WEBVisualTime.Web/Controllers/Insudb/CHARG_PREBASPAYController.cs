@@ -17,11 +17,9 @@ public class CHARG_PREBASPAYController : Controller
     }
 
     // GET: CHARG_PREBASPAY
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CHARG_PREBASPAY/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CHARG_PREBASPAY/Index.cshtml");
 
     // GET: CHARG_PREBASPAY/Details/{id}
     public async Task<IActionResult> Details(int id)

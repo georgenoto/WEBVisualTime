@@ -33,11 +33,9 @@ public class ASCII_I_HEADController : Controller
     }
 
     // GET: ASCII_I_HEAD
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/ASCII_I_HEAD/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/ASCII_I_HEAD/Index.cshtml");
 
     // GET: ASCII_I_HEAD/Details/{id}
     public async Task<IActionResult> Details(string id)

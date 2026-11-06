@@ -21,11 +21,9 @@ public class GROUPVARIABLESController : Controller
     }
 
     // GET: GROUPVARIABLES
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/GROUPVARIABLES/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/GROUPVARIABLES/Index.cshtml");
 
     // GET: GROUPVARIABLES/Details/{id}
     public async Task<IActionResult> Details(int id)

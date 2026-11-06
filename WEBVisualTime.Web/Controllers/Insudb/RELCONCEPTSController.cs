@@ -37,11 +37,9 @@ public class RELCONCEPTSController : Controller
     }
 
     // GET: RELCONCEPTS
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/RELCONCEPTS/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/RELCONCEPTS/Index.cshtml");
 
     // GET: RELCONCEPTS/Details/{id}
     public async Task<IActionResult> Details(long id)

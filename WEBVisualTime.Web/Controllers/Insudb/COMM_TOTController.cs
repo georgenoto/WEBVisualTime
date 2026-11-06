@@ -25,11 +25,9 @@ public class COMM_TOTController : Controller
     }
 
     // GET: COMM_TOT
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/COMM_TOT/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/COMM_TOT/Index.cshtml");
 
     // GET: COMM_TOT/Details/{id}
     public async Task<IActionResult> Details(long id)

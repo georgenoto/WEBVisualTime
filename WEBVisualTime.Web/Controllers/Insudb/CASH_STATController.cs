@@ -21,11 +21,9 @@ public class CASH_STATController : Controller
     }
 
     // GET: CASH_STAT
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CASH_STAT/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CASH_STAT/Index.cshtml");
 
     // GET: CASH_STAT/Details/{id}
     public async Task<IActionResult> Details(int id)

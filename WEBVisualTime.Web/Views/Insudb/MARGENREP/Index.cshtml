@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.MARGENREP.MARGENREPDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "MARGENREP";
-    ViewData["ColumnHeaders"] = new[] { "NBRANCH", "NPRODUCT", "NREPTYPE", "SLOGO", "SLOG", "X1", "Y1", "NIMAGENX", "NIMAGENY", "NPOSIMGX", "NPOSIMGY", "NRADIOCURVA", "NSPACE", "DCOMPDATE", "NUSERCODE" };
-    ViewData["ColumnProperties"] = new[] { "NBRANCH", "NPRODUCT", "NREPTYPE", "SLOGO", "SLOG", "X1", "Y1", "NIMAGENX", "NIMAGENY", "NPOSIMGX", "NPOSIMGY", "NRADIOCURVA", "NSPACE", "DCOMPDATE", "NUSERCODE" };
-    ViewData["KeyName"] = "NBRANCH";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "MARGENREP", "NBRANCH", new[] { "NBRANCH", "NPRODUCT", "NREPTYPE", "SLOGO", "SLOG", "X1", "Y1", "NIMAGENX", "NIMAGENY", "NPOSIMGX", "NPOSIMGY", "NRADIOCURVA", "NSPACE", "DCOMPDATE", "NUSERCODE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("MARGENREP"),
+            new[] { "NBRANCH", "NPRODUCT", "NREPTYPE", "SLOGO", "SLOG", "X1", "Y1", "NIMAGENX", "NIMAGENY", "NPOSIMGX", "NPOSIMGY", "NRADIOCURVA", "NSPACE", "DCOMPDATE", "NUSERCODE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

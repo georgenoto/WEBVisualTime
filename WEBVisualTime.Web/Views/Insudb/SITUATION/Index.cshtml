@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.SITUATION.SITUATIONDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "SITUATION";
-    ViewData["ColumnHeaders"] = new[] { "POLICYSCERTYPE", "POLICYNBRANCH", "POLICYNPRODUCT", "POLICYNPOLICY", "NSITUATION", "NCOD_AGREE", "CLIENT", "DCOMPDATE", "SDESCRIPT", "NUSERCODE", "NPARTICIP_POLEMP", "NPARTICIP_POLCO", "NTYPCLIENTDOC" };
-    ViewData["ColumnProperties"] = new[] { "POLICYSCERTYPESACCOUNTI", "POLICYNBRANCHSACCOUNTI", "POLICYNPRODUCTSACCOUNTI", "POLICYNPOLICYSACCOUNTI", "NSITUATION", "NCOD_AGREE", "CLIENTSACCOUNT_IN", "DCOMPDATE", "SDESCRIPT", "NUSERCODE", "NPARTICIP_POLEMP", "NPARTICIP_POLCO", "NTYPCLIENTDOC" };
-    ViewData["KeyName"] = "SCERTYPE";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "SITUATION", "SCERTYPE", new[] { "POLICYSCERTYPESACCOUNTI", "POLICYNBRANCHSACCOUNTI", "POLICYNPRODUCTSACCOUNTI", "POLICYNPOLICYSACCOUNTI", "NSITUATION", "NCOD_AGREE", "CLIENTSACCOUNT_IN", "DCOMPDATE", "SDESCRIPT", "NUSERCODE", "NPARTICIP_POLEMP", "NPARTICIP_POLCO", "NTYPCLIENTDOC" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("SITUATION"),
+            new[] { "POLICYSCERTYPE", "POLICYNBRANCH", "POLICYNPRODUCT", "POLICYNPOLICY", "NSITUATION", "NCOD_AGREE", "CLIENT", "DCOMPDATE", "SDESCRIPT", "NUSERCODE", "NPARTICIP_POLEMP", "NPARTICIP_POLCO", "NTYPCLIENTDOC" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

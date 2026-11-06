@@ -21,11 +21,9 @@ public class GROUP_COLUMNSController : Controller
     }
 
     // GET: GROUP_COLUMNS
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/GROUP_COLUMNS/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/GROUP_COLUMNS/Index.cshtml");
 
     // GET: GROUP_COLUMNS/Details/{id}
     public async Task<IActionResult> Details(int id)

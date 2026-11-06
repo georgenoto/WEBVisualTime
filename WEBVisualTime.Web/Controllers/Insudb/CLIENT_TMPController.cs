@@ -25,11 +25,9 @@ public class CLIENT_TMPController : Controller
     }
 
     // GET: CLIENT_TMP
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CLIENT_TMP/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CLIENT_TMP/Index.cshtml");
 
     // GET: CLIENT_TMP/Details/{id}
     public async Task<IActionResult> Details(string id)

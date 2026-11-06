@@ -1,62 +1,11 @@
-@model WEBVisualTime.Web.Models.ClientIndexViewModel
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "CLIENT";
-    ViewData["ColumnHeaders"] = new[] { "SCLIENT", "SACCOUNT_IN", "TABLE5522", "TABLE14", "DAPROBDATE", "DBIRTHDAT", "SBLOCKADE", "TABLE146", "SFIRSTNAME", "SLASTNAME", "DCOMPDATE", "DDEATHDAT", "DDRIVERDAT", "NHEIGHT", "DINPDATE", "TABLE149", "SLICENSE", "NNOTENUM", "TABLE9", "NQ_CARS", "NQ_CHILD", "NRATE", "STAX_CODE", "TABLE18", "SSMOKING", "SCUIT", "TABLE222", "NUSERCODE", "NWEIGHT", "SAUTO_CHAR", "SCREDIT_CARD", "TABLE147", "NEMPL_QUA", "NIMAGENUM", "TABLE5006", "TABLE5503", "DDRIVEXPDAT", "TABLE5504", "TABLE5505", "TABLE5521", "SLEGALNAME", "SLASTNAME2", "TABLE5523", "TABLE5524", "DWEDD", "SBILL_IND", "TABLE5549", "DINCAPACITY", "TABLE5550", "TABLE5518", "SDIGIT", "DRETIREMENT", "DINDEPENDANT", "DDEPENDANT", "NMAILINGPREF", "TABLE85", "NSPECIALITY", "NCOMP_TYPE", "SCLIENAME", "SLEDGERPROCESS", "SCOMPLCOD", "NTYPECOMPANY", "SFATCA", "SCLIENTPEP", "SUSPERSON", "NADDRESSID", "NPHONEID", "SCRS", "SMARRIEDSURNAME", "SSPOUSENAME", "SOTHERTITLE", "SOTHERSPECIALITY", "TABLE66NRESIDENCECOUNTRY", "TABLE66NBIRTHCOUNTRY", "TABLE9213", "NCLASEMPRESALEGAL" };
-    ViewData["ColumnProperties"] = new[] { "SCLIENT", "SACCOUNT_IN", "TABLE5522SDESCRIPT", "TABLE14SDESCRIPT", "DAPROBDATE", "DBIRTHDAT", "SBLOCKADE", "TABLE146SDESCRIPT", "SFIRSTNAME", "SLASTNAME", "DCOMPDATE", "DDEATHDAT", "DDRIVERDAT", "NHEIGHT", "DINPDATE", "TABLE149SDESCRIPT", "SLICENSE", "NNOTENUM", "TABLE9SDESCRIPT", "NQ_CARS", "NQ_CHILD", "NRATE", "STAX_CODE", "TABLE18SDESCRIPT", "SSMOKING", "SCUIT", "TABLE222SDESCRIPT", "NUSERCODE", "NWEIGHT", "SAUTO_CHAR", "SCREDIT_CARD", "TABLE147SDESCRIPT", "NEMPL_QUA", "NIMAGENUM", "TABLE5006SDESCRIPT", "TABLE5503SDESCRIPT", "DDRIVEXPDAT", "TABLE5504SDESCRIPT", "TABLE5505SDESCRIPT", "TABLE5521SDESCRIPT", "SLEGALNAME", "SLASTNAME2", "TABLE5523SDESCRIPT", "TABLE5524SDESCRIPT", "DWEDD", "SBILL_IND", "TABLE5549SDESCRIPT", "DINCAPACITY", "TABLE5550SDESCRIPT", "TABLE5518SDESCRIPT", "SDIGIT", "DRETIREMENT", "DINDEPENDANT", "DDEPENDANT", "NMAILINGPREF", "TABLE85SDESCRIPT", "NSPECIALITY", "NCOMP_TYPE", "SCLIENAME", "SLEDGERPROCESS", "SCOMPLCOD", "NTYPECOMPANY", "SFATCA", "SCLIENTPEP", "SUSPERSON", "NADDRESSID", "NPHONEID", "SCRS", "SMARRIEDSURNAME", "SSPOUSENAME", "SOTHERTITLE", "SOTHERSPECIALITY", "TABLE66NRESIDENCECOUNTRYSDESCRIPT", "TABLE66NBIRTHCOUNTRYSDESCRIPT", "TABLE9213SDESCRIPT", "NCLASEMPRESALEGAL" };
-    ViewData["KeyName"] = "SCLIENT";
-    ViewData["PageSize"] = Model.Result.PageSize;
-    ViewData["ServerPaging"] = true;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "CLIENT", "SCLIENT", new[] { "SCLIENT", "SACCOUNT_IN", "TABLE5522SDESCRIPT", "TABLE14SDESCRIPT", "DAPROBDATE", "DBIRTHDAT", "SBLOCKADE", "TABLE146SDESCRIPT", "SFIRSTNAME", "SLASTNAME", "DCOMPDATE", "DDEATHDAT", "DDRIVERDAT", "NHEIGHT", "DINPDATE", "TABLE149SDESCRIPT", "SLICENSE", "NNOTENUM", "TABLE9SDESCRIPT", "NQ_CARS", "NQ_CHILD", "NRATE", "STAX_CODE", "TABLE18SDESCRIPT", "SSMOKING", "SCUIT", "TABLE222SDESCRIPT", "NUSERCODE", "NWEIGHT", "SAUTO_CHAR", "SCREDIT_CARD", "TABLE147SDESCRIPT", "NEMPL_QUA", "NIMAGENUM", "TABLE5006SDESCRIPT", "TABLE5503SDESCRIPT", "DDRIVEXPDAT", "TABLE5504SDESCRIPT", "TABLE5505SDESCRIPT", "TABLE5521SDESCRIPT", "SLEGALNAME", "SLASTNAME2", "TABLE5523SDESCRIPT", "TABLE5524SDESCRIPT", "DWEDD", "SBILL_IND", "TABLE5549SDESCRIPT", "DINCAPACITY", "TABLE5550SDESCRIPT", "TABLE5518SDESCRIPT", "SDIGIT", "DRETIREMENT", "DINDEPENDANT", "DDEPENDANT", "NMAILINGPREF", "TABLE85SDESCRIPT", "NSPECIALITY", "NCOMP_TYPE", "SCLIENAME", "SLEDGERPROCESS", "SCOMPLCOD", "NTYPECOMPANY", "SFATCA", "SCLIENTPEP", "SUSPERSON", "NADDRESSID", "NPHONEID", "SCRS", "SMARRIEDSURNAME", "SSPOUSENAME", "SOTHERTITLE", "SOTHERSPECIALITY", "TABLE66NRESIDENCECOUNTRYSDESCRIPT", "TABLE66NBIRTHCOUNTRYSDESCRIPT", "TABLE9213SDESCRIPT", "NCLASEMPRESALEGAL" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("CLIENT"),
+            new[] { "SCLIENT", "SACCOUNT_IN", "TABLE5522", "TABLE14", "DAPROBDATE", "DBIRTHDAT", "SBLOCKADE", "TABLE146", "SFIRSTNAME", "SLASTNAME", "DCOMPDATE", "DDEATHDAT", "DDRIVERDAT", "NHEIGHT", "DINPDATE", "TABLE149", "SLICENSE", "NNOTENUM", "TABLE9", "NQ_CARS", "NQ_CHILD", "NRATE", "STAX_CODE", "TABLE18", "SSMOKING", "SCUIT", "TABLE222", "NUSERCODE", "NWEIGHT", "SAUTO_CHAR", "SCREDIT_CARD", "TABLE147", "NEMPL_QUA", "NIMAGENUM", "TABLE5006", "TABLE5503", "DDRIVEXPDAT", "TABLE5504", "TABLE5505", "TABLE5521", "SLEGALNAME", "SLASTNAME2", "TABLE5523", "TABLE5524", "DWEDD", "SBILL_IND", "TABLE5549", "DINCAPACITY", "TABLE5550", "TABLE5518", "SDIGIT", "DRETIREMENT", "DINDEPENDANT", "DDEPENDANT", "NMAILINGPREF", "TABLE85", "NSPECIALITY", "NCOMP_TYPE", "SCLIENAME", "SLEDGERPROCESS", "SCOMPLCOD", "NTYPECOMPANY", "SFATCA", "SCLIENTPEP", "SUSPERSON", "NADDRESSID", "NPHONEID", "SCRS", "SMARRIEDSURNAME", "SSPOUSENAME", "SOTHERTITLE", "SOTHERSPECIALITY", "TABLE66NRESIDENCECOUNTRY", "TABLE66NBIRTHCOUNTRY", "TABLE9213", "NCLASEMPRESALEGAL" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-<form asp-action="Index" method="get" class="d-flex flex-wrap gap-2 align-items-end mb-3">
-    <div>
-        <label for="q" class="form-label">Buscar por código, nombre o razón social</label>
-        <input type="search" id="q" name="q" value="@Model.Search" maxlength="100" class="form-control" />
-    </div>
-    <div>
-        <label for="pageSize" class="form-label">Registros por página</label>
-        <select id="pageSize" name="pageSize" class="form-select">
-            @foreach (var size in new[] {20, 50, 100}) { <option value="@size" selected="@(size == Model.Result.PageSize)">@size</option> }
-        </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Buscar</button>
-    <a asp-action="Index" class="btn btn-outline-secondary">Limpiar</a>
-</form>
-
-@if (Model.ErrorMessage is not null)
-{
-    <div class="alert alert-danger" role="alert">
-        <p>@Model.ErrorMessage</p>
-        <p class="mb-0">Referencia: <strong>@Model.ErrorReference</strong></p>
-    </div>
-    <a asp-action="Index" asp-route-page="@Model.Result.Page" asp-route-pageSize="@Model.Result.PageSize" asp-route-q="@Model.Search" class="btn btn-primary">Reintentar</a>
-}
-else if (Model.Result.TotalCount == 0)
-{
-    <div class="alert alert-info" role="status">La consulta se completó, pero no se encontraron clientes@(string.IsNullOrEmpty(Model.Search) ? "." : " con el criterio de búsqueda indicado.")</div>
-}
-else
-{
-    <p role="status">Mostrando @((Model.Result.Page - 1L) * Model.Result.PageSize + 1)–@(Math.Min(Model.Result.Page * (long)Model.Result.PageSize, Model.Result.TotalCount)) de @Model.Result.TotalCount clientes.</p>
-    @await Html.PartialAsync("_DataTable", Model.Result.Items)
-    <nav aria-label="Páginas de clientes" class="d-flex gap-3 align-items-center">
-        @if (Model.Result.Page > 1)
-        {
-            <a asp-action="Index" asp-route-page="@(Model.Result.Page - 1)" asp-route-pageSize="@Model.Result.PageSize" asp-route-q="@Model.Search" class="btn btn-outline-primary">Anterior</a>
-        }
-        <span>Página @Model.Result.Page de @Model.Result.TotalPages</span>
-        @if (Model.Result.Page < Model.Result.TotalPages)
-        {
-            <a asp-action="Index" asp-route-page="@(Model.Result.Page + 1)" asp-route-pageSize="@Model.Result.PageSize" asp-route-q="@Model.Search" class="btn btn-outline-primary">Siguiente</a>
-        }
-    </nav>
-}
-
-@section Scripts {
-    @* CLIENT uses database paging and filtering; the browser renders only this page. *@
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

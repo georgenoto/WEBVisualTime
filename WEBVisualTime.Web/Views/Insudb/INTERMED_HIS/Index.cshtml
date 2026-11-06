@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.INTERMED_HIS.INTERMED_HISDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "INTERMED_HIS";
-    ViewData["ColumnHeaders"] = new[] { "INTERMEDIA", "DEFFECDATE", "TABLE163", "INTERM_TYP", "TABLE9", "NSUPERVIS", "TABLE200", "NUSERCODE", "DCOMPDATE", "NRECEPTYP", "SDESCRIPT" };
-    ViewData["ColumnProperties"] = new[] { "INTERMEDIASCOL_AGREE", "DEFFECDATE", "TABLE163SDESCRIPT", "INTERM_TYPSDESCRIPT", "TABLE9SDESCRIPT", "NSUPERVIS", "TABLE200SDESCRIPT", "NUSERCODE", "DCOMPDATE", "NRECEPTYP", "SDESCRIPT" };
-    ViewData["KeyName"] = "NINTERMED";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "INTERMED_HIS", "NINTERMED", new[] { "INTERMEDIASCOL_AGREE", "DEFFECDATE", "TABLE163SDESCRIPT", "INTERM_TYPSDESCRIPT", "TABLE9SDESCRIPT", "NSUPERVIS", "TABLE200SDESCRIPT", "NUSERCODE", "DCOMPDATE", "NRECEPTYP", "SDESCRIPT" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("INTERMED_HIS"),
+            new[] { "INTERMEDIA", "DEFFECDATE", "TABLE163", "INTERM_TYP", "TABLE9", "NSUPERVIS", "TABLE200", "NUSERCODE", "DCOMPDATE", "NRECEPTYP", "SDESCRIPT" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

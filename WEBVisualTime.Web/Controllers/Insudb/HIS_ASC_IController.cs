@@ -37,11 +37,9 @@ public class HIS_ASC_IController : Controller
     }
 
     // GET: HIS_ASC_I
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/HIS_ASC_I/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/HIS_ASC_I/Index.cshtml");
 
     // GET: HIS_ASC_I/Details/{id}
     public async Task<IActionResult> Details(int id)

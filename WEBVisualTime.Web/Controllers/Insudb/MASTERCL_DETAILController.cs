@@ -25,11 +25,9 @@ public class MASTERCL_DETAILController : Controller
     }
 
     // GET: MASTERCL_DETAIL
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/MASTERCL_DETAIL/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/MASTERCL_DETAIL/Index.cshtml");
 
     // GET: MASTERCL_DETAIL/Details/{id}
     public async Task<IActionResult> Details(long id)

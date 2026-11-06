@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAB_AU_VEH.TAB_AU_VEHDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "TAB_AU_VEH";
-    ViewData["ColumnHeaders"] = new[] { "SVEHCODE", "SDESCRIPT", "NNATIONAL", "NVEHBRAND", "SSTATREGT", "SVEHMODEL", "TABLE226", "DCOMPDATE", "NUSERCODE", "NVEHPLACE", "NVEHPMA", "NSOAP_VEHTYPE", "SAACHCODE", "NGROUPVEH" };
-    ViewData["ColumnProperties"] = new[] { "SVEHCODE", "SDESCRIPT", "NNATIONAL", "NVEHBRAND", "SSTATREGT", "SVEHMODEL", "TABLE226SDESCRIPT", "DCOMPDATE", "NUSERCODE", "NVEHPLACE", "NVEHPMA", "NSOAP_VEHTYPE", "SAACHCODE", "NGROUPVEH" };
-    ViewData["KeyName"] = "SVEHCODE";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "TAB_AU_VEH", "SVEHCODE", new[] { "SVEHCODE", "SDESCRIPT", "NNATIONAL", "NVEHBRAND", "SSTATREGT", "SVEHMODEL", "TABLE226SDESCRIPT", "DCOMPDATE", "NUSERCODE", "NVEHPLACE", "NVEHPMA", "NSOAP_VEHTYPE", "SAACHCODE", "NGROUPVEH" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("TAB_AU_VEH"),
+            new[] { "SVEHCODE", "SDESCRIPT", "NNATIONAL", "NVEHBRAND", "SSTATREGT", "SVEHMODEL", "TABLE226", "DCOMPDATE", "NUSERCODE", "NVEHPLACE", "NVEHPMA", "NSOAP_VEHTYPE", "SAACHCODE", "NGROUPVEH" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

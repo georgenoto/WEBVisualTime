@@ -25,11 +25,9 @@ public class LIFE_SPECIController : Controller
     }
 
     // GET: LIFE_SPECI
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/LIFE_SPECI/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/LIFE_SPECI/Index.cshtml");
 
     // GET: LIFE_SPECI/Details/{id}
     public async Task<IActionResult> Details(long id)

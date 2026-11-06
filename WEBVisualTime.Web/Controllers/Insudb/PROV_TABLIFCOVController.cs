@@ -29,11 +29,9 @@ public class PROV_TABLIFCOVController : Controller
     }
 
     // GET: PROV_TABLIFCOV
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/PROV_TABLIFCOV/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/PROV_TABLIFCOV/Index.cshtml");
 
     // GET: PROV_TABLIFCOV/Details/{id}
     public async Task<IActionResult> Details(int id)

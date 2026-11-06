@@ -29,11 +29,9 @@ public class TAB_PROV_FEESController : Controller
     }
 
     // GET: TAB_PROV_FEES
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TAB_PROV_FEES/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/TAB_PROV_FEES/Index.cshtml");
 
     // GET: TAB_PROV_FEES/Details/{id}
     public async Task<IActionResult> Details(int id)

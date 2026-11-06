@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.AGENCIES.AGENCIESDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "AGENCIES";
-    ViewData["ColumnHeaders"] = new[] { "TABLE5555", "TABLE5556", "TABLE9", "NUSERCODE", "DCOMPDATE", "SPAY" };
-    ViewData["ColumnProperties"] = new[] { "TABLE5555SDESCRIPT", "TABLE5556SDESCRIPT", "TABLE9SDESCRIPT", "NUSERCODE", "DCOMPDATE", "SPAY" };
-    ViewData["KeyName"] = "NAGENCY";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "AGENCIES", "NAGENCY", new[] { "TABLE5555SDESCRIPT", "TABLE5556SDESCRIPT", "TABLE9SDESCRIPT", "NUSERCODE", "DCOMPDATE", "SPAY" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("AGENCIES"),
+            new[] { "TABLE5555", "TABLE5556", "TABLE9", "NUSERCODE", "DCOMPDATE", "SPAY" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

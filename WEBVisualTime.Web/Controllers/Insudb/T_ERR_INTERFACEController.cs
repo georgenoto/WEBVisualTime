@@ -17,11 +17,9 @@ public class T_ERR_INTERFACEController : Controller
     }
 
     // GET: T_ERR_INTERFACE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/T_ERR_INTERFACE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/T_ERR_INTERFACE/Index.cshtml");
 
     // GET: T_ERR_INTERFACE/Details/{id}
     public async Task<IActionResult> Details(string id)

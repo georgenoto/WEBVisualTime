@@ -25,11 +25,9 @@ public class OFF_ACCController : Controller
     }
 
     // GET: OFF_ACC
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/OFF_ACC/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/OFF_ACC/Index.cshtml");
 
     // GET: OFF_ACC/Details/{id}
     public async Task<IActionResult> Details(string id)

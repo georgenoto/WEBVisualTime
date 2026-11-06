@@ -17,11 +17,9 @@ public class CL_COVERMAController : Controller
     }
 
     // GET: CL_COVERMA
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CL_COVERMA/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CL_COVERMA/Index.cshtml");
 
     // GET: CL_COVERMA/Details/{id}
     public async Task<IActionResult> Details(int id)

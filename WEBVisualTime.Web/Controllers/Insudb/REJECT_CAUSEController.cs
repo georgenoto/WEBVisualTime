@@ -21,11 +21,9 @@ public class REJECT_CAUSEController : Controller
     }
 
     // GET: REJECT_CAUSE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/REJECT_CAUSE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/REJECT_CAUSE/Index.cshtml");
 
     // GET: REJECT_CAUSE/Details/{id}
     public async Task<IActionResult> Details(int id)

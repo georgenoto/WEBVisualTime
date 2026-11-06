@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.BATCH_JOB.BATCH_JOBDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "BATCH_JOB";
-    ViewData["ColumnHeaders"] = new[] { "SKEY", "BATCH_PROCESS", "DSTART", "DEND", "NSTATUS", "DCOMPDATE", "USERS", "SCOMMAND", "DSUBMIT", "NORAJOB", "NUSERSUBMIT", "NSHEET", "SKEY_FATHER", "SOUTPUTFILE", "SFILE", "SVERIFIED_PLA" };
-    ViewData["ColumnProperties"] = new[] { "SKEY", "BATCH_PROCESSSCODISPL", "DSTART", "DEND", "NSTATUS", "DCOMPDATE", "USERSSACCESSWO", "SCOMMAND", "DSUBMIT", "NORAJOB", "NUSERSUBMIT", "NSHEET", "SKEY_FATHER", "SOUTPUTFILE", "SFILE", "SVERIFIED_PLA" };
-    ViewData["KeyName"] = "SKEY";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "BATCH_JOB", "SKEY", new[] { "SKEY", "BATCH_PROCESSSCODISPL", "DSTART", "DEND", "NSTATUS", "DCOMPDATE", "USERSSACCESSWO", "SCOMMAND", "DSUBMIT", "NORAJOB", "NUSERSUBMIT", "NSHEET", "SKEY_FATHER", "SOUTPUTFILE", "SFILE", "SVERIFIED_PLA" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("BATCH_JOB"),
+            new[] { "SKEY", "BATCH_PROCESS", "DSTART", "DEND", "NSTATUS", "DCOMPDATE", "USERS", "SCOMMAND", "DSUBMIT", "NORAJOB", "NUSERSUBMIT", "NSHEET", "SKEY_FATHER", "SOUTPUTFILE", "SFILE", "SVERIFIED_PLA" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

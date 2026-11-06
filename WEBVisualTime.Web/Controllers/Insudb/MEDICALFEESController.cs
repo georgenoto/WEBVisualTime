@@ -17,11 +17,9 @@ public class MEDICALFEESController : Controller
     }
 
     // GET: MEDICALFEES
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/MEDICALFEES/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/MEDICALFEES/Index.cshtml");
 
     // GET: MEDICALFEES/Details/{id}
     public async Task<IActionResult> Details(int id)

@@ -61,11 +61,9 @@ public class PRODUCT_LIController : Controller
     }
 
     // GET: PRODUCT_LI
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/PRODUCT_LI/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/PRODUCT_LI/Index.cshtml");
 
     // GET: PRODUCT_LI/Details/{id}
     public async Task<IActionResult> Details(int id)

@@ -1,0 +1,97 @@
+@model WEBVisualTime.Web.Models.ListPageViewModel
+@{
+    var table = Model.Definition ?? throw new InvalidOperationException("Missing table definition.");
+    ViewData["Title"] = table.Name;
+    var firstPage = Math.Max(1, Model.Page - 2);
+    var lastPage = Math.Min(Model.TotalPages, Model.Page + 2L);
+}
+<h1 class="mb-4">@table.Name</h1>
+@if (table.ReadOnlyReason is null)
+{
+    <p><a asp-action="Create" class="btn btn-primary">Crear Nuevo</a></p>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">@table.ReadOnlyReason</div>
+}
+<form asp-action="Index" method="get" class="d-flex flex-wrap gap-2 align-items-end mb-3" role="search">
+    <div>
+        <label for="list-search" class="form-label">Buscar texto, código exacto o fecha (AAAA-MM-DD)</label>
+        <input type="search" id="list-search" name="q" value="@Model.Search" maxlength="100" class="form-control" />
+    </div>
+    <div>
+        <label for="list-page-size" class="form-label">Registros por página</label>
+        <select id="list-page-size" name="pageSize" class="form-select">
+            @foreach (var size in new[] {10, 20, 50, 100}.Append(Model.PageSize).Distinct().OrderBy(size => size))
+            {
+                <option value="@size" selected="@(size == Model.PageSize)">@size</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Aplicar</button>
+    <a asp-action="Index" asp-route-pageSize="@Model.PageSize" class="btn btn-outline-secondary">Limpiar búsqueda</a>
+</form>
+@if (Model.ErrorMessage is not null)
+{
+    <div class="alert alert-danger" role="alert">
+        <p>@Model.ErrorMessage</p><p class="mb-0">Referencia: <strong>@Model.ErrorReference</strong></p>
+    </div>
+    <a asp-action="Index" asp-route-page="@Model.Page" asp-route-pageSize="@Model.PageSize" asp-route-q="@Model.Search" class="btn btn-primary">Reintentar</a>
+}
+else if (Model.TotalCount == 0)
+{
+    <div class="alert alert-info" role="status">La consulta se completó, pero no se encontraron registros@(string.IsNullOrEmpty(Model.Search) ? "." : " con el criterio de búsqueda indicado.")</div>
+}
+else
+{
+    <p role="status">Mostrando @((Model.Page - 1L) * Model.PageSize + 1)–@((Model.Page - 1L) * Model.PageSize + Model.Items.Count) de @Model.TotalCount registros.</p>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover" data-page-size="@Model.PageSize">
+            <caption class="visually-hidden">@table.Name, página @Model.Page de @Model.TotalPages</caption>
+            <thead class="table-dark"><tr>
+                @for (var i = 0; i < table.Columns.Length; i++)
+                {
+                    <th scope="col">@(table.Headers is { } headers && i < headers.Length ? headers[i] : table.Columns[i])</th>
+                }
+                @if (table.ReadOnlyReason is null) { <th scope="col">Acciones</th> }
+            </tr></thead>
+            <tbody>
+                @foreach (var row in Model.Items)
+                {
+                    <tr>
+                        @foreach (var column in table.Columns) { <td>@Model.Value(row, column)</td> }
+                        @if (table.ReadOnlyReason is null)
+                        {
+                            var key = Model.Value(row, table.Key);
+                            <td class="text-nowrap">
+                                <a asp-action="Edit" asp-route-id="@key" class="btn btn-sm btn-warning">Editar</a>
+                                <a asp-action="Details" asp-route-id="@key" class="btn btn-sm btn-info">Detalles</a>
+                                <a asp-action="Delete" asp-route-id="@key" class="btn btn-sm btn-danger">Eliminar</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <nav aria-label="Páginas de @table.Name">
+        <ul class="pagination flex-wrap">
+            @if (Model.Page > 1)
+            {
+                <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page="1" asp-route-pageSize="@Model.PageSize" asp-route-q="@Model.Search">Primera</a></li>
+                <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page="@(Model.Page - 1)" asp-route-pageSize="@Model.PageSize" asp-route-q="@Model.Search">Anterior</a></li>
+            }
+            @for (var number = firstPage; number <= lastPage; number++)
+            {
+                if (number == Model.Page) { <li class="page-item active"><span class="page-link" aria-current="page">@number</span></li> }
+                else { <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page="@number" asp-route-pageSize="@Model.PageSize" asp-route-q="@Model.Search">@number</a></li> }
+            }
+            @if (Model.Page < Model.TotalPages)
+            {
+                <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page="@(Model.Page + 1)" asp-route-pageSize="@Model.PageSize" asp-route-q="@Model.Search">Siguiente</a></li>
+                <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page="@Model.TotalPages" asp-route-pageSize="@Model.PageSize" asp-route-q="@Model.Search">Última</a></li>
+            }
+        </ul>
+        <span>Página @Model.Page de @Model.TotalPages</span>
+    </nav>
+}

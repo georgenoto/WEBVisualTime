@@ -21,11 +21,9 @@ public class INTERM_TYPController : Controller
     }
 
     // GET: INTERM_TYP
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/INTERM_TYP/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/INTERM_TYP/Index.cshtml");
 
     // GET: INTERM_TYP/Details/{id}
     public async Task<IActionResult> Details(int id)

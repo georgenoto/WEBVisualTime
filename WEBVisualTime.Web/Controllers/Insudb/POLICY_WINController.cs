@@ -21,11 +21,9 @@ public class POLICY_WINController : Controller
     }
 
     // GET: POLICY_WIN
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/POLICY_WIN/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/POLICY_WIN/Index.cshtml");
 
     // GET: POLICY_WIN/Details/{id}
     public async Task<IActionResult> Details(string id)

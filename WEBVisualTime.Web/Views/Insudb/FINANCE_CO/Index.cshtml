@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.FINANCE_CO.FINANCE_CODto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "FINANCE_CO";
-    ViewData["ColumnHeaders"] = new[] { "NAMOUNT", "TABLE250", "NAMOUNT_D", "CLIENT", "DCOMPDATE", "NCONTRAT", "NCURRENCY", "DEFFECDATE", "DDATE_PRINT", "NDSCTO_AMO", "TABLE278", "DFIRST_DRAF", "NINITIAL", "NINITIAL_OR", "NINTEREST", "DLEDGER_DAT", "NNOTENUM", "DNULLDATE", "TABLE9", "SOPT_COMMI", "SPAYMENT_IN", "NQ_DRAFT", "SWAIT_CONTR", "USERS", "NBILL_DAY", "TABLE5002", "NCOD_AGREE", "STYPE_CONTR", "NPOLICY", "SORIGIN" };
-    ViewData["ColumnProperties"] = new[] { "NAMOUNT", "TABLE250SDESCRIPT", "NAMOUNT_D", "CLIENTSACCOUNT_IN", "DCOMPDATE", "NCONTRAT", "NCURRENCY", "DEFFECDATE", "DDATE_PRINT", "NDSCTO_AMO", "TABLE278SDESCRIPT", "DFIRST_DRAF", "NINITIAL", "NINITIAL_OR", "NINTEREST", "DLEDGER_DAT", "NNOTENUM", "DNULLDATE", "TABLE9SDESCRIPT", "SOPT_COMMI", "SPAYMENT_IN", "NQ_DRAFT", "SWAIT_CONTR", "USERSSACCESSWO", "NBILL_DAY", "TABLE5002SDESCRIPT", "NCOD_AGREE", "STYPE_CONTR", "NPOLICY", "SORIGIN" };
-    ViewData["KeyName"] = "NCONTRAT";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "FINANCE_CO", "NCONTRAT", new[] { "NAMOUNT", "TABLE250SDESCRIPT", "NAMOUNT_D", "CLIENTSACCOUNT_IN", "DCOMPDATE", "NCONTRAT", "NCURRENCY", "DEFFECDATE", "DDATE_PRINT", "NDSCTO_AMO", "TABLE278SDESCRIPT", "DFIRST_DRAF", "NINITIAL", "NINITIAL_OR", "NINTEREST", "DLEDGER_DAT", "NNOTENUM", "DNULLDATE", "TABLE9SDESCRIPT", "SOPT_COMMI", "SPAYMENT_IN", "NQ_DRAFT", "SWAIT_CONTR", "USERSSACCESSWO", "NBILL_DAY", "TABLE5002SDESCRIPT", "NCOD_AGREE", "STYPE_CONTR", "NPOLICY", "SORIGIN" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("FINANCE_CO"),
+            new[] { "NAMOUNT", "TABLE250", "NAMOUNT_D", "CLIENT", "DCOMPDATE", "NCONTRAT", "NCURRENCY", "DEFFECDATE", "DDATE_PRINT", "NDSCTO_AMO", "TABLE278", "DFIRST_DRAF", "NINITIAL", "NINITIAL_OR", "NINTEREST", "DLEDGER_DAT", "NNOTENUM", "DNULLDATE", "TABLE9", "SOPT_COMMI", "SPAYMENT_IN", "NQ_DRAFT", "SWAIT_CONTR", "USERS", "NBILL_DAY", "TABLE5002", "NCOD_AGREE", "STYPE_CONTR", "NPOLICY", "SORIGIN" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

@@ -17,11 +17,9 @@ public class MASSIVE_PART_CONDITIONSController : Controller
     }
 
     // GET: MASSIVE_PART_CONDITIONS
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/MASSIVE_PART_CONDITIONS/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/MASSIVE_PART_CONDITIONS/Index.cshtml");
 
     // GET: MASSIVE_PART_CONDITIONS/Details/{id}
     public async Task<IActionResult> Details(int id)

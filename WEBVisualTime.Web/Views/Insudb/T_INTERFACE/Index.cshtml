@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.T_INTERFACE.T_INTERFACEDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "T_INTERFACE";
-    ViewData["ColumnHeaders"] = new[] { "SKEY", "NROW", "NCOLUMN", "SVALUE", "STABLE", "SPROCESS", "NFIELD", "SVALUE_HOMO", "SFIELDDESC", "NDATATYPE" };
-    ViewData["ColumnProperties"] = new[] { "SKEY", "NROW", "NCOLUMN", "SVALUE", "STABLE", "SPROCESS", "NFIELD", "SVALUE_HOMO", "SFIELDDESC", "NDATATYPE" };
-    ViewData["KeyName"] = "SKEY";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "T_INTERFACE", "SKEY", new[] { "SKEY", "NROW", "NCOLUMN", "SVALUE", "STABLE", "SPROCESS", "NFIELD", "SVALUE_HOMO", "SFIELDDESC", "NDATATYPE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("T_INTERFACE"),
+            new[] { "SKEY", "NROW", "NCOLUMN", "SVALUE", "STABLE", "SPROCESS", "NFIELD", "SVALUE_HOMO", "SFIELDDESC", "NDATATYPE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

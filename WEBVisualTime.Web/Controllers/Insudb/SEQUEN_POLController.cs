@@ -25,11 +25,9 @@ public class SEQUEN_POLController : Controller
     }
 
     // GET: SEQUEN_POL
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/SEQUEN_POL/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/SEQUEN_POL/Index.cshtml");
 
     // GET: SEQUEN_POL/Details/{id}
     public async Task<IActionResult> Details(int id)

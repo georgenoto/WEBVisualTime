@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.BENEFICIAR.BENEFICIARDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "BENEFICIAR";
-    ViewData["ColumnHeaders"] = new[] { "CERTIFICATSCERTYPE", "CERTIFICATNBRANCH", "CERTIFICATNPRODUCT", "CERTIFICATNPOLICY", "CERTIFICATNCERTIF", "CLIENT", "DEFFECDATE", "DCOMPDATE", "DNULLDATE", "NPARTICIP", "TABLE55", "NUSERCODE", "DDATEDECLA", "SIRREVOC", "NMODULEC", "NCOVER", "SCONTING", "SSEND_MAIL", "SDESIGN" };
-    ViewData["ColumnProperties"] = new[] { "CERTIFICATSCERTYPESCUMUL_CODE", "CERTIFICATNBRANCHSCUMUL_CODE", "CERTIFICATNPRODUCTSCUMUL_CODE", "CERTIFICATNPOLICYSCUMUL_CODE", "CERTIFICATNCERTIFSCUMUL_CODE", "CLIENTSACCOUNT_IN", "DEFFECDATE", "DCOMPDATE", "DNULLDATE", "NPARTICIP", "TABLE55SDESCRIPT", "NUSERCODE", "DDATEDECLA", "SIRREVOC", "NMODULEC", "NCOVER", "SCONTING", "SSEND_MAIL", "SDESIGN" };
-    ViewData["KeyName"] = "SCERTYPE";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "BENEFICIAR", "SCERTYPE", new[] { "CERTIFICATSCERTYPESCUMUL_CODE", "CERTIFICATNBRANCHSCUMUL_CODE", "CERTIFICATNPRODUCTSCUMUL_CODE", "CERTIFICATNPOLICYSCUMUL_CODE", "CERTIFICATNCERTIFSCUMUL_CODE", "CLIENTSACCOUNT_IN", "DEFFECDATE", "DCOMPDATE", "DNULLDATE", "NPARTICIP", "TABLE55SDESCRIPT", "NUSERCODE", "DDATEDECLA", "SIRREVOC", "NMODULEC", "NCOVER", "SCONTING", "SSEND_MAIL", "SDESIGN" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("BENEFICIAR"),
+            new[] { "CERTIFICATSCERTYPE", "CERTIFICATNBRANCH", "CERTIFICATNPRODUCT", "CERTIFICATNPOLICY", "CERTIFICATNCERTIF", "CLIENT", "DEFFECDATE", "DCOMPDATE", "DNULLDATE", "NPARTICIP", "TABLE55", "NUSERCODE", "DDATEDECLA", "SIRREVOC", "NMODULEC", "NCOVER", "SCONTING", "SSEND_MAIL", "SDESIGN" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

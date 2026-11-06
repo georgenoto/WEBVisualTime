@@ -21,11 +21,9 @@ public class T_BANK_TRANSController : Controller
     }
 
     // GET: T_BANK_TRANS
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/T_BANK_TRANS/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/T_BANK_TRANS/Index.cshtml");
 
     // GET: T_BANK_TRANS/Details/{id}
     public async Task<IActionResult> Details(long id)

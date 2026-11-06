@@ -6,6 +6,8 @@ using WEBVisualTime.Entidades.Insudb;
 using WEBVisualTime.Servicios.Insudb.Mappings;
 using WEBVisualTime.Servicios.Insudb.DTOs.APPUSER;
 using WEBVisualTime.Datos.Repositories;
+using WEBVisualTime.Entidades.Common;
+using System.Text.RegularExpressions;
 
 // The connection is deliberately unused: these checks inspect metadata and generate SQL only.
 using var context = new AppDbContext(new DbContextOptionsBuilder<AppDbContext>()
@@ -95,6 +97,52 @@ var readOnlyRepository=new Repository<TABLE8006>(context);
 try { await readOnlyRepository.AddAsync(new TABLE8006()); Check(false,"Unsafe creation must be blocked"); }
 catch(InvalidOperationException e) { Check(e.Message.Contains("duplicados"),"Repository must explain why writes are blocked"); }
 Check(!context.ChangeTracker.Entries<TABLE8006>().Any(),"Blocked creation must not track a pending insertion");
+Check(ListingPolicy.DefaultPageSize==20,"All initial listings must default to 20");
+Check(ListingPolicy.NormalizePageSize(50)==50 && ListingPolicy.NormalizePageSize(25)==25,"Page sizes must be configurable");
+Check(ListingPolicy.NormalizePageSize(0)==20 && ListingPolicy.NormalizePageSize(101)==20,"Invalid page sizes must use the general default");
+var addressEntity=model.FindEntityType(typeof(ADDRESS))!;
+var orderedAddress=ListQueryExpressions.OrderByKeys(context.ADDRESSs.AsNoTracking(),addressEntity).Skip(20).Take(ListingPolicy.PageSize).ToQueryString();
+var order=orderedAddress[orderedAddress.LastIndexOf("ORDER BY",StringComparison.Ordinal)..];
+Check(order.IndexOf("NRECOWNER",StringComparison.Ordinal)<order.IndexOf("SKEYADDRESS",StringComparison.Ordinal) && order.IndexOf("SKEYADDRESS",StringComparison.Ordinal)<order.IndexOf("DEFFECDATE",StringComparison.Ordinal),"Composite ordering must include every primary-key column in order");
+Check(orderedAddress.Contains("OFFSET") && orderedAddress.Contains("FETCH NEXT"),"Oracle must perform the actual paging");
+string SearchSql(string search)
+{
+    var filter=ListQueryExpressions.Search<CLIENT>(clientEntity,search)!;
+    return ListQueryExpressions.OrderByKeys(context.CLIENTs.AsNoTracking().Where(filter),clientEntity).Take(20).ToQueryString();
+}
+var firstText=SearchSql("ABCDE");var secondText=SearchSql("XYZ");
+// Oracle ToQueryString returns a runnable PL/SQL script with separate bind_variable calls.
+// Compare the actual l_sql text, not the debugging script's bound-value declarations.
+string Statement(string script)
+{
+    var match=Regex.Match(script,@"l_sql\s*:=\s*'(?<sql>(?:''|[^'])*)';",RegexOptions.Singleline);
+    return match.Success ? match.Groups["sql"].Value : script[script.IndexOf("SELECT ",StringComparison.Ordinal)..];
+}
+var firstBody=Statement(firstText);
+var secondBody=Statement(secondText);
+if (firstBody!=secondBody || firstBody.Contains("ABCDE"))
+{
+    File.WriteAllText(Path.Combine(AppContext.BaseDirectory,"search-sql-first.sql"),firstText);
+    File.WriteAllText(Path.Combine(AppContext.BaseDirectory,"search-sql-second.sql"),secondText);
+}
+Check(firstBody==secondBody && !firstBody.Contains("ABCDE"),"Search values must be parameterized rather than embedded into SQL");
+Check(SearchSql("2026-11-06").Contains("DCOMPDATE"),"Date search must translate to Oracle SQL");
+Check(SearchSql("7").Contains("NUSERCODE"),"Numeric search must translate to Oracle SQL");
+var bankFilter=ListQueryExpressions.Search<BANK_ACC>(model.FindEntityType(typeof(BANK_ACC))!,"ABCDE")!;
+Check(context.BANK_ACCs.Where(bankFilter).Take(20).ToQueryString().Contains("TAB_BK_AGE"),"Search through composite-key catalog relationships must translate");
+Check(Statement(SearchSql("NaN"))==firstBody,"Non-finite numeric input must stay a text search");
+void CheckExcludedField<T>(string field) where T:class
+{
+    var type=model.FindEntityType(typeof(T))!;
+    Check(type.FindProperty(field)!.FindAnnotation("Listing:Searchable")?.Value is false,"Unsupported Oracle text field must be configured explicitly");
+    var filter=ListQueryExpressions.Search<T>(type,"ABCDE")!;
+    var query=Statement(context.Set<T>().Where(filter).Take(20).ToQueryString());
+    var where=query[query.IndexOf("WHERE ",StringComparison.Ordinal)..];
+    Check(!where.Contains('"'+field+'"'),"Generic search must not invoke UPPER on special Oracle storage types");
+}
+CheckExcludedField<HEALTHCLAIMFORM>("CONTENT");
+CheckExcludedField<MASTERSHEET>("SQUERY_XSL");
+CheckExcludedField<TRACKING>("FACTTIME");
 Console.WriteLine($"PASS: {checks} assertions; {model.GetEntityTypes().Count()} entities; {expected.Count} Oracle-confirmed composite relationships; compatible FK types, no implicit FK columns, aliases and SQL generation. No database connection.");
 
 sealed record ExpectedRelationship(string Entity,string Target,string Navigation,string[] ForeignKeys,string[] PrincipalKeys,string Constraint,string[] Aliases);

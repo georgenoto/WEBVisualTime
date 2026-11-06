@@ -21,11 +21,9 @@ public class DURINSU_PRODController : Controller
     }
 
     // GET: DURINSU_PROD
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/DURINSU_PROD/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/DURINSU_PROD/Index.cshtml");
 
     // GET: DURINSU_PROD/Details/{id}
     public async Task<IActionResult> Details(int id)

@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.T_PARAM_INTERFACE.T_PARAM_INTERFACEDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "T_PARAM_INTERFACE";
-    ViewData["ColumnHeaders"] = new[] { "SKEY", "NFIELD", "SVALUE", "NUSERCODE", "DCOMPDATE" };
-    ViewData["ColumnProperties"] = new[] { "SKEY", "NFIELD", "SVALUE", "NUSERCODE", "DCOMPDATE" };
-    ViewData["KeyName"] = "SKEY";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "T_PARAM_INTERFACE", "SKEY", new[] { "SKEY", "NFIELD", "SVALUE", "NUSERCODE", "DCOMPDATE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("T_PARAM_INTERFACE"),
+            new[] { "SKEY", "NFIELD", "SVALUE", "NUSERCODE", "DCOMPDATE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

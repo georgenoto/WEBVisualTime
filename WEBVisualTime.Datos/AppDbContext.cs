@@ -11137,5 +11137,10 @@ public partial class AppDbContext : DbContext
             .HasForeignKey(e => e.NTYPEPROV).OnDelete(DeleteBehavior.NoAction).HasConstraintName("R_492");
 
         // Oracle R_2093 (WORKSHEET -> PRODMASTER) is DISABLED / NOT VALIDATED.
+
+        // Verified Oracle storage types that cannot use the generic UPPER/LIKE text filter.
+        modelBuilder.Entity<HEALTHCLAIMFORM>().Property(e => e.CONTENT).HasAnnotation("Listing:Searchable", false); // XMLTYPE
+        modelBuilder.Entity<MASTERSHEET>().Property(e => e.SQUERY_XSL).HasAnnotation("Listing:Searchable", false); // LONG
+        modelBuilder.Entity<TRACKING>().Property(e => e.FACTTIME).HasAnnotation("Listing:Searchable", false); // TIMESTAMP stored as a legacy CLR string
     }
 }

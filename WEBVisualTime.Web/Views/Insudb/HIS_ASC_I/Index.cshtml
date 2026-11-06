@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.HIS_ASC_I.HIS_ASC_IDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "HIS_ASC_I";
-    ViewData["ColumnHeaders"] = new[] { "NID", "ASCII_I_HEAD", "TABLE182", "TABLE7NBANK_CODE", "TABLE293", "DSTAT_DATE", "SACC_NUMBER", "TABLE9", "SCLIENT", "SACCOUNTHOLDER", "NREQUEST_NU", "NAMOUNT", "SDESCRIPT", "SBANKACCOUNT", "TABLE7NBANKEXT", "DCOMPDATE", "SSTATREGT", "NUSERCODE" };
-    ViewData["ColumnProperties"] = new[] { "NID", "ASCII_I_HEADSACC_NUMBER", "TABLE182SDESCRIPT", "TABLE7NBANK_CODESDESCRIPT", "TABLE293SDESCRIPT", "DSTAT_DATE", "SACC_NUMBER", "TABLE9SDESCRIPT", "SCLIENT", "SACCOUNTHOLDER", "NREQUEST_NU", "NAMOUNT", "SDESCRIPT", "SBANKACCOUNT", "TABLE7NBANKEXTSDESCRIPT", "DCOMPDATE", "SSTATREGT", "NUSERCODE" };
-    ViewData["KeyName"] = "NID";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "HIS_ASC_I", "NID", new[] { "NID", "ASCII_I_HEADSACC_NUMBER", "TABLE182SDESCRIPT", "TABLE7NBANK_CODESDESCRIPT", "TABLE293SDESCRIPT", "DSTAT_DATE", "SACC_NUMBER", "TABLE9SDESCRIPT", "SCLIENT", "SACCOUNTHOLDER", "NREQUEST_NU", "NAMOUNT", "SDESCRIPT", "SBANKACCOUNT", "TABLE7NBANKEXTSDESCRIPT", "DCOMPDATE", "SSTATREGT", "NUSERCODE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("HIS_ASC_I"),
+            new[] { "NID", "ASCII_I_HEAD", "TABLE182", "TABLE7NBANK_CODE", "TABLE293", "DSTAT_DATE", "SACC_NUMBER", "TABLE9", "SCLIENT", "SACCOUNTHOLDER", "NREQUEST_NU", "NAMOUNT", "SDESCRIPT", "SBANKACCOUNT", "TABLE7NBANKEXT", "DCOMPDATE", "SSTATREGT", "NUSERCODE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAB_CL_OPE.TAB_CL_OPEDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "TAB_CL_OPE";
-    ViewData["ColumnHeaders"] = new[] { "TABLE140NOPER_TYPE", "DCOMPDATE", "TABLE140NGEN_OPERA", "NIND_REV", "TABLE294NPAY_IND", "TABLE294NREC_ESP_IN", "TABLE294NRECOVER_IN", "TABLE294NRESERVE_IN", "NUSERCODE" };
-    ViewData["ColumnProperties"] = new[] { "TABLE140NOPER_TYPESDESCRIPT", "DCOMPDATE", "TABLE140NGEN_OPERASDESCRIPT", "NIND_REV", "TABLE294NPAY_INDSDESCRIPT", "TABLE294NREC_ESP_INSDESCRIPT", "TABLE294NRECOVER_INSDESCRIPT", "TABLE294NRESERVE_INSDESCRIPT", "NUSERCODE" };
-    ViewData["KeyName"] = "NOPER_TYPE";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "TAB_CL_OPE", "NOPER_TYPE", new[] { "TABLE140NOPER_TYPESDESCRIPT", "DCOMPDATE", "TABLE140NGEN_OPERASDESCRIPT", "NIND_REV", "TABLE294NPAY_INDSDESCRIPT", "TABLE294NREC_ESP_INSDESCRIPT", "TABLE294NRECOVER_INSDESCRIPT", "TABLE294NRESERVE_INSDESCRIPT", "NUSERCODE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("TAB_CL_OPE"),
+            new[] { "TABLE140NOPER_TYPE", "DCOMPDATE", "TABLE140NGEN_OPERA", "NIND_REV", "TABLE294NPAY_IND", "TABLE294NREC_ESP_IN", "TABLE294NRECOVER_IN", "TABLE294NRESERVE_IN", "NUSERCODE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

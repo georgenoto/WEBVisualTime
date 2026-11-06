@@ -45,11 +45,9 @@ public class TAB_GENCOVController : Controller
     }
 
     // GET: TAB_GENCOV
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TAB_GENCOV/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/TAB_GENCOV/Index.cshtml");
 
     // GET: TAB_GENCOV/Details/{id}
     public async Task<IActionResult> Details(int id)

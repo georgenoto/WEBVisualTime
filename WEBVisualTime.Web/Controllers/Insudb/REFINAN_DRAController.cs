@@ -33,11 +33,9 @@ public class REFINAN_DRAController : Controller
     }
 
     // GET: REFINAN_DRA
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/REFINAN_DRA/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/REFINAN_DRA/Index.cshtml");
 
     // GET: REFINAN_DRA/Details/{id}
     public async Task<IActionResult> Details(long id)

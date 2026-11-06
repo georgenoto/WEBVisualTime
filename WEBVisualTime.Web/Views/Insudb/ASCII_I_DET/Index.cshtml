@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.ASCII_I_DET.ASCII_I_DETDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "ASCII_I_DET";
-    ViewData["ColumnHeaders"] = new[] { "ASCII_I_HEAD", "NID", "CLIENT", "SCLIENAME", "NREQUEST_NEW", "NAMOUNT", "SDESCRIPT", "SBANKACCOUNT", "TABLE7", "TABLE9", "TABLE9229", "DDATE_PAY", "DCOMPDATE", "SSTATREGT", "NUSERCODE" };
-    ViewData["ColumnProperties"] = new[] { "ASCII_I_HEADSACC_NUMBER", "NID", "CLIENTSACCOUNT_IN", "SCLIENAME", "NREQUEST_NEW", "NAMOUNT", "SDESCRIPT", "SBANKACCOUNT", "TABLE7SDESCRIPT", "TABLE9SDESCRIPT", "TABLE9229SDESCRIPT", "DDATE_PAY", "DCOMPDATE", "SSTATREGT", "NUSERCODE" };
-    ViewData["KeyName"] = "SASCII_NAME";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "ASCII_I_DET", "SASCII_NAME", new[] { "ASCII_I_HEADSACC_NUMBER", "NID", "CLIENTSACCOUNT_IN", "SCLIENAME", "NREQUEST_NEW", "NAMOUNT", "SDESCRIPT", "SBANKACCOUNT", "TABLE7SDESCRIPT", "TABLE9SDESCRIPT", "TABLE9229SDESCRIPT", "DDATE_PAY", "DCOMPDATE", "SSTATREGT", "NUSERCODE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("ASCII_I_DET"),
+            new[] { "ASCII_I_HEAD", "NID", "CLIENT", "SCLIENAME", "NREQUEST_NEW", "NAMOUNT", "SDESCRIPT", "SBANKACCOUNT", "TABLE7", "TABLE9", "TABLE9229", "DDATE_PAY", "DCOMPDATE", "SSTATREGT", "NUSERCODE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

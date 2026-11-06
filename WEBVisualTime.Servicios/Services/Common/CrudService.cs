@@ -23,6 +23,9 @@ public abstract class CrudService<TEntity, TDto, TCreateDto, TUpdateDto, TKey>
     }
 
     public async Task<IEnumerable<TDto>> GetAllAsync() => (await repository.GetAllAsync()).Select(toDto);
+    public Task<PagedResult<TDto>> GetListPageAsync(int page = 1, string? search = null,
+        CancellationToken cancellationToken = default, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize)
+        => PagedQueries.ReadAsync(repository, toDto, page, search, cancellationToken, pageSize);
     public async Task<TDto?> GetByIdAsync(TKey id)
     {
         var entity = await repository.GetByIdAsync(id!);

@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CHEQ_BOOK.CHEQ_BOOKDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "CHEQ_BOOK";
-    ViewData["ColumnHeaders"] = new[] { "BANK_ACC", "DEFFECDATE", "SCHEQUE_END", "SCHEQUE_LAS", "SCHEQUE_STA", "DCOMPDATE", "DNULLDATE", "NQ_CHE_DAMA", "NQ_CHE_NULL", "NUSERCODE" };
-    ViewData["ColumnProperties"] = new[] { "BANK_ACCSACC_LEDGER", "DEFFECDATE", "SCHEQUE_END", "SCHEQUE_LAS", "SCHEQUE_STA", "DCOMPDATE", "DNULLDATE", "NQ_CHE_DAMA", "NQ_CHE_NULL", "NUSERCODE" };
-    ViewData["KeyName"] = "NACC_BANK";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "CHEQ_BOOK", "NACC_BANK", new[] { "BANK_ACCSACC_LEDGER", "DEFFECDATE", "SCHEQUE_END", "SCHEQUE_LAS", "SCHEQUE_STA", "DCOMPDATE", "DNULLDATE", "NQ_CHE_DAMA", "NQ_CHE_NULL", "NUSERCODE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("CHEQ_BOOK"),
+            new[] { "BANK_ACC", "DEFFECDATE", "SCHEQUE_END", "SCHEQUE_LAS", "SCHEQUE_STA", "DCOMPDATE", "DNULLDATE", "NQ_CHE_DAMA", "NQ_CHE_NULL", "NUSERCODE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

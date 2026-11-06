@@ -21,11 +21,9 @@ public class TABLE9269Controller : Controller
     }
 
     // GET: TABLE9269
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TABLE9269/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/TABLE9269/Index.cshtml");
 
     // GET: TABLE9269/Details/{id}
     public async Task<IActionResult> Details(int id)

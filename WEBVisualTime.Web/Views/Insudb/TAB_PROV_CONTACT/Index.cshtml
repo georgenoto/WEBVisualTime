@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.TAB_PROV_CONTACT.TAB_PROV_CONTACTDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "TAB_PROV_CONTACT";
-    ViewData["ColumnHeaders"] = new[] { "TAB_PROVIDER", "NSEQ", "DEFFECDATE", "DNULLDATE", "TABLE283", "SNAME_CONTACT", "SE_MAIL", "SPHONE_CONTACT", "DCOMPDATE", "NUSERCODE" };
-    ViewData["ColumnProperties"] = new[] { "TAB_PROVIDERSSTATREGT", "NSEQ", "DEFFECDATE", "DNULLDATE", "TABLE283SDESCRIPT", "SNAME_CONTACT", "SE_MAIL", "SPHONE_CONTACT", "DCOMPDATE", "NUSERCODE" };
-    ViewData["KeyName"] = "NPROVIDER";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "TAB_PROV_CONTACT", "NPROVIDER", new[] { "TAB_PROVIDERSSTATREGT", "NSEQ", "DEFFECDATE", "DNULLDATE", "TABLE283SDESCRIPT", "SNAME_CONTACT", "SE_MAIL", "SPHONE_CONTACT", "DCOMPDATE", "NUSERCODE" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("TAB_PROV_CONTACT"),
+            new[] { "TAB_PROVIDER", "NSEQ", "DEFFECDATE", "DNULLDATE", "TABLE283", "SNAME_CONTACT", "SE_MAIL", "SPHONE_CONTACT", "DCOMPDATE", "NUSERCODE" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

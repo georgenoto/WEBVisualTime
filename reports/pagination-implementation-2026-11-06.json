@@ -1,0 +1,36 @@
+{
+  "initial_listings": 1017,
+  "common_catalogs": 683,
+  "specific_listings": 334,
+  "default_page_size": 20,
+  "parameterizable": true,
+  "maximum_page_size": 100,
+  "preset_page_sizes": [
+    10,
+    20,
+    50,
+    100
+  ],
+  "shared_table_views": [
+    "WEBVisualTime.Web\\Views\\Shared\\_PagedTable.cshtml"
+  ],
+  "unmigrated": [],
+  "obsolete_pagination_references": [],
+  "query_order": "all primary-key columns; extra scalar ordering for the two read-only duplicate-key catalogs",
+  "search": "parameterized text, exact numeric values and ISO dates; unsupported Oracle XMLTYPE/LONG/legacy timestamp-as-string fields excluded",
+  "checks": {
+    "build_errors": 0,
+    "model_assertions": 7240,
+    "crud_assertions": 89,
+    "client_flow_assertions": 22,
+    "oracle_page_sizes_verified": [
+      10,
+      20,
+      25,
+      50,
+      100
+    ],
+    "oracle_parameterized_search_commands": 4
+  },
+  "database_writes": false
+}

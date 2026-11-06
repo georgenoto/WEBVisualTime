@@ -21,11 +21,9 @@ public class DSEX_CONDIController : Controller
     }
 
     // GET: DSEX_CONDI
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/DSEX_CONDI/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/DSEX_CONDI/Index.cshtml");
 
     // GET: DSEX_CONDI/Details/{id}
     public async Task<IActionResult> Details(int id)

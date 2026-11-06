@@ -21,11 +21,9 @@ public class T_MASIVECHARGEController : Controller
     }
 
     // GET: T_MASIVECHARGE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/T_MASIVECHARGE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/T_MASIVECHARGE/Index.cshtml");
 
     // GET: T_MASIVECHARGE/Details/{id}
     public async Task<IActionResult> Details(string id)

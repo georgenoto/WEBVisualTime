@@ -29,11 +29,9 @@ public class BANK_AGREEController : Controller
     }
 
     // GET: BANK_AGREE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/BANK_AGREE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/BANK_AGREE/Index.cshtml");
 
     // GET: BANK_AGREE/Details/{id}
     public async Task<IActionResult> Details(string id)

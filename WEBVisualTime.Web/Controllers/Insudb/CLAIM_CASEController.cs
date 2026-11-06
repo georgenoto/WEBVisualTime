@@ -37,11 +37,9 @@ public class CLAIM_CASEController : Controller
     }
 
     // GET: CLAIM_CASE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CLAIM_CASE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CLAIM_CASE/Index.cshtml");
 
     // GET: CLAIM_CASE/Details/{id}
     public async Task<IActionResult> Details(long id)

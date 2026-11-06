@@ -21,11 +21,9 @@ public class INTERMED_PARTICController : Controller
     }
 
     // GET: INTERMED_PARTIC
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/INTERMED_PARTIC/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/INTERMED_PARTIC/Index.cshtml");
 
     // GET: INTERMED_PARTIC/Details/{id}
     public async Task<IActionResult> Details(long id)

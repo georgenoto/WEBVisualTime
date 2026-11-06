@@ -101,11 +101,9 @@ public class CASH_MOVController : Controller
     }
 
     // GET: CASH_MOV
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CASH_MOV/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CASH_MOV/Index.cshtml");
 
     // GET: CASH_MOV/Details/{id}
     public async Task<IActionResult> Details(int id)

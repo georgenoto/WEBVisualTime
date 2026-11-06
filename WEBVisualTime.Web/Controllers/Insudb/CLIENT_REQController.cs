@@ -21,11 +21,9 @@ public class CLIENT_REQController : Controller
     }
 
     // GET: CLIENT_REQ
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CLIENT_REQ/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CLIENT_REQ/Index.cshtml");
 
     // GET: CLIENT_REQ/Details/{id}
     public async Task<IActionResult> Details(int id)

@@ -25,11 +25,9 @@ public class FREQ_WAY_PRODController : Controller
     }
 
     // GET: FREQ_WAY_PROD
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/FREQ_WAY_PROD/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/FREQ_WAY_PROD/Index.cshtml");
 
     // GET: FREQ_WAY_PROD/Details/{id}
     public async Task<IActionResult> Details(int id)

@@ -53,11 +53,9 @@ public class PREMIUM_MOController : Controller
     }
 
     // GET: PREMIUM_MO
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/PREMIUM_MO/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/PREMIUM_MO/Index.cshtml");
 
     // GET: PREMIUM_MO/Details/{id}
     public async Task<IActionResult> Details(long id)

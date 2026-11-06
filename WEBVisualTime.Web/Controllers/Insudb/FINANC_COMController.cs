@@ -25,11 +25,9 @@ public class FINANC_COMController : Controller
     }
 
     // GET: FINANC_COM
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/FINANC_COM/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/FINANC_COM/Index.cshtml");
 
     // GET: FINANC_COM/Details/{id}
     public async Task<IActionResult> Details(long id)

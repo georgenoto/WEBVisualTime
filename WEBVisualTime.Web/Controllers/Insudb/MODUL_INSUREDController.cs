@@ -17,11 +17,9 @@ public class MODUL_INSUREDController : Controller
     }
 
     // GET: MODUL_INSURED
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/MODUL_INSURED/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/MODUL_INSURED/Index.cshtml");
 
     // GET: MODUL_INSURED/Details/{id}
     public async Task<IActionResult> Details(string id)

@@ -21,11 +21,9 @@ public class SDD_NLS_GLOBAL_NAME_DOMAINSController : Controller
     }
 
     // GET: SDD_NLS_GLOBAL_NAME_DOMAINS
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/SDD_NLS_GLOBAL_NAME_DOMAINS/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/SDD_NLS_GLOBAL_NAME_DOMAINS/Index.cshtml");
 
     // GET: SDD_NLS_GLOBAL_NAME_DOMAINS/Details/{id}
     public async Task<IActionResult> Details(int id)

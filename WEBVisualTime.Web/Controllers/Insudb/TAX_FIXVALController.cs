@@ -25,11 +25,9 @@ public class TAX_FIXVALController : Controller
     }
 
     // GET: TAX_FIXVAL
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TAX_FIXVAL/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/TAX_FIXVAL/Index.cshtml");
 
     // GET: TAX_FIXVAL/Details/{id}
     public async Task<IActionResult> Details(int id)

@@ -21,11 +21,9 @@ public class CTROL_DATEController : Controller
     }
 
     // GET: CTROL_DATE
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CTROL_DATE/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/CTROL_DATE/Index.cshtml");
 
     // GET: CTROL_DATE/Details/{id}
     public async Task<IActionResult> Details(int id)

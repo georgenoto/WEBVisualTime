@@ -21,11 +21,9 @@ public class TAB_FN_INSTITUTIONController : Controller
     }
 
     // GET: TAB_FN_INSTITUTION
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TAB_FN_INSTITUTION/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/TAB_FN_INSTITUTION/Index.cshtml");
 
     // GET: TAB_FN_INSTITUTION/Details/{id}
     public async Task<IActionResult> Details(int id)

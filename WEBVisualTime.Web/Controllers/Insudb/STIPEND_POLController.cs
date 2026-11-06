@@ -29,11 +29,9 @@ public class STIPEND_POLController : Controller
     }
 
     // GET: STIPEND_POL
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/STIPEND_POL/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/STIPEND_POL/Index.cshtml");
 
     // GET: STIPEND_POL/Details/{id}
     public async Task<IActionResult> Details(string id)

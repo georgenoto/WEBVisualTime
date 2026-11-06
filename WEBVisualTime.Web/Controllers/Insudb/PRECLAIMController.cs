@@ -41,11 +41,9 @@ public class PRECLAIMController : Controller
     }
 
     // GET: PRECLAIM
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/PRECLAIM/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/PRECLAIM/Index.cshtml");
 
     // GET: PRECLAIM/Details/{id}
     public async Task<IActionResult> Details(long id)

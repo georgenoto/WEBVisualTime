@@ -25,11 +25,9 @@ public class PART_CONTRController : Controller
     }
 
     // GET: PART_CONTR
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/PART_CONTR/Index.cshtml", result);
-    }
+    public Task<IActionResult> Index(int page = 1, string? q = null)
+        => WEBVisualTime.Web.Controllers.Common.ListPageLoader.LoadAsync(
+            this, _service, page, q, "~/Views/Insudb/PART_CONTR/Index.cshtml");
 
     // GET: PART_CONTR/Details/{id}
     public async Task<IActionResult> Details(int id)

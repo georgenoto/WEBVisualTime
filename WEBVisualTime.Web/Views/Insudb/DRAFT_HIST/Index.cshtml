@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.DRAFT_HIST.DRAFT_HISTDto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "DRAFT_HIST";
-    ViewData["ColumnHeaders"] = new[] { "NAMOUNT", "DCOMPDATE", "NCONTRAT", "NTRANSAC", "NCURRENCY", "NDRAFT", "NDSCTO_PAG", "NEXPENSIVE", "NINTEREST", "SINTERMEI", "DSTAT_DATE", "TABLE260", "USERS", "TABLE7", "SDOCNUMBE", "TABLE182", "SCHANGE_ACC", "SAUX_ACCOUN", "NCASHNUM", "NPAYREJECT", "COLLECTOR", "DLEDGERDAT", "DPOSTED", "SCESSICOI", "NBILLNUM", "SIND_REVER" };
-    ViewData["ColumnProperties"] = new[] { "NAMOUNT", "DCOMPDATE", "NCONTRAT", "NTRANSAC", "NCURRENCY", "NDRAFT", "NDSCTO_PAG", "NEXPENSIVE", "NINTEREST", "SINTERMEI", "DSTAT_DATE", "TABLE260SDESCRIPT", "USERSSACCESSWO", "TABLE7SDESCRIPT", "SDOCNUMBE", "TABLE182SDESCRIPT", "SCHANGE_ACC", "SAUX_ACCOUN", "NCASHNUM", "NPAYREJECT", "NCOLLECTOR", "DLEDGERDAT", "DPOSTED", "SCESSICOI", "NBILLNUM", "SIND_REVER" };
-    ViewData["KeyName"] = "NCONTRAT";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "DRAFT_HIST", "NCONTRAT", new[] { "NAMOUNT", "DCOMPDATE", "NCONTRAT", "NTRANSAC", "NCURRENCY", "NDRAFT", "NDSCTO_PAG", "NEXPENSIVE", "NINTEREST", "SINTERMEI", "DSTAT_DATE", "TABLE260SDESCRIPT", "USERSSACCESSWO", "TABLE7SDESCRIPT", "SDOCNUMBE", "TABLE182SDESCRIPT", "SCHANGE_ACC", "SAUX_ACCOUN", "NCASHNUM", "NPAYREJECT", "NCOLLECTOR", "DLEDGERDAT", "DPOSTED", "SCESSICOI", "NBILLNUM", "SIND_REVER" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("DRAFT_HIST"),
+            new[] { "NAMOUNT", "DCOMPDATE", "NCONTRAT", "NTRANSAC", "NCURRENCY", "NDRAFT", "NDSCTO_PAG", "NEXPENSIVE", "NINTEREST", "SINTERMEI", "DSTAT_DATE", "TABLE260", "USERS", "TABLE7", "SDOCNUMBE", "TABLE182", "SCHANGE_ACC", "SAUX_ACCOUN", "NCASHNUM", "NPAYREJECT", "COLLECTOR", "DLEDGERDAT", "DPOSTED", "SCESSICOI", "NBILLNUM", "SIND_REVER" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

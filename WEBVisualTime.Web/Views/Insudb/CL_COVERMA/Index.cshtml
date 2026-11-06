@@ -1,19 +1,11 @@
-@model IEnumerable<WEBVisualTime.Servicios.Insudb.DTOs.CL_COVERMA.CL_COVERMADto>
-
+@model WEBVisualTime.Web.Models.ListPageViewModel
 @{
-    ViewData["Title"] = "CL_COVERMA";
-    ViewData["ColumnHeaders"] = new[] { "NMODULEC", "NCOVER", "NCONCEPT", "NAMOUNT", "DCOMPDATE", "NCURRENCY", "NDED_AMOUNT", "NQUANT_USED", "NRESERVE", "NUNIT_COST", "NUSERCODE", "SBUDGET", "DDATE_BUD", "NBILL_CON", "SBILL", "DSTATRDAT", "DPAYDATE", "DCANCELDAT", "NEXCHANGE", "NCLAIM", "NCASE_NUM", "NDEMAN_TYPE", "NPROVIDER", "NEVALSTAT" };
-    ViewData["ColumnProperties"] = new[] { "NMODULEC", "NCOVER", "NCONCEPT", "NAMOUNT", "DCOMPDATE", "NCURRENCY", "NDED_AMOUNT", "NQUANT_USED", "NRESERVE", "NUNIT_COST", "NUSERCODE", "SBUDGET", "DDATE_BUD", "NBILL_CON", "SBILL", "DSTATRDAT", "DPAYDATE", "DCANCELDAT", "NEXCHANGE", "NCLAIM", "NCASE_NUM", "NDEMAN_TYPE", "NPROVIDER", "NEVALSTAT" };
-    ViewData["KeyName"] = "NMODULEC";
-    ViewData["PageSize"] = 20;
+    var table = Model with
+    {
+        Definition = new WEBVisualTime.Web.Models.CrudDefinition(
+            "CL_COVERMA", "NMODULEC", new[] { "NMODULEC", "NCOVER", "NCONCEPT", "NAMOUNT", "DCOMPDATE", "NCURRENCY", "NDED_AMOUNT", "NQUANT_USED", "NRESERVE", "NUNIT_COST", "NUSERCODE", "SBUDGET", "DDATE_BUD", "NBILL_CON", "SBILL", "DSTATRDAT", "DPAYDATE", "DCANCELDAT", "NEXCHANGE", "NCLAIM", "NCASE_NUM", "NDEMAN_TYPE", "NPROVIDER", "NEVALSTAT" },
+            WEBVisualTime.Datos.ModelIntegrityRules.ReadOnlyReason("CL_COVERMA"),
+            new[] { "NMODULEC", "NCOVER", "NCONCEPT", "NAMOUNT", "DCOMPDATE", "NCURRENCY", "NDED_AMOUNT", "NQUANT_USED", "NRESERVE", "NUNIT_COST", "NUSERCODE", "SBUDGET", "DDATE_BUD", "NBILL_CON", "SBILL", "DSTATRDAT", "DPAYDATE", "DCANCELDAT", "NEXCHANGE", "NCLAIM", "NCASE_NUM", "NDEMAN_TYPE", "NPROVIDER", "NEVALSTAT" })
+    };
 }
-
-<h1 class="mb-4">@ViewData["Title"]</h1>
-
-<p><a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Nuevo</a></p>
-
-@await Html.PartialAsync("_DataTable", Model)
-
-@section Scripts {
-    <script>initDataTables();</script>
-}
+@await Html.PartialAsync("~/Views/Shared/_PagedTable.cshtml", table)

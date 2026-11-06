@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using WEBVisualTime.Entidades.Common;
 
 namespace WEBVisualTime.Datos.Repositories;
 
@@ -19,6 +20,30 @@ public class Repository<T> : IRepository<T> where T : class
     public async Task<IEnumerable<T>> GetAllAsync()
     {
         return await IncludeNavigations(_dbSet.AsNoTracking()).ToListAsync();
+    }
+
+    public async Task<(IReadOnlyList<T> Items, long TotalCount, int Page)> GetListPageAsync(
+        int page, string? search = null, CancellationToken cancellationToken = default, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize)
+    {
+        pageSize = ListingPolicy.NormalizePageSize(pageSize);
+        page = ListingPolicy.NormalizePage(page, pageSize);
+        search = ListingPolicy.NormalizeSearch(search);
+        var entity = _context.Model.FindEntityType(typeof(T))!;
+        var previousTimeout = _context.Database.GetCommandTimeout();
+        try
+        {
+            _context.Database.SetCommandTimeout(30);
+            IQueryable<T> query = _dbSet.AsNoTracking().TagWith("Web listing: parameterized paging");
+            var filter = ListQueryExpressions.Search<T>(entity, search);
+            if (filter is not null) query = query.Where(filter);
+            var total = await query.LongCountAsync(cancellationToken);
+            page = (int)Math.Min(page, Math.Max(1, (total + pageSize - 1) / pageSize));
+            var ordered = ListQueryExpressions.OrderByKeys(IncludeNavigations(query), entity);
+            var items = await ordered.Skip((page - 1) * pageSize)
+                .Take(pageSize).ToListAsync(cancellationToken);
+            return (items, total, page);
+        }
+        finally { _context.Database.SetCommandTimeout(previousTimeout); }
     }
 
     public async Task<T?> GetByIdAsync(object id)
