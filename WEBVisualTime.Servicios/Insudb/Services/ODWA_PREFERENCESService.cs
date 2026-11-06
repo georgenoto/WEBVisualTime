@@ -1,64 +1,13 @@
-using System.Linq.Expressions;
 using WEBVisualTime.Entidades.Insudb;
 using WEBVisualTime.Datos.Repositories;
 using WEBVisualTime.Servicios.Insudb.DTOs.ODWA_PREFERENCES;
 using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public class ODWA_PREFERENCESService : IODWA_PREFERENCESService
+public class ODWA_PREFERENCESService : CrudService<ODWA_PREFERENCES, ODWA_PREFERENCESDto, CreateODWA_PREFERENCESDto, UpdateODWA_PREFERENCESDto, string>, IODWA_PREFERENCESService
 {
-    private readonly IRepository<ODWA_PREFERENCES> _repository;
-
     public ODWA_PREFERENCESService(IRepository<ODWA_PREFERENCES> repository)
-    {
-        _repository = repository;
-    }
-
-    public async Task<IEnumerable<ODWA_PREFERENCESDto>> GetAllAsync()
-    {
-        var entities = await _repository.GetAllAsync();
-        return entities.Select(e => e.ToDto());
-    }
-
-    public async Task<ODWA_PREFERENCESDto?> GetByIdAsync(string id)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        return entity?.ToDto();
-    }
-
-    public async Task<IEnumerable<ODWA_PREFERENCESDto>> FindAsync(Expression<Func<ODWA_PREFERENCES, bool>> predicate)
-    {
-        var entities = await _repository.FindAsync(predicate);
-        return entities.Select(e => e.ToDto());
-    }
-
-    public async Task<ODWA_PREFERENCESDto> CreateAsync(CreateODWA_PREFERENCESDto createDto)
-    {
-        var entity = createDto.ToEntity();
-        await _repository.AddAsync(entity);
-        await _repository.SaveChangesAsync();
-        return entity.ToDto();
-    }
-
-    public async Task<bool> UpdateAsync(string id, UpdateODWA_PREFERENCESDto updateDto)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        if (entity == null) return false;
-
-        entity.UpdateEntity(updateDto);
-        _repository.Update(entity);
-        await _repository.SaveChangesAsync();
-        return true;
-    }
-
-    public async Task<bool> DeleteAsync(string id)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        if (entity == null) return false;
-
-        _repository.Remove(entity);
-        await _repository.SaveChangesAsync();
-        return true;
-    }
+        : base(repository, ODWA_PREFERENCESMappingExtensions.ToDto, ODWA_PREFERENCESMappingExtensions.ToEntity, ODWA_PREFERENCESMappingExtensions.UpdateEntity) { }
 }

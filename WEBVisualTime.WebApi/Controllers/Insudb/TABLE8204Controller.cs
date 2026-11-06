@@ -1,55 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE8204;
 using WEBVisualTime.Servicios.Insudb.Services;
+using WEBVisualTime.WebApi.Controllers.Common;
 
 namespace WEBVisualTime.WebApi.Insudb.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class TABLE8204Controller : ControllerBase
+public class TABLE8204Controller : CrudApiController<TABLE8204Dto, CreateTABLE8204Dto, UpdateTABLE8204Dto, string>
 {
-    private readonly ITABLE8204Service _service;
-
-    public TABLE8204Controller(ITABLE8204Service service)
-    {
-        _service = service;
-    }
-
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<TABLE8204Dto>>> GetAll()
-    {
-        var result = await _service.GetAllAsync();
-        return Ok(result);
-    }
-
-[HttpGet("{id}")]
-    public async Task<ActionResult<TABLE8204Dto>> GetById(string id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return Ok(result);
-    }
-
-    [HttpPost]
-    public async Task<ActionResult<TABLE8204Dto>> Create([FromBody] CreateTABLE8204Dto createDto)
-    {
-        var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.STYP_CONDI }, result);
-    }
-
-    [HttpPut("{{id}}")]
-    public async Task<IActionResult> Update(string id, [FromBody] UpdateTABLE8204Dto updateDto)
-    {
-        var success = await _service.UpdateAsync(id, updateDto);
-        if (!success) return NotFound();
-        return NoContent();
-    }
-
-    [HttpDelete("{{id}}")]
-    public async Task<IActionResult> Delete(string id)
-    {
-        var success = await _service.DeleteAsync(id);
-        if (!success) return NotFound();
-        return NoContent();
-    }
+    public TABLE8204Controller(ITABLE8204Service service) : base(service, dto => dto.STYP_CONDI) { }
 }

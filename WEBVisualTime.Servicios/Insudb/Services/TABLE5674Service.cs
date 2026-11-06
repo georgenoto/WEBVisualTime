@@ -1,64 +1,13 @@
-using System.Linq.Expressions;
 using WEBVisualTime.Entidades.Insudb;
 using WEBVisualTime.Datos.Repositories;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE5674;
 using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public class TABLE5674Service : ITABLE5674Service
+public class TABLE5674Service : CrudService<TABLE5674, TABLE5674Dto, CreateTABLE5674Dto, UpdateTABLE5674Dto, int>, ITABLE5674Service
 {
-    private readonly IRepository<TABLE5674> _repository;
-
     public TABLE5674Service(IRepository<TABLE5674> repository)
-    {
-        _repository = repository;
-    }
-
-    public async Task<IEnumerable<TABLE5674Dto>> GetAllAsync()
-    {
-        var entities = await _repository.GetAllAsync();
-        return entities.Select(e => e.ToDto());
-    }
-
-    public async Task<TABLE5674Dto?> GetByIdAsync(int id)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        return entity?.ToDto();
-    }
-
-    public async Task<IEnumerable<TABLE5674Dto>> FindAsync(Expression<Func<TABLE5674, bool>> predicate)
-    {
-        var entities = await _repository.FindAsync(predicate);
-        return entities.Select(e => e.ToDto());
-    }
-
-    public async Task<TABLE5674Dto> CreateAsync(CreateTABLE5674Dto createDto)
-    {
-        var entity = createDto.ToEntity();
-        await _repository.AddAsync(entity);
-        await _repository.SaveChangesAsync();
-        return entity.ToDto();
-    }
-
-    public async Task<bool> UpdateAsync(int id, UpdateTABLE5674Dto updateDto)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        if (entity == null) return false;
-
-        entity.UpdateEntity(updateDto);
-        _repository.Update(entity);
-        await _repository.SaveChangesAsync();
-        return true;
-    }
-
-    public async Task<bool> DeleteAsync(int id)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        if (entity == null) return false;
-
-        _repository.Remove(entity);
-        await _repository.SaveChangesAsync();
-        return true;
-    }
+        : base(repository, TABLE5674MappingExtensions.ToDto, TABLE5674MappingExtensions.ToEntity, TABLE5674MappingExtensions.UpdateEntity) { }
 }

@@ -1,55 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE5540;
 using WEBVisualTime.Servicios.Insudb.Services;
+using WEBVisualTime.WebApi.Controllers.Common;
 
 namespace WEBVisualTime.WebApi.Insudb.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class TABLE5540Controller : ControllerBase
+public class TABLE5540Controller : CrudApiController<TABLE5540Dto, CreateTABLE5540Dto, UpdateTABLE5540Dto, int>
 {
-    private readonly ITABLE5540Service _service;
-
-    public TABLE5540Controller(ITABLE5540Service service)
-    {
-        _service = service;
-    }
-
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<TABLE5540Dto>>> GetAll()
-    {
-        var result = await _service.GetAllAsync();
-        return Ok(result);
-    }
-
-[HttpGet("{id}")]
-    public async Task<ActionResult<TABLE5540Dto>> GetById(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return Ok(result);
-    }
-
-    [HttpPost]
-    public async Task<ActionResult<TABLE5540Dto>> Create([FromBody] CreateTABLE5540Dto createDto)
-    {
-        var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.NSECTOR_TYPE }, result);
-    }
-
-    [HttpPut("{{id}}")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateTABLE5540Dto updateDto)
-    {
-        var success = await _service.UpdateAsync(id, updateDto);
-        if (!success) return NotFound();
-        return NoContent();
-    }
-
-    [HttpDelete("{{id}}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        var success = await _service.DeleteAsync(id);
-        if (!success) return NotFound();
-        return NoContent();
-    }
+    public TABLE5540Controller(ITABLE5540Service service) : base(service, dto => dto.NSECTOR_TYPE) { }
 }

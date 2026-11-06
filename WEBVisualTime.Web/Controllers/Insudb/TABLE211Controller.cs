@@ -1,102 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE211;
 using WEBVisualTime.Servicios.Insudb.Services;
-using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Web.Controllers.Common;
 
 namespace WEBVisualTime.Web.Insudb.Controllers;
 
-public class TABLE211Controller : Controller
+public class TABLE211Controller : CatalogController<TABLE211Dto, CreateTABLE211Dto, UpdateTABLE211Dto, int>
 {
-    private readonly ITABLE211Service _service;
-
-    public TABLE211Controller(ITABLE211Service service
-    )
-    {
-        _service = service;
-    }
-
-    // GET: TABLE211
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TABLE211/Index.cshtml", result);
-    }
-
-    // GET: TABLE211/Details/{id}
-    public async Task<IActionResult> Details(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE211/Details.cshtml", result);
-    }
-
-    // GET: TABLE211/Create
-    public async Task<IActionResult> Create()
-    {
-        return View("~/Views/Insudb/TABLE211/Create.cshtml", new CreateTABLE211Dto());
-    }
-
-    // POST: TABLE211/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(CreateTABLE211Dto createDto)
-    {
-        if (ModelState.IsValid)
-        {
-            await _service.CreateAsync(createDto);
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE211/Create.cshtml", createDto);
-    }
-
-    // GET: TABLE211/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-
-        var updateDto = new UpdateTABLE211Dto
-        {
-            NIN_LIF_TYP = result.NIN_LIF_TYP,
-            DCOMPDATE = result.DCOMPDATE,
-            SDESCRIPT = result.SDESCRIPT,
-            SSHORT_DES = result.SSHORT_DES,
-            SSTATREGT = result.SSTATREGT,
-            NUSERCODE = result.NUSERCODE,
-        };
-        return View("~/Views/Insudb/TABLE211/Edit.cshtml", updateDto);
-    }
-
-    // POST: TABLE211/Edit/{id}
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTABLE211Dto updateDto)
-    {
-        if (ModelState.IsValid)
-        {
-            var success = await _service.UpdateAsync(updateDto.NIN_LIF_TYP, updateDto);
-            if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE211/Edit.cshtml", updateDto);
-    }
-
-    // GET: TABLE211/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE211/Delete.cshtml", result);
-    }
-
-    // POST: TABLE211/Delete/{id}
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
-    {
-        await _service.DeleteAsync(id);
-        return RedirectToAction(nameof(Index));
-    }
-
+    public TABLE211Controller(ITABLE211Service service)
+        : base(service, "TABLE211", "NIN_LIF_TYP", new[] { "NIN_LIF_TYP", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE" }) { }
 }

@@ -1,102 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE9027;
 using WEBVisualTime.Servicios.Insudb.Services;
-using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Web.Controllers.Common;
 
 namespace WEBVisualTime.Web.Insudb.Controllers;
 
-public class TABLE9027Controller : Controller
+public class TABLE9027Controller : CatalogController<TABLE9027Dto, CreateTABLE9027Dto, UpdateTABLE9027Dto, int>
 {
-    private readonly ITABLE9027Service _service;
-
-    public TABLE9027Controller(ITABLE9027Service service
-    )
-    {
-        _service = service;
-    }
-
-    // GET: TABLE9027
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TABLE9027/Index.cshtml", result);
-    }
-
-    // GET: TABLE9027/Details/{id}
-    public async Task<IActionResult> Details(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE9027/Details.cshtml", result);
-    }
-
-    // GET: TABLE9027/Create
-    public async Task<IActionResult> Create()
-    {
-        return View("~/Views/Insudb/TABLE9027/Create.cshtml", new CreateTABLE9027Dto());
-    }
-
-    // POST: TABLE9027/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(CreateTABLE9027Dto createDto)
-    {
-        if (ModelState.IsValid)
-        {
-            await _service.CreateAsync(createDto);
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE9027/Create.cshtml", createDto);
-    }
-
-    // GET: TABLE9027/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-
-        var updateDto = new UpdateTABLE9027Dto
-        {
-            NECONOMIC = result.NECONOMIC,
-            DCOMPDATE = result.DCOMPDATE,
-            SDESCRIPT = result.SDESCRIPT,
-            SSHORT_DES = result.SSHORT_DES,
-            SSTATREGT = result.SSTATREGT,
-            NUSERCODE = result.NUSERCODE,
-        };
-        return View("~/Views/Insudb/TABLE9027/Edit.cshtml", updateDto);
-    }
-
-    // POST: TABLE9027/Edit/{id}
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTABLE9027Dto updateDto)
-    {
-        if (ModelState.IsValid)
-        {
-            var success = await _service.UpdateAsync(updateDto.NECONOMIC, updateDto);
-            if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE9027/Edit.cshtml", updateDto);
-    }
-
-    // GET: TABLE9027/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE9027/Delete.cshtml", result);
-    }
-
-    // POST: TABLE9027/Delete/{id}
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
-    {
-        await _service.DeleteAsync(id);
-        return RedirectToAction(nameof(Index));
-    }
-
+    public TABLE9027Controller(ITABLE9027Service service)
+        : base(service, "TABLE9027", "NECONOMIC", new[] { "NECONOMIC", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE" }) { }
 }

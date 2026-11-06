@@ -1,64 +1,13 @@
-using System.Linq.Expressions;
 using WEBVisualTime.Entidades.Insudb;
 using WEBVisualTime.Datos.Repositories;
 using WEBVisualTime.Servicios.Insudb.DTOs.ODWA_HELP_ITEMS;
 using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public class ODWA_HELP_ITEMSService : IODWA_HELP_ITEMSService
+public class ODWA_HELP_ITEMSService : CrudService<ODWA_HELP_ITEMS, ODWA_HELP_ITEMSDto, CreateODWA_HELP_ITEMSDto, UpdateODWA_HELP_ITEMSDto, int>, IODWA_HELP_ITEMSService
 {
-    private readonly IRepository<ODWA_HELP_ITEMS> _repository;
-
     public ODWA_HELP_ITEMSService(IRepository<ODWA_HELP_ITEMS> repository)
-    {
-        _repository = repository;
-    }
-
-    public async Task<IEnumerable<ODWA_HELP_ITEMSDto>> GetAllAsync()
-    {
-        var entities = await _repository.GetAllAsync();
-        return entities.Select(e => e.ToDto());
-    }
-
-    public async Task<ODWA_HELP_ITEMSDto?> GetByIdAsync(int id)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        return entity?.ToDto();
-    }
-
-    public async Task<IEnumerable<ODWA_HELP_ITEMSDto>> FindAsync(Expression<Func<ODWA_HELP_ITEMS, bool>> predicate)
-    {
-        var entities = await _repository.FindAsync(predicate);
-        return entities.Select(e => e.ToDto());
-    }
-
-    public async Task<ODWA_HELP_ITEMSDto> CreateAsync(CreateODWA_HELP_ITEMSDto createDto)
-    {
-        var entity = createDto.ToEntity();
-        await _repository.AddAsync(entity);
-        await _repository.SaveChangesAsync();
-        return entity.ToDto();
-    }
-
-    public async Task<bool> UpdateAsync(int id, UpdateODWA_HELP_ITEMSDto updateDto)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        if (entity == null) return false;
-
-        entity.UpdateEntity(updateDto);
-        _repository.Update(entity);
-        await _repository.SaveChangesAsync();
-        return true;
-    }
-
-    public async Task<bool> DeleteAsync(int id)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        if (entity == null) return false;
-
-        _repository.Remove(entity);
-        await _repository.SaveChangesAsync();
-        return true;
-    }
+        : base(repository, ODWA_HELP_ITEMSMappingExtensions.ToDto, ODWA_HELP_ITEMSMappingExtensions.ToEntity, ODWA_HELP_ITEMSMappingExtensions.UpdateEntity) { }
 }

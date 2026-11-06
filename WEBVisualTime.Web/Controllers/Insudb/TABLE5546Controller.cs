@@ -1,102 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE5546;
 using WEBVisualTime.Servicios.Insudb.Services;
-using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Web.Controllers.Common;
 
 namespace WEBVisualTime.Web.Insudb.Controllers;
 
-public class TABLE5546Controller : Controller
+public class TABLE5546Controller : CatalogController<TABLE5546Dto, CreateTABLE5546Dto, UpdateTABLE5546Dto, int>
 {
-    private readonly ITABLE5546Service _service;
-
-    public TABLE5546Controller(ITABLE5546Service service
-    )
-    {
-        _service = service;
-    }
-
-    // GET: TABLE5546
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TABLE5546/Index.cshtml", result);
-    }
-
-    // GET: TABLE5546/Details/{id}
-    public async Task<IActionResult> Details(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE5546/Details.cshtml", result);
-    }
-
-    // GET: TABLE5546/Create
-    public async Task<IActionResult> Create()
-    {
-        return View("~/Views/Insudb/TABLE5546/Create.cshtml", new CreateTABLE5546Dto());
-    }
-
-    // POST: TABLE5546/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(CreateTABLE5546Dto createDto)
-    {
-        if (ModelState.IsValid)
-        {
-            await _service.CreateAsync(createDto);
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE5546/Create.cshtml", createDto);
-    }
-
-    // GET: TABLE5546/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-
-        var updateDto = new UpdateTABLE5546Dto
-        {
-            NLEVEL = result.NLEVEL,
-            SDESCRIPT = result.SDESCRIPT,
-            SSHORT_DES = result.SSHORT_DES,
-            SSTATREGT = result.SSTATREGT,
-            DCOMPDATE = result.DCOMPDATE,
-            NUSERCODE = result.NUSERCODE,
-        };
-        return View("~/Views/Insudb/TABLE5546/Edit.cshtml", updateDto);
-    }
-
-    // POST: TABLE5546/Edit/{id}
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTABLE5546Dto updateDto)
-    {
-        if (ModelState.IsValid)
-        {
-            var success = await _service.UpdateAsync(updateDto.NLEVEL, updateDto);
-            if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE5546/Edit.cshtml", updateDto);
-    }
-
-    // GET: TABLE5546/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE5546/Delete.cshtml", result);
-    }
-
-    // POST: TABLE5546/Delete/{id}
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
-    {
-        await _service.DeleteAsync(id);
-        return RedirectToAction(nameof(Index));
-    }
-
+    public TABLE5546Controller(ITABLE5546Service service)
+        : base(service, "TABLE5546", "NLEVEL", new[] { "NLEVEL", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "DCOMPDATE", "NUSERCODE" }) { }
 }

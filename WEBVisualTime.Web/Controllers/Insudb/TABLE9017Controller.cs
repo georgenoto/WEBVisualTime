@@ -1,102 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE9017;
 using WEBVisualTime.Servicios.Insudb.Services;
-using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Web.Controllers.Common;
 
 namespace WEBVisualTime.Web.Insudb.Controllers;
 
-public class TABLE9017Controller : Controller
+public class TABLE9017Controller : CatalogController<TABLE9017Dto, CreateTABLE9017Dto, UpdateTABLE9017Dto, int>
 {
-    private readonly ITABLE9017Service _service;
-
-    public TABLE9017Controller(ITABLE9017Service service
-    )
-    {
-        _service = service;
-    }
-
-    // GET: TABLE9017
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TABLE9017/Index.cshtml", result);
-    }
-
-    // GET: TABLE9017/Details/{id}
-    public async Task<IActionResult> Details(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE9017/Details.cshtml", result);
-    }
-
-    // GET: TABLE9017/Create
-    public async Task<IActionResult> Create()
-    {
-        return View("~/Views/Insudb/TABLE9017/Create.cshtml", new CreateTABLE9017Dto());
-    }
-
-    // POST: TABLE9017/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(CreateTABLE9017Dto createDto)
-    {
-        if (ModelState.IsValid)
-        {
-            await _service.CreateAsync(createDto);
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE9017/Create.cshtml", createDto);
-    }
-
-    // GET: TABLE9017/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-
-        var updateDto = new UpdateTABLE9017Dto
-        {
-            NREFBUS = result.NREFBUS,
-            DCOMPDATE = result.DCOMPDATE,
-            SDESCRIPT = result.SDESCRIPT,
-            SSHORT_DES = result.SSHORT_DES,
-            SSTATREGT = result.SSTATREGT,
-            NUSERCODE = result.NUSERCODE,
-        };
-        return View("~/Views/Insudb/TABLE9017/Edit.cshtml", updateDto);
-    }
-
-    // POST: TABLE9017/Edit/{id}
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTABLE9017Dto updateDto)
-    {
-        if (ModelState.IsValid)
-        {
-            var success = await _service.UpdateAsync(updateDto.NREFBUS, updateDto);
-            if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE9017/Edit.cshtml", updateDto);
-    }
-
-    // GET: TABLE9017/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE9017/Delete.cshtml", result);
-    }
-
-    // POST: TABLE9017/Delete/{id}
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
-    {
-        await _service.DeleteAsync(id);
-        return RedirectToAction(nameof(Index));
-    }
-
+    public TABLE9017Controller(ITABLE9017Service service)
+        : base(service, "TABLE9017", "NREFBUS", new[] { "NREFBUS", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE" }) { }
 }

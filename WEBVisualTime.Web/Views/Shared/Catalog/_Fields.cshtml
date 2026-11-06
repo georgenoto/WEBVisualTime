@@ -1,0 +1,43 @@
+@using System.Globalization
+@using WEBVisualTime.Web.Models
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@inject Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider MetadataProvider
+@inject ValidationHtmlAttributeProvider ValidationAttributes
+@model object
+@{
+    var crud = (CrudDefinition)ViewData["Crud"]!;
+    var editing = string.Equals(ViewContext.RouteData.Values["action"]?.ToString(), "Edit", StringComparison.OrdinalIgnoreCase);
+    var explorer = MetadataProvider.GetModelExplorerForType(Model.GetType(), Model);
+}
+@foreach (var field in crud.Fields(Model))
+{
+    var value = field.GetValue(Model);
+    var type = Nullable.GetUnderlyingType(field.PropertyType) ?? field.PropertyType;
+    if (editing && field.Name == crud.Key)
+    {
+        @Html.Hidden(field.Name, value)
+        continue;
+    }
+    <div class="mb-3">
+        <label for="@field.Name" class="form-label">@field.Name</label>
+        @if (type == typeof(bool))
+        {
+            @Html.CheckBox(field.Name, value is true, new { @class = "form-check-input" })
+        }
+        else
+        {
+            var inputType = type == typeof(DateTime) ? "datetime-local" : type == typeof(string) || type == typeof(Guid) ? "text" : "number";
+            // Numeric values follow the request culture used by ASP.NET model binding.
+            var formatted = value is DateTime date ? date.ToString("yyyy-MM-ddTHH:mm:ss.fffffff", CultureInfo.InvariantCulture) : value;
+            var attributes = new Dictionary<string, object> { ["class"] = "form-control", ["type"] = inputType, ["step"] = "any" };
+            var validationAttributes = new Dictionary<string, string>();
+            ValidationAttributes.AddValidationAttributes(ViewContext, explorer.GetExplorerForProperty(field.Name), validationAttributes);
+            foreach (var validation in validationAttributes)
+            {
+                attributes[validation.Key] = validation.Value;
+            }
+            @Html.TextBox(field.Name, formatted, attributes)
+        }
+        @Html.ValidationMessage(field.Name, null, new { @class = "text-danger" })
+    </div>
+}

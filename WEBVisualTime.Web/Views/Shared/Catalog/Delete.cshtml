@@ -1,0 +1,19 @@
+@using WEBVisualTime.Web.Models
+@model object
+@{
+    var crud = (CrudDefinition)ViewData["Crud"]!;
+    ViewData["Title"] = "Eliminar " + crud.Name;
+}
+<h1>@ViewData["Title"]</h1>
+<p>¿Confirma que desea eliminar este registro?</p>
+<dl class="row">
+    @foreach (var column in crud.Columns)
+    {
+        <dt class="col-sm-3">@column</dt><dd class="col-sm-9">@crud.Value(Model, column)</dd>
+    }
+</dl>
+<form asp-action="Delete" method="post">
+    @Html.Hidden("id", crud.Value(Model, crud.Key))
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

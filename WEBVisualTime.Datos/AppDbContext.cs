@@ -44,35 +44,17 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<BRANPROD_ALLOW> BRANPROD_ALLOWs { get; set; } = null!;
     public virtual DbSet<BROKER_DET> BROKER_DETs { get; set; } = null!;
     public virtual DbSet<BUSSKIND> BUSSKINDs { get; set; } = null!;
-    public virtual DbSet<CALEND_INTERFACE> CALEND_INTERFACEs { get; set; } = null!;
     public virtual DbSet<CASH_ACC> CASH_ACCs { get; set; } = null!;
     public virtual DbSet<CASH_CONCEPTS> CASH_CONCEPTSs { get; set; } = null!;
     public virtual DbSet<CASH_CONCLASS> CASH_CONCLASSs { get; set; } = null!;
     public virtual DbSet<CASH_MOV> CASH_MOVs { get; set; } = null!;
     public virtual DbSet<CASH_STAT> CASH_STATs { get; set; } = null!;
-    public virtual DbSet<CDI_CLASS_SET_CODE_TYPES> CDI_CLASS_SET_CODE_TYPESs { get; set; } = null!;
-    public virtual DbSet<CDI_CODE_SECTION_TYPES> CDI_CODE_SECTION_TYPESs { get; set; } = null!;
-    public virtual DbSet<CDI_DFLT_USER_PREFS> CDI_DFLT_USER_PREFSs { get; set; } = null!;
-    public virtual DbSet<CDI_DFLT_USER_PREF_USAGES> CDI_DFLT_USER_PREF_USAGESs { get; set; } = null!;
-    public virtual DbSet<CDI_FORMS> CDI_FORMSs { get; set; } = null!;
-    public virtual DbSet<CDI_GENERATION_TARGETS> CDI_GENERATION_TARGETSs { get; set; } = null!;
-    public virtual DbSet<CDI_GEN_TARGET_PROPERTIES> CDI_GEN_TARGET_PROPERTIESs { get; set; } = null!;
-    public virtual DbSet<CDI_LANGUAGE_DEFINITIONS> CDI_LANGUAGE_DEFINITIONSs { get; set; } = null!;
-    public virtual DbSet<CDI_NAV> CDI_NAVs { get; set; } = null!;
-    public virtual DbSet<CDI_PREF_DOMAINS> CDI_PREF_DOMAINSs { get; set; } = null!;
-    public virtual DbSet<CDI_PRODUCT_FLAVOURS> CDI_PRODUCT_FLAVOURSs { get; set; } = null!;
-    public virtual DbSet<CDI_PRODUCTS> CDI_PRODUCTSs { get; set; } = null!;
-    public virtual DbSet<CDI_TYPE_MATCH> CDI_TYPE_MATCHs { get; set; } = null!;
-    public virtual DbSet<CDI_VALID_PREFS> CDI_VALID_PREFSs { get; set; } = null!;
     public virtual DbSet<CERTIFICAT> CERTIFICATs { get; set; } = null!;
-    public virtual DbSet<CESSION_NPR> CESSION_NPRs { get; set; } = null!;
     public virtual DbSet<CESSION_PR> CESSION_PRs { get; set; } = null!;
-    public virtual DbSet<CG_DES_FORM_HELP> CG_DES_FORM_HELPs { get; set; } = null!;
     public virtual DbSet<CHARG_PREBASPAY> CHARG_PREBASPAYs { get; set; } = null!;
     public virtual DbSet<CHEQ_BOOK> CHEQ_BOOKs { get; set; } = null!;
     public virtual DbSet<CHEQUE_MOV> CHEQUE_MOVs { get; set; } = null!;
     public virtual DbSet<CHEQUES> CHEQUESs { get; set; } = null!;
-    public virtual DbSet<CI_ELEMENT_TYPES> CI_ELEMENT_TYPESs { get; set; } = null!;
     public virtual DbSet<CLAIM> CLAIMs { get; set; } = null!;
     public virtual DbSet<CLAIM_ACTIONS_SCHE> CLAIM_ACTIONS_SCHEs { get; set; } = null!;
     public virtual DbSet<CLAIM_ACTIONS_STATE> CLAIM_ACTIONS_STATEs { get; set; } = null!;
@@ -105,10 +87,8 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<CLIDOCPOL> CLIDOCPOLs { get; set; } = null!;
     public virtual DbSet<CLIDOCUMENTS> CLIDOCUMENTSs { get; set; } = null!;
     public virtual DbSet<CLIENT> CLIENTs { get; set; } = null!;
-    public virtual DbSet<CLIENT_EVALRISK> CLIENT_EVALRISKs { get; set; } = null!;
     public virtual DbSet<CLIENT_HIS> CLIENT_HISs { get; set; } = null!;
     public virtual DbSet<CLIENT_REQ> CLIENT_REQs { get; set; } = null!;
-    public virtual DbSet<CLIENT_RESP_CLEAR> CLIENT_RESP_CLEARs { get; set; } = null!;
     public virtual DbSet<CLIENT_SF> CLIENT_SFs { get; set; } = null!;
     public virtual DbSet<CLIENT_TMP> CLIENT_TMPs { get; set; } = null!;
     public virtual DbSet<CLIENT_WIN> CLIENT_WINs { get; set; } = null!;
@@ -130,7 +110,6 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<COMM_POL> COMM_POLs { get; set; } = null!;
     public virtual DbSet<COMM_TOT> COMM_TOTs { get; set; } = null!;
     public virtual DbSet<COMPANY> COMPANYs { get; set; } = null!;
-    public virtual DbSet<COMPANY_RESP_CLEAR> COMPANY_RESP_CLEARs { get; set; } = null!;
     public virtual DbSet<CONTRAT_PAY> CONTRAT_PAYs { get; set; } = null!;
     public virtual DbSet<CONTR_CESCOV> CONTR_CESCOVs { get; set; } = null!;
     public virtual DbSet<CONTR_LIMCOV> CONTR_LIMCOVs { get; set; } = null!;
@@ -140,7 +119,6 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<CONTRPROC> CONTRPROCs { get; set; } = null!;
     public virtual DbSet<COVER> COVERs { get; set; } = null!;
     public virtual DbSet<COVER_CO_G> COVER_CO_Gs { get; set; } = null!;
-    public virtual DbSet<COVERCOL_TMP> COVERCOL_TMPs { get; set; } = null!;
     public virtual DbSet<COVER_CO_P> COVER_CO_Ps { get; set; } = null!;
     public virtual DbSet<COVER_QUOTA> COVER_QUOTAs { get; set; } = null!;
     public virtual DbSet<COVER_TMP> COVER_TMPs { get; set; } = null!;
@@ -191,14 +169,12 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<HIS_ASC_II> HIS_ASC_IIs { get; set; } = null!;
     public virtual DbSet<HOBBY> HOBBYs { get; set; } = null!;
     public virtual DbSet<HOLLIDAYS> HOLLIDAYSs { get; set; } = null!;
-    public virtual DbSet<HOMOLOG_TABLE> HOMOLOG_TABLEs { get; set; } = null!;
     public virtual DbSet<IMAGES> IMAGESs { get; set; } = null!;
     public virtual DbSet<INQUIRY_AS> INQUIRY_ASs { get; set; } = null!;
     public virtual DbSet<INSURED_EXPDIS> INSURED_EXPDISs { get; set; } = null!;
     public virtual DbSet<INTERMED_HIS> INTERMED_HISs { get; set; } = null!;
     public virtual DbSet<INTERMEDIA> INTERMEDIAs { get; set; } = null!;
     public virtual DbSet<INTERMED_PARTIC> INTERMED_PARTICs { get; set; } = null!;
-    public virtual DbSet<INTERM_PARAM> INTERM_PARAMs { get; set; } = null!;
     public virtual DbSet<INTERM_TYP> INTERM_TYPs { get; set; } = null!;
     public virtual DbSet<INT_FIXVAL> INT_FIXVALs { get; set; } = null!;
     public virtual DbSet<LATEPAYMENTPENALTY> LATEPAYMENTPENALTYs { get; set; } = null!;
@@ -214,7 +190,6 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<LIMITS> LIMITSs { get; set; } = null!;
     public virtual DbSet<LOGBILLS> LOGBILLSs { get; set; } = null!;
     public virtual DbSet<MARGENREP> MARGENREPs { get; set; } = null!;
-    public virtual DbSet<MASSIVE_LOG_ERROR> MASSIVE_LOG_ERRORs { get; set; } = null!;
     public virtual DbSet<MASSIVE_LOG_PROC> MASSIVE_LOG_PROCs { get; set; } = null!;
     public virtual DbSet<MASSIVE_PART_CONDITIONS> MASSIVE_PART_CONDITIONSs { get; set; } = null!;
     public virtual DbSet<MASSIVE_POLICY> MASSIVE_POLICYs { get; set; } = null!;
@@ -225,7 +200,6 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<MASTERCL_DOCUMENTS> MASTERCL_DOCUMENTSs { get; set; } = null!;
     public virtual DbSet<MASTERCL_HIS> MASTERCL_HISs { get; set; } = null!;
     public virtual DbSet<MASTERCL_ORDER> MASTERCL_ORDERs { get; set; } = null!;
-    public virtual DbSet<MASTER_MASS_SPONSOR> MASTER_MASS_SPONSORs { get; set; } = null!;
     public virtual DbSet<MASTERSHEET> MASTERSHEETs { get; set; } = null!;
     public virtual DbSet<MEDBENEFITS_PROD> MEDBENEFITS_PRODs { get; set; } = null!;
     public virtual DbSet<MEDICALBENEFITS> MEDICALBENEFITSs { get; set; } = null!;
@@ -233,7 +207,6 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<MEDICALFEES> MEDICALFEESs { get; set; } = null!;
     public virtual DbSet<MEDICAL_SURCHARGE> MEDICAL_SURCHARGEs { get; set; } = null!;
     public virtual DbSet<MEDICALTEAMS_FEES> MEDICALTEAMS_FEESs { get; set; } = null!;
-    public virtual DbSet<MENU_SSCHE_CODE> MENU_SSCHE_CODEs { get; set; } = null!;
     public virtual DbSet<MESSAGE> MESSAGEs { get; set; } = null!;
     public virtual DbSet<MODUL_CO_G> MODUL_CO_Gs { get; set; } = null!;
     public virtual DbSet<MODUL_CO_P> MODUL_CO_Ps { get; set; } = null!;
@@ -256,26 +229,18 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<OUT_MOVEME> OUT_MOVEMEs { get; set; } = null!;
     public virtual DbSet<OUT_PREMIU> OUT_PREMIUs { get; set; } = null!;
     public virtual DbSet<OUT_PREMIU_INI> OUT_PREMIU_INIs { get; set; } = null!;
-    public virtual DbSet<PACKAGE_TABLE_MAP> PACKAGE_TABLE_MAPs { get; set; } = null!;
     public virtual DbSet<PART_CONTR> PART_CONTRs { get; set; } = null!;
     public virtual DbSet<PAY_FRACTI> PAY_FRACTIs { get; set; } = null!;
     public virtual DbSet<PAY_ORD_CONCEPTS> PAY_ORD_CONCEPTSs { get; set; } = null!;
     public virtual DbSet<PCC004_FORM> PCC004_FORMs { get; set; } = null!;
-    public virtual DbSet<PCC004_TMP> PCC004_TMPs { get; set; } = null!;
     public virtual DbSet<PERSON_TYPE> PERSON_TYPEs { get; set; } = null!;
     public virtual DbSet<PHONES> PHONESs { get; set; } = null!;
     public virtual DbSet<PIE_ELEMENT_TYPES> PIE_ELEMENT_TYPESs { get; set; } = null!;
-    public virtual DbSet<PLAN_TABLE> PLAN_TABLEs { get; set; } = null!;
-    public virtual DbSet<PL_ASP_CLASICO> PL_ASP_CLASICOs { get; set; } = null!;
-    public virtual DbSet<PL_ASP_NET> PL_ASP_NETs { get; set; } = null!;
     public virtual DbSet<POLICY> POLICYs { get; set; } = null!;
-    public virtual DbSet<POLICY_DELTA_BASELINE> POLICY_DELTA_BASELINEs { get; set; } = null!;
     public virtual DbSet<POLICY_HIS> POLICY_HISs { get; set; } = null!;
     public virtual DbSet<POLICY_WIN> POLICY_WINs { get; set; } = null!;
-    public virtual DbSet<POLICY_WIN_BACKUP_254176> POLICY_WIN_BACKUP_254176s { get; set; } = null!;
     public virtual DbSet<PRECLAIM> PRECLAIMs { get; set; } = null!;
     public virtual DbSet<PREMIUM> PREMIUMs { get; set; } = null!;
-    public virtual DbSet<PREMIUM_BKP_256518> PREMIUM_BKP_256518s { get; set; } = null!;
     public virtual DbSet<PREMIUM_CE> PREMIUM_CEs { get; set; } = null!;
     public virtual DbSet<PREMIUM_CE_INI> PREMIUM_CE_INIs { get; set; } = null!;
     public virtual DbSet<PREMIUM_MO> PREMIUM_MOs { get; set; } = null!;
@@ -300,19 +265,12 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<RELATIONS> RELATIONSs { get; set; } = null!;
     public virtual DbSet<RELATIONSHIP> RELATIONSHIPs { get; set; } = null!;
     public virtual DbSet<RELCONCEPTS> RELCONCEPTSs { get; set; } = null!;
-    public virtual DbSet<REP_CLEAR_VTIME> REP_CLEAR_VTIMEs { get; set; } = null!;
-    public virtual DbSet<REP_ERROR> REP_ERRORs { get; set; } = null!;
-    public virtual DbSet<REP_INTLRECAUDACION> REP_INTLRECAUDACIONs { get; set; } = null!;
-    public virtual DbSet<REPORT_MAP> REPORT_MAPs { get; set; } = null!;
     public virtual DbSet<REPORTMASTER> REPORTMASTERs { get; set; } = null!;
     public virtual DbSet<REPORT_PROD> REPORT_PRODs { get; set; } = null!;
     public virtual DbSet<REPORTSHEET> REPORTSHEETs { get; set; } = null!;
-    public virtual DbSet<REP_TIMES> REP_TIMESs { get; set; } = null!;
     public virtual DbSet<REQ_ENDOR> REQ_ENDORs { get; set; } = null!;
     public virtual DbSet<REQUEST> REQUESTs { get; set; } = null!;
     public virtual DbSet<RETENTIONCOV> RETENTIONCOVs { get; set; } = null!;
-    public virtual DbSet<RM_LINK_CUSTOMIZED_QUERY> RM_LINK_CUSTOMIZED_QUERYs { get; set; } = null!;
-    public virtual DbSet<RM_LINK_CUSTOMIZED_QUERY_BIND> RM_LINK_CUSTOMIZED_QUERY_BINDs { get; set; } = null!;
     public virtual DbSet<RM_REG_TYPES> RM_REG_TYPESs { get; set; } = null!;
     public virtual DbSet<RNULLCONDI> RNULLCONDIs { get; set; } = null!;
     public virtual DbSet<ROLDOCREQ> ROLDOCREQs { get; set; } = null!;
@@ -320,20 +278,12 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<ROLE_TYPE_AMEND> ROLE_TYPE_AMENDs { get; set; } = null!;
     public virtual DbSet<SCHEMA_CUR> SCHEMA_CURs { get; set; } = null!;
     public virtual DbSet<SCHEMA_FOLDER> SCHEMA_FOLDERs { get; set; } = null!;
-    public virtual DbSet<SCHE_PCON> SCHE_PCONs { get; set; } = null!;
-    public virtual DbSet<SCHE_SURR_BRANCH> SCHE_SURR_BRANCHs { get; set; } = null!;
-    public virtual DbSet<SCHE_SURR_PAYMENT> SCHE_SURR_PAYMENTs { get; set; } = null!;
-    public virtual DbSet<SCHE_SURR_REASON> SCHE_SURR_REASONs { get; set; } = null!;
-    public virtual DbSet<SCHE_SURR_ROLES> SCHE_SURR_ROLESs { get; set; } = null!;
-    public virtual DbSet<SCHE_TRANSAC> SCHE_TRANSACs { get; set; } = null!;
     public virtual DbSet<SDD_DEPENDENCY_TYPES> SDD_DEPENDENCY_TYPESs { get; set; } = null!;
     public virtual DbSet<SDD_DEPEND_STATUSES> SDD_DEPEND_STATUSESs { get; set; } = null!;
     public virtual DbSet<SDD_GLOBAL_NAME_DOMAINS> SDD_GLOBAL_NAME_DOMAINSs { get; set; } = null!;
     public virtual DbSet<SDD_NLS_GLOBAL_NAME_DOMAINS> SDD_NLS_GLOBAL_NAME_DOMAINSs { get; set; } = null!;
-    public virtual DbSet<SDD_RESERVED_NAMES> SDD_RESERVED_NAMESs { get; set; } = null!;
     public virtual DbSet<SECTION_PO> SECTION_POs { get; set; } = null!;
     public virtual DbSet<SECUR_SCHE> SECUR_SCHEs { get; set; } = null!;
-    public virtual DbSet<SECUR_SCHE_SURR> SECUR_SCHE_SURRs { get; set; } = null!;
     public virtual DbSet<SELLCHANNEL_PROD> SELLCHANNEL_PRODs { get; set; } = null!;
     public virtual DbSet<SEQFOLDER> SEQFOLDERs { get; set; } = null!;
     public virtual DbSet<SEQUEN_POL> SEQUEN_POLs { get; set; } = null!;
@@ -346,7 +296,6 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<TAB_AM_EXC> TAB_AM_EXCs { get; set; } = null!;
     public virtual DbSet<TAB_AM_ILL> TAB_AM_ILLs { get; set; } = null!;
     public virtual DbSet<TAB_AU_VEH> TAB_AU_VEHs { get; set; } = null!;
-    public virtual DbSet<TAB_AUXILIAR> TAB_AUXILIARs { get; set; } = null!;
     public virtual DbSet<TAB_BILL_I> TAB_BILL_Is { get; set; } = null!;
     public virtual DbSet<TAB_BK_AGE> TAB_BK_AGEs { get; set; } = null!;
     public virtual DbSet<TAB_CLAUSE> TAB_CLAUSEs { get; set; } = null!;
@@ -1031,7 +980,6 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<TAB_PROV_FEES> TAB_PROV_FEESs { get; set; } = null!;
     public virtual DbSet<TAB_PROV_GROUP> TAB_PROV_GROUPs { get; set; } = null!;
     public virtual DbSet<TAB_PROVIDER> TAB_PROVIDERs { get; set; } = null!;
-    public virtual DbSet<TAB_PROVIDER_CARLOS> TAB_PROVIDER_CARLOSs { get; set; } = null!;
     public virtual DbSet<TAB_PROV_MEDSPEC> TAB_PROV_MEDSPECs { get; set; } = null!;
     public virtual DbSet<TAB_PROV_STAFF> TAB_PROV_STAFFs { get; set; } = null!;
     public virtual DbSet<TAB_PROV_SUBTYPES> TAB_PROV_SUBTYPESs { get; set; } = null!;
@@ -1056,34 +1004,18 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<T_BANK_TRANS> T_BANK_TRANSs { get; set; } = null!;
     public virtual DbSet<T_CASH_MOV> T_CASH_MOVs { get; set; } = null!;
     public virtual DbSet<T_CHEQUES> T_CHEQUESs { get; set; } = null!;
-    public virtual DbSet<TCLAUS_CO_G> TCLAUS_CO_Gs { get; set; } = null!;
-    public virtual DbSet<TCLAUS_CO_P> TCLAUS_CO_Ps { get; set; } = null!;
-    public virtual DbSet<TCOMMISS> TCOMMISSs { get; set; } = null!;
     public virtual DbSet<T_CONCEPTS> T_CONCEPTSs { get; set; } = null!;
     public virtual DbSet<TCONVERTIONS> TCONVERTIONSs { get; set; } = null!;
-    public virtual DbSet<TCOVER> TCOVERs { get; set; } = null!;
-    public virtual DbSet<TCURRENCY> TCURRENCYs { get; set; } = null!;
-    public virtual DbSet<TDETAIL_PRE> TDETAIL_PREs { get; set; } = null!;
     public virtual DbSet<T_DOCTYP> T_DOCTYPs { get; set; } = null!;
-    public virtual DbSet<T_DOCTYP_BKP20260910> T_DOCTYP_BKP20260910s { get; set; } = null!;
     public virtual DbSet<T_ERR_INTERFACE> T_ERR_INTERFACEs { get; set; } = null!;
-    public virtual DbSet<T_ERR_MASSIVE> T_ERR_MASSIVEs { get; set; } = null!;
     public virtual DbSet<TIMEGLOBALS> TIMEGLOBALSs { get; set; } = null!;
     public virtual DbSet<T_INTERFACE> T_INTERFACEs { get; set; } = null!;
     public virtual DbSet<TLEDAUTREJECTM> TLEDAUTREJECTMs { get; set; } = null!;
     public virtual DbSet<T_MASIVECHARGE> T_MASIVECHARGEs { get; set; } = null!;
     public virtual DbSet<T_MOVE_ACC> T_MOVE_ACCs { get; set; } = null!;
-    public virtual DbSet<TOAD_PLAN_SQL> TOAD_PLAN_SQLs { get; set; } = null!;
-    public virtual DbSet<TOAD_PLAN_TABLE> TOAD_PLAN_TABLEs { get; set; } = null!;
-    public virtual DbSet<TOBLIGREIN> TOBLIGREINs { get; set; } = null!;
     public virtual DbSet<T_PARAM_INTERFACE> T_PARAM_INTERFACEs { get; set; } = null!;
-    public virtual DbSet<TRACE> TRACEs { get; set; } = null!;
     public virtual DbSet<TRACKING> TRACKINGs { get; set; } = null!;
-    public virtual DbSet<TREHABILITATE> TREHABILITATEs { get; set; } = null!;
-    public virtual DbSet<TREINSURAN> TREINSURANs { get; set; } = null!;
-    public virtual DbSet<TREINSURAN_CESSION> TREINSURAN_CESSIONs { get; set; } = null!;
     public virtual DbSet<TRELDOC> TRELDOCs { get; set; } = null!;
-    public virtual DbSet<TRENEWPOL> TRENEWPOLs { get; set; } = null!;
     public virtual DbSet<TYPE_AMEND> TYPE_AMENDs { get; set; } = null!;
     public virtual DbSet<TYPEPERGROUP> TYPEPERGROUPs { get; set; } = null!;
     public virtual DbSet<TYPESUBTYPE_RELATIONSHIP> TYPESUBTYPE_RELATIONSHIPs { get; set; } = null!;
@@ -1091,7 +1023,6 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<USER_CASHNUM> USER_CASHNUMs { get; set; } = null!;
     public virtual DbSet<USER_OFFICE> USER_OFFICEs { get; set; } = null!;
     public virtual DbSet<USERS> USERSs { get; set; } = null!;
-    public virtual DbSet<USERS_RESP_CLEAR> USERS_RESP_CLEARs { get; set; } = null!;
     public virtual DbSet<WAY_PAY_PROD> WAY_PAY_PRODs { get; set; } = null!;
     public virtual DbSet<WIN_ACTIONS> WIN_ACTIONSs { get; set; } = null!;
     public virtual DbSet<WINDOWS> WINDOWSs { get; set; } = null!;
@@ -1436,12 +1367,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SSTATREGT).HasMaxLength(1);
         });
 
-        modelBuilder.Entity<CALEND_INTERFACE>(entity =>
-        {
-            entity.ToTable("CALEND_INTERFACE", "INSUDB");
-            entity.Property(e => e.SHOUR).HasMaxLength(5);
-        });
-
         modelBuilder.Entity<CASH_ACC>(entity =>
         {
             entity.ToTable("CASH_ACC", "INSUDB");
@@ -1489,193 +1414,6 @@ public partial class AppDbContext : DbContext
             entity.HasKey(e => new { e.NCASHNUM, e.DSTATDATE, e.NID });
         });
 
-        modelBuilder.Entity<CDI_CLASS_SET_CODE_TYPES>(entity =>
-        {
-            entity.ToTable("CDI_CLASS_SET_CODE_TYPES", "INSUDB");
-            entity.Property(e => e.LANGUAGE_NAME).HasMaxLength(30);
-            entity.Property(e => e.TYPE_NAME).HasMaxLength(50);
-            entity.Property(e => e.GENERATE_FLAG).HasMaxLength(1);
-            entity.Property(e => e.TEMPLATE_FILE).HasMaxLength(132);
-            entity.Property(e => e.FILE_FILTER).HasMaxLength(40);
-            entity.Property(e => e.DEFAULT_FILE_NAME).HasMaxLength(40);
-            entity.Property(e => e.OPEN_BEGIN_MARKER).HasMaxLength(40);
-            entity.Property(e => e.CLOSE_BEGIN_MARKER).HasMaxLength(40);
-            entity.Property(e => e.OPEN_END_MARKER).HasMaxLength(40);
-            entity.Property(e => e.CLOSE_END_MARKER).HasMaxLength(40);
-            entity.Property(e => e.FILE_TYPE).HasMaxLength(1);
-            entity.Property(e => e.NLS_LANG).HasMaxLength(3);
-        });
-
-        modelBuilder.Entity<CDI_CODE_SECTION_TYPES>(entity =>
-        {
-            entity.ToTable("CDI_CODE_SECTION_TYPES", "INSUDB");
-            entity.Property(e => e.LANGUAGE_NAME).HasMaxLength(30);
-            entity.Property(e => e.TYPE_NAME).HasMaxLength(50);
-            entity.Property(e => e.GEN_TEMPLATE_FILE).HasMaxLength(132);
-            entity.Property(e => e.REGEN_TEMPLATE_FILE).HasMaxLength(132);
-            entity.Property(e => e.OPEN_BEGIN_MARKER).HasMaxLength(40);
-            entity.Property(e => e.CLOSE_BEGIN_MARKER).HasMaxLength(40);
-            entity.Property(e => e.END_MARKER).HasMaxLength(40);
-            entity.Property(e => e.FILE_FILTER).HasMaxLength(40);
-            entity.Property(e => e.REGISTRY_NAME).HasMaxLength(40);
-            entity.Property(e => e.DEFAULT_FILE_NAME).HasMaxLength(40);
-            entity.Property(e => e.CLOSE_END_MARKER).HasMaxLength(40);
-            entity.Property(e => e.SECTION_TYPE).HasMaxLength(1);
-            entity.Property(e => e.FILE_TYPE).HasMaxLength(1);
-            entity.Property(e => e.NLS_LANG).HasMaxLength(3);
-        });
-
-        modelBuilder.Entity<CDI_DFLT_USER_PREFS>(entity =>
-        {
-            entity.ToTable("CDI_DFLT_USER_PREFS", "INSUDB");
-            entity.Property(e => e.P_SNAME).HasMaxLength(10);
-            entity.Property(e => e.P_CGVERSION).HasMaxLength(10);
-            entity.Property(e => e.SNAME).HasMaxLength(10);
-            entity.Property(e => e.NAME).HasMaxLength(30);
-            entity.Property(e => e.VALUE).HasMaxLength(240);
-            entity.Property(e => e.INTERNAL).HasMaxLength(1);
-            entity.Property(e => e.TYPE).HasMaxLength(20);
-            entity.Property(e => e.DESCRIPTION).HasMaxLength(240);
-        });
-
-        modelBuilder.Entity<CDI_DFLT_USER_PREF_USAGES>(entity =>
-        {
-            entity.ToTable("CDI_DFLT_USER_PREF_USAGES", "INSUDB");
-            entity.Property(e => e.P_SNAME).HasMaxLength(10);
-            entity.Property(e => e.P_CGVERSION).HasMaxLength(10);
-            entity.Property(e => e.DUP_SNAME).HasMaxLength(10);
-            entity.Property(e => e.VALUE).HasMaxLength(240);
-            entity.Property(e => e.DUP_INTERNAL).HasMaxLength(1);
-            entity.Property(e => e.DUP_TYPE).HasMaxLength(30);
-            entity.Property(e => e.MANDATORY).HasMaxLength(1);
-            entity.Property(e => e.CHR_DOMAIN).HasMaxLength(20);
-            entity.Property(e => e.DOM).HasMaxLength(1);
-            entity.Property(e => e.TAB).HasMaxLength(1);
-            entity.Property(e => e.CON).HasMaxLength(1);
-            entity.Property(e => e.COL).HasMaxLength(1);
-            entity.Property(e => e.MOD).HasMaxLength(1);
-            entity.Property(e => e.DTU).HasMaxLength(1);
-            entity.Property(e => e.CONU).HasMaxLength(1);
-            entity.Property(e => e.IGRP).HasMaxLength(1);
-            entity.Property(e => e.DCU).HasMaxLength(1);
-            entity.Property(e => e.ABT).HasMaxLength(1);
-            entity.Property(e => e.VAT).HasMaxLength(1);
-            entity.Property(e => e.OBT).HasMaxLength(1);
-            entity.Property(e => e.TME).HasMaxLength(1);
-            entity.Property(e => e.ARL).HasMaxLength(1);
-            entity.Property(e => e.TAT).HasMaxLength(1);
-            entity.Property(e => e.TOP).HasMaxLength(1);
-            entity.Property(e => e.OPP).HasMaxLength(1);
-            entity.Property(e => e.VVA).HasMaxLength(1);
-            entity.Property(e => e.ABTABT).HasMaxLength(1);
-            entity.Property(e => e.TCO).HasMaxLength(1);
-            entity.Property(e => e.GES).HasMaxLength(1);
-            entity.Property(e => e.PCK).HasMaxLength(1);
-            entity.Property(e => e.LOV).HasMaxLength(1);
-            entity.Property(e => e.SUB).HasMaxLength(1);
-            entity.Property(e => e.ACI).HasMaxLength(1);
-            entity.Property(e => e.NLS_LANG).HasMaxLength(3);
-            entity.Property(e => e.DESCRIPTION).HasMaxLength(240);
-        });
-
-        modelBuilder.Entity<CDI_FORMS>(entity =>
-        {
-            entity.ToTable("CDI_FORMS", "INSUDB");
-            entity.Property(e => e.FRM_FNAME).HasMaxLength(8);
-            entity.Property(e => e.FRM_DISP_NAME).HasMaxLength(30);
-            entity.Property(e => e.FRM_DESC).HasMaxLength(80);
-        });
-
-        modelBuilder.Entity<CDI_GENERATION_TARGETS>(entity =>
-        {
-            entity.ToTable("CDI_GENERATION_TARGETS", "INSUDB");
-            entity.Property(e => e.NAME).HasMaxLength(100);
-            entity.Property(e => e.LANGUAGE).HasMaxLength(100);
-            entity.Property(e => e.REGISTRY_NAME).HasMaxLength(40);
-            entity.Property(e => e.MEMBER_BEGIN_MARKER).HasMaxLength(40);
-            entity.Property(e => e.CLOSE_MEMBER_MARKER).HasMaxLength(40);
-            entity.Property(e => e.MEMBER_END_MARKER).HasMaxLength(40);
-            entity.Property(e => e.NLS_LANG).HasMaxLength(3);
-        });
-
-        modelBuilder.Entity<CDI_GEN_TARGET_PROPERTIES>(entity =>
-        {
-            entity.ToTable("CDI_GEN_TARGET_PROPERTIES", "INSUDB");
-            entity.Property(e => e.TARGET_NAME).HasMaxLength(100);
-            entity.Property(e => e.TYPE).HasMaxLength(3);
-            entity.Property(e => e.NAME).HasMaxLength(32);
-            entity.Property(e => e.VALUE).HasMaxLength(100);
-        });
-
-        modelBuilder.Entity<CDI_LANGUAGE_DEFINITIONS>(entity =>
-        {
-            entity.ToTable("CDI_LANGUAGE_DEFINITIONS", "INSUDB");
-            entity.Property(e => e.LAN_NAME).HasMaxLength(100);
-            entity.Property(e => e.LAN_SOURCE_DIRECTORY).HasMaxLength(240);
-            entity.Property(e => e.LAN_RUNTIME_DIRECTORY).HasMaxLength(240);
-            entity.Property(e => e.LAN_PROGRAMATICAL).HasMaxLength(1);
-            entity.Property(e => e.LAN_TYPE).HasMaxLength(40);
-            entity.Property(e => e.LAN_COMMAND_LINE).HasMaxLength(100);
-            entity.Property(e => e.LAN_GENERATABLE_FLAG).HasMaxLength(1);
-            entity.Property(e => e.LAN_INTERNAL_NAME).HasMaxLength(10);
-            entity.Property(e => e.LAN_OBM_FLAG).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<CDI_NAV>(entity =>
-        {
-            entity.ToTable("CDI_NAV", "INSUDB");
-            entity.Property(e => e.NAV_TYPE).HasMaxLength(1);
-            entity.Property(e => e.NAV_FNAME).HasMaxLength(8);
-            entity.Property(e => e.NAV_NAME).HasMaxLength(10);
-            entity.Property(e => e.NAV_BTNAME).HasMaxLength(30);
-            entity.Property(e => e.NAV_CNAME).HasMaxLength(30);
-            entity.Property(e => e.NAV_REF_BTNAME).HasMaxLength(30);
-            entity.Property(e => e.NAV_REF_CNAME).HasMaxLength(30);
-            entity.Property(e => e.NAV_ASSOC_END).HasMaxLength(1);
-            entity.Property(e => e.NAV_DESCRIPTION).HasMaxLength(40);
-        });
-
-        modelBuilder.Entity<CDI_PREF_DOMAINS>(entity =>
-        {
-            entity.ToTable("CDI_PREF_DOMAINS", "INSUDB");
-            entity.Property(e => e.PD_DOMAIN).HasMaxLength(20);
-            entity.Property(e => e.PD_DESC).HasMaxLength(240);
-        });
-
-        modelBuilder.Entity<CDI_PRODUCT_FLAVOURS>(entity =>
-        {
-            entity.ToTable("CDI_PRODUCT_FLAVOURS", "INSUDB");
-            entity.Property(e => e.P_SNAME).HasMaxLength(10);
-            entity.Property(e => e.P_CGVERSION).HasMaxLength(10);
-            entity.Property(e => e.DESCRIPTION).HasMaxLength(240);
-        });
-
-        modelBuilder.Entity<CDI_PRODUCTS>(entity =>
-        {
-            entity.ToTable("CDI_PRODUCTS", "INSUDB");
-            entity.Property(e => e.SNAME).HasMaxLength(10);
-            entity.Property(e => e.NAME).HasMaxLength(60);
-            entity.Property(e => e.VERSION).HasMaxLength(10);
-        });
-
-        modelBuilder.Entity<CDI_TYPE_MATCH>(entity =>
-        {
-            entity.ToTable("CDI_TYPE_MATCH", "INSUDB");
-            entity.Property(e => e.TYPE_SHORT_NAME).HasMaxLength(40);
-            entity.Property(e => e.EL_TYPE_OF).HasMaxLength(10);
-            entity.Property(e => e.EL_OCCUR_TYPE).HasMaxLength(12);
-        });
-
-        modelBuilder.Entity<CDI_VALID_PREFS>(entity =>
-        {
-            entity.ToTable("CDI_VALID_PREFS", "INSUDB");
-            entity.Property(e => e.VP_DOMAIN).HasMaxLength(20);
-            entity.Property(e => e.VP_VALUE).HasMaxLength(240);
-            entity.Property(e => e.VP_MEANING).HasMaxLength(240);
-            entity.Property(e => e.VP_ABBREVIATION).HasMaxLength(240);
-            entity.Property(e => e.NLS_LANG).HasMaxLength(3);
-        });
-
         modelBuilder.Entity<CERTIFICAT>(entity =>
         {
             entity.ToTable("CERTIFICAT", "INSUDB");
@@ -1721,14 +1459,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SPREVPOLNUM).HasMaxLength(30);
         });
 
-        modelBuilder.Entity<CESSION_NPR>(entity =>
-        {
-            entity.ToTable("CESSION_NPR", "INSUDB");
-            entity.Property(e => e.SPRINT_CE).HasMaxLength(1);
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-        });
-
         modelBuilder.Entity<CESSION_PR>(entity =>
         {
             entity.ToTable("CESSION_PR", "INSUDB");
@@ -1743,17 +1473,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SKEY).HasMaxLength(20);
             entity.Property(e => e.SPOSTEDSEQUENCE).HasMaxLength(100);
             entity.Property(e => e.SINDPROCESS).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<CG_DES_FORM_HELP>(entity =>
-        {
-            entity.ToTable("CG_DES_FORM_HELP", "INSUDB");
-            entity.Property(e => e.HLP_APPLN).HasMaxLength(30);
-            entity.Property(e => e.HLP_INDEX).HasMaxLength(100);
-            entity.Property(e => e.HLP_MODTAB_NAME).HasMaxLength(30);
-            entity.Property(e => e.HLP_GENERATED).HasMaxLength(1);
-            entity.Property(e => e.HLP_TEXT).HasMaxLength(70);
-            entity.Property(e => e.HLP_TYPE).HasMaxLength(1);
         });
 
         modelBuilder.Entity<CHARG_PREBASPAY>(entity =>
@@ -1795,22 +1514,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SINDPROCES).HasMaxLength(1);
             entity.Property(e => e.SACCOUNTHOLDER).HasMaxLength(14);
             entity.Property(e => e.SBANKACCOUNT).HasMaxLength(100);
-        });
-
-        modelBuilder.Entity<CI_ELEMENT_TYPES>(entity =>
-        {
-            entity.ToTable("CI_ELEMENT_TYPES", "INSUDB");
-            entity.Property(e => e.NAME).HasMaxLength(27);
-            entity.Property(e => e.SHORT_NAME).HasMaxLength(10);
-            entity.Property(e => e.EL_TYPE_OF).HasMaxLength(10);
-            entity.Property(e => e.PRODUCT).HasMaxLength(2);
-            entity.Property(e => e.RELEASE).HasMaxLength(1);
-            entity.Property(e => e.PACK_GEN).HasMaxLength(1);
-            entity.Property(e => e.VIEW_GEN).HasMaxLength(1);
-            entity.Property(e => e.SUPERTYPE).HasMaxLength(6);
-            entity.Property(e => e.PARENT).HasMaxLength(27);
-            entity.Property(e => e.ADDED_TYPE).HasMaxLength(20);
-            entity.Property(e => e.EXTENSIBLE).HasMaxLength(1);
         });
 
         modelBuilder.Entity<CLAIM>(entity =>
@@ -2167,17 +1870,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.NCLASEMPRESALEGAL).HasMaxLength(1);
         });
 
-        modelBuilder.Entity<CLIENT_EVALRISK>(entity =>
-        {
-            entity.ToTable("CLIENT_EVALRISK", "INSUDB");
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SDESDICOM).HasMaxLength(60);
-            entity.Property(e => e.SNOTE1).HasMaxLength(60);
-            entity.Property(e => e.SNOTE2).HasMaxLength(60);
-            entity.Property(e => e.SNOTE3).HasMaxLength(60);
-            entity.Property(e => e.SNOTE4).HasMaxLength(60);
-        });
-
         modelBuilder.Entity<CLIENT_HIS>(entity =>
         {
             entity.ToTable("CLIENT_HIS", "INSUDB");
@@ -2204,38 +1896,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.STAX_SITUA).HasMaxLength(1);
             entity.Property(e => e.SADDRESS).HasMaxLength(1);
             entity.Property(e => e.SCREDITLINE).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<CLIENT_RESP_CLEAR>(entity =>
-        {
-            entity.ToTable("CLIENT_RESP_CLEAR", "INSUDB");
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SACCOUNT_IN).HasMaxLength(1);
-            entity.Property(e => e.SBLOCKADE).HasMaxLength(1);
-            entity.Property(e => e.SFIRSTNAME).HasMaxLength(20);
-            entity.Property(e => e.SLASTNAME).HasMaxLength(20);
-            entity.Property(e => e.SLICENSE).HasMaxLength(10);
-            entity.Property(e => e.STAX_CODE).HasMaxLength(12);
-            entity.Property(e => e.SSEXCLIEN).HasMaxLength(1);
-            entity.Property(e => e.SSMOKING).HasMaxLength(1);
-            entity.Property(e => e.SCUIT).HasMaxLength(14);
-            entity.Property(e => e.SAUTO_CHAR).HasMaxLength(1);
-            entity.Property(e => e.SCREDIT_CARD).HasMaxLength(1);
-            entity.Property(e => e.SLEGALNAME).HasMaxLength(60);
-            entity.Property(e => e.SLASTNAME2).HasMaxLength(20);
-            entity.Property(e => e.SBILL_IND).HasMaxLength(1);
-            entity.Property(e => e.SDIGIT).HasMaxLength(1);
-            entity.Property(e => e.SCLIENAME).HasMaxLength(63);
-            entity.Property(e => e.SLEDGERPROCESS).HasMaxLength(1);
-            entity.Property(e => e.SCOMPLCOD).HasMaxLength(6);
-            entity.Property(e => e.SFATCA).HasMaxLength(20);
-            entity.Property(e => e.SCLIENTPEP).HasMaxLength(1);
-            entity.Property(e => e.SUSPERSON).HasMaxLength(1);
-            entity.Property(e => e.SCRS).HasMaxLength(1);
-            entity.Property(e => e.SMARRIEDSURNAME).HasMaxLength(20);
-            entity.Property(e => e.SSPOUSENAME).HasMaxLength(63);
-            entity.Property(e => e.SOTHERTITLE).HasMaxLength(50);
-            entity.Property(e => e.SOTHERSPECIALITY).HasMaxLength(50);
         });
 
         modelBuilder.Entity<CLIENT_SF>(entity =>
@@ -2455,22 +2115,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.NBANKCOUNTRY).HasMaxLength(10);
         });
 
-        modelBuilder.Entity<COMPANY_RESP_CLEAR>(entity =>
-        {
-            entity.ToTable("COMPANY_RESP_CLEAR", "INSUDB");
-            entity.Property(e => e.SACCOUNT).HasMaxLength(25);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SBANKNAME).HasMaxLength(30);
-            entity.Property(e => e.SSTATREGT).HasMaxLength(1);
-            entity.Property(e => e.STYPE).HasMaxLength(1);
-            entity.Property(e => e.SREGSVS).HasMaxLength(18);
-            entity.Property(e => e.SNATIONAL).HasMaxLength(1);
-            entity.Property(e => e.SABA_ID).HasMaxLength(10);
-            entity.Property(e => e.SWIFT_IT).HasMaxLength(10);
-            entity.Property(e => e.SCITY).HasMaxLength(10);
-            entity.Property(e => e.NBANKCOUNTRY).HasMaxLength(10);
-        });
-
         modelBuilder.Entity<CONTRAT_PAY>(entity =>
         {
             entity.ToTable("CONTRAT_PAY", "INSUDB");
@@ -2579,26 +2223,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SDEFAULTI).HasMaxLength(1);
             entity.Property(e => e.SREQUIRED).HasMaxLength(1);
             entity.Property(e => e.SROUTMAX_EVEN).HasMaxLength(12);
-        });
-
-        modelBuilder.Entity<COVERCOL_TMP>(entity =>
-        {
-            entity.ToTable("COVERCOL_TMP", "INSUDB");
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
-            entity.Property(e => e.STITTLE).HasMaxLength(60);
-            entity.Property(e => e.SVALUE).HasMaxLength(60);
-            entity.Property(e => e.SVALUE1).HasMaxLength(60);
-            entity.Property(e => e.SVALUE2).HasMaxLength(60);
-            entity.Property(e => e.SVALUE3).HasMaxLength(60);
-            entity.Property(e => e.SVALUE4).HasMaxLength(60);
-            entity.Property(e => e.SVALUE5).HasMaxLength(60);
-            entity.Property(e => e.SVALUE6).HasMaxLength(60);
-            entity.Property(e => e.SVALUE7).HasMaxLength(60);
-            entity.Property(e => e.SVALUE8).HasMaxLength(60);
-            entity.Property(e => e.SVALUE9).HasMaxLength(60);
-            entity.Property(e => e.STYPE).HasMaxLength(3);
-            entity.Property(e => e.SDATATYPE).HasMaxLength(1);
-            entity.Property(e => e.SMATERNITY).HasMaxLength(2);
         });
 
         modelBuilder.Entity<COVER_CO_P>(entity =>
@@ -3102,18 +2726,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SDESCRIPT).HasMaxLength(60);
         });
 
-        modelBuilder.Entity<HOMOLOG_TABLE>(entity =>
-        {
-            entity.ToTable("HOMOLOG_TABLE", "INSUDB");
-            entity.Property(e => e.SCOLUMNNAME_VT).HasMaxLength(20);
-            entity.Property(e => e.SCODVALUE_VT).HasMaxLength(300);
-            entity.Property(e => e.SVALUE_VT).HasMaxLength(300);
-            entity.Property(e => e.STABLENAME).HasMaxLength(20);
-            entity.Property(e => e.SCOLUMNNAME).HasMaxLength(20);
-            entity.Property(e => e.SCODVALUE).HasMaxLength(300);
-            entity.Property(e => e.SPREDOM).HasMaxLength(1);
-        });
-
         modelBuilder.Entity<IMAGES>(entity =>
         {
             entity.ToTable("IMAGES", "INSUDB");
@@ -3167,11 +2779,6 @@ public partial class AppDbContext : DbContext
         {
             entity.ToTable("INTERMED_PARTIC", "INSUDB");
             entity.HasKey(e => e.NINTERMED);
-        });
-
-        modelBuilder.Entity<INTERM_PARAM>(entity =>
-        {
-            entity.ToTable("INTERM_PARAM", "INSUDB");
         });
 
         modelBuilder.Entity<INTERM_TYP>(entity =>
@@ -3340,18 +2947,6 @@ public partial class AppDbContext : DbContext
             entity.HasKey(e => new { e.NBRANCH, e.NPRODUCT, e.NREPTYPE });
             entity.Property(e => e.SLOGO).HasMaxLength(100);
             entity.Property(e => e.SLOG).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<MASSIVE_LOG_ERROR>(entity =>
-        {
-            entity.ToTable("MASSIVE_LOG_ERROR", "INSUDB");
-            entity.Property(e => e.SKEY).HasMaxLength(60);
-            entity.Property(e => e.SACTION).HasMaxLength(4000);
-            entity.Property(e => e.SERRORTYP).HasMaxLength(1);
-            entity.Property(e => e.STYP_CONDI).HasMaxLength(1);
-            entity.Property(e => e.SCODISPL).HasMaxLength(8);
-            entity.Property(e => e.SERRORMESSEROW).HasMaxLength(200);
-            entity.Property(e => e.SBREAK).HasMaxLength(1);
         });
 
         modelBuilder.Entity<MASSIVE_LOG_PROC>(entity =>
@@ -3523,15 +3118,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SHISTORICAL_CLAIM).HasMaxLength(1);
         });
 
-        modelBuilder.Entity<MASTER_MASS_SPONSOR>(entity =>
-        {
-            entity.ToTable("MASTER_MASS_SPONSOR", "INSUDB");
-            entity.Property(e => e.SCOLLECTDEBT).HasMaxLength(1);
-            entity.Property(e => e.SCOLLCURRDEBT).HasMaxLength(1);
-            entity.Property(e => e.SMAIL).HasMaxLength(60);
-            entity.Property(e => e.SDESCRIPT).HasMaxLength(60);
-        });
-
         modelBuilder.Entity<MASTERSHEET>(entity =>
         {
             entity.ToTable("MASTERSHEET", "INSUDB");
@@ -3626,23 +3212,6 @@ public partial class AppDbContext : DbContext
         {
             entity.ToTable("MEDICALTEAMS_FEES", "INSUDB");
             entity.HasKey(e => new { e.NOFFICE, e.NDOCTORROL, e.NORD_PROCEDURE, e.DEFFECDATE });
-        });
-
-        modelBuilder.Entity<MENU_SSCHE_CODE>(entity =>
-        {
-            entity.ToTable("MENU_SSCHE_CODE", "INSUDB");
-            entity.Property(e => e.SSCHE_CODE).HasMaxLength(6);
-            entity.Property(e => e.SCOD_LVL0).HasMaxLength(8);
-            entity.Property(e => e.SLVL0).HasMaxLength(60);
-            entity.Property(e => e.SCOD_LVL1).HasMaxLength(8);
-            entity.Property(e => e.SLVL1).HasMaxLength(60);
-            entity.Property(e => e.SCOD_LVL2).HasMaxLength(8);
-            entity.Property(e => e.SLVL2).HasMaxLength(60);
-            entity.Property(e => e.SCOD_LVL3).HasMaxLength(8);
-            entity.Property(e => e.SLVL3).HasMaxLength(60);
-            entity.Property(e => e.SCOD_LVL4).HasMaxLength(8);
-            entity.Property(e => e.SLVL4).HasMaxLength(60);
-            entity.Property(e => e.SPERMITTED).HasMaxLength(1);
         });
 
         modelBuilder.Entity<MESSAGE>(entity =>
@@ -3849,14 +3418,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SCLIENT).HasMaxLength(14);
         });
 
-        modelBuilder.Entity<PACKAGE_TABLE_MAP>(entity =>
-        {
-            entity.ToTable("PACKAGE_TABLE_MAP", "INSUDB");
-            entity.Property(e => e.OWNER).HasMaxLength(60);
-            entity.Property(e => e.PACKAGE_NAME).HasMaxLength(60);
-            entity.Property(e => e.TABLE_NAME).HasMaxLength(60);
-        });
-
         modelBuilder.Entity<PART_CONTR>(entity =>
         {
             entity.ToTable("PART_CONTR", "INSUDB");
@@ -3915,39 +3476,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SDESPOLICY).HasMaxLength(140);
         });
 
-        modelBuilder.Entity<PCC004_TMP>(entity =>
-        {
-            entity.ToTable("PCC004_TMP", "INSUDB");
-            entity.Property(e => e.SLEGALNAME_COMPANY).HasMaxLength(63);
-            entity.Property(e => e.SCLINUMDOCU_COMPANY).HasMaxLength(18);
-            entity.Property(e => e.SDESCADD_COMPANY).HasMaxLength(140);
-            entity.Property(e => e.SZONA_COMPANY).HasMaxLength(30);
-            entity.Property(e => e.SPHONE_COMPANY).HasMaxLength(15);
-            entity.Property(e => e.SFIRSTNAME).HasMaxLength(20);
-            entity.Property(e => e.SLASTNAME).HasMaxLength(20);
-            entity.Property(e => e.SLASTNAME2).HasMaxLength(20);
-            entity.Property(e => e.SCLINUMDOCU).HasMaxLength(18);
-            entity.Property(e => e.SIDCOMPL).HasMaxLength(5);
-            entity.Property(e => e.SCOMPANYWORKS).HasMaxLength(63);
-            entity.Property(e => e.SDESCADD_LABOUR).HasMaxLength(140);
-            entity.Property(e => e.SLEGALNAME).HasMaxLength(63);
-            entity.Property(e => e.SZONA).HasMaxLength(30);
-            entity.Property(e => e.SDESCADD_DOMICILE).HasMaxLength(140);
-            entity.Property(e => e.SPHONE).HasMaxLength(15);
-            entity.Property(e => e.SCLIENAME_INTERMEDIARY).HasMaxLength(63);
-            entity.Property(e => e.SCLIENAME_TITULAR).HasMaxLength(63);
-            entity.Property(e => e.SBANKACCOUNT).HasMaxLength(100);
-            entity.Property(e => e.SCHEQUE).HasMaxLength(10);
-            entity.Property(e => e.SORIGENRESOURCES).HasMaxLength(140);
-            entity.Property(e => e.SDESTINYRESOURCES).HasMaxLength(140);
-            entity.Property(e => e.SREMARKS).HasMaxLength(500);
-            entity.Property(e => e.SPHONE_PART).HasMaxLength(15);
-            entity.Property(e => e.SZONE_PART).HasMaxLength(30);
-            entity.Property(e => e.SCLIENAME_BROKER).HasMaxLength(63);
-            entity.Property(e => e.NIND_CASHFLOW).HasMaxLength(1);
-            entity.Property(e => e.SDESCRIPT_CITY).HasMaxLength(140);
-        });
-
         modelBuilder.Entity<PERSON_TYPE>(entity =>
         {
             entity.ToTable("PERSON_TYPE", "INSUDB");
@@ -3976,38 +3504,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.ROOT_PROCEDURE).HasMaxLength(100);
             entity.Property(e => e.SHORT_NAME).HasMaxLength(10);
             entity.Property(e => e.DETAIL_PROCEDURE).HasMaxLength(100);
-        });
-
-        modelBuilder.Entity<PLAN_TABLE>(entity =>
-        {
-            entity.ToTable("PLAN_TABLE", "INSUDB");
-            entity.Property(e => e.STATEMENT_ID).HasMaxLength(30);
-            entity.Property(e => e.REMARKS).HasMaxLength(80);
-            entity.Property(e => e.OPERATION).HasMaxLength(30);
-            entity.Property(e => e.OPTIONS).HasMaxLength(30);
-            entity.Property(e => e.OBJECT_NODE).HasMaxLength(128);
-            entity.Property(e => e.OBJECT_OWNER).HasMaxLength(30);
-            entity.Property(e => e.OBJECT_NAME).HasMaxLength(30);
-            entity.Property(e => e.OBJECT_TYPE).HasMaxLength(30);
-            entity.Property(e => e.OPTIMIZER).HasMaxLength(255);
-            entity.Property(e => e.OTHER_TAG).HasMaxLength(255);
-            entity.Property(e => e.PARTITION_START).HasMaxLength(255);
-            entity.Property(e => e.PARTITION_STOP).HasMaxLength(255);
-            entity.Property(e => e.DISTRIBUTION).HasMaxLength(30);
-        });
-
-        modelBuilder.Entity<PL_ASP_CLASICO>(entity =>
-        {
-            entity.ToTable("PL_ASP_CLASICO", "INSUDB");
-            entity.Property(e => e.SPROPERTY).HasMaxLength(20);
-            entity.Property(e => e.SFORMAT).HasMaxLength(255);
-        });
-
-        modelBuilder.Entity<PL_ASP_NET>(entity =>
-        {
-            entity.ToTable("PL_ASP_NET", "INSUDB");
-            entity.Property(e => e.SPROPERTY).HasMaxLength(20);
-            entity.Property(e => e.SFORMAT).HasMaxLength(255);
         });
 
         modelBuilder.Entity<POLICY>(entity =>
@@ -4061,22 +3557,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SPREVPOLNUM).HasMaxLength(30);
         });
 
-        modelBuilder.Entity<POLICY_DELTA_BASELINE>(entity =>
-        {
-            entity.ToTable("POLICY_DELTA_BASELINE", "INSUDB");
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
-            entity.Property(e => e.STYPE).HasMaxLength(15);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SSMOKER).HasMaxLength(1);
-            entity.Property(e => e.STYP_RISK).HasMaxLength(1);
-            entity.Property(e => e.SSTREET).HasMaxLength(40);
-            entity.Property(e => e.STYPEOFADDRESS).HasMaxLength(40);
-            entity.Property(e => e.SPHONE).HasMaxLength(11);
-            entity.Property(e => e.SACCOUNT).HasMaxLength(25);
-            entity.Property(e => e.SCREDI_CARD).HasMaxLength(20);
-            entity.Property(e => e.SDIRIND).HasMaxLength(1);
-        });
-
         modelBuilder.Entity<POLICY_HIS>(entity =>
         {
             entity.ToTable("POLICY_HIS", "INSUDB");
@@ -4095,14 +3575,6 @@ public partial class AppDbContext : DbContext
         {
             entity.ToTable("POLICY_WIN", "INSUDB");
             entity.HasKey(e => new { e.SCERTYPE, e.NBRANCH, e.NPRODUCT, e.NPOLICY, e.NCERTIF, e.DEFFECDATE });
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
-            entity.Property(e => e.SV_CONPOLIC).HasMaxLength(60);
-            entity.Property(e => e.SV_WINPOLIC).HasMaxLength(480);
-        });
-
-        modelBuilder.Entity<POLICY_WIN_BACKUP_254176>(entity =>
-        {
-            entity.ToTable("POLICY_WIN_BACKUP_254176", "INSUDB");
             entity.Property(e => e.SCERTYPE).HasMaxLength(1);
             entity.Property(e => e.SV_CONPOLIC).HasMaxLength(60);
             entity.Property(e => e.SV_WINPOLIC).HasMaxLength(480);
@@ -4148,12 +3620,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SIND_RESERV).HasMaxLength(1);
             entity.Property(e => e.SDOCUMENT).HasMaxLength(25);
             entity.Property(e => e.SCLINUMDOCU).HasMaxLength(18);
-        });
-
-        modelBuilder.Entity<PREMIUM_BKP_256518>(entity =>
-        {
-            entity.ToTable("PREMIUM_BKP_256518", "INSUDB");
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
         });
 
         modelBuilder.Entity<PREMIUM_CE>(entity =>
@@ -4488,36 +3954,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.NAUTORIZATIONNUMBER).HasMaxLength(37);
         });
 
-        modelBuilder.Entity<REP_CLEAR_VTIME>(entity =>
-        {
-            entity.ToTable("REP_CLEAR_VTIME", "INSUDB");
-            entity.Property(e => e.STABLE).HasMaxLength(100);
-            entity.Property(e => e.SCOMMENTS).HasMaxLength(4000);
-        });
-
-        modelBuilder.Entity<REP_ERROR>(entity =>
-        {
-            entity.ToTable("REP_ERROR", "INSUDB");
-            entity.Property(e => e.SPROCESS_NAME).HasMaxLength(50);
-            entity.Property(e => e.SSQLERRM).HasMaxLength(2000);
-            entity.Property(e => e.SDESCRIPTION).HasMaxLength(4000);
-        });
-
-        modelBuilder.Entity<REP_INTLRECAUDACION>(entity =>
-        {
-            entity.ToTable("REP_INTLRECAUDACION", "INSUDB");
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SDIGIT).HasMaxLength(1);
-            entity.Property(e => e.SDESCRIPTOLD).HasMaxLength(4000);
-            entity.Property(e => e.SDESCRIPTACC).HasMaxLength(120);
-        });
-
-        modelBuilder.Entity<REPORT_MAP>(entity =>
-        {
-            entity.ToTable("REPORT_MAP", "INSUDB");
-        });
-
         modelBuilder.Entity<REPORTMASTER>(entity =>
         {
             entity.ToTable("REPORTMASTER", "INSUDB");
@@ -4539,13 +3975,6 @@ public partial class AppDbContext : DbContext
             entity.HasKey(e => new { e.SCODE_REPORT, e.NBOX, e.NCOLUMN, e.NROW, e.DEFFECDATE });
             entity.Property(e => e.SCODE_REPORT).HasMaxLength(8);
             entity.Property(e => e.SCONTENT).HasMaxLength(4000);
-        });
-
-        modelBuilder.Entity<REP_TIMES>(entity =>
-        {
-            entity.ToTable("REP_TIMES", "INSUDB");
-            entity.Property(e => e.SPROCESS_NAME).HasMaxLength(200);
-            entity.Property(e => e.SDESC).HasMaxLength(200);
         });
 
         modelBuilder.Entity<REQ_ENDOR>(entity =>
@@ -4583,24 +4012,6 @@ public partial class AppDbContext : DbContext
             entity.HasKey(e => new { e.NBRANCH_REI, e.DEFFECDATE, e.NNUMBER, e.NTYPE, e.NINSUR_AREA, e.NCOVERGEN });
             entity.Property(e => e.SROUTINE).HasMaxLength(12);
             entity.Property(e => e.SEARTHQUAKE).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<RM_LINK_CUSTOMIZED_QUERY>(entity =>
-        {
-            entity.ToTable("RM_LINK_CUSTOMIZED_QUERY", "INSUDB");
-            entity.Property(e => e.QUERY_NAME).HasMaxLength(100);
-            entity.Property(e => e.QUERY_TEXT).HasMaxLength(4000);
-            entity.Property(e => e.ALIAS).HasMaxLength(20);
-            entity.Property(e => e.FOLDER_CONTEXT).HasMaxLength(1);
-            entity.Property(e => e.OBJECT_CONTEXT).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<RM_LINK_CUSTOMIZED_QUERY_BIND>(entity =>
-        {
-            entity.ToTable("RM_LINK_CUSTOMIZED_QUERY_BIND", "INSUDB");
-            entity.Property(e => e.QUERY_NAME).HasMaxLength(100);
-            entity.Property(e => e.BIND_NAME).HasMaxLength(10);
-            entity.Property(e => e.BIND_PROPERTY_NAME).HasMaxLength(40);
         });
 
         modelBuilder.Entity<RM_REG_TYPES>(entity =>
@@ -4673,49 +4084,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SPERMITTED).HasMaxLength(1);
         });
 
-        modelBuilder.Entity<SCHE_PCON>(entity =>
-        {
-            entity.ToTable("SCHE_PCON", "INSUDB");
-            entity.HasKey(e => new { e.SSCHE_CODE, e.NCONCEPT });
-            entity.Property(e => e.SSCHE_CODE).HasMaxLength(6);
-            entity.Property(e => e.SSTATREGT).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<SCHE_SURR_BRANCH>(entity =>
-        {
-            entity.ToTable("SCHE_SURR_BRANCH", "INSUDB");
-            entity.Property(e => e.SSCHE_CODE).HasMaxLength(6);
-            entity.Property(e => e.SLIFE).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<SCHE_SURR_PAYMENT>(entity =>
-        {
-            entity.ToTable("SCHE_SURR_PAYMENT", "INSUDB");
-            entity.Property(e => e.SSCHE_CODE).HasMaxLength(6);
-            entity.Property(e => e.SLIFE).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<SCHE_SURR_REASON>(entity =>
-        {
-            entity.ToTable("SCHE_SURR_REASON", "INSUDB");
-            entity.Property(e => e.SSCHE_CODE).HasMaxLength(6);
-        });
-
-        modelBuilder.Entity<SCHE_SURR_ROLES>(entity =>
-        {
-            entity.ToTable("SCHE_SURR_ROLES", "INSUDB");
-            entity.Property(e => e.SSCHE_CODE).HasMaxLength(6);
-        });
-
-        modelBuilder.Entity<SCHE_TRANSAC>(entity =>
-        {
-            entity.ToTable("SCHE_TRANSAC", "INSUDB");
-            entity.HasKey(e => new { e.SSCHE_CODE, e.SCODISPL, e.NTRANSAC, e.NID });
-            entity.Property(e => e.SSCHE_CODE).HasMaxLength(6);
-            entity.Property(e => e.SCODISPL).HasMaxLength(8);
-            entity.Property(e => e.SPAY_FORM).HasMaxLength(2);
-        });
-
         modelBuilder.Entity<SDD_DEPENDENCY_TYPES>(entity =>
         {
             entity.ToTable("SDD_DEPENDENCY_TYPES", "INSUDB");
@@ -4760,19 +4128,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.CHANGED_BY).HasMaxLength(30);
         });
 
-        modelBuilder.Entity<SDD_RESERVED_NAMES>(entity =>
-        {
-            entity.ToTable("SDD_RESERVED_NAMES", "INSUDB");
-            entity.Property(e => e.RN_RES_NAME).HasMaxLength(40);
-            entity.Property(e => e.RN_TYPE).HasMaxLength(10);
-            entity.Property(e => e.RN_COMMENT).HasMaxLength(70);
-            entity.Property(e => e.RN_GLOBAL).HasMaxLength(1);
-            entity.Property(e => e.RN_TEMPORARY).HasMaxLength(1);
-            entity.Property(e => e.RN_ENABLED).HasMaxLength(1);
-            entity.Property(e => e.RN_USR_ACCESS).HasMaxLength(1);
-            entity.Property(e => e.RN_CDAPI).HasMaxLength(1);
-        });
-
         modelBuilder.Entity<SECTION_PO>(entity =>
         {
             entity.ToTable("SECTION_PO", "INSUDB");
@@ -4803,25 +4158,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.STIMEQ2_TO).HasMaxLength(5);
             entity.Property(e => e.SUSEQUERY).HasMaxLength(1);
             entity.Property(e => e.SENCRYPTED).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<SECUR_SCHE_SURR>(entity =>
-        {
-            entity.ToTable("SECUR_SCHE_SURR", "INSUDB");
-            entity.Property(e => e.SSCHE_CODE).HasMaxLength(6);
-            entity.Property(e => e.SMOD_DATE_R).HasMaxLength(1);
-            entity.Property(e => e.SRESC_TOT).HasMaxLength(1);
-            entity.Property(e => e.SRESC_PAR).HasMaxLength(1);
-            entity.Property(e => e.STYPEXECUT).HasMaxLength(1);
-            entity.Property(e => e.SMOD_DATE_P).HasMaxLength(1);
-            entity.Property(e => e.SMOD_DATE_RV).HasMaxLength(1);
-            entity.Property(e => e.SRESC_TOTV).HasMaxLength(1);
-            entity.Property(e => e.SRESC_PARV).HasMaxLength(1);
-            entity.Property(e => e.STYPEXECUTV).HasMaxLength(1);
-            entity.Property(e => e.SANULREC).HasMaxLength(1);
-            entity.Property(e => e.SMOD_DATE_PV).HasMaxLength(1);
-            entity.Property(e => e.SREQUEST).HasMaxLength(1);
-            entity.Property(e => e.SREPORT).HasMaxLength(1);
         });
 
         modelBuilder.Entity<SELLCHANNEL_PROD>(entity =>
@@ -4933,12 +4269,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SSTATREGT).HasMaxLength(1);
             entity.Property(e => e.SVEHMODEL).HasMaxLength(30);
             entity.Property(e => e.SAACHCODE).HasMaxLength(100);
-        });
-
-        modelBuilder.Entity<TAB_AUXILIAR>(entity =>
-        {
-            entity.ToTable("TAB_AUXILIAR", "INSUDB");
-            entity.Property(e => e.CARACTER).HasMaxLength(30);
         });
 
         modelBuilder.Entity<TAB_BILL_I>(entity =>
@@ -11260,16 +10590,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SINTERNATIONALPROVIDER).HasMaxLength(1);
         });
 
-        modelBuilder.Entity<TAB_PROVIDER_CARLOS>(entity =>
-        {
-            entity.ToTable("TAB_PROVIDER_CARLOS", "INSUDB");
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SSTATREGT).HasMaxLength(1);
-            entity.Property(e => e.SCONCESIONARY).HasMaxLength(1);
-            entity.Property(e => e.SAGENCYDESC).HasMaxLength(30);
-            entity.Property(e => e.SINTERNATIONALPROVIDER).HasMaxLength(1);
-        });
-
         modelBuilder.Entity<TAB_PROV_MEDSPEC>(entity =>
         {
             entity.ToTable("TAB_PROV_MEDSPEC", "INSUDB");
@@ -11509,36 +10829,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SACTION).HasMaxLength(1);
         });
 
-        modelBuilder.Entity<TCLAUS_CO_G>(entity =>
-        {
-            entity.ToTable("TCLAUS_CO_G", "INSUDB");
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
-            entity.Property(e => e.STYPE_CLAUSE).HasMaxLength(1);
-            entity.Property(e => e.SDOC_ATTACH).HasMaxLength(250);
-            entity.Property(e => e.SMODIFIED).HasMaxLength(1);
-            entity.Property(e => e.SSELECTED).HasMaxLength(1);
-            entity.Property(e => e.IND_INPOLICY).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<TCLAUS_CO_P>(entity =>
-        {
-            entity.ToTable("TCLAUS_CO_P", "INSUDB");
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
-            entity.Property(e => e.STYPE_CLAUSE).HasMaxLength(1);
-            entity.Property(e => e.SDOC_ATTACH).HasMaxLength(250);
-            entity.Property(e => e.SMODIFIED).HasMaxLength(1);
-            entity.Property(e => e.SSELECTED).HasMaxLength(1);
-            entity.Property(e => e.IND_INPOLICY).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<TCOMMISS>(entity =>
-        {
-            entity.ToTable("TCOMMISS", "INSUDB");
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-        });
-
         modelBuilder.Entity<T_CONCEPTS>(entity =>
         {
             entity.ToTable("T_CONCEPTS", "INSUDB");
@@ -11565,80 +10855,10 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SPENSTATUS_POL).HasMaxLength(1);
         });
 
-        modelBuilder.Entity<TCOVER>(entity =>
-        {
-            entity.ToTable("TCOVER", "INSUDB");
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
-            entity.Property(e => e.SCHANGE).HasMaxLength(1);
-            entity.Property(e => e.SFRANDEDI).HasMaxLength(1);
-            entity.Property(e => e.SWAIT_TYPE).HasMaxLength(1);
-            entity.Property(e => e.SFRANCAPL).HasMaxLength(1);
-            entity.Property(e => e.SFREE_PREMI).HasMaxLength(1);
-            entity.Property(e => e.SDESCRIPT).HasMaxLength(120);
-            entity.Property(e => e.SEXIST).HasMaxLength(1);
-            entity.Property(e => e.SREQUIRE).HasMaxLength(1);
-            entity.Property(e => e.SDEFAULTI).HasMaxLength(1);
-            entity.Property(e => e.SCACALILI).HasMaxLength(1);
-            entity.Property(e => e.SCH_TYP_CAP).HasMaxLength(1);
-            entity.Property(e => e.SCHANGE_TYP).HasMaxLength(1);
-            entity.Property(e => e.SFDREQUIRE).HasMaxLength(1);
-            entity.Property(e => e.SROUPREMI).HasMaxLength(12);
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-            entity.Property(e => e.SCACALFRI).HasMaxLength(1);
-            entity.Property(e => e.SFDCHANTYP).HasMaxLength(1);
-            entity.Property(e => e.SPFRANDEDI).HasMaxLength(1);
-            entity.Property(e => e.SADDSUINI).HasMaxLength(1);
-            entity.Property(e => e.SROUCHACA).HasMaxLength(12);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SDEFAULTIC).HasMaxLength(1);
-            entity.Property(e => e.SREQUIREC).HasMaxLength(1);
-            entity.Property(e => e.SDEPEND).HasMaxLength(1);
-            entity.Property(e => e.SBAS_SUMINS).HasMaxLength(1);
-            entity.Property(e => e.SROUCAPIT).HasMaxLength(12);
-            entity.Property(e => e.SCONDSVS).HasMaxLength(30);
-            entity.Property(e => e.SINHERIT).HasMaxLength(1);
-            entity.Property(e => e.SROUTMAX_EVEN).HasMaxLength(12);
-            entity.Property(e => e.SREDUCCAPITAL).HasMaxLength(1);
-            entity.Property(e => e.SCOVERCHANGE).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<TCURRENCY>(entity =>
-        {
-            entity.ToTable("TCURRENCY", "INSUDB");
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-        });
-
-        modelBuilder.Entity<TDETAIL_PRE>(entity =>
-        {
-            entity.ToTable("TDETAIL_PRE", "INSUDB");
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-            entity.Property(e => e.SADDSUINI).HasMaxLength(1);
-            entity.Property(e => e.STYPE_DETAI).HasMaxLength(1);
-            entity.Property(e => e.SADDTAX).HasMaxLength(1);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SSHORT_DES).HasMaxLength(30);
-            entity.Property(e => e.SCACALILI).HasMaxLength(1);
-            entity.Property(e => e.SCOMMISSI_I).HasMaxLength(1);
-            entity.Property(e => e.SADDTAXIN).HasMaxLength(1);
-            entity.Property(e => e.SPREM_DET).HasMaxLength(1);
-        });
-
         modelBuilder.Entity<T_DOCTYP>(entity =>
         {
             entity.ToTable("T_DOCTYP", "INSUDB");
             entity.HasKey(e => new { e.NBORDEREAUX, e.NSEQUENCE });
-            entity.Property(e => e.SSEL).HasMaxLength(1);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SMANAUTI).HasMaxLength(1);
-            entity.Property(e => e.STYPE_DETAI).HasMaxLength(1);
-            entity.Property(e => e.SNEWRECEIPT).HasMaxLength(1);
-            entity.Property(e => e.SFOLIONUMBER).HasMaxLength(10);
-            entity.Property(e => e.SBILLADVANCE).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<T_DOCTYP_BKP20260910>(entity =>
-        {
-            entity.ToTable("T_DOCTYP_BKP20260910", "INSUDB");
             entity.Property(e => e.SSEL).HasMaxLength(1);
             entity.Property(e => e.SCLIENT).HasMaxLength(14);
             entity.Property(e => e.SMANAUTI).HasMaxLength(1);
@@ -11656,16 +10876,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SDESCRIPT).HasMaxLength(1000);
             entity.Property(e => e.SCERTYPE).HasMaxLength(1);
             entity.Property(e => e.SCLIENT).HasMaxLength(14);
-        });
-
-        modelBuilder.Entity<T_ERR_MASSIVE>(entity =>
-        {
-            entity.ToTable("T_ERR_MASSIVE", "INSUDB");
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-            entity.Property(e => e.SDESCRIPT).HasMaxLength(120);
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.STYPE).HasMaxLength(1);
         });
 
         modelBuilder.Entity<TIMEGLOBALS>(entity =>
@@ -11728,52 +10938,12 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SACTION).HasMaxLength(1);
         });
 
-        modelBuilder.Entity<TOAD_PLAN_SQL>(entity =>
-        {
-            entity.ToTable("TOAD_PLAN_SQL", "INSUDB");
-            entity.Property(e => e.USERNAME).HasMaxLength(30);
-            entity.Property(e => e.STATEMENT_ID).HasMaxLength(32);
-            entity.Property(e => e.STATEMENT).HasMaxLength(2000);
-        });
-
-        modelBuilder.Entity<TOAD_PLAN_TABLE>(entity =>
-        {
-            entity.ToTable("TOAD_PLAN_TABLE", "INSUDB");
-            entity.Property(e => e.STATEMENT_ID).HasMaxLength(32);
-            entity.Property(e => e.REMARKS).HasMaxLength(80);
-            entity.Property(e => e.OPERATION).HasMaxLength(30);
-            entity.Property(e => e.OPTIONS).HasMaxLength(30);
-            entity.Property(e => e.OBJECT_NODE).HasMaxLength(128);
-            entity.Property(e => e.OBJECT_OWNER).HasMaxLength(30);
-            entity.Property(e => e.OBJECT_NAME).HasMaxLength(30);
-            entity.Property(e => e.OBJECT_TYPE).HasMaxLength(30);
-            entity.Property(e => e.OPTIMIZER).HasMaxLength(255);
-            entity.Property(e => e.OTHER_TAG).HasMaxLength(255);
-            entity.Property(e => e.PARTITION_START).HasMaxLength(255);
-            entity.Property(e => e.PARTITION_STOP).HasMaxLength(255);
-            entity.Property(e => e.DISTRIBUTION).HasMaxLength(30);
-        });
-
-        modelBuilder.Entity<TOBLIGREIN>(entity =>
-        {
-            entity.ToTable("TOBLIGREIN", "INSUDB");
-            entity.Property(e => e.SBUSSITYP).HasMaxLength(1);
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-        });
-
         modelBuilder.Entity<T_PARAM_INTERFACE>(entity =>
         {
             entity.ToTable("T_PARAM_INTERFACE", "INSUDB");
             entity.HasKey(e => new { e.SKEY, e.NFIELD });
             entity.Property(e => e.SKEY).HasMaxLength(20);
             entity.Property(e => e.SVALUE).HasMaxLength(100);
-        });
-
-        modelBuilder.Entity<TRACE>(entity =>
-        {
-            entity.ToTable("TRACE", "INSUDB");
-            entity.Property(e => e.PROC).HasMaxLength(50);
-            entity.Property(e => e.TEXT).HasMaxLength(4000);
         });
 
         modelBuilder.Entity<TRACKING>(entity =>
@@ -11789,63 +10959,11 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.CALLEDFROMID).HasMaxLength(36);
         });
 
-        modelBuilder.Entity<TREHABILITATE>(entity =>
-        {
-            entity.ToTable("TREHABILITATE", "INSUDB");
-            entity.Property(e => e.SCURRENCY).HasMaxLength(30);
-            entity.Property(e => e.SNAME_EXEC).HasMaxLength(15);
-            entity.Property(e => e.SCLIENT_AGE).HasMaxLength(18);
-            entity.Property(e => e.SCLIENAME_AGE).HasMaxLength(63);
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-            entity.Property(e => e.SCLIENT_A).HasMaxLength(18);
-            entity.Property(e => e.SCLIENAME_A).HasMaxLength(63);
-            entity.Property(e => e.STRATYPEI).HasMaxLength(30);
-            entity.Property(e => e.SCLIENT_D).HasMaxLength(14);
-            entity.Property(e => e.SCLIENAME_D).HasMaxLength(63);
-            entity.Property(e => e.SADDRESS).HasMaxLength(100);
-            entity.Property(e => e.SLOCAL).HasMaxLength(30);
-            entity.Property(e => e.SMUNICIPALITY).HasMaxLength(30);
-            entity.Property(e => e.SPHONE).HasMaxLength(11);
-            entity.Property(e => e.SMODULEC).HasMaxLength(30);
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<TREINSURAN>(entity =>
-        {
-            entity.ToTable("TREINSURAN", "INSUDB");
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SHEAP_CODE).HasMaxLength(14);
-            entity.Property(e => e.NACEP_CODE).HasMaxLength(10);
-            entity.Property(e => e.SMANUALMOV).HasMaxLength(1);
-            entity.Property(e => e.SCOVERDESC).HasMaxLength(120);
-            entity.Property(e => e.SCLIENAME).HasMaxLength(63);
-            entity.Property(e => e.SCOMPANY).HasMaxLength(63);
-        });
-
-        modelBuilder.Entity<TREINSURAN_CESSION>(entity =>
-        {
-            entity.ToTable("TREINSURAN_CESSION", "INSUDB");
-            entity.Property(e => e.SCERTYPE).HasMaxLength(1);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-        });
-
         modelBuilder.Entity<TRELDOC>(entity =>
         {
             entity.ToTable("TRELDOC", "INSUDB");
             entity.HasKey(e => new { e.NBORDEREAUX, e.NSEQUENCE, e.NCOLLECDOCTYP });
             entity.Property(e => e.SFOLIONUMBER).HasMaxLength(10);
-        });
-
-        modelBuilder.Entity<TRENEWPOL>(entity =>
-        {
-            entity.ToTable("TRENEWPOL", "INSUDB");
-            entity.Property(e => e.SKEY).HasMaxLength(20);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.STEXT_ERR).HasMaxLength(2000);
-            entity.Property(e => e.SWARNING).HasMaxLength(500);
         });
 
         modelBuilder.Entity<TYPE_AMEND>(entity =>
@@ -11903,22 +11021,6 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SACCESSWO).HasMaxLength(12);
             entity.Property(e => e.SCLIENT).HasMaxLength(14);
             entity.Property(e => e.SINITIALS).HasMaxLength(50);
-            entity.Property(e => e.SSCHE_CODE).HasMaxLength(6);
-            entity.Property(e => e.SSTATREGT).HasMaxLength(1);
-            entity.Property(e => e.STYPE).HasMaxLength(1);
-            entity.Property(e => e.SMENU).HasMaxLength(8);
-            entity.Property(e => e.SCHNEXTLOGON).HasMaxLength(1);
-            entity.Property(e => e.SNEVERCHANGE).HasMaxLength(1);
-            entity.Property(e => e.SNEVEREXPIRES).HasMaxLength(1);
-            entity.Property(e => e.SLOCKEDOUT).HasMaxLength(1);
-        });
-
-        modelBuilder.Entity<USERS_RESP_CLEAR>(entity =>
-        {
-            entity.ToTable("USERS_RESP_CLEAR", "INSUDB");
-            entity.Property(e => e.SACCESSWO).HasMaxLength(12);
-            entity.Property(e => e.SCLIENT).HasMaxLength(14);
-            entity.Property(e => e.SINITIALS).HasMaxLength(12);
             entity.Property(e => e.SSCHE_CODE).HasMaxLength(6);
             entity.Property(e => e.SSTATREGT).HasMaxLength(1);
             entity.Property(e => e.STYPE).HasMaxLength(1);

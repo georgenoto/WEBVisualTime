@@ -1,64 +1,13 @@
-using System.Linq.Expressions;
 using WEBVisualTime.Entidades.Insudb;
 using WEBVisualTime.Datos.Repositories;
 using WEBVisualTime.Servicios.Insudb.DTOs.ATTCHAMENTFORM;
 using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public class ATTCHAMENTFORMService : IATTCHAMENTFORMService
+public class ATTCHAMENTFORMService : CrudService<ATTCHAMENTFORM, ATTCHAMENTFORMDto, CreateATTCHAMENTFORMDto, UpdateATTCHAMENTFORMDto, long>, IATTCHAMENTFORMService
 {
-    private readonly IRepository<ATTCHAMENTFORM> _repository;
-
     public ATTCHAMENTFORMService(IRepository<ATTCHAMENTFORM> repository)
-    {
-        _repository = repository;
-    }
-
-    public async Task<IEnumerable<ATTCHAMENTFORMDto>> GetAllAsync()
-    {
-        var entities = await _repository.GetAllAsync();
-        return entities.Select(e => e.ToDto());
-    }
-
-    public async Task<ATTCHAMENTFORMDto?> GetByIdAsync(long id)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        return entity?.ToDto();
-    }
-
-    public async Task<IEnumerable<ATTCHAMENTFORMDto>> FindAsync(Expression<Func<ATTCHAMENTFORM, bool>> predicate)
-    {
-        var entities = await _repository.FindAsync(predicate);
-        return entities.Select(e => e.ToDto());
-    }
-
-    public async Task<ATTCHAMENTFORMDto> CreateAsync(CreateATTCHAMENTFORMDto createDto)
-    {
-        var entity = createDto.ToEntity();
-        await _repository.AddAsync(entity);
-        await _repository.SaveChangesAsync();
-        return entity.ToDto();
-    }
-
-    public async Task<bool> UpdateAsync(long id, UpdateATTCHAMENTFORMDto updateDto)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        if (entity == null) return false;
-
-        entity.UpdateEntity(updateDto);
-        _repository.Update(entity);
-        await _repository.SaveChangesAsync();
-        return true;
-    }
-
-    public async Task<bool> DeleteAsync(long id)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        if (entity == null) return false;
-
-        _repository.Remove(entity);
-        await _repository.SaveChangesAsync();
-        return true;
-    }
+        : base(repository, ATTCHAMENTFORMMappingExtensions.ToDto, ATTCHAMENTFORMMappingExtensions.ToEntity, ATTCHAMENTFORMMappingExtensions.UpdateEntity) { }
 }

@@ -1,102 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE308;
 using WEBVisualTime.Servicios.Insudb.Services;
-using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Web.Controllers.Common;
 
 namespace WEBVisualTime.Web.Insudb.Controllers;
 
-public class TABLE308Controller : Controller
+public class TABLE308Controller : CatalogController<TABLE308Dto, CreateTABLE308Dto, UpdateTABLE308Dto, long>
 {
-    private readonly ITABLE308Service _service;
-
-    public TABLE308Controller(ITABLE308Service service
-    )
-    {
-        _service = service;
-    }
-
-    // GET: TABLE308
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TABLE308/Index.cshtml", result);
-    }
-
-    // GET: TABLE308/Details/{id}
-    public async Task<IActionResult> Details(long id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE308/Details.cshtml", result);
-    }
-
-    // GET: TABLE308/Create
-    public async Task<IActionResult> Create()
-    {
-        return View("~/Views/Insudb/TABLE308/Create.cshtml", new CreateTABLE308Dto());
-    }
-
-    // POST: TABLE308/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(CreateTABLE308Dto createDto)
-    {
-        if (ModelState.IsValid)
-        {
-            await _service.CreateAsync(createDto);
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE308/Create.cshtml", createDto);
-    }
-
-    // GET: TABLE308/Edit/{id}
-    public async Task<IActionResult> Edit(long id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-
-        var updateDto = new UpdateTABLE308Dto
-        {
-            NCODIGINT = result.NCODIGINT,
-            DCOMPDATE = result.DCOMPDATE,
-            SDESCRIPT = result.SDESCRIPT,
-            SSHORT_DES = result.SSHORT_DES,
-            SSTATREGT = result.SSTATREGT,
-            NUSERCODE = result.NUSERCODE,
-        };
-        return View("~/Views/Insudb/TABLE308/Edit.cshtml", updateDto);
-    }
-
-    // POST: TABLE308/Edit/{id}
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTABLE308Dto updateDto)
-    {
-        if (ModelState.IsValid)
-        {
-            var success = await _service.UpdateAsync(updateDto.NCODIGINT, updateDto);
-            if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE308/Edit.cshtml", updateDto);
-    }
-
-    // GET: TABLE308/Delete/{id}
-    public async Task<IActionResult> Delete(long id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE308/Delete.cshtml", result);
-    }
-
-    // POST: TABLE308/Delete/{id}
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(long id)
-    {
-        await _service.DeleteAsync(id);
-        return RedirectToAction(nameof(Index));
-    }
-
+    public TABLE308Controller(ITABLE308Service service)
+        : base(service, "TABLE308", "NCODIGINT", new[] { "NCODIGINT", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE" }) { }
 }

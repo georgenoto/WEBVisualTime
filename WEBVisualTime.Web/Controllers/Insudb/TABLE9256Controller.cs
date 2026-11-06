@@ -1,102 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE9256;
 using WEBVisualTime.Servicios.Insudb.Services;
-using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Web.Controllers.Common;
 
 namespace WEBVisualTime.Web.Insudb.Controllers;
 
-public class TABLE9256Controller : Controller
+public class TABLE9256Controller : CatalogController<TABLE9256Dto, CreateTABLE9256Dto, UpdateTABLE9256Dto, int>
 {
-    private readonly ITABLE9256Service _service;
-
-    public TABLE9256Controller(ITABLE9256Service service
-    )
-    {
-        _service = service;
-    }
-
-    // GET: TABLE9256
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TABLE9256/Index.cshtml", result);
-    }
-
-    // GET: TABLE9256/Details/{id}
-    public async Task<IActionResult> Details(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE9256/Details.cshtml", result);
-    }
-
-    // GET: TABLE9256/Create
-    public async Task<IActionResult> Create()
-    {
-        return View("~/Views/Insudb/TABLE9256/Create.cshtml", new CreateTABLE9256Dto());
-    }
-
-    // POST: TABLE9256/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(CreateTABLE9256Dto createDto)
-    {
-        if (ModelState.IsValid)
-        {
-            await _service.CreateAsync(createDto);
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE9256/Create.cshtml", createDto);
-    }
-
-    // GET: TABLE9256/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-
-        var updateDto = new UpdateTABLE9256Dto
-        {
-            NCOD_MEDCOLLEGE = result.NCOD_MEDCOLLEGE,
-            SDESCRIPT = result.SDESCRIPT,
-            SSHORT_DES = result.SSHORT_DES,
-            SSTATREGT = result.SSTATREGT,
-            DCOMPDATE = result.DCOMPDATE,
-            NUSERCODE = result.NUSERCODE,
-        };
-        return View("~/Views/Insudb/TABLE9256/Edit.cshtml", updateDto);
-    }
-
-    // POST: TABLE9256/Edit/{id}
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTABLE9256Dto updateDto)
-    {
-        if (ModelState.IsValid)
-        {
-            var success = await _service.UpdateAsync(updateDto.NCOD_MEDCOLLEGE, updateDto);
-            if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE9256/Edit.cshtml", updateDto);
-    }
-
-    // GET: TABLE9256/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE9256/Delete.cshtml", result);
-    }
-
-    // POST: TABLE9256/Delete/{id}
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
-    {
-        await _service.DeleteAsync(id);
-        return RedirectToAction(nameof(Index));
-    }
-
+    public TABLE9256Controller(ITABLE9256Service service)
+        : base(service, "TABLE9256", "NCOD_MEDCOLLEGE", new[] { "NCOD_MEDCOLLEGE", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "DCOMPDATE", "NUSERCODE" }) { }
 }

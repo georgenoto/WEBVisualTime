@@ -1,102 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE1;
 using WEBVisualTime.Servicios.Insudb.Services;
-using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Web.Controllers.Common;
 
 namespace WEBVisualTime.Web.Insudb.Controllers;
 
-public class TABLE1Controller : Controller
+public class TABLE1Controller : CatalogController<TABLE1Dto, CreateTABLE1Dto, UpdateTABLE1Dto, long>
 {
-    private readonly ITABLE1Service _service;
-
-    public TABLE1Controller(ITABLE1Service service
-    )
-    {
-        _service = service;
-    }
-
-    // GET: TABLE1
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TABLE1/Index.cshtml", result);
-    }
-
-    // GET: TABLE1/Details/{id}
-    public async Task<IActionResult> Details(long id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE1/Details.cshtml", result);
-    }
-
-    // GET: TABLE1/Create
-    public async Task<IActionResult> Create()
-    {
-        return View("~/Views/Insudb/TABLE1/Create.cshtml", new CreateTABLE1Dto());
-    }
-
-    // POST: TABLE1/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(CreateTABLE1Dto createDto)
-    {
-        if (ModelState.IsValid)
-        {
-            await _service.CreateAsync(createDto);
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE1/Create.cshtml", createDto);
-    }
-
-    // GET: TABLE1/Edit/{id}
-    public async Task<IActionResult> Edit(long id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-
-        var updateDto = new UpdateTABLE1Dto
-        {
-            NCODIGINT = result.NCODIGINT,
-            DCOMPDATE = result.DCOMPDATE,
-            SDESCRIPT = result.SDESCRIPT,
-            SSHORT_DES = result.SSHORT_DES,
-            SSTATREGT = result.SSTATREGT,
-            NUSERCODE = result.NUSERCODE,
-        };
-        return View("~/Views/Insudb/TABLE1/Edit.cshtml", updateDto);
-    }
-
-    // POST: TABLE1/Edit/{id}
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTABLE1Dto updateDto)
-    {
-        if (ModelState.IsValid)
-        {
-            var success = await _service.UpdateAsync(updateDto.NCODIGINT, updateDto);
-            if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE1/Edit.cshtml", updateDto);
-    }
-
-    // GET: TABLE1/Delete/{id}
-    public async Task<IActionResult> Delete(long id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE1/Delete.cshtml", result);
-    }
-
-    // POST: TABLE1/Delete/{id}
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(long id)
-    {
-        await _service.DeleteAsync(id);
-        return RedirectToAction(nameof(Index));
-    }
-
+    public TABLE1Controller(ITABLE1Service service)
+        : base(service, "TABLE1", "NCODIGINT", new[] { "NCODIGINT", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE" }) { }
 }

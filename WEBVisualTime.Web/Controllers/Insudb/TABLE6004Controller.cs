@@ -1,102 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE6004;
 using WEBVisualTime.Servicios.Insudb.Services;
-using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Web.Controllers.Common;
 
 namespace WEBVisualTime.Web.Insudb.Controllers;
 
-public class TABLE6004Controller : Controller
+public class TABLE6004Controller : CatalogController<TABLE6004Dto, CreateTABLE6004Dto, UpdateTABLE6004Dto, int>
 {
-    private readonly ITABLE6004Service _service;
-
-    public TABLE6004Controller(ITABLE6004Service service
-    )
-    {
-        _service = service;
-    }
-
-    // GET: TABLE6004
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TABLE6004/Index.cshtml", result);
-    }
-
-    // GET: TABLE6004/Details/{id}
-    public async Task<IActionResult> Details(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE6004/Details.cshtml", result);
-    }
-
-    // GET: TABLE6004/Create
-    public async Task<IActionResult> Create()
-    {
-        return View("~/Views/Insudb/TABLE6004/Create.cshtml", new CreateTABLE6004Dto());
-    }
-
-    // POST: TABLE6004/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(CreateTABLE6004Dto createDto)
-    {
-        if (ModelState.IsValid)
-        {
-            await _service.CreateAsync(createDto);
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE6004/Create.cshtml", createDto);
-    }
-
-    // GET: TABLE6004/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-
-        var updateDto = new UpdateTABLE6004Dto
-        {
-            NSWIMPOOL = result.NSWIMPOOL,
-            DCOMPDATE = result.DCOMPDATE,
-            SDESCRIPT = result.SDESCRIPT,
-            SSHORT_DES = result.SSHORT_DES,
-            SSTATREGT = result.SSTATREGT,
-            NUSERCODE = result.NUSERCODE,
-        };
-        return View("~/Views/Insudb/TABLE6004/Edit.cshtml", updateDto);
-    }
-
-    // POST: TABLE6004/Edit/{id}
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTABLE6004Dto updateDto)
-    {
-        if (ModelState.IsValid)
-        {
-            var success = await _service.UpdateAsync(updateDto.NSWIMPOOL, updateDto);
-            if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE6004/Edit.cshtml", updateDto);
-    }
-
-    // GET: TABLE6004/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE6004/Delete.cshtml", result);
-    }
-
-    // POST: TABLE6004/Delete/{id}
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
-    {
-        await _service.DeleteAsync(id);
-        return RedirectToAction(nameof(Index));
-    }
-
+    public TABLE6004Controller(ITABLE6004Service service)
+        : base(service, "TABLE6004", "NSWIMPOOL", new[] { "NSWIMPOOL", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE" }) { }
 }

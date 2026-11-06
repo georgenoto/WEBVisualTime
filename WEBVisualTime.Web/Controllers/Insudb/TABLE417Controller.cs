@@ -1,102 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE417;
 using WEBVisualTime.Servicios.Insudb.Services;
-using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Web.Controllers.Common;
 
 namespace WEBVisualTime.Web.Insudb.Controllers;
 
-public class TABLE417Controller : Controller
+public class TABLE417Controller : CatalogController<TABLE417Dto, CreateTABLE417Dto, UpdateTABLE417Dto, long>
 {
-    private readonly ITABLE417Service _service;
-
-    public TABLE417Controller(ITABLE417Service service
-    )
-    {
-        _service = service;
-    }
-
-    // GET: TABLE417
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TABLE417/Index.cshtml", result);
-    }
-
-    // GET: TABLE417/Details/{id}
-    public async Task<IActionResult> Details(long id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE417/Details.cshtml", result);
-    }
-
-    // GET: TABLE417/Create
-    public async Task<IActionResult> Create()
-    {
-        return View("~/Views/Insudb/TABLE417/Create.cshtml", new CreateTABLE417Dto());
-    }
-
-    // POST: TABLE417/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(CreateTABLE417Dto createDto)
-    {
-        if (ModelState.IsValid)
-        {
-            await _service.CreateAsync(createDto);
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE417/Create.cshtml", createDto);
-    }
-
-    // GET: TABLE417/Edit/{id}
-    public async Task<IActionResult> Edit(long id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-
-        var updateDto = new UpdateTABLE417Dto
-        {
-            NCODIGINT = result.NCODIGINT,
-            DCOMPDATE = result.DCOMPDATE,
-            SDESCRIPT = result.SDESCRIPT,
-            SSHORT_DES = result.SSHORT_DES,
-            SSTATREGT = result.SSTATREGT,
-            NUSERCODE = result.NUSERCODE,
-        };
-        return View("~/Views/Insudb/TABLE417/Edit.cshtml", updateDto);
-    }
-
-    // POST: TABLE417/Edit/{id}
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTABLE417Dto updateDto)
-    {
-        if (ModelState.IsValid)
-        {
-            var success = await _service.UpdateAsync(updateDto.NCODIGINT, updateDto);
-            if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE417/Edit.cshtml", updateDto);
-    }
-
-    // GET: TABLE417/Delete/{id}
-    public async Task<IActionResult> Delete(long id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE417/Delete.cshtml", result);
-    }
-
-    // POST: TABLE417/Delete/{id}
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(long id)
-    {
-        await _service.DeleteAsync(id);
-        return RedirectToAction(nameof(Index));
-    }
-
+    public TABLE417Controller(ITABLE417Service service)
+        : base(service, "TABLE417", "NCODIGINT", new[] { "NCODIGINT", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE" }) { }
 }

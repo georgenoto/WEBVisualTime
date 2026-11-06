@@ -1,0 +1,165 @@
+using System.Net;
+using System.Net.Http.Json;
+using System.Linq.Expressions;
+using System.Reflection;
+using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.AspNetCore.Hosting.Server.Features;
+using WEBVisualTime.Servicios.Services.Common;
+using WEBVisualTime.Servicios.Insudb.Services;
+using WEBVisualTime.Servicios.Insudb.DTOs.TABLE2000;
+using WEBVisualTime.Servicios.Insudb.DTOs.TABLE999;
+
+// Exercise the real controllers and compiled Razor views with in-memory services.
+var builder = WebApplication.CreateBuilder(args);
+builder.Logging.ClearProviders();
+builder.WebHost.UseUrls("http://127.0.0.1:0");
+builder.Services.AddSingleton<ITABLE2000Service, NumberCatalog>();
+builder.Services.AddSingleton<ITABLE999Service, StringCatalog>();
+var webAssembly = typeof(WEBVisualTime.Web.Insudb.Controllers.TABLE2000Controller).Assembly;
+var apiAssembly = typeof(WEBVisualTime.WebApi.Insudb.Controllers.TABLE2000Controller).Assembly;
+builder.Services.AddControllersWithViews().AddApplicationPart(webAssembly).AddApplicationPart(apiAssembly)
+    .ConfigureApplicationPartManager(manager => manager.FeatureProviders.Add(new OnlyTestCatalogs()));
+await using var app = builder.Build();
+app.UseDeveloperExceptionPage();
+app.UseRouting();
+app.MapControllerRoute("default", "{controller}/{action=Index}/{id?}");
+await app.StartAsync();
+var address = app.Services.GetRequiredService<IServer>().Features.Get<IServerAddressesFeature>()!.Addresses.Single();
+using var client = new HttpClient(new HttpClientHandler { AllowAutoRedirect = false, CookieContainer = new CookieContainer() }) { BaseAddress = new Uri(address) };
+var checks = 0;
+void Check(bool condition, string message) { if (!condition) throw new Exception(message); checks++; }
+async Task<string> Page(string url)
+{
+    var response = await client.GetAsync(url);
+    var html = await response.Content.ReadAsStringAsync();
+    Check(response.StatusCode == HttpStatusCode.OK, url + ": " + response.StatusCode + " " + html[..Math.Min(html.Length, 1200)]);
+    return html;
+}
+async Task<HttpResponseMessage> PostForm(string url, string html, Dictionary<string,string> fields)
+{
+    var token = Regex.Match(html, "name=\"__RequestVerificationToken\"[^>]*value=\"([^\"]+)\"");
+    Check(token.Success, "CSRF token missing: " + url);
+    fields["__RequestVerificationToken"] = WebUtility.HtmlDecode(token.Groups[1].Value);
+    return await client.PostAsync(url, new FormUrlEncodedContent(fields));
+}
+
+foreach (var (name, key, id) in new[] { ("TABLE2000", "NAPLY", "7"), ("TABLE999", "SSTAT_ERROR", "A") })
+{
+    var html = await Page($"/{name}");
+    Check(html.Contains("Original &lt;script&gt;"), "Index must HTML-encode values");
+    Check(html.Contains($"/{name}/Edit/{id}"), "Existing action links must remain valid");
+    var create = await Page($"/{name}/Create");
+    Check(create.Contains("name=\"SDESCRIPT\""), "Shared form fields missing");
+    var invalid = await PostForm($"/{name}/Create", create, new() { ["DCOMPDATE"] = "not-a-date" });
+    var invalidHtml = await invalid.Content.ReadAsStringAsync();
+    Check(invalid.StatusCode == HttpStatusCode.OK && invalidHtml.Contains("not-a-date") && invalidHtml.Contains("validation-summary-errors"), "Invalid values must be retained with validation errors");
+    var valid = await PostForm($"/{name}/Create", create, new() { [key] = name == "TABLE2000" ? "42" : "NEW", ["SDESCRIPT"] = "Created", ["DCOMPDATE"] = "2026-11-06T10:25:30" });
+    Check(valid.StatusCode == HttpStatusCode.Redirect, "Create must redirect");
+    var edit = await Page($"/{name}/Edit/{id}");
+    Check(edit.Contains("type=\"hidden\"") && edit.Contains($"name=\"{key}\""), "Edit must retain the original key");
+    var missingToken = await client.PostAsync($"/{name}/Edit/{id}", new FormUrlEncodedContent(new Dictionary<string,string> { [key] = id }));
+    Check(missingToken.StatusCode == HttpStatusCode.BadRequest, "CSRF must be enforced");
+    var updated = await PostForm($"/{name}/Edit/{id}", edit, new() { [key] = id, ["SDESCRIPT"] = "Updated" });
+    Check(updated.StatusCode == HttpStatusCode.Redirect, "Edit must redirect");
+    Check((await Page($"/{name}/Details/{id}")).Contains("Updated"), "Edit must persist through the service");
+    var delete = await Page($"/{name}/Delete/{id}");
+    var deleted = await PostForm($"/{name}/Delete/{id}", delete, new() { ["id"] = id });
+    Check(deleted.StatusCode == HttpStatusCode.Redirect, "Delete must redirect");
+    Check((await client.GetAsync($"/{name}/Details/{id}")).StatusCode == HttpStatusCode.NotFound, "Deleted records must return 404");
+}
+
+var createdApi = await client.PostAsJsonAsync("/api/TABLE2000", new CreateTABLE2000Dto { NAPLY = 55, SDESCRIPT = "API created" });
+Check(createdApi.StatusCode == HttpStatusCode.Created && createdApi.Headers.Location?.ToString().EndsWith("/api/TABLE2000/55") == true, "API POST and CreatedAtAction route");
+Check((await client.GetAsync("/api/TABLE2000/55")).IsSuccessStatusCode, "API GET by numeric key");
+Check((await client.PutAsJsonAsync("/api/TABLE2000/55", new UpdateTABLE2000Dto { NAPLY = 55, SDESCRIPT = "API updated" })).StatusCode == HttpStatusCode.NoContent, "API PUT route");
+Check((await client.DeleteAsync("/api/TABLE2000/55")).StatusCode == HttpStatusCode.NoContent, "API DELETE route");
+Check((await client.PutAsJsonAsync("/api/TABLE2000/987", new UpdateTABLE2000Dto { NAPLY = 987 })).StatusCode == HttpStatusCode.NotFound, "API missing key returns 404");
+Check((await client.GetAsync("/api/TABLE2000/not-a-number")).StatusCode == HttpStatusCode.BadRequest, "Numeric keys must reject invalid input");
+Check((await client.PutAsJsonAsync("/api/TABLE999/NEW", new UpdateTABLE999Dto { SSTAT_ERROR = "NEW", SDESCRIPT = "String API" })).StatusCode == HttpStatusCode.NoContent, "API PUT string key");
+Check((await client.DeleteAsync("/api/TABLE999/NEW")).StatusCode == HttpStatusCode.NoContent, "API DELETE string key");
+Check((await Page("/TABLE999")).Contains("No hay registros disponibles."), "Empty catalog message");
+
+// Exercise the real shared service and existing mappings with an isolated repository.
+var repository = new NumberRepository();
+var realService = new TABLE2000Service(repository);
+await realService.CreateAsync(new CreateTABLE2000Dto { NAPLY = 91, SDESCRIPT = "Mapped" });
+Check((await realService.GetByIdAsync(91))?.SDESCRIPT == "Mapped", "Real service create/get mapping");
+await realService.UpdateAsync(91, new UpdateTABLE2000Dto { NAPLY = 91, SDESCRIPT = "Mapped update" });
+Check((await realService.FindAsync(e => e.NAPLY == 91)).Single().SDESCRIPT == "Mapped update", "Real service update/find mapping");
+Check(await realService.DeleteAsync(91) && !await realService.DeleteAsync(91) && repository.Saves == 3, "Real service deletion and save boundaries");
+Console.WriteLine($"PASS: {checks} HTTP assertions: numeric/string keys, MVC CRUD, Razor, HTML encoding, invalid forms, CSRF and API routes. No Oracle connection.");
+await app.StopAsync();
+
+sealed class OnlyTestCatalogs : IApplicationFeatureProvider<ControllerFeature>
+{
+    public void PopulateFeature(IEnumerable<ApplicationPart> parts, ControllerFeature feature)
+    {
+        foreach (var controller in feature.Controllers.Where(c => c.Name is not ("TABLE2000Controller" or "TABLE999Controller")).ToList())
+            feature.Controllers.Remove(controller);
+    }
+}
+
+abstract class MemoryCatalog<TDto,TCreate,TUpdate,TKey> : IService<TDto,TCreate,TUpdate,TKey>
+    where TDto : class,new() where TCreate : class where TUpdate : class where TKey : notnull
+{
+    private readonly Dictionary<TKey,TDto> records = new();
+    private readonly PropertyInfo key;
+    private readonly TKey defaultKey;
+    protected MemoryCatalog(string keyName, TKey initialKey, TKey defaultKey)
+    {
+        key = typeof(TDto).GetProperty(keyName)!;
+        this.defaultKey = defaultKey;
+        var item = new TDto(); key.SetValue(item, initialKey);
+        typeof(TDto).GetProperty("SDESCRIPT")!.SetValue(item, "Original <script>");
+        records[initialKey] = item;
+    }
+    static TDto Copy(object source)
+    {
+        var dto = new TDto();
+        foreach (var p in source.GetType().GetProperties())
+            typeof(TDto).GetProperty(p.Name)?.SetValue(dto, p.GetValue(source));
+        return dto;
+    }
+    public Task<IEnumerable<TDto>> GetAllAsync() => Task.FromResult<IEnumerable<TDto>>(records.Values.ToList());
+    public Task<TDto?> GetByIdAsync(TKey id) => Task.FromResult(records.GetValueOrDefault(id));
+    public Task<TDto> CreateAsync(TCreate create)
+    {
+        var dto = Copy(create);
+        if (key.GetValue(dto) is not TKey id || EqualityComparer<TKey>.Default.Equals(id, default!))
+            key.SetValue(dto, defaultKey);
+        records[(TKey)key.GetValue(dto)!] = dto;
+        return Task.FromResult(dto);
+    }
+    public Task<bool> UpdateAsync(TKey id, TUpdate update)
+    {
+        if (!records.ContainsKey(id)) return Task.FromResult(false);
+        records[id] = Copy(update); return Task.FromResult(true);
+    }
+    public Task<bool> DeleteAsync(TKey id) => Task.FromResult(records.Remove(id));
+}
+sealed class NumberCatalog : MemoryCatalog<TABLE2000Dto,CreateTABLE2000Dto,UpdateTABLE2000Dto,long>, ITABLE2000Service
+{
+    public NumberCatalog() : base("NAPLY", 7, 42) { }
+    public Task<IEnumerable<TABLE2000Dto>> FindAsync(Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE2000,bool>> predicate) => GetAllAsync();
+}
+sealed class StringCatalog : MemoryCatalog<TABLE999Dto,CreateTABLE999Dto,UpdateTABLE999Dto,string>, ITABLE999Service
+{
+    public StringCatalog() : base("SSTAT_ERROR", "A", "NEW") { }
+    public Task<IEnumerable<TABLE999Dto>> FindAsync(Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE999,bool>> predicate) => GetAllAsync();
+}
+
+sealed class NumberRepository : WEBVisualTime.Datos.Repositories.IRepository<WEBVisualTime.Entidades.Insudb.TABLE2000>
+{
+    private readonly List<WEBVisualTime.Entidades.Insudb.TABLE2000> items = new();
+    public int Saves { get; private set; }
+    public Task<IEnumerable<WEBVisualTime.Entidades.Insudb.TABLE2000>> GetAllAsync() => Task.FromResult<IEnumerable<WEBVisualTime.Entidades.Insudb.TABLE2000>>(items);
+    public Task<WEBVisualTime.Entidades.Insudb.TABLE2000?> GetByIdAsync(object id) => Task.FromResult(items.FirstOrDefault(e => e.NAPLY == Convert.ToInt64(id)));
+    public Task<IEnumerable<WEBVisualTime.Entidades.Insudb.TABLE2000>> FindAsync(Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE2000,bool>> predicate) => Task.FromResult(items.Where(predicate.Compile()));
+    public Task AddAsync(WEBVisualTime.Entidades.Insudb.TABLE2000 entity) { items.Add(entity); return Task.CompletedTask; }
+    public void Update(WEBVisualTime.Entidades.Insudb.TABLE2000 entity) { }
+    public void Remove(WEBVisualTime.Entidades.Insudb.TABLE2000 entity) => items.Remove(entity);
+    public Task<int> SaveChangesAsync() { Saves++; return Task.FromResult(1); }
+}

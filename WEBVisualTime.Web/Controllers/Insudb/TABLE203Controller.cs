@@ -1,102 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE203;
 using WEBVisualTime.Servicios.Insudb.Services;
-using WEBVisualTime.Servicios.Insudb.Mappings;
+using WEBVisualTime.Web.Controllers.Common;
 
 namespace WEBVisualTime.Web.Insudb.Controllers;
 
-public class TABLE203Controller : Controller
+public class TABLE203Controller : CatalogController<TABLE203Dto, CreateTABLE203Dto, UpdateTABLE203Dto, int>
 {
-    private readonly ITABLE203Service _service;
-
-    public TABLE203Controller(ITABLE203Service service
-    )
-    {
-        _service = service;
-    }
-
-    // GET: TABLE203
-    public async Task<IActionResult> Index()
-    {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/TABLE203/Index.cshtml", result);
-    }
-
-    // GET: TABLE203/Details/{id}
-    public async Task<IActionResult> Details(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE203/Details.cshtml", result);
-    }
-
-    // GET: TABLE203/Create
-    public async Task<IActionResult> Create()
-    {
-        return View("~/Views/Insudb/TABLE203/Create.cshtml", new CreateTABLE203Dto());
-    }
-
-    // POST: TABLE203/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(CreateTABLE203Dto createDto)
-    {
-        if (ModelState.IsValid)
-        {
-            await _service.CreateAsync(createDto);
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE203/Create.cshtml", createDto);
-    }
-
-    // GET: TABLE203/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-
-        var updateDto = new UpdateTABLE203Dto
-        {
-            NSTATUS_DOC = result.NSTATUS_DOC,
-            DCOMPDATE = result.DCOMPDATE,
-            SDESCRIPT = result.SDESCRIPT,
-            SSHORT_DES = result.SSHORT_DES,
-            SSTATREGT = result.SSTATREGT,
-            NUSERCODE = result.NUSERCODE,
-        };
-        return View("~/Views/Insudb/TABLE203/Edit.cshtml", updateDto);
-    }
-
-    // POST: TABLE203/Edit/{id}
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTABLE203Dto updateDto)
-    {
-        if (ModelState.IsValid)
-        {
-            var success = await _service.UpdateAsync(updateDto.NSTATUS_DOC, updateDto);
-            if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
-        }
-        return View("~/Views/Insudb/TABLE203/Edit.cshtml", updateDto);
-    }
-
-    // GET: TABLE203/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
-    {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return View("~/Views/Insudb/TABLE203/Delete.cshtml", result);
-    }
-
-    // POST: TABLE203/Delete/{id}
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
-    {
-        await _service.DeleteAsync(id);
-        return RedirectToAction(nameof(Index));
-    }
-
+    public TABLE203Controller(ITABLE203Service service)
+        : base(service, "TABLE203", "NSTATUS_DOC", new[] { "NSTATUS_DOC", "DCOMPDATE", "SDESCRIPT", "SSHORT_DES", "SSTATREGT", "NUSERCODE" }) { }
 }
