@@ -15,11 +15,11 @@ public partial class USER_CASHNUM
 
     [ForeignKey("NUSERCODE")]
     public Insudb.USERS? USERSNUSERCODE { get; set; }
-    public int NCASHSUP { get; set; }
+    public int? NCASHSUP { get; set; }
 
     [ForeignKey("NCASHSUP")]
     public Insudb.USERS? USERSNCASHSUP { get; set; }
-    public int NHEADSUP { get; set; }
+    public int? NHEADSUP { get; set; }
 
     [ForeignKey("NHEADSUP")]
     public Insudb.USERS? USERSNHEADSUP { get; set; }

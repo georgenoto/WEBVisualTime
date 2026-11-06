@@ -10,8 +10,8 @@ public class UpdateFINANC_PREDto
     public DateTime? DSTARTDATE { get; set; }
     public decimal? NEXCHANGE { get; set; }
     public DateTime? DEXPIRDAT { get; set; }
-    public long NINTERMED { get; set; }
-    public int NOFFICE { get; set; }
+    public long? NINTERMED { get; set; }
+    public int? NOFFICE { get; set; }
     public long? NPOLICY { get; set; }
     public decimal? NPREMIUM { get; set; }
     public long NRECEIPT { get; set; }
@@ -20,6 +20,6 @@ public class UpdateFINANC_PREDto
     public string? SCLIENT { get; set; }
     public int NUSERCODE { get; set; }
     public int? NPRODUCT { get; set; }
-    public int NCOMPANY { get; set; }
+    public int? NCOMPANY { get; set; }
     public string? SEXTRECEIPT { get; set; }
 }

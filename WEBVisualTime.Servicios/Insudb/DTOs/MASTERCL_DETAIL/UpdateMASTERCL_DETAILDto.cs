@@ -29,7 +29,7 @@ public class UpdateMASTERCL_DETAILDto
     public int? NIND_DONOTRECALCULATE { get; set; }
     public decimal? NAMOUNT_DIFFERENCETARIFF { get; set; }
     public int? NIND_REOPENCL { get; set; }
-    public int NCAUSEREOPENCL { get; set; }
+    public int? NCAUSEREOPENCL { get; set; }
     public int? NTYPE_COMMPAY { get; set; }
     public long? NRELPROCEDURE_NUM_ORIG { get; set; }
     public long? NRELPROCEDURE_NUM_GEN { get; set; }

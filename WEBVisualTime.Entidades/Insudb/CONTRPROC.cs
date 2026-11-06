@@ -6,23 +6,35 @@ public partial class CONTRPROC
 {
     public int NNUMBER { get; set; }
 
-    [ForeignKey("NNUMBER")]
+    [ForeignKey("NTYPE_REL, NNUMBER, NTYPE, NBRANCH")]
     public Insudb.CONTRMASTER? CONTRMASTERNNUMBER { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CONTRMASTER? CONTRMASTERNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CONTRMASTER? CONTRMASTERNBRANCH
+    {
+        get => CONTRMASTERNNUMBER;
+        set => CONTRMASTERNNUMBER = value;
+    }
     public DateTime DEFFECDATE { get; set; }
     public int NTYPE { get; set; }
 
-    [ForeignKey("NTYPE")]
-    public Insudb.CONTRMASTER? CONTRMASTERNTYPE { get; set; }
+    [NotMapped]
+    public Insudb.CONTRMASTER? CONTRMASTERNTYPE
+    {
+        get => CONTRMASTERNNUMBER;
+        set => CONTRMASTERNNUMBER = value;
+    }
     public decimal? NAMOUNT { get; set; }
     public int NTYPE_REL { get; set; }
 
-    [ForeignKey("NTYPE_REL")]
-    public Insudb.CONTRMASTER? CONTRMASTERNTYPE_REL { get; set; }
-    public int NFQCY_ACC { get; set; }
+    [NotMapped]
+    public Insudb.CONTRMASTER? CONTRMASTERNTYPE_REL
+    {
+        get => CONTRMASTERNNUMBER;
+        set => CONTRMASTERNNUMBER = value;
+    }
+    public int? NFQCY_ACC { get; set; }
 
     [ForeignKey("NFQCY_ACC")]
     public Insudb.TABLE97? TABLE97 { get; set; }
@@ -75,7 +87,7 @@ public partial class CONTRPROC
     [ForeignKey("SCUMREINT")]
     public Insudb.TABLE90? TABLE90 { get; set; }
     public string? SCUMULPOL { get; set; }
-    public int NFREQPAY { get; set; }
+    public int? NFREQPAY { get; set; }
 
     [ForeignKey("NFREQPAY")]
     public Insudb.TABLE36? TABLE36 { get; set; }

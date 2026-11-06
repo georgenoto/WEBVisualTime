@@ -20,5 +20,5 @@ public class UpdateWAY_PAY_PRODDto
     public string? SCOLLECTION { get; set; }
     public string? SIND_PREREFMAX { get; set; }
     public string? SPRFIRST_EXPR { get; set; }
-    public int NTYPE_VALUECOLLECT { get; set; }
+    public int? NTYPE_VALUECOLLECT { get; set; }
 }

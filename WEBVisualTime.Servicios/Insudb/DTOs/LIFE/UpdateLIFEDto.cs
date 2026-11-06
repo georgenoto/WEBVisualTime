@@ -21,7 +21,7 @@ public class UpdateLIFEDto
     public long? NEXA_AMOUNT { get; set; }
     public int? NEXAM_TYPE { get; set; }
     public DateTime? DEXPIRDAT { get; set; }
-    public int NTYPDURINS { get; set; }
+    public int? NTYPDURINS { get; set; }
     public int? NINIT_NUM { get; set; }
     public int? NINSUR_TIME { get; set; }
     public DateTime? DISSUEDAT { get; set; }
@@ -56,10 +56,10 @@ public class UpdateLIFEDto
     public int? NCURREN_CRE { get; set; }
     public decimal? NAMOUNT_CRE { get; set; }
     public decimal? NAMOUNT_ACT { get; set; }
-    public int NCALCAPITAL { get; set; }
-    public int NTYPPREMIUM { get; set; }
+    public int? NCALCAPITAL { get; set; }
+    public int? NTYPPREMIUM { get; set; }
     public int? NCOUNT_INSU { get; set; }
-    public int NGROUP_COMP { get; set; }
+    public int? NGROUP_COMP { get; set; }
     public int? NTARIFF { get; set; }
     public int? NGROUP { get; set; }
     public int? NSITUATION { get; set; }
@@ -90,7 +90,7 @@ public class UpdateLIFEDto
     public int? NTAXREGIME { get; set; }
     public long? NCOD_SAAPV { get; set; }
     public int? NINSTITUTION { get; set; }
-    public int NTYPEEXC { get; set; }
+    public long? NTYPEEXC { get; set; }
     public int? NNOTCANCELDAY { get; set; }
     public decimal? NPARTICIP_POLEMP { get; set; }
     public decimal? NPARTICIP_POLCO { get; set; }

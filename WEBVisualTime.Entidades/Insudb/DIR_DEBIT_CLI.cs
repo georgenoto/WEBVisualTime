@@ -14,7 +14,7 @@ public partial class DIR_DEBIT_CLI
     public string? STYP_DIRDEB { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
-    public long NBANKEXT { get; set; }
+    public long? NBANKEXT { get; set; }
 
     [ForeignKey("NBANKEXT")]
     public Insudb.TABLE7? TABLE7 { get; set; }

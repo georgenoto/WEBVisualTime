@@ -10,7 +10,7 @@ public partial class LATEPAYMENTPENALTY
     public Insudb.TABLE10? TABLE10 { get; set; }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
+    [ForeignKey("NBRANCH, NPRODUCT")]
     public Insudb.PRODMASTER? PRODMASTER { get; set; }
     public int NDAY_INI { get; set; }
     public DateTime DEFFECTDATE { get; set; }

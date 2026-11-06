@@ -4,13 +4,13 @@ public class TAB_LIFCOVDto
 {
     public int NCOVERGEN { get; set; }
     public int? NAGEMAXI { get; set; }
-    public int NBRANCH_EST { get; set; }
+    public int? NBRANCH_EST { get; set; }
     public string? TABLE71SDESCRIPT { get; set; }
-    public int NBRANCH_LED { get; set; }
+    public int? NBRANCH_LED { get; set; }
     public string? TABLE75SDESCRIPT { get; set; }
-    public int NBRANCH_GEN { get; set; }
+    public int? NBRANCH_GEN { get; set; }
     public string? TABLE634SDESCRIPT { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public string? TABLE5000SDESCRIPT { get; set; }
     public decimal? NCACALFIX { get; set; }
     public string? SCACALFRI { get; set; }
@@ -53,7 +53,7 @@ public class TAB_LIFCOVDto
     public string? SINFORPROV { get; set; }
     public string? SPROVIDER { get; set; }
     public string? CLIENTSACCOUNT_IN { get; set; }
-    public int NCLA_LI_TYP { get; set; }
+    public int? NCLA_LI_TYP { get; set; }
     public string? TABLE210SDESCRIPT { get; set; }
     public string? SDESCOVER { get; set; }
     public string? STAXHEREDITY { get; set; }

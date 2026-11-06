@@ -18,9 +18,9 @@ public class CreateBOOK_COLLECTIONDto
     public DateTime? DPOSTED { get; set; }
     public int? NWAY_PAY { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NOFFICE { get; set; }
-    public int NOFFICEAGEN { get; set; }
-    public int NAGENCY { get; set; }
+    public int? NOFFICE { get; set; }
+    public int? NOFFICEAGEN { get; set; }
+    public int? NAGENCY { get; set; }
     public DateTime? DLEDGERDAT { get; set; }
     public DateTime? DSTATDATE { get; set; }
     public string? SPAY_FORM { get; set; }
@@ -43,7 +43,7 @@ public class CreateBOOK_COLLECTIONDto
     public decimal? NPREMIUM { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NUSERCODE { get; set; }
-    public int NTYPE_TRAN { get; set; }
+    public int? NTYPE_TRAN { get; set; }
     public DateTime? DSTATDATE_NEW { get; set; }
     public DateTime? DSTATDATE_OLD { get; set; }
     public long? NBILLNUM { get; set; }

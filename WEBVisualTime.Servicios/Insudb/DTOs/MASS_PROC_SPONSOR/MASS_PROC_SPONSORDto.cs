@@ -32,7 +32,7 @@ public class MASS_PROC_SPONSORDto
     public int? NSHEET_OUT { get; set; }
     public int? NUSERINCHARGE { get; set; }
     public DateTime? DRECEPTION_DAY { get; set; }
-    public int NCOD_AGREE { get; set; }
+    public long NCOD_AGREE { get; set; }
     public string? SFILENAME { get; set; }
     public DateTime DEXECUTE { get; set; }
     public int? NMONTH { get; set; }

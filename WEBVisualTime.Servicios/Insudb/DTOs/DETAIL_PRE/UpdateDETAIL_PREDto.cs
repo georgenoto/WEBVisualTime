@@ -21,7 +21,7 @@ public class UpdateDETAIL_PREDto
     public int? NBILL_ITEM { get; set; }
     public int NBRANCH_EST { get; set; }
     public int NBRANCH_LED { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public int? NUSERCODE { get; set; }
     public decimal? NPREMANUAL { get; set; }
     public string? SADDTAX { get; set; }
@@ -37,7 +37,7 @@ public class UpdateDETAIL_PREDto
     public decimal? NSTIPEND_AMOUNT { get; set; }
     public decimal? NSTIPEND_ANNUAL { get; set; }
     public decimal? NTAXRATE { get; set; }
-    public int NDISSUR_TYPE { get; set; }
+    public int? NDISSUR_TYPE { get; set; }
     public decimal? NCOM_SUPER { get; set; }
     public decimal? NCOMANUAL_SUPER { get; set; }
     public decimal? NCOMSUP_RATE { get; set; }

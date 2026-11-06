@@ -12,5 +12,5 @@ public class UpdateINTERM_TYPDto
     public int NTYP_ACCO { get; set; }
     public string? SIND_FECU { get; set; }
     public string? SGEN_CERTIF { get; set; }
-    public int NRECEPTYP { get; set; }
+    public int? NRECEPTYP { get; set; }
 }

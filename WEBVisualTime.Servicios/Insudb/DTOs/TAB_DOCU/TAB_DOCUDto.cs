@@ -19,6 +19,6 @@ public class TAB_DOCUDto
     public string? STEXT { get; set; }
     public string? SREQUIERED { get; set; }
     public int? NPERSON_TYP { get; set; }
-    public int NDOC_TYPE { get; set; }
+    public int? NDOC_TYPE { get; set; }
     public string? TABLE9217SDESCRIPT { get; set; }
 }

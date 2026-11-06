@@ -6,32 +6,56 @@ public partial class MEDICAL_EVAL_ROL
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF, NROLE, SCLIENT, DEFFECDATE")]
     public Insudb.ROLES? ROLESSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.ROLES? ROLESNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.ROLES? ROLESNBRANCH
+    {
+        get => ROLESSCERTYPE;
+        set => ROLESSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.ROLES? ROLESNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.ROLES? ROLESNPRODUCT
+    {
+        get => ROLESSCERTYPE;
+        set => ROLESSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.ROLES? ROLESNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.ROLES? ROLESNPOLICY
+    {
+        get => ROLESSCERTYPE;
+        set => ROLESSCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.ROLES? ROLESNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.ROLES? ROLESNCERTIF
+    {
+        get => ROLESSCERTYPE;
+        set => ROLESSCERTYPE = value;
+    }
     public int NROLE { get; set; }
 
-    [ForeignKey("NROLE")]
-    public Insudb.ROLES? ROLESNROLE { get; set; }
+    [NotMapped]
+    public Insudb.ROLES? ROLESNROLE
+    {
+        get => ROLESSCERTYPE;
+        set => ROLESSCERTYPE = value;
+    }
     public string SCLIENT { get; set; }
 
-    [ForeignKey("SCLIENT")]
-    public Insudb.ROLES? ROLESSCLIENT { get; set; }
+    [NotMapped]
+    public Insudb.ROLES? ROLESSCLIENT
+    {
+        get => ROLESSCERTYPE;
+        set => ROLESSCERTYPE = value;
+    }
     public int NMEDICALSTAT { get; set; }
 
     [ForeignKey("NMEDICALSTAT")]
@@ -42,7 +66,11 @@ public partial class MEDICAL_EVAL_ROL
     public int? NUSERCODE { get; set; }
     public DateTime DEFFECDATE { get; set; }
 
-    [ForeignKey("DEFFECDATE")]
-    public Insudb.ROLES? ROLESDEFFECDATE { get; set; }
+    [NotMapped]
+    public Insudb.ROLES? ROLESDEFFECDATE
+    {
+        get => ROLESSCERTYPE;
+        set => ROLESSCERTYPE = value;
+    }
     public int? NMONTHS { get; set; }
 }

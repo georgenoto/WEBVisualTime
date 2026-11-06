@@ -6,35 +6,47 @@ public partial class MOVE_ACC
 {
     public int NTYP_ACCO { get; set; }
 
-    [ForeignKey("NTYP_ACCO")]
+    [ForeignKey("NTYP_ACCO, STYPE_ACC, SCLIENT, NCURRENCY")]
     public Insudb.CURR_ACC? CURR_ACCNTYP_ACCO { get; set; }
     public string STYPE_ACC { get; set; }
 
-    [ForeignKey("STYPE_ACC")]
-    public Insudb.CURR_ACC? CURR_ACCSTYPE_ACC { get; set; }
+    [NotMapped]
+    public Insudb.CURR_ACC? CURR_ACCSTYPE_ACC
+    {
+        get => CURR_ACCNTYP_ACCO;
+        set => CURR_ACCNTYP_ACCO = value;
+    }
     public string SCLIENT { get; set; }
 
-    [ForeignKey("SCLIENT")]
-    public Insudb.CURR_ACC? CURR_ACCSCLIENT { get; set; }
+    [NotMapped]
+    public Insudb.CURR_ACC? CURR_ACCSCLIENT
+    {
+        get => CURR_ACCNTYP_ACCO;
+        set => CURR_ACCNTYP_ACCO = value;
+    }
     public int NCURRENCY { get; set; }
 
-    [ForeignKey("NCURRENCY")]
-    public Insudb.CURR_ACC? CURR_ACCNCURRENCY { get; set; }
+    [NotMapped]
+    public Insudb.CURR_ACC? CURR_ACCNCURRENCY
+    {
+        get => CURR_ACCNTYP_ACCO;
+        set => CURR_ACCNTYP_ACCO = value;
+    }
     public DateTime DOPERDATE { get; set; }
     public long NIDCONSEC { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }
     public decimal? NAMOUNT { get; set; }
-    public long NBANKEXT { get; set; }
+    public long? NBANKEXT { get; set; }
 
     [ForeignKey("NBANKEXT")]
     public Insudb.TABLE7? TABLE7 { get; set; }
     public int? NBRANCH { get; set; }
     public long? NCERTIF { get; set; }
     public string? SCHEQUE { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
 
     [ForeignKey("NCLAIM")]
     public Insudb.CLAIM? CLAIM { get; set; }
@@ -48,27 +60,27 @@ public partial class MOVE_ACC
     public string? SSTATREGT { get; set; }
     public int? NTRANSAC { get; set; }
     public int? NTRANSACTIO { get; set; }
-    public int NTYPE_MOVE { get; set; }
+    public int? NTYPE_MOVE { get; set; }
 
     [ForeignKey("NTYPE_MOVE")]
     public Insudb.TABLE401? TABLE401 { get; set; }
-    public int NTYPE_PAY { get; set; }
+    public int? NTYPE_PAY { get; set; }
 
     [ForeignKey("NTYPE_PAY")]
     public Insudb.TABLE137? TABLE137 { get; set; }
-    public int NTYPE_TRAN { get; set; }
+    public int? NTYPE_TRAN { get; set; }
 
     [ForeignKey("NTYPE_TRAN")]
     public Insudb.TABLE6? TABLE6 { get; set; }
     public int? NUSERCODE { get; set; }
-    public int NPROVINCE { get; set; }
+    public int? NPROVINCE { get; set; }
 
     [ForeignKey("NPROVINCE")]
     public Insudb.PROVINCE? PROVINCE { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public long? NIDDOCUMENT { get; set; }
     public long? NREQUEST_NU { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
 
     [ForeignKey("NBORDEREAUX")]
     public Insudb.COLFORMREF? COLFORMREF { get; set; }
@@ -88,7 +100,7 @@ public partial class MOVE_ACC
     public DateTime? DPOSTED { get; set; }
     public string? SPROCESS_IND { get; set; }
     public long? NPROPONUM { get; set; }
-    public long NBULLETINS { get; set; }
+    public long? NBULLETINS { get; set; }
     public long? NNOTENUM { get; set; }
     public long NID { get; set; }
     public decimal? NAMOUNTDEC { get; set; }

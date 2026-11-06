@@ -21,13 +21,13 @@ public partial class T_DOCTYP
     public string? SCLIENT { get; set; }
     public long? NBULLETINS { get; set; }
     public long? NPROPONUM { get; set; }
-    public int NTYPEMOVE { get; set; }
+    public int? NTYPEMOVE { get; set; }
 
     [ForeignKey("NTYPEMOVE")]
     public Insudb.TABLE5525? TABLE5525 { get; set; }
     public DateTime? DMOVDATE { get; set; }
     public int? NTYPE { get; set; }
-    public int NTRATYPEI { get; set; }
+    public int? NTRATYPEI { get; set; }
 
     [ForeignKey("NTRATYPEI")]
     public Insudb.TABLE24? TABLE24 { get; set; }
@@ -55,12 +55,12 @@ public partial class T_DOCTYP
     public DateTime? DISSUEDATBON { get; set; }
     public DateTime? DEXPIRDATBON { get; set; }
     public decimal? NTAX { get; set; }
-    public int NORIGIN { get; set; }
+    public int? NORIGIN { get; set; }
 
     [ForeignKey("NORIGIN")]
     public Insudb.TABLE5633? TABLE5633 { get; set; }
     public DateTime? DDATE_ORIGIN { get; set; }
-    public int NINSTITUTION { get; set; }
+    public int? NINSTITUTION { get; set; }
 
     [ForeignKey("NINSTITUTION")]
     public Insudb.TAB_FN_INSTITUTION? TAB_FN_INSTITUTION { get; set; }

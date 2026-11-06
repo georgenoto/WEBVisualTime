@@ -6,23 +6,27 @@ public partial class BANK_ACC
 {
     public int NACC_BANK { get; set; }
     public string? SACC_LEDGER { get; set; }
-    public long NBANK_CODE { get; set; }
+    public long? NBANK_CODE { get; set; }
 
-    [ForeignKey("NBANK_CODE")]
+    [ForeignKey("NBANK_CODE, NBK_AGENCY")]
     public Insudb.TAB_BK_AGE? TAB_BK_AGENBANK_CODE { get; set; }
-    public long NBK_AGENCY { get; set; }
+    public long? NBK_AGENCY { get; set; }
 
-    [ForeignKey("NBK_AGENCY")]
-    public Insudb.TAB_BK_AGE? TAB_BK_AGENBK_AGENCY { get; set; }
+    [NotMapped]
+    public Insudb.TAB_BK_AGE? TAB_BK_AGENBK_AGENCY
+    {
+        get => TAB_BK_AGENBANK_CODE;
+        set => TAB_BK_AGENBANK_CODE = value;
+    }
     public string? SACC_NUMBER { get; set; }
     public string? SAUX_ACCOUN { get; set; }
-    public int NACC_TYPE { get; set; }
+    public int? NACC_TYPE { get; set; }
 
     [ForeignKey("NACC_TYPE")]
     public Insudb.TABLE190? TABLE190 { get; set; }
     public decimal? NAVAILABLE { get; set; }
     public DateTime? DCOMPDATE { get; set; }
-    public int NAVAIL_TYPE { get; set; }
+    public int? NAVAIL_TYPE { get; set; }
 
     [ForeignKey("NAVAIL_TYPE")]
     public Insudb.TABLE197? TABLE197 { get; set; }
@@ -37,7 +41,7 @@ public partial class BANK_ACC
     public decimal? NTRANSIT_5 { get; set; }
     public int? NUSERCODE { get; set; }
     public string? SSTATREGT { get; set; }
-    public int NCOMPANY { get; set; }
+    public int? NCOMPANY { get; set; }
 
     [ForeignKey("NCOMPANY")]
     public Insudb.COMPANY? COMPANY { get; set; }

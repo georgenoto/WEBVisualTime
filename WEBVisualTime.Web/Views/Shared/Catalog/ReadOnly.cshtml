@@ -1,0 +1,5 @@
+@model string
+@{ ViewData["Title"] = "Catálogo de solo lectura"; }
+<h1 class="h4">Catálogo de solo lectura</h1>
+<div class="alert alert-warning" role="alert">@Model</div>
+<a asp-action="Index" class="btn btn-primary">Volver al catálogo</a>

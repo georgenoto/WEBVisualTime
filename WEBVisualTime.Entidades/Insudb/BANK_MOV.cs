@@ -14,12 +14,12 @@ public partial class BANK_MOV
     public decimal? NCHEQ_AMOUN { get; set; }
     public long NMOVEMENT { get; set; }
     public long? NYEAR_MONTH { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
 
     [ForeignKey("NBORDEREAUX")]
     public Insudb.COLFORMREF? COLFORMREF { get; set; }
     public string? SDOCNUMBE { get; set; }
-    public int NCONCEPT { get; set; }
+    public int? NCONCEPT { get; set; }
 
     [ForeignKey("NCONCEPT")]
     public Insudb.TABLE22? TABLE22 { get; set; }
@@ -31,32 +31,36 @@ public partial class BANK_MOV
 
     [ForeignKey("SCLIENT")]
     public Insudb.CLIENT? CLIENT { get; set; }
-    public int NTYPE_MOV { get; set; }
+    public int? NTYPE_MOV { get; set; }
 
     [ForeignKey("NTYPE_MOV")]
     public Insudb.TABLE296? TABLE296 { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }
     public int? NUSERCODE { get; set; }
     public string? SNUMFORM { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
 
     [ForeignKey("NCLAIM")]
     public Insudb.CLAIM? CLAIM { get; set; }
     public int? NVOUCHER_LE { get; set; }
-    public long NCONTRAT { get; set; }
+    public long? NCONTRAT { get; set; }
 
-    [ForeignKey("NCONTRAT")]
+    [ForeignKey("NCONTRAT, NDRAFT")]
     public Insudb.FINANC_DRA? FINANC_DRANCONTRAT { get; set; }
-    public int NDRAFT { get; set; }
+    public int? NDRAFT { get; set; }
 
-    [ForeignKey("NDRAFT")]
-    public Insudb.FINANC_DRA? FINANC_DRANDRAFT { get; set; }
+    [NotMapped]
+    public Insudb.FINANC_DRA? FINANC_DRANDRAFT
+    {
+        get => FINANC_DRANCONTRAT;
+        set => FINANC_DRANCONTRAT = value;
+    }
     public int? NCOMPANYC { get; set; }
     public long? NVOUCHER { get; set; }
-    public int NTYP_ACCO { get; set; }
+    public int? NTYP_ACCO { get; set; }
 
     [ForeignKey("NTYP_ACCO")]
     public Insudb.TABLE400? TABLE400 { get; set; }

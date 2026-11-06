@@ -11,13 +11,13 @@ public class CreateWINDOWSDto
     public string? SDIRECTGO { get; set; }
     public int? NG_IDENTI { get; set; }
     public int? NINQLEVEL { get; set; }
-    public int NMODULES { get; set; }
+    public int? NMODULES { get; set; }
     public string? SPSEUDO { get; set; }
     public int? NSEQUENCE { get; set; }
     public string? SSHORT_DES { get; set; }
     public string SSTATREGT { get; set; }
     public int NUSERCODE { get; set; }
-    public int NWINDOWTY { get; set; }
+    public int? NWINDOWTY { get; set; }
     public string? SHELPPATH { get; set; }
     public int? NHEIGHT { get; set; }
     public string SAUTOREP { get; set; }

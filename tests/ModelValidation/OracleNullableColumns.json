@@ -1,0 +1,2642 @@
+[
+  {
+    "Entity": "ADDRESS",
+    "Property": "NLOCAL",
+    "Column": "NLOCAL"
+  },
+  {
+    "Entity": "ADDRESS",
+    "Property": "NMUNICIPALITY",
+    "Column": "NMUNICIPALITY"
+  },
+  {
+    "Entity": "AGREEMENT",
+    "Property": "NAGENCY",
+    "Column": "NAGENCY"
+  },
+  {
+    "Entity": "AGREEMENT",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "AGREEMENT",
+    "Property": "NTYPE_REC",
+    "Column": "NTYPE_REC"
+  },
+  {
+    "Entity": "AGREEMENT_AL",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "BANK_ACC",
+    "Property": "NACC_TYPE",
+    "Column": "NACC_TYPE"
+  },
+  {
+    "Entity": "BANK_ACC",
+    "Property": "NAVAIL_TYPE",
+    "Column": "NAVAIL_TYPE"
+  },
+  {
+    "Entity": "BANK_ACC",
+    "Property": "NBANK_CODE",
+    "Column": "NBANK_CODE"
+  },
+  {
+    "Entity": "BANK_ACC",
+    "Property": "NBK_AGENCY",
+    "Column": "NBK_AGENCY"
+  },
+  {
+    "Entity": "BANK_ACC",
+    "Property": "NCOMPANY",
+    "Column": "NCOMPANY"
+  },
+  {
+    "Entity": "BANK_MOV",
+    "Property": "NBORDEREAUX",
+    "Column": "NBORDEREAUX"
+  },
+  {
+    "Entity": "BANK_MOV",
+    "Property": "NCLAIM",
+    "Column": "NCLAIM"
+  },
+  {
+    "Entity": "BANK_MOV",
+    "Property": "NCONCEPT",
+    "Column": "NCONCEPT"
+  },
+  {
+    "Entity": "BANK_MOV",
+    "Property": "NCONTRAT",
+    "Column": "NCONTRAT"
+  },
+  {
+    "Entity": "BANK_MOV",
+    "Property": "NDRAFT",
+    "Column": "NDRAFT"
+  },
+  {
+    "Entity": "BANK_MOV",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "BANK_MOV",
+    "Property": "NTYPE_MOV",
+    "Column": "NTYPE_MOV"
+  },
+  {
+    "Entity": "BANK_MOV",
+    "Property": "NTYP_ACCO",
+    "Column": "NTYP_ACCO"
+  },
+  {
+    "Entity": "BENEFITS_GROUP",
+    "Property": "NTYPE_GROUP",
+    "Column": "NTYPE_GROUP"
+  },
+  {
+    "Entity": "BOOK_COLLECTION",
+    "Property": "NAGENCY",
+    "Column": "NAGENCY"
+  },
+  {
+    "Entity": "BOOK_COLLECTION",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "BOOK_COLLECTION",
+    "Property": "NOFFICEAGEN",
+    "Column": "NOFFICEAGEN"
+  },
+  {
+    "Entity": "BOOK_COLLECTION",
+    "Property": "NTYPE_TRAN",
+    "Column": "NTYPE_TRAN"
+  },
+  {
+    "Entity": "BOOK_PRODUCTION",
+    "Property": "NAGENCY",
+    "Column": "NAGENCY"
+  },
+  {
+    "Entity": "BOOK_PRODUCTION",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "BOOK_PRODUCTION",
+    "Property": "NOFFICEAGEN",
+    "Column": "NOFFICEAGEN"
+  },
+  {
+    "Entity": "BOOK_PRODUCTION",
+    "Property": "NTRATYPEI",
+    "Column": "NTRATYPEI"
+  },
+  {
+    "Entity": "BOOK_PRODUCTION",
+    "Property": "NTYPE_TRAN",
+    "Column": "NTYPE_TRAN"
+  },
+  {
+    "Entity": "BRANPROD_ALLOW",
+    "Property": "NCATEGORY",
+    "Column": "NCATEGORY"
+  },
+  {
+    "Entity": "CASH_ACC",
+    "Property": "NCOMPANY",
+    "Column": "NCOMPANY"
+  },
+  {
+    "Entity": "CASH_ACC",
+    "Property": "NLED_COMPAN",
+    "Column": "NLED_COMPAN"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NACC_BANK",
+    "Column": "NACC_BANK"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NBANK_AGREE",
+    "Column": "NBANK_AGREE"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NBANK_CODE",
+    "Column": "NBANK_CODE"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NBORDEREAUX",
+    "Column": "NBORDEREAUX"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NBRANCH_LED",
+    "Column": "NBRANCH_LED"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NBULLETINS",
+    "Column": "NBULLETINS"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NCARD_TYPE",
+    "Column": "NCARD_TYPE"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NCASE_NUM",
+    "Column": "NCASE_NUM"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NCHEQUELOCAT",
+    "Column": "NCHEQUELOCAT"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NCHEQUE_STAT",
+    "Column": "NCHEQUE_STAT"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NCLAIM",
+    "Column": "NCLAIM"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NCOD_AGREE",
+    "Column": "NCOD_AGREE"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NCOMPANYC",
+    "Column": "NCOMPANYC"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NCONCEPT",
+    "Column": "NCONCEPT"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NCONTRAT",
+    "Column": "NCONTRAT"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NDEMAN_TYPE",
+    "Column": "NDEMAN_TYPE"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NDRAFT",
+    "Column": "NDRAFT"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NINSUR_AREA",
+    "Column": "NINSUR_AREA"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NMOV_TYPE",
+    "Column": "NMOV_TYPE"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NTYPESUPPORT",
+    "Column": "NTYPESUPPORT"
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Property": "NTYP_ACCO",
+    "Column": "NTYP_ACCO"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NCOD_AGREE",
+    "Column": "NCOD_AGREE"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NCOLLECTOR",
+    "Column": "NCOLLECTOR"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NGROUP_AGREE",
+    "Column": "NGROUP_AGREE"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NMAILINGPREF",
+    "Column": "NMAILINGPREF"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NNO_CONVERS",
+    "Column": "NNO_CONVERS"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NPAYFREQ",
+    "Column": "NPAYFREQ"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NSELLCHANNEL",
+    "Column": "NSELLCHANNEL"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NSITUATION",
+    "Column": "NSITUATION"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NSTATQUOTA",
+    "Column": "NSTATQUOTA"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NSUS_REASON",
+    "Column": "NSUS_REASON"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NSYSTEM",
+    "Column": "NSYSTEM"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NTYPEEXC",
+    "Column": "NTYPEEXC"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NWAIT_CODE",
+    "Column": "NWAIT_CODE"
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Property": "NWAY_PAY",
+    "Column": "NWAY_PAY"
+  },
+  {
+    "Entity": "CESSION_PR",
+    "Property": "NBRANCH_LED",
+    "Column": "NBRANCH_LED"
+  },
+  {
+    "Entity": "CESSION_PR",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "CESSION_PR",
+    "Property": "NCONCEPT",
+    "Column": "NCONCEPT"
+  },
+  {
+    "Entity": "CESSION_PR",
+    "Property": "NINSUR_AREA",
+    "Column": "NINSUR_AREA"
+  },
+  {
+    "Entity": "CHEQUES",
+    "Property": "NACC_BANK",
+    "Column": "NACC_BANK"
+  },
+  {
+    "Entity": "CHEQUES",
+    "Property": "NBORDEREAUX",
+    "Column": "NBORDEREAUX"
+  },
+  {
+    "Entity": "CHEQUES",
+    "Property": "NBRANCH_LED",
+    "Column": "NBRANCH_LED"
+  },
+  {
+    "Entity": "CHEQUES",
+    "Property": "NCLAIM",
+    "Column": "NCLAIM"
+  },
+  {
+    "Entity": "CHEQUES",
+    "Property": "NCONCEPT",
+    "Column": "NCONCEPT"
+  },
+  {
+    "Entity": "CHEQUES",
+    "Property": "NINSUR_AREA",
+    "Column": "NINSUR_AREA"
+  },
+  {
+    "Entity": "CHEQUES",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "CHEQUES",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "CHEQUES",
+    "Property": "NSTA_CHEQUE",
+    "Column": "NSTA_CHEQUE"
+  },
+  {
+    "Entity": "CHEQUES",
+    "Property": "NTYPESUPPORT",
+    "Column": "NTYPESUPPORT"
+  },
+  {
+    "Entity": "CHEQUE_MOV",
+    "Property": "NBANK_INTER",
+    "Column": "NBANK_INTER"
+  },
+  {
+    "Entity": "CHEQUE_MOV",
+    "Property": "NCHEOPER_REASON",
+    "Column": "NCHEOPER_REASON"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NAGENCY_PAY",
+    "Column": "NAGENCY_PAY"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NBORDEREAUX_CL",
+    "Column": "NBORDEREAUX_CL"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NCLAIMANTTYPE",
+    "Column": "NCLAIMANTTYPE"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NIDPRECLAIM",
+    "Column": "NIDPRECLAIM"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NOFFICEAGEN",
+    "Column": "NOFFICEAGEN"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NOFFICEAGEN_PAY",
+    "Column": "NOFFICEAGEN_PAY"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NOFFICE_OWN",
+    "Column": "NOFFICE_OWN"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NOFFICE_PAY",
+    "Column": "NOFFICE_PAY"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NOFFICTRA",
+    "Column": "NOFFICTRA"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NRELASHIP",
+    "Column": "NRELASHIP"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NUNACCODE",
+    "Column": "NUNACCODE"
+  },
+  {
+    "Entity": "CLAIM",
+    "Property": "NWAITCL_CODE",
+    "Column": "NWAITCL_CODE"
+  },
+  {
+    "Entity": "CLAIMBENEF",
+    "Property": "NAGENCY_PAY",
+    "Column": "NAGENCY_PAY"
+  },
+  {
+    "Entity": "CLAIMBENEF",
+    "Property": "NBENE_TYPE",
+    "Column": "NBENE_TYPE"
+  },
+  {
+    "Entity": "CLAIMBENEF",
+    "Property": "NOFFICEAGEN_PAY",
+    "Column": "NOFFICEAGEN_PAY"
+  },
+  {
+    "Entity": "CLAIMBENEF",
+    "Property": "NOFFICE_PAY",
+    "Column": "NOFFICE_PAY"
+  },
+  {
+    "Entity": "CLAIMBENEF",
+    "Property": "NPAYMENTADDRESS",
+    "Column": "NPAYMENTADDRESS"
+  },
+  {
+    "Entity": "CLAIMBENEF",
+    "Property": "NRELATION",
+    "Column": "NRELATION"
+  },
+  {
+    "Entity": "CLAIM_CASE",
+    "Property": "NAFP",
+    "Column": "NAFP"
+  },
+  {
+    "Entity": "CLAIM_CASE",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Property": "NBRANCH_LED",
+    "Column": "NBRANCH_LED"
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Property": "NCESS_CONC",
+    "Column": "NCESS_CONC"
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Property": "NCESS_TYPE",
+    "Column": "NCESS_TYPE"
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Property": "NCOVER",
+    "Column": "NCOVER"
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Property": "NINSUR_AREA",
+    "Column": "NINSUR_AREA"
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Property": "NMODULEC",
+    "Column": "NMODULEC"
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Property": "NNUMBER",
+    "Column": "NNUMBER"
+  },
+  {
+    "Entity": "CLAIM_HIS",
+    "Property": "NBORDEREAUX",
+    "Column": "NBORDEREAUX"
+  },
+  {
+    "Entity": "CLAIM_HIS",
+    "Property": "NDOC_TYPE",
+    "Column": "NDOC_TYPE"
+  },
+  {
+    "Entity": "CLAIM_HIS",
+    "Property": "NPAY_FORM",
+    "Column": "NPAY_FORM"
+  },
+  {
+    "Entity": "CLAIM_HIS",
+    "Property": "NPAY_TYPE",
+    "Column": "NPAY_TYPE"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NATTENTCHANNEL",
+    "Column": "NATTENTCHANNEL"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NCLAIMANTTYPE",
+    "Column": "NCLAIMANTTYPE"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NCLA_LI_TYP",
+    "Column": "NCLA_LI_TYP"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NCOMMERCIALPAYASSOC",
+    "Column": "NCOMMERCIALPAYASSOC"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NCURREN_DOC",
+    "Column": "NCURREN_DOC"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NCURREN_ORDER",
+    "Column": "NCURREN_ORDER"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NDOCTORROL",
+    "Column": "NDOCTORROL"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NMASTERORDER",
+    "Column": "NMASTERORDER"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NORDERTYPE",
+    "Column": "NORDERTYPE"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NPROVIDER",
+    "Column": "NPROVIDER"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NSTATUS_ORDER",
+    "Column": "NSTATUS_ORDER"
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Property": "NTYPEDOC_PAY",
+    "Column": "NTYPEDOC_PAY"
+  },
+  {
+    "Entity": "CLAIM_SETTLEMENT",
+    "Property": "NACC_TYPE",
+    "Column": "NACC_TYPE"
+  },
+  {
+    "Entity": "CLAIM_SETTLEMENT",
+    "Property": "NCLAIMANTTYPE",
+    "Column": "NCLAIMANTTYPE"
+  },
+  {
+    "Entity": "CLAIM_SETTLEMENT",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "CLAIM_SETTLEMENT",
+    "Property": "NPAYEE",
+    "Column": "NPAYEE"
+  },
+  {
+    "Entity": "CLAIM_SETTLEMENT",
+    "Property": "NPAYMENT_METHOD",
+    "Column": "NPAYMENT_METHOD"
+  },
+  {
+    "Entity": "CLAIM_SETTLEMENT",
+    "Property": "NSETTLEMENT_CONC",
+    "Column": "NSETTLEMENT_CONC"
+  },
+  {
+    "Entity": "CLAIM_SETTLEMENT",
+    "Property": "NSETTLEMENT_STAT",
+    "Column": "NSETTLEMENT_STAT"
+  },
+  {
+    "Entity": "CLAIM_SETTLEMENT",
+    "Property": "NSEVERITYPEP",
+    "Column": "NSEVERITYPEP"
+  },
+  {
+    "Entity": "CLAIM_SETTLEMENT",
+    "Property": "NTYPELIST",
+    "Column": "NTYPELIST"
+  },
+  {
+    "Entity": "CLAIM_SETT_DOCUM",
+    "Property": "NSTATUS_DOC",
+    "Column": "NSTATUS_DOC"
+  },
+  {
+    "Entity": "CLAIM_SETT_FILTERS",
+    "Property": "NSETTLEMENT_CONC",
+    "Column": "NSETTLEMENT_CONC"
+  },
+  {
+    "Entity": "CLAIM_SETT_FILTERS",
+    "Property": "NTYPEDOC_PAY",
+    "Column": "NTYPEDOC_PAY"
+  },
+  {
+    "Entity": "CLAIM_SETT_HIS",
+    "Property": "NMOVEMENT_TYPE",
+    "Column": "NMOVEMENT_TYPE"
+  },
+  {
+    "Entity": "CLAIM_SETT_HIS",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "CLAIM_SETT_HIS",
+    "Property": "NPAYEE",
+    "Column": "NPAYEE"
+  },
+  {
+    "Entity": "CLAIM_SETT_HIS",
+    "Property": "NPAYMENT_METHOD",
+    "Column": "NPAYMENT_METHOD"
+  },
+  {
+    "Entity": "CLAIM_SETT_HIS",
+    "Property": "NSETTLEMENT_CONC",
+    "Column": "NSETTLEMENT_CONC"
+  },
+  {
+    "Entity": "CLAIM_SETT_HIS",
+    "Property": "NSETTLEMENT_STAT",
+    "Column": "NSETTLEMENT_STAT"
+  },
+  {
+    "Entity": "CLAIM_SETT_VOUCHER",
+    "Property": "NTYPEDISC_PROV",
+    "Column": "NTYPEDISC_PROV"
+  },
+  {
+    "Entity": "CLAIM_VOUCHER",
+    "Property": "NFOREIGNDOCTYPE",
+    "Column": "NFOREIGNDOCTYPE"
+  },
+  {
+    "Entity": "CLAIM_VOUCHER",
+    "Property": "NPROVIDER",
+    "Column": "NPROVIDER"
+  },
+  {
+    "Entity": "CLAIM_VOUCHER",
+    "Property": "NSTATUS",
+    "Column": "NSTATUS"
+  },
+  {
+    "Entity": "CLIENT_HIS",
+    "Property": "NAFP",
+    "Column": "NAFP"
+  },
+  {
+    "Entity": "CLIENT_HIS",
+    "Property": "NCIVILSTA",
+    "Column": "NCIVILSTA"
+  },
+  {
+    "Entity": "CLIENT_HIS",
+    "Property": "NHEALTH_ORG",
+    "Column": "NHEALTH_ORG"
+  },
+  {
+    "Entity": "CLIENT_HIS",
+    "Property": "NINCAPACITY",
+    "Column": "NINCAPACITY"
+  },
+  {
+    "Entity": "CLIENT_HIS",
+    "Property": "NINCAP_COD",
+    "Column": "NINCAP_COD"
+  },
+  {
+    "Entity": "CLIENT_HIS",
+    "Property": "NLIMITDRIV",
+    "Column": "NLIMITDRIV"
+  },
+  {
+    "Entity": "CLIENT_HIS",
+    "Property": "NTYPDRIVER",
+    "Column": "NTYPDRIVER"
+  },
+  {
+    "Entity": "CLIENT_SF",
+    "Property": "NPOSITION",
+    "Column": "NPOSITION"
+  },
+  {
+    "Entity": "CLORDER_DETAIL",
+    "Property": "NSURCHAR_MED",
+    "Column": "NSURCHAR_MED"
+  },
+  {
+    "Entity": "CLORDER_HIS",
+    "Property": "NATTENTCHANNEL",
+    "Column": "NATTENTCHANNEL"
+  },
+  {
+    "Entity": "CLORDER_HIS",
+    "Property": "NCURREN_DOC",
+    "Column": "NCURREN_DOC"
+  },
+  {
+    "Entity": "CLORDER_HIS",
+    "Property": "NCURREN_ORDER",
+    "Column": "NCURREN_ORDER"
+  },
+  {
+    "Entity": "CLORDER_HIS",
+    "Property": "NSTATUS_ORDER",
+    "Column": "NSTATUS_ORDER"
+  },
+  {
+    "Entity": "CLORDER_HIS",
+    "Property": "NTYPEDOC_PAY",
+    "Column": "NTYPEDOC_PAY"
+  },
+  {
+    "Entity": "CL_COVER",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "COLFORMREF",
+    "Property": "NBANK",
+    "Column": "NBANK"
+  },
+  {
+    "Entity": "COLFORMREF",
+    "Property": "NCOLLECTOR",
+    "Column": "NCOLLECTOR"
+  },
+  {
+    "Entity": "COLFORMREF",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "COLFORMREF",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "COMMISSION",
+    "Property": "NID_CAMPAIGN",
+    "Column": "NID_CAMPAIGN"
+  },
+  {
+    "Entity": "COMMISS_PR",
+    "Property": "NID_CAMPAIGN",
+    "Column": "NID_CAMPAIGN"
+  },
+  {
+    "Entity": "COMMISS_PR",
+    "Property": "NPROVINCE",
+    "Column": "NPROVINCE"
+  },
+  {
+    "Entity": "COMMISS_PR",
+    "Property": "NROLE",
+    "Column": "NROLE"
+  },
+  {
+    "Entity": "COMMPAYMENTREQUESTS",
+    "Property": "NCLAIM",
+    "Column": "NCLAIM"
+  },
+  {
+    "Entity": "COMMPAYMENTREQUESTS",
+    "Property": "NCURRENCY",
+    "Column": "NCURRENCY"
+  },
+  {
+    "Entity": "COMMPAYMENTREQUESTS",
+    "Property": "NCURRENCY_PAY",
+    "Column": "NCURRENCY_PAY"
+  },
+  {
+    "Entity": "COMMPAYMENTREQUESTS",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "COMMPAYMENTREQUESTS",
+    "Property": "NROLE",
+    "Column": "NROLE"
+  },
+  {
+    "Entity": "COMMPAYMENTREQUESTS",
+    "Property": "NUSERCODE_RESPONSIBLE",
+    "Column": "NUSERCODE_RESPONSIBLE"
+  },
+  {
+    "Entity": "COMMPAYMENTREQUESTS",
+    "Property": "NUSER_AMEND",
+    "Column": "NUSER_AMEND"
+  },
+  {
+    "Entity": "COMMPAYMENTREQUESTS",
+    "Property": "NUSER_DERIVEDBY",
+    "Column": "NUSER_DERIVEDBY"
+  },
+  {
+    "Entity": "COMMPAYREQ_HIS",
+    "Property": "NMOVEMENT_TYPE",
+    "Column": "NMOVEMENT_TYPE"
+  },
+  {
+    "Entity": "COMMPAYREQ_HIS",
+    "Property": "NSTATUS",
+    "Column": "NSTATUS"
+  },
+  {
+    "Entity": "COMMPAYREQ_ORDERS",
+    "Property": "NCURRENCY_MO",
+    "Column": "NCURRENCY_MO"
+  },
+  {
+    "Entity": "COMMPAYREQ_ORDERS",
+    "Property": "NMASTERORDER",
+    "Column": "NMASTERORDER"
+  },
+  {
+    "Entity": "COMMPAYREQ_ORDERS",
+    "Property": "NMASTERORDERTYPE",
+    "Column": "NMASTERORDERTYPE"
+  },
+  {
+    "Entity": "COMMPAYREQ_ORDERS",
+    "Property": "NSTATUS_ORDER",
+    "Column": "NSTATUS_ORDER"
+  },
+  {
+    "Entity": "COMMPAYREQ_POLICIES",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "COMMPAYREQ_POLICIES",
+    "Property": "NINTERTYP",
+    "Column": "NINTERTYP"
+  },
+  {
+    "Entity": "COMM_POL",
+    "Property": "NCOD_SALDIS",
+    "Column": "NCOD_SALDIS"
+  },
+  {
+    "Entity": "COMM_POL",
+    "Property": "NID_CAMPAIGN",
+    "Column": "NID_CAMPAIGN"
+  },
+  {
+    "Entity": "COMM_POL",
+    "Property": "NTRATYPEI",
+    "Column": "NTRATYPEI"
+  },
+  {
+    "Entity": "COMM_POL",
+    "Property": "NTYPE",
+    "Column": "NTYPE"
+  },
+  {
+    "Entity": "COMM_TOT",
+    "Property": "NBRANCH",
+    "Column": "NBRANCH"
+  },
+  {
+    "Entity": "COMM_TOT",
+    "Property": "NCERTIF",
+    "Column": "NCERTIF"
+  },
+  {
+    "Entity": "COMM_TOT",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "COMM_TOT",
+    "Property": "NPOLICY",
+    "Column": "NPOLICY"
+  },
+  {
+    "Entity": "COMM_TOT",
+    "Property": "NPRODUCT",
+    "Column": "NPRODUCT"
+  },
+  {
+    "Entity": "COMPANY",
+    "Property": "NCLASIFIC",
+    "Column": "NCLASIFIC"
+  },
+  {
+    "Entity": "COMPANY",
+    "Property": "NCOUNTRY",
+    "Column": "NCOUNTRY"
+  },
+  {
+    "Entity": "COMPANY",
+    "Property": "NLOCAL",
+    "Column": "NLOCAL"
+  },
+  {
+    "Entity": "CONTRNPRO",
+    "Property": "NFREQCT",
+    "Column": "NFREQCT"
+  },
+  {
+    "Entity": "CONTRNPRO",
+    "Property": "NFREQPAY",
+    "Column": "NFREQPAY"
+  },
+  {
+    "Entity": "CONTRPROC",
+    "Property": "NFQCY_ACC",
+    "Column": "NFQCY_ACC"
+  },
+  {
+    "Entity": "CONTRPROC",
+    "Property": "NFREQPAY",
+    "Column": "NFREQPAY"
+  },
+  {
+    "Entity": "COVER",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "COVER",
+    "Property": "NCAUSEUPD",
+    "Column": "NCAUSEUPD"
+  },
+  {
+    "Entity": "COVER",
+    "Property": "NFREQMAXEVEN",
+    "Column": "NFREQMAXEVEN"
+  },
+  {
+    "Entity": "COVER",
+    "Property": "NRETARIF",
+    "Column": "NRETARIF"
+  },
+  {
+    "Entity": "COVER",
+    "Property": "NTYPDURINS",
+    "Column": "NTYPDURINS"
+  },
+  {
+    "Entity": "COVER",
+    "Property": "NTYPDURPAY",
+    "Column": "NTYPDURPAY"
+  },
+  {
+    "Entity": "COVER_CO_G",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "COVER_CO_G",
+    "Property": "NFREQMAXEVEN",
+    "Column": "NFREQMAXEVEN"
+  },
+  {
+    "Entity": "COVER_CO_G",
+    "Property": "NRETARIF",
+    "Column": "NRETARIF"
+  },
+  {
+    "Entity": "COVER_CO_G",
+    "Property": "NTYPDURPAY",
+    "Column": "NTYPDURPAY"
+  },
+  {
+    "Entity": "COVER_CO_P",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "COVER_CO_P",
+    "Property": "NFREQMAXEVEN",
+    "Column": "NFREQMAXEVEN"
+  },
+  {
+    "Entity": "COVER_CO_P",
+    "Property": "NRETARIF",
+    "Column": "NRETARIF"
+  },
+  {
+    "Entity": "COVER_CO_P",
+    "Property": "NTYPDURPAY",
+    "Column": "NTYPDURPAY"
+  },
+  {
+    "Entity": "CRED_CARD",
+    "Property": "NCARD_TYPE",
+    "Column": "NCARD_TYPE"
+  },
+  {
+    "Entity": "CURR_ACC",
+    "Property": "NBRANCH",
+    "Column": "NBRANCH"
+  },
+  {
+    "Entity": "CURR_ACC",
+    "Property": "NCERTIF",
+    "Column": "NCERTIF"
+  },
+  {
+    "Entity": "CURR_ACC",
+    "Property": "NCOMPANY",
+    "Column": "NCOMPANY"
+  },
+  {
+    "Entity": "CURR_ACC",
+    "Property": "NINSUR_AREA",
+    "Column": "NINSUR_AREA"
+  },
+  {
+    "Entity": "CURR_ACC",
+    "Property": "NLED_COMPAN",
+    "Column": "NLED_COMPAN"
+  },
+  {
+    "Entity": "CURR_ACC",
+    "Property": "NPOLICY",
+    "Column": "NPOLICY"
+  },
+  {
+    "Entity": "CURR_ACC",
+    "Property": "NPRODUCT",
+    "Column": "NPRODUCT"
+  },
+  {
+    "Entity": "DETAIL_PRE",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "DETAIL_PRE",
+    "Property": "NDISSUR_TYPE",
+    "Column": "NDISSUR_TYPE"
+  },
+  {
+    "Entity": "DET_COMLIF",
+    "Property": "NIDCOMM",
+    "Column": "NIDCOMM"
+  },
+  {
+    "Entity": "DET_COMLIF",
+    "Property": "NTYPCOMMIS",
+    "Column": "NTYPCOMMIS"
+  },
+  {
+    "Entity": "DET_COMLIF",
+    "Property": "NTYPERISK",
+    "Column": "NTYPERISK"
+  },
+  {
+    "Entity": "DIR_DEBIT",
+    "Property": "NBANKEXT",
+    "Column": "NBANKEXT"
+  },
+  {
+    "Entity": "DIR_DEBIT",
+    "Property": "NTYP_CRECARD",
+    "Column": "NTYP_CRECARD"
+  },
+  {
+    "Entity": "DIR_DEBIT_CLI",
+    "Property": "NBANKEXT",
+    "Column": "NBANKEXT"
+  },
+  {
+    "Entity": "DISCO_EXPR",
+    "Property": "NBRANCH_EST",
+    "Column": "NBRANCH_EST"
+  },
+  {
+    "Entity": "DISCO_EXPR",
+    "Property": "NBRANCH_LED",
+    "Column": "NBRANCH_LED"
+  },
+  {
+    "Entity": "DISCO_EXPR",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "DISC_XPREM",
+    "Property": "NCAUSE",
+    "Column": "NCAUSE"
+  },
+  {
+    "Entity": "DOCUMENTS",
+    "Property": "NDOC_TYPE",
+    "Column": "NDOC_TYPE"
+  },
+  {
+    "Entity": "DOCUMENTS",
+    "Property": "NPROVIDER",
+    "Column": "NPROVIDER"
+  },
+  {
+    "Entity": "DOCUMENTS",
+    "Property": "NSTATUS_DOC",
+    "Column": "NSTATUS_DOC"
+  },
+  {
+    "Entity": "DOCUMENTS",
+    "Property": "NUSERCODE",
+    "Column": "NUSERCODE"
+  },
+  {
+    "Entity": "DOCUMENTS_PRECLAIM",
+    "Property": "NCLASS_DOC",
+    "Column": "NCLASS_DOC"
+  },
+  {
+    "Entity": "DOCUMENTS_PRECLAIM",
+    "Property": "NDOC_TYPE",
+    "Column": "NDOC_TYPE"
+  },
+  {
+    "Entity": "DOCUMENTS_PRECLAIM",
+    "Property": "NPROVIDER",
+    "Column": "NPROVIDER"
+  },
+  {
+    "Entity": "DOC_REQ_CLI",
+    "Property": "NTYPEDOC",
+    "Column": "NTYPEDOC"
+  },
+  {
+    "Entity": "DRAFT_HIST",
+    "Property": "NBANK_CODE",
+    "Column": "NBANK_CODE"
+  },
+  {
+    "Entity": "DRAFT_HIST",
+    "Property": "NCOLLECTOR",
+    "Column": "NCOLLECTOR"
+  },
+  {
+    "Entity": "DRAFT_HIST",
+    "Property": "NTYPE",
+    "Column": "NTYPE"
+  },
+  {
+    "Entity": "DURPAY_PROD",
+    "Property": "NTYPDURINS",
+    "Column": "NTYPDURINS"
+  },
+  {
+    "Entity": "DURPAY_PROD",
+    "Property": "NTYPDURPAY",
+    "Column": "NTYPDURPAY"
+  },
+  {
+    "Entity": "EVAL_MASTER",
+    "Property": "NBRANCH",
+    "Column": "NBRANCH"
+  },
+  {
+    "Entity": "EVAL_MASTER",
+    "Property": "NCERTIF",
+    "Column": "NCERTIF"
+  },
+  {
+    "Entity": "EVAL_MASTER",
+    "Property": "NPOLICY",
+    "Column": "NPOLICY"
+  },
+  {
+    "Entity": "EVAL_MASTER",
+    "Property": "NPRODUCT",
+    "Column": "NPRODUCT"
+  },
+  {
+    "Entity": "FINANCE_CO",
+    "Property": "NFRECUENCY",
+    "Column": "NFRECUENCY"
+  },
+  {
+    "Entity": "FINANCE_CO",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "FINANCE_CO",
+    "Property": "NSTAT_CONTR",
+    "Column": "NSTAT_CONTR"
+  },
+  {
+    "Entity": "FINANCE_CO",
+    "Property": "NUSERCODE",
+    "Column": "NUSERCODE"
+  },
+  {
+    "Entity": "FINANCE_CO",
+    "Property": "NWAY_PAY",
+    "Column": "NWAY_PAY"
+  },
+  {
+    "Entity": "FINANC_DRA",
+    "Property": "NBORDEREAUX",
+    "Column": "NBORDEREAUX"
+  },
+  {
+    "Entity": "FINANC_DRA",
+    "Property": "NBULLETINS",
+    "Column": "NBULLETINS"
+  },
+  {
+    "Entity": "FINANC_DRA",
+    "Property": "NCLAIM",
+    "Column": "NCLAIM"
+  },
+  {
+    "Entity": "FINANC_DRA",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "FINANC_DRA",
+    "Property": "NSTATPRINT",
+    "Column": "NSTATPRINT"
+  },
+  {
+    "Entity": "FINANC_DRA",
+    "Property": "NSTAT_DRAFT",
+    "Column": "NSTAT_DRAFT"
+  },
+  {
+    "Entity": "FINANC_DRA",
+    "Property": "NSUS_REASON",
+    "Column": "NSUS_REASON"
+  },
+  {
+    "Entity": "FINANC_DRA",
+    "Property": "NWAY_PAY",
+    "Column": "NWAY_PAY"
+  },
+  {
+    "Entity": "FINANC_PRE",
+    "Property": "NCOMPANY",
+    "Column": "NCOMPANY"
+  },
+  {
+    "Entity": "FINANC_PRE",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "FINANC_PRE",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "FOLDERS",
+    "Property": "NFOLDERKEY",
+    "Column": "NFOLDERKEY"
+  },
+  {
+    "Entity": "GROUP_COLUMNS",
+    "Property": "NSHEET",
+    "Column": "NSHEET"
+  },
+  {
+    "Entity": "IMAGES",
+    "Property": "IIMAGE",
+    "Column": "IIMAGE"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NAGENCY",
+    "Column": "NAGENCY"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NCOMTABLI",
+    "Column": "NCOMTABLI"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NECO_SCHE",
+    "Column": "NECO_SCHE"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NGEN_SCHE",
+    "Column": "NGEN_SCHE"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NINTERTYP",
+    "Column": "NINTERTYP"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NINT_STATUS",
+    "Column": "NINT_STATUS"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NLEGAL_SCH",
+    "Column": "NLEGAL_SCH"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NLIFE_SCHE",
+    "Column": "NLIFE_SCHE"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NOFFICEAGEN",
+    "Column": "NOFFICEAGEN"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NRECEPTYP",
+    "Column": "NRECEPTYP"
+  },
+  {
+    "Entity": "INTERMEDIA",
+    "Property": "NTABLE_COD",
+    "Column": "NTABLE_COD"
+  },
+  {
+    "Entity": "INTERMED_HIS",
+    "Property": "NINTERTYP",
+    "Column": "NINTERTYP"
+  },
+  {
+    "Entity": "INTERMED_HIS",
+    "Property": "NINT_STATUS",
+    "Column": "NINT_STATUS"
+  },
+  {
+    "Entity": "INTERMED_HIS",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "INTERMED_HIS",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "INTERM_TYP",
+    "Property": "NRECEPTYP",
+    "Column": "NRECEPTYP"
+  },
+  {
+    "Entity": "LIFE",
+    "Property": "NCALCAPITAL",
+    "Column": "NCALCAPITAL"
+  },
+  {
+    "Entity": "LIFE",
+    "Property": "NGROUP_COMP",
+    "Column": "NGROUP_COMP"
+  },
+  {
+    "Entity": "LIFE",
+    "Property": "NTYPDURINS",
+    "Column": "NTYPDURINS"
+  },
+  {
+    "Entity": "LIFE",
+    "Property": "NTYPEEXC",
+    "Column": "NTYPEEXC"
+  },
+  {
+    "Entity": "LIFE",
+    "Property": "NTYPPREMIUM",
+    "Column": "NTYPPREMIUM"
+  },
+  {
+    "Entity": "LIFE_COVER",
+    "Property": "NBRANCH_GEN",
+    "Column": "NBRANCH_GEN"
+  },
+  {
+    "Entity": "LIFE_COVER",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "LIFE_COVER",
+    "Property": "NRETARIF",
+    "Column": "NRETARIF"
+  },
+  {
+    "Entity": "LIFE_DOCU",
+    "Property": "NEVAL",
+    "Column": "NEVAL"
+  },
+  {
+    "Entity": "LIFE_DOCU",
+    "Property": "NREASON",
+    "Column": "NREASON"
+  },
+  {
+    "Entity": "LIFE_DOCU",
+    "Property": "NSTAT_DOCREQ",
+    "Column": "NSTAT_DOCREQ"
+  },
+  {
+    "Entity": "MASSIVE_LOG_PROC",
+    "Property": "NCOD_AGREE",
+    "Column": "NCOD_AGREE"
+  },
+  {
+    "Entity": "MASSIVE_RULES",
+    "Property": "NSECTION",
+    "Column": "NSECTION"
+  },
+  {
+    "Entity": "MASTERCL_DETAIL",
+    "Property": "NCAUSEREOPENCL",
+    "Column": "NCAUSEREOPENCL"
+  },
+  {
+    "Entity": "MASTERCL_HIS",
+    "Property": "NCLAIMANTTYPE",
+    "Column": "NCLAIMANTTYPE"
+  },
+  {
+    "Entity": "MASTERCL_HIS",
+    "Property": "NMOVEMENT_TYPE",
+    "Column": "NMOVEMENT_TYPE"
+  },
+  {
+    "Entity": "MASTERCL_HIS",
+    "Property": "NTYPEDOC_PAY",
+    "Column": "NTYPEDOC_PAY"
+  },
+  {
+    "Entity": "MASTERCL_ORDER",
+    "Property": "NCLAIMANTTYPE",
+    "Column": "NCLAIMANTTYPE"
+  },
+  {
+    "Entity": "MASTERCL_ORDER",
+    "Property": "NCLA_LI_TYP",
+    "Column": "NCLA_LI_TYP"
+  },
+  {
+    "Entity": "MASTERCL_ORDER",
+    "Property": "NMASTERORDERTYPE",
+    "Column": "NMASTERORDERTYPE"
+  },
+  {
+    "Entity": "MASTERCL_ORDER",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "MEDBENEFITS_PROD",
+    "Property": "NATTENSYSTEM",
+    "Column": "NATTENSYSTEM"
+  },
+  {
+    "Entity": "MEDBENEFITS_PROD",
+    "Property": "NDED_TYPE",
+    "Column": "NDED_TYPE"
+  },
+  {
+    "Entity": "MEDBENEFITS_PROD",
+    "Property": "NINDPRINT",
+    "Column": "NINDPRINT"
+  },
+  {
+    "Entity": "MEDBENEFITS_PROD",
+    "Property": "NOFFICE_PROD",
+    "Column": "NOFFICE_PROD"
+  },
+  {
+    "Entity": "MEDBENEFITS_PROD",
+    "Property": "NPROVIDER",
+    "Column": "NPROVIDER"
+  },
+  {
+    "Entity": "MEDBENEFITS_PROD",
+    "Property": "NROLE",
+    "Column": "NROLE"
+  },
+  {
+    "Entity": "MEDBENEFITS_PROD",
+    "Property": "NTYPEEXHAUS",
+    "Column": "NTYPEEXHAUS"
+  },
+  {
+    "Entity": "MEDBENEFITS_PROD",
+    "Property": "NUSERCODE",
+    "Column": "NUSERCODE"
+  },
+  {
+    "Entity": "MODULES",
+    "Property": "NATTENSYSTEM",
+    "Column": "NATTENSYSTEM"
+  },
+  {
+    "Entity": "MODULES",
+    "Property": "NGEOGRAPHAREA",
+    "Column": "NGEOGRAPHAREA"
+  },
+  {
+    "Entity": "MODUL_CO_G",
+    "Property": "NATTENSYSTEM",
+    "Column": "NATTENSYSTEM"
+  },
+  {
+    "Entity": "MODUL_CO_G",
+    "Property": "NGEOGRAPHAREA",
+    "Column": "NGEOGRAPHAREA"
+  },
+  {
+    "Entity": "MODUL_CO_P",
+    "Property": "NATTENSYSTEM",
+    "Column": "NATTENSYSTEM"
+  },
+  {
+    "Entity": "MODUL_CO_P",
+    "Property": "NGEOGRAPHAREA",
+    "Column": "NGEOGRAPHAREA"
+  },
+  {
+    "Entity": "MOVE_ACC",
+    "Property": "NBANKEXT",
+    "Column": "NBANKEXT"
+  },
+  {
+    "Entity": "MOVE_ACC",
+    "Property": "NBORDEREAUX",
+    "Column": "NBORDEREAUX"
+  },
+  {
+    "Entity": "MOVE_ACC",
+    "Property": "NBULLETINS",
+    "Column": "NBULLETINS"
+  },
+  {
+    "Entity": "MOVE_ACC",
+    "Property": "NCLAIM",
+    "Column": "NCLAIM"
+  },
+  {
+    "Entity": "MOVE_ACC",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "MOVE_ACC",
+    "Property": "NPROVINCE",
+    "Column": "NPROVINCE"
+  },
+  {
+    "Entity": "MOVE_ACC",
+    "Property": "NTYPE_MOVE",
+    "Column": "NTYPE_MOVE"
+  },
+  {
+    "Entity": "MOVE_ACC",
+    "Property": "NTYPE_PAY",
+    "Column": "NTYPE_PAY"
+  },
+  {
+    "Entity": "MOVE_ACC",
+    "Property": "NTYPE_TRAN",
+    "Column": "NTYPE_TRAN"
+  },
+  {
+    "Entity": "MUNICIPALITY",
+    "Property": "NLOCAL",
+    "Column": "NLOCAL"
+  },
+  {
+    "Entity": "NOCONVERS",
+    "Property": "NAREAWAIT",
+    "Column": "NAREAWAIT"
+  },
+  {
+    "Entity": "NOTES",
+    "Property": "NRECTYPE",
+    "Column": "NRECTYPE"
+  },
+  {
+    "Entity": "OUT_MOVEME",
+    "Property": "NWAY_PAY",
+    "Column": "NWAY_PAY"
+  },
+  {
+    "Entity": "OUT_PREMIU",
+    "Property": "NDISSUR_TYPE",
+    "Column": "NDISSUR_TYPE"
+  },
+  {
+    "Entity": "PHONES",
+    "Property": "NBESTTIMETOCALL",
+    "Column": "NBESTTIMETOCALL"
+  },
+  {
+    "Entity": "PHONES",
+    "Property": "NPHONE_TYPE",
+    "Column": "NPHONE_TYPE"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NAGENCY",
+    "Column": "NAGENCY"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NCOD_AGREE",
+    "Column": "NCOD_AGREE"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NCOMPANY",
+    "Column": "NCOMPANY"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NLEADCOMP",
+    "Column": "NLEADCOMP"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NNO_CONVERS",
+    "Column": "NNO_CONVERS"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NOFFICEAGEN",
+    "Column": "NOFFICEAGEN"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NOFFICEINS",
+    "Column": "NOFFICEINS"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NPAYFREQ",
+    "Column": "NPAYFREQ"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NREPINSURED",
+    "Column": "NREPINSURED"
+  },
+  {
+    "Entity": "POLICY",
+    "Property": "NSPECIALBUSINESS",
+    "Column": "NSPECIALBUSINESS"
+  },
+  {
+    "Entity": "POLICY_HIS",
+    "Property": "NCLAIM",
+    "Column": "NCLAIM"
+  },
+  {
+    "Entity": "POLICY_HIS",
+    "Property": "NCOD_AGREE",
+    "Column": "NCOD_AGREE"
+  },
+  {
+    "Entity": "POLICY_HIS",
+    "Property": "NNO_CONVERS",
+    "Column": "NNO_CONVERS"
+  },
+  {
+    "Entity": "POLICY_HIS",
+    "Property": "NSERV_ORDER",
+    "Column": "NSERV_ORDER"
+  },
+  {
+    "Entity": "POLICY_HIS",
+    "Property": "NSTATQUOTA",
+    "Column": "NSTATQUOTA"
+  },
+  {
+    "Entity": "POLICY_HIS",
+    "Property": "NTYPE_HIST",
+    "Column": "NTYPE_HIST"
+  },
+  {
+    "Entity": "POLICY_HIS",
+    "Property": "NWAIT_CODE",
+    "Column": "NWAIT_CODE"
+  },
+  {
+    "Entity": "PRECLAIM",
+    "Property": "NATTENTCHANNEL",
+    "Column": "NATTENTCHANNEL"
+  },
+  {
+    "Entity": "PRECLAIM",
+    "Property": "NCLA_LI_TYP",
+    "Column": "NCLA_LI_TYP"
+  },
+  {
+    "Entity": "PRECLAIM",
+    "Property": "NMASTERORDER",
+    "Column": "NMASTERORDER"
+  },
+  {
+    "Entity": "PRECLAIM",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "PRECLAIM",
+    "Property": "NORDERTYPE",
+    "Column": "NORDERTYPE"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NBULLETINS",
+    "Column": "NBULLETINS"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NCERTIF",
+    "Column": "NCERTIF"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NCOD_AGREE",
+    "Column": "NCOD_AGREE"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NCOLLECTOR",
+    "Column": "NCOLLECTOR"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NCOMPANY",
+    "Column": "NCOMPANY"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NINDRECDEP",
+    "Column": "NINDRECDEP"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NINSUR_AREA",
+    "Column": "NINSUR_AREA"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NSTATUS_PRE",
+    "Column": "NSTATUS_PRE"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NSUS_REASON",
+    "Column": "NSUS_REASON"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NTRATYPEI",
+    "Column": "NTRATYPEI"
+  },
+  {
+    "Entity": "PREMIUM",
+    "Property": "NWAY_PAY",
+    "Column": "NWAY_PAY"
+  },
+  {
+    "Entity": "PREMIUM_CE",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "PREMIUM_CE",
+    "Property": "NTRATYPEI",
+    "Column": "NTRATYPEI"
+  },
+  {
+    "Entity": "PREMIUM_MO",
+    "Property": "NBANK_CODE",
+    "Column": "NBANK_CODE"
+  },
+  {
+    "Entity": "PREMIUM_MO",
+    "Property": "NBORDEREAUX",
+    "Column": "NBORDEREAUX"
+  },
+  {
+    "Entity": "PREMIUM_MO",
+    "Property": "NBULLETINS",
+    "Column": "NBULLETINS"
+  },
+  {
+    "Entity": "PREMIUM_MO",
+    "Property": "NCARD_TYPE",
+    "Column": "NCARD_TYPE"
+  },
+  {
+    "Entity": "PREMIUM_MO",
+    "Property": "NCAUSE_AMEN",
+    "Column": "NCAUSE_AMEN"
+  },
+  {
+    "Entity": "PREMIUM_MO",
+    "Property": "NCOLLECTOR",
+    "Column": "NCOLLECTOR"
+  },
+  {
+    "Entity": "PREMIUM_MO",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "PREMIUM_MO",
+    "Property": "NTYPE",
+    "Column": "NTYPE"
+  },
+  {
+    "Entity": "PRODUCT",
+    "Property": "NCLASSIFICATION",
+    "Column": "NCLASSIFICATION"
+  },
+  {
+    "Entity": "PRODUCT",
+    "Property": "NPAYFREQ",
+    "Column": "NPAYFREQ"
+  },
+  {
+    "Entity": "PRODUCT",
+    "Property": "NREPINSURED",
+    "Column": "NREPINSURED"
+  },
+  {
+    "Entity": "PRODUCT",
+    "Property": "NWAY_PAY",
+    "Column": "NWAY_PAY"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NANLIFINT",
+    "Column": "NANLIFINT"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NBENEFAPL",
+    "Column": "NBENEFAPL"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NDEDUFREQ",
+    "Column": "NDEDUFREQ"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NINFTYPE",
+    "Column": "NINFTYPE"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NPAYINTER",
+    "Column": "NPAYINTER"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NPRODCLAS",
+    "Column": "NPRODCLAS"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NSURRFREQ",
+    "Column": "NSURRFREQ"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NTYPDURINS",
+    "Column": "NTYPDURINS"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NTYPE_RATEPROY",
+    "Column": "NTYPE_RATEPROY"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NULRDMAXPER",
+    "Column": "NULRDMAXPER"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NULRDMQTPER",
+    "Column": "NULRDMQTPER"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NULREDPER",
+    "Column": "NULREDPER"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NULSWIPER",
+    "Column": "NULSWIPER"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NULSWMAXPER",
+    "Column": "NULSWMAXPER"
+  },
+  {
+    "Entity": "PRODUCT_LI",
+    "Property": "NULSWMQTPER",
+    "Column": "NULSWMQTPER"
+  },
+  {
+    "Entity": "QC_PARAM",
+    "Property": "NROUTY_QC",
+    "Column": "NROUTY_QC"
+  },
+  {
+    "Entity": "QC_PARAM",
+    "Property": "NROUTY_QCCAP",
+    "Column": "NROUTY_QCCAP"
+  },
+  {
+    "Entity": "QC_PARAM",
+    "Property": "NUSERCODE",
+    "Column": "NUSERCODE"
+  },
+  {
+    "Entity": "REFINAN_DRA",
+    "Property": "NBRANCH",
+    "Column": "NBRANCH"
+  },
+  {
+    "Entity": "REFINAN_DRA",
+    "Property": "NOPT_DRAFT",
+    "Column": "NOPT_DRAFT"
+  },
+  {
+    "Entity": "RELCONCEPTS",
+    "Property": "NACCOUNT",
+    "Column": "NACCOUNT"
+  },
+  {
+    "Entity": "RELCONCEPTS",
+    "Property": "NBANK_CODE",
+    "Column": "NBANK_CODE"
+  },
+  {
+    "Entity": "RELCONCEPTS",
+    "Property": "NCHANGEDAT",
+    "Column": "NCHANGEDAT"
+  },
+  {
+    "Entity": "RELCONCEPTS",
+    "Property": "NCOMPANY",
+    "Column": "NCOMPANY"
+  },
+  {
+    "Entity": "RELCONCEPTS",
+    "Property": "NCURRENCY",
+    "Column": "NCURRENCY"
+  },
+  {
+    "Entity": "RELCONCEPTS",
+    "Property": "NORICURR",
+    "Column": "NORICURR"
+  },
+  {
+    "Entity": "RELCONCEPTS",
+    "Property": "NTYPESUPPORT",
+    "Column": "NTYPESUPPORT"
+  },
+  {
+    "Entity": "REQUEST",
+    "Property": "NBRAPAYSURR",
+    "Column": "NBRAPAYSURR"
+  },
+  {
+    "Entity": "REQUEST",
+    "Property": "NCERPAYSURR",
+    "Column": "NCERPAYSURR"
+  },
+  {
+    "Entity": "REQUEST",
+    "Property": "NINSTITUTION",
+    "Column": "NINSTITUTION"
+  },
+  {
+    "Entity": "REQUEST",
+    "Property": "NNULLCODE",
+    "Column": "NNULLCODE"
+  },
+  {
+    "Entity": "REQUEST",
+    "Property": "NPOLPAYSURR",
+    "Column": "NPOLPAYSURR"
+  },
+  {
+    "Entity": "REQUEST",
+    "Property": "NPROPAYSURR",
+    "Column": "NPROPAYSURR"
+  },
+  {
+    "Entity": "REQUEST",
+    "Property": "NSURR_REASON",
+    "Column": "NSURR_REASON"
+  },
+  {
+    "Entity": "REQUEST",
+    "Property": "NTYPEPAY",
+    "Column": "NTYPEPAY"
+  },
+  {
+    "Entity": "REQUEST",
+    "Property": "NTYPE_PAYMENT",
+    "Column": "NTYPE_PAYMENT"
+  },
+  {
+    "Entity": "REQ_ENDOR",
+    "Property": "NUSERCODE_REJECT",
+    "Column": "NUSERCODE_REJECT"
+  },
+  {
+    "Entity": "ROLES",
+    "Property": "NCITY_RESIDENCE",
+    "Column": "NCITY_RESIDENCE"
+  },
+  {
+    "Entity": "ROLES",
+    "Property": "NCLASSTYPDOC",
+    "Column": "NCLASSTYPDOC"
+  },
+  {
+    "Entity": "ROLES",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "ROLES",
+    "Property": "NSTATUSROL",
+    "Column": "NSTATUSROL"
+  },
+  {
+    "Entity": "ROLES",
+    "Property": "NTYPCLIENTDOC",
+    "Column": "NTYPCLIENTDOC"
+  },
+  {
+    "Entity": "ROLES",
+    "Property": "NTYPELIST",
+    "Column": "NTYPELIST"
+  },
+  {
+    "Entity": "ROLES",
+    "Property": "NTYPENAME",
+    "Column": "NTYPENAME"
+  },
+  {
+    "Entity": "ROLES",
+    "Property": "NTYPERISK",
+    "Column": "NTYPERISK"
+  },
+  {
+    "Entity": "SECTION_PO",
+    "Property": "NORIGIN",
+    "Column": "NORIGIN"
+  },
+  {
+    "Entity": "STIPEND_POL",
+    "Property": "NINTERMED",
+    "Column": "NINTERMED"
+  },
+  {
+    "Entity": "TABLE5633",
+    "Property": "NTABLE6071",
+    "Column": "NTABLE6071"
+  },
+  {
+    "Entity": "TAB_AM_EXC",
+    "Property": "NEXC_CODE",
+    "Column": "NEXC_CODE"
+  },
+  {
+    "Entity": "TAB_CLAUSE",
+    "Property": "NTYPE",
+    "Column": "NTYPE"
+  },
+  {
+    "Entity": "TAB_CL_OPE",
+    "Property": "NGEN_OPERA",
+    "Column": "NGEN_OPERA"
+  },
+  {
+    "Entity": "TAB_CL_OPE",
+    "Property": "NPAY_IND",
+    "Column": "NPAY_IND"
+  },
+  {
+    "Entity": "TAB_CL_OPE",
+    "Property": "NRECOVER_IN",
+    "Column": "NRECOVER_IN"
+  },
+  {
+    "Entity": "TAB_CL_OPE",
+    "Property": "NREC_ESP_IN",
+    "Column": "NREC_ESP_IN"
+  },
+  {
+    "Entity": "TAB_CL_OPE",
+    "Property": "NRESERVE_IN",
+    "Column": "NRESERVE_IN"
+  },
+  {
+    "Entity": "TAB_COMLIF",
+    "Property": "NINTERTYP",
+    "Column": "NINTERTYP"
+  },
+  {
+    "Entity": "TAB_COMPRO",
+    "Property": "NTYP_AMOUNT",
+    "Column": "NTYP_AMOUNT"
+  },
+  {
+    "Entity": "TAB_COVROL",
+    "Property": "NCAMAXROL",
+    "Column": "NCAMAXROL"
+  },
+  {
+    "Entity": "TAB_COVROL",
+    "Property": "NFIELDDATE",
+    "Column": "NFIELDDATE"
+  },
+  {
+    "Entity": "TAB_COVROL",
+    "Property": "NID_TABLE",
+    "Column": "NID_TABLE"
+  },
+  {
+    "Entity": "TAB_COVROL",
+    "Property": "NROLACTIV_REL",
+    "Column": "NROLACTIV_REL"
+  },
+  {
+    "Entity": "TAB_COVROL",
+    "Property": "NROLCAP",
+    "Column": "NROLCAP"
+  },
+  {
+    "Entity": "TAB_COVROL",
+    "Property": "NROLPREM",
+    "Column": "NROLPREM"
+  },
+  {
+    "Entity": "TAB_COVROL",
+    "Property": "NTYPDURINS",
+    "Column": "NTYPDURINS"
+  },
+  {
+    "Entity": "TAB_COVROL",
+    "Property": "NTYPDURPAY",
+    "Column": "NTYPDURPAY"
+  },
+  {
+    "Entity": "TAB_COVROL",
+    "Property": "NTYPE_DUREXEMP",
+    "Column": "NTYPE_DUREXEMP"
+  },
+  {
+    "Entity": "TAB_COVROL",
+    "Property": "NUSERCODE",
+    "Column": "NUSERCODE"
+  },
+  {
+    "Entity": "TAB_DOCU",
+    "Property": "NDOC_TYPE",
+    "Column": "NDOC_TYPE"
+  },
+  {
+    "Entity": "TAB_GENCOV",
+    "Property": "NBRANCH_EST",
+    "Column": "NBRANCH_EST"
+  },
+  {
+    "Entity": "TAB_GENCOV",
+    "Property": "NBRANCH_GEN",
+    "Column": "NBRANCH_GEN"
+  },
+  {
+    "Entity": "TAB_GENCOV",
+    "Property": "NBRANCH_LED",
+    "Column": "NBRANCH_LED"
+  },
+  {
+    "Entity": "TAB_GENCOV",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "TAB_LIFCOV",
+    "Property": "NBRANCH_EST",
+    "Column": "NBRANCH_EST"
+  },
+  {
+    "Entity": "TAB_LIFCOV",
+    "Property": "NBRANCH_GEN",
+    "Column": "NBRANCH_GEN"
+  },
+  {
+    "Entity": "TAB_LIFCOV",
+    "Property": "NBRANCH_LED",
+    "Column": "NBRANCH_LED"
+  },
+  {
+    "Entity": "TAB_LIFCOV",
+    "Property": "NBRANCH_REI",
+    "Column": "NBRANCH_REI"
+  },
+  {
+    "Entity": "TAB_LIFCOV",
+    "Property": "NCLA_LI_TYP",
+    "Column": "NCLA_LI_TYP"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS",
+    "Property": "NATTENSYSTEM",
+    "Column": "NATTENSYSTEM"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS",
+    "Property": "NDED_TYPE",
+    "Column": "NDED_TYPE"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS",
+    "Property": "NOFFICE_PROD",
+    "Column": "NOFFICE_PROD"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS",
+    "Property": "NPROVIDER",
+    "Column": "NPROVIDER"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS",
+    "Property": "NTYPEEXHAUS",
+    "Column": "NTYPEEXHAUS"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS_CO",
+    "Property": "NATTENSYSTEM",
+    "Column": "NATTENSYSTEM"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS_CO",
+    "Property": "NDED_TYPE",
+    "Column": "NDED_TYPE"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS_CO",
+    "Property": "NINDPRINT",
+    "Column": "NINDPRINT"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS_CO",
+    "Property": "NOFFICE_PROD",
+    "Column": "NOFFICE_PROD"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS_CO",
+    "Property": "NPROVIDER",
+    "Column": "NPROVIDER"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS_CO",
+    "Property": "NROLE",
+    "Column": "NROLE"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS_CO",
+    "Property": "NTYPEEXHAUS",
+    "Column": "NTYPEEXHAUS"
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS_CO",
+    "Property": "NUSERCODE",
+    "Column": "NUSERCODE"
+  },
+  {
+    "Entity": "TAB_MODUL",
+    "Property": "NATTENSYSTEM",
+    "Column": "NATTENSYSTEM"
+  },
+  {
+    "Entity": "TAB_MODUL",
+    "Property": "NGEOGRAPHAREA",
+    "Column": "NGEOGRAPHAREA"
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Property": "NCATEG_PROV",
+    "Column": "NCATEG_PROV"
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Property": "NCLASS_PROV",
+    "Column": "NCLASS_PROV"
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Property": "NCOD_INSTEDUC",
+    "Column": "NCOD_INSTEDUC"
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Property": "NCOD_MEDCOLLEGE",
+    "Column": "NCOD_MEDCOLLEGE"
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Property": "NOFFICE",
+    "Column": "NOFFICE"
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Property": "NPAYMENT_METHOD",
+    "Column": "NPAYMENT_METHOD"
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Property": "NSUBTYPEPROV",
+    "Column": "NSUBTYPEPROV"
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Property": "NTYPEDISC_PROV",
+    "Column": "NTYPEDISC_PROV"
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Property": "NTYPEPROV",
+    "Column": "NTYPEPROV"
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Property": "NTYPESUPPORT",
+    "Column": "NTYPESUPPORT"
+  },
+  {
+    "Entity": "TAB_PROV_CONTACT",
+    "Property": "NPOSITION",
+    "Column": "NPOSITION"
+  },
+  {
+    "Entity": "TAB_PROV_STAFF",
+    "Property": "NPROVIDER_REL",
+    "Column": "NPROVIDER_REL"
+  },
+  {
+    "Entity": "TAB_RELAT",
+    "Property": "NREL_TARGET",
+    "Column": "NREL_TARGET"
+  },
+  {
+    "Entity": "TAB_TYPERR",
+    "Property": "NTYPEERR_PA",
+    "Column": "NTYPEERR_PA"
+  },
+  {
+    "Entity": "TAX_FIXVAL",
+    "Property": "NTYPESUPPORT",
+    "Column": "NTYPESUPPORT"
+  },
+  {
+    "Entity": "TYPE_AMEND",
+    "Property": "NTYPE_EV_ENDOR",
+    "Column": "NTYPE_EV_ENDOR"
+  },
+  {
+    "Entity": "T_CASH_MOV",
+    "Property": "NLOCAL",
+    "Column": "NLOCAL"
+  },
+  {
+    "Entity": "T_CONCEPTS",
+    "Property": "NACCOUNT",
+    "Column": "NACCOUNT"
+  },
+  {
+    "Entity": "T_CONCEPTS",
+    "Property": "NBANK_CODE",
+    "Column": "NBANK_CODE"
+  },
+  {
+    "Entity": "T_CONCEPTS",
+    "Property": "NCHANGESDAT",
+    "Column": "NCHANGESDAT"
+  },
+  {
+    "Entity": "T_CONCEPTS",
+    "Property": "NCOMPANY",
+    "Column": "NCOMPANY"
+  },
+  {
+    "Entity": "T_CONCEPTS",
+    "Property": "NCURRENCY",
+    "Column": "NCURRENCY"
+  },
+  {
+    "Entity": "T_CONCEPTS",
+    "Property": "NORICURR",
+    "Column": "NORICURR"
+  },
+  {
+    "Entity": "T_CONCEPTS",
+    "Property": "NTYPESUPPORT",
+    "Column": "NTYPESUPPORT"
+  },
+  {
+    "Entity": "T_DOCTYP",
+    "Property": "NINSTITUTION",
+    "Column": "NINSTITUTION"
+  },
+  {
+    "Entity": "T_DOCTYP",
+    "Property": "NORIGIN",
+    "Column": "NORIGIN"
+  },
+  {
+    "Entity": "T_DOCTYP",
+    "Property": "NTRATYPEI",
+    "Column": "NTRATYPEI"
+  },
+  {
+    "Entity": "T_DOCTYP",
+    "Property": "NTYPEMOVE",
+    "Column": "NTYPEMOVE"
+  },
+  {
+    "Entity": "T_MASIVECHARGE",
+    "Property": "NSEARCH",
+    "Column": "NSEARCH"
+  },
+  {
+    "Entity": "USERS",
+    "Property": "NDEPARTME",
+    "Column": "NDEPARTME"
+  },
+  {
+    "Entity": "USER_CASHNUM",
+    "Property": "NCASHSUP",
+    "Column": "NCASHSUP"
+  },
+  {
+    "Entity": "USER_CASHNUM",
+    "Property": "NHEADSUP",
+    "Column": "NHEADSUP"
+  },
+  {
+    "Entity": "USER_OFFICE",
+    "Property": "NUSERCODE",
+    "Column": "NUSERCODE"
+  },
+  {
+    "Entity": "WAY_PAY_PROD",
+    "Property": "NTYPE_VALUECOLLECT",
+    "Column": "NTYPE_VALUECOLLECT"
+  },
+  {
+    "Entity": "WINDOWS",
+    "Property": "NMODULES",
+    "Column": "NMODULES"
+  },
+  {
+    "Entity": "WINDOWS",
+    "Property": "NWINDOWTY",
+    "Column": "NWINDOWTY"
+  },
+  {
+    "Entity": "WIN_ACTIONS",
+    "Property": "NACTION",
+    "Column": "NACTION"
+  }
+]

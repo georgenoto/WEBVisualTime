@@ -39,11 +39,11 @@ public class ADDRESSDto
     public int NPROVINCE { get; set; }
     public string? PROVINCESDESCRIPT { get; set; }
     public int? NPRODUCT { get; set; }
-    public int NLOCAL { get; set; }
+    public int? NLOCAL { get; set; }
     public string? TAB_LOCATSDESCRIPT { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public string? SBUILD { get; set; }
-    public long NMUNICIPALITY { get; set; }
+    public long? NMUNICIPALITY { get; set; }
     public string? MUNICIPALITYSDESCRIPT { get; set; }
     public int? NFLOOR { get; set; }
     public string? SDEPARTMENT { get; set; }

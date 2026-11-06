@@ -6,19 +6,19 @@ public partial class TAB_GENCOV
 {
     public int NCOVERGEN { get; set; }
     public string? SAUTOMREP { get; set; }
-    public int NBRANCH_LED { get; set; }
+    public int? NBRANCH_LED { get; set; }
 
     [ForeignKey("NBRANCH_LED")]
     public Insudb.TABLE75? TABLE75 { get; set; }
-    public int NBRANCH_EST { get; set; }
+    public int? NBRANCH_EST { get; set; }
 
     [ForeignKey("NBRANCH_EST")]
     public Insudb.TABLE71? TABLE71 { get; set; }
-    public int NBRANCH_GEN { get; set; }
+    public int? NBRANCH_GEN { get; set; }
 
     [ForeignKey("NBRANCH_GEN")]
     public Insudb.TABLE634? TABLE634 { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
 
     [ForeignKey("NBRANCH_REI")]
     public Insudb.TABLE5000? TABLE5000 { get; set; }

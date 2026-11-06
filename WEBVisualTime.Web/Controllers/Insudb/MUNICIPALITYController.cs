@@ -28,7 +28,7 @@ public class MUNICIPALITYController : Controller
     }
 
     // GET: MUNICIPALITY/Details/{id}
-    public async Task<IActionResult> Details(int id)
+    public async Task<IActionResult> Details(long id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -57,7 +57,7 @@ public class MUNICIPALITYController : Controller
     }
 
     // GET: MUNICIPALITY/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
+    public async Task<IActionResult> Edit(long id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -91,7 +91,7 @@ public class MUNICIPALITYController : Controller
     }
 
     // GET: MUNICIPALITY/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(long id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -101,7 +101,7 @@ public class MUNICIPALITYController : Controller
     // POST: MUNICIPALITY/Delete/{id}
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
+    public async Task<IActionResult> DeleteConfirmed(long id)
     {
         await _service.DeleteAsync(id);
         return RedirectToAction(nameof(Index));

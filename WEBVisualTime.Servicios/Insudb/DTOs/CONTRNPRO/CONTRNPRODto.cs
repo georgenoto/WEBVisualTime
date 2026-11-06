@@ -33,11 +33,11 @@ public class CONTRNPRODto
     public int? NUSERCODE { get; set; }
     public int NCURR_PAY { get; set; }
     public decimal? NINTEREST { get; set; }
-    public int NFREQPAY { get; set; }
+    public int? NFREQPAY { get; set; }
     public string? TABLE97NFREQPAYSDESCRIPT { get; set; }
     public int? NNEXTMONTHPA { get; set; }
     public int? NNEXTYEARPA { get; set; }
-    public int NFREQCT { get; set; }
+    public int? NFREQCT { get; set; }
     public string? TABLE97NFREQCTSDESCRIPT { get; set; }
     public int? NNEXTMONTHC { get; set; }
     public int? NNEXTYEARC { get; set; }

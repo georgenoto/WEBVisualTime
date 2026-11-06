@@ -44,7 +44,7 @@ public class OUT_PREMIUDto
     public decimal? NDESCAMOUNT { get; set; }
     public int? NREL_IDBILL { get; set; }
     public string? SCLIENT { get; set; }
-    public int NDISSUR_TYPE { get; set; }
+    public int? NDISSUR_TYPE { get; set; }
     public string? TABLE9207SDESCRIPT { get; set; }
     public decimal? NCOM_SUPER { get; set; }
     public decimal? NCOMANUAL_SUPER { get; set; }

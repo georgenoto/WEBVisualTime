@@ -6,24 +6,40 @@ public partial class LIFE
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public DateTime DEFFECDATE { get; set; }
     public int? NAGE { get; set; }
     public string? SCLIENT { get; set; }
@@ -38,7 +54,7 @@ public partial class LIFE
     public long? NEXA_AMOUNT { get; set; }
     public int? NEXAM_TYPE { get; set; }
     public DateTime? DEXPIRDAT { get; set; }
-    public int NTYPDURINS { get; set; }
+    public int? NTYPDURINS { get; set; }
 
     [ForeignKey("NTYPDURINS")]
     public Insudb.TABLE5589? TABLE5589 { get; set; }
@@ -76,16 +92,16 @@ public partial class LIFE
     public int? NCURREN_CRE { get; set; }
     public decimal? NAMOUNT_CRE { get; set; }
     public decimal? NAMOUNT_ACT { get; set; }
-    public int NCALCAPITAL { get; set; }
+    public int? NCALCAPITAL { get; set; }
 
     [ForeignKey("NCALCAPITAL")]
     public Insudb.TABLE5560? TABLE5560NCALCAPITAL { get; set; }
-    public int NTYPPREMIUM { get; set; }
+    public int? NTYPPREMIUM { get; set; }
 
     [ForeignKey("NTYPPREMIUM")]
     public Insudb.TABLE5560? TABLE5560NTYPPREMIUM { get; set; }
     public int? NCOUNT_INSU { get; set; }
-    public int NGROUP_COMP { get; set; }
+    public int? NGROUP_COMP { get; set; }
 
     [ForeignKey("NGROUP_COMP")]
     public Insudb.TABLE268? TABLE268 { get; set; }
@@ -119,7 +135,7 @@ public partial class LIFE
     public int? NTAXREGIME { get; set; }
     public long? NCOD_SAAPV { get; set; }
     public int? NINSTITUTION { get; set; }
-    public int NTYPEEXC { get; set; }
+    public long? NTYPEEXC { get; set; }
 
     [ForeignKey("NTYPEEXC")]
     public Insudb.TABLE2? TABLE2 { get; set; }

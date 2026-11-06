@@ -4,7 +4,7 @@ using WEBVisualTime.Web.Controllers.Common;
 
 namespace WEBVisualTime.Web.Insudb.Controllers;
 
-public class ODWA_HELP_ITEMSController : CatalogController<ODWA_HELP_ITEMSDto, CreateODWA_HELP_ITEMSDto, UpdateODWA_HELP_ITEMSDto, int>
+public class ODWA_HELP_ITEMSController : CatalogController<ODWA_HELP_ITEMSDto, CreateODWA_HELP_ITEMSDto, UpdateODWA_HELP_ITEMSDto, long>
 {
     public ODWA_HELP_ITEMSController(IODWA_HELP_ITEMSService service)
         : base(service, "ODWA_HELP_ITEMS", "ID", new[] { "ID", "DESCRIPTION", "DOCUMENT", "KEYWORDS" }) { }

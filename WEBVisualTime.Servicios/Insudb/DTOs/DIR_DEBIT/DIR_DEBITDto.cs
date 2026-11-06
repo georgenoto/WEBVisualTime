@@ -14,13 +14,13 @@ public class DIR_DEBITDto
     public string? CERTIFICATNCERTIFSCUMUL_CODE { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public string? SACCOUNT { get; set; }
-    public long NBANKEXT { get; set; }
+    public long? NBANKEXT { get; set; }
     public string? TABLE7SDESCRIPT { get; set; }
     public string SCLIENT { get; set; }
     public string? CLIENTSACCOUNT_IN { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public string? SCREDI_CARD { get; set; }
-    public int NTYP_CRECARD { get; set; }
+    public int? NTYP_CRECARD { get; set; }
     public string? TABLE183SDESCRIPT { get; set; }
     public string? STYP_DIRDEB { get; set; }
     public DateTime? DCOMPDATE { get; set; }

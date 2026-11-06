@@ -25,8 +25,8 @@ public class TAB_MODULDto
     public string? SVIGEN { get; set; }
     public string? SDEPEND { get; set; }
     public string? SCLAIMMANDATORYFIELDS { get; set; }
-    public int NGEOGRAPHAREA { get; set; }
+    public int? NGEOGRAPHAREA { get; set; }
     public string? TABLE9214SDESCRIPT { get; set; }
-    public int NATTENSYSTEM { get; set; }
+    public int? NATTENSYSTEM { get; set; }
     public string? TABLE9215SDESCRIPT { get; set; }
 }

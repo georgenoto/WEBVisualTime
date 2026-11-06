@@ -6,20 +6,32 @@ public partial class CERTIFICAT
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NSITUATION, NCOD_AGREE")]
     public Insudb.SITUATION? SITUATIONSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.SITUATION? SITUATIONNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.SITUATION? SITUATIONNBRANCH
+    {
+        get => SITUATIONSCERTYPE;
+        set => SITUATIONSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.SITUATION? SITUATIONNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.SITUATION? SITUATIONNPRODUCT
+    {
+        get => SITUATIONSCERTYPE;
+        set => SITUATIONSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.SITUATION? SITUATIONNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.SITUATION? SITUATIONNPOLICY
+    {
+        get => SITUATIONSCERTYPE;
+        set => SITUATIONSCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
     public string? SCLIENT { get; set; }
 
@@ -35,28 +47,32 @@ public partial class CERTIFICAT
     public int? NGROUP { get; set; }
     public DateTime? DISSUEDAT { get; set; }
     public DateTime? DMAXIMUM_DA { get; set; }
-    public int NNO_CONVERS { get; set; }
+    public int? NNO_CONVERS { get; set; }
 
     [ForeignKey("NNO_CONVERS")]
     public Insudb.NOCONVERS? NOCONVERS { get; set; }
     public long? NNOTE_BENEF { get; set; }
     public long? NNOTE_DRISK { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
 
     [ForeignKey("NNULLCODE")]
     public Insudb.TABLE13? TABLE13 { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NPAYFREQ { get; set; }
+    public int? NPAYFREQ { get; set; }
 
     [ForeignKey("NPAYFREQ")]
     public Insudb.TABLE36? TABLE36 { get; set; }
     public decimal? NPREMIUM { get; set; }
     public DateTime? DPROPODAT { get; set; }
     public string? SRENEWAL { get; set; }
-    public int NSITUATION { get; set; }
+    public int? NSITUATION { get; set; }
 
-    [ForeignKey("NSITUATION")]
-    public Insudb.SITUATION? SITUATIONNSITUATION { get; set; }
+    [NotMapped]
+    public Insudb.SITUATION? SITUATIONNSITUATION
+    {
+        get => SITUATIONSCERTYPE;
+        set => SITUATIONSCERTYPE = value;
+    }
     public DateTime? DSTARTDATE { get; set; }
     public string? SSTATUSVA { get; set; }
 
@@ -65,7 +81,7 @@ public partial class CERTIFICAT
     public int? NUSER_AMEND { get; set; }
     public int? NUSERCODE { get; set; }
     public int? NSUS_BRANCH { get; set; }
-    public int NWAIT_CODE { get; set; }
+    public int? NWAIT_CODE { get; set; }
 
     [ForeignKey("NWAIT_CODE")]
     public Insudb.TAB_WAITPO? TAB_WAITPO { get; set; }
@@ -87,14 +103,14 @@ public partial class CERTIFICAT
     public string? SEXEMPTION { get; set; }
     public long? NIMAGENUM { get; set; }
     public string? SDIRIND { get; set; }
-    public int NWAY_PAY { get; set; }
+    public int? NWAY_PAY { get; set; }
 
     [ForeignKey("NWAY_PAY")]
     public Insudb.TABLE5002? TABLE5002 { get; set; }
     public int? NBILL_DAY { get; set; }
     public int? NSENDADDR { get; set; }
     public string? SAUT_GUARVAL { get; set; }
-    public int NSELLCHANNEL { get; set; }
+    public int? NSELLCHANNEL { get; set; }
 
     [ForeignKey("NSELLCHANNEL")]
     public Insudb.TABLE5532? TABLE5532 { get; set; }
@@ -102,7 +118,7 @@ public partial class CERTIFICAT
     public DateTime? DFER { get; set; }
     public DateTime? DCOLLSUS_END { get; set; }
     public int? NDAYS_QUOT { get; set; }
-    public int NSUS_REASON { get; set; }
+    public int? NSUS_REASON { get; set; }
 
     [ForeignKey("NSUS_REASON")]
     public Insudb.TABLE5566? TABLE5566 { get; set; }
@@ -112,7 +128,7 @@ public partial class CERTIFICAT
     public string? SANULLETTER { get; set; }
     public string? SBILL_IND { get; set; }
     public string? SREFUNDPREM { get; set; }
-    public int NSTATQUOTA { get; set; }
+    public int? NSTATQUOTA { get; set; }
 
     [ForeignKey("NSTATQUOTA")]
     public Insudb.TABLE5526? TABLE5526 { get; set; }
@@ -125,16 +141,16 @@ public partial class CERTIFICAT
     public decimal? NAFP_COMMISS { get; set; }
     public int? NAFP_COMM_CURR { get; set; }
     public int? NORIGIN { get; set; }
-    public long NCOLLECTOR { get; set; }
+    public long? NCOLLECTOR { get; set; }
 
     [ForeignKey("NCOLLECTOR")]
     public Insudb.COLLECTOR? COLLECTOR { get; set; }
     public string? SFRACRECEIP { get; set; }
-    public int NGROUP_AGREE { get; set; }
+    public int? NGROUP_AGREE { get; set; }
 
     [ForeignKey("NGROUP_AGREE")]
     public Insudb.AGREEMENT? AGREEMENT { get; set; }
-    public int NMAILINGPREF { get; set; }
+    public int? NMAILINGPREF { get; set; }
     public string? SRETARIF { get; set; }
     public DateTime? DLAST_TARIF { get; set; }
     public string? SOPERATION { get; set; }
@@ -152,16 +168,20 @@ public partial class CERTIFICAT
     public string? SOFFICIALPOL { get; set; }
     public string? SOFFICIALCER { get; set; }
     public int? NSUS_OFFICE { get; set; }
-    public int NCOD_AGREE { get; set; }
+    public int? NCOD_AGREE { get; set; }
 
-    [ForeignKey("NCOD_AGREE")]
-    public Insudb.SITUATION? SITUATIONNCOD_AGREE { get; set; }
-    public int NTYPEEXC { get; set; }
+    [NotMapped]
+    public Insudb.SITUATION? SITUATIONNCOD_AGREE
+    {
+        get => SITUATIONSCERTYPE;
+        set => SITUATIONSCERTYPE = value;
+    }
+    public long? NTYPEEXC { get; set; }
 
     [ForeignKey("NTYPEEXC")]
     public Insudb.TABLE2? TABLE2 { get; set; }
     public string? SFILENUMBER { get; set; }
-    public int NSYSTEM { get; set; }
+    public int? NSYSTEM { get; set; }
 
     [ForeignKey("NSYSTEM")]
     public Insudb.TABLE9781? TABLE9781 { get; set; }

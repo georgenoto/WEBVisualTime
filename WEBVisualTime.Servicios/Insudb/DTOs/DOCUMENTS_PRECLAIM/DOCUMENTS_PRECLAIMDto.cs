@@ -17,14 +17,14 @@ public class DOCUMENTS_PRECLAIMDto
     public int NUSERCODE { get; set; }
     public string? USERSSACCESSWO { get; set; }
     public DateTime DCOMPDATE { get; set; }
-    public int NDOC_TYPE { get; set; }
+    public int? NDOC_TYPE { get; set; }
     public string? TABLE9217SDESCRIPT { get; set; }
-    public int NPROVIDER { get; set; }
+    public int? NPROVIDER { get; set; }
     public string? TAB_PROVIDERSSTATREGT { get; set; }
     public string? SCLIENT { get; set; }
     public string? CLIENTSACCOUNT_IN { get; set; }
     public long? NID_SECUENCIA { get; set; }
-    public int NCLASS_DOC { get; set; }
+    public int? NCLASS_DOC { get; set; }
     public string? TABLE9219SDESCRIPT { get; set; }
     public string? SOBSERVATIONS { get; set; }
 }

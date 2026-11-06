@@ -1,0 +1,8 @@
+@model WEBVisualTime.Web.Models.ErrorViewModel
+@{ ViewData["Title"] = "No se pudo completar la solicitud"; }
+<div class="alert alert-danger" role="alert">
+    <h1 class="h4">No se pudo completar la solicitud</h1>
+    <p>Ocurrió un error al procesar la operación. Intente nuevamente o comuníquese con soporte.</p>
+    <p>Referencia: <strong>@Model.Reference</strong></p>
+</div>
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver al inicio</a>

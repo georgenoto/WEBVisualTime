@@ -11,5 +11,5 @@ public class UpdateAGREEMENT_ALDto
     public string SSTATREGT { get; set; }
     public int NUSERCODE { get; set; }
     public int? NAGREE_TYPE { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 }

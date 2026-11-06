@@ -10,7 +10,7 @@ public partial class T_CASH_MOV
     public Insudb.COLFORMREF? COLFORMREF { get; set; }
     public int NSEQUENCE { get; set; }
     public int? NACC_CASH { get; set; }
-    public int NLOCAL { get; set; }
+    public int? NLOCAL { get; set; }
 
     [ForeignKey("NLOCAL")]
     public Insudb.TAB_LOCAT? TAB_LOCAT { get; set; }

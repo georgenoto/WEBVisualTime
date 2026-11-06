@@ -5,23 +5,23 @@ public class CreateCLAIM_SETTLEMENTDto
     public int? NCURRENCY { get; set; }
     public decimal? NEXCHANGE_REF { get; set; }
     public decimal? NAMOUNT_PAY { get; set; }
-    public int NPAYMENT_METHOD { get; set; }
-    public int NPAYEE { get; set; }
-    public int NSETTLEMENT_STAT { get; set; }
-    public int NSETTLEMENT_CONC { get; set; }
+    public int? NPAYMENT_METHOD { get; set; }
+    public int? NPAYEE { get; set; }
+    public int? NSETTLEMENT_STAT { get; set; }
+    public int? NSETTLEMENT_CONC { get; set; }
     public long? NNOTENUM { get; set; }
     public int? NUSER_AMEND { get; set; }
     public long? NSEQUENCE_ID { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
-    public int NTYPELIST { get; set; }
+    public int? NTYPELIST { get; set; }
     public DateTime? DPEPSEARCH { get; set; }
     public int? NUSERPEPSEARCH { get; set; }
-    public int NSEVERITYPEP { get; set; }
+    public int? NSEVERITYPEP { get; set; }
     public int? NINDAUTHPEP { get; set; }
     public DateTime? DPEPSTATUS { get; set; }
     public int? NUSERUIF { get; set; }
-    public int NCLAIMANTTYPE { get; set; }
+    public int? NCLAIMANTTYPE { get; set; }
     public string? SCLIENT2 { get; set; }
     public int? NPROVIDER { get; set; }
     public string? SCLIENT_PAYEE { get; set; }
@@ -42,7 +42,7 @@ public class CreateCLAIM_SETTLEMENTDto
     public decimal? NAMOUNT_BASE { get; set; }
     public long? NBANKEXT { get; set; }
     public string? SBANKACCOUNT { get; set; }
-    public int NACC_TYPE { get; set; }
+    public int? NACC_TYPE { get; set; }
     public string? SREFUND { get; set; }
     public string? SCLIENAMEPAYEE { get; set; }
     public int? NTYPCLIENTDOC { get; set; }
@@ -59,7 +59,7 @@ public class CreateCLAIM_SETTLEMENTDto
     public int? NUSER_DERIVEDBY { get; set; }
     public int? NUSER_AUTHORIZATION { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
     public long? NSETTLEMENT_ORIG { get; set; }
     public long? NSEQ_IDLEDGERDOCUM { get; set; }
     public string? SCLIENT_BENEF { get; set; }

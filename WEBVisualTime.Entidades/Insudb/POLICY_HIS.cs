@@ -6,27 +6,43 @@ public partial class POLICY_HIS
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NMOVEMENT { get; set; }
     public DateTime DCOMPDATE { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
 
     [ForeignKey("NCLAIM")]
     public Insudb.CLAIM? CLAIM { get; set; }
@@ -36,7 +52,7 @@ public partial class POLICY_HIS
     public DateTime? DNULLDATE { get; set; }
     public long? NRECEIPT { get; set; }
     public int? NTRANSACTIO { get; set; }
-    public int NTYPE_HIST { get; set; }
+    public int? NTYPE_HIST { get; set; }
 
     [ForeignKey("NTYPE_HIST")]
     public Insudb.TABLE165? TABLE165 { get; set; }
@@ -44,21 +60,21 @@ public partial class POLICY_HIS
     public DateTime? DLEDGERDAT { get; set; }
     public long? NOFICIAL_P { get; set; }
     public int? NTYPE_AMEND { get; set; }
-    public long NSERV_ORDER { get; set; }
+    public long? NSERV_ORDER { get; set; }
     public long? NNOTENUM { get; set; }
     public string? SINTERMEI { get; set; }
     public DateTime? DFER { get; set; }
     public long? NPROPONUM { get; set; }
     public int? NAGENCY { get; set; }
-    public int NWAIT_CODE { get; set; }
+    public int? NWAIT_CODE { get; set; }
 
     [ForeignKey("NWAIT_CODE")]
     public Insudb.TAB_WAITPO? TAB_WAITPO { get; set; }
-    public int NSTATQUOTA { get; set; }
+    public int? NSTATQUOTA { get; set; }
 
     [ForeignKey("NSTATQUOTA")]
     public Insudb.TABLE5526? TABLE5526 { get; set; }
-    public int NNO_CONVERS { get; set; }
+    public int? NNO_CONVERS { get; set; }
 
     [ForeignKey("NNO_CONVERS")]
     public Insudb.NOCONVERS? NOCONVERS { get; set; }
@@ -78,7 +94,7 @@ public partial class POLICY_HIS
     public string? SLOT { get; set; }
     public int? NWAY_PAY { get; set; }
     public int? NBILL_DAY { get; set; }
-    public int NCOD_AGREE { get; set; }
+    public int? NCOD_AGREE { get; set; }
 
     [ForeignKey("NCOD_AGREE")]
     public Insudb.AGREEMENT? AGREEMENT { get; set; }

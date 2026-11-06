@@ -4,10 +4,10 @@ public class UpdateTAB_GENCOVDto
 {
     public int NCOVERGEN { get; set; }
     public string? SAUTOMREP { get; set; }
-    public int NBRANCH_LED { get; set; }
-    public int NBRANCH_EST { get; set; }
-    public int NBRANCH_GEN { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_LED { get; set; }
+    public int? NBRANCH_EST { get; set; }
+    public int? NBRANCH_GEN { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public decimal? NCACALFIX { get; set; }
     public string? SCACALFRI { get; set; }
     public string? SCACALILI { get; set; }

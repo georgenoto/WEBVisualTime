@@ -12,7 +12,7 @@ public partial class SIGNSCAPOFF
 
     [ForeignKey("NOFFICE")]
     public Insudb.TABLE9? TABLE9 { get; set; }
-    public int NCURRENCY { get; set; }
+    public long NCURRENCY { get; set; }
 
     [ForeignKey("NCURRENCY")]
     public Insudb.TABLE11? TABLE11 { get; set; }

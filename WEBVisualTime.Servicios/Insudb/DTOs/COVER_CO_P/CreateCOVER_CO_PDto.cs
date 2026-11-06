@@ -27,11 +27,11 @@ public class CreateCOVER_CO_PDto
     public int? NAGEMAXINSF { get; set; }
     public int? NAGEMAXPERF { get; set; }
     public int? NDURPAY { get; set; }
-    public int NTYPDURPAY { get; set; }
+    public int? NTYPDURPAY { get; set; }
     public decimal? NRATECOVE { get; set; }
     public decimal? NPREMIUM { get; set; }
-    public int NBRANCH_REI { get; set; }
-    public int NRETARIF { get; set; }
+    public int? NBRANCH_REI { get; set; }
+    public int? NRETARIF { get; set; }
     public string? SDEFAULTI { get; set; }
     public string? SREQUIRED { get; set; }
     public decimal? NCAPITAL_O { get; set; }
@@ -53,7 +53,7 @@ public class CreateCOVER_CO_PDto
     public int? NTYP_AGEMINM { get; set; }
     public int? NTYP_AGEMINF { get; set; }
     public decimal? NPERCENT { get; set; }
-    public int NFREQMAXEVEN { get; set; }
+    public int? NFREQMAXEVEN { get; set; }
     public int? NMAXEVEN_QUAN { get; set; }
     public int? NFREQUEN { get; set; }
     public string? SROUTMAX_EVEN { get; set; }

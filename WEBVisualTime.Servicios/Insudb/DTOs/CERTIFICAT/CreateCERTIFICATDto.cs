@@ -13,22 +13,22 @@ public class CreateCERTIFICATDto
     public int? NGROUP { get; set; }
     public DateTime? DISSUEDAT { get; set; }
     public DateTime? DMAXIMUM_DA { get; set; }
-    public int NNO_CONVERS { get; set; }
+    public int? NNO_CONVERS { get; set; }
     public long? NNOTE_BENEF { get; set; }
     public long? NNOTE_DRISK { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NPAYFREQ { get; set; }
+    public int? NPAYFREQ { get; set; }
     public decimal? NPREMIUM { get; set; }
     public DateTime? DPROPODAT { get; set; }
     public string? SRENEWAL { get; set; }
-    public int NSITUATION { get; set; }
+    public int? NSITUATION { get; set; }
     public DateTime? DSTARTDATE { get; set; }
     public string? SSTATUSVA { get; set; }
     public int? NUSER_AMEND { get; set; }
     public int? NUSERCODE { get; set; }
     public int? NSUS_BRANCH { get; set; }
-    public int NWAIT_CODE { get; set; }
+    public int? NWAIT_CODE { get; set; }
     public int? NSUS_PRODUCT { get; set; }
     public long? NSUS_POLICY { get; set; }
     public long? NSUS_CERTIF { get; set; }
@@ -47,23 +47,23 @@ public class CreateCERTIFICATDto
     public string? SEXEMPTION { get; set; }
     public long? NIMAGENUM { get; set; }
     public string? SDIRIND { get; set; }
-    public int NWAY_PAY { get; set; }
+    public int? NWAY_PAY { get; set; }
     public int? NBILL_DAY { get; set; }
     public int? NSENDADDR { get; set; }
     public string? SAUT_GUARVAL { get; set; }
-    public int NSELLCHANNEL { get; set; }
+    public int? NSELLCHANNEL { get; set; }
     public DateTime? DCOLLSUS_INI { get; set; }
     public DateTime? DFER { get; set; }
     public DateTime? DCOLLSUS_END { get; set; }
     public int? NDAYS_QUOT { get; set; }
-    public int NSUS_REASON { get; set; }
+    public int? NSUS_REASON { get; set; }
     public long? NPOL_QUOT { get; set; }
     public string? SSUS_ORIGI { get; set; }
     public DateTime? DDATE_ACCEPT { get; set; }
     public string? SANULLETTER { get; set; }
     public string? SBILL_IND { get; set; }
     public string? SREFUNDPREM { get; set; }
-    public int NSTATQUOTA { get; set; }
+    public int? NSTATQUOTA { get; set; }
     public string? SPENDINFO { get; set; }
     public int? NRENEWALNUM { get; set; }
     public int? NDIGIT { get; set; }
@@ -73,10 +73,10 @@ public class CreateCERTIFICATDto
     public decimal? NAFP_COMMISS { get; set; }
     public int? NAFP_COMM_CURR { get; set; }
     public int? NORIGIN { get; set; }
-    public long NCOLLECTOR { get; set; }
+    public long? NCOLLECTOR { get; set; }
     public string? SFRACRECEIP { get; set; }
-    public int NGROUP_AGREE { get; set; }
-    public int NMAILINGPREF { get; set; }
+    public int? NGROUP_AGREE { get; set; }
+    public int? NMAILINGPREF { get; set; }
     public string? SRETARIF { get; set; }
     public DateTime? DLAST_TARIF { get; set; }
     public string? SOPERATION { get; set; }
@@ -94,10 +94,10 @@ public class CreateCERTIFICATDto
     public string? SOFFICIALPOL { get; set; }
     public string? SOFFICIALCER { get; set; }
     public int? NSUS_OFFICE { get; set; }
-    public int NCOD_AGREE { get; set; }
-    public int NTYPEEXC { get; set; }
+    public int? NCOD_AGREE { get; set; }
+    public long? NTYPEEXC { get; set; }
     public string? SFILENUMBER { get; set; }
-    public int NSYSTEM { get; set; }
+    public int? NSYSTEM { get; set; }
     public long? NCOVERAGECERTIFICATE { get; set; }
     public int? NSTATUSCOVERAGECERTIFICATE { get; set; }
     public DateTime? DRISKACCEPTED { get; set; }

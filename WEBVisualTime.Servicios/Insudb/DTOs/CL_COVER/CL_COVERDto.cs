@@ -17,7 +17,7 @@ public class CL_COVERDto
     public string? CLIENTSACCOUNT_IN { get; set; }
     public int NBRANCH_LED { get; set; }
     public string? TABLE75SDESCRIPT { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public string? TABLE5000SDESCRIPT { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public decimal? NCOST_RECU { get; set; }

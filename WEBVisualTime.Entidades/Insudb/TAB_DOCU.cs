@@ -23,7 +23,7 @@ public partial class TAB_DOCU
     public string? STEXT { get; set; }
     public string? SREQUIERED { get; set; }
     public int? NPERSON_TYP { get; set; }
-    public int NDOC_TYPE { get; set; }
+    public int? NDOC_TYPE { get; set; }
 
     [ForeignKey("NDOC_TYPE")]
     public Insudb.TABLE9217? TABLE9217 { get; set; }

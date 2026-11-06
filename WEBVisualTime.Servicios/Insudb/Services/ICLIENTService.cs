@@ -8,4 +8,6 @@ namespace WEBVisualTime.Servicios.Insudb.Services;
 public interface ICLIENTService : IService<CLIENTDto, CreateCLIENTDto, UpdateCLIENTDto, string>
 {
     Task<IEnumerable<CLIENTDto>> FindAsync(Expression<Func<CLIENT, bool>> predicate);
+    Task<PagedResult<CLIENTDto>> GetPageAsync(int page, int pageSize,
+        string? search = null, CancellationToken cancellationToken = default);
 }

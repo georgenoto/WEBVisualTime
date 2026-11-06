@@ -6,22 +6,34 @@ public partial class CONTRNPRO
 {
     public int NNUMBER { get; set; }
 
-    [ForeignKey("NNUMBER")]
+    [ForeignKey("NTYPE_REL, NNUMBER, NTYPE, NBRANCH")]
     public Insudb.CONTRMASTER? CONTRMASTERNNUMBER { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CONTRMASTER? CONTRMASTERNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CONTRMASTER? CONTRMASTERNBRANCH
+    {
+        get => CONTRMASTERNNUMBER;
+        set => CONTRMASTERNNUMBER = value;
+    }
     public DateTime DEFFECDATE { get; set; }
     public int NTYPE { get; set; }
 
-    [ForeignKey("NTYPE")]
-    public Insudb.CONTRMASTER? CONTRMASTERNTYPE { get; set; }
+    [NotMapped]
+    public Insudb.CONTRMASTER? CONTRMASTERNTYPE
+    {
+        get => CONTRMASTERNNUMBER;
+        set => CONTRMASTERNNUMBER = value;
+    }
     public decimal? NAMOUNT { get; set; }
     public int NTYPE_REL { get; set; }
 
-    [ForeignKey("NTYPE_REL")]
-    public Insudb.CONTRMASTER? CONTRMASTERNTYPE_REL { get; set; }
+    [NotMapped]
+    public Insudb.CONTRMASTER? CONTRMASTERNTYPE_REL
+    {
+        get => CONTRMASTERNNUMBER;
+        set => CONTRMASTERNNUMBER = value;
+    }
     public long? NCESSION { get; set; }
     public decimal? NCLAUSULE { get; set; }
     public DateTime? DCOMPDATE { get; set; }
@@ -43,13 +55,13 @@ public partial class CONTRNPRO
     public int? NUSERCODE { get; set; }
     public int NCURR_PAY { get; set; }
     public decimal? NINTEREST { get; set; }
-    public int NFREQPAY { get; set; }
+    public int? NFREQPAY { get; set; }
 
     [ForeignKey("NFREQPAY")]
     public Insudb.TABLE97? TABLE97NFREQPAY { get; set; }
     public int? NNEXTMONTHPA { get; set; }
     public int? NNEXTYEARPA { get; set; }
-    public int NFREQCT { get; set; }
+    public int? NFREQCT { get; set; }
 
     [ForeignKey("NFREQCT")]
     public Insudb.TABLE97? TABLE97NFREQCT { get; set; }

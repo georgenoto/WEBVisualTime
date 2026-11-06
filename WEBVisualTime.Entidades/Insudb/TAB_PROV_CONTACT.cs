@@ -11,7 +11,7 @@ public partial class TAB_PROV_CONTACT
     public int NSEQ { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NPOSITION { get; set; }
+    public int? NPOSITION { get; set; }
 
     [ForeignKey("NPOSITION")]
     public Insudb.TABLE283? TABLE283 { get; set; }

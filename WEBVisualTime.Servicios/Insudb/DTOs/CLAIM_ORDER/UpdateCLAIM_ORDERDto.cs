@@ -6,17 +6,17 @@ public class UpdateCLAIM_ORDERDto
     public int NCASE_NUM { get; set; }
     public int NDEMAN_TYPE { get; set; }
     public long NORDER_NUM { get; set; }
-    public int NCLAIMANTTYPE { get; set; }
-    public int NATTENTCHANNEL { get; set; }
+    public int? NCLAIMANTTYPE { get; set; }
+    public int? NATTENTCHANNEL { get; set; }
     public DateTime? DORDERDATE { get; set; }
-    public int NTYPEDOC_PAY { get; set; }
+    public int? NTYPEDOC_PAY { get; set; }
     public DateTime? DACCOUNTDOC { get; set; }
-    public int NCURREN_DOC { get; set; }
-    public int NPROVIDER { get; set; }
+    public long? NCURREN_DOC { get; set; }
+    public int? NPROVIDER { get; set; }
     public string? STYPECARE { get; set; }
-    public int NCURREN_ORDER { get; set; }
-    public int NSTATUS_ORDER { get; set; }
-    public int NORDERTYPE { get; set; }
+    public long? NCURREN_ORDER { get; set; }
+    public int? NSTATUS_ORDER { get; set; }
+    public int? NORDERTYPE { get; set; }
     public string? SPREAUTHORIZATION { get; set; }
     public long? NNOTENUM { get; set; }
     public string? NMOVEMENT { get; set; }
@@ -26,9 +26,9 @@ public class UpdateCLAIM_ORDERDto
     public int? NUSER_AMEND { get; set; }
     public int? NUSER_AUDITDOC { get; set; }
     public decimal? NEXCHANGE { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
     public int? NUSER_DERIVEDBY { get; set; }
-    public long NMASTERORDER { get; set; }
+    public long? NMASTERORDER { get; set; }
     public int? NPHYSICIAN { get; set; }
     public int? NMEDICALINSTITUTE { get; set; }
     public int? NREVALIDATIONS { get; set; }
@@ -43,19 +43,19 @@ public class UpdateCLAIM_ORDERDto
     public long? NORDER_NUM_ORIG { get; set; }
     public int? NAUDITDOCTOR { get; set; }
     public string? SCALLCENTER { get; set; }
-    public int NDOCTORROL { get; set; }
+    public int? NDOCTORROL { get; set; }
     public string? SFASTMEDICALEVAL { get; set; }
     public string? SOBSV_AUDITDOC { get; set; }
     public DateTime? DLEDGERDAT { get; set; }
     public string? SCLIENT_BENEF { get; set; }
     public string? SCLIENT_REP { get; set; }
-    public int NCLA_LI_TYP { get; set; }
+    public int? NCLA_LI_TYP { get; set; }
     public int? NIND_REOPENCL { get; set; }
     public int? NCAUSEREOPENCL { get; set; }
     public int? NTYPE_COMMPAY { get; set; }
     public long? NORDER_NUM_GEN { get; set; }
-    public int NCOMMERCIALPAYASSOC { get; set; }
+    public int? NCOMMERCIALPAYASSOC { get; set; }
     public string? SHISTORICAL_CLAIM { get; set; }
     public int? NCOUNTRY { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
 }

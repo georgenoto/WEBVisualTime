@@ -23,7 +23,7 @@ public partial class MASSIVE_RULES
 
     [ForeignKey("STYP_CONDI")]
     public Insudb.TABLE8204? TABLE8204 { get; set; }
-    public int NSECTION { get; set; }
+    public int? NSECTION { get; set; }
 
     [ForeignKey("NSECTION")]
     public Insudb.TABLE8205? TABLE8205 { get; set; }

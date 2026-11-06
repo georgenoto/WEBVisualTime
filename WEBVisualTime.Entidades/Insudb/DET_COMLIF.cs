@@ -35,12 +35,12 @@ public partial class DET_COMLIF
     public Insudb.TABLE9108? TABLE9108 { get; set; }
     public string? SROUTINE { get; set; }
     public int? NLIFE_SCHE { get; set; }
-    public int NTYPCOMMIS { get; set; }
+    public int? NTYPCOMMIS { get; set; }
 
     [ForeignKey("NTYPCOMMIS")]
     public Insudb.TABLE5662? TABLE5662 { get; set; }
     public decimal? NPERC_PAY { get; set; }
-    public int NTYPERISK { get; set; }
+    public int? NTYPERISK { get; set; }
 
     [ForeignKey("NTYPERISK")]
     public Insudb.TABLE5639? TABLE5639 { get; set; }
@@ -49,7 +49,7 @@ public partial class DET_COMLIF
     public decimal? NCAPITAL_END { get; set; }
     public decimal? NAMOUNTLIM { get; set; }
     public decimal? NDRCOMM { get; set; }
-    public int NIDCOMM { get; set; }
+    public int? NIDCOMM { get; set; }
     public int NCATEGORY { get; set; }
 
     [ForeignKey("NCATEGORY")]

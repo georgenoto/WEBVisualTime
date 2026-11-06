@@ -12,7 +12,7 @@ public partial class FOLDERS
     public int NUSERCODE { get; set; }
     public string? SCLASS { get; set; }
     public string? SFOLDERKEY { get; set; }
-    public int NFOLDERKEY { get; set; }
+    public int? NFOLDERKEY { get; set; }
 
     [ForeignKey("NFOLDERKEY")]
     public Insudb.PROPERTYLIBRARY? PROPERTYLIBRARY { get; set; }

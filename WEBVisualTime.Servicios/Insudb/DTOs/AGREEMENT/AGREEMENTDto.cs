@@ -14,11 +14,11 @@ public class AGREEMENTDto
     public int NUSERCODE { get; set; }
     public int NTYPEAGREE { get; set; }
     public string? TABLE5529SDESCRIPT { get; set; }
-    public int NTYPE_REC { get; set; }
+    public int? NTYPE_REC { get; set; }
     public string? TABLE5581SDESCRIPT { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public string? INTERMEDIASCOL_AGREE { get; set; }
-    public int NAGENCY { get; set; }
+    public int? NAGENCY { get; set; }
     public string? TABLE5555SDESCRIPT { get; set; }
     public string? SEMAIL_CONTACT { get; set; }
     public string? SPHONE_CONTACT { get; set; }

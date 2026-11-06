@@ -6,32 +6,56 @@ public partial class OUT_PREMIU
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF, NMOVNUMBE, NDIGIT")]
     public Insudb.OUT_MOVEME? OUT_MOVEMESCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.OUT_MOVEME? OUT_MOVEMENBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.OUT_MOVEME? OUT_MOVEMENBRANCH
+    {
+        get => OUT_MOVEMESCERTYPE;
+        set => OUT_MOVEMESCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.OUT_MOVEME? OUT_MOVEMENPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.OUT_MOVEME? OUT_MOVEMENPRODUCT
+    {
+        get => OUT_MOVEMESCERTYPE;
+        set => OUT_MOVEMESCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.OUT_MOVEME? OUT_MOVEMENPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.OUT_MOVEME? OUT_MOVEMENPOLICY
+    {
+        get => OUT_MOVEMESCERTYPE;
+        set => OUT_MOVEMESCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.OUT_MOVEME? OUT_MOVEMENCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.OUT_MOVEME? OUT_MOVEMENCERTIF
+    {
+        get => OUT_MOVEMESCERTYPE;
+        set => OUT_MOVEMESCERTYPE = value;
+    }
     public long NMOVNUMBE { get; set; }
 
-    [ForeignKey("NMOVNUMBE")]
-    public Insudb.OUT_MOVEME? OUT_MOVEMENMOVNUMBE { get; set; }
+    [NotMapped]
+    public Insudb.OUT_MOVEME? OUT_MOVEMENMOVNUMBE
+    {
+        get => OUT_MOVEMESCERTYPE;
+        set => OUT_MOVEMESCERTYPE = value;
+    }
     public int NDIGIT { get; set; }
 
-    [ForeignKey("NDIGIT")]
-    public Insudb.OUT_MOVEME? OUT_MOVEMENDIGIT { get; set; }
+    [NotMapped]
+    public Insudb.OUT_MOVEME? OUT_MOVEMENDIGIT
+    {
+        get => OUT_MOVEMESCERTYPE;
+        set => OUT_MOVEMESCERTYPE = value;
+    }
     public int NID_BILL { get; set; }
     public string? SADDSUINI { get; set; }
     public string STYPE_DETAI { get; set; }
@@ -60,7 +84,7 @@ public partial class OUT_PREMIU
     public decimal? NDESCAMOUNT { get; set; }
     public int? NREL_IDBILL { get; set; }
     public string? SCLIENT { get; set; }
-    public int NDISSUR_TYPE { get; set; }
+    public int? NDISSUR_TYPE { get; set; }
 
     [ForeignKey("NDISSUR_TYPE")]
     public Insudb.TABLE9207? TABLE9207 { get; set; }

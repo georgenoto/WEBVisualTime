@@ -13,5 +13,5 @@ public class INTERM_TYPDto
     public string? TABLE400SDESCRIPT { get; set; }
     public string? SIND_FECU { get; set; }
     public string? SGEN_CERTIF { get; set; }
-    public int NRECEPTYP { get; set; }
+    public int? NRECEPTYP { get; set; }
 }

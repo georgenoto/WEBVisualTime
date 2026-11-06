@@ -11,7 +11,7 @@ public class UpdateCL_COVERDto
     public int NBRANCH_EST { get; set; }
     public string SCLIENT { get; set; }
     public int NBRANCH_LED { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public decimal? NCOST_RECU { get; set; }
     public decimal? NDAMAGES { get; set; }

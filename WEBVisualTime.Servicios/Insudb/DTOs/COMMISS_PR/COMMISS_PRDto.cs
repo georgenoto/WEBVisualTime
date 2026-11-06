@@ -16,12 +16,12 @@ public class COMMISS_PRDto
     public string? PREMIUMNPAYNUMBESCESSIONS { get; set; }
     public long NINTERMED { get; set; }
     public string? INTERMEDIASCOL_AGREE { get; set; }
-    public int NPROVINCE { get; set; }
+    public int? NPROVINCE { get; set; }
     public string? PROVINCESDESCRIPT { get; set; }
     public decimal? NAMOUNT { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public decimal? NPERCENT { get; set; }
-    public int NROLE { get; set; }
+    public int? NROLE { get; set; }
     public string? INTERM_TYPSDESCRIPT { get; set; }
     public decimal? NSHARE { get; set; }
     public int? NUSERCODE { get; set; }
@@ -29,5 +29,5 @@ public class COMMISS_PRDto
     public decimal? NCOM_EXEN { get; set; }
     public decimal? NDISC_AMOUNT { get; set; }
     public int? NCATEGORY { get; set; }
-    public int NID_CAMPAIGN { get; set; }
+    public int? NID_CAMPAIGN { get; set; }
 }

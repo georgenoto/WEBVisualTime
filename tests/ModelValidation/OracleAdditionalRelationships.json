@@ -1,0 +1,80 @@
+[
+  {
+    "Entity": "CERTIFICAT",
+    "Target": "POLICY",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "R_70"
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Target": "CLIENT",
+    "ForeignKeys": [
+      "SCLIENT"
+    ],
+    "PrincipalKeys": [
+      "SCLIENT"
+    ],
+    "Constraint": "R_1858"
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Target": "CLAIM_HIS",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NTRANSAC"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NTRANSAC"
+    ],
+    "Constraint": "SYS_C0041332"
+  },
+  {
+    "Entity": "POLICY",
+    "Target": "AGENCIES",
+    "ForeignKeys": [
+      "NAGENCY"
+    ],
+    "PrincipalKeys": [
+      "NAGENCY"
+    ],
+    "Constraint": "R_2381"
+  },
+  {
+    "Entity": "TAB_PROV_FEES",
+    "Target": "TAB_PROVIDER",
+    "ForeignKeys": [
+      "NPROVIDER"
+    ],
+    "PrincipalKeys": [
+      "NPROVIDER"
+    ],
+    "Constraint": "R_TAB_PROVIDER_3383"
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Target": "TABLE7027",
+    "ForeignKeys": [
+      "NTYPEPROV"
+    ],
+    "PrincipalKeys": [
+      "NTYPEPROV"
+    ],
+    "Constraint": "R_492"
+  }
+]

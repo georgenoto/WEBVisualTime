@@ -8,7 +8,7 @@ public partial class PHONES
     public string SKEYADDRESS { get; set; }
     public int NKEYPHONES { get; set; }
     public DateTime DEFFECDATE { get; set; }
-    public long NBESTTIMETOCALL { get; set; }
+    public long? NBESTTIMETOCALL { get; set; }
 
     [ForeignKey("NBESTTIMETOCALL")]
     public Insudb.TABLE8060? TABLE8060 { get; set; }
@@ -17,7 +17,7 @@ public partial class PHONES
     public int? NORDER { get; set; }
     public int? NEXTENS1 { get; set; }
     public int? NEXTENS2 { get; set; }
-    public int NPHONE_TYPE { get; set; }
+    public int? NPHONE_TYPE { get; set; }
 
     [ForeignKey("NPHONE_TYPE")]
     public Insudb.TABLE564? TABLE564 { get; set; }

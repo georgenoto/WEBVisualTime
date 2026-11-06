@@ -8,7 +8,7 @@ public partial class CLAIM_SETT_DOCUM
     public long NCONSEC_DOC { get; set; }
     public DateTime? DRECEPDATE { get; set; }
     public string? SDESCRIPT { get; set; }
-    public int NSTATUS_DOC { get; set; }
+    public int? NSTATUS_DOC { get; set; }
 
     [ForeignKey("NSTATUS_DOC")]
     public Insudb.TABLE203? TABLE203 { get; set; }

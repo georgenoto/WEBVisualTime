@@ -10,16 +10,24 @@ public partial class BATCH_PARAM_VALUE
     public Insudb.BATCH_JOB? BATCH_JOB { get; set; }
     public int NAREA { get; set; }
 
-    [ForeignKey("NAREA")]
+    [ForeignKey("NBATCH, NAREA, NSEQ")]
     public Insudb.BATCH_PARAM? BATCH_PARAMNAREA { get; set; }
     public int NSEQ { get; set; }
 
-    [ForeignKey("NSEQ")]
-    public Insudb.BATCH_PARAM? BATCH_PARAMNSEQ { get; set; }
+    [NotMapped]
+    public Insudb.BATCH_PARAM? BATCH_PARAMNSEQ
+    {
+        get => BATCH_PARAMNAREA;
+        set => BATCH_PARAMNAREA = value;
+    }
     public int NBATCH { get; set; }
 
-    [ForeignKey("NBATCH")]
-    public Insudb.BATCH_PARAM? BATCH_PARAMNBATCH { get; set; }
+    [NotMapped]
+    public Insudb.BATCH_PARAM? BATCH_PARAMNBATCH
+    {
+        get => BATCH_PARAMNAREA;
+        set => BATCH_PARAMNAREA = value;
+    }
     public string? SVALUE { get; set; }
     public int? NDATATYPE { get; set; }
     public int NUSERCODE { get; set; }

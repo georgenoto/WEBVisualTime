@@ -28,7 +28,7 @@ public partial class TYPE_AMEND
     public int NLEVEL { get; set; }
     public string? SRETARIF { get; set; }
     public string? SDESCRIPT { get; set; }
-    public int NTYPE_EV_ENDOR { get; set; }
+    public int? NTYPE_EV_ENDOR { get; set; }
 
     [ForeignKey("NTYPE_EV_ENDOR")]
     public Insudb.TABLE9232? TABLE9232 { get; set; }

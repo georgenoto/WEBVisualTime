@@ -12,15 +12,15 @@ public class MOVE_ACCDto
     public string? CURR_ACCNCURRENCYSSTATREGT { get; set; }
     public DateTime DOPERDATE { get; set; }
     public long NIDCONSEC { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public string? INTERMEDIASCOL_AGREE { get; set; }
     public decimal? NAMOUNT { get; set; }
-    public long NBANKEXT { get; set; }
+    public long? NBANKEXT { get; set; }
     public string? TABLE7SDESCRIPT { get; set; }
     public int? NBRANCH { get; set; }
     public long? NCERTIF { get; set; }
     public string? SCHEQUE { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
     public string? CLAIMSCERTYPE { get; set; }
     public decimal? NCREDIT { get; set; }
     public decimal? NDEBIT { get; set; }
@@ -32,19 +32,19 @@ public class MOVE_ACCDto
     public string? SSTATREGT { get; set; }
     public int? NTRANSAC { get; set; }
     public int? NTRANSACTIO { get; set; }
-    public int NTYPE_MOVE { get; set; }
+    public int? NTYPE_MOVE { get; set; }
     public string? TABLE401SDESCRIPT { get; set; }
-    public int NTYPE_PAY { get; set; }
+    public int? NTYPE_PAY { get; set; }
     public string? TABLE137SDESCRIPT { get; set; }
-    public int NTYPE_TRAN { get; set; }
+    public int? NTYPE_TRAN { get; set; }
     public string? TABLE6SDESCRIPT { get; set; }
     public int? NUSERCODE { get; set; }
-    public int NPROVINCE { get; set; }
+    public int? NPROVINCE { get; set; }
     public string? PROVINCESDESCRIPT { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public long? NIDDOCUMENT { get; set; }
     public long? NREQUEST_NU { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
     public string? COLFORMREFSTYPE { get; set; }
     public string? SPROCESS { get; set; }
     public string? SNUMFORM { get; set; }
@@ -62,7 +62,7 @@ public class MOVE_ACCDto
     public DateTime? DPOSTED { get; set; }
     public string? SPROCESS_IND { get; set; }
     public long? NPROPONUM { get; set; }
-    public long NBULLETINS { get; set; }
+    public long? NBULLETINS { get; set; }
     public long? NNOTENUM { get; set; }
     public long NID { get; set; }
     public decimal? NAMOUNTDEC { get; set; }

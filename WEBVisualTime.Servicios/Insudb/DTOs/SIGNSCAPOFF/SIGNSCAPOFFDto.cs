@@ -6,7 +6,7 @@ public class SIGNSCAPOFFDto
     public string? TABLE10SDESCRIPT { get; set; }
     public int NOFFICE { get; set; }
     public string? TABLE9SDESCRIPT { get; set; }
-    public int NCURRENCY { get; set; }
+    public long NCURRENCY { get; set; }
     public string? TABLE11SDESCRIPT { get; set; }
     public int NUSERSIGN { get; set; }
     public string? USERSSACCESSWO { get; set; }

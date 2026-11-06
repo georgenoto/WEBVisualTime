@@ -11,24 +11,40 @@ public partial class COMM_POL
     public int NCURRENCY { get; set; }
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NID { get; set; }
     public int NTYPMOV_COMM { get; set; }
 
@@ -54,11 +70,11 @@ public partial class COMM_POL
     public int? NDRAFT { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
-    public int NTRATYPEI { get; set; }
+    public int? NTRATYPEI { get; set; }
 
     [ForeignKey("NTRATYPEI")]
     public Insudb.TABLE24? TABLE24 { get; set; }
-    public int NTYPE { get; set; }
+    public int? NTYPE { get; set; }
 
     [ForeignKey("NTYPE")]
     public Insudb.TABLE6? TABLE6 { get; set; }
@@ -72,8 +88,8 @@ public partial class COMM_POL
     public decimal? NBALANCE { get; set; }
     public string? SIND_DESC { get; set; }
     public string? SIND_BALANCE { get; set; }
-    public int NCOD_SALDIS { get; set; }
+    public int? NCOD_SALDIS { get; set; }
     public int? NCATEGORY { get; set; }
-    public int NID_CAMPAIGN { get; set; }
+    public int? NID_CAMPAIGN { get; set; }
     public DateTime? DDATEEND_CAMP { get; set; }
 }

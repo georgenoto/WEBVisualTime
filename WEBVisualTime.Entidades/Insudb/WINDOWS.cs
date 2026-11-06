@@ -14,7 +14,7 @@ public partial class WINDOWS
     public string? SDIRECTGO { get; set; }
     public int? NG_IDENTI { get; set; }
     public int? NINQLEVEL { get; set; }
-    public int NMODULES { get; set; }
+    public int? NMODULES { get; set; }
 
     [ForeignKey("NMODULES")]
     public Insudb.TABLE87? TABLE87 { get; set; }
@@ -23,7 +23,7 @@ public partial class WINDOWS
     public string? SSHORT_DES { get; set; }
     public string SSTATREGT { get; set; }
     public int NUSERCODE { get; set; }
-    public int NWINDOWTY { get; set; }
+    public int? NWINDOWTY { get; set; }
 
     [ForeignKey("NWINDOWTY")]
     public Insudb.TABLE88? TABLE88 { get; set; }

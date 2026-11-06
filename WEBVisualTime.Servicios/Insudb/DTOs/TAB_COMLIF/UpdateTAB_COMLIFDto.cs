@@ -8,5 +8,5 @@ public class UpdateTAB_COMLIFDto
     public string? SDESCRIPT { get; set; }
     public string? SSHORT_DES { get; set; }
     public string? SSTATREGT { get; set; }
-    public int NINTERTYP { get; set; }
+    public int? NINTERTYP { get; set; }
 }

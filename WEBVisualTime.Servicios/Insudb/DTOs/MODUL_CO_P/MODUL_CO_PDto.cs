@@ -17,8 +17,8 @@ public class MODUL_CO_PDto
     public int? NUSERCODE { get; set; }
     public decimal? NPREMIRAT { get; set; }
     public string? STYP_RAT { get; set; }
-    public int NGEOGRAPHAREA { get; set; }
+    public int? NGEOGRAPHAREA { get; set; }
     public string? TABLE9214SDESCRIPT { get; set; }
-    public int NATTENSYSTEM { get; set; }
+    public int? NATTENSYSTEM { get; set; }
     public string? TABLE9215SDESCRIPT { get; set; }
 }

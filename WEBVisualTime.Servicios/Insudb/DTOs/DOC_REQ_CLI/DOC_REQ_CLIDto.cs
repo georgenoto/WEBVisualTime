@@ -5,7 +5,7 @@ public class DOC_REQ_CLIDto
     public long NEVAL { get; set; }
     public string? EVAL_MASTERSCERTYPE { get; set; }
     public long NID { get; set; }
-    public int NTYPEDOC { get; set; }
+    public int? NTYPEDOC { get; set; }
     public string? TABLE32SDESCRIPT { get; set; }
     public int NSTATUSDOC { get; set; }
     public string? TABLE275SDESCRIPT { get; set; }

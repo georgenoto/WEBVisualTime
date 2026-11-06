@@ -3,7 +3,7 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.TAB_AM_EXC;
 public class CreateTAB_AM_EXCDto
 {
     public string? SCLIENT { get; set; }
-    public int NEXC_CODE { get; set; }
+    public int? NEXC_CODE { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public DateTime? DINIT_DATE { get; set; }
     public DateTime? DNULLDATE { get; set; }

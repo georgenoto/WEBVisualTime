@@ -6,16 +6,24 @@ public partial class COV_USED
 {
     public long NCLAIM { get; set; }
 
-    [ForeignKey("NCLAIM")]
+    [ForeignKey("NCLAIM, NCASE_NUM, NDEMAN_TYPE")]
     public Insudb.CLAIM_CASE? CLAIM_CASENCLAIM { get; set; }
     public int NCASE_NUM { get; set; }
 
-    [ForeignKey("NCASE_NUM")]
-    public Insudb.CLAIM_CASE? CLAIM_CASENCASE_NUM { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_CASE? CLAIM_CASENCASE_NUM
+    {
+        get => CLAIM_CASENCLAIM;
+        set => CLAIM_CASENCLAIM = value;
+    }
     public int NDEMAN_TYPE { get; set; }
 
-    [ForeignKey("NDEMAN_TYPE")]
-    public Insudb.CLAIM_CASE? CLAIM_CASENDEMAN_TYPE { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_CASE? CLAIM_CASENDEMAN_TYPE
+    {
+        get => CLAIM_CASENCLAIM;
+        set => CLAIM_CASENCLAIM = value;
+    }
     public int NGROUP_INSU { get; set; }
     public int NTRANSAC { get; set; }
     public int NMODULEC { get; set; }
@@ -28,24 +36,40 @@ public partial class COV_USED
     public long NSTARTDATE { get; set; }
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public decimal? NCAPITAL { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int NCON_ID { get; set; }

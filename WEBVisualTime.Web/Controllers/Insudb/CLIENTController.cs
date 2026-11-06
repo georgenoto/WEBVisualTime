@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Diagnostics;
+using System.Data.Common;
+using WEBVisualTime.Web.Models;
 using WEBVisualTime.Servicios.Insudb.DTOs.CLIENT;
 using WEBVisualTime.Servicios.Insudb.Services;
 using WEBVisualTime.Servicios.Insudb.Mappings;
@@ -30,6 +33,7 @@ namespace WEBVisualTime.Web.Insudb.Controllers;
 public class CLIENTController : Controller
 {
     private readonly ICLIENTService _service;
+    private readonly ILogger<CLIENTController> _logger;
     private readonly ITABLE5522Service _TABLE5522Service;
     private readonly ITABLE14Service _TABLE14Service;
     private readonly ITABLE146Service _TABLE146Service;
@@ -52,7 +56,7 @@ public class CLIENTController : Controller
     private readonly ITABLE66Service _TABLE66Service;
     private readonly ITABLE9213Service _TABLE9213Service;
 
-    public CLIENTController(ICLIENTService service
+    public CLIENTController(ICLIENTService service, ILogger<CLIENTController> logger
         , ITABLE5522Service TABLE5522Service
         , ITABLE14Service TABLE14Service
         , ITABLE146Service TABLE146Service
@@ -77,6 +81,7 @@ public class CLIENTController : Controller
     )
     {
         _service = service;
+        _logger = logger;
         _TABLE5522Service = TABLE5522Service;
         _TABLE14Service = TABLE14Service;
         _TABLE146Service = TABLE146Service;
@@ -101,10 +106,39 @@ public class CLIENTController : Controller
     }
 
     // GET: CLIENT
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(int page = 1, int pageSize = 20, string? q = null)
     {
-        var result = await _service.GetAllAsync();
-        return View("~/Views/Insudb/CLIENT/Index.cshtml", result);
+        page = Math.Clamp(page, 1, 1_000_000);
+        pageSize = pageSize is 20 or 50 or 100 ? pageSize : 20;
+        q = q?.Trim();
+        if (q?.Length > 100) q = q[..100];
+        try
+        {
+            var result = await _service.GetPageAsync(page, pageSize, q, HttpContext.RequestAborted);
+            _logger.LogInformation("CLIENT loaded {Count} records on page {Page}; {Total} matching records.", result.Items.Count, result.Page, result.TotalCount);
+            return View("~/Views/Insudb/CLIENT/Index.cshtml", new ClientIndexViewModel { Result = result, Search = q });
+        }
+        catch (OperationCanceledException) when (HttpContext.RequestAborted.IsCancellationRequested)
+        {
+            return new EmptyResult();
+        }
+        catch (Exception exception)
+        {
+            var reference = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+            _logger.LogError(exception, "Failed to load CLIENT. Reference: {Reference}", reference);
+            var message = exception switch
+            {
+                TimeoutException or OperationCanceledException => "La consulta de clientes tardó demasiado. Intente nuevamente.",
+                DbException => "No fue posible consultar la base de datos de clientes. Intente nuevamente.",
+                _ => "No se pudieron cargar los clientes. Informe esta referencia al equipo de soporte."
+            };
+            Response.StatusCode = exception is DbException or TimeoutException or OperationCanceledException ? 503 : 500;
+            return View("~/Views/Insudb/CLIENT/Index.cshtml", new ClientIndexViewModel
+            {
+                Search = q, ErrorMessage = message, ErrorReference = reference,
+                Result = new(Array.Empty<CLIENTDto>(), 0, page, pageSize)
+            });
+        }
     }
 
     // GET: CLIENT/Details/{id}

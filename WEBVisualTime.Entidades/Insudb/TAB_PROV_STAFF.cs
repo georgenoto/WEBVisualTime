@@ -20,7 +20,7 @@ public partial class TAB_PROV_STAFF
     public DateTime? DNULLDATE { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
-    public int NPROVIDER_REL { get; set; }
+    public int? NPROVIDER_REL { get; set; }
 
     [ForeignKey("NPROVIDER_REL")]
     public Insudb.TAB_PROVIDER? TAB_PROVIDERNPROVIDER_REL { get; set; }

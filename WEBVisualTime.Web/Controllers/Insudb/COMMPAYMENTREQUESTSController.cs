@@ -222,7 +222,7 @@ public class COMMPAYMENTREQUESTSController : Controller
 
     // GET: COMMPAYMENTREQUESTS/GetByNCURRENCY?NCURRENCY=value (cascade)
     [HttpGet]
-    public async Task<JsonResult> GetByNCURRENCY(int NCURRENCY)
+    public async Task<JsonResult> GetByNCURRENCY(long NCURRENCY)
     {
         var items = await _service.FindAsync(p => p.NCURRENCY == NCURRENCY);
         return Json(items.Select(i => new { value = i.NID_COMMPAYREQ, text = i.SCLIENAME_HOLDER }));

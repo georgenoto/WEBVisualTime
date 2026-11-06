@@ -2,7 +2,7 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.GROUP_COLUMNS;
 
 public class UpdateGROUP_COLUMNSDto
 {
-    public int NSHEET { get; set; }
+    public int? NSHEET { get; set; }
     public int NIDREC { get; set; }
     public string? SFIELD { get; set; }
     public DateTime? DCOMPDATE { get; set; }

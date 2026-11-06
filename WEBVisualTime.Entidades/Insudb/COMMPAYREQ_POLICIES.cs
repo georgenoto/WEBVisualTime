@@ -11,41 +11,57 @@ public partial class COMMPAYREQ_POLICIES
     public int NCONSEC { get; set; }
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
-    public int NPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
+    public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
-    public int NCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
+    public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NMODULEC { get; set; }
     public int? NGROUP_INSU { get; set; }
     public string SPOLITYPE { get; set; }
     public int? NIND_POLICY { get; set; }
     public int? NIND_CURRENT_POLICY { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }
-    public int NINTERTYP { get; set; }
+    public int? NINTERTYP { get; set; }
 
     [ForeignKey("NINTERTYP")]
     public Insudb.INTERM_TYP? INTERM_TYP { get; set; }
     public string? SCLIENAME_INTERMEDIA { get; set; }
     public DateTime DSTARTDATE { get; set; }
     public DateTime DEXPIRDAT { get; set; }
-    public int NCURRENCY { get; set; }
+    public long NCURRENCY { get; set; }
 
     [ForeignKey("NCURRENCY")]
     public Insudb.TABLE11? TABLE11 { get; set; }

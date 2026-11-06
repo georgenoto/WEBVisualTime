@@ -12,9 +12,9 @@ public class UpdateAGREEMENTDto
     public string? SSTATREGT { get; set; }
     public int NUSERCODE { get; set; }
     public int NTYPEAGREE { get; set; }
-    public int NTYPE_REC { get; set; }
-    public long NINTERMED { get; set; }
-    public int NAGENCY { get; set; }
+    public int? NTYPE_REC { get; set; }
+    public long? NINTERMED { get; set; }
+    public int? NAGENCY { get; set; }
     public string? SEMAIL_CONTACT { get; set; }
     public string? SPHONE_CONTACT { get; set; }
     public string? SCLIENAME { get; set; }

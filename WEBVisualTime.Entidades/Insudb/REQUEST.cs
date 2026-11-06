@@ -6,7 +6,7 @@ public partial class REQUEST
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public int NORIGIN { get; set; }
 
@@ -14,20 +14,36 @@ public partial class REQUEST
     public Insudb.TABLE5580? TABLE5580 { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public DateTime DEFFECDATE { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public string? STYP_SURR { get; set; }
@@ -41,14 +57,14 @@ public partial class REQUEST
     public long? NNOTENUM { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
 
     [ForeignKey("NNULLCODE")]
     public Insudb.TABLE13? TABLE13 { get; set; }
     public int? NTYP_REC { get; set; }
     public string? SREH_LREC { get; set; }
     public decimal? NINTERESTRATE { get; set; }
-    public int NTYPEPAY { get; set; }
+    public int? NTYPEPAY { get; set; }
 
     [ForeignKey("NTYPEPAY")]
     public Insudb.TABLE5527? TABLE5527 { get; set; }
@@ -60,34 +76,50 @@ public partial class REQUEST
     public Insudb.CLIENT? CLIENTSCLIPAYSURR { get; set; }
     public string? SCERTPAYSURR { get; set; }
 
-    [ForeignKey("SCERTPAYSURR")]
+    [ForeignKey("SCERTPAYSURR, NBRAPAYSURR, NPROPAYSURR, NPOLPAYSURR, NCERPAYSURR")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTPAYSURR { get; set; }
-    public int NBRAPAYSURR { get; set; }
+    public int? NBRAPAYSURR { get; set; }
 
-    [ForeignKey("NBRAPAYSURR")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRAPAYSURR { get; set; }
-    public int NPROPAYSURR { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRAPAYSURR
+    {
+        get => CERTIFICATSCERTPAYSURR;
+        set => CERTIFICATSCERTPAYSURR = value;
+    }
+    public int? NPROPAYSURR { get; set; }
 
-    [ForeignKey("NPROPAYSURR")]
-    public Insudb.CERTIFICAT? CERTIFICATNPROPAYSURR { get; set; }
-    public long NPOLPAYSURR { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPROPAYSURR
+    {
+        get => CERTIFICATSCERTPAYSURR;
+        set => CERTIFICATSCERTPAYSURR = value;
+    }
+    public long? NPOLPAYSURR { get; set; }
 
-    [ForeignKey("NPOLPAYSURR")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLPAYSURR { get; set; }
-    public long NCERPAYSURR { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLPAYSURR
+    {
+        get => CERTIFICATSCERTPAYSURR;
+        set => CERTIFICATSCERTPAYSURR = value;
+    }
+    public long? NCERPAYSURR { get; set; }
 
-    [ForeignKey("NCERPAYSURR")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERPAYSURR { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERPAYSURR
+    {
+        get => CERTIFICATSCERTPAYSURR;
+        set => CERTIFICATSCERTPAYSURR = value;
+    }
     public int? NAGENCY { get; set; }
-    public int NSURR_REASON { get; set; }
+    public int? NSURR_REASON { get; set; }
 
     [ForeignKey("NSURR_REASON")]
     public Insudb.TABLE5635? TABLE5635 { get; set; }
-    public int NTYPE_PAYMENT { get; set; }
+    public int? NTYPE_PAYMENT { get; set; }
 
     [ForeignKey("NTYPE_PAYMENT")]
     public Insudb.TABLE5636? TABLE5636 { get; set; }
-    public int NINSTITUTION { get; set; }
+    public int? NINSTITUTION { get; set; }
 
     [ForeignKey("NINSTITUTION")]
     public Insudb.TAB_FN_INSTITUTION? TAB_FN_INSTITUTION { get; set; }

@@ -5,8 +5,8 @@ public class UpdateCOMMPAYREQ_HISDto
     public long NID_COMMPAYREQ { get; set; }
     public int NMOVEMENT { get; set; }
     public DateTime? DMOVEMENT_DATE { get; set; }
-    public int NMOVEMENT_TYPE { get; set; }
-    public int NSTATUS { get; set; }
+    public int? NMOVEMENT_TYPE { get; set; }
+    public int? NSTATUS { get; set; }
     public int NUSERCODE { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public string? SCLARIFICATIONREQUESTED { get; set; }

@@ -15,7 +15,7 @@ public class SECTION_PODto
     public DateTime? DCOMPDATE { get; set; }
     public int? NUSERCODE { get; set; }
     public int NID { get; set; }
-    public int NORIGIN { get; set; }
+    public int? NORIGIN { get; set; }
     public string? TABLE5580SDESCRIPT { get; set; }
     public int? NTYPE_AMEND { get; set; }
     public DateTime? DNULLDATE { get; set; }

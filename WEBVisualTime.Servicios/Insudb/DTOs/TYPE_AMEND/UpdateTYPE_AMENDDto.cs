@@ -14,7 +14,7 @@ public class UpdateTYPE_AMENDDto
     public int NLEVEL { get; set; }
     public string? SRETARIF { get; set; }
     public string? SDESCRIPT { get; set; }
-    public int NTYPE_EV_ENDOR { get; set; }
+    public int? NTYPE_EV_ENDOR { get; set; }
     public string? SRESOLUTION { get; set; }
     public string? SGOVAPRNAME { get; set; }
     public DateTime? DRESDATE { get; set; }

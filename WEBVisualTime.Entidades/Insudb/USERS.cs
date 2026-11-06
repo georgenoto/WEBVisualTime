@@ -25,7 +25,7 @@ public partial class USERS
 
     [ForeignKey("STYPE")]
     public Insudb.TABLE105? TABLE105 { get; set; }
-    public int NDEPARTME { get; set; }
+    public int? NDEPARTME { get; set; }
 
     [ForeignKey("NDEPARTME")]
     public Insudb.TABLE84? TABLE84 { get; set; }

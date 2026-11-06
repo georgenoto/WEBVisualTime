@@ -9,9 +9,9 @@ public class USER_CASHNUMDto
     public string? USERSNUSERSACCESSWO { get; set; }
     public int NUSERCODE { get; set; }
     public string? USERSNUSERCODESACCESSWO { get; set; }
-    public int NCASHSUP { get; set; }
+    public int? NCASHSUP { get; set; }
     public string? USERSNCASHSUPSACCESSWO { get; set; }
-    public int NHEADSUP { get; set; }
+    public int? NHEADSUP { get; set; }
     public string? USERSNHEADSUPSACCESSWO { get; set; }
     public int NOFFICEAGEN { get; set; }
     public int? NTYPECASH { get; set; }

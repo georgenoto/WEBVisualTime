@@ -19,10 +19,10 @@ public class MASTERCL_ORDERDto
     public int? NUSER_AMEND { get; set; }
     public int? NUSER_AUDITDOC { get; set; }
     public int? NUSER_DERIVEDBY { get; set; }
-    public int NMASTERORDERTYPE { get; set; }
+    public int? NMASTERORDERTYPE { get; set; }
     public string? TABLE9265SDESCRIPT { get; set; }
     public string? SPREAUTHORIZATION { get; set; }
-    public int NCLAIMANTTYPE { get; set; }
+    public int? NCLAIMANTTYPE { get; set; }
     public string? TABLE9212SDESCRIPT { get; set; }
     public int? NREVALIDATIONS { get; set; }
     public DateTime? DORIGINALPREAUTH { get; set; }
@@ -37,10 +37,10 @@ public class MASTERCL_ORDERDto
     public decimal? NEXCHANGE { get; set; }
     public DateTime? DPRESENTDATE { get; set; }
     public long? NCLAIM { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
     public string? TABLE9263SDESCRIPT { get; set; }
     public DateTime? DLEDGERDAT { get; set; }
-    public int NCLA_LI_TYP { get; set; }
+    public int? NCLA_LI_TYP { get; set; }
     public string? TABLE210SDESCRIPT { get; set; }
     public int? NIND_REOPENCL { get; set; }
     public int? NCAUSEREOPENCL { get; set; }

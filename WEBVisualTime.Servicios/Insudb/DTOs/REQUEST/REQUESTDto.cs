@@ -25,12 +25,12 @@ public class REQUESTDto
     public long? NNOTENUM { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
     public string? TABLE13SDESCRIPT { get; set; }
     public int? NTYP_REC { get; set; }
     public string? SREH_LREC { get; set; }
     public decimal? NINTERESTRATE { get; set; }
-    public int NTYPEPAY { get; set; }
+    public int? NTYPEPAY { get; set; }
     public string? TABLE5527SDESCRIPT { get; set; }
     public DateTime? DMOVDATE { get; set; }
     public long? NREQUEST_NU { get; set; }
@@ -38,20 +38,20 @@ public class REQUESTDto
     public string? CLIENTSCLIPAYSURRSACCOUNT_IN { get; set; }
     public string? SCERTPAYSURR { get; set; }
     public string? CERTIFICATSCERTPAYSURRSCUMUL_CODE { get; set; }
-    public int NBRAPAYSURR { get; set; }
+    public int? NBRAPAYSURR { get; set; }
     public string? CERTIFICATNBRAPAYSURRSCUMUL_CODE { get; set; }
-    public int NPROPAYSURR { get; set; }
+    public int? NPROPAYSURR { get; set; }
     public string? CERTIFICATNPROPAYSURRSCUMUL_CODE { get; set; }
-    public long NPOLPAYSURR { get; set; }
+    public long? NPOLPAYSURR { get; set; }
     public string? CERTIFICATNPOLPAYSURRSCUMUL_CODE { get; set; }
-    public long NCERPAYSURR { get; set; }
+    public long? NCERPAYSURR { get; set; }
     public string? CERTIFICATNCERPAYSURRSCUMUL_CODE { get; set; }
     public int? NAGENCY { get; set; }
-    public int NSURR_REASON { get; set; }
+    public int? NSURR_REASON { get; set; }
     public string? TABLE5635SDESCRIPT { get; set; }
-    public int NTYPE_PAYMENT { get; set; }
+    public int? NTYPE_PAYMENT { get; set; }
     public string? TABLE5636SDESCRIPT { get; set; }
-    public int NINSTITUTION { get; set; }
+    public int? NINSTITUTION { get; set; }
     public string? TAB_FN_INSTITUTIONSNAME { get; set; }
     public string? SCLIENTINSTITUTION { get; set; }
     public string? CLIENTSCLIENTINSTITUTIONSACCOUNT_IN { get; set; }

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ITABLE9221Service : IService<TABLE9221Dto, CreateTABLE9221Dto, UpdateTABLE9221Dto, int>
+public interface ITABLE9221Service : IService<TABLE9221Dto, CreateTABLE9221Dto, UpdateTABLE9221Dto, long>
 {
     Task<IEnumerable<TABLE9221Dto>> FindAsync(Expression<Func<TABLE9221, bool>> predicate);
 }

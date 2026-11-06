@@ -6,9 +6,9 @@ public class COMMPAYREQ_HISDto
     public string? COMMPAYMENTREQUESTSSCLIENAME_HOLDER { get; set; }
     public int NMOVEMENT { get; set; }
     public DateTime? DMOVEMENT_DATE { get; set; }
-    public int NMOVEMENT_TYPE { get; set; }
+    public int? NMOVEMENT_TYPE { get; set; }
     public string? TABLE9276SDESCRIPT { get; set; }
-    public int NSTATUS { get; set; }
+    public int? NSTATUS { get; set; }
     public string? TABLE9275SDESCRIPT { get; set; }
     public int NUSERCODE { get; set; }
     public DateTime DCOMPDATE { get; set; }

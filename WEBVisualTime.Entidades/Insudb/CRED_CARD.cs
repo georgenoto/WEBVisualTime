@@ -13,7 +13,7 @@ public partial class CRED_CARD
     [ForeignKey("NBANKEXT")]
     public Insudb.TABLE7? TABLE7 { get; set; }
     public string SCREDI_CARD { get; set; }
-    public int NCARD_TYPE { get; set; }
+    public int? NCARD_TYPE { get; set; }
 
     [ForeignKey("NCARD_TYPE")]
     public Insudb.TABLE183? TABLE183 { get; set; }

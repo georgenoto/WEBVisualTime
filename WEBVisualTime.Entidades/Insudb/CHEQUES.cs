@@ -7,20 +7,20 @@ public partial class CHEQUES
     public long NREQUEST_NU { get; set; }
     public string SCHEQUE { get; set; }
     public int NCONSEC { get; set; }
-    public int NCONCEPT { get; set; }
+    public int? NCONCEPT { get; set; }
 
-    [ForeignKey("NCONCEPT")]
+    [ForeignKey("NCOMPANY, NCONCEPT")]
     public Insudb.PAY_ORD_CONCEPTS? PAY_ORD_CONCEPTSNCONCEPT { get; set; }
     public decimal? NAMOUNT { get; set; }
     public string SCLIENT { get; set; }
 
     [ForeignKey("SCLIENT")]
     public Insudb.CLIENT? CLIENT { get; set; }
-    public int NBRANCH_LED { get; set; }
+    public int? NBRANCH_LED { get; set; }
 
     [ForeignKey("NBRANCH_LED")]
     public Insudb.TABLE75? TABLE75 { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
 
     [ForeignKey("NCLAIM")]
     public Insudb.CLAIM? CLAIM { get; set; }
@@ -31,7 +31,7 @@ public partial class CHEQUES
     public string? SDESCRIPT { get; set; }
     public DateTime? DISSUE_DAT { get; set; }
     public DateTime? DLEDGER_DAT { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
 
     [ForeignKey("NNULLCODE")]
     public Insudb.TABLE295? TABLE295 { get; set; }
@@ -43,7 +43,7 @@ public partial class CHEQUES
 
     [ForeignKey("SREQUEST_TY")]
     public Insudb.TABLE193? TABLE193 { get; set; }
-    public int NSTA_CHEQUE { get; set; }
+    public int? NSTA_CHEQUE { get; set; }
 
     [ForeignKey("NSTA_CHEQUE")]
     public Insudb.TABLE187? TABLE187 { get; set; }
@@ -52,11 +52,11 @@ public partial class CHEQUES
     public int? NUSER_SOL { get; set; }
     public int? NUSERCODE { get; set; }
     public long? NYEAR_MONTH { get; set; }
-    public int NACC_BANK { get; set; }
+    public int? NACC_BANK { get; set; }
 
     [ForeignKey("NACC_BANK")]
     public Insudb.BANK_ACC? BANK_ACC { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
 
     [ForeignKey("NBORDEREAUX")]
     public Insudb.COLFORMREF? COLFORMREF { get; set; }
@@ -65,20 +65,24 @@ public partial class CHEQUES
     public decimal? NEXENT { get; set; }
     public int? NTAXCODE { get; set; }
     public decimal? NTAX_AMOUNT { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
 
     [ForeignKey("NOFFICE")]
     public Insudb.TABLE9? TABLE9 { get; set; }
     public int? NCASHNUM { get; set; }
-    public int NINSUR_AREA { get; set; }
+    public int? NINSUR_AREA { get; set; }
 
     [ForeignKey("NINSUR_AREA")]
     public Insudb.TABLE5001? TABLE5001 { get; set; }
     public int? NPAYORDBORD { get; set; }
     public int NCOMPANY { get; set; }
 
-    [ForeignKey("NCOMPANY")]
-    public Insudb.PAY_ORD_CONCEPTS? PAY_ORD_CONCEPTSNCOMPANY { get; set; }
+    [NotMapped]
+    public Insudb.PAY_ORD_CONCEPTS? PAY_ORD_CONCEPTSNCOMPANY
+    {
+        get => PAY_ORD_CONCEPTSNCONCEPT;
+        set => PAY_ORD_CONCEPTSNCONCEPT = value;
+    }
     public string? SINTER_PAY { get; set; }
     public decimal? NAMOUNT_LOCAL { get; set; }
     public int? NBRANCH { get; set; }
@@ -86,7 +90,7 @@ public partial class CHEQUES
     public long? NPOLICY { get; set; }
     public string? SFILE_FIN700 { get; set; }
     public DateTime? DDATE_FIN700 { get; set; }
-    public int NTYPESUPPORT { get; set; }
+    public int? NTYPESUPPORT { get; set; }
 
     [ForeignKey("NTYPESUPPORT")]
     public Insudb.TABLE5570? TABLE5570 { get; set; }

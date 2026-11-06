@@ -5,7 +5,7 @@ public class CreateSTIPEND_POLDto
     public int NUSERCODE { get; set; }
     public string? SCOMMITYP { get; set; }
     public long? NCONTRAT_PAY { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public decimal? NAMOUNT { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public DateTime? DNULLDATE { get; set; }

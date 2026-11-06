@@ -5,7 +5,7 @@ namespace WEBVisualTime.Entidades.Insudb;
 public partial class FINANCE_CO
 {
     public decimal? NAMOUNT { get; set; }
-    public int NFRECUENCY { get; set; }
+    public int? NFRECUENCY { get; set; }
 
     [ForeignKey("NFRECUENCY")]
     public Insudb.TABLE250? TABLE250 { get; set; }
@@ -20,7 +20,7 @@ public partial class FINANCE_CO
     public DateTime DEFFECDATE { get; set; }
     public DateTime? DDATE_PRINT { get; set; }
     public decimal? NDSCTO_AMO { get; set; }
-    public int NSTAT_CONTR { get; set; }
+    public int? NSTAT_CONTR { get; set; }
 
     [ForeignKey("NSTAT_CONTR")]
     public Insudb.TABLE278? TABLE278 { get; set; }
@@ -31,7 +31,7 @@ public partial class FINANCE_CO
     public DateTime? DLEDGER_DAT { get; set; }
     public long? NNOTENUM { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
 
     [ForeignKey("NOFFICE")]
     public Insudb.TABLE9? TABLE9 { get; set; }
@@ -39,12 +39,12 @@ public partial class FINANCE_CO
     public string? SPAYMENT_IN { get; set; }
     public int? NQ_DRAFT { get; set; }
     public string? SWAIT_CONTR { get; set; }
-    public int NUSERCODE { get; set; }
+    public int? NUSERCODE { get; set; }
 
     [ForeignKey("NUSERCODE")]
     public Insudb.USERS? USERS { get; set; }
     public int? NBILL_DAY { get; set; }
-    public int NWAY_PAY { get; set; }
+    public int? NWAY_PAY { get; set; }
 
     [ForeignKey("NWAY_PAY")]
     public Insudb.TABLE5002? TABLE5002 { get; set; }

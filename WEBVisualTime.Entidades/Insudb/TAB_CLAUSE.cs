@@ -18,7 +18,7 @@ public partial class TAB_CLAUSE
     public string? SSHORT_DES { get; set; }
     public int NUSERCODE { get; set; }
     public string? SMODIFIED { get; set; }
-    public int NTYPE { get; set; }
+    public int? NTYPE { get; set; }
 
     [ForeignKey("NTYPE")]
     public Insudb.TABLE7509? TABLE7509 { get; set; }

@@ -16,7 +16,7 @@ public partial class AGREEMENT_AL
     [ForeignKey("NUSERCODE")]
     public Insudb.USERS? USERS { get; set; }
     public int? NAGREE_TYPE { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }

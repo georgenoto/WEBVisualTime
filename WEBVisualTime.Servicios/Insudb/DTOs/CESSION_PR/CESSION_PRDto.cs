@@ -13,7 +13,7 @@ public class CESSION_PRDto
     public int NNUMBER { get; set; }
     public string? CONTRPROCNNUMBERSCAP_NOM_RI { get; set; }
     public int NID { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public string? TABLE5000SDESCRIPT { get; set; }
     public int NCOMPANY { get; set; }
     public string? COMPANYSACCOUNT { get; set; }
@@ -23,7 +23,7 @@ public class CESSION_PRDto
     public decimal NCOMMISSION { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NCONCEPT { get; set; }
+    public int? NCONCEPT { get; set; }
     public string? TABLE533SDESCRIPT { get; set; }
     public DateTime? DEXPIRDAT { get; set; }
     public decimal? NINTER_RATE { get; set; }
@@ -37,9 +37,9 @@ public class CESSION_PRDto
     public long? NTYPE_CESSI { get; set; }
     public int? NUSERCODE { get; set; }
     public decimal? NEXPENSIV { get; set; }
-    public int NBRANCH_LED { get; set; }
+    public int? NBRANCH_LED { get; set; }
     public string? TABLE75SDESCRIPT { get; set; }
-    public int NINSUR_AREA { get; set; }
+    public int? NINSUR_AREA { get; set; }
     public string? TABLE5001SDESCRIPT { get; set; }
     public int? NGROUP_INSU { get; set; }
     public int? NMODULEC { get; set; }

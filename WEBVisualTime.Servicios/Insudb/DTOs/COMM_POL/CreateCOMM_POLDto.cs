@@ -20,8 +20,8 @@ public class CreateCOMM_POLDto
     public int? NDRAFT { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
-    public int NTRATYPEI { get; set; }
-    public int NTYPE { get; set; }
+    public int? NTRATYPEI { get; set; }
+    public int? NTYPE { get; set; }
     public long? NTRANSAC { get; set; }
     public int? NMAINYEAR_COMM { get; set; }
     public long? NRECEIPT { get; set; }
@@ -32,8 +32,8 @@ public class CreateCOMM_POLDto
     public decimal? NBALANCE { get; set; }
     public string? SIND_DESC { get; set; }
     public string? SIND_BALANCE { get; set; }
-    public int NCOD_SALDIS { get; set; }
+    public int? NCOD_SALDIS { get; set; }
     public int? NCATEGORY { get; set; }
-    public int NID_CAMPAIGN { get; set; }
+    public int? NID_CAMPAIGN { get; set; }
     public DateTime? DDATEEND_CAMP { get; set; }
 }

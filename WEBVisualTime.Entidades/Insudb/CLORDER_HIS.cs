@@ -6,39 +6,47 @@ public partial class CLORDER_HIS
 {
     public long NCLAIM { get; set; }
 
-    [ForeignKey("NCLAIM")]
+    [ForeignKey("NCLAIM, NCASE_NUM, NDEMAN_TYPE, NORDER_NUM")]
     public Insudb.CLAIM_ORDER? CLAIM_ORDERNCLAIM { get; set; }
     public int NCASE_NUM { get; set; }
 
-    [ForeignKey("NCASE_NUM")]
-    public Insudb.CLAIM_ORDER? CLAIM_ORDERNCASE_NUM { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_ORDER? CLAIM_ORDERNCASE_NUM
+    {
+        get => CLAIM_ORDERNCLAIM;
+        set => CLAIM_ORDERNCLAIM = value;
+    }
     public int NDEMAN_TYPE { get; set; }
 
     [ForeignKey("NDEMAN_TYPE")]
     public Insudb.TABLE692? TABLE692 { get; set; }
     public long NORDER_NUM { get; set; }
 
-    [ForeignKey("NORDER_NUM")]
-    public Insudb.CLAIM_ORDER? CLAIM_ORDERNORDER_NUM { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_ORDER? CLAIM_ORDERNORDER_NUM
+    {
+        get => CLAIM_ORDERNCLAIM;
+        set => CLAIM_ORDERNCLAIM = value;
+    }
     public int NMOVEMENT { get; set; }
     public DateTime? DMOVEMENT_DATE { get; set; }
-    public int NSTATUS_ORDER { get; set; }
+    public int? NSTATUS_ORDER { get; set; }
 
     [ForeignKey("NSTATUS_ORDER")]
     public Insudb.TABLE9241? TABLE9241 { get; set; }
-    public int NATTENTCHANNEL { get; set; }
+    public int? NATTENTCHANNEL { get; set; }
 
     [ForeignKey("NATTENTCHANNEL")]
     public Insudb.TABLE9237? TABLE9237 { get; set; }
-    public int NTYPEDOC_PAY { get; set; }
+    public int? NTYPEDOC_PAY { get; set; }
 
     [ForeignKey("NTYPEDOC_PAY")]
     public Insudb.TABLE9242? TABLE9242 { get; set; }
-    public int NCURREN_DOC { get; set; }
+    public long? NCURREN_DOC { get; set; }
 
     [ForeignKey("NCURREN_DOC")]
     public Insudb.TABLE11? TABLE11NCURREN_DOC { get; set; }
-    public int NCURREN_ORDER { get; set; }
+    public long? NCURREN_ORDER { get; set; }
 
     [ForeignKey("NCURREN_ORDER")]
     public Insudb.TABLE11? TABLE11NCURREN_ORDER { get; set; }

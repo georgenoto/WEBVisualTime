@@ -28,7 +28,7 @@ public class CreateMASSIVE_LOG_PROCDto
     public long? NCOMBPOLICY { get; set; }
     public decimal? NCOMMISION { get; set; }
     public decimal? NSTIPEND_AMOUNT { get; set; }
-    public long NCOD_AGREE { get; set; }
+    public long? NCOD_AGREE { get; set; }
     public decimal? NAMOUNT_ORI { get; set; }
     public decimal? NAMOUNT_LOC { get; set; }
     public int? NACTION { get; set; }

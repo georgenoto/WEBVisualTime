@@ -29,10 +29,10 @@ public class UpdateCONTRNPRODto
     public int? NUSERCODE { get; set; }
     public int NCURR_PAY { get; set; }
     public decimal? NINTEREST { get; set; }
-    public int NFREQPAY { get; set; }
+    public int? NFREQPAY { get; set; }
     public int? NNEXTMONTHPA { get; set; }
     public int? NNEXTYEARPA { get; set; }
-    public int NFREQCT { get; set; }
+    public int? NFREQCT { get; set; }
     public int? NNEXTMONTHC { get; set; }
     public int? NNEXTYEARC { get; set; }
     public string? SROUCESSPR { get; set; }

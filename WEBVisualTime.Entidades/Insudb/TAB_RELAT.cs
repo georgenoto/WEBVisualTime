@@ -9,7 +9,7 @@ public partial class TAB_RELAT
     [ForeignKey("NRELASHIP")]
     public Insudb.TABLE15? TABLE15NRELASHIP { get; set; }
     public DateTime? DCOMPDATE { get; set; }
-    public int NREL_TARGET { get; set; }
+    public int? NREL_TARGET { get; set; }
 
     [ForeignKey("NREL_TARGET")]
     public Insudb.TABLE15? TABLE15NREL_TARGET { get; set; }

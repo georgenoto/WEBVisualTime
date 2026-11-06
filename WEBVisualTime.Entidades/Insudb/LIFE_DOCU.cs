@@ -6,24 +6,40 @@ public partial class LIFE_DOCU
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public DateTime DEFFECDATE { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public int NMODULEC { get; set; }
@@ -34,7 +50,7 @@ public partial class LIFE_DOCU
 
     [ForeignKey("NROLE")]
     public Insudb.TABLE12? TABLE12 { get; set; }
-    public int NSTAT_DOCREQ { get; set; }
+    public int? NSTAT_DOCREQ { get; set; }
 
     [ForeignKey("NSTAT_DOCREQ")]
     public Insudb.TABLE275? TABLE275 { get; set; }
@@ -46,14 +62,14 @@ public partial class LIFE_DOCU
     public int NUSERCODE { get; set; }
     public DateTime? DDATE_TO { get; set; }
     public DateTime? DDATEFREE { get; set; }
-    public long NEVAL { get; set; }
+    public long? NEVAL { get; set; }
 
     [ForeignKey("NEVAL")]
     public Insudb.EVAL_MASTER? EVAL_MASTER { get; set; }
     public DateTime? DDATEVIG { get; set; }
     public long? NNOTENUM { get; set; }
     public string? SREQUEST { get; set; }
-    public int NREASON { get; set; }
+    public int? NREASON { get; set; }
 
     [ForeignKey("NREASON")]
     public Insudb.TABLE5719? TABLE5719 { get; set; }

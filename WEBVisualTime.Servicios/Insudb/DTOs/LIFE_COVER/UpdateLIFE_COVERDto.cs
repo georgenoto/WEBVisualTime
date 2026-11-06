@@ -12,15 +12,15 @@ public class UpdateLIFE_COVERDto
     public string? SADDTAXIN { get; set; }
     public int NCOVERGEN { get; set; }
     public int? NBILL_ITEM { get; set; }
-    public int NBRANCH_GEN { get; set; }
+    public int? NBRANCH_GEN { get; set; }
     public int NBRANCH_EST { get; set; }
     public int NBRANCH_LED { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public decimal? NCAEXTEXP { get; set; }
     public string? SMORTACOF { get; set; }
     public decimal? NCAINTEXP { get; set; }
     public string? SMORTACOM { get; set; }
-    public int NRETARIF { get; set; }
+    public int? NRETARIF { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public string? SCOVERUSE { get; set; }
     public int? NCURRENCY { get; set; }

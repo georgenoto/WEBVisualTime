@@ -25,12 +25,12 @@ public partial class MASTERCL_ORDER
     public int? NUSER_AMEND { get; set; }
     public int? NUSER_AUDITDOC { get; set; }
     public int? NUSER_DERIVEDBY { get; set; }
-    public int NMASTERORDERTYPE { get; set; }
+    public int? NMASTERORDERTYPE { get; set; }
 
     [ForeignKey("NMASTERORDERTYPE")]
     public Insudb.TABLE9265? TABLE9265 { get; set; }
     public string? SPREAUTHORIZATION { get; set; }
-    public int NCLAIMANTTYPE { get; set; }
+    public int? NCLAIMANTTYPE { get; set; }
 
     [ForeignKey("NCLAIMANTTYPE")]
     public Insudb.TABLE9212? TABLE9212 { get; set; }
@@ -51,12 +51,12 @@ public partial class MASTERCL_ORDER
     public decimal? NEXCHANGE { get; set; }
     public DateTime? DPRESENTDATE { get; set; }
     public long? NCLAIM { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
 
     [ForeignKey("NNULLCODE")]
     public Insudb.TABLE9263? TABLE9263 { get; set; }
     public DateTime? DLEDGERDAT { get; set; }
-    public int NCLA_LI_TYP { get; set; }
+    public int? NCLA_LI_TYP { get; set; }
 
     [ForeignKey("NCLA_LI_TYP")]
     public Insudb.TABLE210? TABLE210 { get; set; }

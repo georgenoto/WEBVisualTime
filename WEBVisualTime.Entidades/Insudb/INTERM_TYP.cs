@@ -17,5 +17,5 @@ public partial class INTERM_TYP
     public Insudb.TABLE400? TABLE400 { get; set; }
     public string? SIND_FECU { get; set; }
     public string? SGEN_CERTIF { get; set; }
-    public int NRECEPTYP { get; set; }
+    public int? NRECEPTYP { get; set; }
 }

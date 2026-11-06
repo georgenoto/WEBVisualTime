@@ -8,13 +8,13 @@ public partial class PRODUCT_LI
     public int NPRODUCT { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public string? SACCOUNTI { get; set; }
-    public long NANLIFINT { get; set; }
+    public long? NANLIFINT { get; set; }
 
     [ForeignKey("NANLIFINT")]
     public Insudb.TABLE34? TABLE34 { get; set; }
     public decimal? NANNUALAP { get; set; }
     public string? SASSOCIAI { get; set; }
-    public int NBENEFAPL { get; set; }
+    public int? NBENEFAPL { get; set; }
 
     [ForeignKey("NBENEFAPL")]
     public Insudb.TABLE113? TABLE113 { get; set; }
@@ -32,17 +32,17 @@ public partial class PRODUCT_LI
     public string? SCLTRANSI { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NDEDUFREQ { get; set; }
+    public int? NDEDUFREQ { get; set; }
 
     [ForeignKey("NDEDUFREQ")]
     public Insudb.TABLE36? TABLE36NDEDUFREQ { get; set; }
     public decimal? NENTRANCE { get; set; }
-    public long NSURRFREQ { get; set; }
+    public long? NSURRFREQ { get; set; }
 
     [ForeignKey("NSURRFREQ")]
     public Insudb.TABLE114? TABLE114 { get; set; }
     public int? NIDURAFIX { get; set; }
-    public int NTYPDURINS { get; set; }
+    public int? NTYPDURINS { get; set; }
 
     [ForeignKey("NTYPDURINS")]
     public Insudb.TABLE5589? TABLE5589 { get; set; }
@@ -59,7 +59,7 @@ public partial class PRODUCT_LI
     public string? SNPEUNIFA { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public decimal? NPAYINITI { get; set; }
-    public long NPAYINTER { get; set; }
+    public long? NPAYINTER { get; set; }
 
     [ForeignKey("NPAYINTER")]
     public Insudb.TABLE74? TABLE74 { get; set; }
@@ -74,7 +74,7 @@ public partial class PRODUCT_LI
     [ForeignKey("SREVALTYP")]
     public Insudb.TABLE46? TABLE46 { get; set; }
     public string? SPERUNIFA { get; set; }
-    public long NPRODCLAS { get; set; }
+    public long? NPRODCLAS { get; set; }
 
     [ForeignKey("NPRODCLAS")]
     public Insudb.TABLE124? TABLE124 { get; set; }
@@ -93,7 +93,7 @@ public partial class PRODUCT_LI
     public string? SULFCHANI { get; set; }
     public int? NULFMAXQU { get; set; }
     public decimal? NULRCHARG { get; set; }
-    public int NULREDPER { get; set; }
+    public int? NULREDPER { get; set; }
 
     [ForeignKey("NULREDPER")]
     public Insudb.TABLE36? TABLE36NULREDPER { get; set; }
@@ -103,7 +103,7 @@ public partial class PRODUCT_LI
     public int? NULSMAXQU { get; set; }
     public string? SASSOTOTAL { get; set; }
     public int? NULSSCHAR { get; set; }
-    public int NULSWIPER { get; set; }
+    public int? NULSWIPER { get; set; }
 
     [ForeignKey("NULSWIPER")]
     public Insudb.TABLE36? TABLE36NULSWIPER { get; set; }
@@ -154,7 +154,7 @@ public partial class PRODUCT_LI
     public string? SS_ALLWCHNG { get; set; }
     public string? SIX_ALLWCHNG { get; set; }
     public string? SW_ALLWCHNG { get; set; }
-    public int NINFTYPE { get; set; }
+    public int? NINFTYPE { get; set; }
 
     [ForeignKey("NINFTYPE")]
     public Insudb.TABLE5675? TABLE5675 { get; set; }
@@ -171,21 +171,21 @@ public partial class PRODUCT_LI
     public int? NORIGIN_LOAN { get; set; }
     public int? NULMMSW { get; set; }
     public int? NULMMRD { get; set; }
-    public int NULSWMAXPER { get; set; }
+    public int? NULSWMAXPER { get; set; }
 
     [ForeignKey("NULSWMAXPER")]
     public Insudb.TABLE5644? TABLE5644NULSWMAXPER { get; set; }
-    public int NULRDMAXPER { get; set; }
+    public int? NULRDMAXPER { get; set; }
 
     [ForeignKey("NULRDMAXPER")]
     public Insudb.TABLE5644? TABLE5644NULRDMAXPER { get; set; }
     public int? NULSWMQT { get; set; }
     public int? NULRDMQT { get; set; }
-    public int NULSWMQTPER { get; set; }
+    public int? NULSWMQTPER { get; set; }
 
     [ForeignKey("NULSWMQTPER")]
     public Insudb.TABLE5644? TABLE5644NULSWMQTPER { get; set; }
-    public int NULRDMQTPER { get; set; }
+    public int? NULRDMQTPER { get; set; }
 
     [ForeignKey("NULRDMQTPER")]
     public Insudb.TABLE5644? TABLE5644NULRDMQTPER { get; set; }
@@ -204,7 +204,7 @@ public partial class PRODUCT_LI
     public string? SROUTINEVPN { get; set; }
     public string? SPRORATE { get; set; }
     public string? SNO_HOLIDAYS { get; set; }
-    public int NTYPE_RATEPROY { get; set; }
+    public int? NTYPE_RATEPROY { get; set; }
 
     [ForeignKey("NTYPE_RATEPROY")]
     public Insudb.TABLE8300? TABLE8300 { get; set; }

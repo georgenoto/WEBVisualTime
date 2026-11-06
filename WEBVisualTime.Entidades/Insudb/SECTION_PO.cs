@@ -21,7 +21,7 @@ public partial class SECTION_PO
     public DateTime? DCOMPDATE { get; set; }
     public int? NUSERCODE { get; set; }
     public int NID { get; set; }
-    public int NORIGIN { get; set; }
+    public int? NORIGIN { get; set; }
 
     [ForeignKey("NORIGIN")]
     public Insudb.TABLE5580? TABLE5580 { get; set; }

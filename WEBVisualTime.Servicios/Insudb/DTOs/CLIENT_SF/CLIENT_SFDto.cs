@@ -4,7 +4,7 @@ public class CLIENT_SFDto
 {
     public string SCLIENT { get; set; }
     public string SDIGIT { get; set; }
-    public int NPOSITION { get; set; }
+    public int? NPOSITION { get; set; }
     public string? TABLE8004SDESCRIPT { get; set; }
     public DateTime? DSTARTCONDITION { get; set; }
     public DateTime? DENDCONDITION { get; set; }

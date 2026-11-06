@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <!-- Build the application first with scripts/build-local.ps1 -Target All. -->
+    <Reference Include="../../WEBVisualTime.WebApi/bin/$(Configuration)/net8.0/*.dll"
+               Exclude="../../WEBVisualTime.WebApi/bin/$(Configuration)/net8.0/WEBVisualTime.Datos.dll;../../WEBVisualTime.WebApi/bin/$(Configuration)/net8.0/WEBVisualTime.Entidades.dll" />
+    <Reference Include="../../WEBVisualTime.Datos/bin/$(Configuration)/net8.0/WEBVisualTime.Datos.dll" />
+    <Reference Include="../../WEBVisualTime.Entidades/bin/$(Configuration)/net8.0/WEBVisualTime.Entidades.dll" />
+    <None Update="OracleCompositeKeys.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="OracleNullableColumns.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="OracleAdditionalRelationships.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

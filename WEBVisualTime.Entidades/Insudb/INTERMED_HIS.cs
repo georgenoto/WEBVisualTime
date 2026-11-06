@@ -9,20 +9,20 @@ public partial class INTERMED_HIS
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }
     public DateTime DEFFECDATE { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
 
     [ForeignKey("NNULLCODE")]
     public Insudb.TABLE163? TABLE163 { get; set; }
-    public int NINTERTYP { get; set; }
+    public int? NINTERTYP { get; set; }
 
     [ForeignKey("NINTERTYP")]
     public Insudb.INTERM_TYP? INTERM_TYP { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
 
     [ForeignKey("NOFFICE")]
     public Insudb.TABLE9? TABLE9 { get; set; }
     public long? NSUPERVIS { get; set; }
-    public int NINT_STATUS { get; set; }
+    public int? NINT_STATUS { get; set; }
 
     [ForeignKey("NINT_STATUS")]
     public Insudb.TABLE200? TABLE200 { get; set; }

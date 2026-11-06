@@ -7,7 +7,7 @@ public class TAB_PROV_CONTACTDto
     public int NSEQ { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NPOSITION { get; set; }
+    public int? NPOSITION { get; set; }
     public string? TABLE283SDESCRIPT { get; set; }
     public string? SNAME_CONTACT { get; set; }
     public string? SE_MAIL { get; set; }

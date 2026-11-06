@@ -19,7 +19,7 @@ public class CreatePRODUCTDto
     public string? SINDIVIND { get; set; }
     public string? SMULTIIND { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NPAYFREQ { get; set; }
+    public int? NPAYFREQ { get; set; }
     public string? SPOLITYPE { get; set; }
     public int? NQMAXCURR { get; set; }
     public string? SREINTYPE { get; set; }
@@ -40,7 +40,7 @@ public class CreatePRODUCTDto
     public int? NQDAYS_PRO { get; set; }
     public int? NQUOTA { get; set; }
     public string? SGROUPSI { get; set; }
-    public int NWAY_PAY { get; set; }
+    public int? NWAY_PAY { get; set; }
     public int? NBILL_DAY { get; set; }
     public int? NREHABPERIOD { get; set; }
     public string? STYP_DOM { get; set; }
@@ -58,7 +58,7 @@ public class CreatePRODUCTDto
     public string? SFRACRECEIP { get; set; }
     public string? SCONDSVS { get; set; }
     public string? SAUTO_SUSC { get; set; }
-    public int NREPINSURED { get; set; }
+    public int? NREPINSURED { get; set; }
     public int? NQDAYS_DIFQUO { get; set; }
     public int? NREHABPERIOD_AUT { get; set; }
     public string? SRECSEC { get; set; }
@@ -93,7 +93,7 @@ public class CreatePRODUCTDto
     public string? SCLIENT { get; set; }
     public int? NSELLCHANNEL { get; set; }
     public string? SNATIONALS { get; set; }
-    public int NCLASSIFICATION { get; set; }
+    public int? NCLASSIFICATION { get; set; }
     public string? SRESOLUTION { get; set; }
     public string? SGOVAPRNAME { get; set; }
     public DateTime? DRESDATE { get; set; }

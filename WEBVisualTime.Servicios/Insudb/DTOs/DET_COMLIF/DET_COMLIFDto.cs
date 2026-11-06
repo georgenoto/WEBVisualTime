@@ -27,17 +27,17 @@ public class DET_COMLIFDto
     public string? TABLE9108SDESCRIPT { get; set; }
     public string? SROUTINE { get; set; }
     public int? NLIFE_SCHE { get; set; }
-    public int NTYPCOMMIS { get; set; }
+    public int? NTYPCOMMIS { get; set; }
     public string? TABLE5662SDESCRIPT { get; set; }
     public decimal? NPERC_PAY { get; set; }
-    public int NTYPERISK { get; set; }
+    public int? NTYPERISK { get; set; }
     public string? TABLE5639SDESCRIPT { get; set; }
     public string? SSMOKING { get; set; }
     public decimal? NCAPITAL_INIT { get; set; }
     public decimal? NCAPITAL_END { get; set; }
     public decimal? NAMOUNTLIM { get; set; }
     public decimal? NDRCOMM { get; set; }
-    public int NIDCOMM { get; set; }
+    public int? NIDCOMM { get; set; }
     public int NCATEGORY { get; set; }
     public string? TABLE9202SDESCRIPT { get; set; }
 }

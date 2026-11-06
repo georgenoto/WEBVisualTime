@@ -6,11 +6,11 @@ public partial class COLFORMREF
 {
     public long NBORDEREAUX { get; set; }
     public string? STYPE { get; set; }
-    public long NBANK { get; set; }
+    public long? NBANK { get; set; }
 
     [ForeignKey("NBANK")]
     public Insudb.TABLE7? TABLE7 { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }
@@ -19,7 +19,7 @@ public partial class COLFORMREF
     public long? NPOLICY { get; set; }
     public DateTime? DCOLLECT { get; set; }
     public int? NBRANCH { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
 
     [ForeignKey("NOFFICE")]
     public Insudb.TABLE9? TABLE9 { get; set; }
@@ -51,7 +51,7 @@ public partial class COLFORMREF
     public DateTime DVALUEDATE { get; set; }
     public string? SIND_ANNUITY { get; set; }
     public DateTime? DDATE_BENLAR { get; set; }
-    public long NCOLLECTOR { get; set; }
+    public long? NCOLLECTOR { get; set; }
 
     [ForeignKey("NCOLLECTOR")]
     public Insudb.COLLECTOR? COLLECTOR { get; set; }

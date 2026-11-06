@@ -25,7 +25,7 @@ public partial class WAY_PAY_PROD
     public string? SCOLLECTION { get; set; }
     public string? SIND_PREREFMAX { get; set; }
     public string? SPRFIRST_EXPR { get; set; }
-    public int NTYPE_VALUECOLLECT { get; set; }
+    public int? NTYPE_VALUECOLLECT { get; set; }
 
     [ForeignKey("NTYPE_VALUECOLLECT")]
     public Insudb.TABLE8215? TABLE8215 { get; set; }

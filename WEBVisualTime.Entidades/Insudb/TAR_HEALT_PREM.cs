@@ -10,7 +10,7 @@ public partial class TAR_HEALT_PREM
     public Insudb.TABLE10? TABLE10 { get; set; }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
+    [ForeignKey("NBRANCH, NPRODUCT")]
     public Insudb.PRODMASTER? PRODMASTER { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public int NROLE { get; set; }

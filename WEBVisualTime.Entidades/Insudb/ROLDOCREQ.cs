@@ -6,32 +6,52 @@ public partial class ROLDOCREQ
 {
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
+    [ForeignKey("NBRANCH, NPRODUCT, SPOLITYPE, SCOMPON, NROLE")]
     public Insudb.CLIALLOPRO? CLIALLOPRONBRANCH { get; set; }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CLIALLOPRO? CLIALLOPRONPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CLIALLOPRO? CLIALLOPRONPRODUCT
+    {
+        get => CLIALLOPRONBRANCH;
+        set => CLIALLOPRONBRANCH = value;
+    }
     public string SPOLITYPE { get; set; }
 
-    [ForeignKey("SPOLITYPE")]
-    public Insudb.CLIALLOPRO? CLIALLOPROSPOLITYPE { get; set; }
+    [NotMapped]
+    public Insudb.CLIALLOPRO? CLIALLOPROSPOLITYPE
+    {
+        get => CLIALLOPRONBRANCH;
+        set => CLIALLOPRONBRANCH = value;
+    }
     public string SCOMPON { get; set; }
 
-    [ForeignKey("SCOMPON")]
-    public Insudb.CLIALLOPRO? CLIALLOPROSCOMPON { get; set; }
+    [NotMapped]
+    public Insudb.CLIALLOPRO? CLIALLOPROSCOMPON
+    {
+        get => CLIALLOPRONBRANCH;
+        set => CLIALLOPRONBRANCH = value;
+    }
     public int NROLE { get; set; }
 
-    [ForeignKey("NROLE")]
-    public Insudb.CLIALLOPRO? CLIALLOPRONROLE { get; set; }
+    [NotMapped]
+    public Insudb.CLIALLOPRO? CLIALLOPRONROLE
+    {
+        get => CLIALLOPRONBRANCH;
+        set => CLIALLOPRONBRANCH = value;
+    }
     public int NCLASSTYPDOC { get; set; }
 
-    [ForeignKey("NCLASSTYPDOC")]
+    [ForeignKey("NTYPCLIENTDOC, NCLASSTYPDOC")]
     public Insudb.FORMATVALUES? FORMATVALUESNCLASSTYPDOC { get; set; }
     public int NTYPCLIENTDOC { get; set; }
 
-    [ForeignKey("NTYPCLIENTDOC")]
-    public Insudb.FORMATVALUES? FORMATVALUESNTYPCLIENTDOC { get; set; }
+    [NotMapped]
+    public Insudb.FORMATVALUES? FORMATVALUESNTYPCLIENTDOC
+    {
+        get => FORMATVALUESNCLASSTYPDOC;
+        set => FORMATVALUESNCLASSTYPDOC = value;
+    }
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
 }

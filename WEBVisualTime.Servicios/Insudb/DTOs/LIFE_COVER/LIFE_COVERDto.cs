@@ -13,19 +13,19 @@ public class LIFE_COVERDto
     public int NCOVERGEN { get; set; }
     public string? TAB_LIFCOVSCACALFRI { get; set; }
     public int? NBILL_ITEM { get; set; }
-    public int NBRANCH_GEN { get; set; }
+    public int? NBRANCH_GEN { get; set; }
     public string? TABLE634SDESCRIPT { get; set; }
     public int NBRANCH_EST { get; set; }
     public string? TABLE71SDESCRIPT { get; set; }
     public int NBRANCH_LED { get; set; }
     public string? TABLE75SDESCRIPT { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public string? TABLE5000SDESCRIPT { get; set; }
     public decimal? NCAEXTEXP { get; set; }
     public string? SMORTACOF { get; set; }
     public decimal? NCAINTEXP { get; set; }
     public string? SMORTACOM { get; set; }
-    public int NRETARIF { get; set; }
+    public int? NRETARIF { get; set; }
     public string? TABLE5559SDESCRIPT { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public string? SCOVERUSE { get; set; }

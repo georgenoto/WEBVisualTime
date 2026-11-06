@@ -4,7 +4,7 @@ public class UpdateTAX_FIXVALDto
 {
     public int NCODE { get; set; }
     public string STYPETAX { get; set; }
-    public int NTYPESUPPORT { get; set; }
+    public int? NTYPESUPPORT { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public decimal? NPERCENT { get; set; }
     public DateTime DCOMPDATE { get; set; }

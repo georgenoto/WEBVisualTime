@@ -4,7 +4,7 @@ public class NOCONVERSDto
 {
     public int NNO_CONVERS { get; set; }
     public string? SDESCRIPT { get; set; }
-    public int NAREAWAIT { get; set; }
+    public int? NAREAWAIT { get; set; }
     public string? TABLE5603SDESCRIPT { get; set; }
     public string? SDEVO { get; set; }
     public string? SDISC { get; set; }

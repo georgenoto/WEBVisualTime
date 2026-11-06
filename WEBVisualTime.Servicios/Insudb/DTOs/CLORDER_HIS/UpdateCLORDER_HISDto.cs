@@ -8,11 +8,11 @@ public class UpdateCLORDER_HISDto
     public long NORDER_NUM { get; set; }
     public int NMOVEMENT { get; set; }
     public DateTime? DMOVEMENT_DATE { get; set; }
-    public int NSTATUS_ORDER { get; set; }
-    public int NATTENTCHANNEL { get; set; }
-    public int NTYPEDOC_PAY { get; set; }
-    public int NCURREN_DOC { get; set; }
-    public int NCURREN_ORDER { get; set; }
+    public int? NSTATUS_ORDER { get; set; }
+    public int? NATTENTCHANNEL { get; set; }
+    public int? NTYPEDOC_PAY { get; set; }
+    public long? NCURREN_DOC { get; set; }
+    public long? NCURREN_ORDER { get; set; }
     public int? NPROVIDER { get; set; }
     public string? STYPECARE { get; set; }
     public string? SIND_REV { get; set; }

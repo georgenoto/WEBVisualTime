@@ -3,11 +3,11 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.DIR_DEBIT;
 public class CreateDIR_DEBITDto
 {
     public string? SACCOUNT { get; set; }
-    public long NBANKEXT { get; set; }
+    public long? NBANKEXT { get; set; }
     public string SCLIENT { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public string? SCREDI_CARD { get; set; }
-    public int NTYP_CRECARD { get; set; }
+    public int? NTYP_CRECARD { get; set; }
     public string? STYP_DIRDEB { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NUSERCODE { get; set; }

@@ -34,13 +34,13 @@ public partial class CLAIM_CASE
     public decimal? NTRANSF_AMOUNT { get; set; }
     public decimal? NAPV_TAX { get; set; }
     public decimal? NAPV_BENEF_BALANCE { get; set; }
-    public long NAFP { get; set; }
+    public long? NAFP { get; set; }
 
     [ForeignKey("NAFP")]
     public Insudb.TABLE5524? TABLE5524 { get; set; }
     public int? NSENDTO_LGM { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
 
     [ForeignKey("NNULLCODE")]
     public Insudb.TABLE136? TABLE136 { get; set; }

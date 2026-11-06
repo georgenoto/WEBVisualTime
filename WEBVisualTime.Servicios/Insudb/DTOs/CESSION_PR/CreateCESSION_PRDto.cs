@@ -4,13 +4,13 @@ public class CreateCESSION_PRDto
 {
     public int NNUM_CESS { get; set; }
     public int NNUMBER { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public int NCOMPANY { get; set; }
     public decimal? NCAPITAL { get; set; }
     public decimal NCOMMISSION { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NCONCEPT { get; set; }
+    public int? NCONCEPT { get; set; }
     public DateTime? DEXPIRDAT { get; set; }
     public decimal? NINTER_RATE { get; set; }
     public decimal NPREMIUM { get; set; }
@@ -21,8 +21,8 @@ public class CreateCESSION_PRDto
     public long? NTYPE_CESSI { get; set; }
     public int? NUSERCODE { get; set; }
     public decimal? NEXPENSIV { get; set; }
-    public int NBRANCH_LED { get; set; }
-    public int NINSUR_AREA { get; set; }
+    public int? NBRANCH_LED { get; set; }
+    public int? NINSUR_AREA { get; set; }
     public int? NGROUP_INSU { get; set; }
     public int? NMODULEC { get; set; }
     public int? NCOVER { get; set; }

@@ -12,7 +12,7 @@ public class UpdateTAB_AM_EXCDto
     public DateTime DEFFECDATE { get; set; }
     public int NID { get; set; }
     public string? SCLIENT { get; set; }
-    public int NEXC_CODE { get; set; }
+    public int? NEXC_CODE { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public DateTime? DINIT_DATE { get; set; }
     public DateTime? DNULLDATE { get; set; }

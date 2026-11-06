@@ -5,12 +5,12 @@ namespace WEBVisualTime.Entidades.Insudb;
 public partial class FINANC_DRA
 {
     public decimal? NAMOUNT { get; set; }
-    public int NSTAT_DRAFT { get; set; }
+    public int? NSTAT_DRAFT { get; set; }
 
     [ForeignKey("NSTAT_DRAFT")]
     public Insudb.TABLE253? TABLE253 { get; set; }
     public decimal? NAMOUNT_NET { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
 
     [ForeignKey("NCLAIM")]
     public Insudb.CLAIM? CLAIM { get; set; }
@@ -20,11 +20,11 @@ public partial class FINANC_DRA
     public int NDRAFT { get; set; }
     public DateTime? DEXPIRDAT { get; set; }
     public decimal? NINTAMMOU { get; set; }
-    public int NSTATPRINT { get; set; }
+    public int? NSTATPRINT { get; set; }
 
     [ForeignKey("NSTATPRINT")]
     public Insudb.TABLE282? TABLE282 { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }
@@ -33,21 +33,21 @@ public partial class FINANC_DRA
 
     [ForeignKey("NUSERCODE")]
     public Insudb.USERS? USERS { get; set; }
-    public long NBULLETINS { get; set; }
+    public long? NBULLETINS { get; set; }
     public decimal? NAMO_AFEC { get; set; }
     public decimal? NAMO_EXEN { get; set; }
     public decimal? NIVA { get; set; }
     public decimal? NCOM_AFEC { get; set; }
     public decimal? NCOM_EXEN { get; set; }
     public DateTime DLIMITDATE { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
 
     [ForeignKey("NBORDEREAUX")]
     public Insudb.COLFORMREF? COLFORMREF { get; set; }
     public string? SINDCHEQUE { get; set; }
     public DateTime? DCOLLSUS_INI { get; set; }
     public DateTime? DCOLLSUS_END { get; set; }
-    public int NSUS_REASON { get; set; }
+    public int? NSUS_REASON { get; set; }
 
     [ForeignKey("NSUS_REASON")]
     public Insudb.TABLE5566? TABLE5566 { get; set; }
@@ -55,7 +55,7 @@ public partial class FINANC_DRA
     public long? NCOLLECTOR { get; set; }
     public long? NBILLNUM { get; set; }
     public string? SBILLTYPE { get; set; }
-    public int NWAY_PAY { get; set; }
+    public int? NWAY_PAY { get; set; }
 
     [ForeignKey("NWAY_PAY")]
     public Insudb.TABLE5002? TABLE5002 { get; set; }

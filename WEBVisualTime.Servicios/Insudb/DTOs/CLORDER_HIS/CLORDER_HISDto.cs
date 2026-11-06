@@ -12,15 +12,15 @@ public class CLORDER_HISDto
     public string? CLAIM_ORDERNORDER_NUMSTYPECARE { get; set; }
     public int NMOVEMENT { get; set; }
     public DateTime? DMOVEMENT_DATE { get; set; }
-    public int NSTATUS_ORDER { get; set; }
+    public int? NSTATUS_ORDER { get; set; }
     public string? TABLE9241SDESCRIPT { get; set; }
-    public int NATTENTCHANNEL { get; set; }
+    public int? NATTENTCHANNEL { get; set; }
     public string? TABLE9237SDESCRIPT { get; set; }
-    public int NTYPEDOC_PAY { get; set; }
+    public int? NTYPEDOC_PAY { get; set; }
     public string? TABLE9242SDESCRIPT { get; set; }
-    public int NCURREN_DOC { get; set; }
+    public long? NCURREN_DOC { get; set; }
     public string? TABLE11NCURREN_DOCSDESCRIPT { get; set; }
-    public int NCURREN_ORDER { get; set; }
+    public long? NCURREN_ORDER { get; set; }
     public string? TABLE11NCURREN_ORDERSDESCRIPT { get; set; }
     public int? NPROVIDER { get; set; }
     public string? STYPECARE { get; set; }

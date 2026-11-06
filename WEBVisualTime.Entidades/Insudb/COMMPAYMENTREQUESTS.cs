@@ -6,7 +6,7 @@ public partial class COMMPAYMENTREQUESTS
 {
     public long NID_COMMPAYREQ { get; set; }
     public DateTime? DREGISTRATIONDATE { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
 
     [ForeignKey("NOFFICE")]
     public Insudb.TABLE9? TABLE9 { get; set; }
@@ -26,7 +26,7 @@ public partial class COMMPAYMENTREQUESTS
     public Insudb.CLIENT? CLIENTSCLIENT_AFFECT { get; set; }
     public string? SCLIENAME_AFFECT { get; set; }
     public int? NAGE_AFFECT { get; set; }
-    public int NROLE { get; set; }
+    public int? NROLE { get; set; }
 
     [ForeignKey("NROLE")]
     public Insudb.TABLE12? TABLE12 { get; set; }
@@ -40,13 +40,13 @@ public partial class COMMPAYMENTREQUESTS
 
     [ForeignKey("STYPECARE_PRECLAIM")]
     public Insudb.TABLE8604? TABLE8604 { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
 
     [ForeignKey("NCLAIM")]
     public Insudb.CLAIM? CLAIM { get; set; }
     public DateTime? DREJECTEDDATE { get; set; }
     public decimal? NAMOUNTREJECTED_PRECLAIM { get; set; }
-    public int NCURRENCY { get; set; }
+    public long? NCURRENCY { get; set; }
 
     [ForeignKey("NCURRENCY")]
     public Insudb.TABLE11? TABLE11NCURRENCY { get; set; }
@@ -54,14 +54,14 @@ public partial class COMMPAYMENTREQUESTS
     public string? REASONREJECT_PRECLAIM { get; set; }
     public string? SCLARIFICATIONREQUESTED { get; set; }
     public string? SJUSTIFICATIONREQUESTED { get; set; }
-    public int NUSERCODE_RESPONSIBLE { get; set; }
+    public int? NUSERCODE_RESPONSIBLE { get; set; }
 
     [ForeignKey("NUSERCODE_RESPONSIBLE")]
     public Insudb.USERS? USERSNUSERCODE_RESPONSIBLE { get; set; }
     public DateTime? DRESULTDATE { get; set; }
     public string? SIND_RESULT { get; set; }
     public string? SIND_ASSUMEIVA { get; set; }
-    public int NCURRENCY_PAY { get; set; }
+    public long? NCURRENCY_PAY { get; set; }
 
     [ForeignKey("NCURRENCY_PAY")]
     public Insudb.TABLE11? TABLE11NCURRENCY_PAY { get; set; }
@@ -81,11 +81,11 @@ public partial class COMMPAYMENTREQUESTS
     public Insudb.TABLE9275? TABLE9275 { get; set; }
     public long? NNOTENUM { get; set; }
     public int? NMOVEMENT { get; set; }
-    public int NUSER_AMEND { get; set; }
+    public int? NUSER_AMEND { get; set; }
 
     [ForeignKey("NUSER_AMEND")]
     public Insudb.USERS? USERSNUSER_AMEND { get; set; }
-    public int NUSER_DERIVEDBY { get; set; }
+    public int? NUSER_DERIVEDBY { get; set; }
 
     [ForeignKey("NUSER_DERIVEDBY")]
     public Insudb.USERS? USERSNUSER_DERIVEDBY { get; set; }

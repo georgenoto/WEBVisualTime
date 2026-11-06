@@ -3,15 +3,15 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.PREMIUM_MO;
 public class CreatePREMIUM_MODto
 {
     public decimal? NAMOUNT { get; set; }
-    public int NCARD_TYPE { get; set; }
+    public int? NCARD_TYPE { get; set; }
     public string? SAUX_ACCOUN { get; set; }
     public decimal? NBALANCE { get; set; }
-    public long NBANK_CODE { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBANK_CODE { get; set; }
+    public long? NBORDEREAUX { get; set; }
     public DateTime? DCAR_DATEXP { get; set; }
     public string? SCARD_NUM { get; set; }
     public long? NCASH_MOV { get; set; }
-    public int NCAUSE_AMEN { get; set; }
+    public int? NCAUSE_AMEN { get; set; }
     public string? SCESSICOI { get; set; }
     public string? SCHANG_ACC { get; set; }
     public DateTime DCOMPDATE { get; set; }
@@ -20,7 +20,7 @@ public class CreatePREMIUM_MODto
     public string? SIND_REVER { get; set; }
     public decimal? NINT_MORA { get; set; }
     public string? SINTERMEI { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
     public string? SPAY_FORM { get; set; }
     public DateTime? DPOSTED { get; set; }
     public decimal? NPREMIUM { get; set; }
@@ -29,16 +29,16 @@ public class CreatePREMIUM_MODto
     public string? SSTATISI { get; set; }
     public int NUSERCODE { get; set; }
     public DateTime? DLEDGERDAT { get; set; }
-    public int NTYPE { get; set; }
+    public int? NTYPE { get; set; }
     public decimal? NEXCHANGE { get; set; }
     public string? SINDASSOCPRO { get; set; }
     public decimal? NPAYSOONDISC { get; set; }
     public string? SIND_ASIS { get; set; }
     public string? SIND_COMI { get; set; }
-    public long NBULLETINS { get; set; }
+    public long? NBULLETINS { get; set; }
     public int? NCASHNUM { get; set; }
     public int? NPAYREJECT { get; set; }
-    public long NCOLLECTOR { get; set; }
+    public long? NCOLLECTOR { get; set; }
     public long? NBILLNUM { get; set; }
     public string? SBILLTYPE { get; set; }
     public string? SIND_SOAP { get; set; }

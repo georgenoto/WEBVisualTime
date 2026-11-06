@@ -29,7 +29,7 @@ public class REQ_ENDORDto
     public long? NPOLICYENDOR { get; set; }
     public string? SOBS { get; set; }
     public string? SREASON_REJECT { get; set; }
-    public int NUSERCODE_REJECT { get; set; }
+    public int? NUSERCODE_REJECT { get; set; }
     public string? USERSNUSERCODE_REJECTSACCESSWO { get; set; }
     public DateTime? DREJECT { get; set; }
     public long? NID_SECUENCIA { get; set; }

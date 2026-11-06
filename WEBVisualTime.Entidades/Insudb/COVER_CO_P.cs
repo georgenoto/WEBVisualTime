@@ -6,20 +6,32 @@ public partial class COVER_CO_P
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY")]
     public Insudb.POLICY? POLICYSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.POLICY? POLICYNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.POLICY? POLICYNBRANCH
+    {
+        get => POLICYSCERTYPE;
+        set => POLICYSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.POLICY? POLICYNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.POLICY? POLICYNPRODUCT
+    {
+        get => POLICYSCERTYPE;
+        set => POLICYSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.POLICY? POLICYNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.POLICY? POLICYNPOLICY
+    {
+        get => POLICYSCERTYPE;
+        set => POLICYSCERTYPE = value;
+    }
     public int NMODULEC { get; set; }
     public int NCOVER { get; set; }
     public DateTime DEFFECDATE { get; set; }
@@ -64,17 +76,17 @@ public partial class COVER_CO_P
     public int? NAGEMAXINSF { get; set; }
     public int? NAGEMAXPERF { get; set; }
     public int? NDURPAY { get; set; }
-    public int NTYPDURPAY { get; set; }
+    public int? NTYPDURPAY { get; set; }
 
     [ForeignKey("NTYPDURPAY")]
     public Insudb.TABLE5589? TABLE5589NTYPDURPAY { get; set; }
     public decimal? NRATECOVE { get; set; }
     public decimal? NPREMIUM { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
 
     [ForeignKey("NBRANCH_REI")]
     public Insudb.TABLE5000? TABLE5000 { get; set; }
-    public int NRETARIF { get; set; }
+    public int? NRETARIF { get; set; }
 
     [ForeignKey("NRETARIF")]
     public Insudb.TABLE5559? TABLE5559 { get; set; }
@@ -99,7 +111,7 @@ public partial class COVER_CO_P
     public int? NTYP_AGEMINM { get; set; }
     public int? NTYP_AGEMINF { get; set; }
     public decimal? NPERCENT { get; set; }
-    public int NFREQMAXEVEN { get; set; }
+    public int? NFREQMAXEVEN { get; set; }
 
     [ForeignKey("NFREQMAXEVEN")]
     public Insudb.TABLE340? TABLE340 { get; set; }

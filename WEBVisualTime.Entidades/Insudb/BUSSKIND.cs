@@ -12,11 +12,15 @@ public partial class BUSSKIND
     public int NUSERCODE { get; set; }
     public int NBUSINESSTY { get; set; }
 
-    [ForeignKey("NBUSINESSTY")]
+    [ForeignKey("NBUSINESSTY, NCOMMERGRP")]
     public Insudb.TYPEPERGROUP? TYPEPERGROUPNBUSINESSTY { get; set; }
     public int NCOMMERGRP { get; set; }
 
-    [ForeignKey("NCOMMERGRP")]
-    public Insudb.TYPEPERGROUP? TYPEPERGROUPNCOMMERGRP { get; set; }
+    [NotMapped]
+    public Insudb.TYPEPERGROUP? TYPEPERGROUPNCOMMERGRP
+    {
+        get => TYPEPERGROUPNBUSINESSTY;
+        set => TYPEPERGROUPNBUSINESSTY = value;
+    }
     public int NCODKIND { get; set; }
 }

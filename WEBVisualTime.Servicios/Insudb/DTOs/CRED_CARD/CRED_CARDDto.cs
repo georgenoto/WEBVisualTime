@@ -7,7 +7,7 @@ public class CRED_CARDDto
     public long NBANKEXT { get; set; }
     public string? TABLE7SDESCRIPT { get; set; }
     public string SCREDI_CARD { get; set; }
-    public int NCARD_TYPE { get; set; }
+    public int? NCARD_TYPE { get; set; }
     public string? TABLE183SDESCRIPT { get; set; }
     public string? SSTATREGT { get; set; }
     public DateTime DCARDEXPIR { get; set; }

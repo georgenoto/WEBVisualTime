@@ -17,6 +17,6 @@ public class MASSIVE_RULESDto
     public string? SVIP { get; set; }
     public string? STYP_CONDI { get; set; }
     public string? TABLE8204SDESCRIPT { get; set; }
-    public int NSECTION { get; set; }
+    public int? NSECTION { get; set; }
     public string? TABLE8205SDESCRIPT { get; set; }
 }

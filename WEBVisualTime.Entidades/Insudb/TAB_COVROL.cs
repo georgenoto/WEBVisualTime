@@ -6,15 +6,19 @@ public partial class TAB_COVROL
 {
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
+    [ForeignKey("NBRANCH, NPRODUCT")]
     public Insudb.PRODMASTER? PRODMASTERNBRANCH { get; set; }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.PRODMASTER? PRODMASTERNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.PRODMASTER? PRODMASTERNPRODUCT
+    {
+        get => PRODMASTERNBRANCH;
+        set => PRODMASTERNBRANCH = value;
+    }
     public int NMODULEC { get; set; }
     public int NCOVER { get; set; }
-    public int NROLCAP { get; set; }
+    public int? NROLCAP { get; set; }
 
     [ForeignKey("NROLCAP")]
     public Insudb.TABLE12? TABLE12NROLCAP { get; set; }
@@ -33,7 +37,7 @@ public partial class TAB_COVROL
     public int? NAGEMAXINSF { get; set; }
     public int? NAGEMAXPERF { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NUSERCODE { get; set; }
+    public int? NUSERCODE { get; set; }
 
     [ForeignKey("NUSERCODE")]
     public Insudb.USERS? USERS { get; set; }
@@ -45,7 +49,7 @@ public partial class TAB_COVROL
     public decimal? NCAPMAXIM { get; set; }
     public decimal? NCAPMINIM { get; set; }
     public int? NCOVER_IN { get; set; }
-    public int NROLPREM { get; set; }
+    public int? NROLPREM { get; set; }
 
     [ForeignKey("NROLPREM")]
     public Insudb.TABLE12? TABLE12NROLPREM { get; set; }
@@ -93,7 +97,7 @@ public partial class TAB_COVROL
     public string? SCHANGETYP { get; set; }
     public string? SSTATREGT { get; set; }
     public string? SROUT_PAY { get; set; }
-    public int NTYPDURPAY { get; set; }
+    public int? NTYPDURPAY { get; set; }
 
     [ForeignKey("NTYPDURPAY")]
     public Insudb.TABLE5589? TABLE5589NTYPDURPAY { get; set; }
@@ -101,7 +105,7 @@ public partial class TAB_COVROL
 
     [ForeignKey("SCAREN_TYPE")]
     public Insudb.TABLE52? TABLE52 { get; set; }
-    public int NTYPDURINS { get; set; }
+    public int? NTYPDURINS { get; set; }
 
     [ForeignKey("NTYPDURINS")]
     public Insudb.TABLE5589? TABLE5589NTYPDURINS { get; set; }
@@ -114,7 +118,7 @@ public partial class TAB_COVROL
     public string? SCLIILLNESS { get; set; }
     public string? SCACALTYP { get; set; }
     public string? SCLSURVII { get; set; }
-    public int NCAMAXROL { get; set; }
+    public int? NCAMAXROL { get; set; }
 
     [ForeignKey("NCAMAXROL")]
     public Insudb.TABLE12? TABLE12NCAMAXROL { get; set; }
@@ -122,7 +126,7 @@ public partial class TAB_COVROL
     public decimal? NMAXRENT { get; set; }
     public decimal? NPREMIFIX { get; set; }
     public int? NCOVACTIV_REL { get; set; }
-    public int NROLACTIV_REL { get; set; }
+    public int? NROLACTIV_REL { get; set; }
 
     [ForeignKey("NROLACTIV_REL")]
     public Insudb.TABLE12? TABLE12NROLACTIV_REL { get; set; }
@@ -130,7 +134,7 @@ public partial class TAB_COVROL
     public string? SLEG { get; set; }
     public int? NUNITM { get; set; }
     public int? NUNITF { get; set; }
-    public int NID_TABLE { get; set; }
+    public int? NID_TABLE { get; set; }
 
     [ForeignKey("NID_TABLE")]
     public Insudb.TABLE5800? TABLE5800 { get; set; }
@@ -145,7 +149,7 @@ public partial class TAB_COVROL
     public long? NRECCOSTFP { get; set; }
     public int? NTYPEAGE { get; set; }
     public string? SROURATE { get; set; }
-    public long NFIELDDATE { get; set; }
+    public long? NFIELDDATE { get; set; }
 
     [ForeignKey("NFIELDDATE")]
     public Insudb.TABLE8106? TABLE8106 { get; set; }
@@ -164,7 +168,7 @@ public partial class TAB_COVROL
     public decimal? NPERCCOAS { get; set; }
     public string? SROUT_REDUCTCAP { get; set; }
     public string? SEXEMPTION { get; set; }
-    public int NTYPE_DUREXEMP { get; set; }
+    public int? NTYPE_DUREXEMP { get; set; }
 
     [ForeignKey("NTYPE_DUREXEMP")]
     public Insudb.TABLE5589? TABLE5589NTYPE_DUREXEMP { get; set; }

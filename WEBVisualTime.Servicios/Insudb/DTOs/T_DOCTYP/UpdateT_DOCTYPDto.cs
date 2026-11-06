@@ -16,10 +16,10 @@ public class UpdateT_DOCTYPDto
     public string? SCLIENT { get; set; }
     public long? NBULLETINS { get; set; }
     public long? NPROPONUM { get; set; }
-    public int NTYPEMOVE { get; set; }
+    public int? NTYPEMOVE { get; set; }
     public DateTime? DMOVDATE { get; set; }
     public int? NTYPE { get; set; }
-    public int NTRATYPEI { get; set; }
+    public int? NTRATYPEI { get; set; }
     public int? NCURRENCY { get; set; }
     public decimal? NEXCHANGE { get; set; }
     public decimal? NAMOUNTCOL { get; set; }
@@ -44,9 +44,9 @@ public class UpdateT_DOCTYPDto
     public DateTime? DISSUEDATBON { get; set; }
     public DateTime? DEXPIRDATBON { get; set; }
     public decimal? NTAX { get; set; }
-    public int NORIGIN { get; set; }
+    public int? NORIGIN { get; set; }
     public DateTime? DDATE_ORIGIN { get; set; }
-    public int NINSTITUTION { get; set; }
+    public int? NINSTITUTION { get; set; }
     public int? NCHANGESDAT { get; set; }
     public DateTime? DVALUEDATE { get; set; }
     public long? NCOLLECTOR { get; set; }

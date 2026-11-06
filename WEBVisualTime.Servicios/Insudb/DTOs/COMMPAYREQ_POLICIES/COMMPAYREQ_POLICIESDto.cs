@@ -11,23 +11,23 @@ public class COMMPAYREQ_POLICIESDto
     public string? CERTIFICATNBRANCHSCUMUL_CODE { get; set; }
     public int NPRODUCT { get; set; }
     public string? CERTIFICATNPRODUCTSCUMUL_CODE { get; set; }
-    public int NPOLICY { get; set; }
+    public long NPOLICY { get; set; }
     public string? CERTIFICATNPOLICYSCUMUL_CODE { get; set; }
-    public int NCERTIF { get; set; }
+    public long NCERTIF { get; set; }
     public string? CERTIFICATNCERTIFSCUMUL_CODE { get; set; }
     public int NMODULEC { get; set; }
     public int? NGROUP_INSU { get; set; }
     public string SPOLITYPE { get; set; }
     public int? NIND_POLICY { get; set; }
     public int? NIND_CURRENT_POLICY { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public string? INTERMEDIASCOL_AGREE { get; set; }
-    public int NINTERTYP { get; set; }
+    public int? NINTERTYP { get; set; }
     public string? INTERM_TYPSDESCRIPT { get; set; }
     public string? SCLIENAME_INTERMEDIA { get; set; }
     public DateTime DSTARTDATE { get; set; }
     public DateTime DEXPIRDAT { get; set; }
-    public int NCURRENCY { get; set; }
+    public long NCURRENCY { get; set; }
     public string? TABLE11SDESCRIPT { get; set; }
     public decimal? NCAPITAL { get; set; }
     public decimal? NBALANCECAPITAL { get; set; }

@@ -44,16 +44,16 @@ public class COVER_CO_GDto
     public int? NAGEMININSF { get; set; }
     public int? NAGEMAXINSF { get; set; }
     public int? NAGEMAXPERF { get; set; }
-    public int NTYPDURPAY { get; set; }
+    public int? NTYPDURPAY { get; set; }
     public string? TABLE5589NTYPDURPAYSDESCRIPT { get; set; }
     public int? NDURPAY { get; set; }
     public decimal? NRATECOVE { get; set; }
     public decimal? NPREMIUM { get; set; }
     public string? SDEFAULTI { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public string? TABLE5000SDESCRIPT { get; set; }
     public string? SREQUIRED { get; set; }
-    public int NRETARIF { get; set; }
+    public int? NRETARIF { get; set; }
     public string? TABLE5559SDESCRIPT { get; set; }
     public decimal? NCAPITAL_O { get; set; }
     public decimal? NPREMIUM_O { get; set; }
@@ -74,7 +74,7 @@ public class COVER_CO_GDto
     public int? NTYP_AGEMINM { get; set; }
     public int? NTYP_AGEMINF { get; set; }
     public decimal? NPERCENT { get; set; }
-    public int NFREQMAXEVEN { get; set; }
+    public int? NFREQMAXEVEN { get; set; }
     public string? TABLE340SDESCRIPT { get; set; }
     public int? NMAXEVEN_QUAN { get; set; }
     public int? NFREQUEN { get; set; }

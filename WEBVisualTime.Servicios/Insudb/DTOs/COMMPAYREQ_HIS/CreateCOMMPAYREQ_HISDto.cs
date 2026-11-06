@@ -3,8 +3,8 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.COMMPAYREQ_HIS;
 public class CreateCOMMPAYREQ_HISDto
 {
     public DateTime? DMOVEMENT_DATE { get; set; }
-    public int NMOVEMENT_TYPE { get; set; }
-    public int NSTATUS { get; set; }
+    public int? NMOVEMENT_TYPE { get; set; }
+    public int? NSTATUS { get; set; }
     public int NUSERCODE { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public string? SCLARIFICATIONREQUESTED { get; set; }

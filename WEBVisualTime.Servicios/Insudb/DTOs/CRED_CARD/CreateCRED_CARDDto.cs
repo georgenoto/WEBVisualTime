@@ -2,7 +2,7 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.CRED_CARD;
 
 public class CreateCRED_CARDDto
 {
-    public int NCARD_TYPE { get; set; }
+    public int? NCARD_TYPE { get; set; }
     public string? SSTATREGT { get; set; }
     public DateTime DCARDEXPIR { get; set; }
     public DateTime DCOMPDATE { get; set; }

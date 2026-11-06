@@ -8,19 +8,19 @@ public partial class CLAIM_SETTLEMENT
     public int? NCURRENCY { get; set; }
     public decimal? NEXCHANGE_REF { get; set; }
     public decimal? NAMOUNT_PAY { get; set; }
-    public int NPAYMENT_METHOD { get; set; }
+    public int? NPAYMENT_METHOD { get; set; }
 
     [ForeignKey("NPAYMENT_METHOD")]
     public Insudb.TABLE9252? TABLE9252 { get; set; }
-    public int NPAYEE { get; set; }
+    public int? NPAYEE { get; set; }
 
     [ForeignKey("NPAYEE")]
     public Insudb.TABLE9251? TABLE9251 { get; set; }
-    public int NSETTLEMENT_STAT { get; set; }
+    public int? NSETTLEMENT_STAT { get; set; }
 
     [ForeignKey("NSETTLEMENT_STAT")]
     public Insudb.TABLE9250? TABLE9250 { get; set; }
-    public int NSETTLEMENT_CONC { get; set; }
+    public int? NSETTLEMENT_CONC { get; set; }
 
     [ForeignKey("NSETTLEMENT_CONC")]
     public Insudb.TABLE9249? TABLE9249 { get; set; }
@@ -29,20 +29,20 @@ public partial class CLAIM_SETTLEMENT
     public long? NSEQUENCE_ID { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
-    public int NTYPELIST { get; set; }
+    public int? NTYPELIST { get; set; }
 
     [ForeignKey("NTYPELIST")]
     public Insudb.TABLE9203? TABLE9203 { get; set; }
     public DateTime? DPEPSEARCH { get; set; }
     public int? NUSERPEPSEARCH { get; set; }
-    public int NSEVERITYPEP { get; set; }
+    public int? NSEVERITYPEP { get; set; }
 
     [ForeignKey("NSEVERITYPEP")]
     public Insudb.TABLE9204? TABLE9204 { get; set; }
     public int? NINDAUTHPEP { get; set; }
     public DateTime? DPEPSTATUS { get; set; }
     public int? NUSERUIF { get; set; }
-    public int NCLAIMANTTYPE { get; set; }
+    public int? NCLAIMANTTYPE { get; set; }
 
     [ForeignKey("NCLAIMANTTYPE")]
     public Insudb.TABLE9212? TABLE9212 { get; set; }
@@ -66,7 +66,7 @@ public partial class CLAIM_SETTLEMENT
     public decimal? NAMOUNT_BASE { get; set; }
     public long? NBANKEXT { get; set; }
     public string? SBANKACCOUNT { get; set; }
-    public int NACC_TYPE { get; set; }
+    public int? NACC_TYPE { get; set; }
 
     [ForeignKey("NACC_TYPE")]
     public Insudb.TABLE190? TABLE190 { get; set; }
@@ -86,7 +86,7 @@ public partial class CLAIM_SETTLEMENT
     public int? NUSER_DERIVEDBY { get; set; }
     public int? NUSER_AUTHORIZATION { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
 
     [ForeignKey("NNULLCODE")]
     public Insudb.TABLE9274? TABLE9274 { get; set; }

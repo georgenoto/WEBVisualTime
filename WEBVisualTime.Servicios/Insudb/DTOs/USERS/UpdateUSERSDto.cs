@@ -11,7 +11,7 @@ public class UpdateUSERSDto
     public string SSCHE_CODE { get; set; }
     public string SSTATREGT { get; set; }
     public string? STYPE { get; set; }
-    public int NDEPARTME { get; set; }
+    public int? NDEPARTME { get; set; }
     public string? SMENU { get; set; }
     public string? SCHNEXTLOGON { get; set; }
     public string? SNEVERCHANGE { get; set; }

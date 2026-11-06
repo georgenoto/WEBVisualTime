@@ -17,11 +17,11 @@ public class T_DOCTYPDto
     public string? SCLIENT { get; set; }
     public long? NBULLETINS { get; set; }
     public long? NPROPONUM { get; set; }
-    public int NTYPEMOVE { get; set; }
+    public int? NTYPEMOVE { get; set; }
     public string? TABLE5525SDESCRIPT { get; set; }
     public DateTime? DMOVDATE { get; set; }
     public int? NTYPE { get; set; }
-    public int NTRATYPEI { get; set; }
+    public int? NTRATYPEI { get; set; }
     public string? TABLE24SDESCRIPT { get; set; }
     public int? NCURRENCY { get; set; }
     public decimal? NEXCHANGE { get; set; }
@@ -47,10 +47,10 @@ public class T_DOCTYPDto
     public DateTime? DISSUEDATBON { get; set; }
     public DateTime? DEXPIRDATBON { get; set; }
     public decimal? NTAX { get; set; }
-    public int NORIGIN { get; set; }
+    public int? NORIGIN { get; set; }
     public string? TABLE5633SDESCRIPT { get; set; }
     public DateTime? DDATE_ORIGIN { get; set; }
-    public int NINSTITUTION { get; set; }
+    public int? NINSTITUTION { get; set; }
     public string? TAB_FN_INSTITUTIONSNAME { get; set; }
     public int? NCHANGESDAT { get; set; }
     public DateTime? DVALUEDATE { get; set; }

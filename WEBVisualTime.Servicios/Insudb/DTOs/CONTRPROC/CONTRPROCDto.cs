@@ -12,7 +12,7 @@ public class CONTRPROCDto
     public decimal? NAMOUNT { get; set; }
     public int NTYPE_REL { get; set; }
     public string? CONTRMASTERNTYPE_RELSSTATREGT { get; set; }
-    public int NFQCY_ACC { get; set; }
+    public int? NFQCY_ACC { get; set; }
     public string? TABLE97SDESCRIPT { get; set; }
     public string? SCAP_NOM_RI { get; set; }
     public DateTime? DCOMPDATE { get; set; }
@@ -59,7 +59,7 @@ public class CONTRPROCDto
     public string? SCUMREINT { get; set; }
     public string? TABLE90SDESCRIPT { get; set; }
     public string? SCUMULPOL { get; set; }
-    public int NFREQPAY { get; set; }
+    public int? NFREQPAY { get; set; }
     public string? TABLE36SDESCRIPT { get; set; }
     public int? NNEXTMONTHPA { get; set; }
     public int? NNEXTYEARPA { get; set; }

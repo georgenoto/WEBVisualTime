@@ -21,43 +21,67 @@ public partial class CURR_ACC
     public string? SSTATREGT { get; set; }
     public int? NUSERCODE { get; set; }
     public DateTime DCOMPDATE { get; set; }
-    public int NLED_COMPAN { get; set; }
+    public int? NLED_COMPAN { get; set; }
 
-    [ForeignKey("NLED_COMPAN")]
+    [ForeignKey("NLED_COMPAN, SACCOUNT, SAUX_ACCOUN")]
     public Insudb.LEDGER_ACC? LEDGER_ACCNLED_COMPAN { get; set; }
     public string? SACCOUNT { get; set; }
 
-    [ForeignKey("SACCOUNT")]
-    public Insudb.LEDGER_ACC? LEDGER_ACCSACCOUNT { get; set; }
+    [NotMapped]
+    public Insudb.LEDGER_ACC? LEDGER_ACCSACCOUNT
+    {
+        get => LEDGER_ACCNLED_COMPAN;
+        set => LEDGER_ACCNLED_COMPAN = value;
+    }
     public string? SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
-    public int NCOMPANY { get; set; }
+    public int? NCOMPANY { get; set; }
 
     [ForeignKey("NCOMPANY")]
     public Insudb.COMPANY? COMPANY { get; set; }
-    public int NPRODUCT { get; set; }
+    public int? NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public string? SAUX_ACCOUN { get; set; }
 
-    [ForeignKey("SAUX_ACCOUN")]
-    public Insudb.LEDGER_ACC? LEDGER_ACCSAUX_ACCOUN { get; set; }
-    public int NBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.LEDGER_ACC? LEDGER_ACCSAUX_ACCOUN
+    {
+        get => LEDGER_ACCNLED_COMPAN;
+        set => LEDGER_ACCNLED_COMPAN = value;
+    }
+    public int? NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
-    public long NCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
+    public long? NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
-    public long NPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
+    public long? NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
-    public int NINSUR_AREA { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
+    public int? NINSUR_AREA { get; set; }
 
     [ForeignKey("NINSUR_AREA")]
     public Insudb.TABLE5001? TABLE5001 { get; set; }

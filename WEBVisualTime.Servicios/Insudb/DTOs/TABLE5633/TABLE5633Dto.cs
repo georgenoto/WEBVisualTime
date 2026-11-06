@@ -8,6 +8,6 @@ public class TABLE5633Dto
     public string? SSHORT_DES { get; set; }
     public string? SSTATREGT { get; set; }
     public int NUSERCODE { get; set; }
-    public int NTABLE6071 { get; set; }
+    public int? NTABLE6071 { get; set; }
     public string? TABLE6071SDESCRIPT { get; set; }
 }

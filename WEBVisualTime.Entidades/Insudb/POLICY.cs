@@ -92,11 +92,11 @@ public partial class POLICY
     public decimal? NPARTICIP { get; set; }
     public decimal? NPREMIUM { get; set; }
     public decimal? NSHARE { get; set; }
-    public int NPAYFREQ { get; set; }
+    public int? NPAYFREQ { get; set; }
 
     [ForeignKey("NPAYFREQ")]
     public Insudb.TABLE36? TABLE36 { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }
@@ -112,16 +112,16 @@ public partial class POLICY
     public long? NMOV_HISTOR { get; set; }
     public long? NOFICIAL_P { get; set; }
     public int? NCOPIES { get; set; }
-    public int NLEADCOMP { get; set; }
+    public int? NLEADCOMP { get; set; }
 
     [ForeignKey("NLEADCOMP")]
     public Insudb.COMPANY? COMPANY { get; set; }
-    public int NNO_CONVERS { get; set; }
+    public int? NNO_CONVERS { get; set; }
 
     [ForeignKey("NNO_CONVERS")]
     public Insudb.NOCONVERS? NOCONVERS { get; set; }
     public int? NNOTICE { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
 
     [ForeignKey("NNULLCODE")]
     public Insudb.TABLE13? TABLE13 { get; set; }
@@ -138,10 +138,10 @@ public partial class POLICY
     public string? SPRORSHORT { get; set; }
     public int? NDAYSFQ { get; set; }
     public int? NDAYSSQ { get; set; }
-    public int NCOMPANY { get; set; }
-    public int NOFFICEINS { get; set; }
+    public int? NCOMPANY { get; set; }
+    public int? NOFFICEINS { get; set; }
     public string? SORIGINAL { get; set; }
-    public int NCOD_AGREE { get; set; }
+    public int? NCOD_AGREE { get; set; }
 
     [ForeignKey("NCOD_AGREE")]
     public Insudb.AGREEMENT? AGREEMENT { get; set; }
@@ -150,11 +150,11 @@ public partial class POLICY
     public string? SINSUBANK { get; set; }
     public decimal? NLEGAMOUNT { get; set; }
     public string? SLEG { get; set; }
-    public int NAGENCY { get; set; }
+    public int? NAGENCY { get; set; }
 
     [ForeignKey("NAGENCY")]
     public Insudb.TABLE5555? TABLE5555 { get; set; }
-    public int NOFFICEAGEN { get; set; }
+    public int? NOFFICEAGEN { get; set; }
 
     [ForeignKey("NOFFICEAGEN")]
     public Insudb.TABLE5556? TABLE5556 { get; set; }
@@ -164,7 +164,7 @@ public partial class POLICY
     public Insudb.TABLE92? TABLE92SCOLTPRES { get; set; }
     public string? SIND_COMM { get; set; }
     public string? SCURRACC { get; set; }
-    public int NREPINSURED { get; set; }
+    public int? NREPINSURED { get; set; }
 
     [ForeignKey("NREPINSURED")]
     public Insudb.TABLE5677? TABLE5677 { get; set; }
@@ -181,7 +181,7 @@ public partial class POLICY
     public string? SACCHSEND_IND { get; set; }
     public int? NTYPEACCOUNT { get; set; }
     public DateTime? DPREVIUS_EXPIRDATE { get; set; }
-    public int NSPECIALBUSINESS { get; set; }
+    public int? NSPECIALBUSINESS { get; set; }
 
     [ForeignKey("NSPECIALBUSINESS")]
     public Insudb.TABLE5770? TABLE5770 { get; set; }

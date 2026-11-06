@@ -16,8 +16,8 @@ public class CreateCLAIM_SETT_FILTERSDto
     public int? NBRANCH { get; set; }
     public int? NPRODUCT { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NTYPEDOC_PAY { get; set; }
-    public int NSETTLEMENT_CONC { get; set; }
+    public int? NTYPEDOC_PAY { get; set; }
+    public int? NSETTLEMENT_CONC { get; set; }
     public int? NPHYSICIAN { get; set; }
     public int? NCLINIC { get; set; }
     public DateTime? DCOMPDATE { get; set; }

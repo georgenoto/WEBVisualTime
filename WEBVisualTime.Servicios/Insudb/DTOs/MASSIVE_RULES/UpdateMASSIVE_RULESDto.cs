@@ -15,5 +15,5 @@ public class UpdateMASSIVE_RULESDto
     public int? NACTIONPROC { get; set; }
     public string? SVIP { get; set; }
     public string? STYP_CONDI { get; set; }
-    public int NSECTION { get; set; }
+    public int? NSECTION { get; set; }
 }

@@ -8,13 +8,13 @@ public class UpdateMOVE_ACCDto
     public int NCURRENCY { get; set; }
     public DateTime DOPERDATE { get; set; }
     public long NIDCONSEC { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public decimal? NAMOUNT { get; set; }
-    public long NBANKEXT { get; set; }
+    public long? NBANKEXT { get; set; }
     public int? NBRANCH { get; set; }
     public long? NCERTIF { get; set; }
     public string? SCHEQUE { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
     public decimal? NCREDIT { get; set; }
     public decimal? NDEBIT { get; set; }
     public string? SDESCRIPT { get; set; }
@@ -25,15 +25,15 @@ public class UpdateMOVE_ACCDto
     public string? SSTATREGT { get; set; }
     public int? NTRANSAC { get; set; }
     public int? NTRANSACTIO { get; set; }
-    public int NTYPE_MOVE { get; set; }
-    public int NTYPE_PAY { get; set; }
-    public int NTYPE_TRAN { get; set; }
+    public int? NTYPE_MOVE { get; set; }
+    public int? NTYPE_PAY { get; set; }
+    public int? NTYPE_TRAN { get; set; }
     public int? NUSERCODE { get; set; }
-    public int NPROVINCE { get; set; }
+    public int? NPROVINCE { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public long? NIDDOCUMENT { get; set; }
     public long? NREQUEST_NU { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
     public string? SPROCESS { get; set; }
     public string? SNUMFORM { get; set; }
     public int? NORIGCURR { get; set; }
@@ -50,7 +50,7 @@ public class UpdateMOVE_ACCDto
     public DateTime? DPOSTED { get; set; }
     public string? SPROCESS_IND { get; set; }
     public long? NPROPONUM { get; set; }
-    public long NBULLETINS { get; set; }
+    public long? NBULLETINS { get; set; }
     public long? NNOTENUM { get; set; }
     public long NID { get; set; }
     public decimal? NAMOUNTDEC { get; set; }

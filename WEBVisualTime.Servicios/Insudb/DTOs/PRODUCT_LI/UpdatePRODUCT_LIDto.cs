@@ -6,10 +6,10 @@ public class UpdatePRODUCT_LIDto
     public int NPRODUCT { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public string? SACCOUNTI { get; set; }
-    public long NANLIFINT { get; set; }
+    public long? NANLIFINT { get; set; }
     public decimal? NANNUALAP { get; set; }
     public string? SASSOCIAI { get; set; }
-    public int NBENEFAPL { get; set; }
+    public int? NBENEFAPL { get; set; }
     public decimal? NBENEFEXC { get; set; }
     public decimal? NBENEFITR { get; set; }
     public decimal? NBENEXCRA { get; set; }
@@ -24,11 +24,11 @@ public class UpdatePRODUCT_LIDto
     public string? SCLTRANSI { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NDEDUFREQ { get; set; }
+    public int? NDEDUFREQ { get; set; }
     public decimal? NENTRANCE { get; set; }
-    public long NSURRFREQ { get; set; }
+    public long? NSURRFREQ { get; set; }
     public int? NIDURAFIX { get; set; }
-    public int NTYPDURINS { get; set; }
+    public int? NTYPDURINS { get; set; }
     public string? SIDURVARI { get; set; }
     public decimal? NINTEREST { get; set; }
     public string? SMETHAGAV { get; set; }
@@ -42,7 +42,7 @@ public class UpdatePRODUCT_LIDto
     public string? SNPEUNIFA { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public decimal? NPAYINITI { get; set; }
-    public long NPAYINTER { get; set; }
+    public long? NPAYINTER { get; set; }
     public string? SPERIODIC { get; set; }
     public decimal? NPERMULTI { get; set; }
     public decimal? NPERNOPAY { get; set; }
@@ -51,7 +51,7 @@ public class UpdatePRODUCT_LIDto
     public decimal? NPERREVFA { get; set; }
     public string? SREVALTYP { get; set; }
     public string? SPERUNIFA { get; set; }
-    public long NPRODCLAS { get; set; }
+    public long? NPRODCLAS { get; set; }
     public int? NQBONUSMA { get; set; }
     public int? NQBONUSMI { get; set; }
     public int? NREAGEMAX { get; set; }
@@ -67,14 +67,14 @@ public class UpdatePRODUCT_LIDto
     public string? SULFCHANI { get; set; }
     public int? NULFMAXQU { get; set; }
     public decimal? NULRCHARG { get; set; }
-    public int NULREDPER { get; set; }
+    public int? NULREDPER { get; set; }
     public int? NULRMAXQU { get; set; }
     public int? NULRSCHAR { get; set; }
     public decimal? NULSCHARG { get; set; }
     public int? NULSMAXQU { get; set; }
     public string? SASSOTOTAL { get; set; }
     public int? NULSSCHAR { get; set; }
-    public int NULSWIPER { get; set; }
+    public int? NULSWIPER { get; set; }
     public string? SBENRES { get; set; }
     public int? NUSERCODE { get; set; }
     public decimal? NVALUEBON { get; set; }
@@ -122,7 +122,7 @@ public class UpdatePRODUCT_LIDto
     public string? SS_ALLWCHNG { get; set; }
     public string? SIX_ALLWCHNG { get; set; }
     public string? SW_ALLWCHNG { get; set; }
-    public int NINFTYPE { get; set; }
+    public int? NINFTYPE { get; set; }
     public int? NDAY_BMG { get; set; }
     public string? SAPV { get; set; }
     public decimal? NULSMIN { get; set; }
@@ -136,12 +136,12 @@ public class UpdatePRODUCT_LIDto
     public int? NORIGIN_LOAN { get; set; }
     public int? NULMMSW { get; set; }
     public int? NULMMRD { get; set; }
-    public int NULSWMAXPER { get; set; }
-    public int NULRDMAXPER { get; set; }
+    public int? NULSWMAXPER { get; set; }
+    public int? NULRDMAXPER { get; set; }
     public int? NULSWMQT { get; set; }
     public int? NULRDMQT { get; set; }
-    public int NULSWMQTPER { get; set; }
-    public int NULRDMQTPER { get; set; }
+    public int? NULSWMQTPER { get; set; }
+    public int? NULRDMQTPER { get; set; }
     public decimal? NULSWCHPERC { get; set; }
     public decimal? NULRDCHPERC { get; set; }
     public string? SINDCL_PAY { get; set; }
@@ -157,7 +157,7 @@ public class UpdatePRODUCT_LIDto
     public string? SROUTINEVPN { get; set; }
     public string? SPRORATE { get; set; }
     public string? SNO_HOLIDAYS { get; set; }
-    public int NTYPE_RATEPROY { get; set; }
+    public int? NTYPE_RATEPROY { get; set; }
     public string? NAOF { get; set; }
     public string? STYPPB { get; set; }
     public string? SLOANSGUARANT { get; set; }

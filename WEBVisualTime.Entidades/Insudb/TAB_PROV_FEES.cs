@@ -6,12 +6,16 @@ public partial class TAB_PROV_FEES
 {
     public int NPROVIDER { get; set; }
 
-    [ForeignKey("NPROVIDER")]
+    [ForeignKey("NPROVIDER, NZONE")]
     public Insudb.TAB_PROV_ZONE? TAB_PROV_ZONENPROVIDER { get; set; }
     public int NZONE { get; set; }
 
-    [ForeignKey("NZONE")]
-    public Insudb.TAB_PROV_ZONE? TAB_PROV_ZONENZONE { get; set; }
+    [NotMapped]
+    public Insudb.TAB_PROV_ZONE? TAB_PROV_ZONENZONE
+    {
+        get => TAB_PROV_ZONENPROVIDER;
+        set => TAB_PROV_ZONENPROVIDER = value;
+    }
     public string STYPEBENEFIT { get; set; }
 
     [ForeignKey("STYPEBENEFIT")]

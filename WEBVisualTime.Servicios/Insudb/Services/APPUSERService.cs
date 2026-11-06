@@ -6,7 +6,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public class APPUSERService : CrudService<APPUSER, APPUSERDto, CreateAPPUSERDto, UpdateAPPUSERDto, int>, IAPPUSERService
+public class APPUSERService : CrudService<APPUSER, APPUSERDto, CreateAPPUSERDto, UpdateAPPUSERDto, long>, IAPPUSERService
 {
     public APPUSERService(IRepository<APPUSER> repository)
         : base(repository, APPUSERMappingExtensions.ToDto, APPUSERMappingExtensions.ToEntity, APPUSERMappingExtensions.UpdateEntity) { }

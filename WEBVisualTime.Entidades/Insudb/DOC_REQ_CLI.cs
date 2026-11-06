@@ -9,7 +9,7 @@ public partial class DOC_REQ_CLI
     [ForeignKey("NEVAL")]
     public Insudb.EVAL_MASTER? EVAL_MASTER { get; set; }
     public long NID { get; set; }
-    public int NTYPEDOC { get; set; }
+    public int? NTYPEDOC { get; set; }
 
     [ForeignKey("NTYPEDOC")]
     public Insudb.TABLE32? TABLE32 { get; set; }

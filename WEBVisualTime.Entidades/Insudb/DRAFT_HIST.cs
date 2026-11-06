@@ -15,7 +15,7 @@ public partial class DRAFT_HIST
     public decimal? NINTEREST { get; set; }
     public string? SINTERMEI { get; set; }
     public DateTime? DSTAT_DATE { get; set; }
-    public int NTYPE { get; set; }
+    public long? NTYPE { get; set; }
 
     [ForeignKey("NTYPE")]
     public Insudb.TABLE260? TABLE260 { get; set; }
@@ -23,7 +23,7 @@ public partial class DRAFT_HIST
 
     [ForeignKey("NUSERCODE")]
     public Insudb.USERS? USERS { get; set; }
-    public long NBANK_CODE { get; set; }
+    public long? NBANK_CODE { get; set; }
 
     [ForeignKey("NBANK_CODE")]
     public Insudb.TABLE7? TABLE7 { get; set; }
@@ -36,7 +36,7 @@ public partial class DRAFT_HIST
     public string? SAUX_ACCOUN { get; set; }
     public int? NCASHNUM { get; set; }
     public int? NPAYREJECT { get; set; }
-    public long NCOLLECTOR { get; set; }
+    public long? NCOLLECTOR { get; set; }
 
     [ForeignKey("NCOLLECTOR")]
     public Insudb.COLLECTOR? COLLECTOR { get; set; }

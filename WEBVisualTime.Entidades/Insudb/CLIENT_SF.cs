@@ -6,7 +6,7 @@ public partial class CLIENT_SF
 {
     public string SCLIENT { get; set; }
     public string SDIGIT { get; set; }
-    public int NPOSITION { get; set; }
+    public int? NPOSITION { get; set; }
 
     [ForeignKey("NPOSITION")]
     public Insudb.TABLE8004? TABLE8004 { get; set; }

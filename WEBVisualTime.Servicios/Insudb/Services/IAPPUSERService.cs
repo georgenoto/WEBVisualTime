@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IAPPUSERService : IService<APPUSERDto, CreateAPPUSERDto, UpdateAPPUSERDto, int>
+public interface IAPPUSERService : IService<APPUSERDto, CreateAPPUSERDto, UpdateAPPUSERDto, long>
 {
     Task<IEnumerable<APPUSERDto>> FindAsync(Expression<Func<APPUSER, bool>> predicate);
 }

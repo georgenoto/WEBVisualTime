@@ -6,20 +6,32 @@ public partial class CLAUS_CO_P
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY")]
     public Insudb.POLICY? POLICYSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.POLICY? POLICYNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.POLICY? POLICYNBRANCH
+    {
+        get => POLICYSCERTYPE;
+        set => POLICYSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.POLICY? POLICYNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.POLICY? POLICYNPRODUCT
+    {
+        get => POLICYSCERTYPE;
+        set => POLICYSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.POLICY? POLICYNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.POLICY? POLICYNPOLICY
+    {
+        get => POLICYSCERTYPE;
+        set => POLICYSCERTYPE = value;
+    }
     public int NCLAUSE { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public DateTime? DCOMPDATE { get; set; }

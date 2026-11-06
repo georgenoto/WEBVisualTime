@@ -376,7 +376,7 @@ public class CERTIFICATController : Controller
 
     // GET: CERTIFICAT/GetByNTYPEEXC?NTYPEEXC=value (cascade)
     [HttpGet]
-    public async Task<JsonResult> GetByNTYPEEXC(int NTYPEEXC)
+    public async Task<JsonResult> GetByNTYPEEXC(long NTYPEEXC)
     {
         var items = await _service.FindAsync(p => p.NTYPEEXC == NTYPEEXC);
         return Json(items.Select(i => new { value = i.SCERTYPE, text = i.SCUMUL_CODE }));

@@ -12,14 +12,14 @@ public class UpdateCLAIM_VOUCHERDto
     public string? SVOUCHER_SERIES { get; set; }
     public long? NVOUCHER_NUM { get; set; }
     public string? SCONTROL_CODE { get; set; }
-    public int NSTATUS { get; set; }
+    public int? NSTATUS { get; set; }
     public string? SOBSERV { get; set; }
     public decimal? NAMOUNT_DOCU { get; set; }
     public decimal? NEXCHANGE { get; set; }
     public decimal? NBALANCE { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NFOREIGNDOCTYPE { get; set; }
-    public int NPROVIDER { get; set; }
+    public int? NFOREIGNDOCTYPE { get; set; }
+    public int? NPROVIDER { get; set; }
     public string? SCLIENT { get; set; }
     public long? NNOTENUM { get; set; }
     public long? NSEQUENCE_ID { get; set; }

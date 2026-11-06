@@ -13,7 +13,7 @@ public class CreateCLAIM_SETT_VOUCHERDto
     public decimal? NSETTLEMENT_PAY { get; set; }
     public decimal? NAMOUNT_VAT_LOSS { get; set; }
     public decimal? NAMOUNT_FTT_LOSS { get; set; }
-    public int NTYPEDISC_PROV { get; set; }
+    public int? NTYPEDISC_PROV { get; set; }
     public decimal? NAMOUNT_BASE { get; set; }
     public decimal? NAGREE_DISCOUNT { get; set; }
 }

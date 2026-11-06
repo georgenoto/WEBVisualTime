@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WEBVisualTime.Servicios.Services.Common;
 using WEBVisualTime.Web.Models;
+using WEBVisualTime.Datos;
 
 namespace WEBVisualTime.Web.Controllers.Common;
 
@@ -14,26 +15,33 @@ public abstract class CatalogController<TDto, TCreateDto, TUpdateDto, TKey> : Co
         string name, string key, string[] columns)
     {
         this.service = service;
-        definition = new(name, key, columns);
+        definition = new(name, key, columns, ModelIntegrityRules.ReadOnlyReason(name));
     }
     private ViewResult Page(string view, object model)
     {
         ViewData["Crud"] = definition;
         return View($"~/Views/Shared/Catalog/{view}.cshtml", model);
     }
+    private ViewResult ReadOnlyPage()
+    {
+        Response.StatusCode = 409;
+        return Page("ReadOnly", definition.ReadOnlyReason!);
+    }
     [HttpGet]
     public async Task<IActionResult> Index() => Page("Index", await service.GetAllAsync());
     [HttpGet]
     public async Task<IActionResult> Details(TKey id)
     {
+        if (definition.ReadOnlyReason is not null) return ReadOnlyPage();
         var dto = await service.GetByIdAsync(id);
         return dto is null ? NotFound() : Page("Details", dto);
     }
     [HttpGet]
-    public IActionResult Create() => Page("Form", new TCreateDto());
+    public IActionResult Create() => definition.ReadOnlyReason is not null ? ReadOnlyPage() : Page("Form", new TCreateDto());
     [HttpPost, ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(TCreateDto createDto)
     {
+        if (definition.ReadOnlyReason is not null) return ReadOnlyPage();
         if (!ModelState.IsValid) return Page("Form", createDto);
         await service.CreateAsync(createDto);
         return RedirectToAction(nameof(Index));
@@ -41,6 +49,7 @@ public abstract class CatalogController<TDto, TCreateDto, TUpdateDto, TKey> : Co
     [HttpGet]
     public async Task<IActionResult> Edit(TKey id)
     {
+        if (definition.ReadOnlyReason is not null) return ReadOnlyPage();
         var dto = await service.GetByIdAsync(id);
         if (dto is null) return NotFound();
         var updateDto = new TUpdateDto();
@@ -55,6 +64,7 @@ public abstract class CatalogController<TDto, TCreateDto, TUpdateDto, TKey> : Co
     [HttpPost, ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(TUpdateDto updateDto)
     {
+        if (definition.ReadOnlyReason is not null) return ReadOnlyPage();
         if (!ModelState.IsValid) return Page("Form", updateDto);
         var key = typeof(TUpdateDto).GetProperty(definition.Key)?.GetValue(updateDto);
         if (key is not TKey id) return BadRequest();
@@ -64,12 +74,14 @@ public abstract class CatalogController<TDto, TCreateDto, TUpdateDto, TKey> : Co
     [HttpGet]
     public async Task<IActionResult> Delete(TKey id)
     {
+        if (definition.ReadOnlyReason is not null) return ReadOnlyPage();
         var dto = await service.GetByIdAsync(id);
         return dto is null ? NotFound() : Page("Delete", dto);
     }
     [HttpPost, ActionName("Delete"), ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(TKey id)
     {
+        if (definition.ReadOnlyReason is not null) return ReadOnlyPage();
         await service.DeleteAsync(id);
         return RedirectToAction(nameof(Index));
     }

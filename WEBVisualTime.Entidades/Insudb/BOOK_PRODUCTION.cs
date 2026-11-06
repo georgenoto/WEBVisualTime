@@ -33,7 +33,7 @@ public partial class BOOK_PRODUCTION
     public int? NINSUR_AREA { get; set; }
     public DateTime? DSTARTDATE_REP { get; set; }
     public DateTime? DEXPIRDATE_REP { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
 
     [ForeignKey("NOFFICE")]
     public Insudb.TABLE9? TABLE9 { get; set; }
@@ -41,20 +41,20 @@ public partial class BOOK_PRODUCTION
     public DateTime? DLEDGERDAT { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NUSERCODE { get; set; }
-    public int NOFFICEAGEN { get; set; }
+    public int? NOFFICEAGEN { get; set; }
 
     [ForeignKey("NOFFICEAGEN")]
     public Insudb.TABLE5556? TABLE5556 { get; set; }
-    public int NAGENCY { get; set; }
+    public int? NAGENCY { get; set; }
 
     [ForeignKey("NAGENCY")]
     public Insudb.TABLE5555? TABLE5555 { get; set; }
-    public int NTRATYPEI { get; set; }
+    public int? NTRATYPEI { get; set; }
 
     [ForeignKey("NTRATYPEI")]
     public Insudb.TABLE24? TABLE24 { get; set; }
     public int? NTYPE { get; set; }
-    public int NTYPE_TRAN { get; set; }
+    public int? NTYPE_TRAN { get; set; }
 
     [ForeignKey("NTYPE_TRAN")]
     public Insudb.TABLE6? TABLE6 { get; set; }

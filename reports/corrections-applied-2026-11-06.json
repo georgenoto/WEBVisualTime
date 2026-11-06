@@ -1,0 +1,4677 @@
+{
+  "date": "2026-11-06",
+  "nullable_properties_corrected": [
+    {
+      "entity": "ADDRESS",
+      "table": "ADDRESS",
+      "property": "NLOCAL",
+      "column": "NLOCAL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "ADDRESS",
+      "table": "ADDRESS",
+      "property": "NMUNICIPALITY",
+      "column": "NMUNICIPALITY",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "AGREEMENT",
+      "table": "AGREEMENT",
+      "property": "NAGENCY",
+      "column": "NAGENCY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "AGREEMENT",
+      "table": "AGREEMENT",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "AGREEMENT",
+      "table": "AGREEMENT",
+      "property": "NTYPE_REC",
+      "column": "NTYPE_REC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "AGREEMENT_AL",
+      "table": "AGREEMENT_AL",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_ACC",
+      "table": "BANK_ACC",
+      "property": "NACC_TYPE",
+      "column": "NACC_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_ACC",
+      "table": "BANK_ACC",
+      "property": "NAVAIL_TYPE",
+      "column": "NAVAIL_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_ACC",
+      "table": "BANK_ACC",
+      "property": "NBANK_CODE",
+      "column": "NBANK_CODE",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_ACC",
+      "table": "BANK_ACC",
+      "property": "NBK_AGENCY",
+      "column": "NBK_AGENCY",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_ACC",
+      "table": "BANK_ACC",
+      "property": "NCOMPANY",
+      "column": "NCOMPANY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_MOV",
+      "table": "BANK_MOV",
+      "property": "NBORDEREAUX",
+      "column": "NBORDEREAUX",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_MOV",
+      "table": "BANK_MOV",
+      "property": "NCLAIM",
+      "column": "NCLAIM",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_MOV",
+      "table": "BANK_MOV",
+      "property": "NCONCEPT",
+      "column": "NCONCEPT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_MOV",
+      "table": "BANK_MOV",
+      "property": "NCONTRAT",
+      "column": "NCONTRAT",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_MOV",
+      "table": "BANK_MOV",
+      "property": "NDRAFT",
+      "column": "NDRAFT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_MOV",
+      "table": "BANK_MOV",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_MOV",
+      "table": "BANK_MOV",
+      "property": "NTYPE_MOV",
+      "column": "NTYPE_MOV",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BANK_MOV",
+      "table": "BANK_MOV",
+      "property": "NTYP_ACCO",
+      "column": "NTYP_ACCO",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BENEFITS_GROUP",
+      "table": "BENEFITS_GROUP",
+      "property": "NTYPE_GROUP",
+      "column": "NTYPE_GROUP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BOOK_COLLECTION",
+      "table": "BOOK_COLLECTION",
+      "property": "NAGENCY",
+      "column": "NAGENCY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BOOK_COLLECTION",
+      "table": "BOOK_COLLECTION",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BOOK_COLLECTION",
+      "table": "BOOK_COLLECTION",
+      "property": "NOFFICEAGEN",
+      "column": "NOFFICEAGEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BOOK_COLLECTION",
+      "table": "BOOK_COLLECTION",
+      "property": "NTYPE_TRAN",
+      "column": "NTYPE_TRAN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BOOK_PRODUCTION",
+      "table": "BOOK_PRODUCTION",
+      "property": "NAGENCY",
+      "column": "NAGENCY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BOOK_PRODUCTION",
+      "table": "BOOK_PRODUCTION",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BOOK_PRODUCTION",
+      "table": "BOOK_PRODUCTION",
+      "property": "NOFFICEAGEN",
+      "column": "NOFFICEAGEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BOOK_PRODUCTION",
+      "table": "BOOK_PRODUCTION",
+      "property": "NTRATYPEI",
+      "column": "NTRATYPEI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BOOK_PRODUCTION",
+      "table": "BOOK_PRODUCTION",
+      "property": "NTYPE_TRAN",
+      "column": "NTYPE_TRAN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "BRANPROD_ALLOW",
+      "table": "BRANPROD_ALLOW",
+      "property": "NCATEGORY",
+      "column": "NCATEGORY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_ACC",
+      "table": "CASH_ACC",
+      "property": "NCOMPANY",
+      "column": "NCOMPANY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_ACC",
+      "table": "CASH_ACC",
+      "property": "NLED_COMPAN",
+      "column": "NLED_COMPAN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NACC_BANK",
+      "column": "NACC_BANK",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NBANK_AGREE",
+      "column": "NBANK_AGREE",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NBANK_CODE",
+      "column": "NBANK_CODE",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NBORDEREAUX",
+      "column": "NBORDEREAUX",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NBRANCH_LED",
+      "column": "NBRANCH_LED",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NBULLETINS",
+      "column": "NBULLETINS",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NCARD_TYPE",
+      "column": "NCARD_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NCASE_NUM",
+      "column": "NCASE_NUM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NCHEQUELOCAT",
+      "column": "NCHEQUELOCAT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NCHEQUE_STAT",
+      "column": "NCHEQUE_STAT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NCLAIM",
+      "column": "NCLAIM",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NCOD_AGREE",
+      "column": "NCOD_AGREE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NCOMPANYC",
+      "column": "NCOMPANYC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NCONCEPT",
+      "column": "NCONCEPT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NCONTRAT",
+      "column": "NCONTRAT",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NDEMAN_TYPE",
+      "column": "NDEMAN_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NDRAFT",
+      "column": "NDRAFT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NINSUR_AREA",
+      "column": "NINSUR_AREA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NMOV_TYPE",
+      "column": "NMOV_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NTYPESUPPORT",
+      "column": "NTYPESUPPORT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CASH_MOV",
+      "table": "CASH_MOV",
+      "property": "NTYP_ACCO",
+      "column": "NTYP_ACCO",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NCOD_AGREE",
+      "column": "NCOD_AGREE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NCOLLECTOR",
+      "column": "NCOLLECTOR",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NGROUP_AGREE",
+      "column": "NGROUP_AGREE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NMAILINGPREF",
+      "column": "NMAILINGPREF",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NNO_CONVERS",
+      "column": "NNO_CONVERS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NPAYFREQ",
+      "column": "NPAYFREQ",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NSELLCHANNEL",
+      "column": "NSELLCHANNEL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NSITUATION",
+      "column": "NSITUATION",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NSTATQUOTA",
+      "column": "NSTATQUOTA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NSUS_REASON",
+      "column": "NSUS_REASON",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NSYSTEM",
+      "column": "NSYSTEM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NTYPEEXC",
+      "column": "NTYPEEXC",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NWAIT_CODE",
+      "column": "NWAIT_CODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CERTIFICAT",
+      "table": "CERTIFICAT",
+      "property": "NWAY_PAY",
+      "column": "NWAY_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CESSION_PR",
+      "table": "CESSION_PR",
+      "property": "NBRANCH_LED",
+      "column": "NBRANCH_LED",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CESSION_PR",
+      "table": "CESSION_PR",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CESSION_PR",
+      "table": "CESSION_PR",
+      "property": "NCONCEPT",
+      "column": "NCONCEPT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CESSION_PR",
+      "table": "CESSION_PR",
+      "property": "NINSUR_AREA",
+      "column": "NINSUR_AREA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUES",
+      "table": "CHEQUES",
+      "property": "NACC_BANK",
+      "column": "NACC_BANK",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUES",
+      "table": "CHEQUES",
+      "property": "NBORDEREAUX",
+      "column": "NBORDEREAUX",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUES",
+      "table": "CHEQUES",
+      "property": "NBRANCH_LED",
+      "column": "NBRANCH_LED",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUES",
+      "table": "CHEQUES",
+      "property": "NCLAIM",
+      "column": "NCLAIM",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUES",
+      "table": "CHEQUES",
+      "property": "NCONCEPT",
+      "column": "NCONCEPT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUES",
+      "table": "CHEQUES",
+      "property": "NINSUR_AREA",
+      "column": "NINSUR_AREA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUES",
+      "table": "CHEQUES",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUES",
+      "table": "CHEQUES",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUES",
+      "table": "CHEQUES",
+      "property": "NSTA_CHEQUE",
+      "column": "NSTA_CHEQUE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUES",
+      "table": "CHEQUES",
+      "property": "NTYPESUPPORT",
+      "column": "NTYPESUPPORT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUE_MOV",
+      "table": "CHEQUE_MOV",
+      "property": "NBANK_INTER",
+      "column": "NBANK_INTER",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CHEQUE_MOV",
+      "table": "CHEQUE_MOV",
+      "property": "NCHEOPER_REASON",
+      "column": "NCHEOPER_REASON",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NAGENCY_PAY",
+      "column": "NAGENCY_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NBORDEREAUX_CL",
+      "column": "NBORDEREAUX_CL",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NCLAIMANTTYPE",
+      "column": "NCLAIMANTTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NIDPRECLAIM",
+      "column": "NIDPRECLAIM",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NOFFICEAGEN",
+      "column": "NOFFICEAGEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NOFFICEAGEN_PAY",
+      "column": "NOFFICEAGEN_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NOFFICE_OWN",
+      "column": "NOFFICE_OWN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NOFFICE_PAY",
+      "column": "NOFFICE_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NOFFICTRA",
+      "column": "NOFFICTRA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NRELASHIP",
+      "column": "NRELASHIP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NUNACCODE",
+      "column": "NUNACCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM",
+      "table": "CLAIM",
+      "property": "NWAITCL_CODE",
+      "column": "NWAITCL_CODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIMBENEF",
+      "table": "CLAIMBENEF",
+      "property": "NAGENCY_PAY",
+      "column": "NAGENCY_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIMBENEF",
+      "table": "CLAIMBENEF",
+      "property": "NBENE_TYPE",
+      "column": "NBENE_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIMBENEF",
+      "table": "CLAIMBENEF",
+      "property": "NOFFICEAGEN_PAY",
+      "column": "NOFFICEAGEN_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIMBENEF",
+      "table": "CLAIMBENEF",
+      "property": "NOFFICE_PAY",
+      "column": "NOFFICE_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIMBENEF",
+      "table": "CLAIMBENEF",
+      "property": "NPAYMENTADDRESS",
+      "column": "NPAYMENTADDRESS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIMBENEF",
+      "table": "CLAIMBENEF",
+      "property": "NRELATION",
+      "column": "NRELATION",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_CASE",
+      "table": "CLAIM_CASE",
+      "property": "NAFP",
+      "column": "NAFP",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_CASE",
+      "table": "CLAIM_CASE",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_CES",
+      "table": "CLAIM_CES",
+      "property": "NBRANCH_LED",
+      "column": "NBRANCH_LED",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_CES",
+      "table": "CLAIM_CES",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_CES",
+      "table": "CLAIM_CES",
+      "property": "NCESS_CONC",
+      "column": "NCESS_CONC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_CES",
+      "table": "CLAIM_CES",
+      "property": "NCESS_TYPE",
+      "column": "NCESS_TYPE",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_CES",
+      "table": "CLAIM_CES",
+      "property": "NCOVER",
+      "column": "NCOVER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_CES",
+      "table": "CLAIM_CES",
+      "property": "NINSUR_AREA",
+      "column": "NINSUR_AREA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_CES",
+      "table": "CLAIM_CES",
+      "property": "NMODULEC",
+      "column": "NMODULEC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_CES",
+      "table": "CLAIM_CES",
+      "property": "NNUMBER",
+      "column": "NNUMBER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_HIS",
+      "table": "CLAIM_HIS",
+      "property": "NBORDEREAUX",
+      "column": "NBORDEREAUX",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_HIS",
+      "table": "CLAIM_HIS",
+      "property": "NDOC_TYPE",
+      "column": "NDOC_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_HIS",
+      "table": "CLAIM_HIS",
+      "property": "NPAY_FORM",
+      "column": "NPAY_FORM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_HIS",
+      "table": "CLAIM_HIS",
+      "property": "NPAY_TYPE",
+      "column": "NPAY_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NATTENTCHANNEL",
+      "column": "NATTENTCHANNEL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NCLAIMANTTYPE",
+      "column": "NCLAIMANTTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NCLA_LI_TYP",
+      "column": "NCLA_LI_TYP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NCOMMERCIALPAYASSOC",
+      "column": "NCOMMERCIALPAYASSOC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NCURREN_DOC",
+      "column": "NCURREN_DOC",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NCURREN_ORDER",
+      "column": "NCURREN_ORDER",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NDOCTORROL",
+      "column": "NDOCTORROL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NMASTERORDER",
+      "column": "NMASTERORDER",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NORDERTYPE",
+      "column": "NORDERTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NPROVIDER",
+      "column": "NPROVIDER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NSTATUS_ORDER",
+      "column": "NSTATUS_ORDER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_ORDER",
+      "table": "CLAIM_ORDER",
+      "property": "NTYPEDOC_PAY",
+      "column": "NTYPEDOC_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETTLEMENT",
+      "table": "CLAIM_SETTLEMENT",
+      "property": "NACC_TYPE",
+      "column": "NACC_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETTLEMENT",
+      "table": "CLAIM_SETTLEMENT",
+      "property": "NCLAIMANTTYPE",
+      "column": "NCLAIMANTTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETTLEMENT",
+      "table": "CLAIM_SETTLEMENT",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETTLEMENT",
+      "table": "CLAIM_SETTLEMENT",
+      "property": "NPAYEE",
+      "column": "NPAYEE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETTLEMENT",
+      "table": "CLAIM_SETTLEMENT",
+      "property": "NPAYMENT_METHOD",
+      "column": "NPAYMENT_METHOD",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETTLEMENT",
+      "table": "CLAIM_SETTLEMENT",
+      "property": "NSETTLEMENT_CONC",
+      "column": "NSETTLEMENT_CONC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETTLEMENT",
+      "table": "CLAIM_SETTLEMENT",
+      "property": "NSETTLEMENT_STAT",
+      "column": "NSETTLEMENT_STAT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETTLEMENT",
+      "table": "CLAIM_SETTLEMENT",
+      "property": "NSEVERITYPEP",
+      "column": "NSEVERITYPEP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETTLEMENT",
+      "table": "CLAIM_SETTLEMENT",
+      "property": "NTYPELIST",
+      "column": "NTYPELIST",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETT_DOCUM",
+      "table": "CLAIM_SETT_DOCUM",
+      "property": "NSTATUS_DOC",
+      "column": "NSTATUS_DOC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETT_FILTERS",
+      "table": "CLAIM_SETT_FILTERS",
+      "property": "NSETTLEMENT_CONC",
+      "column": "NSETTLEMENT_CONC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETT_FILTERS",
+      "table": "CLAIM_SETT_FILTERS",
+      "property": "NTYPEDOC_PAY",
+      "column": "NTYPEDOC_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETT_HIS",
+      "table": "CLAIM_SETT_HIS",
+      "property": "NMOVEMENT_TYPE",
+      "column": "NMOVEMENT_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETT_HIS",
+      "table": "CLAIM_SETT_HIS",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETT_HIS",
+      "table": "CLAIM_SETT_HIS",
+      "property": "NPAYEE",
+      "column": "NPAYEE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETT_HIS",
+      "table": "CLAIM_SETT_HIS",
+      "property": "NPAYMENT_METHOD",
+      "column": "NPAYMENT_METHOD",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETT_HIS",
+      "table": "CLAIM_SETT_HIS",
+      "property": "NSETTLEMENT_CONC",
+      "column": "NSETTLEMENT_CONC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETT_HIS",
+      "table": "CLAIM_SETT_HIS",
+      "property": "NSETTLEMENT_STAT",
+      "column": "NSETTLEMENT_STAT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_SETT_VOUCHER",
+      "table": "CLAIM_SETT_VOUCHER",
+      "property": "NTYPEDISC_PROV",
+      "column": "NTYPEDISC_PROV",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_VOUCHER",
+      "table": "CLAIM_VOUCHER",
+      "property": "NFOREIGNDOCTYPE",
+      "column": "NFOREIGNDOCTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_VOUCHER",
+      "table": "CLAIM_VOUCHER",
+      "property": "NPROVIDER",
+      "column": "NPROVIDER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLAIM_VOUCHER",
+      "table": "CLAIM_VOUCHER",
+      "property": "NSTATUS",
+      "column": "NSTATUS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLIENT_HIS",
+      "table": "CLIENT_HIS",
+      "property": "NAFP",
+      "column": "NAFP",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CLIENT_HIS",
+      "table": "CLIENT_HIS",
+      "property": "NCIVILSTA",
+      "column": "NCIVILSTA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLIENT_HIS",
+      "table": "CLIENT_HIS",
+      "property": "NHEALTH_ORG",
+      "column": "NHEALTH_ORG",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLIENT_HIS",
+      "table": "CLIENT_HIS",
+      "property": "NINCAPACITY",
+      "column": "NINCAPACITY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLIENT_HIS",
+      "table": "CLIENT_HIS",
+      "property": "NINCAP_COD",
+      "column": "NINCAP_COD",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLIENT_HIS",
+      "table": "CLIENT_HIS",
+      "property": "NLIMITDRIV",
+      "column": "NLIMITDRIV",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLIENT_HIS",
+      "table": "CLIENT_HIS",
+      "property": "NTYPDRIVER",
+      "column": "NTYPDRIVER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLIENT_SF",
+      "table": "CLIENT_SF",
+      "property": "NPOSITION",
+      "column": "NPOSITION",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLORDER_DETAIL",
+      "table": "CLORDER_DETAIL",
+      "property": "NSURCHAR_MED",
+      "column": "NSURCHAR_MED",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLORDER_HIS",
+      "table": "CLORDER_HIS",
+      "property": "NATTENTCHANNEL",
+      "column": "NATTENTCHANNEL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLORDER_HIS",
+      "table": "CLORDER_HIS",
+      "property": "NCURREN_DOC",
+      "column": "NCURREN_DOC",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CLORDER_HIS",
+      "table": "CLORDER_HIS",
+      "property": "NCURREN_ORDER",
+      "column": "NCURREN_ORDER",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CLORDER_HIS",
+      "table": "CLORDER_HIS",
+      "property": "NSTATUS_ORDER",
+      "column": "NSTATUS_ORDER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CLORDER_HIS",
+      "table": "CLORDER_HIS",
+      "property": "NTYPEDOC_PAY",
+      "column": "NTYPEDOC_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CL_COVER",
+      "table": "CL_COVER",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COLFORMREF",
+      "table": "COLFORMREF",
+      "property": "NBANK",
+      "column": "NBANK",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COLFORMREF",
+      "table": "COLFORMREF",
+      "property": "NCOLLECTOR",
+      "column": "NCOLLECTOR",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COLFORMREF",
+      "table": "COLFORMREF",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COLFORMREF",
+      "table": "COLFORMREF",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMISSION",
+      "table": "COMMISSION",
+      "property": "NID_CAMPAIGN",
+      "column": "NID_CAMPAIGN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMISS_PR",
+      "table": "COMMISS_PR",
+      "property": "NID_CAMPAIGN",
+      "column": "NID_CAMPAIGN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMISS_PR",
+      "table": "COMMISS_PR",
+      "property": "NPROVINCE",
+      "column": "NPROVINCE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMISS_PR",
+      "table": "COMMISS_PR",
+      "property": "NROLE",
+      "column": "NROLE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYMENTREQUESTS",
+      "table": "COMMPAYMENTREQUESTS",
+      "property": "NCLAIM",
+      "column": "NCLAIM",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYMENTREQUESTS",
+      "table": "COMMPAYMENTREQUESTS",
+      "property": "NCURRENCY",
+      "column": "NCURRENCY",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYMENTREQUESTS",
+      "table": "COMMPAYMENTREQUESTS",
+      "property": "NCURRENCY_PAY",
+      "column": "NCURRENCY_PAY",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYMENTREQUESTS",
+      "table": "COMMPAYMENTREQUESTS",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYMENTREQUESTS",
+      "table": "COMMPAYMENTREQUESTS",
+      "property": "NROLE",
+      "column": "NROLE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYMENTREQUESTS",
+      "table": "COMMPAYMENTREQUESTS",
+      "property": "NUSERCODE_RESPONSIBLE",
+      "column": "NUSERCODE_RESPONSIBLE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYMENTREQUESTS",
+      "table": "COMMPAYMENTREQUESTS",
+      "property": "NUSER_AMEND",
+      "column": "NUSER_AMEND",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYMENTREQUESTS",
+      "table": "COMMPAYMENTREQUESTS",
+      "property": "NUSER_DERIVEDBY",
+      "column": "NUSER_DERIVEDBY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYREQ_HIS",
+      "table": "COMMPAYREQ_HIS",
+      "property": "NMOVEMENT_TYPE",
+      "column": "NMOVEMENT_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYREQ_HIS",
+      "table": "COMMPAYREQ_HIS",
+      "property": "NSTATUS",
+      "column": "NSTATUS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYREQ_ORDERS",
+      "table": "COMMPAYREQ_ORDERS",
+      "property": "NCURRENCY_MO",
+      "column": "NCURRENCY_MO",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYREQ_ORDERS",
+      "table": "COMMPAYREQ_ORDERS",
+      "property": "NMASTERORDER",
+      "column": "NMASTERORDER",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYREQ_ORDERS",
+      "table": "COMMPAYREQ_ORDERS",
+      "property": "NMASTERORDERTYPE",
+      "column": "NMASTERORDERTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYREQ_ORDERS",
+      "table": "COMMPAYREQ_ORDERS",
+      "property": "NSTATUS_ORDER",
+      "column": "NSTATUS_ORDER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYREQ_POLICIES",
+      "table": "COMMPAYREQ_POLICIES",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COMMPAYREQ_POLICIES",
+      "table": "COMMPAYREQ_POLICIES",
+      "property": "NINTERTYP",
+      "column": "NINTERTYP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMM_POL",
+      "table": "COMM_POL",
+      "property": "NCOD_SALDIS",
+      "column": "NCOD_SALDIS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMM_POL",
+      "table": "COMM_POL",
+      "property": "NID_CAMPAIGN",
+      "column": "NID_CAMPAIGN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMM_POL",
+      "table": "COMM_POL",
+      "property": "NTRATYPEI",
+      "column": "NTRATYPEI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMM_POL",
+      "table": "COMM_POL",
+      "property": "NTYPE",
+      "column": "NTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMM_TOT",
+      "table": "COMM_TOT",
+      "property": "NBRANCH",
+      "column": "NBRANCH",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMM_TOT",
+      "table": "COMM_TOT",
+      "property": "NCERTIF",
+      "column": "NCERTIF",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COMM_TOT",
+      "table": "COMM_TOT",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COMM_TOT",
+      "table": "COMM_TOT",
+      "property": "NPOLICY",
+      "column": "NPOLICY",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "COMM_TOT",
+      "table": "COMM_TOT",
+      "property": "NPRODUCT",
+      "column": "NPRODUCT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMPANY",
+      "table": "COMPANY",
+      "property": "NCLASIFIC",
+      "column": "NCLASIFIC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMPANY",
+      "table": "COMPANY",
+      "property": "NCOUNTRY",
+      "column": "NCOUNTRY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COMPANY",
+      "table": "COMPANY",
+      "property": "NLOCAL",
+      "column": "NLOCAL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CONTRNPRO",
+      "table": "CONTRNPRO",
+      "property": "NFREQCT",
+      "column": "NFREQCT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CONTRNPRO",
+      "table": "CONTRNPRO",
+      "property": "NFREQPAY",
+      "column": "NFREQPAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CONTRPROC",
+      "table": "CONTRPROC",
+      "property": "NFQCY_ACC",
+      "column": "NFQCY_ACC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CONTRPROC",
+      "table": "CONTRPROC",
+      "property": "NFREQPAY",
+      "column": "NFREQPAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER",
+      "table": "COVER",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER",
+      "table": "COVER",
+      "property": "NCAUSEUPD",
+      "column": "NCAUSEUPD",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER",
+      "table": "COVER",
+      "property": "NFREQMAXEVEN",
+      "column": "NFREQMAXEVEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER",
+      "table": "COVER",
+      "property": "NRETARIF",
+      "column": "NRETARIF",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER",
+      "table": "COVER",
+      "property": "NTYPDURINS",
+      "column": "NTYPDURINS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER",
+      "table": "COVER",
+      "property": "NTYPDURPAY",
+      "column": "NTYPDURPAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER_CO_G",
+      "table": "COVER_CO_G",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER_CO_G",
+      "table": "COVER_CO_G",
+      "property": "NFREQMAXEVEN",
+      "column": "NFREQMAXEVEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER_CO_G",
+      "table": "COVER_CO_G",
+      "property": "NRETARIF",
+      "column": "NRETARIF",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER_CO_G",
+      "table": "COVER_CO_G",
+      "property": "NTYPDURPAY",
+      "column": "NTYPDURPAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER_CO_P",
+      "table": "COVER_CO_P",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER_CO_P",
+      "table": "COVER_CO_P",
+      "property": "NFREQMAXEVEN",
+      "column": "NFREQMAXEVEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER_CO_P",
+      "table": "COVER_CO_P",
+      "property": "NRETARIF",
+      "column": "NRETARIF",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "COVER_CO_P",
+      "table": "COVER_CO_P",
+      "property": "NTYPDURPAY",
+      "column": "NTYPDURPAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CRED_CARD",
+      "table": "CRED_CARD",
+      "property": "NCARD_TYPE",
+      "column": "NCARD_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CURR_ACC",
+      "table": "CURR_ACC",
+      "property": "NBRANCH",
+      "column": "NBRANCH",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CURR_ACC",
+      "table": "CURR_ACC",
+      "property": "NCERTIF",
+      "column": "NCERTIF",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CURR_ACC",
+      "table": "CURR_ACC",
+      "property": "NCOMPANY",
+      "column": "NCOMPANY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CURR_ACC",
+      "table": "CURR_ACC",
+      "property": "NINSUR_AREA",
+      "column": "NINSUR_AREA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CURR_ACC",
+      "table": "CURR_ACC",
+      "property": "NLED_COMPAN",
+      "column": "NLED_COMPAN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "CURR_ACC",
+      "table": "CURR_ACC",
+      "property": "NPOLICY",
+      "column": "NPOLICY",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "CURR_ACC",
+      "table": "CURR_ACC",
+      "property": "NPRODUCT",
+      "column": "NPRODUCT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DETAIL_PRE",
+      "table": "DETAIL_PRE",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DETAIL_PRE",
+      "table": "DETAIL_PRE",
+      "property": "NDISSUR_TYPE",
+      "column": "NDISSUR_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DET_COMLIF",
+      "table": "DET_COMLIF",
+      "property": "NIDCOMM",
+      "column": "NIDCOMM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DET_COMLIF",
+      "table": "DET_COMLIF",
+      "property": "NTYPCOMMIS",
+      "column": "NTYPCOMMIS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DET_COMLIF",
+      "table": "DET_COMLIF",
+      "property": "NTYPERISK",
+      "column": "NTYPERISK",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DIR_DEBIT",
+      "table": "DIR_DEBIT",
+      "property": "NBANKEXT",
+      "column": "NBANKEXT",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "DIR_DEBIT",
+      "table": "DIR_DEBIT",
+      "property": "NTYP_CRECARD",
+      "column": "NTYP_CRECARD",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DIR_DEBIT_CLI",
+      "table": "DIR_DEBIT_CLI",
+      "property": "NBANKEXT",
+      "column": "NBANKEXT",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "DISCO_EXPR",
+      "table": "DISCO_EXPR",
+      "property": "NBRANCH_EST",
+      "column": "NBRANCH_EST",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DISCO_EXPR",
+      "table": "DISCO_EXPR",
+      "property": "NBRANCH_LED",
+      "column": "NBRANCH_LED",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DISCO_EXPR",
+      "table": "DISCO_EXPR",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DISC_XPREM",
+      "table": "DISC_XPREM",
+      "property": "NCAUSE",
+      "column": "NCAUSE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DOCUMENTS",
+      "table": "DOCUMENTS",
+      "property": "NDOC_TYPE",
+      "column": "NDOC_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DOCUMENTS",
+      "table": "DOCUMENTS",
+      "property": "NPROVIDER",
+      "column": "NPROVIDER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DOCUMENTS",
+      "table": "DOCUMENTS",
+      "property": "NSTATUS_DOC",
+      "column": "NSTATUS_DOC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DOCUMENTS",
+      "table": "DOCUMENTS",
+      "property": "NUSERCODE",
+      "column": "NUSERCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DOCUMENTS_PRECLAIM",
+      "table": "DOCUMENTS_PRECLAIM",
+      "property": "NCLASS_DOC",
+      "column": "NCLASS_DOC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DOCUMENTS_PRECLAIM",
+      "table": "DOCUMENTS_PRECLAIM",
+      "property": "NDOC_TYPE",
+      "column": "NDOC_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DOCUMENTS_PRECLAIM",
+      "table": "DOCUMENTS_PRECLAIM",
+      "property": "NPROVIDER",
+      "column": "NPROVIDER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DOC_REQ_CLI",
+      "table": "DOC_REQ_CLI",
+      "property": "NTYPEDOC",
+      "column": "NTYPEDOC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DRAFT_HIST",
+      "table": "DRAFT_HIST",
+      "property": "NBANK_CODE",
+      "column": "NBANK_CODE",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "DRAFT_HIST",
+      "table": "DRAFT_HIST",
+      "property": "NCOLLECTOR",
+      "column": "NCOLLECTOR",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "DRAFT_HIST",
+      "table": "DRAFT_HIST",
+      "property": "NTYPE",
+      "column": "NTYPE",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "DURPAY_PROD",
+      "table": "DURPAY_PROD",
+      "property": "NTYPDURINS",
+      "column": "NTYPDURINS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "DURPAY_PROD",
+      "table": "DURPAY_PROD",
+      "property": "NTYPDURPAY",
+      "column": "NTYPDURPAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "EVAL_MASTER",
+      "table": "EVAL_MASTER",
+      "property": "NBRANCH",
+      "column": "NBRANCH",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "EVAL_MASTER",
+      "table": "EVAL_MASTER",
+      "property": "NCERTIF",
+      "column": "NCERTIF",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "EVAL_MASTER",
+      "table": "EVAL_MASTER",
+      "property": "NPOLICY",
+      "column": "NPOLICY",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "EVAL_MASTER",
+      "table": "EVAL_MASTER",
+      "property": "NPRODUCT",
+      "column": "NPRODUCT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANCE_CO",
+      "table": "FINANCE_CO",
+      "property": "NFRECUENCY",
+      "column": "NFRECUENCY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANCE_CO",
+      "table": "FINANCE_CO",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANCE_CO",
+      "table": "FINANCE_CO",
+      "property": "NSTAT_CONTR",
+      "column": "NSTAT_CONTR",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANCE_CO",
+      "table": "FINANCE_CO",
+      "property": "NUSERCODE",
+      "column": "NUSERCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANCE_CO",
+      "table": "FINANCE_CO",
+      "property": "NWAY_PAY",
+      "column": "NWAY_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANC_DRA",
+      "table": "FINANC_DRA",
+      "property": "NBORDEREAUX",
+      "column": "NBORDEREAUX",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANC_DRA",
+      "table": "FINANC_DRA",
+      "property": "NBULLETINS",
+      "column": "NBULLETINS",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANC_DRA",
+      "table": "FINANC_DRA",
+      "property": "NCLAIM",
+      "column": "NCLAIM",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANC_DRA",
+      "table": "FINANC_DRA",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANC_DRA",
+      "table": "FINANC_DRA",
+      "property": "NSTATPRINT",
+      "column": "NSTATPRINT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANC_DRA",
+      "table": "FINANC_DRA",
+      "property": "NSTAT_DRAFT",
+      "column": "NSTAT_DRAFT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANC_DRA",
+      "table": "FINANC_DRA",
+      "property": "NSUS_REASON",
+      "column": "NSUS_REASON",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANC_DRA",
+      "table": "FINANC_DRA",
+      "property": "NWAY_PAY",
+      "column": "NWAY_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANC_PRE",
+      "table": "FINANC_PRE",
+      "property": "NCOMPANY",
+      "column": "NCOMPANY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANC_PRE",
+      "table": "FINANC_PRE",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "FINANC_PRE",
+      "table": "FINANC_PRE",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "FOLDERS",
+      "table": "FOLDERS",
+      "property": "NFOLDERKEY",
+      "column": "NFOLDERKEY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "GROUP_COLUMNS",
+      "table": "GROUP_COLUMNS",
+      "property": "NSHEET",
+      "column": "NSHEET",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "IMAGES",
+      "table": "IMAGES",
+      "property": "IIMAGE",
+      "column": "IIMAGE",
+      "type": "Byte[]",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NAGENCY",
+      "column": "NAGENCY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NCOMTABLI",
+      "column": "NCOMTABLI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NECO_SCHE",
+      "column": "NECO_SCHE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NGEN_SCHE",
+      "column": "NGEN_SCHE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NINTERTYP",
+      "column": "NINTERTYP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NINT_STATUS",
+      "column": "NINT_STATUS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NLEGAL_SCH",
+      "column": "NLEGAL_SCH",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NLIFE_SCHE",
+      "column": "NLIFE_SCHE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NOFFICEAGEN",
+      "column": "NOFFICEAGEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NRECEPTYP",
+      "column": "NRECEPTYP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMEDIA",
+      "table": "INTERMEDIA",
+      "property": "NTABLE_COD",
+      "column": "NTABLE_COD",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMED_HIS",
+      "table": "INTERMED_HIS",
+      "property": "NINTERTYP",
+      "column": "NINTERTYP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMED_HIS",
+      "table": "INTERMED_HIS",
+      "property": "NINT_STATUS",
+      "column": "NINT_STATUS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMED_HIS",
+      "table": "INTERMED_HIS",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERMED_HIS",
+      "table": "INTERMED_HIS",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "INTERM_TYP",
+      "table": "INTERM_TYP",
+      "property": "NRECEPTYP",
+      "column": "NRECEPTYP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "LIFE",
+      "table": "LIFE",
+      "property": "NCALCAPITAL",
+      "column": "NCALCAPITAL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "LIFE",
+      "table": "LIFE",
+      "property": "NGROUP_COMP",
+      "column": "NGROUP_COMP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "LIFE",
+      "table": "LIFE",
+      "property": "NTYPDURINS",
+      "column": "NTYPDURINS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "LIFE",
+      "table": "LIFE",
+      "property": "NTYPEEXC",
+      "column": "NTYPEEXC",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "LIFE",
+      "table": "LIFE",
+      "property": "NTYPPREMIUM",
+      "column": "NTYPPREMIUM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "LIFE_COVER",
+      "table": "LIFE_COVER",
+      "property": "NBRANCH_GEN",
+      "column": "NBRANCH_GEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "LIFE_COVER",
+      "table": "LIFE_COVER",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "LIFE_COVER",
+      "table": "LIFE_COVER",
+      "property": "NRETARIF",
+      "column": "NRETARIF",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "LIFE_DOCU",
+      "table": "LIFE_DOCU",
+      "property": "NEVAL",
+      "column": "NEVAL",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "LIFE_DOCU",
+      "table": "LIFE_DOCU",
+      "property": "NREASON",
+      "column": "NREASON",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "LIFE_DOCU",
+      "table": "LIFE_DOCU",
+      "property": "NSTAT_DOCREQ",
+      "column": "NSTAT_DOCREQ",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MASSIVE_LOG_PROC",
+      "table": "MASSIVE_LOG_PROC",
+      "property": "NCOD_AGREE",
+      "column": "NCOD_AGREE",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "MASSIVE_RULES",
+      "table": "MASSIVE_RULES",
+      "property": "NSECTION",
+      "column": "NSECTION",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MASTERCL_DETAIL",
+      "table": "MASTERCL_DETAIL",
+      "property": "NCAUSEREOPENCL",
+      "column": "NCAUSEREOPENCL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MASTERCL_HIS",
+      "table": "MASTERCL_HIS",
+      "property": "NCLAIMANTTYPE",
+      "column": "NCLAIMANTTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MASTERCL_HIS",
+      "table": "MASTERCL_HIS",
+      "property": "NMOVEMENT_TYPE",
+      "column": "NMOVEMENT_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MASTERCL_HIS",
+      "table": "MASTERCL_HIS",
+      "property": "NTYPEDOC_PAY",
+      "column": "NTYPEDOC_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MASTERCL_ORDER",
+      "table": "MASTERCL_ORDER",
+      "property": "NCLAIMANTTYPE",
+      "column": "NCLAIMANTTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MASTERCL_ORDER",
+      "table": "MASTERCL_ORDER",
+      "property": "NCLA_LI_TYP",
+      "column": "NCLA_LI_TYP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MASTERCL_ORDER",
+      "table": "MASTERCL_ORDER",
+      "property": "NMASTERORDERTYPE",
+      "column": "NMASTERORDERTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MASTERCL_ORDER",
+      "table": "MASTERCL_ORDER",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MEDBENEFITS_PROD",
+      "table": "MEDBENEFITS_PROD",
+      "property": "NATTENSYSTEM",
+      "column": "NATTENSYSTEM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MEDBENEFITS_PROD",
+      "table": "MEDBENEFITS_PROD",
+      "property": "NDED_TYPE",
+      "column": "NDED_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MEDBENEFITS_PROD",
+      "table": "MEDBENEFITS_PROD",
+      "property": "NINDPRINT",
+      "column": "NINDPRINT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MEDBENEFITS_PROD",
+      "table": "MEDBENEFITS_PROD",
+      "property": "NOFFICE_PROD",
+      "column": "NOFFICE_PROD",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MEDBENEFITS_PROD",
+      "table": "MEDBENEFITS_PROD",
+      "property": "NPROVIDER",
+      "column": "NPROVIDER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MEDBENEFITS_PROD",
+      "table": "MEDBENEFITS_PROD",
+      "property": "NROLE",
+      "column": "NROLE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MEDBENEFITS_PROD",
+      "table": "MEDBENEFITS_PROD",
+      "property": "NTYPEEXHAUS",
+      "column": "NTYPEEXHAUS",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "MEDBENEFITS_PROD",
+      "table": "MEDBENEFITS_PROD",
+      "property": "NUSERCODE",
+      "column": "NUSERCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MODULES",
+      "table": "MODULES",
+      "property": "NATTENSYSTEM",
+      "column": "NATTENSYSTEM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MODULES",
+      "table": "MODULES",
+      "property": "NGEOGRAPHAREA",
+      "column": "NGEOGRAPHAREA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MODUL_CO_G",
+      "table": "MODUL_CO_G",
+      "property": "NATTENSYSTEM",
+      "column": "NATTENSYSTEM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MODUL_CO_G",
+      "table": "MODUL_CO_G",
+      "property": "NGEOGRAPHAREA",
+      "column": "NGEOGRAPHAREA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MODUL_CO_P",
+      "table": "MODUL_CO_P",
+      "property": "NATTENSYSTEM",
+      "column": "NATTENSYSTEM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MODUL_CO_P",
+      "table": "MODUL_CO_P",
+      "property": "NGEOGRAPHAREA",
+      "column": "NGEOGRAPHAREA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MOVE_ACC",
+      "table": "MOVE_ACC",
+      "property": "NBANKEXT",
+      "column": "NBANKEXT",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "MOVE_ACC",
+      "table": "MOVE_ACC",
+      "property": "NBORDEREAUX",
+      "column": "NBORDEREAUX",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "MOVE_ACC",
+      "table": "MOVE_ACC",
+      "property": "NBULLETINS",
+      "column": "NBULLETINS",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "MOVE_ACC",
+      "table": "MOVE_ACC",
+      "property": "NCLAIM",
+      "column": "NCLAIM",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "MOVE_ACC",
+      "table": "MOVE_ACC",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "MOVE_ACC",
+      "table": "MOVE_ACC",
+      "property": "NPROVINCE",
+      "column": "NPROVINCE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MOVE_ACC",
+      "table": "MOVE_ACC",
+      "property": "NTYPE_MOVE",
+      "column": "NTYPE_MOVE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MOVE_ACC",
+      "table": "MOVE_ACC",
+      "property": "NTYPE_PAY",
+      "column": "NTYPE_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MOVE_ACC",
+      "table": "MOVE_ACC",
+      "property": "NTYPE_TRAN",
+      "column": "NTYPE_TRAN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "MUNICIPALITY",
+      "table": "MUNICIPALITY",
+      "property": "NLOCAL",
+      "column": "NLOCAL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "NOCONVERS",
+      "table": "NOCONVERS",
+      "property": "NAREAWAIT",
+      "column": "NAREAWAIT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "NOTES",
+      "table": "NOTES",
+      "property": "NRECTYPE",
+      "column": "NRECTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "OUT_MOVEME",
+      "table": "OUT_MOVEME",
+      "property": "NWAY_PAY",
+      "column": "NWAY_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "OUT_PREMIU",
+      "table": "OUT_PREMIU",
+      "property": "NDISSUR_TYPE",
+      "column": "NDISSUR_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PHONES",
+      "table": "PHONES",
+      "property": "NBESTTIMETOCALL",
+      "column": "NBESTTIMETOCALL",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PHONES",
+      "table": "PHONES",
+      "property": "NPHONE_TYPE",
+      "column": "NPHONE_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NAGENCY",
+      "column": "NAGENCY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NCOD_AGREE",
+      "column": "NCOD_AGREE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NCOMPANY",
+      "column": "NCOMPANY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NLEADCOMP",
+      "column": "NLEADCOMP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NNO_CONVERS",
+      "column": "NNO_CONVERS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NOFFICEAGEN",
+      "column": "NOFFICEAGEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NOFFICEINS",
+      "column": "NOFFICEINS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NPAYFREQ",
+      "column": "NPAYFREQ",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NREPINSURED",
+      "column": "NREPINSURED",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY",
+      "table": "POLICY",
+      "property": "NSPECIALBUSINESS",
+      "column": "NSPECIALBUSINESS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY_HIS",
+      "table": "POLICY_HIS",
+      "property": "NCLAIM",
+      "column": "NCLAIM",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY_HIS",
+      "table": "POLICY_HIS",
+      "property": "NCOD_AGREE",
+      "column": "NCOD_AGREE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY_HIS",
+      "table": "POLICY_HIS",
+      "property": "NNO_CONVERS",
+      "column": "NNO_CONVERS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY_HIS",
+      "table": "POLICY_HIS",
+      "property": "NSERV_ORDER",
+      "column": "NSERV_ORDER",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY_HIS",
+      "table": "POLICY_HIS",
+      "property": "NSTATQUOTA",
+      "column": "NSTATQUOTA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY_HIS",
+      "table": "POLICY_HIS",
+      "property": "NTYPE_HIST",
+      "column": "NTYPE_HIST",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "POLICY_HIS",
+      "table": "POLICY_HIS",
+      "property": "NWAIT_CODE",
+      "column": "NWAIT_CODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRECLAIM",
+      "table": "PRECLAIM",
+      "property": "NATTENTCHANNEL",
+      "column": "NATTENTCHANNEL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRECLAIM",
+      "table": "PRECLAIM",
+      "property": "NCLA_LI_TYP",
+      "column": "NCLA_LI_TYP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRECLAIM",
+      "table": "PRECLAIM",
+      "property": "NMASTERORDER",
+      "column": "NMASTERORDER",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PRECLAIM",
+      "table": "PRECLAIM",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRECLAIM",
+      "table": "PRECLAIM",
+      "property": "NORDERTYPE",
+      "column": "NORDERTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NBULLETINS",
+      "column": "NBULLETINS",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NCERTIF",
+      "column": "NCERTIF",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NCOD_AGREE",
+      "column": "NCOD_AGREE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NCOLLECTOR",
+      "column": "NCOLLECTOR",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NCOMPANY",
+      "column": "NCOMPANY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NINDRECDEP",
+      "column": "NINDRECDEP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NINSUR_AREA",
+      "column": "NINSUR_AREA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NSTATUS_PRE",
+      "column": "NSTATUS_PRE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NSUS_REASON",
+      "column": "NSUS_REASON",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NTRATYPEI",
+      "column": "NTRATYPEI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM",
+      "table": "PREMIUM",
+      "property": "NWAY_PAY",
+      "column": "NWAY_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM_CE",
+      "table": "PREMIUM_CE",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM_CE",
+      "table": "PREMIUM_CE",
+      "property": "NTRATYPEI",
+      "column": "NTRATYPEI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM_MO",
+      "table": "PREMIUM_MO",
+      "property": "NBANK_CODE",
+      "column": "NBANK_CODE",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM_MO",
+      "table": "PREMIUM_MO",
+      "property": "NBORDEREAUX",
+      "column": "NBORDEREAUX",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM_MO",
+      "table": "PREMIUM_MO",
+      "property": "NBULLETINS",
+      "column": "NBULLETINS",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM_MO",
+      "table": "PREMIUM_MO",
+      "property": "NCARD_TYPE",
+      "column": "NCARD_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM_MO",
+      "table": "PREMIUM_MO",
+      "property": "NCAUSE_AMEN",
+      "column": "NCAUSE_AMEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM_MO",
+      "table": "PREMIUM_MO",
+      "property": "NCOLLECTOR",
+      "column": "NCOLLECTOR",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM_MO",
+      "table": "PREMIUM_MO",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PREMIUM_MO",
+      "table": "PREMIUM_MO",
+      "property": "NTYPE",
+      "column": "NTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT",
+      "table": "PRODUCT",
+      "property": "NCLASSIFICATION",
+      "column": "NCLASSIFICATION",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT",
+      "table": "PRODUCT",
+      "property": "NPAYFREQ",
+      "column": "NPAYFREQ",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT",
+      "table": "PRODUCT",
+      "property": "NREPINSURED",
+      "column": "NREPINSURED",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT",
+      "table": "PRODUCT",
+      "property": "NWAY_PAY",
+      "column": "NWAY_PAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NANLIFINT",
+      "column": "NANLIFINT",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NBENEFAPL",
+      "column": "NBENEFAPL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NDEDUFREQ",
+      "column": "NDEDUFREQ",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NINFTYPE",
+      "column": "NINFTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NPAYINTER",
+      "column": "NPAYINTER",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NPRODCLAS",
+      "column": "NPRODCLAS",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NSURRFREQ",
+      "column": "NSURRFREQ",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NTYPDURINS",
+      "column": "NTYPDURINS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NTYPE_RATEPROY",
+      "column": "NTYPE_RATEPROY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NULRDMAXPER",
+      "column": "NULRDMAXPER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NULRDMQTPER",
+      "column": "NULRDMQTPER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NULREDPER",
+      "column": "NULREDPER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NULSWIPER",
+      "column": "NULSWIPER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NULSWMAXPER",
+      "column": "NULSWMAXPER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "PRODUCT_LI",
+      "table": "PRODUCT_LI",
+      "property": "NULSWMQTPER",
+      "column": "NULSWMQTPER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "QC_PARAM",
+      "table": "QC_PARAM",
+      "property": "NROUTY_QC",
+      "column": "NROUTY_QC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "QC_PARAM",
+      "table": "QC_PARAM",
+      "property": "NROUTY_QCCAP",
+      "column": "NROUTY_QCCAP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "QC_PARAM",
+      "table": "QC_PARAM",
+      "property": "NUSERCODE",
+      "column": "NUSERCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "REFINAN_DRA",
+      "table": "REFINAN_DRA",
+      "property": "NBRANCH",
+      "column": "NBRANCH",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "REFINAN_DRA",
+      "table": "REFINAN_DRA",
+      "property": "NOPT_DRAFT",
+      "column": "NOPT_DRAFT",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "RELCONCEPTS",
+      "table": "RELCONCEPTS",
+      "property": "NACCOUNT",
+      "column": "NACCOUNT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "RELCONCEPTS",
+      "table": "RELCONCEPTS",
+      "property": "NBANK_CODE",
+      "column": "NBANK_CODE",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "RELCONCEPTS",
+      "table": "RELCONCEPTS",
+      "property": "NCHANGEDAT",
+      "column": "NCHANGEDAT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "RELCONCEPTS",
+      "table": "RELCONCEPTS",
+      "property": "NCOMPANY",
+      "column": "NCOMPANY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "RELCONCEPTS",
+      "table": "RELCONCEPTS",
+      "property": "NCURRENCY",
+      "column": "NCURRENCY",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "RELCONCEPTS",
+      "table": "RELCONCEPTS",
+      "property": "NORICURR",
+      "column": "NORICURR",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "RELCONCEPTS",
+      "table": "RELCONCEPTS",
+      "property": "NTYPESUPPORT",
+      "column": "NTYPESUPPORT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "REQUEST",
+      "table": "REQUEST",
+      "property": "NBRAPAYSURR",
+      "column": "NBRAPAYSURR",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "REQUEST",
+      "table": "REQUEST",
+      "property": "NCERPAYSURR",
+      "column": "NCERPAYSURR",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "REQUEST",
+      "table": "REQUEST",
+      "property": "NINSTITUTION",
+      "column": "NINSTITUTION",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "REQUEST",
+      "table": "REQUEST",
+      "property": "NNULLCODE",
+      "column": "NNULLCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "REQUEST",
+      "table": "REQUEST",
+      "property": "NPOLPAYSURR",
+      "column": "NPOLPAYSURR",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "REQUEST",
+      "table": "REQUEST",
+      "property": "NPROPAYSURR",
+      "column": "NPROPAYSURR",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "REQUEST",
+      "table": "REQUEST",
+      "property": "NSURR_REASON",
+      "column": "NSURR_REASON",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "REQUEST",
+      "table": "REQUEST",
+      "property": "NTYPEPAY",
+      "column": "NTYPEPAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "REQUEST",
+      "table": "REQUEST",
+      "property": "NTYPE_PAYMENT",
+      "column": "NTYPE_PAYMENT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "REQ_ENDOR",
+      "table": "REQ_ENDOR",
+      "property": "NUSERCODE_REJECT",
+      "column": "NUSERCODE_REJECT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "ROLES",
+      "table": "ROLES",
+      "property": "NCITY_RESIDENCE",
+      "column": "NCITY_RESIDENCE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "ROLES",
+      "table": "ROLES",
+      "property": "NCLASSTYPDOC",
+      "column": "NCLASSTYPDOC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "ROLES",
+      "table": "ROLES",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "ROLES",
+      "table": "ROLES",
+      "property": "NSTATUSROL",
+      "column": "NSTATUSROL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "ROLES",
+      "table": "ROLES",
+      "property": "NTYPCLIENTDOC",
+      "column": "NTYPCLIENTDOC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "ROLES",
+      "table": "ROLES",
+      "property": "NTYPELIST",
+      "column": "NTYPELIST",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "ROLES",
+      "table": "ROLES",
+      "property": "NTYPENAME",
+      "column": "NTYPENAME",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "ROLES",
+      "table": "ROLES",
+      "property": "NTYPERISK",
+      "column": "NTYPERISK",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "SECTION_PO",
+      "table": "SECTION_PO",
+      "property": "NORIGIN",
+      "column": "NORIGIN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "STIPEND_POL",
+      "table": "STIPEND_POL",
+      "property": "NINTERMED",
+      "column": "NINTERMED",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "TABLE5633",
+      "table": "TABLE5633",
+      "property": "NTABLE6071",
+      "column": "NTABLE6071",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_AM_EXC",
+      "table": "TAB_AM_EXC",
+      "property": "NEXC_CODE",
+      "column": "NEXC_CODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_CLAUSE",
+      "table": "TAB_CLAUSE",
+      "property": "NTYPE",
+      "column": "NTYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_CL_OPE",
+      "table": "TAB_CL_OPE",
+      "property": "NGEN_OPERA",
+      "column": "NGEN_OPERA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_CL_OPE",
+      "table": "TAB_CL_OPE",
+      "property": "NPAY_IND",
+      "column": "NPAY_IND",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_CL_OPE",
+      "table": "TAB_CL_OPE",
+      "property": "NRECOVER_IN",
+      "column": "NRECOVER_IN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_CL_OPE",
+      "table": "TAB_CL_OPE",
+      "property": "NREC_ESP_IN",
+      "column": "NREC_ESP_IN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_CL_OPE",
+      "table": "TAB_CL_OPE",
+      "property": "NRESERVE_IN",
+      "column": "NRESERVE_IN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COMLIF",
+      "table": "TAB_COMLIF",
+      "property": "NINTERTYP",
+      "column": "NINTERTYP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COMPRO",
+      "table": "TAB_COMPRO",
+      "property": "NTYP_AMOUNT",
+      "column": "NTYP_AMOUNT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COVROL",
+      "table": "TAB_COVROL",
+      "property": "NCAMAXROL",
+      "column": "NCAMAXROL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COVROL",
+      "table": "TAB_COVROL",
+      "property": "NFIELDDATE",
+      "column": "NFIELDDATE",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COVROL",
+      "table": "TAB_COVROL",
+      "property": "NID_TABLE",
+      "column": "NID_TABLE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COVROL",
+      "table": "TAB_COVROL",
+      "property": "NROLACTIV_REL",
+      "column": "NROLACTIV_REL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COVROL",
+      "table": "TAB_COVROL",
+      "property": "NROLCAP",
+      "column": "NROLCAP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COVROL",
+      "table": "TAB_COVROL",
+      "property": "NROLPREM",
+      "column": "NROLPREM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COVROL",
+      "table": "TAB_COVROL",
+      "property": "NTYPDURINS",
+      "column": "NTYPDURINS",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COVROL",
+      "table": "TAB_COVROL",
+      "property": "NTYPDURPAY",
+      "column": "NTYPDURPAY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COVROL",
+      "table": "TAB_COVROL",
+      "property": "NTYPE_DUREXEMP",
+      "column": "NTYPE_DUREXEMP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_COVROL",
+      "table": "TAB_COVROL",
+      "property": "NUSERCODE",
+      "column": "NUSERCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_DOCU",
+      "table": "TAB_DOCU",
+      "property": "NDOC_TYPE",
+      "column": "NDOC_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_GENCOV",
+      "table": "TAB_GENCOV",
+      "property": "NBRANCH_EST",
+      "column": "NBRANCH_EST",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_GENCOV",
+      "table": "TAB_GENCOV",
+      "property": "NBRANCH_GEN",
+      "column": "NBRANCH_GEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_GENCOV",
+      "table": "TAB_GENCOV",
+      "property": "NBRANCH_LED",
+      "column": "NBRANCH_LED",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_GENCOV",
+      "table": "TAB_GENCOV",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_LIFCOV",
+      "table": "TAB_LIFCOV",
+      "property": "NBRANCH_EST",
+      "column": "NBRANCH_EST",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_LIFCOV",
+      "table": "TAB_LIFCOV",
+      "property": "NBRANCH_GEN",
+      "column": "NBRANCH_GEN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_LIFCOV",
+      "table": "TAB_LIFCOV",
+      "property": "NBRANCH_LED",
+      "column": "NBRANCH_LED",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_LIFCOV",
+      "table": "TAB_LIFCOV",
+      "property": "NBRANCH_REI",
+      "column": "NBRANCH_REI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_LIFCOV",
+      "table": "TAB_LIFCOV",
+      "property": "NCLA_LI_TYP",
+      "column": "NCLA_LI_TYP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS",
+      "table": "TAB_MEDBENEFITS",
+      "property": "NATTENSYSTEM",
+      "column": "NATTENSYSTEM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS",
+      "table": "TAB_MEDBENEFITS",
+      "property": "NDED_TYPE",
+      "column": "NDED_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS",
+      "table": "TAB_MEDBENEFITS",
+      "property": "NOFFICE_PROD",
+      "column": "NOFFICE_PROD",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS",
+      "table": "TAB_MEDBENEFITS",
+      "property": "NPROVIDER",
+      "column": "NPROVIDER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS",
+      "table": "TAB_MEDBENEFITS",
+      "property": "NTYPEEXHAUS",
+      "column": "NTYPEEXHAUS",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS_CO",
+      "table": "TAB_MEDBENEFITS_CO",
+      "property": "NATTENSYSTEM",
+      "column": "NATTENSYSTEM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS_CO",
+      "table": "TAB_MEDBENEFITS_CO",
+      "property": "NDED_TYPE",
+      "column": "NDED_TYPE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS_CO",
+      "table": "TAB_MEDBENEFITS_CO",
+      "property": "NINDPRINT",
+      "column": "NINDPRINT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS_CO",
+      "table": "TAB_MEDBENEFITS_CO",
+      "property": "NOFFICE_PROD",
+      "column": "NOFFICE_PROD",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS_CO",
+      "table": "TAB_MEDBENEFITS_CO",
+      "property": "NPROVIDER",
+      "column": "NPROVIDER",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS_CO",
+      "table": "TAB_MEDBENEFITS_CO",
+      "property": "NROLE",
+      "column": "NROLE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS_CO",
+      "table": "TAB_MEDBENEFITS_CO",
+      "property": "NTYPEEXHAUS",
+      "column": "NTYPEEXHAUS",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MEDBENEFITS_CO",
+      "table": "TAB_MEDBENEFITS_CO",
+      "property": "NUSERCODE",
+      "column": "NUSERCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MODUL",
+      "table": "TAB_MODUL",
+      "property": "NATTENSYSTEM",
+      "column": "NATTENSYSTEM",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_MODUL",
+      "table": "TAB_MODUL",
+      "property": "NGEOGRAPHAREA",
+      "column": "NGEOGRAPHAREA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROVIDER",
+      "table": "TAB_PROVIDER",
+      "property": "NCATEG_PROV",
+      "column": "NCATEG_PROV",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROVIDER",
+      "table": "TAB_PROVIDER",
+      "property": "NCLASS_PROV",
+      "column": "NCLASS_PROV",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROVIDER",
+      "table": "TAB_PROVIDER",
+      "property": "NCOD_INSTEDUC",
+      "column": "NCOD_INSTEDUC",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROVIDER",
+      "table": "TAB_PROVIDER",
+      "property": "NCOD_MEDCOLLEGE",
+      "column": "NCOD_MEDCOLLEGE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROVIDER",
+      "table": "TAB_PROVIDER",
+      "property": "NOFFICE",
+      "column": "NOFFICE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROVIDER",
+      "table": "TAB_PROVIDER",
+      "property": "NPAYMENT_METHOD",
+      "column": "NPAYMENT_METHOD",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROVIDER",
+      "table": "TAB_PROVIDER",
+      "property": "NSUBTYPEPROV",
+      "column": "NSUBTYPEPROV",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROVIDER",
+      "table": "TAB_PROVIDER",
+      "property": "NTYPEDISC_PROV",
+      "column": "NTYPEDISC_PROV",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROVIDER",
+      "table": "TAB_PROVIDER",
+      "property": "NTYPEPROV",
+      "column": "NTYPEPROV",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROVIDER",
+      "table": "TAB_PROVIDER",
+      "property": "NTYPESUPPORT",
+      "column": "NTYPESUPPORT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROV_CONTACT",
+      "table": "TAB_PROV_CONTACT",
+      "property": "NPOSITION",
+      "column": "NPOSITION",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_PROV_STAFF",
+      "table": "TAB_PROV_STAFF",
+      "property": "NPROVIDER_REL",
+      "column": "NPROVIDER_REL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_RELAT",
+      "table": "TAB_RELAT",
+      "property": "NREL_TARGET",
+      "column": "NREL_TARGET",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAB_TYPERR",
+      "table": "TAB_TYPERR",
+      "property": "NTYPEERR_PA",
+      "column": "NTYPEERR_PA",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TAX_FIXVAL",
+      "table": "TAX_FIXVAL",
+      "property": "NTYPESUPPORT",
+      "column": "NTYPESUPPORT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "TYPE_AMEND",
+      "table": "TYPE_AMEND",
+      "property": "NTYPE_EV_ENDOR",
+      "column": "NTYPE_EV_ENDOR",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "T_CASH_MOV",
+      "table": "T_CASH_MOV",
+      "property": "NLOCAL",
+      "column": "NLOCAL",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "T_CONCEPTS",
+      "table": "T_CONCEPTS",
+      "property": "NACCOUNT",
+      "column": "NACCOUNT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "T_CONCEPTS",
+      "table": "T_CONCEPTS",
+      "property": "NBANK_CODE",
+      "column": "NBANK_CODE",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "T_CONCEPTS",
+      "table": "T_CONCEPTS",
+      "property": "NCHANGESDAT",
+      "column": "NCHANGESDAT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "T_CONCEPTS",
+      "table": "T_CONCEPTS",
+      "property": "NCOMPANY",
+      "column": "NCOMPANY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "T_CONCEPTS",
+      "table": "T_CONCEPTS",
+      "property": "NCURRENCY",
+      "column": "NCURRENCY",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "T_CONCEPTS",
+      "table": "T_CONCEPTS",
+      "property": "NORICURR",
+      "column": "NORICURR",
+      "type": "Int64",
+      "primary_key": false
+    },
+    {
+      "entity": "T_CONCEPTS",
+      "table": "T_CONCEPTS",
+      "property": "NTYPESUPPORT",
+      "column": "NTYPESUPPORT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "T_DOCTYP",
+      "table": "T_DOCTYP",
+      "property": "NINSTITUTION",
+      "column": "NINSTITUTION",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "T_DOCTYP",
+      "table": "T_DOCTYP",
+      "property": "NORIGIN",
+      "column": "NORIGIN",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "T_DOCTYP",
+      "table": "T_DOCTYP",
+      "property": "NTRATYPEI",
+      "column": "NTRATYPEI",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "T_DOCTYP",
+      "table": "T_DOCTYP",
+      "property": "NTYPEMOVE",
+      "column": "NTYPEMOVE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "T_MASIVECHARGE",
+      "table": "T_MASIVECHARGE",
+      "property": "NSEARCH",
+      "column": "NSEARCH",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "USERS",
+      "table": "USERS",
+      "property": "NDEPARTME",
+      "column": "NDEPARTME",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "USER_CASHNUM",
+      "table": "USER_CASHNUM",
+      "property": "NCASHSUP",
+      "column": "NCASHSUP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "USER_CASHNUM",
+      "table": "USER_CASHNUM",
+      "property": "NHEADSUP",
+      "column": "NHEADSUP",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "USER_OFFICE",
+      "table": "USER_OFFICE",
+      "property": "NUSERCODE",
+      "column": "NUSERCODE",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "WAY_PAY_PROD",
+      "table": "WAY_PAY_PROD",
+      "property": "NTYPE_VALUECOLLECT",
+      "column": "NTYPE_VALUECOLLECT",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "WINDOWS",
+      "table": "WINDOWS",
+      "property": "NMODULES",
+      "column": "NMODULES",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "WINDOWS",
+      "table": "WINDOWS",
+      "property": "NWINDOWTY",
+      "column": "NWINDOWTY",
+      "type": "Int32",
+      "primary_key": false
+    },
+    {
+      "entity": "WIN_ACTIONS",
+      "table": "WIN_ACTIONS",
+      "property": "NACTION",
+      "column": "NACTION",
+      "type": "Int32",
+      "primary_key": false
+    }
+  ],
+  "active_foreign_keys_added": [
+    {
+      "table": "CERTIFICAT",
+      "name": "R_70",
+      "target_schema": "INSUDB",
+      "target": "POLICY",
+      "pairs": [
+        [
+          "NBRANCH",
+          "NBRANCH"
+        ],
+        [
+          "NPOLICY",
+          "NPOLICY"
+        ],
+        [
+          "NPRODUCT",
+          "NPRODUCT"
+        ],
+        [
+          "SCERTYPE",
+          "SCERTYPE"
+        ]
+      ],
+      "foreign_columns": [
+        "NBRANCH",
+        "NPOLICY",
+        "NPRODUCT",
+        "SCERTYPE"
+      ],
+      "status": "ENABLED",
+      "validated": "VALIDATED",
+      "delete_rule": "NO ACTION"
+    },
+    {
+      "table": "CLAIM_CES",
+      "name": "R_1858",
+      "target_schema": "INSUDB",
+      "target": "CLIENT",
+      "pairs": [
+        [
+          "SCLIENT",
+          "SCLIENT"
+        ]
+      ],
+      "foreign_columns": [
+        "SCLIENT"
+      ],
+      "status": "ENABLED",
+      "validated": "VALIDATED",
+      "delete_rule": "NO ACTION"
+    },
+    {
+      "table": "CLAIM_CES",
+      "name": "SYS_C0041332",
+      "target_schema": "INSUDB",
+      "target": "CLAIM_HIS",
+      "pairs": [
+        [
+          "NCASE_NUM",
+          "NCASE_NUM"
+        ],
+        [
+          "NCLAIM",
+          "NCLAIM"
+        ],
+        [
+          "NDEMAN_TYPE",
+          "NDEMAN_TYPE"
+        ],
+        [
+          "NTRANSAC",
+          "NTRANSAC"
+        ]
+      ],
+      "foreign_columns": [
+        "NCASE_NUM",
+        "NCLAIM",
+        "NDEMAN_TYPE",
+        "NTRANSAC"
+      ],
+      "status": "ENABLED",
+      "validated": "VALIDATED",
+      "delete_rule": "NO ACTION"
+    },
+    {
+      "table": "POLICY",
+      "name": "R_2381",
+      "target_schema": "INSUDB",
+      "target": "AGENCIES",
+      "pairs": [
+        [
+          "NAGENCY",
+          "NAGENCY"
+        ]
+      ],
+      "foreign_columns": [
+        "NAGENCY"
+      ],
+      "status": "ENABLED",
+      "validated": "VALIDATED",
+      "delete_rule": "NO ACTION"
+    },
+    {
+      "table": "TAB_PROV_FEES",
+      "name": "R_TAB_PROVIDER_3383",
+      "target_schema": "INSUDB",
+      "target": "TAB_PROVIDER",
+      "pairs": [
+        [
+          "NPROVIDER",
+          "NPROVIDER"
+        ]
+      ],
+      "foreign_columns": [
+        "NPROVIDER"
+      ],
+      "status": "ENABLED",
+      "validated": "VALIDATED",
+      "delete_rule": "NO ACTION"
+    },
+    {
+      "table": "TAB_PROVIDER",
+      "name": "R_492",
+      "target_schema": "INSUDB",
+      "target": "TABLE7027",
+      "pairs": [
+        [
+          "NTYPEPROV",
+          "NTYPEPROV"
+        ]
+      ],
+      "foreign_columns": [
+        "NTYPEPROV"
+      ],
+      "status": "ENABLED",
+      "validated": "VALIDATED",
+      "delete_rule": "NO ACTION"
+    }
+  ],
+  "disabled_foreign_keys_kept_outside_model": [
+    {
+      "table": "DRAFT_HIST",
+      "name": "R_815",
+      "target_schema": "INSUDB",
+      "target": "FINANC_DRA",
+      "pairs": [
+        [
+          "NCONTRAT",
+          "NCONTRAT"
+        ],
+        [
+          "NDRAFT",
+          "NDRAFT"
+        ]
+      ],
+      "foreign_columns": [
+        "NCONTRAT",
+        "NDRAFT"
+      ],
+      "status": "DISABLED",
+      "validated": "NOT VALIDATED",
+      "delete_rule": "NO ACTION"
+    },
+    {
+      "table": "FINANC_COM",
+      "name": "R_816",
+      "target_schema": "INSUDB",
+      "target": "FINANC_PRE",
+      "pairs": [
+        [
+          "NCONTRAT",
+          "NCONTRAT"
+        ],
+        [
+          "NRECEIPT",
+          "NRECEIPT"
+        ]
+      ],
+      "foreign_columns": [
+        "NCONTRAT",
+        "NRECEIPT"
+      ],
+      "status": "DISABLED",
+      "validated": "NOT VALIDATED",
+      "delete_rule": "NO ACTION"
+    },
+    {
+      "table": "WORKSHEET",
+      "name": "R_2093",
+      "target_schema": "INSUDB",
+      "target": "PRODMASTER",
+      "pairs": [
+        [
+          "NBRANCH",
+          "NBRANCH"
+        ],
+        [
+          "NPRODUCT",
+          "NPRODUCT"
+        ]
+      ],
+      "foreign_columns": [
+        "NBRANCH",
+        "NPRODUCT"
+      ],
+      "status": "DISABLED",
+      "validated": "NOT VALIDATED",
+      "delete_rule": "NO ACTION"
+    }
+  ],
+  "identity_data_audit": [
+    {
+      "table": "ATTCHAMENTFORM",
+      "columns": [
+        "NSEQUENCEATT"
+      ],
+      "totalRows": 3,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "BILLS_HIS",
+      "columns": [
+        "SBILLTYPE",
+        "NBILLNUM",
+        "DSTATDATE",
+        "NTRANSAC"
+      ],
+      "totalRows": 4043,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE2000",
+      "columns": [
+        "NAPLY"
+      ],
+      "totalRows": 7,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE5616",
+      "columns": [
+        "NPAYFORMCREDITCARD"
+      ],
+      "totalRows": 3,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE5617",
+      "columns": [
+        "NPAYFREQCREDITCARD"
+      ],
+      "totalRows": 5,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE5621",
+      "columns": [
+        "NTODAYSDEPOSIT"
+      ],
+      "totalRows": 5,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE5679",
+      "columns": [
+        "NCAUSE"
+      ],
+      "totalRows": 6,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE5709",
+      "columns": [
+        "NTYPE"
+      ],
+      "totalRows": 15,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE7200",
+      "columns": [
+        "NCODIGINT"
+      ],
+      "totalRows": 6,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE7201",
+      "columns": [
+        "NCODIGINT"
+      ],
+      "totalRows": 4,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE7212",
+      "columns": [
+        "NTYPE"
+      ],
+      "totalRows": 8,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE8006",
+      "columns": [
+        "NTYPEAFEC"
+      ],
+      "totalRows": 6,
+      "duplicateExists": true,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE8007",
+      "columns": [
+        "NAFECBASADI"
+      ],
+      "totalRows": 6,
+      "duplicateExists": true,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE9040",
+      "columns": [
+        "NTYPE_SETTLE"
+      ],
+      "totalRows": 12,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE9200",
+      "columns": [
+        "NDATETYPE"
+      ],
+      "totalRows": 3,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE9300",
+      "columns": [
+        "NPROMISSORYNOTE"
+      ],
+      "totalRows": 3,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "TABLE996",
+      "columns": [
+        "NSECUR_CIA"
+      ],
+      "totalRows": 4,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    },
+    {
+      "table": "CL_M_COVER",
+      "columns": [
+        "NCLAIM",
+        "NCASE_NUM",
+        "NDEMAN_TYPE",
+        "NTRANSAC",
+        "NCOVER",
+        "NMODULEC",
+        "NCURRENCY",
+        "SCLIENT"
+      ],
+      "totalRows": 1854,
+      "duplicateExists": false,
+      "nullKeyRows": 0,
+      "status": "checked"
+    }
+  ],
+  "read_only_catalogs": [
+    "TABLE8006",
+    "TABLE8007"
+  ],
+  "oracle_schema_changes_executed": false,
+  "checks": {
+    "build_errors": 0,
+    "model_assertions": 7224,
+    "crud_assertions": 73,
+    "client_flow_assertions": 22
+  },
+  "before": {
+    "entities": 1017,
+    "relationships": 1052,
+    "confirmed_relationships": 1052,
+    "required_with_nullable_fk": 478,
+    "affected_entities": 131,
+    "unique_fk_columns_rejecting_null": 511,
+    "no_oracle_fk": 0,
+    "different_target_or_key": 0,
+    "inactive_or_unvalidated": 0,
+    "all_columns_rejecting_oracle_null": 530,
+    "unmapped_oracle_columns": 0,
+    "oracle_fks_between_mapped_tables_not_represented": 9,
+    "nullable_primary_key_columns": 2,
+    "model_primary_keys_without_pk_or_unique": 17,
+    "model_primary_keys_with_unvalidated_backing": 1
+  },
+  "after": {
+    "entities": 1017,
+    "relationships": 1058,
+    "confirmed_relationships": 1058,
+    "required_with_nullable_fk": 0,
+    "affected_entities": 0,
+    "unique_fk_columns_rejecting_null": 0,
+    "no_oracle_fk": 0,
+    "different_target_or_key": 0,
+    "inactive_or_unvalidated": 0,
+    "all_columns_rejecting_oracle_null": 2,
+    "unmapped_oracle_columns": 0,
+    "oracle_fks_between_mapped_tables_not_represented": 3,
+    "nullable_primary_key_columns": 2,
+    "model_primary_keys_without_pk_or_unique": 17,
+    "model_primary_keys_with_unvalidated_backing": 1
+  }
+}

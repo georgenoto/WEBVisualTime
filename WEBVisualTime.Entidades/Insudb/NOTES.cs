@@ -10,7 +10,7 @@ public partial class NOTES
     public string? SDESCRIPT { get; set; }
     public string? TDS_TEXT { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NRECTYPE { get; set; }
+    public int? NRECTYPE { get; set; }
 
     [ForeignKey("NRECTYPE")]
     public Insudb.TABLE62? TABLE62 { get; set; }

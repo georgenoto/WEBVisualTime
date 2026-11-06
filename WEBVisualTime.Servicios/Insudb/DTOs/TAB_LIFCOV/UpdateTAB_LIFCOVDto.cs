@@ -4,10 +4,10 @@ public class UpdateTAB_LIFCOVDto
 {
     public int NCOVERGEN { get; set; }
     public int? NAGEMAXI { get; set; }
-    public int NBRANCH_EST { get; set; }
-    public int NBRANCH_LED { get; set; }
-    public int NBRANCH_GEN { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_EST { get; set; }
+    public int? NBRANCH_LED { get; set; }
+    public int? NBRANCH_GEN { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public decimal? NCACALFIX { get; set; }
     public string? SCACALFRI { get; set; }
     public string? SCAPIPREM { get; set; }
@@ -48,7 +48,7 @@ public class UpdateTAB_LIFCOVDto
     public string? SCONDSVS { get; set; }
     public string? SINFORPROV { get; set; }
     public string? SPROVIDER { get; set; }
-    public int NCLA_LI_TYP { get; set; }
+    public int? NCLA_LI_TYP { get; set; }
     public string? SDESCOVER { get; set; }
     public string? STAXHEREDITY { get; set; }
     public DateTime? DSTARTDATE { get; set; }

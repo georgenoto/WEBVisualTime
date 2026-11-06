@@ -25,7 +25,7 @@ public class UpdateCOMMISSIONDto
     public long NCERTIF { get; set; }
     public int? NINSTALLCOM { get; set; }
     public int? NCATEGORY { get; set; }
-    public int NID_CAMPAIGN { get; set; }
+    public int? NID_CAMPAIGN { get; set; }
     public DateTime? DDATEEND_CAMP { get; set; }
     public long? NMOVEMENT { get; set; }
     public long? NMOVEMENT_NULL { get; set; }

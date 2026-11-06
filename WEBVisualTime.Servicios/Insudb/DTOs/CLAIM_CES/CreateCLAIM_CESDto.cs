@@ -3,15 +3,15 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.CLAIM_CES;
 public class CreateCLAIM_CESDto
 {
     public int NTRANSAC { get; set; }
-    public int NNUMBER { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NNUMBER { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public int NNUM_CESS { get; set; }
     public int NCURRENCY { get; set; }
     public decimal? NCED_AMNT { get; set; }
     public decimal? NCED_PER { get; set; }
-    public int NCESS_CONC { get; set; }
+    public int? NCESS_CONC { get; set; }
     public int NCOMPANY { get; set; }
-    public long NCESS_TYPE { get; set; }
+    public long? NCESS_TYPE { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public DateTime? DEND_DATE { get; set; }
     public DateTime? DINIT_DATE { get; set; }
@@ -20,11 +20,11 @@ public class CreateCLAIM_CESDto
     public string? SPRINT_C { get; set; }
     public int? NUSERCODE { get; set; }
     public DateTime? DEFFECDATE { get; set; }
-    public int NBRANCH_LED { get; set; }
-    public int NMODULEC { get; set; }
-    public int NINSUR_AREA { get; set; }
+    public int? NBRANCH_LED { get; set; }
+    public int? NMODULEC { get; set; }
+    public int? NINSUR_AREA { get; set; }
     public string? SCLIENT { get; set; }
-    public int NCOVER { get; set; }
+    public int? NCOVER { get; set; }
     public long NYEARMONTH { get; set; }
     public int? NGROUP_INSU { get; set; }
     public int NTYPE { get; set; }

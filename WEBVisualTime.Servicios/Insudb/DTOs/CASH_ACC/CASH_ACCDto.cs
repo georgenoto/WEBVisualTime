@@ -5,7 +5,7 @@ public class CASH_ACCDto
     public int NACC_CASH { get; set; }
     public int NOFFICE { get; set; }
     public string? TABLE9SDESCRIPT { get; set; }
-    public int NLED_COMPAN { get; set; }
+    public int? NLED_COMPAN { get; set; }
     public string? LEDGER_ACCNLED_COMPANSADJU_EXCI { get; set; }
     public string? SACCOUNT { get; set; }
     public string? LEDGER_ACCSACCOUNTSADJU_EXCI { get; set; }
@@ -19,7 +19,7 @@ public class CASH_ACCDto
     public string? SSTATREGT { get; set; }
     public int NCASHNUM { get; set; }
     public decimal? NMIN_AMOUNT { get; set; }
-    public int NCOMPANY { get; set; }
+    public int? NCOMPANY { get; set; }
     public string? COMPANYSACCOUNT { get; set; }
     public int? NTYPECASH { get; set; }
 }

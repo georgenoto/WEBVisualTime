@@ -6,7 +6,7 @@ public class T_CASH_MOVDto
     public string? COLFORMREFSTYPE { get; set; }
     public int NSEQUENCE { get; set; }
     public int? NACC_CASH { get; set; }
-    public int NLOCAL { get; set; }
+    public int? NLOCAL { get; set; }
     public string? TAB_LOCATSDESCRIPT { get; set; }
     public int? NCURRENCY { get; set; }
     public decimal? NAMOUNT { get; set; }

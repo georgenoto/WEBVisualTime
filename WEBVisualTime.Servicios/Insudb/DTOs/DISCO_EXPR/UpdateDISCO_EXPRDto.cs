@@ -6,12 +6,12 @@ public class UpdateDISCO_EXPRDto
     public int NPRODUCT { get; set; }
     public int NDISEXPRC { get; set; }
     public DateTime DEFFECDATE { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public int? NBILL_ITEM { get; set; }
     public string? SCHANALLO { get; set; }
-    public int NBRANCH_EST { get; set; }
+    public int? NBRANCH_EST { get; set; }
     public string? SCOMMISSI_I { get; set; }
-    public int NBRANCH_LED { get; set; }
+    public int? NBRANCH_LED { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NCURRENCY { get; set; }
     public string? SDEFAULTI { get; set; }

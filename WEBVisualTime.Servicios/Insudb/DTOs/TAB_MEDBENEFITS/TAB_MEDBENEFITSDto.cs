@@ -23,7 +23,7 @@ public class TAB_MEDBENEFITSDto
     public long? NAMOUNT_BENE { get; set; }
     public int? NPERCEN_HOSPITAL { get; set; }
     public int? NPERCEN_AMBULATORY { get; set; }
-    public int NDED_TYPE { get; set; }
+    public int? NDED_TYPE { get; set; }
     public string? TABLE269SDESCRIPT { get; set; }
     public int NUSERCODE { get; set; }
     public string? USERSSACCESSWO { get; set; }
@@ -32,7 +32,7 @@ public class TAB_MEDBENEFITSDto
     public string? SCAREN_TYPE { get; set; }
     public string? TABLE52SDESCRIPT { get; set; }
     public int? NCAREN_QUANT { get; set; }
-    public int NOFFICE_PROD { get; set; }
+    public int? NOFFICE_PROD { get; set; }
     public string? TABLE9SDESCRIPT { get; set; }
     public decimal? NAMOUNT_COPAY { get; set; }
     public decimal? NFRANCFIX { get; set; }
@@ -40,11 +40,11 @@ public class TAB_MEDBENEFITSDto
     public int? NAGEEND { get; set; }
     public string? SSEXCLIEN { get; set; }
     public string? TABLE18SDESCRIPT { get; set; }
-    public int NPROVIDER { get; set; }
+    public int? NPROVIDER { get; set; }
     public string? TAB_PROVIDERSSTATREGT { get; set; }
-    public int NATTENSYSTEM { get; set; }
+    public int? NATTENSYSTEM { get; set; }
     public string? TABLE9215SDESCRIPT { get; set; }
-    public long NTYPEEXHAUS { get; set; }
+    public long? NTYPEEXHAUS { get; set; }
     public string? TABLE9221SDESCRIPT { get; set; }
     public string? SILLNESS { get; set; }
     public string? TAB_AM_ILLSDESCRIPT { get; set; }

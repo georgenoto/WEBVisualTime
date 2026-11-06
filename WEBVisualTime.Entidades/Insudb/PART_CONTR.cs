@@ -6,21 +6,33 @@ public partial class PART_CONTR
 {
     public int NTYPE_REL { get; set; }
 
-    [ForeignKey("NTYPE_REL")]
+    [ForeignKey("NTYPE_REL, NNUMBER, NTYPE, NBRANCH")]
     public Insudb.CONTRMASTER? CONTRMASTERNTYPE_REL { get; set; }
     public int NNUMBER { get; set; }
 
-    [ForeignKey("NNUMBER")]
-    public Insudb.CONTRMASTER? CONTRMASTERNNUMBER { get; set; }
+    [NotMapped]
+    public Insudb.CONTRMASTER? CONTRMASTERNNUMBER
+    {
+        get => CONTRMASTERNTYPE_REL;
+        set => CONTRMASTERNTYPE_REL = value;
+    }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CONTRMASTER? CONTRMASTERNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CONTRMASTER? CONTRMASTERNBRANCH
+    {
+        get => CONTRMASTERNTYPE_REL;
+        set => CONTRMASTERNTYPE_REL = value;
+    }
     public DateTime DEFFECDATE { get; set; }
     public int NTYPE { get; set; }
 
-    [ForeignKey("NTYPE")]
-    public Insudb.CONTRMASTER? CONTRMASTERNTYPE { get; set; }
+    [NotMapped]
+    public Insudb.CONTRMASTER? CONTRMASTERNTYPE
+    {
+        get => CONTRMASTERNTYPE_REL;
+        set => CONTRMASTERNTYPE_REL = value;
+    }
     public DateTime DSTARTDATE { get; set; }
     public int NCOMPANY { get; set; }
 

@@ -6,20 +6,28 @@ public partial class CLORDER_DETAIL
 {
     public long NCLAIM { get; set; }
 
-    [ForeignKey("NCLAIM")]
+    [ForeignKey("NCLAIM, NCASE_NUM, NDEMAN_TYPE, NORDER_NUM")]
     public Insudb.CLAIM_ORDER? CLAIM_ORDERNCLAIM { get; set; }
     public int NCASE_NUM { get; set; }
 
-    [ForeignKey("NCASE_NUM")]
-    public Insudb.CLAIM_ORDER? CLAIM_ORDERNCASE_NUM { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_ORDER? CLAIM_ORDERNCASE_NUM
+    {
+        get => CLAIM_ORDERNCLAIM;
+        set => CLAIM_ORDERNCLAIM = value;
+    }
     public int NDEMAN_TYPE { get; set; }
 
     [ForeignKey("NDEMAN_TYPE")]
     public Insudb.TABLE692? TABLE692 { get; set; }
     public long NORDER_NUM { get; set; }
 
-    [ForeignKey("NORDER_NUM")]
-    public Insudb.CLAIM_ORDER? CLAIM_ORDERNORDER_NUM { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_ORDER? CLAIM_ORDERNORDER_NUM
+    {
+        get => CLAIM_ORDERNCLAIM;
+        set => CLAIM_ORDERNCLAIM = value;
+    }
     public int NDETAIL_ORDER { get; set; }
     public int? NID { get; set; }
     public string? SBENEFIT { get; set; }
@@ -53,7 +61,7 @@ public partial class CLORDER_DETAIL
 
     [ForeignKey("SMEDSPECIALIALTY")]
     public Insudb.TABLE8603? TABLE8603 { get; set; }
-    public int NSURCHAR_MED { get; set; }
+    public int? NSURCHAR_MED { get; set; }
 
     [ForeignKey("NSURCHAR_MED")]
     public Insudb.MEDICAL_SURCHARGE? MEDICAL_SURCHARGE { get; set; }

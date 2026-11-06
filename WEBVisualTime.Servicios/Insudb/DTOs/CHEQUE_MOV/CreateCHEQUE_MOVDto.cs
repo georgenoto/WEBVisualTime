@@ -2,8 +2,8 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.CHEQUE_MOV;
 
 public class CreateCHEQUE_MOVDto
 {
-    public int NCHEOPER_REASON { get; set; }
-    public long NBANK_INTER { get; set; }
+    public int? NCHEOPER_REASON { get; set; }
+    public long? NBANK_INTER { get; set; }
     public string? SCHEQUEINTER { get; set; }
     public DateTime? DNEW_DATE { get; set; }
     public string? SDEPNUMBER { get; set; }

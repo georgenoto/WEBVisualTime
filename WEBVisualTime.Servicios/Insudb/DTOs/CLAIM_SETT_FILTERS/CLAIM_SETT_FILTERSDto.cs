@@ -18,9 +18,9 @@ public class CLAIM_SETT_FILTERSDto
     public int? NBRANCH { get; set; }
     public int? NPRODUCT { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NTYPEDOC_PAY { get; set; }
+    public int? NTYPEDOC_PAY { get; set; }
     public string? TABLE9242SDESCRIPT { get; set; }
-    public int NSETTLEMENT_CONC { get; set; }
+    public int? NSETTLEMENT_CONC { get; set; }
     public string? TABLE9249SDESCRIPT { get; set; }
     public int? NPHYSICIAN { get; set; }
     public int? NCLINIC { get; set; }

@@ -12,6 +12,6 @@ public class AGREEMENT_ALDto
     public int NUSERCODE { get; set; }
     public string? USERSSACCESSWO { get; set; }
     public int? NAGREE_TYPE { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public string? INTERMEDIASCOL_AGREE { get; set; }
 }

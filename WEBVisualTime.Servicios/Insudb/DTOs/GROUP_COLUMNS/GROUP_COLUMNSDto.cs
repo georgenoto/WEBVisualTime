@@ -2,7 +2,7 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.GROUP_COLUMNS;
 
 public class GROUP_COLUMNSDto
 {
-    public int NSHEET { get; set; }
+    public int? NSHEET { get; set; }
     public string? TABLE697SDESCRIPT { get; set; }
     public int NIDREC { get; set; }
     public string? SFIELD { get; set; }

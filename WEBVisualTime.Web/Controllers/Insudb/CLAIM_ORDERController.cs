@@ -295,7 +295,7 @@ public class CLAIM_ORDERController : Controller
 
     // GET: CLAIM_ORDER/GetByNCURREN_DOC?NCURREN_DOC=value (cascade)
     [HttpGet]
-    public async Task<JsonResult> GetByNCURREN_DOC(int NCURREN_DOC)
+    public async Task<JsonResult> GetByNCURREN_DOC(long NCURREN_DOC)
     {
         var items = await _service.FindAsync(p => p.NCURREN_DOC == NCURREN_DOC);
         return Json(items.Select(i => new { value = i.NCLAIM, text = i.SPREAUTHORIZATION }));

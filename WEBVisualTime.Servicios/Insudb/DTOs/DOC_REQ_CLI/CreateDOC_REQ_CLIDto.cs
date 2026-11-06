@@ -2,7 +2,7 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.DOC_REQ_CLI;
 
 public class CreateDOC_REQ_CLIDto
 {
-    public int NTYPEDOC { get; set; }
+    public int? NTYPEDOC { get; set; }
     public int NSTATUSDOC { get; set; }
     public string? SDESCRIPT { get; set; }
     public DateTime DDOCREQ { get; set; }

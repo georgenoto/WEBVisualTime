@@ -47,13 +47,13 @@ public partial class ADDRESS
     [ForeignKey("NPROVINCE")]
     public Insudb.PROVINCE? PROVINCE { get; set; }
     public int? NPRODUCT { get; set; }
-    public int NLOCAL { get; set; }
+    public int? NLOCAL { get; set; }
 
     [ForeignKey("NLOCAL")]
     public Insudb.TAB_LOCAT? TAB_LOCAT { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public string? SBUILD { get; set; }
-    public long NMUNICIPALITY { get; set; }
+    public long? NMUNICIPALITY { get; set; }
 
     [ForeignKey("NMUNICIPALITY")]
     public Insudb.MUNICIPALITY? MUNICIPALITY { get; set; }

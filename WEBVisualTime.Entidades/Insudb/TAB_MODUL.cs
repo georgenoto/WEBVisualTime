@@ -27,11 +27,11 @@ public partial class TAB_MODUL
     public string? SVIGEN { get; set; }
     public string? SDEPEND { get; set; }
     public string? SCLAIMMANDATORYFIELDS { get; set; }
-    public int NGEOGRAPHAREA { get; set; }
+    public int? NGEOGRAPHAREA { get; set; }
 
     [ForeignKey("NGEOGRAPHAREA")]
     public Insudb.TABLE9214? TABLE9214 { get; set; }
-    public int NATTENSYSTEM { get; set; }
+    public int? NATTENSYSTEM { get; set; }
 
     [ForeignKey("NATTENSYSTEM")]
     public Insudb.TABLE9215? TABLE9215 { get; set; }

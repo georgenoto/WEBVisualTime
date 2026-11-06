@@ -20,15 +20,15 @@ public partial class AGREEMENT
 
     [ForeignKey("NTYPEAGREE")]
     public Insudb.TABLE5529? TABLE5529 { get; set; }
-    public int NTYPE_REC { get; set; }
+    public int? NTYPE_REC { get; set; }
 
     [ForeignKey("NTYPE_REC")]
     public Insudb.TABLE5581? TABLE5581 { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }
-    public int NAGENCY { get; set; }
+    public int? NAGENCY { get; set; }
 
     [ForeignKey("NAGENCY")]
     public Insudb.TABLE5555? TABLE5555 { get; set; }

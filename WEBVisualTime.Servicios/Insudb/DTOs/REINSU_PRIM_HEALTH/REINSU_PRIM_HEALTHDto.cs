@@ -7,7 +7,7 @@ public class REINSU_PRIM_HEALTHDto
     public int NPRODUCT { get; set; }
     public string? PRODMASTERSDESCRIPT { get; set; }
     public int NMODULEC { get; set; }
-    public int NCURRENCY { get; set; }
+    public long NCURRENCY { get; set; }
     public string? TABLE11SDESCRIPT { get; set; }
     public DateTime DEEFECDATE { get; set; }
     public DateTime? DNULLDATE { get; set; }

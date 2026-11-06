@@ -15,7 +15,7 @@ public class USERSDto
     public string SSTATREGT { get; set; }
     public string? STYPE { get; set; }
     public string? TABLE105SDESCRIPT { get; set; }
-    public int NDEPARTME { get; set; }
+    public int? NDEPARTME { get; set; }
     public string? TABLE84SDESCRIPT { get; set; }
     public string? SMENU { get; set; }
     public string? SCHNEXTLOGON { get; set; }

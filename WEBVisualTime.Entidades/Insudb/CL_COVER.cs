@@ -6,17 +6,25 @@ public partial class CL_COVER
 {
     public long NCLAIM { get; set; }
 
-    [ForeignKey("NCLAIM")]
+    [ForeignKey("NCLAIM, NCASE_NUM, NDEMAN_TYPE")]
     public Insudb.CLAIM_CASE? CLAIM_CASENCLAIM { get; set; }
     public int NCOVER { get; set; }
     public int NCASE_NUM { get; set; }
 
-    [ForeignKey("NCASE_NUM")]
-    public Insudb.CLAIM_CASE? CLAIM_CASENCASE_NUM { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_CASE? CLAIM_CASENCASE_NUM
+    {
+        get => CLAIM_CASENCLAIM;
+        set => CLAIM_CASENCLAIM = value;
+    }
     public int NDEMAN_TYPE { get; set; }
 
-    [ForeignKey("NDEMAN_TYPE")]
-    public Insudb.CLAIM_CASE? CLAIM_CASENDEMAN_TYPE { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_CASE? CLAIM_CASENDEMAN_TYPE
+    {
+        get => CLAIM_CASENCLAIM;
+        set => CLAIM_CASENCLAIM = value;
+    }
     public int NMODULEC { get; set; }
     public int NCURRENCY { get; set; }
     public int NBRANCH_EST { get; set; }
@@ -31,7 +39,7 @@ public partial class CL_COVER
 
     [ForeignKey("NBRANCH_LED")]
     public Insudb.TABLE75? TABLE75 { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
 
     [ForeignKey("NBRANCH_REI")]
     public Insudb.TABLE5000? TABLE5000 { get; set; }

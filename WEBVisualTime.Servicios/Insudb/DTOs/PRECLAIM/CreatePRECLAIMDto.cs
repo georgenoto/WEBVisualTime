@@ -19,25 +19,25 @@ public class CreatePRECLAIMDto
     public string? SNAMECLIENT { get; set; }
     public long? NNOTENUM { get; set; }
     public string? SCLIENT_AFFECT { get; set; }
-    public int NOFFICE { get; set; }
-    public int NATTENTCHANNEL { get; set; }
+    public int? NOFFICE { get; set; }
+    public int? NATTENTCHANNEL { get; set; }
     public string? SCLINUMDOCU { get; set; }
     public int? NCOUNTRY { get; set; }
     public string? SLOCALOCCUR { get; set; }
     public string? SACCIDENT { get; set; }
     public string? SPREAUTHORIZATION { get; set; }
-    public int NORDERTYPE { get; set; }
+    public int? NORDERTYPE { get; set; }
     public DateTime? DSTATUS { get; set; }
     public DateTime? DREJECTION { get; set; }
     public DateTime? DREJECTNOTICE { get; set; }
     public int? NREJECTUSER { get; set; }
-    public long NMASTERORDER { get; set; }
+    public long? NMASTERORDER { get; set; }
     public int? NPROVIDER { get; set; }
     public int? NPHYSICIAN { get; set; }
     public int? NMEDICALINSTITUTE { get; set; }
     public string? SCALLCENTER { get; set; }
     public DateTime? DLEDGERDAT { get; set; }
-    public int NCLA_LI_TYP { get; set; }
+    public int? NCLA_LI_TYP { get; set; }
     public int? NCAUSEREOPENCL { get; set; }
     public int? NTYPE_COMMPAY { get; set; }
     public DateTime? DREOPENCL { get; set; }

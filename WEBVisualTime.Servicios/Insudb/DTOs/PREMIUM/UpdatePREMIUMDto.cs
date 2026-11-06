@@ -11,13 +11,13 @@ public class UpdatePREMIUMDto
     public string SCLIENT { get; set; }
     public long NPOLICY { get; set; }
     public string? SCESSIONS { get; set; }
-    public long NCERTIF { get; set; }
+    public long? NCERTIF { get; set; }
     public string? SDIRDEBIT { get; set; }
     public string? SLEADINVO { get; set; }
     public string? SMANAUTI { get; set; }
     public string? SRENEWAL { get; set; }
     public string? SSUBSTITI { get; set; }
-    public int NSTATUS_PRE { get; set; }
+    public int? NSTATUS_PRE { get; set; }
     public string? SCONCOLL { get; set; }
     public string? SSTATUSVA { get; set; }
     public DateTime DCOMPDATE { get; set; }
@@ -41,36 +41,36 @@ public class UpdatePREMIUMDto
     public long? NCOLLECTO { get; set; }
     public long? NCONTRAT { get; set; }
     public long? NINSPECTO { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public long? NSUSTIT { get; set; }
     public long? NTRANSACTIO { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
     public int? NCURRENCY { get; set; }
     public long? NNOTENUM { get; set; }
     public int NOFFICE { get; set; }
     public int? NTYPE { get; set; }
-    public int NTRATYPEI { get; set; }
+    public int? NTRATYPEI { get; set; }
     public int NUSERCODE { get; set; }
     public int? NPERIOD { get; set; }
-    public int NCOMPANY { get; set; }
+    public int? NCOMPANY { get; set; }
     public string? SORIGRECEIPT { get; set; }
-    public int NWAY_PAY { get; set; }
+    public int? NWAY_PAY { get; set; }
     public DateTime? DLIMITDATE { get; set; }
-    public int NINSUR_AREA { get; set; }
-    public int NINDRECDEP { get; set; }
+    public int? NINSUR_AREA { get; set; }
+    public int? NINDRECDEP { get; set; }
     public DateTime? DCOLLSUS_INI { get; set; }
     public DateTime? DCOLLSUS_END { get; set; }
-    public int NSUS_REASON { get; set; }
+    public int? NSUS_REASON { get; set; }
     public string? SSUS_ORIGI { get; set; }
     public string? SREJECT { get; set; }
-    public long NCOLLECTOR { get; set; }
+    public long? NCOLLECTOR { get; set; }
     public long? NIDLOANS { get; set; }
-    public int NCOD_AGREE { get; set; }
+    public int? NCOD_AGREE { get; set; }
     public string? SBILLTYPE { get; set; }
     public long? NBILLNUM { get; set; }
     public string? SINDCHEQUE { get; set; }
     public string? SIND_CAP { get; set; }
-    public long NBULLETINS { get; set; }
+    public long? NBULLETINS { get; set; }
     public string? SINDMARGIN { get; set; }
     public string? SIND_RESERV { get; set; }
     public int? NYEARMONTHDESC { get; set; }

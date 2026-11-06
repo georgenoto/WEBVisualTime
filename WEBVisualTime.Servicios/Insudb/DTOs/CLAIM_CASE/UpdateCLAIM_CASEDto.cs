@@ -23,8 +23,8 @@ public class UpdateCLAIM_CASEDto
     public decimal? NTRANSF_AMOUNT { get; set; }
     public decimal? NAPV_TAX { get; set; }
     public decimal? NAPV_BENEF_BALANCE { get; set; }
-    public long NAFP { get; set; }
+    public long? NAFP { get; set; }
     public int? NSENDTO_LGM { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
 }

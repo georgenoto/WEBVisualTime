@@ -5,7 +5,7 @@ public class TAX_FIXVALDto
     public int NCODE { get; set; }
     public string STYPETAX { get; set; }
     public string? TABLE5602SDESCRIPT { get; set; }
-    public int NTYPESUPPORT { get; set; }
+    public int? NTYPESUPPORT { get; set; }
     public string? TABLE5570SDESCRIPT { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public decimal? NPERCENT { get; set; }

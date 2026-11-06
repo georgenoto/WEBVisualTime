@@ -11,6 +11,9 @@ using WEBVisualTime.Servicios.Services.Common;
 using WEBVisualTime.Servicios.Insudb.Services;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE2000;
 using WEBVisualTime.Servicios.Insudb.DTOs.TABLE999;
+using WEBVisualTime.Servicios.Insudb.DTOs.APPUSER;
+using WEBVisualTime.Servicios.Insudb.DTOs.TABLE8006;
+using WEBVisualTime.Servicios.Insudb.DTOs.TABLE8007;
 
 // Exercise the real controllers and compiled Razor views with in-memory services.
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +21,9 @@ builder.Logging.ClearProviders();
 builder.WebHost.UseUrls("http://127.0.0.1:0");
 builder.Services.AddSingleton<ITABLE2000Service, NumberCatalog>();
 builder.Services.AddSingleton<ITABLE999Service, StringCatalog>();
+builder.Services.AddSingleton<IAPPUSERService, WideUserCatalog>();
+builder.Services.AddSingleton<ITABLE8006Service, DuplicateFactor>();
+builder.Services.AddSingleton<ITABLE8007Service, DuplicateBase>();
 var webAssembly = typeof(WEBVisualTime.Web.Insudb.Controllers.TABLE2000Controller).Assembly;
 var apiAssembly = typeof(WEBVisualTime.WebApi.Insudb.Controllers.TABLE2000Controller).Assembly;
 builder.Services.AddControllersWithViews().AddApplicationPart(webAssembly).AddApplicationPart(apiAssembly)
@@ -81,6 +87,21 @@ Check((await client.GetAsync("/api/TABLE2000/not-a-number")).StatusCode == HttpS
 Check((await client.PutAsJsonAsync("/api/TABLE999/NEW", new UpdateTABLE999Dto { SSTAT_ERROR = "NEW", SDESCRIPT = "String API" })).StatusCode == HttpStatusCode.NoContent, "API PUT string key");
 Check((await client.DeleteAsync("/api/TABLE999/NEW")).StatusCode == HttpStatusCode.NoContent, "API DELETE string key");
 Check((await Page("/TABLE999")).Contains("No hay registros disponibles."), "Empty catalog message");
+Check((await Page("/APPUSER/Edit/3000000000")).Contains("3000000000"), "MVC keys above Int32 must not be truncated");
+Check((await client.GetAsync("/api/APPUSER/3000000000")).IsSuccessStatusCode, "API must accept corrected Int64 keys");
+Check((await client.PutAsJsonAsync("/api/APPUSER/3000000000", new UpdateAPPUSERDto { NIDUSER=3_000_000_000L, SUSERNAME="Wide key" })).StatusCode == HttpStatusCode.NoContent, "Corrected Int64 update contract");
+foreach(var table in new[]{"TABLE8006","TABLE8007"})
+{
+    var readOnly=await Page("/"+table);
+    Check(readOnly.Contains("First duplicate") && readOnly.Contains("Second duplicate"),"Duplicate rows must remain visible");
+    Check(readOnly.Contains("códigos duplicados") || readOnly.Contains("c&#xF3;digos duplicados"),"Read-only catalogs must explain their restriction");
+    Check(!readOnly.Contains("/"+table+"/Create") && !readOnly.Contains("/"+table+"/Edit/") && !readOnly.Contains("/"+table+"/Delete/"),"Unsafe actions must not be offered");
+    Check((await client.GetAsync("/"+table+"/Edit/1")).StatusCode==HttpStatusCode.Conflict,"Direct edit URLs must be blocked");
+    Check((await client.GetAsync("/api/"+table+"/1")).StatusCode==HttpStatusCode.Conflict,"API must reject ambiguous keys");
+    Check((await client.DeleteAsync("/api/"+table+"/1")).StatusCode==HttpStatusCode.Conflict,"API deletion must be blocked");
+}
+Check((await client.PostAsJsonAsync("/api/TABLE8006",new CreateTABLE8006Dto {NTYPEAFEC=1,DCOMPDATE=DateTime.Today,NUSERCODE=1})).StatusCode==HttpStatusCode.Conflict,"API creation must be blocked");
+Check((await client.PutAsJsonAsync("/api/TABLE8007/1",new UpdateTABLE8007Dto {NAFECBASADI=1,DCOMPDATE=DateTime.Today,NUSERCODE=1})).StatusCode==HttpStatusCode.Conflict,"API updates must be blocked");
 
 // Exercise the real shared service and existing mappings with an isolated repository.
 var repository = new NumberRepository();
@@ -97,7 +118,7 @@ sealed class OnlyTestCatalogs : IApplicationFeatureProvider<ControllerFeature>
 {
     public void PopulateFeature(IEnumerable<ApplicationPart> parts, ControllerFeature feature)
     {
-        foreach (var controller in feature.Controllers.Where(c => c.Name is not ("TABLE2000Controller" or "TABLE999Controller")).ToList())
+        foreach (var controller in feature.Controllers.Where(c => c.Name is not ("TABLE2000Controller" or "TABLE999Controller" or "APPUSERController" or "TABLE8006Controller" or "TABLE8007Controller")).ToList())
             feature.Controllers.Remove(controller);
     }
 }
@@ -108,12 +129,12 @@ abstract class MemoryCatalog<TDto,TCreate,TUpdate,TKey> : IService<TDto,TCreate,
     private readonly Dictionary<TKey,TDto> records = new();
     private readonly PropertyInfo key;
     private readonly TKey defaultKey;
-    protected MemoryCatalog(string keyName, TKey initialKey, TKey defaultKey)
+    protected MemoryCatalog(string keyName, TKey initialKey, TKey defaultKey, string descriptionProperty = "SDESCRIPT")
     {
         key = typeof(TDto).GetProperty(keyName)!;
         this.defaultKey = defaultKey;
         var item = new TDto(); key.SetValue(item, initialKey);
-        typeof(TDto).GetProperty("SDESCRIPT")!.SetValue(item, "Original <script>");
+        typeof(TDto).GetProperty(descriptionProperty)!.SetValue(item, "Original <script>");
         records[initialKey] = item;
     }
     static TDto Copy(object source)
@@ -123,7 +144,7 @@ abstract class MemoryCatalog<TDto,TCreate,TUpdate,TKey> : IService<TDto,TCreate,
             typeof(TDto).GetProperty(p.Name)?.SetValue(dto, p.GetValue(source));
         return dto;
     }
-    public Task<IEnumerable<TDto>> GetAllAsync() => Task.FromResult<IEnumerable<TDto>>(records.Values.ToList());
+    public virtual Task<IEnumerable<TDto>> GetAllAsync() => Task.FromResult<IEnumerable<TDto>>(records.Values.ToList());
     public Task<TDto?> GetByIdAsync(TKey id) => Task.FromResult(records.GetValueOrDefault(id));
     public Task<TDto> CreateAsync(TCreate create)
     {
@@ -151,6 +172,25 @@ sealed class StringCatalog : MemoryCatalog<TABLE999Dto,CreateTABLE999Dto,UpdateT
     public Task<IEnumerable<TABLE999Dto>> FindAsync(Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE999,bool>> predicate) => GetAllAsync();
 }
 
+sealed class WideUserCatalog : MemoryCatalog<APPUSERDto,CreateAPPUSERDto,UpdateAPPUSERDto,long>, IAPPUSERService
+{
+    public WideUserCatalog() : base("NIDUSER", 3_000_000_000L, 3_000_000_001L, "SUSERNAME") { }
+    public Task<IEnumerable<APPUSERDto>> FindAsync(Expression<Func<WEBVisualTime.Entidades.Insudb.APPUSER,bool>> predicate) => GetAllAsync();
+}
+
+sealed class DuplicateFactor : MemoryCatalog<TABLE8006Dto,CreateTABLE8006Dto,UpdateTABLE8006Dto,int>, ITABLE8006Service
+{
+    public DuplicateFactor() : base("NTYPEAFEC",1,1) { }
+    public override Task<IEnumerable<TABLE8006Dto>> GetAllAsync()=>Task.FromResult<IEnumerable<TABLE8006Dto>>(new[]{new TABLE8006Dto {NTYPEAFEC=1,SDESCRIPT="First duplicate"},new TABLE8006Dto {NTYPEAFEC=1,SDESCRIPT="Second duplicate"}});
+    public Task<IEnumerable<TABLE8006Dto>> FindAsync(Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE8006,bool>> predicate)=>GetAllAsync();
+}
+sealed class DuplicateBase : MemoryCatalog<TABLE8007Dto,CreateTABLE8007Dto,UpdateTABLE8007Dto,int>, ITABLE8007Service
+{
+    public DuplicateBase() : base("NAFECBASADI",1,1) { }
+    public override Task<IEnumerable<TABLE8007Dto>> GetAllAsync()=>Task.FromResult<IEnumerable<TABLE8007Dto>>(new[]{new TABLE8007Dto {NAFECBASADI=1,SDESCRIPT="First duplicate"},new TABLE8007Dto {NAFECBASADI=1,SDESCRIPT="Second duplicate"}});
+    public Task<IEnumerable<TABLE8007Dto>> FindAsync(Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE8007,bool>> predicate)=>GetAllAsync();
+}
+
 sealed class NumberRepository : WEBVisualTime.Datos.Repositories.IRepository<WEBVisualTime.Entidades.Insudb.TABLE2000>
 {
     private readonly List<WEBVisualTime.Entidades.Insudb.TABLE2000> items = new();
@@ -158,6 +198,11 @@ sealed class NumberRepository : WEBVisualTime.Datos.Repositories.IRepository<WEB
     public Task<IEnumerable<WEBVisualTime.Entidades.Insudb.TABLE2000>> GetAllAsync() => Task.FromResult<IEnumerable<WEBVisualTime.Entidades.Insudb.TABLE2000>>(items);
     public Task<WEBVisualTime.Entidades.Insudb.TABLE2000?> GetByIdAsync(object id) => Task.FromResult(items.FirstOrDefault(e => e.NAPLY == Convert.ToInt64(id)));
     public Task<IEnumerable<WEBVisualTime.Entidades.Insudb.TABLE2000>> FindAsync(Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE2000,bool>> predicate) => Task.FromResult(items.Where(predicate.Compile()));
+    public Task<(IReadOnlyList<WEBVisualTime.Entidades.Insudb.TABLE2000> Items,long TotalCount,int Page)> GetPageAsync(int page,int pageSize,Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE2000,object>> orderBy,Expression<Func<WEBVisualTime.Entidades.Insudb.TABLE2000,bool>>? predicate=null,CancellationToken cancellationToken=default)
+    {
+        var filtered=predicate is null ? items : items.Where(predicate.Compile()).ToList();
+        return Task.FromResult(((IReadOnlyList<WEBVisualTime.Entidades.Insudb.TABLE2000>)filtered.OrderBy(orderBy.Compile()).Skip((page-1)*pageSize).Take(pageSize).ToList(),(long)filtered.Count,page));
+    }
     public Task AddAsync(WEBVisualTime.Entidades.Insudb.TABLE2000 entity) { items.Add(entity); return Task.CompletedTask; }
     public void Update(WEBVisualTime.Entidades.Insudb.TABLE2000 entity) { }
     public void Remove(WEBVisualTime.Entidades.Insudb.TABLE2000 entity) => items.Remove(entity);

@@ -7,7 +7,7 @@ public class T_MASIVECHARGEDto
     public long NCOLUMNS { get; set; }
     public string SFIELD { get; set; }
     public string? SVALUE { get; set; }
-    public int NSEARCH { get; set; }
+    public int? NSEARCH { get; set; }
     public string? TABLE5571SDESCRIPT { get; set; }
     public string STABLE { get; set; }
     public string? SVALUESLIST { get; set; }

@@ -10,7 +10,7 @@ public class CreateTAB_CLAUSEDto
     public string? SSHORT_DES { get; set; }
     public int NUSERCODE { get; set; }
     public string? SMODIFIED { get; set; }
-    public int NTYPE { get; set; }
+    public int? NTYPE { get; set; }
     public string? STYPE_CLAUSE { get; set; }
     public string? SDOC_ATTACH { get; set; }
     public int? NORDEN { get; set; }

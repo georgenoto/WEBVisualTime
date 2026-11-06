@@ -13,37 +13,37 @@ public class CASH_MOVDto
     public string? CASH_ACCNCASHNUMSSTATREGT { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public decimal? NAMOUNT { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
     public string? CLAIMSCERTYPE { get; set; }
-    public int NCONCEPT { get; set; }
+    public int? NCONCEPT { get; set; }
     public string? TABLE22SDESCRIPT { get; set; }
-    public int NACC_BANK { get; set; }
+    public int? NACC_BANK { get; set; }
     public string? BANK_ACCSACC_LEDGER { get; set; }
-    public int NCARD_TYPE { get; set; }
+    public int? NCARD_TYPE { get; set; }
     public string? TABLE183SDESCRIPT { get; set; }
-    public long NBANK_CODE { get; set; }
+    public long? NBANK_CODE { get; set; }
     public string? TABLE7NBANK_CODESDESCRIPT { get; set; }
-    public int NBRANCH_LED { get; set; }
+    public int? NBRANCH_LED { get; set; }
     public string? TABLE75SDESCRIPT { get; set; }
     public DateTime? DCARD_EXPIR { get; set; }
     public string? SCARD_NUM { get; set; }
     public int? NCL_TRANSAC { get; set; }
-    public int NCOMPANYC { get; set; }
+    public int? NCOMPANYC { get; set; }
     public string? COMPANYSACCOUNT { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NVOUCHER_LE { get; set; }
     public long? NVOUCHER { get; set; }
-    public long NCONTRAT { get; set; }
+    public long? NCONTRAT { get; set; }
     public string? FINANC_DRANCONTRATSINDCHEQUE { get; set; }
     public string? SDEP_NUMBER { get; set; }
     public DateTime? DDOC_DATE { get; set; }
     public string? SDOCNUMBE { get; set; }
-    public int NDRAFT { get; set; }
+    public int? NDRAFT { get; set; }
     public string? FINANC_DRANDRAFTSINDCHEQUE { get; set; }
     public decimal? NEXCHANGE { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public string? INTERMEDIASCOL_AGREE { get; set; }
-    public int NMOV_TYPE { get; set; }
+    public int? NMOV_TYPE { get; set; }
     public string? TABLE78SDESCRIPT { get; set; }
     public string? SNULL_MOVEM { get; set; }
     public string? SNULL_RECOR { get; set; }
@@ -52,9 +52,9 @@ public class CASH_MOVDto
     public long? NRECEIPT { get; set; }
     public int? NUSERCODE { get; set; }
     public long? NYEAR_MONTH { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
     public string? COLFORMREFSTYPE { get; set; }
-    public int NTYP_ACCO { get; set; }
+    public int? NTYP_ACCO { get; set; }
     public string? TABLE400SDESCRIPT { get; set; }
     public string? SCLIENT { get; set; }
     public string? CLIENTSCLIENTSACCOUNT_IN { get; set; }
@@ -66,14 +66,14 @@ public class CASH_MOVDto
     public long? NNOTENUM { get; set; }
     public DateTime? DLEDGER_DAT { get; set; }
     public int NUSER_SOL { get; set; }
-    public int NCHEQUELOCAT { get; set; }
+    public int? NCHEQUELOCAT { get; set; }
     public string? TABLE5553SDESCRIPT { get; set; }
     public int NCOMPANY { get; set; }
     public string? SPROCESS { get; set; }
-    public int NINSUR_AREA { get; set; }
+    public int? NINSUR_AREA { get; set; }
     public string? TABLE5001SDESCRIPT { get; set; }
     public DateTime? DPOSTED { get; set; }
-    public int NCOD_AGREE { get; set; }
+    public int? NCOD_AGREE { get; set; }
     public string? AGREEMENTSSTATREGT { get; set; }
     public int NINPUTCHANNEL { get; set; }
     public string? TABLE5554SDESCRIPT { get; set; }
@@ -82,22 +82,22 @@ public class CASH_MOVDto
     public int NORI_CURR { get; set; }
     public decimal NORI_AMOUNT { get; set; }
     public long? NSUPPORT_ID { get; set; }
-    public int NTYPESUPPORT { get; set; }
+    public int? NTYPESUPPORT { get; set; }
     public string? TABLE5570SDESCRIPT { get; set; }
     public DateTime? DCOLLECTION { get; set; }
-    public int NCHEQUE_STAT { get; set; }
+    public int? NCHEQUE_STAT { get; set; }
     public string? TABLE5576SDESCRIPT { get; set; }
     public long? NCASH_ID { get; set; }
     public decimal? NFIN_INT { get; set; }
     public int? NBRANCH { get; set; }
     public int? NPRODUCT { get; set; }
-    public long NBANK_AGREE { get; set; }
+    public long? NBANK_AGREE { get; set; }
     public string? TABLE7NBANK_AGREESDESCRIPT { get; set; }
     public long? NPROPONUM { get; set; }
-    public long NBULLETINS { get; set; }
-    public int NCASE_NUM { get; set; }
+    public long? NBULLETINS { get; set; }
+    public int? NCASE_NUM { get; set; }
     public string? CLAIM_CASENCASE_NUMSSTACASE { get; set; }
-    public int NDEMAN_TYPE { get; set; }
+    public int? NDEMAN_TYPE { get; set; }
     public string? CLAIM_CASENDEMAN_TYPESSTACASE { get; set; }
     public long? NID { get; set; }
     public long? NBORDERUSED { get; set; }

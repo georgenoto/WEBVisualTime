@@ -19,7 +19,7 @@ public class TAB_AM_EXCDto
     public int NID { get; set; }
     public string? SCLIENT { get; set; }
     public string? CLIENTSACCOUNT_IN { get; set; }
-    public int NEXC_CODE { get; set; }
+    public int? NEXC_CODE { get; set; }
     public string? TABLE271SDESCRIPT { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public DateTime? DINIT_DATE { get; set; }

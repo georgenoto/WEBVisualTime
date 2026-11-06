@@ -14,7 +14,7 @@ public partial class BRANPROD_ALLOW
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
     public long? NNOTE_INT { get; set; }
-    public int NCATEGORY { get; set; }
+    public int? NCATEGORY { get; set; }
 
     [ForeignKey("NCATEGORY")]
     public Insudb.TABLE9202? TABLE9202 { get; set; }

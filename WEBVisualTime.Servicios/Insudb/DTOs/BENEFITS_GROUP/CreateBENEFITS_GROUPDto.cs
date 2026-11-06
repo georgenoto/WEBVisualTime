@@ -7,6 +7,6 @@ public class CreateBENEFITS_GROUPDto
     public string? SSHORT_DES { get; set; }
     public string? SSTATREGT { get; set; }
     public int? NUSERCODE { get; set; }
-    public int NTYPE_GROUP { get; set; }
+    public int? NTYPE_GROUP { get; set; }
     public string? SCLARIFICACT { get; set; }
 }

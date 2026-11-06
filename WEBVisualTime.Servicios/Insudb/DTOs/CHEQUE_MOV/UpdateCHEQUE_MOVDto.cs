@@ -7,9 +7,9 @@ public class UpdateCHEQUE_MOVDto
     public string SCHEQUENU { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public int NCHEOPERTYP { get; set; }
-    public int NCHEOPER_REASON { get; set; }
+    public int? NCHEOPER_REASON { get; set; }
     public int NID { get; set; }
-    public long NBANK_INTER { get; set; }
+    public long? NBANK_INTER { get; set; }
     public string? SCHEQUEINTER { get; set; }
     public DateTime? DNEW_DATE { get; set; }
     public string? SDEPNUMBER { get; set; }

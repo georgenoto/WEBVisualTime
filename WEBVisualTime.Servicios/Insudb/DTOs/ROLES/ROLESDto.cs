@@ -20,19 +20,19 @@ public class ROLESDto
     public DateTime? DCOMPDATE { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public int? NUSERCODE { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public string? INTERMEDIASCOL_AGREE { get; set; }
     public DateTime? DBIRTHDATE { get; set; }
     public string? SSEXCLIEN { get; set; }
     public string? TABLE18SDESCRIPT { get; set; }
     public string? SSMOKING { get; set; }
-    public int NTYPERISK { get; set; }
+    public int? NTYPERISK { get; set; }
     public string? TABLE5639SDESCRIPT { get; set; }
     public string? SVIP { get; set; }
-    public int NSTATUSROL { get; set; }
+    public int? NSTATUSROL { get; set; }
     public string? TABLE5561SDESCRIPT { get; set; }
     public int? NRATING { get; set; }
-    public int NTYPENAME { get; set; }
+    public int? NTYPENAME { get; set; }
     public string? TABLE5592SDESCRIPT { get; set; }
     public int? NCOVERPOS { get; set; }
     public DateTime? DCONTINUE { get; set; }
@@ -43,16 +43,16 @@ public class ROLESDto
     public decimal? NWEIGHT { get; set; }
     public decimal? NHEIGHT { get; set; }
     public decimal? NIMC { get; set; }
-    public int NTYPELIST { get; set; }
+    public int? NTYPELIST { get; set; }
     public string? TABLE9203SDESCRIPT { get; set; }
     public DateTime? DPEPSEARCH { get; set; }
     public int? NUSERPEPSEARCH { get; set; }
     public string? SFPHYSICAL_CREDEN { get; set; }
-    public int NCLASSTYPDOC { get; set; }
+    public int? NCLASSTYPDOC { get; set; }
     public string? FORMATVALUESNCLASSTYPDOCSDESCRIPT { get; set; }
-    public int NTYPCLIENTDOC { get; set; }
+    public int? NTYPCLIENTDOC { get; set; }
     public string? FORMATVALUESNTYPCLIENTDOCSDESCRIPT { get; set; }
-    public int NCITY_RESIDENCE { get; set; }
+    public int? NCITY_RESIDENCE { get; set; }
     public string? TABLE9SDESCRIPT { get; set; }
     public string? SSHORT_DES { get; set; }
     public int? NSEVERITYPEP { get; set; }

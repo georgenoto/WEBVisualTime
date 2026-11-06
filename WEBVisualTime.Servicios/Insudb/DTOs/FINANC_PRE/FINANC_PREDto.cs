@@ -10,9 +10,9 @@ public class FINANC_PREDto
     public DateTime? DSTARTDATE { get; set; }
     public decimal? NEXCHANGE { get; set; }
     public DateTime? DEXPIRDAT { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public string? INTERMEDIASCOL_AGREE { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
     public string? TABLE9SDESCRIPT { get; set; }
     public long? NPOLICY { get; set; }
     public decimal? NPREMIUM { get; set; }
@@ -24,7 +24,7 @@ public class FINANC_PREDto
     public int NUSERCODE { get; set; }
     public string? USERSSACCESSWO { get; set; }
     public int? NPRODUCT { get; set; }
-    public int NCOMPANY { get; set; }
+    public int? NCOMPANY { get; set; }
     public string? COMPANYSACCOUNT { get; set; }
     public string? SEXTRECEIPT { get; set; }
 }

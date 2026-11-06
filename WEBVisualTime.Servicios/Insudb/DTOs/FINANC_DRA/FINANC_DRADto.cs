@@ -3,10 +3,10 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.FINANC_DRA;
 public class FINANC_DRADto
 {
     public decimal? NAMOUNT { get; set; }
-    public int NSTAT_DRAFT { get; set; }
+    public int? NSTAT_DRAFT { get; set; }
     public string? TABLE253SDESCRIPT { get; set; }
     public decimal? NAMOUNT_NET { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
     public string? CLAIMSCERTYPE { get; set; }
     public decimal? NCOMMISSION { get; set; }
     public DateTime DCOMPDATE { get; set; }
@@ -14,32 +14,32 @@ public class FINANC_DRADto
     public int NDRAFT { get; set; }
     public DateTime? DEXPIRDAT { get; set; }
     public decimal? NINTAMMOU { get; set; }
-    public int NSTATPRINT { get; set; }
+    public int? NSTATPRINT { get; set; }
     public string? TABLE282SDESCRIPT { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public string? INTERMEDIASCOL_AGREE { get; set; }
     public DateTime? DSTAT_DATE { get; set; }
     public int NUSERCODE { get; set; }
     public string? USERSSACCESSWO { get; set; }
-    public long NBULLETINS { get; set; }
+    public long? NBULLETINS { get; set; }
     public decimal? NAMO_AFEC { get; set; }
     public decimal? NAMO_EXEN { get; set; }
     public decimal? NIVA { get; set; }
     public decimal? NCOM_AFEC { get; set; }
     public decimal? NCOM_EXEN { get; set; }
     public DateTime DLIMITDATE { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
     public string? COLFORMREFSTYPE { get; set; }
     public string? SINDCHEQUE { get; set; }
     public DateTime? DCOLLSUS_INI { get; set; }
     public DateTime? DCOLLSUS_END { get; set; }
-    public int NSUS_REASON { get; set; }
+    public int? NSUS_REASON { get; set; }
     public string? TABLE5566SDESCRIPT { get; set; }
     public string? SSUS_ORIGI { get; set; }
     public long? NCOLLECTOR { get; set; }
     public long? NBILLNUM { get; set; }
     public string? SBILLTYPE { get; set; }
-    public int NWAY_PAY { get; set; }
+    public int? NWAY_PAY { get; set; }
     public string? TABLE5002SDESCRIPT { get; set; }
     public string? SDOCNUMBE { get; set; }
     public int? NRETENTIONTAXCODE { get; set; }

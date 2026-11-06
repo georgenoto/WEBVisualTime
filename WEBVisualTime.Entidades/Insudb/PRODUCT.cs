@@ -42,7 +42,7 @@ public partial class PRODUCT
     public string? SINDIVIND { get; set; }
     public string? SMULTIIND { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NPAYFREQ { get; set; }
+    public int? NPAYFREQ { get; set; }
 
     [ForeignKey("NPAYFREQ")]
     public Insudb.TABLE36? TABLE36 { get; set; }
@@ -90,7 +90,7 @@ public partial class PRODUCT
     public int? NQDAYS_PRO { get; set; }
     public int? NQUOTA { get; set; }
     public string? SGROUPSI { get; set; }
-    public int NWAY_PAY { get; set; }
+    public int? NWAY_PAY { get; set; }
 
     [ForeignKey("NWAY_PAY")]
     public Insudb.TABLE5002? TABLE5002 { get; set; }
@@ -111,7 +111,7 @@ public partial class PRODUCT
     public string? SFRACRECEIP { get; set; }
     public string? SCONDSVS { get; set; }
     public string? SAUTO_SUSC { get; set; }
-    public int NREPINSURED { get; set; }
+    public int? NREPINSURED { get; set; }
 
     [ForeignKey("NREPINSURED")]
     public Insudb.TABLE5677? TABLE5677 { get; set; }
@@ -149,7 +149,7 @@ public partial class PRODUCT
     public string? SCLIENT { get; set; }
     public int? NSELLCHANNEL { get; set; }
     public string? SNATIONALS { get; set; }
-    public int NCLASSIFICATION { get; set; }
+    public int? NCLASSIFICATION { get; set; }
 
     [ForeignKey("NCLASSIFICATION")]
     public Insudb.TABLE9223? TABLE9223 { get; set; }

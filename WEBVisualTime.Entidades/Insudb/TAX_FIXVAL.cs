@@ -9,7 +9,7 @@ public partial class TAX_FIXVAL
 
     [ForeignKey("STYPETAX")]
     public Insudb.TABLE5602? TABLE5602 { get; set; }
-    public int NTYPESUPPORT { get; set; }
+    public int? NTYPESUPPORT { get; set; }
 
     [ForeignKey("NTYPESUPPORT")]
     public Insudb.TABLE5570? TABLE5570 { get; set; }

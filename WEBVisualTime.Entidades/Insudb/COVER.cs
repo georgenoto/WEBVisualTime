@@ -6,24 +6,40 @@ public partial class COVER
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NGROUP_INSU { get; set; }
     public int NMODULEC { get; set; }
     public int NCOVER { get; set; }
@@ -65,7 +81,7 @@ public partial class COVER
     [ForeignKey("SFRANCAPL")]
     public Insudb.TABLE33? TABLE33 { get; set; }
     public decimal? NDISC_AMOUN { get; set; }
-    public int NTYPDURINS { get; set; }
+    public int? NTYPDURINS { get; set; }
 
     [ForeignKey("NTYPDURINS")]
     public Insudb.TABLE5589? TABLE5589NTYPDURINS { get; set; }
@@ -73,12 +89,12 @@ public partial class COVER
     public int? NAGEMININS { get; set; }
     public int? NAGEMAXINS { get; set; }
     public int? NAGEMAXPER { get; set; }
-    public int NTYPDURPAY { get; set; }
+    public int? NTYPDURPAY { get; set; }
 
     [ForeignKey("NTYPDURPAY")]
     public Insudb.TABLE5589? TABLE5589NTYPDURPAY { get; set; }
     public int? NDURPAY { get; set; }
-    public int NCAUSEUPD { get; set; }
+    public int? NCAUSEUPD { get; set; }
 
     [ForeignKey("NCAUSEUPD")]
     public Insudb.TABLE5547? TABLE5547 { get; set; }
@@ -88,11 +104,11 @@ public partial class COVER
     public DateTime? DANIVERSARY { get; set; }
     public DateTime? DSEEKTAR { get; set; }
     public DateTime? DFER { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
 
     [ForeignKey("NBRANCH_REI")]
     public Insudb.TABLE5000? TABLE5000 { get; set; }
-    public int NRETARIF { get; set; }
+    public int? NRETARIF { get; set; }
 
     [ForeignKey("NRETARIF")]
     public Insudb.TABLE5559? TABLE5559 { get; set; }
@@ -112,7 +128,7 @@ public partial class COVER
     public decimal? NDISCCLA { get; set; }
     public decimal? NDISC_AMOCLA { get; set; }
     public int? NFRANCDAYS { get; set; }
-    public int NFREQMAXEVEN { get; set; }
+    public int? NFREQMAXEVEN { get; set; }
 
     [ForeignKey("NFREQMAXEVEN")]
     public Insudb.TABLE340? TABLE340 { get; set; }

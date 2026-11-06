@@ -6,19 +6,31 @@ public partial class ROLE_TYPE_AMEND
 {
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
+    [ForeignKey("NBRANCH, NPRODUCT, NTYPE_AMEND, DEFFECDATE")]
     public Insudb.TYPE_AMEND? TYPE_AMENDNBRANCH { get; set; }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.TYPE_AMEND? TYPE_AMENDNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.TYPE_AMEND? TYPE_AMENDNPRODUCT
+    {
+        get => TYPE_AMENDNBRANCH;
+        set => TYPE_AMENDNBRANCH = value;
+    }
     public DateTime DEFFECDATE { get; set; }
 
-    [ForeignKey("DEFFECDATE")]
-    public Insudb.TYPE_AMEND? TYPE_AMENDDEFFECDATE { get; set; }
+    [NotMapped]
+    public Insudb.TYPE_AMEND? TYPE_AMENDDEFFECDATE
+    {
+        get => TYPE_AMENDNBRANCH;
+        set => TYPE_AMENDNBRANCH = value;
+    }
     public int NTYPE_AMEND { get; set; }
 
-    [ForeignKey("NTYPE_AMEND")]
-    public Insudb.TYPE_AMEND? TYPE_AMENDNTYPE_AMEND { get; set; }
+    [NotMapped]
+    public Insudb.TYPE_AMEND? TYPE_AMENDNTYPE_AMEND
+    {
+        get => TYPE_AMENDNBRANCH;
+        set => TYPE_AMENDNBRANCH = value;
+    }
     public int NROLEID { get; set; }
 }

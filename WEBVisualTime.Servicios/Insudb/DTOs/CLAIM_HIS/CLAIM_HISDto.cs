@@ -24,7 +24,7 @@ public class CLAIM_HISDto
     public decimal? NLOC_AMOUNT { get; set; }
     public DateTime? DOPERDATE { get; set; }
     public string? SORDER_NUM { get; set; }
-    public int NPAY_TYPE { get; set; }
+    public int? NPAY_TYPE { get; set; }
     public string? TABLE199SDESCRIPT { get; set; }
     public DateTime? DPOSTED { get; set; }
     public long? NSERV_ORDER { get; set; }
@@ -32,14 +32,14 @@ public class CLAIM_HISDto
     public DateTime DCOMPDATE { get; set; }
     public string? SCLIENT { get; set; }
     public string? CLIENTSACCOUNT_IN { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
     public string? COLFORMREFSTYPE { get; set; }
-    public int NPAY_FORM { get; set; }
+    public int? NPAY_FORM { get; set; }
     public string? TABLE138SDESCRIPT { get; set; }
     public string? SREINSU_IND { get; set; }
     public string? SCOINSU_IND { get; set; }
     public long? NCASH_ID { get; set; }
-    public int NDOC_TYPE { get; set; }
+    public int? NDOC_TYPE { get; set; }
     public string? TABLE5570SDESCRIPT { get; set; }
     public long? NBILL { get; set; }
     public DateTime? DBILL_DATE { get; set; }

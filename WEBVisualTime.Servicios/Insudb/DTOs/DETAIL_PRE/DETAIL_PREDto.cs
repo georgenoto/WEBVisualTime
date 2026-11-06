@@ -29,7 +29,7 @@ public class DETAIL_PREDto
     public string? TABLE71SDESCRIPT { get; set; }
     public int NBRANCH_LED { get; set; }
     public string? TABLE75SDESCRIPT { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public string? TABLE5000SDESCRIPT { get; set; }
     public int? NUSERCODE { get; set; }
     public decimal? NPREMANUAL { get; set; }
@@ -46,7 +46,7 @@ public class DETAIL_PREDto
     public decimal? NSTIPEND_AMOUNT { get; set; }
     public decimal? NSTIPEND_ANNUAL { get; set; }
     public decimal? NTAXRATE { get; set; }
-    public int NDISSUR_TYPE { get; set; }
+    public int? NDISSUR_TYPE { get; set; }
     public string? TABLE9207SDESCRIPT { get; set; }
     public decimal? NCOM_SUPER { get; set; }
     public decimal? NCOMANUAL_SUPER { get; set; }

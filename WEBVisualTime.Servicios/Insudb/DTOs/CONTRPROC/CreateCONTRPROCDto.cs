@@ -4,7 +4,7 @@ public class CreateCONTRPROCDto
 {
     public decimal? NAMOUNT { get; set; }
     public int NTYPE_REL { get; set; }
-    public int NFQCY_ACC { get; set; }
+    public int? NFQCY_ACC { get; set; }
     public string? SCAP_NOM_RI { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public decimal? NEXCESS { get; set; }
@@ -48,7 +48,7 @@ public class CreateCONTRPROCDto
     public string? SCUMULTYP { get; set; }
     public string? SCUMREINT { get; set; }
     public string? SCUMULPOL { get; set; }
-    public int NFREQPAY { get; set; }
+    public int? NFREQPAY { get; set; }
     public int? NNEXTMONTHPA { get; set; }
     public int? NNEXTYEARPA { get; set; }
     public string? SRETZONE { get; set; }

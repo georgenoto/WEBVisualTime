@@ -4,7 +4,7 @@ namespace WEBVisualTime.Entidades.Insudb;
 
 public partial class GROUP_COLUMNS
 {
-    public int NSHEET { get; set; }
+    public int? NSHEET { get; set; }
 
     [ForeignKey("NSHEET")]
     public Insudb.TABLE697? TABLE697 { get; set; }

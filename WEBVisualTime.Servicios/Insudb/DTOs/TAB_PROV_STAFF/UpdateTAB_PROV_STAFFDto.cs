@@ -9,5 +9,5 @@ public class UpdateTAB_PROV_STAFFDto
     public DateTime? DNULLDATE { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
-    public int NPROVIDER_REL { get; set; }
+    public int? NPROVIDER_REL { get; set; }
 }

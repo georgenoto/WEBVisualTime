@@ -14,7 +14,7 @@ public partial class CLAIM_VOUCHER
     public string? SVOUCHER_SERIES { get; set; }
     public long? NVOUCHER_NUM { get; set; }
     public string? SCONTROL_CODE { get; set; }
-    public int NSTATUS { get; set; }
+    public int? NSTATUS { get; set; }
 
     [ForeignKey("NSTATUS")]
     public Insudb.TABLE9248? TABLE9248 { get; set; }
@@ -23,11 +23,11 @@ public partial class CLAIM_VOUCHER
     public decimal? NEXCHANGE { get; set; }
     public decimal? NBALANCE { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NFOREIGNDOCTYPE { get; set; }
+    public int? NFOREIGNDOCTYPE { get; set; }
 
     [ForeignKey("NFOREIGNDOCTYPE")]
     public Insudb.TABLE9247? TABLE9247 { get; set; }
-    public int NPROVIDER { get; set; }
+    public int? NPROVIDER { get; set; }
 
     [ForeignKey("NPROVIDER")]
     public Insudb.TAB_PROVIDER? TAB_PROVIDER { get; set; }

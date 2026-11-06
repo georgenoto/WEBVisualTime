@@ -6,16 +6,24 @@ public partial class CLAIM_HIS
 {
     public long NCLAIM { get; set; }
 
-    [ForeignKey("NCLAIM")]
+    [ForeignKey("NCLAIM, NCASE_NUM, NDEMAN_TYPE")]
     public Insudb.CLAIM_CASE? CLAIM_CASENCLAIM { get; set; }
     public int NCASE_NUM { get; set; }
 
-    [ForeignKey("NCASE_NUM")]
-    public Insudb.CLAIM_CASE? CLAIM_CASENCASE_NUM { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_CASE? CLAIM_CASENCASE_NUM
+    {
+        get => CLAIM_CASENCLAIM;
+        set => CLAIM_CASENCLAIM = value;
+    }
     public int NDEMAN_TYPE { get; set; }
 
-    [ForeignKey("NDEMAN_TYPE")]
-    public Insudb.CLAIM_CASE? CLAIM_CASENDEMAN_TYPE { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_CASE? CLAIM_CASENDEMAN_TYPE
+    {
+        get => CLAIM_CASENCLAIM;
+        set => CLAIM_CASENCLAIM = value;
+    }
     public int NTRANSAC { get; set; }
     public decimal? NAMOUNT { get; set; }
     public int NOPER_TYPE { get; set; }
@@ -34,7 +42,7 @@ public partial class CLAIM_HIS
     public decimal? NLOC_AMOUNT { get; set; }
     public DateTime? DOPERDATE { get; set; }
     public string? SORDER_NUM { get; set; }
-    public int NPAY_TYPE { get; set; }
+    public int? NPAY_TYPE { get; set; }
 
     [ForeignKey("NPAY_TYPE")]
     public Insudb.TABLE199? TABLE199 { get; set; }
@@ -46,18 +54,18 @@ public partial class CLAIM_HIS
 
     [ForeignKey("SCLIENT")]
     public Insudb.CLIENT? CLIENT { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
 
     [ForeignKey("NBORDEREAUX")]
     public Insudb.COLFORMREF? COLFORMREF { get; set; }
-    public int NPAY_FORM { get; set; }
+    public int? NPAY_FORM { get; set; }
 
     [ForeignKey("NPAY_FORM")]
     public Insudb.TABLE138? TABLE138 { get; set; }
     public string? SREINSU_IND { get; set; }
     public string? SCOINSU_IND { get; set; }
     public long? NCASH_ID { get; set; }
-    public int NDOC_TYPE { get; set; }
+    public int? NDOC_TYPE { get; set; }
 
     [ForeignKey("NDOC_TYPE")]
     public Insudb.TABLE5570? TABLE5570 { get; set; }

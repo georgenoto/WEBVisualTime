@@ -4,7 +4,7 @@ using WEBVisualTime.WebApi.Controllers.Common;
 
 namespace WEBVisualTime.WebApi.Insudb.Controllers;
 
-public class APPUSERController : CrudApiController<APPUSERDto, CreateAPPUSERDto, UpdateAPPUSERDto, int>
+public class APPUSERController : CrudApiController<APPUSERDto, CreateAPPUSERDto, UpdateAPPUSERDto, long>
 {
     public APPUSERController(IAPPUSERService service) : base(service, dto => dto.NIDUSER) { }
 }

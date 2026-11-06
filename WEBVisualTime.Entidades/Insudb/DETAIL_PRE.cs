@@ -6,28 +6,48 @@ public partial class DETAIL_PRE
 {
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
+    [ForeignKey("SCERTYPE, NRECEIPT, NBRANCH, NPRODUCT, NDIGIT, NPAYNUMBE")]
     public Insudb.PREMIUM? PREMIUMNPRODUCT { get; set; }
     public long NRECEIPT { get; set; }
 
-    [ForeignKey("NRECEIPT")]
-    public Insudb.PREMIUM? PREMIUMNRECEIPT { get; set; }
+    [NotMapped]
+    public Insudb.PREMIUM? PREMIUMNRECEIPT
+    {
+        get => PREMIUMNPRODUCT;
+        set => PREMIUMNPRODUCT = value;
+    }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.PREMIUM? PREMIUMNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.PREMIUM? PREMIUMNBRANCH
+    {
+        get => PREMIUMNPRODUCT;
+        set => PREMIUMNPRODUCT = value;
+    }
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
-    public Insudb.PREMIUM? PREMIUMSCERTYPE { get; set; }
+    [NotMapped]
+    public Insudb.PREMIUM? PREMIUMSCERTYPE
+    {
+        get => PREMIUMNPRODUCT;
+        set => PREMIUMNPRODUCT = value;
+    }
     public int NDIGIT { get; set; }
 
-    [ForeignKey("NDIGIT")]
-    public Insudb.PREMIUM? PREMIUMNDIGIT { get; set; }
+    [NotMapped]
+    public Insudb.PREMIUM? PREMIUMNDIGIT
+    {
+        get => PREMIUMNPRODUCT;
+        set => PREMIUMNPRODUCT = value;
+    }
     public int NPAYNUMBE { get; set; }
 
-    [ForeignKey("NPAYNUMBE")]
-    public Insudb.PREMIUM? PREMIUMNPAYNUMBE { get; set; }
+    [NotMapped]
+    public Insudb.PREMIUM? PREMIUMNPAYNUMBE
+    {
+        get => PREMIUMNPRODUCT;
+        set => PREMIUMNPRODUCT = value;
+    }
     public int NID_BILL { get; set; }
     public string? SADDSUINI { get; set; }
     public string STYPE_DETAI { get; set; }
@@ -47,7 +67,7 @@ public partial class DETAIL_PRE
 
     [ForeignKey("NBRANCH_LED")]
     public Insudb.TABLE75? TABLE75 { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
 
     [ForeignKey("NBRANCH_REI")]
     public Insudb.TABLE5000? TABLE5000 { get; set; }
@@ -66,7 +86,7 @@ public partial class DETAIL_PRE
     public decimal? NSTIPEND_AMOUNT { get; set; }
     public decimal? NSTIPEND_ANNUAL { get; set; }
     public decimal? NTAXRATE { get; set; }
-    public int NDISSUR_TYPE { get; set; }
+    public int? NDISSUR_TYPE { get; set; }
 
     [ForeignKey("NDISSUR_TYPE")]
     public Insudb.TABLE9207? TABLE9207 { get; set; }

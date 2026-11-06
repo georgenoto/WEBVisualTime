@@ -20,7 +20,7 @@ public class DISC_XPREMDto
     public long? NNOTENUM { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public int NUSERCODE { get; set; }
-    public int NCAUSE { get; set; }
+    public int? NCAUSE { get; set; }
     public string? TABLE5631SDESCRIPT { get; set; }
     public string SAGREE { get; set; }
     public decimal? NPERCENT { get; set; }

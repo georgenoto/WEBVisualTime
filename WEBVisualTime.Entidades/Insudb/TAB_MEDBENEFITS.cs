@@ -6,24 +6,40 @@ public partial class TAB_MEDBENEFITS
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NID { get; set; }
     public int NMODULEC { get; set; }
     public int NCOVER { get; set; }
@@ -35,7 +51,7 @@ public partial class TAB_MEDBENEFITS
     public long? NAMOUNT_BENE { get; set; }
     public int? NPERCEN_HOSPITAL { get; set; }
     public int? NPERCEN_AMBULATORY { get; set; }
-    public int NDED_TYPE { get; set; }
+    public int? NDED_TYPE { get; set; }
 
     [ForeignKey("NDED_TYPE")]
     public Insudb.TABLE269? TABLE269 { get; set; }
@@ -50,7 +66,7 @@ public partial class TAB_MEDBENEFITS
     [ForeignKey("SCAREN_TYPE")]
     public Insudb.TABLE52? TABLE52 { get; set; }
     public int? NCAREN_QUANT { get; set; }
-    public int NOFFICE_PROD { get; set; }
+    public int? NOFFICE_PROD { get; set; }
 
     [ForeignKey("NOFFICE_PROD")]
     public Insudb.TABLE9? TABLE9 { get; set; }
@@ -62,15 +78,15 @@ public partial class TAB_MEDBENEFITS
 
     [ForeignKey("SSEXCLIEN")]
     public Insudb.TABLE18? TABLE18 { get; set; }
-    public int NPROVIDER { get; set; }
+    public int? NPROVIDER { get; set; }
 
     [ForeignKey("NPROVIDER")]
     public Insudb.TAB_PROVIDER? TAB_PROVIDER { get; set; }
-    public int NATTENSYSTEM { get; set; }
+    public int? NATTENSYSTEM { get; set; }
 
     [ForeignKey("NATTENSYSTEM")]
     public Insudb.TABLE9215? TABLE9215 { get; set; }
-    public long NTYPEEXHAUS { get; set; }
+    public long? NTYPEEXHAUS { get; set; }
 
     [ForeignKey("NTYPEEXHAUS")]
     public Insudb.TABLE9221? TABLE9221 { get; set; }

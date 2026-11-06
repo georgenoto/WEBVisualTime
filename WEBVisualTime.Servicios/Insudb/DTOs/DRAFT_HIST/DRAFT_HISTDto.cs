@@ -13,11 +13,11 @@ public class DRAFT_HISTDto
     public decimal? NINTEREST { get; set; }
     public string? SINTERMEI { get; set; }
     public DateTime? DSTAT_DATE { get; set; }
-    public int NTYPE { get; set; }
+    public long? NTYPE { get; set; }
     public string? TABLE260SDESCRIPT { get; set; }
     public int NUSERCODE { get; set; }
     public string? USERSSACCESSWO { get; set; }
-    public long NBANK_CODE { get; set; }
+    public long? NBANK_CODE { get; set; }
     public string? TABLE7SDESCRIPT { get; set; }
     public string? SDOCNUMBE { get; set; }
     public string? SPAY_FORM { get; set; }
@@ -26,7 +26,7 @@ public class DRAFT_HISTDto
     public string? SAUX_ACCOUN { get; set; }
     public int? NCASHNUM { get; set; }
     public int? NPAYREJECT { get; set; }
-    public long NCOLLECTOR { get; set; }
+    public long? NCOLLECTOR { get; set; }
     public DateTime? DLEDGERDAT { get; set; }
     public DateTime? DPOSTED { get; set; }
     public string? SCESSICOI { get; set; }

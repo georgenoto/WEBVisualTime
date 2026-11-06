@@ -31,14 +31,14 @@ public class CLAIMDto
     public string? SMAILNUMB { get; set; }
     public int? NMOVEMENT { get; set; }
     public long? NNOTENUM { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
     public string? TABLE136SDESCRIPT { get; set; }
     public DateTime? DOCCURDAT { get; set; }
     public int NOFFICE { get; set; }
     public string? TABLE9NOFFICESDESCRIPT { get; set; }
-    public int NOFFICE_OWN { get; set; }
+    public int? NOFFICE_OWN { get; set; }
     public string? TABLE9NOFFICE_OWNSDESCRIPT { get; set; }
-    public int NOFFICTRA { get; set; }
+    public int? NOFFICTRA { get; set; }
     public string? TABLE9NOFFICTRASDESCRIPT { get; set; }
     public DateTime? DPRESCDAT { get; set; }
     public string? SPRINTED { get; set; }
@@ -47,7 +47,7 @@ public class CLAIMDto
     public string? SSHOW_STATU { get; set; }
     public string? SSTACLAIM { get; set; }
     public string? TABLE135SDESCRIPT { get; set; }
-    public int NUNACCODE { get; set; }
+    public int? NUNACCODE { get; set; }
     public string? TABLE133SDESCRIPT { get; set; }
     public int? NUSERCODE { get; set; }
     public string? SNUMFORM { get; set; }
@@ -56,33 +56,33 @@ public class CLAIMDto
     public string? SCESS_NPR { get; set; }
     public string? SCLIENT2 { get; set; }
     public string? CLIENTSCLIENT2SACCOUNT_IN { get; set; }
-    public long NBORDEREAUX_CL { get; set; }
+    public long? NBORDEREAUX_CL { get; set; }
     public string? CLAIM_MASTERSCLIENT { get; set; }
     public DateTime? DLIMIT_PAY { get; set; }
     public int? NIDCATAS { get; set; }
-    public int NOFFICE_PAY { get; set; }
+    public int? NOFFICE_PAY { get; set; }
     public string? TABLE9NOFFICE_PAYSDESCRIPT { get; set; }
-    public int NWAITCL_CODE { get; set; }
+    public int? NWAITCL_CODE { get; set; }
     public string? TABLE5604SDESCRIPT { get; set; }
-    public int NRELASHIP { get; set; }
+    public int? NRELASHIP { get; set; }
     public string? TABLE15SDESCRIPT { get; set; }
-    public int NOFFICEAGEN { get; set; }
+    public int? NOFFICEAGEN { get; set; }
     public string? TABLE5556NOFFICEAGENSDESCRIPT { get; set; }
     public int NAGENCY { get; set; }
     public string? AGENCIESNAGENCYSPAY { get; set; }
-    public int NAGENCY_PAY { get; set; }
+    public int? NAGENCY_PAY { get; set; }
     public string? AGENCIESNAGENCY_PAYSPAY { get; set; }
-    public int NOFFICEAGEN_PAY { get; set; }
+    public int? NOFFICEAGEN_PAY { get; set; }
     public string? TABLE5556NOFFICEAGEN_PAYSDESCRIPT { get; set; }
     public long? NCLAIMPARENT { get; set; }
     public string? SUNIQUEID { get; set; }
     public DateTime? DMC_OCCURDAT { get; set; }
     public DateTime? DCOMPLETDATE { get; set; }
     public DateTime? DPAYDATE { get; set; }
-    public long NIDPRECLAIM { get; set; }
+    public long? NIDPRECLAIM { get; set; }
     public string? PRECLAIMSCERTYPE { get; set; }
     public int? NPRECLAIM { get; set; }
-    public int NCLAIMANTTYPE { get; set; }
+    public int? NCLAIMANTTYPE { get; set; }
     public string? TABLE9212SDESCRIPT { get; set; }
     public DateTime? DPRESENTDATE { get; set; }
     public int? NIND_REOPENCL { get; set; }

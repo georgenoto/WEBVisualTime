@@ -23,7 +23,7 @@ public partial class CLAIM_SETT_VOUCHER
     public decimal? NSETTLEMENT_PAY { get; set; }
     public decimal? NAMOUNT_VAT_LOSS { get; set; }
     public decimal? NAMOUNT_FTT_LOSS { get; set; }
-    public int NTYPEDISC_PROV { get; set; }
+    public int? NTYPEDISC_PROV { get; set; }
 
     [ForeignKey("NTYPEDISC_PROV")]
     public Insudb.TABLE9254? TABLE9254 { get; set; }

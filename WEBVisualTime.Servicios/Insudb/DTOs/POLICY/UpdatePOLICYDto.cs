@@ -54,8 +54,8 @@ public class UpdatePOLICYDto
     public decimal? NPARTICIP { get; set; }
     public decimal? NPREMIUM { get; set; }
     public decimal? NSHARE { get; set; }
-    public int NPAYFREQ { get; set; }
-    public long NINTERMED { get; set; }
+    public int? NPAYFREQ { get; set; }
+    public long? NINTERMED { get; set; }
     public long? NLAST_CERTI { get; set; }
     public long? NNOTE_ADEND { get; set; }
     public long? NNOTE_BENEF { get; set; }
@@ -68,10 +68,10 @@ public class UpdatePOLICYDto
     public long? NMOV_HISTOR { get; set; }
     public long? NOFICIAL_P { get; set; }
     public int? NCOPIES { get; set; }
-    public int NLEADCOMP { get; set; }
-    public int NNO_CONVERS { get; set; }
+    public int? NLEADCOMP { get; set; }
+    public int? NNO_CONVERS { get; set; }
     public int? NNOTICE { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
     public int NOFFICE { get; set; }
     public int? NOFFICE_OWN { get; set; }
     public int? NTARIFF { get; set; }
@@ -82,21 +82,21 @@ public class UpdatePOLICYDto
     public string? SPRORSHORT { get; set; }
     public int? NDAYSFQ { get; set; }
     public int? NDAYSSQ { get; set; }
-    public int NCOMPANY { get; set; }
-    public int NOFFICEINS { get; set; }
+    public int? NCOMPANY { get; set; }
+    public int? NOFFICEINS { get; set; }
     public string? SORIGINAL { get; set; }
-    public int NCOD_AGREE { get; set; }
+    public int? NCOD_AGREE { get; set; }
     public string? STYPENOM { get; set; }
     public string? SNOPAYROLL { get; set; }
     public string? SINSUBANK { get; set; }
     public decimal? NLEGAMOUNT { get; set; }
     public string? SLEG { get; set; }
-    public int NAGENCY { get; set; }
-    public int NOFFICEAGEN { get; set; }
+    public int? NAGENCY { get; set; }
+    public int? NOFFICEAGEN { get; set; }
     public string? SCOLTPRES { get; set; }
     public string? SIND_COMM { get; set; }
     public string? SCURRACC { get; set; }
-    public int NREPINSURED { get; set; }
+    public int? NREPINSURED { get; set; }
     public int? NLOCAL { get; set; }
     public DateTime? DDATERENOVA { get; set; }
     public int? NCLAIM_NOTICE { get; set; }
@@ -110,7 +110,7 @@ public class UpdatePOLICYDto
     public string? SACCHSEND_IND { get; set; }
     public int? NTYPEACCOUNT { get; set; }
     public DateTime? DPREVIUS_EXPIRDATE { get; set; }
-    public int NSPECIALBUSINESS { get; set; }
+    public int? NSPECIALBUSINESS { get; set; }
     public int? NLEADYM { get; set; }
     public DateTime? DEXPIRDATANT { get; set; }
     public string? STYPCALC_FLATPREM { get; set; }

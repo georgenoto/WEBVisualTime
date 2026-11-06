@@ -23,11 +23,11 @@ public partial class DOCUMENTS_PRECLAIM
     [ForeignKey("NUSERCODE")]
     public Insudb.USERS? USERS { get; set; }
     public DateTime DCOMPDATE { get; set; }
-    public int NDOC_TYPE { get; set; }
+    public int? NDOC_TYPE { get; set; }
 
     [ForeignKey("NDOC_TYPE")]
     public Insudb.TABLE9217? TABLE9217 { get; set; }
-    public int NPROVIDER { get; set; }
+    public int? NPROVIDER { get; set; }
 
     [ForeignKey("NPROVIDER")]
     public Insudb.TAB_PROVIDER? TAB_PROVIDER { get; set; }
@@ -36,7 +36,7 @@ public partial class DOCUMENTS_PRECLAIM
     [ForeignKey("SCLIENT")]
     public Insudb.CLIENT? CLIENT { get; set; }
     public long? NID_SECUENCIA { get; set; }
-    public int NCLASS_DOC { get; set; }
+    public int? NCLASS_DOC { get; set; }
 
     [ForeignKey("NCLASS_DOC")]
     public Insudb.TABLE9219? TABLE9219 { get; set; }

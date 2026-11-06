@@ -14,7 +14,7 @@ public class POLICY_HISDto
     public string? CERTIFICATNCERTIFSCUMUL_CODE { get; set; }
     public long NMOVEMENT { get; set; }
     public DateTime DCOMPDATE { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
     public string? CLAIMSCERTYPE { get; set; }
     public int? NCURRENCY { get; set; }
     public DateTime? DEFFECDATE { get; set; }
@@ -22,23 +22,23 @@ public class POLICY_HISDto
     public DateTime? DNULLDATE { get; set; }
     public long? NRECEIPT { get; set; }
     public int? NTRANSACTIO { get; set; }
-    public int NTYPE_HIST { get; set; }
+    public int? NTYPE_HIST { get; set; }
     public string? TABLE165SDESCRIPT { get; set; }
     public int NUSERCODE { get; set; }
     public DateTime? DLEDGERDAT { get; set; }
     public long? NOFICIAL_P { get; set; }
     public int? NTYPE_AMEND { get; set; }
-    public long NSERV_ORDER { get; set; }
+    public long? NSERV_ORDER { get; set; }
     public long? NNOTENUM { get; set; }
     public string? SINTERMEI { get; set; }
     public DateTime? DFER { get; set; }
     public long? NPROPONUM { get; set; }
     public int? NAGENCY { get; set; }
-    public int NWAIT_CODE { get; set; }
+    public int? NWAIT_CODE { get; set; }
     public string? TAB_WAITPOSDESCRIPT { get; set; }
-    public int NSTATQUOTA { get; set; }
+    public int? NSTATQUOTA { get; set; }
     public string? TABLE5526SDESCRIPT { get; set; }
-    public int NNO_CONVERS { get; set; }
+    public int? NNO_CONVERS { get; set; }
     public string? NOCONVERSSDESCRIPT { get; set; }
     public int? NCARTPOL { get; set; }
     public int? NNUMCART { get; set; }
@@ -56,7 +56,7 @@ public class POLICY_HISDto
     public string? SLOT { get; set; }
     public int? NWAY_PAY { get; set; }
     public int? NBILL_DAY { get; set; }
-    public int NCOD_AGREE { get; set; }
+    public int? NCOD_AGREE { get; set; }
     public string? AGREEMENTSSTATREGT { get; set; }
     public long? NNUMCERT { get; set; }
 }

@@ -15,12 +15,12 @@ public partial class CHEQUE_MOV
     public string SCHEQUENU { get; set; }
     public DateTime DEFFECDATE { get; set; }
     public int NCHEOPERTYP { get; set; }
-    public int NCHEOPER_REASON { get; set; }
+    public int? NCHEOPER_REASON { get; set; }
 
     [ForeignKey("NCHEOPER_REASON")]
     public Insudb.TABLE5577? TABLE5577 { get; set; }
     public int NID { get; set; }
-    public long NBANK_INTER { get; set; }
+    public long? NBANK_INTER { get; set; }
 
     [ForeignKey("NBANK_INTER")]
     public Insudb.TABLE7? TABLE7NBANK_INTER { get; set; }

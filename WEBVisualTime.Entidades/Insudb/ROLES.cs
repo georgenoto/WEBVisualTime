@@ -6,24 +6,40 @@ public partial class ROLES
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NROLE { get; set; }
 
     [ForeignKey("NROLE")]
@@ -36,7 +52,7 @@ public partial class ROLES
     public DateTime? DCOMPDATE { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public int? NUSERCODE { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }
@@ -46,17 +62,17 @@ public partial class ROLES
     [ForeignKey("SSEXCLIEN")]
     public Insudb.TABLE18? TABLE18 { get; set; }
     public string? SSMOKING { get; set; }
-    public int NTYPERISK { get; set; }
+    public int? NTYPERISK { get; set; }
 
     [ForeignKey("NTYPERISK")]
     public Insudb.TABLE5639? TABLE5639 { get; set; }
     public string? SVIP { get; set; }
-    public int NSTATUSROL { get; set; }
+    public int? NSTATUSROL { get; set; }
 
     [ForeignKey("NSTATUSROL")]
     public Insudb.TABLE5561? TABLE5561 { get; set; }
     public int? NRATING { get; set; }
-    public int NTYPENAME { get; set; }
+    public int? NTYPENAME { get; set; }
 
     [ForeignKey("NTYPENAME")]
     public Insudb.TABLE5592? TABLE5592 { get; set; }
@@ -69,22 +85,26 @@ public partial class ROLES
     public decimal? NWEIGHT { get; set; }
     public decimal? NHEIGHT { get; set; }
     public decimal? NIMC { get; set; }
-    public int NTYPELIST { get; set; }
+    public int? NTYPELIST { get; set; }
 
     [ForeignKey("NTYPELIST")]
     public Insudb.TABLE9203? TABLE9203 { get; set; }
     public DateTime? DPEPSEARCH { get; set; }
     public int? NUSERPEPSEARCH { get; set; }
     public string? SFPHYSICAL_CREDEN { get; set; }
-    public int NCLASSTYPDOC { get; set; }
+    public int? NCLASSTYPDOC { get; set; }
 
-    [ForeignKey("NCLASSTYPDOC")]
+    [ForeignKey("NTYPCLIENTDOC, NCLASSTYPDOC")]
     public Insudb.FORMATVALUES? FORMATVALUESNCLASSTYPDOC { get; set; }
-    public int NTYPCLIENTDOC { get; set; }
+    public int? NTYPCLIENTDOC { get; set; }
 
-    [ForeignKey("NTYPCLIENTDOC")]
-    public Insudb.FORMATVALUES? FORMATVALUESNTYPCLIENTDOC { get; set; }
-    public int NCITY_RESIDENCE { get; set; }
+    [NotMapped]
+    public Insudb.FORMATVALUES? FORMATVALUESNTYPCLIENTDOC
+    {
+        get => FORMATVALUESNCLASSTYPDOC;
+        set => FORMATVALUESNCLASSTYPDOC = value;
+    }
+    public int? NCITY_RESIDENCE { get; set; }
 
     [ForeignKey("NCITY_RESIDENCE")]
     public Insudb.TABLE9? TABLE9 { get; set; }

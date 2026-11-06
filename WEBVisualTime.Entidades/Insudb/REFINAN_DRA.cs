@@ -4,7 +4,7 @@ namespace WEBVisualTime.Entidades.Insudb;
 
 public partial class REFINAN_DRA
 {
-    public int NBRANCH { get; set; }
+    public int? NBRANCH { get; set; }
 
     [ForeignKey("NBRANCH")]
     public Insudb.TABLE10? TABLE10 { get; set; }
@@ -28,7 +28,7 @@ public partial class REFINAN_DRA
 
     [ForeignKey("NUSERCODE")]
     public Insudb.USERS? USERS { get; set; }
-    public int NOPT_DRAFT { get; set; }
+    public long? NOPT_DRAFT { get; set; }
 
     [ForeignKey("NOPT_DRAFT")]
     public Insudb.TABLE252? TABLE252 { get; set; }

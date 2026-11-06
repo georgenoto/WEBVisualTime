@@ -10,10 +10,10 @@ public partial class REINSU_PRIM_HEALTH
     public Insudb.TABLE10? TABLE10 { get; set; }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
+    [ForeignKey("NBRANCH, NPRODUCT")]
     public Insudb.PRODMASTER? PRODMASTER { get; set; }
     public int NMODULEC { get; set; }
-    public int NCURRENCY { get; set; }
+    public long NCURRENCY { get; set; }
 
     [ForeignKey("NCURRENCY")]
     public Insudb.TABLE11? TABLE11 { get; set; }

@@ -4,16 +4,16 @@ public class COLFORMREFDto
 {
     public long NBORDEREAUX { get; set; }
     public string? STYPE { get; set; }
-    public long NBANK { get; set; }
+    public long? NBANK { get; set; }
     public string? TABLE7SDESCRIPT { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public string? INTERMEDIASCOL_AGREE { get; set; }
     public decimal? NREL_AMOUN { get; set; }
     public int? NCURRENCY { get; set; }
     public long? NPOLICY { get; set; }
     public DateTime? DCOLLECT { get; set; }
     public int? NBRANCH { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
     public string? TABLE9SDESCRIPT { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public int NUSERCODE { get; set; }
@@ -35,7 +35,7 @@ public class COLFORMREFDto
     public DateTime DVALUEDATE { get; set; }
     public string? SIND_ANNUITY { get; set; }
     public DateTime? DDATE_BENLAR { get; set; }
-    public long NCOLLECTOR { get; set; }
+    public long? NCOLLECTOR { get; set; }
     public string? SRELORIGI { get; set; }
     public DateTime? DCOLLECTDATE { get; set; }
     public long? NBILLNUM { get; set; }

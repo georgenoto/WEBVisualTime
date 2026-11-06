@@ -37,7 +37,7 @@ public class CLORDER_DETAILDto
     public decimal? NAMOUNT_PAY_POL { get; set; }
     public string? SMEDSPECIALIALTY { get; set; }
     public string? TABLE8603SDESCRIPT { get; set; }
-    public int NSURCHAR_MED { get; set; }
+    public int? NSURCHAR_MED { get; set; }
     public string? MEDICAL_SURCHARGESDESCRIPT { get; set; }
     public decimal? NPERC_SURCHAR { get; set; }
     public decimal? NAMOUNT_SURCHAR { get; set; }

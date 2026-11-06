@@ -4,7 +4,7 @@ using WEBVisualTime.WebApi.Controllers.Common;
 
 namespace WEBVisualTime.WebApi.Insudb.Controllers;
 
-public class ODWA_HELP_ITEMSController : CrudApiController<ODWA_HELP_ITEMSDto, CreateODWA_HELP_ITEMSDto, UpdateODWA_HELP_ITEMSDto, int>
+public class ODWA_HELP_ITEMSController : CrudApiController<ODWA_HELP_ITEMSDto, CreateODWA_HELP_ITEMSDto, UpdateODWA_HELP_ITEMSDto, long>
 {
     public ODWA_HELP_ITEMSController(IODWA_HELP_ITEMSService service) : base(service, dto => dto.ID) { }
 }

@@ -25,11 +25,11 @@ public partial class PRECLAIM
     public string? SNAMECLIENT { get; set; }
     public long? NNOTENUM { get; set; }
     public string? SCLIENT_AFFECT { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
 
     [ForeignKey("NOFFICE")]
     public Insudb.TABLE9? TABLE9 { get; set; }
-    public int NATTENTCHANNEL { get; set; }
+    public int? NATTENTCHANNEL { get; set; }
 
     [ForeignKey("NATTENTCHANNEL")]
     public Insudb.TABLE9237? TABLE9237 { get; set; }
@@ -38,7 +38,7 @@ public partial class PRECLAIM
     public string? SLOCALOCCUR { get; set; }
     public string? SACCIDENT { get; set; }
     public string? SPREAUTHORIZATION { get; set; }
-    public int NORDERTYPE { get; set; }
+    public int? NORDERTYPE { get; set; }
 
     [ForeignKey("NORDERTYPE")]
     public Insudb.TABLE9238? TABLE9238 { get; set; }
@@ -46,7 +46,7 @@ public partial class PRECLAIM
     public DateTime? DREJECTION { get; set; }
     public DateTime? DREJECTNOTICE { get; set; }
     public int? NREJECTUSER { get; set; }
-    public long NMASTERORDER { get; set; }
+    public long? NMASTERORDER { get; set; }
 
     [ForeignKey("NMASTERORDER")]
     public Insudb.MASTERCL_ORDER? MASTERCL_ORDER { get; set; }
@@ -55,7 +55,7 @@ public partial class PRECLAIM
     public int? NMEDICALINSTITUTE { get; set; }
     public string? SCALLCENTER { get; set; }
     public DateTime? DLEDGERDAT { get; set; }
-    public int NCLA_LI_TYP { get; set; }
+    public int? NCLA_LI_TYP { get; set; }
 
     [ForeignKey("NCLA_LI_TYP")]
     public Insudb.TABLE210? TABLE210 { get; set; }

@@ -18,9 +18,9 @@ public class DOCUMENTSDto
     public DateTime? DLETFIRSDAT { get; set; }
     public DateTime? DLETLASTDAT { get; set; }
     public DateTime? DRECEPDATE { get; set; }
-    public int NSTATUS_DOC { get; set; }
+    public int? NSTATUS_DOC { get; set; }
     public string? TABLE203SDESCRIPT { get; set; }
-    public int NUSERCODE { get; set; }
+    public int? NUSERCODE { get; set; }
     public string? USERSSACCESSWO { get; set; }
     public long? NDOCNUMBE { get; set; }
     public int? NQUANTITY { get; set; }
@@ -30,9 +30,9 @@ public class DOCUMENTSDto
     public string? SDESCRIPT { get; set; }
     public decimal? NAMOUNT { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NDOC_TYPE { get; set; }
+    public int? NDOC_TYPE { get; set; }
     public string? TABLE9217SDESCRIPT { get; set; }
-    public int NPROVIDER { get; set; }
+    public int? NPROVIDER { get; set; }
     public string? TAB_PROVIDERSSTATREGT { get; set; }
     public long? NID_SECUENCIA { get; set; }
     public int? NCLASS_DOC { get; set; }

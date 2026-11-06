@@ -9,14 +9,14 @@ public class CreateCURR_ACCDto
     public string? SSTATREGT { get; set; }
     public int? NUSERCODE { get; set; }
     public DateTime DCOMPDATE { get; set; }
-    public int NLED_COMPAN { get; set; }
+    public int? NLED_COMPAN { get; set; }
     public string? SACCOUNT { get; set; }
     public string? SCERTYPE { get; set; }
-    public int NCOMPANY { get; set; }
-    public int NPRODUCT { get; set; }
+    public int? NCOMPANY { get; set; }
+    public int? NPRODUCT { get; set; }
     public string? SAUX_ACCOUN { get; set; }
-    public int NBRANCH { get; set; }
-    public long NCERTIF { get; set; }
-    public long NPOLICY { get; set; }
-    public int NINSUR_AREA { get; set; }
+    public int? NBRANCH { get; set; }
+    public long? NCERTIF { get; set; }
+    public long? NPOLICY { get; set; }
+    public int? NINSUR_AREA { get; set; }
 }

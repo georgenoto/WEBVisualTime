@@ -5,7 +5,7 @@ namespace WEBVisualTime.Entidades.Insudb;
 public partial class TAB_TYPERR
 {
     public int NTYPE_ERR { get; set; }
-    public int NTYPEERR_PA { get; set; }
+    public int? NTYPEERR_PA { get; set; }
 
     [ForeignKey("NTYPEERR_PA")]
     public Insudb.TAB_TYPERR? TAB_TYPERRParent { get; set; }

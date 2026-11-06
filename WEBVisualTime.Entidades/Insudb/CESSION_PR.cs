@@ -6,24 +6,32 @@ public partial class CESSION_PR
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public long NCESSION_NU { get; set; }
     public int NNUM_CESS { get; set; }
     public int NNUMBER { get; set; }
 
-    [ForeignKey("NNUMBER")]
+    [ForeignKey("NNUMBER, NBRANCH_REI, DEFD_CONTRPROC, NTYPE")]
     public Insudb.CONTRPROC? CONTRPROCNNUMBER { get; set; }
     public int NID { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
 
     [ForeignKey("NBRANCH_REI")]
     public Insudb.TABLE5000? TABLE5000 { get; set; }
@@ -34,12 +42,16 @@ public partial class CESSION_PR
     public decimal? NCAPITAL { get; set; }
     public long NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public decimal NCOMMISSION { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NCONCEPT { get; set; }
+    public int? NCONCEPT { get; set; }
 
     [ForeignKey("NCONCEPT")]
     public Insudb.TABLE533? TABLE533 { get; set; }
@@ -47,8 +59,12 @@ public partial class CESSION_PR
     public decimal? NINTER_RATE { get; set; }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public decimal NPREMIUM { get; set; }
     public string? SPRINT_CE { get; set; }
     public decimal? NRESER_PREM { get; set; }
@@ -57,11 +73,11 @@ public partial class CESSION_PR
     public long? NTYPE_CESSI { get; set; }
     public int? NUSERCODE { get; set; }
     public decimal? NEXPENSIV { get; set; }
-    public int NBRANCH_LED { get; set; }
+    public int? NBRANCH_LED { get; set; }
 
     [ForeignKey("NBRANCH_LED")]
     public Insudb.TABLE75? TABLE75 { get; set; }
-    public int NINSUR_AREA { get; set; }
+    public int? NINSUR_AREA { get; set; }
 
     [ForeignKey("NINSUR_AREA")]
     public Insudb.TABLE5001? TABLE5001 { get; set; }
@@ -74,8 +90,12 @@ public partial class CESSION_PR
     public Insudb.CLIENT? CLIENT { get; set; }
     public DateTime? DEFD_CONTRPROC { get; set; }
 
-    [ForeignKey("DEFD_CONTRPROC")]
-    public Insudb.CONTRPROC? CONTRPROCDEFD_CONTRPROC { get; set; }
+    [NotMapped]
+    public Insudb.CONTRPROC? CONTRPROCDEFD_CONTRPROC
+    {
+        get => CONTRPROCNNUMBER;
+        set => CONTRPROCNNUMBER = value;
+    }
     public int NYEARMONTH { get; set; }
     public decimal? NCAPCESS { get; set; }
     public DateTime DSTARTDATE { get; set; }
@@ -83,8 +103,12 @@ public partial class CESSION_PR
     public decimal NCESSEXTRAPR { get; set; }
     public int NTYPE { get; set; }
 
-    [ForeignKey("NTYPE")]
-    public Insudb.CONTRPROC? CONTRPROCNTYPE { get; set; }
+    [NotMapped]
+    public Insudb.CONTRPROC? CONTRPROCNTYPE
+    {
+        get => CONTRPROCNNUMBER;
+        set => CONTRPROCNNUMBER = value;
+    }
     public DateTime? DEFFECDATE { get; set; }
     public long? NRECEIPT { get; set; }
     public int? NDIGIT { get; set; }

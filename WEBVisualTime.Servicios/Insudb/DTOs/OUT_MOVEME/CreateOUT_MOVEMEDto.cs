@@ -17,7 +17,7 @@ public class CreateOUT_MOVEMEDto
     public int? NPROVINCE { get; set; }
     public DateTime? DSTARTDATE { get; set; }
     public int? NINSUR_AREA { get; set; }
-    public int NWAY_PAY { get; set; }
+    public int? NWAY_PAY { get; set; }
     public int? NORIGI { get; set; }
     public long? NRECEIPT { get; set; }
     public int? NSITUATION { get; set; }

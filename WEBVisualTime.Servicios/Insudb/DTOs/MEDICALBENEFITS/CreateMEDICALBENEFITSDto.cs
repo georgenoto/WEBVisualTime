@@ -9,5 +9,5 @@ public class CreateMEDICALBENEFITSDto
     public string? SSHORT_DES { get; set; }
     public string? SSTATREGT { get; set; }
     public int? NUSERCODE { get; set; }
-    public int NIND_PACKAGE { get; set; }
+    public long NIND_PACKAGE { get; set; }
 }

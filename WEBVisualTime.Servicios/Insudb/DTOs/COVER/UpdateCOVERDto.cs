@@ -33,22 +33,22 @@ public class UpdateCOVERDto
     public string? SWAIT_TYPE { get; set; }
     public string? SFRANCAPL { get; set; }
     public decimal? NDISC_AMOUN { get; set; }
-    public int NTYPDURINS { get; set; }
+    public int? NTYPDURINS { get; set; }
     public int? NDURINSUR { get; set; }
     public int? NAGEMININS { get; set; }
     public int? NAGEMAXINS { get; set; }
     public int? NAGEMAXPER { get; set; }
-    public int NTYPDURPAY { get; set; }
+    public int? NTYPDURPAY { get; set; }
     public int? NDURPAY { get; set; }
-    public int NCAUSEUPD { get; set; }
+    public int? NCAUSEUPD { get; set; }
     public decimal? NCAPITAL_WAIT { get; set; }
     public int? NAGELIMIT { get; set; }
     public int? NAGE_PER { get; set; }
     public DateTime? DANIVERSARY { get; set; }
     public DateTime? DSEEKTAR { get; set; }
     public DateTime? DFER { get; set; }
-    public int NBRANCH_REI { get; set; }
-    public int NRETARIF { get; set; }
+    public int? NBRANCH_REI { get; set; }
+    public int? NRETARIF { get; set; }
     public decimal? NCAPITAL_O { get; set; }
     public decimal? NPREMIUM_O { get; set; }
     public decimal? NRATECOVE_O { get; set; }
@@ -65,7 +65,7 @@ public class UpdateCOVERDto
     public decimal? NDISCCLA { get; set; }
     public decimal? NDISC_AMOCLA { get; set; }
     public int? NFRANCDAYS { get; set; }
-    public int NFREQMAXEVEN { get; set; }
+    public int? NFREQMAXEVEN { get; set; }
     public string? SROUTMAX_EVEN { get; set; }
     public int? NFREQUEN { get; set; }
     public int? NMAXEVEN_QUAN { get; set; }

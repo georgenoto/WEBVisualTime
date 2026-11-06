@@ -11108,5 +11108,34 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.SDESCRIPT).HasMaxLength(30);
         });
 
+
+        // Oracle constraint R_70; navigation-free to avoid adding automatic joins.
+        modelBuilder.Entity<CERTIFICAT>().HasOne<POLICY>().WithMany()
+            .HasForeignKey(e => new { e.SCERTYPE, e.NBRANCH, e.NPRODUCT, e.NPOLICY }).OnDelete(DeleteBehavior.NoAction).HasConstraintName("R_70");
+
+        // Oracle constraint R_1858; navigation-free to avoid adding automatic joins.
+        modelBuilder.Entity<CLAIM_CES>().HasOne<CLIENT>().WithMany()
+            .HasForeignKey(e => e.SCLIENT).OnDelete(DeleteBehavior.NoAction).HasConstraintName("R_1858");
+
+        // Oracle constraint SYS_C0041332; navigation-free to avoid adding automatic joins.
+        modelBuilder.Entity<CLAIM_CES>().HasOne<CLAIM_HIS>().WithMany()
+            .HasForeignKey(e => new { e.NCLAIM, e.NCASE_NUM, e.NDEMAN_TYPE, e.NTRANSAC }).OnDelete(DeleteBehavior.NoAction).HasConstraintName("SYS_C0041332");
+
+        // Oracle R_815 (DRAFT_HIST -> FINANC_DRA) and R_816 (FINANC_COM -> FINANC_PRE)
+        // are DISABLED / NOT VALIDATED. Keep them outside the EF relationship graph.
+
+        // Oracle constraint R_2381; navigation-free to avoid adding automatic joins.
+        modelBuilder.Entity<POLICY>().HasOne<AGENCIES>().WithMany()
+            .HasForeignKey(e => e.NAGENCY).OnDelete(DeleteBehavior.NoAction).HasConstraintName("R_2381");
+
+        // Oracle constraint R_TAB_PROVIDER_3383; navigation-free to avoid adding automatic joins.
+        modelBuilder.Entity<TAB_PROV_FEES>().HasOne<TAB_PROVIDER>().WithMany()
+            .HasForeignKey(e => e.NPROVIDER).OnDelete(DeleteBehavior.NoAction).HasConstraintName("R_TAB_PROVIDER_3383");
+
+        // Oracle constraint R_492; navigation-free to avoid adding automatic joins.
+        modelBuilder.Entity<TAB_PROVIDER>().HasOne<TABLE7027>().WithMany()
+            .HasForeignKey(e => e.NTYPEPROV).OnDelete(DeleteBehavior.NoAction).HasConstraintName("R_492");
+
+        // Oracle R_2093 (WORKSHEET -> PRODMASTER) is DISABLED / NOT VALIDATED.
     }
 }

@@ -6,7 +6,7 @@ public partial class MASSIVE_LOG_PROC
 {
     public string SKEY { get; set; }
 
-    [ForeignKey("SKEY")]
+    [ForeignKey("SKEY, NCOD_AGREE")]
     public Insudb.MASS_PROC_SPONSOR? MASS_PROC_SPONSORSKEY { get; set; }
     public long NKEY { get; set; }
     public string? SCERTYPE { get; set; }
@@ -37,10 +37,14 @@ public partial class MASSIVE_LOG_PROC
     public long? NCOMBPOLICY { get; set; }
     public decimal? NCOMMISION { get; set; }
     public decimal? NSTIPEND_AMOUNT { get; set; }
-    public long NCOD_AGREE { get; set; }
+    public long? NCOD_AGREE { get; set; }
 
-    [ForeignKey("NCOD_AGREE")]
-    public Insudb.MASS_PROC_SPONSOR? MASS_PROC_SPONSORNCOD_AGREE { get; set; }
+    [NotMapped]
+    public Insudb.MASS_PROC_SPONSOR? MASS_PROC_SPONSORNCOD_AGREE
+    {
+        get => MASS_PROC_SPONSORSKEY;
+        set => MASS_PROC_SPONSORSKEY = value;
+    }
     public decimal? NAMOUNT_ORI { get; set; }
     public decimal? NAMOUNT_LOC { get; set; }
     public int? NACTION { get; set; }

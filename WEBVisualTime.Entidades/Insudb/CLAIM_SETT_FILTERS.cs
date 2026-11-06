@@ -22,11 +22,11 @@ public partial class CLAIM_SETT_FILTERS
     public int? NBRANCH { get; set; }
     public int? NPRODUCT { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NTYPEDOC_PAY { get; set; }
+    public int? NTYPEDOC_PAY { get; set; }
 
     [ForeignKey("NTYPEDOC_PAY")]
     public Insudb.TABLE9242? TABLE9242 { get; set; }
-    public int NSETTLEMENT_CONC { get; set; }
+    public int? NSETTLEMENT_CONC { get; set; }
 
     [ForeignKey("NSETTLEMENT_CONC")]
     public Insudb.TABLE9249? TABLE9249 { get; set; }

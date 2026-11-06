@@ -32,15 +32,15 @@ public partial class BOOK_COLLECTION
     public DateTime? DPOSTED { get; set; }
     public int? NWAY_PAY { get; set; }
     public int? NCURRENCY { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
 
     [ForeignKey("NOFFICE")]
     public Insudb.TABLE9? TABLE9 { get; set; }
-    public int NOFFICEAGEN { get; set; }
+    public int? NOFFICEAGEN { get; set; }
 
     [ForeignKey("NOFFICEAGEN")]
     public Insudb.TABLE5556? TABLE5556 { get; set; }
-    public int NAGENCY { get; set; }
+    public int? NAGENCY { get; set; }
 
     [ForeignKey("NAGENCY")]
     public Insudb.TABLE5555? TABLE5555 { get; set; }
@@ -66,7 +66,7 @@ public partial class BOOK_COLLECTION
     public decimal? NPREMIUM { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NUSERCODE { get; set; }
-    public int NTYPE_TRAN { get; set; }
+    public int? NTYPE_TRAN { get; set; }
 
     [ForeignKey("NTYPE_TRAN")]
     public Insudb.TABLE6? TABLE6 { get; set; }

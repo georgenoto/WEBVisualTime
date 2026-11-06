@@ -10,21 +10,21 @@ public class CreateBANK_MOVDto
     public decimal? NCASH_AMOUN { get; set; }
     public decimal? NCHEQ_AMOUN { get; set; }
     public long? NYEAR_MONTH { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
     public string? SDOCNUMBE { get; set; }
-    public int NCONCEPT { get; set; }
+    public int? NCONCEPT { get; set; }
     public string? SCLIENT { get; set; }
-    public int NTYPE_MOV { get; set; }
-    public long NINTERMED { get; set; }
+    public int? NTYPE_MOV { get; set; }
+    public long? NINTERMED { get; set; }
     public int? NUSERCODE { get; set; }
     public string? SNUMFORM { get; set; }
-    public long NCLAIM { get; set; }
+    public long? NCLAIM { get; set; }
     public int? NVOUCHER_LE { get; set; }
-    public long NCONTRAT { get; set; }
-    public int NDRAFT { get; set; }
+    public long? NCONTRAT { get; set; }
+    public int? NDRAFT { get; set; }
     public int? NCOMPANYC { get; set; }
     public long? NVOUCHER { get; set; }
-    public int NTYP_ACCO { get; set; }
+    public int? NTYP_ACCO { get; set; }
     public string? STYPE_ACC { get; set; }
     public int NCASHNUM { get; set; }
     public DateTime? DPOSTED { get; set; }

@@ -33,10 +33,10 @@ public class CreateADDRESSDto
     public int? NOFFICE { get; set; }
     public int NPROVINCE { get; set; }
     public int? NPRODUCT { get; set; }
-    public int NLOCAL { get; set; }
+    public int? NLOCAL { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public string? SBUILD { get; set; }
-    public long NMUNICIPALITY { get; set; }
+    public long? NMUNICIPALITY { get; set; }
     public int? NFLOOR { get; set; }
     public string? SDEPARTMENT { get; set; }
     public string? SPOPULATION { get; set; }

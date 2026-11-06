@@ -8,7 +8,7 @@ public partial class WIN_ACTIONS
 
     [ForeignKey("SCODISPL")]
     public Insudb.WINDOWS? WINDOWS { get; set; }
-    public int NACTION { get; set; }
+    public int? NACTION { get; set; }
 
     [ForeignKey("NACTION")]
     public Insudb.ACTIONS? ACTIONS { get; set; }

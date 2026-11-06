@@ -6,48 +6,68 @@ public partial class PREMIUM_MO
 {
     public long NRECEIPT { get; set; }
 
-    [ForeignKey("NRECEIPT")]
+    [ForeignKey("SCERTYPE, NRECEIPT, NBRANCH, NPRODUCT, NDIGIT, NPAYNUMBE")]
     public Insudb.PREMIUM? PREMIUMNRECEIPT { get; set; }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.PREMIUM? PREMIUMNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.PREMIUM? PREMIUMNPRODUCT
+    {
+        get => PREMIUMNRECEIPT;
+        set => PREMIUMNRECEIPT = value;
+    }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.PREMIUM? PREMIUMNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.PREMIUM? PREMIUMNBRANCH
+    {
+        get => PREMIUMNRECEIPT;
+        set => PREMIUMNRECEIPT = value;
+    }
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
-    public Insudb.PREMIUM? PREMIUMSCERTYPE { get; set; }
+    [NotMapped]
+    public Insudb.PREMIUM? PREMIUMSCERTYPE
+    {
+        get => PREMIUMNRECEIPT;
+        set => PREMIUMNRECEIPT = value;
+    }
     public int NDIGIT { get; set; }
 
-    [ForeignKey("NDIGIT")]
-    public Insudb.PREMIUM? PREMIUMNDIGIT { get; set; }
+    [NotMapped]
+    public Insudb.PREMIUM? PREMIUMNDIGIT
+    {
+        get => PREMIUMNRECEIPT;
+        set => PREMIUMNRECEIPT = value;
+    }
     public int NPAYNUMBE { get; set; }
 
-    [ForeignKey("NPAYNUMBE")]
-    public Insudb.PREMIUM? PREMIUMNPAYNUMBE { get; set; }
+    [NotMapped]
+    public Insudb.PREMIUM? PREMIUMNPAYNUMBE
+    {
+        get => PREMIUMNRECEIPT;
+        set => PREMIUMNRECEIPT = value;
+    }
     public int NTRANSAC { get; set; }
     public decimal? NAMOUNT { get; set; }
-    public int NCARD_TYPE { get; set; }
+    public int? NCARD_TYPE { get; set; }
 
     [ForeignKey("NCARD_TYPE")]
     public Insudb.TABLE183? TABLE183 { get; set; }
     public string? SAUX_ACCOUN { get; set; }
     public decimal? NBALANCE { get; set; }
-    public long NBANK_CODE { get; set; }
+    public long? NBANK_CODE { get; set; }
 
     [ForeignKey("NBANK_CODE")]
     public Insudb.TABLE7? TABLE7 { get; set; }
-    public long NBORDEREAUX { get; set; }
+    public long? NBORDEREAUX { get; set; }
 
     [ForeignKey("NBORDEREAUX")]
     public Insudb.COLFORMREF? COLFORMREF { get; set; }
     public DateTime? DCAR_DATEXP { get; set; }
     public string? SCARD_NUM { get; set; }
     public long? NCASH_MOV { get; set; }
-    public int NCAUSE_AMEN { get; set; }
+    public int? NCAUSE_AMEN { get; set; }
 
     [ForeignKey("NCAUSE_AMEN")]
     public Insudb.TABLE77? TABLE77 { get; set; }
@@ -59,7 +79,7 @@ public partial class PREMIUM_MO
     public string? SIND_REVER { get; set; }
     public decimal? NINT_MORA { get; set; }
     public string? SINTERMEI { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
 
     [ForeignKey("NNULLCODE")]
     public Insudb.TABLE95? TABLE95 { get; set; }
@@ -74,7 +94,7 @@ public partial class PREMIUM_MO
     public string? SSTATISI { get; set; }
     public int NUSERCODE { get; set; }
     public DateTime? DLEDGERDAT { get; set; }
-    public int NTYPE { get; set; }
+    public int? NTYPE { get; set; }
 
     [ForeignKey("NTYPE")]
     public Insudb.TABLE6? TABLE6 { get; set; }
@@ -83,10 +103,10 @@ public partial class PREMIUM_MO
     public decimal? NPAYSOONDISC { get; set; }
     public string? SIND_ASIS { get; set; }
     public string? SIND_COMI { get; set; }
-    public long NBULLETINS { get; set; }
+    public long? NBULLETINS { get; set; }
     public int? NCASHNUM { get; set; }
     public int? NPAYREJECT { get; set; }
-    public long NCOLLECTOR { get; set; }
+    public long? NCOLLECTOR { get; set; }
 
     [ForeignKey("NCOLLECTOR")]
     public Insudb.COLLECTOR? COLLECTOR { get; set; }

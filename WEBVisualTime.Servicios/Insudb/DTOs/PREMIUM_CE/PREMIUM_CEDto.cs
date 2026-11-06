@@ -22,14 +22,14 @@ public class PREMIUM_CEDto
     public int NID_BILL { get; set; }
     public int NCODE_DETAI { get; set; }
     public int? NBILL_ITEM { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public string? TABLE5000SDESCRIPT { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public DateTime? DEXPIRDAT { get; set; }
     public decimal? NPREMIUM { get; set; }
     public decimal? NPREMIUMN { get; set; }
     public DateTime? DSTARTDATE { get; set; }
-    public int NTRATYPEI { get; set; }
+    public int? NTRATYPEI { get; set; }
     public string? TABLE24SDESCRIPT { get; set; }
     public int? NUSERCODE { get; set; }
     public decimal? NPREMANUAL { get; set; }

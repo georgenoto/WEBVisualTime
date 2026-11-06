@@ -3,7 +3,7 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.T_CASH_MOV;
 public class CreateT_CASH_MOVDto
 {
     public int? NACC_CASH { get; set; }
-    public int NLOCAL { get; set; }
+    public int? NLOCAL { get; set; }
     public int? NCURRENCY { get; set; }
     public decimal? NAMOUNT { get; set; }
     public string? SCARD_NUM { get; set; }

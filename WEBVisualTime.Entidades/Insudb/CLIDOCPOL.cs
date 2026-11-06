@@ -16,12 +16,16 @@ public partial class CLIDOCPOL
     public string SCLIENT { get; set; }
     public int NCLASSTYPDOC { get; set; }
 
-    [ForeignKey("NCLASSTYPDOC")]
+    [ForeignKey("NTYPCLIENTDOC, NCLASSTYPDOC")]
     public Insudb.FORMATVALUES? FORMATVALUESNCLASSTYPDOC { get; set; }
     public int NTYPCLIENTDOC { get; set; }
 
-    [ForeignKey("NTYPCLIENTDOC")]
-    public Insudb.FORMATVALUES? FORMATVALUESNTYPCLIENTDOC { get; set; }
+    [NotMapped]
+    public Insudb.FORMATVALUES? FORMATVALUESNTYPCLIENTDOC
+    {
+        get => FORMATVALUESNCLASSTYPDOC;
+        set => FORMATVALUESNCLASSTYPDOC = value;
+    }
     public DateTime DEFFECDATE { get; set; }
     public DateTime? DNULLDATE { get; set; }
     public DateTime? DRECEP_DATE { get; set; }

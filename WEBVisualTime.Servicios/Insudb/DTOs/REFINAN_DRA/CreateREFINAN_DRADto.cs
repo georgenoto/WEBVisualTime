@@ -2,7 +2,7 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.REFINAN_DRA;
 
 public class CreateREFINAN_DRADto
 {
-    public int NBRANCH { get; set; }
+    public int? NBRANCH { get; set; }
     public decimal? NCOMMISSION { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public int? NCURRENCY { get; set; }
@@ -14,5 +14,5 @@ public class CreateREFINAN_DRADto
     public string SSTATREGT { get; set; }
     public string? SCLIENT { get; set; }
     public int NUSERCODE { get; set; }
-    public int NOPT_DRAFT { get; set; }
+    public long? NOPT_DRAFT { get; set; }
 }

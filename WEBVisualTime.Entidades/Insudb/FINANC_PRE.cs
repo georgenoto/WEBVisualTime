@@ -12,11 +12,11 @@ public partial class FINANC_PRE
     public DateTime? DSTARTDATE { get; set; }
     public decimal? NEXCHANGE { get; set; }
     public DateTime? DEXPIRDAT { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }
-    public int NOFFICE { get; set; }
+    public int? NOFFICE { get; set; }
 
     [ForeignKey("NOFFICE")]
     public Insudb.TABLE9? TABLE9 { get; set; }
@@ -34,7 +34,7 @@ public partial class FINANC_PRE
     [ForeignKey("NUSERCODE")]
     public Insudb.USERS? USERS { get; set; }
     public int? NPRODUCT { get; set; }
-    public int NCOMPANY { get; set; }
+    public int? NCOMPANY { get; set; }
 
     [ForeignKey("NCOMPANY")]
     public Insudb.COMPANY? COMPANY { get; set; }

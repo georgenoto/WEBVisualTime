@@ -6,17 +6,25 @@ public partial class PREMIUM
 {
     public string SCERTYPE { get; set; }
 
-    [ForeignKey("SCERTYPE")]
+    [ForeignKey("SCERTYPE, NBRANCH, NPRODUCT, NPOLICY, NCERTIF")]
     public Insudb.CERTIFICAT? CERTIFICATSCERTYPE { get; set; }
     public long NRECEIPT { get; set; }
     public int NBRANCH { get; set; }
 
-    [ForeignKey("NBRANCH")]
-    public Insudb.CERTIFICAT? CERTIFICATNBRANCH { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNBRANCH
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NPRODUCT { get; set; }
 
-    [ForeignKey("NPRODUCT")]
-    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPRODUCT
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public int NDIGIT { get; set; }
     public int NPAYNUMBE { get; set; }
     public string SCLIENT { get; set; }
@@ -25,19 +33,27 @@ public partial class PREMIUM
     public Insudb.CLIENT? CLIENT { get; set; }
     public long NPOLICY { get; set; }
 
-    [ForeignKey("NPOLICY")]
-    public Insudb.CERTIFICAT? CERTIFICATNPOLICY { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNPOLICY
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public string? SCESSIONS { get; set; }
-    public long NCERTIF { get; set; }
+    public long? NCERTIF { get; set; }
 
-    [ForeignKey("NCERTIF")]
-    public Insudb.CERTIFICAT? CERTIFICATNCERTIF { get; set; }
+    [NotMapped]
+    public Insudb.CERTIFICAT? CERTIFICATNCERTIF
+    {
+        get => CERTIFICATSCERTYPE;
+        set => CERTIFICATSCERTYPE = value;
+    }
     public string? SDIRDEBIT { get; set; }
     public string? SLEADINVO { get; set; }
     public string? SMANAUTI { get; set; }
     public string? SRENEWAL { get; set; }
     public string? SSUBSTITI { get; set; }
-    public int NSTATUS_PRE { get; set; }
+    public int? NSTATUS_PRE { get; set; }
 
     [ForeignKey("NSTATUS_PRE")]
     public Insudb.TABLE19? TABLE19 { get; set; }
@@ -67,13 +83,13 @@ public partial class PREMIUM
     public long? NCOLLECTO { get; set; }
     public long? NCONTRAT { get; set; }
     public long? NINSPECTO { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
 
     [ForeignKey("NINTERMED")]
     public Insudb.INTERMEDIA? INTERMEDIA { get; set; }
     public long? NSUSTIT { get; set; }
     public long? NTRANSACTIO { get; set; }
-    public int NNULLCODE { get; set; }
+    public int? NNULLCODE { get; set; }
 
     [ForeignKey("NNULLCODE")]
     public Insudb.TABLE95? TABLE95 { get; set; }
@@ -84,44 +100,44 @@ public partial class PREMIUM
     [ForeignKey("NOFFICE")]
     public Insudb.TABLE9? TABLE9 { get; set; }
     public int? NTYPE { get; set; }
-    public int NTRATYPEI { get; set; }
+    public int? NTRATYPEI { get; set; }
 
     [ForeignKey("NTRATYPEI")]
     public Insudb.TABLE24? TABLE24 { get; set; }
     public int NUSERCODE { get; set; }
     public int? NPERIOD { get; set; }
-    public int NCOMPANY { get; set; }
+    public int? NCOMPANY { get; set; }
 
     [ForeignKey("NCOMPANY")]
     public Insudb.COMPANY? COMPANY { get; set; }
     public string? SORIGRECEIPT { get; set; }
-    public int NWAY_PAY { get; set; }
+    public int? NWAY_PAY { get; set; }
 
     [ForeignKey("NWAY_PAY")]
     public Insudb.TABLE5002? TABLE5002 { get; set; }
     public DateTime? DLIMITDATE { get; set; }
-    public int NINSUR_AREA { get; set; }
+    public int? NINSUR_AREA { get; set; }
 
     [ForeignKey("NINSUR_AREA")]
     public Insudb.TABLE5001? TABLE5001 { get; set; }
-    public int NINDRECDEP { get; set; }
+    public int? NINDRECDEP { get; set; }
 
     [ForeignKey("NINDRECDEP")]
     public Insudb.TABLE5600? TABLE5600 { get; set; }
     public DateTime? DCOLLSUS_INI { get; set; }
     public DateTime? DCOLLSUS_END { get; set; }
-    public int NSUS_REASON { get; set; }
+    public int? NSUS_REASON { get; set; }
 
     [ForeignKey("NSUS_REASON")]
     public Insudb.TABLE5566? TABLE5566 { get; set; }
     public string? SSUS_ORIGI { get; set; }
     public string? SREJECT { get; set; }
-    public long NCOLLECTOR { get; set; }
+    public long? NCOLLECTOR { get; set; }
 
     [ForeignKey("NCOLLECTOR")]
     public Insudb.COLLECTOR? COLLECTOR { get; set; }
     public long? NIDLOANS { get; set; }
-    public int NCOD_AGREE { get; set; }
+    public int? NCOD_AGREE { get; set; }
 
     [ForeignKey("NCOD_AGREE")]
     public Insudb.AGREEMENT? AGREEMENT { get; set; }
@@ -129,7 +145,7 @@ public partial class PREMIUM
     public long? NBILLNUM { get; set; }
     public string? SINDCHEQUE { get; set; }
     public string? SIND_CAP { get; set; }
-    public long NBULLETINS { get; set; }
+    public long? NBULLETINS { get; set; }
     public string? SINDMARGIN { get; set; }
     public string? SIND_RESERV { get; set; }
     public int? NYEARMONTHDESC { get; set; }

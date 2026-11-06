@@ -20,7 +20,7 @@ public class STIPEND_POLDto
     public string? SCOMMITYP { get; set; }
     public string? TABLE47SDESCRIPT { get; set; }
     public long? NCONTRAT_PAY { get; set; }
-    public long NINTERMED { get; set; }
+    public long? NINTERMED { get; set; }
     public string? INTERMEDIASCOL_AGREE { get; set; }
     public decimal? NAMOUNT { get; set; }
     public DateTime? DCOMPDATE { get; set; }

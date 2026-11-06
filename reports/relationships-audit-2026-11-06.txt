@@ -1,0 +1,75 @@
+AUDITORIA DE RELACIONES: EF CORE FRENTE A ORACLE INSUDB
+2026-11-06 | Solo metadatos; sin consultar datos de negocio.
+
+{
+  "entities": 1017,
+  "relationships": 1058,
+  "confirmed_relationships": 1058,
+  "required_with_nullable_fk": 0,
+  "affected_entities": 0,
+  "unique_fk_columns_rejecting_null": 0,
+  "no_oracle_fk": 0,
+  "different_target_or_key": 0,
+  "inactive_or_unvalidated": 0,
+  "all_columns_rejecting_oracle_null": 2,
+  "unmapped_oracle_columns": 0,
+  "oracle_fks_between_mapped_tables_not_represented": 3,
+  "nullable_primary_key_columns": 2,
+  "model_primary_keys_without_pk_or_unique": 17,
+  "model_primary_keys_with_unvalidated_backing": 1
+}
+
+ENTIDADES CON RELACIONES OBLIGATORIAS QUE ADMITE NULL ORACLE
+
+
+RELACIONES OBLIGATORIAS CON COLUMNAS QUE ORACLE ADMITE COMO NULL
+Total: 0
+
+
+RELACIONES SIN RESTRICCION FK EN ORACLE
+Total: 0
+
+
+RELACIONES CON OTRA TABLA O CLAVE EN ORACLE
+Total: 0
+
+
+RESTRICCIONES DESACTIVADAS O SIN VALIDAR
+Total: 0
+
+
+CLAVES EF SIN RESTRICCION PK/UNIQUE CORRESPONDIENTE EN ORACLE
+Total: 17
+
+ATTCHAMENTFORM(NSEQUENCEATT) | Columnas NULL en Oracle: -
+BILLS_HIS(SBILLTYPE, NBILLNUM, DSTATDATE, NTRANSAC) | Columnas NULL en Oracle: -
+TABLE2000(NAPLY) | Columnas NULL en Oracle: -
+TABLE5616(NPAYFORMCREDITCARD) | Columnas NULL en Oracle: -
+TABLE5617(NPAYFREQCREDITCARD) | Columnas NULL en Oracle: -
+TABLE5621(NTODAYSDEPOSIT) | Columnas NULL en Oracle: -
+TABLE5679(NCAUSE) | Columnas NULL en Oracle: -
+TABLE5709(NTYPE) | Columnas NULL en Oracle: -
+TABLE7200(NCODIGINT) | Columnas NULL en Oracle: -
+TABLE7201(NCODIGINT) | Columnas NULL en Oracle: -
+TABLE7212(NTYPE) | Columnas NULL en Oracle: -
+TABLE8006(NTYPEAFEC) | Columnas NULL en Oracle: -
+TABLE8007(NAFECBASADI) | Columnas NULL en Oracle: -
+TABLE9040(NTYPE_SETTLE) | Columnas NULL en Oracle: -
+TABLE9200(NDATETYPE) | Columnas NULL en Oracle: -
+TABLE9300(NPROMISSORYNOTE) | Columnas NULL en Oracle: -
+TABLE996(NSECUR_CIA) | Columnas NULL en Oracle: -
+CLAVES EF CON PK/UNIQUE EXISTENTE PERO SIN VALIDACION COMPLETA
+Total: 1
+
+CL_M_COVER(NCLAIM, NCASE_NUM, NDEMAN_TYPE, NTRANSAC, NCOVER, NMODULEC, NCURRENCY, SCLIENT) | [{'name': 'XPKCL_M_COVER', 'kind': 'P', 'status': 'ENABLED', 'validated': 'NOT VALIDATED'}]
+FK REALES ENTRE TABLAS DEL MODELO QUE NO ESTAN REPRESENTADAS EN EF
+Total: 3
+
+DRAFT_HIST(NCONTRAT, NDRAFT) -> FINANC_DRA(NCONTRAT, NDRAFT) | R_815 | DISABLED / NOT VALIDATED
+FINANC_COM(NCONTRAT, NRECEIPT) -> FINANC_PRE(NCONTRAT, NRECEIPT) | R_816 | DISABLED / NOT VALIDATED
+WORKSHEET(NBRANCH, NPRODUCT) -> PRODMASTER(NBRANCH, NPRODUCT) | R_2093 | DISABLED / NOT VALIDATED
+TODAS LAS COLUMNAS OBLIGATORIAS EN EF QUE ADMITEN NULL EN ORACLE
+Total: 2
+
+CL_M_COVER.NCOVER | Int32 obligatorio en EF / NULL permitido en Oracle | CLAVE EF: revisar identidad antes de hacer nullable
+CL_M_COVER.NMODULEC | Int32 obligatorio en EF / NULL permitido en Oracle | CLAVE EF: revisar identidad antes de hacer nullable

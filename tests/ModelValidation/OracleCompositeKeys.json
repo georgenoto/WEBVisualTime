@@ -1,0 +1,2305 @@
+[
+  {
+    "Entity": "BANK_ACC",
+    "Target": "TAB_BK_AGE",
+    "Navigation": "TAB_BK_AGENBANK_CODE",
+    "ForeignKeys": [
+      "NBANK_CODE",
+      "NBK_AGENCY"
+    ],
+    "PrincipalKeys": [
+      "NBANK_CODE",
+      "NBK_AGENCY"
+    ],
+    "Constraint": "R_301",
+    "Aliases": [
+      "TAB_BK_AGENBK_AGENCY"
+    ]
+  },
+  {
+    "Entity": "BANK_MOV",
+    "Target": "FINANC_DRA",
+    "Navigation": "FINANC_DRANCONTRAT",
+    "ForeignKeys": [
+      "NCONTRAT",
+      "NDRAFT"
+    ],
+    "PrincipalKeys": [
+      "NCONTRAT",
+      "NDRAFT"
+    ],
+    "Constraint": "R_1911",
+    "Aliases": [
+      "FINANC_DRANDRAFT"
+    ]
+  },
+  {
+    "Entity": "BATCH_PARAM_VALUE",
+    "Target": "BATCH_PARAM",
+    "Navigation": "BATCH_PARAMNAREA",
+    "ForeignKeys": [
+      "NBATCH",
+      "NAREA",
+      "NSEQ"
+    ],
+    "PrincipalKeys": [
+      "NBATCH",
+      "NAREA",
+      "NSEQ"
+    ],
+    "Constraint": "R_2554",
+    "Aliases": [
+      "BATCH_PARAMNBATCH",
+      "BATCH_PARAMNSEQ"
+    ]
+  },
+  {
+    "Entity": "BENEFICIAR",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_102",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "BUSSKIND",
+    "Target": "TYPEPERGROUP",
+    "Navigation": "TYPEPERGROUPNBUSINESSTY",
+    "ForeignKeys": [
+      "NBUSINESSTY",
+      "NCOMMERGRP"
+    ],
+    "PrincipalKeys": [
+      "NBUSINESSTY",
+      "NCOMMERGRP"
+    ],
+    "Constraint": "SYS_C0039838",
+    "Aliases": [
+      "TYPEPERGROUPNCOMMERGRP"
+    ]
+  },
+  {
+    "Entity": "CASH_ACC",
+    "Target": "LEDGER_ACC",
+    "Navigation": "LEDGER_ACCNLED_COMPAN",
+    "ForeignKeys": [
+      "NLED_COMPAN",
+      "SACCOUNT",
+      "SAUX_ACCOUN"
+    ],
+    "PrincipalKeys": [
+      "NLED_COMPAN",
+      "SACCOUNT",
+      "SAUX_ACCOUN"
+    ],
+    "Constraint": "R_1919",
+    "Aliases": [
+      "LEDGER_ACCSACCOUNT",
+      "LEDGER_ACCSAUX_ACCOUN"
+    ]
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Target": "CASH_ACC",
+    "Navigation": "CASH_ACCNACC_CASH",
+    "ForeignKeys": [
+      "NACC_CASH",
+      "NOFFICE",
+      "NCURRENCY",
+      "NCASHNUM"
+    ],
+    "PrincipalKeys": [
+      "NACC_CASH",
+      "NOFFICE",
+      "NCURRENCY",
+      "NCASHNUM"
+    ],
+    "Constraint": "R_1629",
+    "Aliases": [
+      "CASH_ACCNCASHNUM",
+      "CASH_ACCNCURRENCY",
+      "CASH_ACCNOFFICE"
+    ]
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Target": "CLAIM_CASE",
+    "Navigation": "CLAIM_CASENCASE_NUM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "Constraint": "R_2226",
+    "Aliases": [
+      "CLAIM_CASENDEMAN_TYPE"
+    ]
+  },
+  {
+    "Entity": "CASH_MOV",
+    "Target": "FINANC_DRA",
+    "Navigation": "FINANC_DRANCONTRAT",
+    "ForeignKeys": [
+      "NCONTRAT",
+      "NDRAFT"
+    ],
+    "PrincipalKeys": [
+      "NCONTRAT",
+      "NDRAFT"
+    ],
+    "Constraint": "R_1923",
+    "Aliases": [
+      "FINANC_DRANDRAFT"
+    ]
+  },
+  {
+    "Entity": "CERTIFICAT",
+    "Target": "SITUATION",
+    "Navigation": "SITUATIONSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NSITUATION",
+      "NCOD_AGREE"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NSITUATION",
+      "NCOD_AGREE"
+    ],
+    "Constraint": "R_1951",
+    "Aliases": [
+      "SITUATIONNBRANCH",
+      "SITUATIONNCOD_AGREE",
+      "SITUATIONNPOLICY",
+      "SITUATIONNPRODUCT",
+      "SITUATIONNSITUATION"
+    ]
+  },
+  {
+    "Entity": "CESSION_PR",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_1865",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "CESSION_PR",
+    "Target": "CONTRPROC",
+    "Navigation": "CONTRPROCNNUMBER",
+    "ForeignKeys": [
+      "NNUMBER",
+      "NBRANCH_REI",
+      "DEFD_CONTRPROC",
+      "NTYPE"
+    ],
+    "PrincipalKeys": [
+      "NNUMBER",
+      "NBRANCH",
+      "DEFFECDATE",
+      "NTYPE"
+    ],
+    "Constraint": "R_2297",
+    "Aliases": [
+      "CONTRPROCDEFD_CONTRPROC",
+      "CONTRPROCNTYPE"
+    ]
+  },
+  {
+    "Entity": "CHEQUES",
+    "Target": "PAY_ORD_CONCEPTS",
+    "Navigation": "PAY_ORD_CONCEPTSNCONCEPT",
+    "ForeignKeys": [
+      "NCOMPANY",
+      "NCONCEPT"
+    ],
+    "PrincipalKeys": [
+      "NCOMPANY",
+      "NCONCEPT"
+    ],
+    "Constraint": "R_1307",
+    "Aliases": [
+      "PAY_ORD_CONCEPTSNCOMPANY"
+    ]
+  },
+  {
+    "Entity": "CLAIM",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_238",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "CLAIMBENEF",
+    "Target": "CLAIM_CASE",
+    "Navigation": "CLAIM_CASENCLAIM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "Constraint": "R_570",
+    "Aliases": [
+      "CLAIM_CASENCASE_NUM",
+      "CLAIM_CASENDEMAN_TYPE"
+    ]
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Target": "CL_M_COVER",
+    "Navigation": "CL_M_COVERNCLAIM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NTRANSAC",
+      "NCOVER",
+      "NMODULEC",
+      "NCURRENCY",
+      "SCLIENT"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NTRANSAC",
+      "NCOVER",
+      "NMODULEC",
+      "NCURRENCY",
+      "SCLIENT"
+    ],
+    "Constraint": "R_2301",
+    "Aliases": [
+      "CL_M_COVERNCASE_NUM",
+      "CL_M_COVERNCOVER",
+      "CL_M_COVERNCURRENCY",
+      "CL_M_COVERNDEMAN_TYPE",
+      "CL_M_COVERNMODULEC",
+      "CL_M_COVERNTRANSAC",
+      "CL_M_COVERSCLIENT"
+    ]
+  },
+  {
+    "Entity": "CLAIM_CES",
+    "Target": "CONTRPROC",
+    "Navigation": "CONTRPROCNNUMBER",
+    "ForeignKeys": [
+      "NNUMBER",
+      "NBRANCH_REI",
+      "DEFFECDATE",
+      "NTYPE"
+    ],
+    "PrincipalKeys": [
+      "NNUMBER",
+      "NBRANCH",
+      "DEFFECDATE",
+      "NTYPE"
+    ],
+    "Constraint": "R_2298",
+    "Aliases": [
+      "CONTRPROCDEFFECDATE",
+      "CONTRPROCNBRANCH_REI",
+      "CONTRPROCNTYPE"
+    ]
+  },
+  {
+    "Entity": "CLAIM_HIS",
+    "Target": "CLAIM_CASE",
+    "Navigation": "CLAIM_CASENCLAIM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "Constraint": "R_643",
+    "Aliases": [
+      "CLAIM_CASENCASE_NUM",
+      "CLAIM_CASENDEMAN_TYPE"
+    ]
+  },
+  {
+    "Entity": "CLAIM_ORDER",
+    "Target": "CLAIM_CASE",
+    "Navigation": "CLAIM_CASE",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "Constraint": "R_3414",
+    "Aliases": []
+  },
+  {
+    "Entity": "CLAUSE",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_2262",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "CLAUS_CO_P",
+    "Target": "POLICY",
+    "Navigation": "POLICYSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "R_98",
+    "Aliases": [
+      "POLICYNBRANCH",
+      "POLICYNPOLICY",
+      "POLICYNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "CLIDOCPOL",
+    "Target": "FORMATVALUES",
+    "Navigation": "FORMATVALUESNCLASSTYPDOC",
+    "ForeignKeys": [
+      "NTYPCLIENTDOC",
+      "NCLASSTYPDOC"
+    ],
+    "PrincipalKeys": [
+      "NTYPCLIENTDOC",
+      "NCLASSTYPDOC"
+    ],
+    "Constraint": "R_3345",
+    "Aliases": [
+      "FORMATVALUESNTYPCLIENTDOC"
+    ]
+  },
+  {
+    "Entity": "CLIENT_TMP",
+    "Target": "POLICY",
+    "Navigation": "POLICYSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "R_1887",
+    "Aliases": [
+      "POLICYNBRANCH",
+      "POLICYNPOLICY",
+      "POLICYNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "CLORDER_ADDITIONALS",
+    "Target": "CLAIM_ORDER",
+    "Navigation": "CLAIM_ORDERNCLAIM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NORDER_NUM"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NORDER_NUM"
+    ],
+    "Constraint": "R_1225",
+    "Aliases": [
+      "CLAIM_ORDERNCASE_NUM",
+      "CLAIM_ORDERNDEMAN_TYPE",
+      "CLAIM_ORDERNORDER_NUM"
+    ]
+  },
+  {
+    "Entity": "CLORDER_DETAIL",
+    "Target": "CLAIM_ORDER",
+    "Navigation": "CLAIM_ORDERNCLAIM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NORDER_NUM"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NORDER_NUM"
+    ],
+    "Constraint": "R_3418",
+    "Aliases": [
+      "CLAIM_ORDERNCASE_NUM",
+      "CLAIM_ORDERNORDER_NUM"
+    ]
+  },
+  {
+    "Entity": "CLORDER_DOCUMENTS",
+    "Target": "DOCUMENTS",
+    "Navigation": "DOCUMENTSNCLAIM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NDOC_CODE",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "SCLIENT",
+      "NID",
+      "NCONSEC"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NDOC_CODE",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "SCLIENT",
+      "NID",
+      "NCONSEC"
+    ],
+    "Constraint": "R_3424",
+    "Aliases": [
+      "DOCUMENTSNCASE_NUM",
+      "DOCUMENTSNCONSEC",
+      "DOCUMENTSNDOC_CODE",
+      "DOCUMENTSNID",
+      "DOCUMENTSSCLIENT"
+    ]
+  },
+  {
+    "Entity": "CLORDER_HIS",
+    "Target": "CLAIM_ORDER",
+    "Navigation": "CLAIM_ORDERNCLAIM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NORDER_NUM"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NORDER_NUM"
+    ],
+    "Constraint": "R_3398",
+    "Aliases": [
+      "CLAIM_ORDERNCASE_NUM",
+      "CLAIM_ORDERNORDER_NUM"
+    ]
+  },
+  {
+    "Entity": "CL_COVER",
+    "Target": "CLAIM_CASE",
+    "Navigation": "CLAIM_CASENCLAIM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "Constraint": "R_434",
+    "Aliases": [
+      "CLAIM_CASENCASE_NUM",
+      "CLAIM_CASENDEMAN_TYPE"
+    ]
+  },
+  {
+    "Entity": "COMMISSION",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_2133",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "COMMISS_PR",
+    "Target": "PREMIUM",
+    "Navigation": "PREMIUMNRECEIPT",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NRECEIPT",
+      "NBRANCH",
+      "NPRODUCT",
+      "NDIGIT",
+      "NPAYNUMBE"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NRECEIPT",
+      "NBRANCH",
+      "NPRODUCT",
+      "NDIGIT",
+      "NPAYNUMBE"
+    ],
+    "Constraint": "R_67",
+    "Aliases": [
+      "PREMIUMNBRANCH",
+      "PREMIUMNDIGIT",
+      "PREMIUMNPAYNUMBE",
+      "PREMIUMNPRODUCT",
+      "PREMIUMSCERTYPE"
+    ]
+  },
+  {
+    "Entity": "COMMPAYREQ_ORDERS",
+    "Target": "CLAIM_ORDER",
+    "Navigation": "CLAIM_ORDERNCLAIM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NORDER_NUM"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "NORDER_NUM"
+    ],
+    "Constraint": "FK_CPR_CLAIM_ORDER",
+    "Aliases": [
+      "CLAIM_ORDERNCASE_NUM",
+      "CLAIM_ORDERNDEMAN_TYPE",
+      "CLAIM_ORDERNORDER_NUM"
+    ]
+  },
+  {
+    "Entity": "COMMPAYREQ_POLICIES",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "FK_CPR_POLICIES_CERTIFICAT",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "COMM_POL",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_2526",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "COMM_TOT",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_7832",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "CONTRNPRO",
+    "Target": "CONTRMASTER",
+    "Navigation": "CONTRMASTERNNUMBER",
+    "ForeignKeys": [
+      "NTYPE_REL",
+      "NNUMBER",
+      "NTYPE",
+      "NBRANCH"
+    ],
+    "PrincipalKeys": [
+      "NTYPE_REL",
+      "NNUMBER",
+      "NTYPE",
+      "NBRANCH"
+    ],
+    "Constraint": "R_2250",
+    "Aliases": [
+      "CONTRMASTERNBRANCH",
+      "CONTRMASTERNTYPE",
+      "CONTRMASTERNTYPE_REL"
+    ]
+  },
+  {
+    "Entity": "CONTRNP_PAYS",
+    "Target": "CONTRNPRO",
+    "Navigation": "CONTRNPRONBRANCH_REI",
+    "ForeignKeys": [
+      "NNUMBER",
+      "NBRANCH_REI",
+      "DEFFECDATE",
+      "NTYPE"
+    ],
+    "PrincipalKeys": [
+      "NNUMBER",
+      "NBRANCH",
+      "DEFFECDATE",
+      "NTYPE"
+    ],
+    "Constraint": "R_2090",
+    "Aliases": [
+      "CONTRNPRODEFFECDATE",
+      "CONTRNPRONNUMBER",
+      "CONTRNPRONTYPE"
+    ]
+  },
+  {
+    "Entity": "CONTRPROC",
+    "Target": "CONTRMASTER",
+    "Navigation": "CONTRMASTERNNUMBER",
+    "ForeignKeys": [
+      "NTYPE_REL",
+      "NNUMBER",
+      "NTYPE",
+      "NBRANCH"
+    ],
+    "PrincipalKeys": [
+      "NTYPE_REL",
+      "NNUMBER",
+      "NTYPE",
+      "NBRANCH"
+    ],
+    "Constraint": "R_2249",
+    "Aliases": [
+      "CONTRMASTERNBRANCH",
+      "CONTRMASTERNTYPE",
+      "CONTRMASTERNTYPE_REL"
+    ]
+  },
+  {
+    "Entity": "COVER",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_122",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "COVER_CO_G",
+    "Target": "POLICY",
+    "Navigation": "POLICYSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "R_995",
+    "Aliases": [
+      "POLICYNBRANCH",
+      "POLICYNPOLICY",
+      "POLICYNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "COVER_CO_P",
+    "Target": "POLICY",
+    "Navigation": "POLICYSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "R_86",
+    "Aliases": [
+      "POLICYNBRANCH",
+      "POLICYNPOLICY",
+      "POLICYNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "COVER_QUOTA",
+    "Target": "POLICY",
+    "Navigation": "POLICYSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "R_1884",
+    "Aliases": [
+      "POLICYNBRANCH",
+      "POLICYNPOLICY",
+      "POLICYNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "COVER_TMP",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "FK_COVER_TMP_CERTIFICAT",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "COV_USED",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_237",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "COV_USED",
+    "Target": "CLAIM_CASE",
+    "Navigation": "CLAIM_CASENCLAIM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE"
+    ],
+    "Constraint": "R_1896",
+    "Aliases": [
+      "CLAIM_CASENCASE_NUM",
+      "CLAIM_CASENDEMAN_TYPE"
+    ]
+  },
+  {
+    "Entity": "CURREN_POL",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_125",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "CURR_ACC",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_1930",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "CURR_ACC",
+    "Target": "LEDGER_ACC",
+    "Navigation": "LEDGER_ACCNLED_COMPAN",
+    "ForeignKeys": [
+      "NLED_COMPAN",
+      "SACCOUNT",
+      "SAUX_ACCOUN"
+    ],
+    "PrincipalKeys": [
+      "NLED_COMPAN",
+      "SACCOUNT",
+      "SAUX_ACCOUN"
+    ],
+    "Constraint": "R_1928",
+    "Aliases": [
+      "LEDGER_ACCSACCOUNT",
+      "LEDGER_ACCSAUX_ACCOUN"
+    ]
+  },
+  {
+    "Entity": "DETAIL_PRE",
+    "Target": "PREMIUM",
+    "Navigation": "PREMIUMNPRODUCT",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NRECEIPT",
+      "NBRANCH",
+      "NPRODUCT",
+      "NDIGIT",
+      "NPAYNUMBE"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NRECEIPT",
+      "NBRANCH",
+      "NPRODUCT",
+      "NDIGIT",
+      "NPAYNUMBE"
+    ],
+    "Constraint": "R_65",
+    "Aliases": [
+      "PREMIUMNBRANCH",
+      "PREMIUMNDIGIT",
+      "PREMIUMNPAYNUMBE",
+      "PREMIUMNRECEIPT",
+      "PREMIUMSCERTYPE"
+    ]
+  },
+  {
+    "Entity": "DIR_DEBIT",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_108",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "DISC_XPREM",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_321",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "DISC_XPRE_P",
+    "Target": "POLICY",
+    "Navigation": "POLICYSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "R_308",
+    "Aliases": [
+      "POLICYNBRANCH",
+      "POLICYNPOLICY",
+      "POLICYNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "DOCUMENTS",
+    "Target": "CLAIMBENEF",
+    "Navigation": "CLAIMBENEFNCLAIM",
+    "ForeignKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "SCLIENT",
+      "NID"
+    ],
+    "PrincipalKeys": [
+      "NCLAIM",
+      "NCASE_NUM",
+      "NDEMAN_TYPE",
+      "SCLIENT",
+      "NID"
+    ],
+    "Constraint": "R_647",
+    "Aliases": [
+      "CLAIMBENEFNCASE_NUM",
+      "CLAIMBENEFNID",
+      "CLAIMBENEFSCLIENT"
+    ]
+  },
+  {
+    "Entity": "EVAL_MASTER",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATNBRANCH",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_2037",
+    "Aliases": [
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT",
+      "CERTIFICATSCERTYPE"
+    ]
+  },
+  {
+    "Entity": "GROUPS",
+    "Target": "POLICY",
+    "Navigation": "POLICYSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "R_996",
+    "Aliases": [
+      "POLICYNBRANCH",
+      "POLICYNPOLICY",
+      "POLICYNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "INSURED_EXPDIS",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_1623",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "LATEPAYMENTPENALTY",
+    "Target": "PRODMASTER",
+    "Navigation": "PRODMASTER",
+    "ForeignKeys": [
+      "NBRANCH",
+      "NPRODUCT"
+    ],
+    "PrincipalKeys": [
+      "NBRANCH",
+      "NPRODUCT"
+    ],
+    "Constraint": "FK_PRODMASTER_LATEPAYMENTPENALTY",
+    "Aliases": []
+  },
+  {
+    "Entity": "LEND_AGREE_PRES",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_CERTIF_27",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "LIFE",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_425",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "LIFE_DOCU",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_1743",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "MASSIVE_LOG_PROC",
+    "Target": "MASS_PROC_SPONSOR",
+    "Navigation": "MASS_PROC_SPONSORSKEY",
+    "ForeignKeys": [
+      "SKEY",
+      "NCOD_AGREE"
+    ],
+    "PrincipalKeys": [
+      "SKEY",
+      "NCOD_AGREE"
+    ],
+    "Constraint": "RMASSPS_MASSLP",
+    "Aliases": [
+      "MASS_PROC_SPONSORNCOD_AGREE"
+    ]
+  },
+  {
+    "Entity": "MEDICAL_EVAL_ROL",
+    "Target": "ROLES",
+    "Navigation": "ROLESSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF",
+      "NROLE",
+      "SCLIENT",
+      "DEFFECDATE"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF",
+      "NROLE",
+      "SCLIENT",
+      "DEFFECDATE"
+    ],
+    "Constraint": "XFKROLES",
+    "Aliases": [
+      "ROLESDEFFECDATE",
+      "ROLESNBRANCH",
+      "ROLESNCERTIF",
+      "ROLESNPOLICY",
+      "ROLESNPRODUCT",
+      "ROLESNROLE",
+      "ROLESSCLIENT"
+    ]
+  },
+  {
+    "Entity": "MODULES",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_121",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "MODUL_CO_G",
+    "Target": "POLICY",
+    "Navigation": "POLICYSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "R_997",
+    "Aliases": [
+      "POLICYNBRANCH",
+      "POLICYNPOLICY",
+      "POLICYNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "MODUL_CO_P",
+    "Target": "POLICY",
+    "Navigation": "POLICYSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "R_2243",
+    "Aliases": [
+      "POLICYNBRANCH",
+      "POLICYNPOLICY",
+      "POLICYNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "MOVE_ACC",
+    "Target": "CURR_ACC",
+    "Navigation": "CURR_ACCNTYP_ACCO",
+    "ForeignKeys": [
+      "NTYP_ACCO",
+      "STYPE_ACC",
+      "SCLIENT",
+      "NCURRENCY"
+    ],
+    "PrincipalKeys": [
+      "NTYP_ACCO",
+      "STYPE_ACC",
+      "SCLIENT",
+      "NCURRENCY"
+    ],
+    "Constraint": "R_42",
+    "Aliases": [
+      "CURR_ACCNCURRENCY",
+      "CURR_ACCSCLIENT",
+      "CURR_ACCSTYPE_ACC"
+    ]
+  },
+  {
+    "Entity": "OUT_MOVEME",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_126",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "OUT_PREMIU",
+    "Target": "OUT_MOVEME",
+    "Navigation": "OUT_MOVEMESCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF",
+      "NMOVNUMBE",
+      "NDIGIT"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF",
+      "NMOVNUMBE",
+      "NDIGIT"
+    ],
+    "Constraint": "R_131",
+    "Aliases": [
+      "OUT_MOVEMENBRANCH",
+      "OUT_MOVEMENCERTIF",
+      "OUT_MOVEMENDIGIT",
+      "OUT_MOVEMENMOVNUMBE",
+      "OUT_MOVEMENPOLICY",
+      "OUT_MOVEMENPRODUCT"
+    ]
+  },
+  {
+    "Entity": "PART_CONTR",
+    "Target": "CONTRMASTER",
+    "Navigation": "CONTRMASTERNTYPE_REL",
+    "ForeignKeys": [
+      "NTYPE_REL",
+      "NNUMBER",
+      "NTYPE",
+      "NBRANCH"
+    ],
+    "PrincipalKeys": [
+      "NTYPE_REL",
+      "NNUMBER",
+      "NTYPE",
+      "NBRANCH"
+    ],
+    "Constraint": "R_350",
+    "Aliases": [
+      "CONTRMASTERNBRANCH",
+      "CONTRMASTERNNUMBER",
+      "CONTRMASTERNTYPE"
+    ]
+  },
+  {
+    "Entity": "POLICY_HIS",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_94",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "POLICY_WIN",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_113",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "PREMIUM",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_1364",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "PREMIUM_CE",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATNPOLICY",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_203",
+    "Aliases": [
+      "CERTIFICATNCERTIF"
+    ]
+  },
+  {
+    "Entity": "PREMIUM_CE",
+    "Target": "PREMIUM",
+    "Navigation": "PREMIUMSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NRECEIPT",
+      "NBRANCH",
+      "NPRODUCT",
+      "NDIGIT",
+      "NPAYNUMBE"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NRECEIPT",
+      "NBRANCH",
+      "NPRODUCT",
+      "NDIGIT",
+      "NPAYNUMBE"
+    ],
+    "Constraint": "R_73",
+    "Aliases": [
+      "PREMIUMNBRANCH",
+      "PREMIUMNDIGIT",
+      "PREMIUMNPAYNUMBE",
+      "PREMIUMNPRODUCT",
+      "PREMIUMNRECEIPT"
+    ]
+  },
+  {
+    "Entity": "PREMIUM_MO",
+    "Target": "PREMIUM",
+    "Navigation": "PREMIUMNRECEIPT",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NRECEIPT",
+      "NBRANCH",
+      "NPRODUCT",
+      "NDIGIT",
+      "NPAYNUMBE"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NRECEIPT",
+      "NBRANCH",
+      "NPRODUCT",
+      "NDIGIT",
+      "NPAYNUMBE"
+    ],
+    "Constraint": "R_74",
+    "Aliases": [
+      "PREMIUMNBRANCH",
+      "PREMIUMNDIGIT",
+      "PREMIUMNPAYNUMBE",
+      "PREMIUMNPRODUCT",
+      "PREMIUMSCERTYPE"
+    ]
+  },
+  {
+    "Entity": "QC_PARAM",
+    "Target": "PRODMASTER",
+    "Navigation": "PRODMASTER",
+    "ForeignKeys": [
+      "NBRANCH",
+      "NPRODUCT"
+    ],
+    "PrincipalKeys": [
+      "NBRANCH",
+      "NPRODUCT"
+    ],
+    "Constraint": "R02_QC_PARAM",
+    "Aliases": []
+  },
+  {
+    "Entity": "QC_PARAM",
+    "Target": "TAB_ROUTINE",
+    "Navigation": "TAB_ROUTINESROUT_QC",
+    "ForeignKeys": [
+      "SROUT_QC",
+      "NROUTY_QC"
+    ],
+    "PrincipalKeys": [
+      "SROUTINE",
+      "NROUTINETYPE"
+    ],
+    "Constraint": "R05_QC_PARAM",
+    "Aliases": []
+  },
+  {
+    "Entity": "QC_PARAM",
+    "Target": "TAB_ROUTINE",
+    "Navigation": "TAB_ROUTINESROUT_QCCAP",
+    "ForeignKeys": [
+      "SROUT_QCCAP",
+      "NROUTY_QCCAP"
+    ],
+    "PrincipalKeys": [
+      "SROUTINE",
+      "NROUTINETYPE"
+    ],
+    "Constraint": "R07_QC_PARAM",
+    "Aliases": []
+  },
+  {
+    "Entity": "REINSURAN",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_99",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "REINSU_PRIM_HEALTH",
+    "Target": "PRODMASTER",
+    "Navigation": "PRODMASTER",
+    "ForeignKeys": [
+      "NBRANCH",
+      "NPRODUCT"
+    ],
+    "PrincipalKeys": [
+      "NBRANCH",
+      "NPRODUCT"
+    ],
+    "Constraint": "REINSU_PRIM_HEALTH_R03",
+    "Aliases": []
+  },
+  {
+    "Entity": "RELCONCEPTS",
+    "Target": "BANK_AGREE",
+    "Navigation": "BANK_AGREENBANK_CODE",
+    "ForeignKeys": [
+      "STYPE_BANKAGREE",
+      "NBANK_CODE",
+      "NACCOUNT"
+    ],
+    "PrincipalKeys": [
+      "STYPE_BANKAGREE",
+      "NBANK",
+      "NACCOUNT"
+    ],
+    "Constraint": "R_2444",
+    "Aliases": [
+      "BANK_AGREENACCOUNT",
+      "BANK_AGREESTYPE_BANKAGREE"
+    ]
+  },
+  {
+    "Entity": "RELCONCEPTS",
+    "Target": "CASH_CONCEPTS",
+    "Navigation": "CASH_CONCEPTSNCONCEPT",
+    "ForeignKeys": [
+      "NCONCEPT",
+      "NCOMPANY"
+    ],
+    "PrincipalKeys": [
+      "NCONCEPT",
+      "NCOMPANY"
+    ],
+    "Constraint": "R_2438",
+    "Aliases": [
+      "CASH_CONCEPTSNCOMPANY"
+    ]
+  },
+  {
+    "Entity": "REQUEST",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTPAYSURR",
+    "ForeignKeys": [
+      "SCERTPAYSURR",
+      "NBRAPAYSURR",
+      "NPROPAYSURR",
+      "NPOLPAYSURR",
+      "NCERPAYSURR"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_1893",
+    "Aliases": [
+      "CERTIFICATNBRAPAYSURR",
+      "CERTIFICATNCERPAYSURR",
+      "CERTIFICATNPOLPAYSURR",
+      "CERTIFICATNPROPAYSURR"
+    ]
+  },
+  {
+    "Entity": "REQUEST",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_1724",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "REQ_ENDOR",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "FK_REQ_ENDOR_CERTIFICAT",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "ROLDOCREQ",
+    "Target": "CLIALLOPRO",
+    "Navigation": "CLIALLOPRONBRANCH",
+    "ForeignKeys": [
+      "NBRANCH",
+      "NPRODUCT",
+      "SPOLITYPE",
+      "SCOMPON",
+      "NROLE"
+    ],
+    "PrincipalKeys": [
+      "NBRANCH",
+      "NPRODUCT",
+      "SPOLITYPE",
+      "SCOMPON",
+      "NROLE"
+    ],
+    "Constraint": "FK_ROLDOP",
+    "Aliases": [
+      "CLIALLOPRONPRODUCT",
+      "CLIALLOPRONROLE",
+      "CLIALLOPROSCOMPON",
+      "CLIALLOPROSPOLITYPE"
+    ]
+  },
+  {
+    "Entity": "ROLDOCREQ",
+    "Target": "FORMATVALUES",
+    "Navigation": "FORMATVALUESNCLASSTYPDOC",
+    "ForeignKeys": [
+      "NTYPCLIENTDOC",
+      "NCLASSTYPDOC"
+    ],
+    "PrincipalKeys": [
+      "NTYPCLIENTDOC",
+      "NCLASSTYPDOC"
+    ],
+    "Constraint": "FK_NCLASSTYPDOC",
+    "Aliases": [
+      "FORMATVALUESNTYPCLIENTDOC"
+    ]
+  },
+  {
+    "Entity": "ROLES",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_2256",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "ROLES",
+    "Target": "FORMATVALUES",
+    "Navigation": "FORMATVALUESNCLASSTYPDOC",
+    "ForeignKeys": [
+      "NTYPCLIENTDOC",
+      "NCLASSTYPDOC"
+    ],
+    "PrincipalKeys": [
+      "NTYPCLIENTDOC",
+      "NCLASSTYPDOC"
+    ],
+    "Constraint": "ROLES_R09",
+    "Aliases": [
+      "FORMATVALUESNTYPCLIENTDOC"
+    ]
+  },
+  {
+    "Entity": "ROLE_TYPE_AMEND",
+    "Target": "TYPE_AMEND",
+    "Navigation": "TYPE_AMENDNBRANCH",
+    "ForeignKeys": [
+      "NBRANCH",
+      "NPRODUCT",
+      "NTYPE_AMEND",
+      "DEFFECDATE"
+    ],
+    "PrincipalKeys": [
+      "NBRANCH",
+      "NPRODUCT",
+      "NTYPE_AMEND",
+      "DEFFECDATE"
+    ],
+    "Constraint": "FK_ROLE_TYPE_AMEND_TYPE_AMEND",
+    "Aliases": [
+      "TYPE_AMENDDEFFECDATE",
+      "TYPE_AMENDNPRODUCT",
+      "TYPE_AMENDNTYPE_AMEND"
+    ]
+  },
+  {
+    "Entity": "SITUATION",
+    "Target": "POLICY",
+    "Navigation": "POLICYSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "R_87",
+    "Aliases": [
+      "POLICYNBRANCH",
+      "POLICYNPOLICY",
+      "POLICYNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "STIPEND_POL",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_3037",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "TAB_AM_EXC",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_CERTIF_42",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "TAB_COVROL",
+    "Target": "PRODMASTER",
+    "Navigation": "PRODMASTERNBRANCH",
+    "ForeignKeys": [
+      "NBRANCH",
+      "NPRODUCT"
+    ],
+    "PrincipalKeys": [
+      "NBRANCH",
+      "NPRODUCT"
+    ],
+    "Constraint": "R_1568",
+    "Aliases": [
+      "PRODMASTERNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS",
+    "Target": "CERTIFICAT",
+    "Navigation": "CERTIFICATSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY",
+      "NCERTIF"
+    ],
+    "Constraint": "R_3360",
+    "Aliases": [
+      "CERTIFICATNBRANCH",
+      "CERTIFICATNCERTIF",
+      "CERTIFICATNPOLICY",
+      "CERTIFICATNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "TAB_MEDBENEFITS_CO",
+    "Target": "POLICY",
+    "Navigation": "POLICYSCERTYPE",
+    "ForeignKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "PrincipalKeys": [
+      "SCERTYPE",
+      "NBRANCH",
+      "NPRODUCT",
+      "NPOLICY"
+    ],
+    "Constraint": "FK_TMEDC_POLICY",
+    "Aliases": [
+      "POLICYNBRANCH",
+      "POLICYNPOLICY",
+      "POLICYNPRODUCT"
+    ]
+  },
+  {
+    "Entity": "TAB_PROVIDER",
+    "Target": "TAB_PROV_SUBTYPES",
+    "Navigation": "TAB_PROV_SUBTYPESNTYPEPROV",
+    "ForeignKeys": [
+      "NTYPEPROV",
+      "NSUBTYPEPROV"
+    ],
+    "PrincipalKeys": [
+      "NTYPEPROV",
+      "NSUBTYPEPROV"
+    ],
+    "Constraint": "R_1310",
+    "Aliases": [
+      "TAB_PROV_SUBTYPESNSUBTYPEPROV"
+    ]
+  },
+  {
+    "Entity": "TAB_PROV_FEES",
+    "Target": "TAB_PROV_ZONE",
+    "Navigation": "TAB_PROV_ZONENPROVIDER",
+    "ForeignKeys": [
+      "NPROVIDER",
+      "NZONE"
+    ],
+    "PrincipalKeys": [
+      "NPROVIDER",
+      "NZONE"
+    ],
+    "Constraint": "R_TAB_PROV_ZONE_3383",
+    "Aliases": [
+      "TAB_PROV_ZONENZONE"
+    ]
+  },
+  {
+    "Entity": "TAR_HEALT_PREM",
+    "Target": "PRODMASTER",
+    "Navigation": "PRODMASTER",
+    "ForeignKeys": [
+      "NBRANCH",
+      "NPRODUCT"
+    ],
+    "PrincipalKeys": [
+      "NBRANCH",
+      "NPRODUCT"
+    ],
+    "Constraint": "TAR_HEALT_PREM_R02",
+    "Aliases": []
+  },
+  {
+    "Entity": "T_CONCEPTS",
+    "Target": "BANK_AGREE",
+    "Navigation": "BANK_AGREENBANK_CODE",
+    "ForeignKeys": [
+      "STYPE_BANKAGREE",
+      "NBANK_CODE",
+      "NACCOUNT"
+    ],
+    "PrincipalKeys": [
+      "STYPE_BANKAGREE",
+      "NBANK",
+      "NACCOUNT"
+    ],
+    "Constraint": "R_2449",
+    "Aliases": [
+      "BANK_AGREENACCOUNT",
+      "BANK_AGREESTYPE_BANKAGREE"
+    ]
+  },
+  {
+    "Entity": "T_CONCEPTS",
+    "Target": "CASH_CONCEPTS",
+    "Navigation": "CASH_CONCEPTSNCONCEPT",
+    "ForeignKeys": [
+      "NCONCEPT",
+      "NCOMPANY"
+    ],
+    "PrincipalKeys": [
+      "NCONCEPT",
+      "NCOMPANY"
+    ],
+    "Constraint": "R_2450",
+    "Aliases": [
+      "CASH_CONCEPTSNCOMPANY"
+    ]
+  }
+]

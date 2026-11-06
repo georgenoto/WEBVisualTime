@@ -13,10 +13,10 @@ public class CreateDOCUMENTS_PRECLAIMDto
     public int? NQUANTITY { get; set; }
     public int NUSERCODE { get; set; }
     public DateTime DCOMPDATE { get; set; }
-    public int NDOC_TYPE { get; set; }
-    public int NPROVIDER { get; set; }
+    public int? NDOC_TYPE { get; set; }
+    public int? NPROVIDER { get; set; }
     public string? SCLIENT { get; set; }
     public long? NID_SECUENCIA { get; set; }
-    public int NCLASS_DOC { get; set; }
+    public int? NCLASS_DOC { get; set; }
     public string? SOBSERVATIONS { get; set; }
 }

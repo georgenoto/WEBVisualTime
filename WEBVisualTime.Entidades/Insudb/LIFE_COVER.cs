@@ -17,7 +17,7 @@ public partial class LIFE_COVER
     [ForeignKey("NCOVERGEN")]
     public Insudb.TAB_LIFCOV? TAB_LIFCOV { get; set; }
     public int? NBILL_ITEM { get; set; }
-    public int NBRANCH_GEN { get; set; }
+    public int? NBRANCH_GEN { get; set; }
 
     [ForeignKey("NBRANCH_GEN")]
     public Insudb.TABLE634? TABLE634 { get; set; }
@@ -29,7 +29,7 @@ public partial class LIFE_COVER
 
     [ForeignKey("NBRANCH_LED")]
     public Insudb.TABLE75? TABLE75 { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
 
     [ForeignKey("NBRANCH_REI")]
     public Insudb.TABLE5000? TABLE5000 { get; set; }
@@ -37,7 +37,7 @@ public partial class LIFE_COVER
     public string? SMORTACOF { get; set; }
     public decimal? NCAINTEXP { get; set; }
     public string? SMORTACOM { get; set; }
-    public int NRETARIF { get; set; }
+    public int? NRETARIF { get; set; }
 
     [ForeignKey("NRETARIF")]
     public Insudb.TABLE5559? TABLE5559 { get; set; }

@@ -4,13 +4,13 @@ public class TAB_GENCOVDto
 {
     public int NCOVERGEN { get; set; }
     public string? SAUTOMREP { get; set; }
-    public int NBRANCH_LED { get; set; }
+    public int? NBRANCH_LED { get; set; }
     public string? TABLE75SDESCRIPT { get; set; }
-    public int NBRANCH_EST { get; set; }
+    public int? NBRANCH_EST { get; set; }
     public string? TABLE71SDESCRIPT { get; set; }
-    public int NBRANCH_GEN { get; set; }
+    public int? NBRANCH_GEN { get; set; }
     public string? TABLE634SDESCRIPT { get; set; }
-    public int NBRANCH_REI { get; set; }
+    public int? NBRANCH_REI { get; set; }
     public string? TABLE5000SDESCRIPT { get; set; }
     public decimal? NCACALFIX { get; set; }
     public string? SCACALFRI { get; set; }

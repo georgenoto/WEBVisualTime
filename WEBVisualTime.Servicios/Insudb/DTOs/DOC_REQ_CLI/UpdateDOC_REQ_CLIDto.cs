@@ -4,7 +4,7 @@ public class UpdateDOC_REQ_CLIDto
 {
     public long NEVAL { get; set; }
     public long NID { get; set; }
-    public int NTYPEDOC { get; set; }
+    public int? NTYPEDOC { get; set; }
     public int NSTATUSDOC { get; set; }
     public string? SDESCRIPT { get; set; }
     public DateTime DDOCREQ { get; set; }

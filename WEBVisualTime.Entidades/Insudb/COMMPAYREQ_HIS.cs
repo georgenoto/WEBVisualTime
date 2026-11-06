@@ -10,11 +10,11 @@ public partial class COMMPAYREQ_HIS
     public Insudb.COMMPAYMENTREQUESTS? COMMPAYMENTREQUESTS { get; set; }
     public int NMOVEMENT { get; set; }
     public DateTime? DMOVEMENT_DATE { get; set; }
-    public int NMOVEMENT_TYPE { get; set; }
+    public int? NMOVEMENT_TYPE { get; set; }
 
     [ForeignKey("NMOVEMENT_TYPE")]
     public Insudb.TABLE9276? TABLE9276 { get; set; }
-    public int NSTATUS { get; set; }
+    public int? NSTATUS { get; set; }
 
     [ForeignKey("NSTATUS")]
     public Insudb.TABLE9275? TABLE9275 { get; set; }

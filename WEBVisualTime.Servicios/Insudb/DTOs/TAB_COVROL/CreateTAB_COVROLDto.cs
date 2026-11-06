@@ -2,7 +2,7 @@ namespace WEBVisualTime.Servicios.Insudb.DTOs.TAB_COVROL;
 
 public class CreateTAB_COVROLDto
 {
-    public int NROLCAP { get; set; }
+    public int? NROLCAP { get; set; }
     public string? SREQUIRED { get; set; }
     public string? SDEFAULTI { get; set; }
     public string? SROUPREMI { get; set; }
@@ -13,7 +13,7 @@ public class CreateTAB_COVROLDto
     public int? NAGEMAXINSF { get; set; }
     public int? NAGEMAXPERF { get; set; }
     public DateTime? DNULLDATE { get; set; }
-    public int NUSERCODE { get; set; }
+    public int? NUSERCODE { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public int? NCACALCOV { get; set; }
     public decimal? NCACALFIX { get; set; }
@@ -22,7 +22,7 @@ public class CreateTAB_COVROLDto
     public decimal? NCAPMAXIM { get; set; }
     public decimal? NCAPMINIM { get; set; }
     public int? NCOVER_IN { get; set; }
-    public int NROLPREM { get; set; }
+    public int? NROLPREM { get; set; }
     public decimal? NPREMIRAT { get; set; }
     public long? NNOTENUM { get; set; }
     public int? NDURATIND { get; set; }
@@ -61,9 +61,9 @@ public class CreateTAB_COVROLDto
     public string? SCHANGETYP { get; set; }
     public string? SSTATREGT { get; set; }
     public string? SROUT_PAY { get; set; }
-    public int NTYPDURPAY { get; set; }
+    public int? NTYPDURPAY { get; set; }
     public string? SCAREN_TYPE { get; set; }
-    public int NTYPDURINS { get; set; }
+    public int? NTYPDURINS { get; set; }
     public int? NCAREN_QUAN { get; set; }
     public string? SCLACCIDI { get; set; }
     public string? SCLDEATHI { get; set; }
@@ -73,17 +73,17 @@ public class CreateTAB_COVROLDto
     public string? SCLIILLNESS { get; set; }
     public string? SCACALTYP { get; set; }
     public string? SCLSURVII { get; set; }
-    public int NCAMAXROL { get; set; }
+    public int? NCAMAXROL { get; set; }
     public int? NMAX_ROLE { get; set; }
     public decimal? NMAXRENT { get; set; }
     public decimal? NPREMIFIX { get; set; }
     public int? NCOVACTIV_REL { get; set; }
-    public int NROLACTIV_REL { get; set; }
+    public int? NROLACTIV_REL { get; set; }
     public decimal? NPREMIMAX { get; set; }
     public string? SLEG { get; set; }
     public int? NUNITM { get; set; }
     public int? NUNITF { get; set; }
-    public int NID_TABLE { get; set; }
+    public int? NID_TABLE { get; set; }
     public int? NQMONTH_VIG { get; set; }
     public int? NQBETWEENMOD { get; set; }
     public int? NQMAX_MOD { get; set; }
@@ -95,7 +95,7 @@ public class CreateTAB_COVROLDto
     public long? NRECCOSTFP { get; set; }
     public int? NTYPEAGE { get; set; }
     public string? SROURATE { get; set; }
-    public long NFIELDDATE { get; set; }
+    public long? NFIELDDATE { get; set; }
     public string? SDEVPRIMEXCESS { get; set; }
     public string? SPROVCOV { get; set; }
     public int? NMAXCAP_PROVCOV { get; set; }
@@ -111,7 +111,7 @@ public class CreateTAB_COVROLDto
     public decimal? NPERCCOAS { get; set; }
     public string? SROUT_REDUCTCAP { get; set; }
     public string? SEXEMPTION { get; set; }
-    public int NTYPE_DUREXEMP { get; set; }
+    public int? NTYPE_DUREXEMP { get; set; }
     public int? NEXEMPDUR { get; set; }
     public int? NTYPE_SEX { get; set; }
 }

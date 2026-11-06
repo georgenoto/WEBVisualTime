@@ -13,11 +13,11 @@ public partial class DURPAY_PROD
     public DateTime? DNULLDATE { get; set; }
     public int NUSERCODE { get; set; }
     public DateTime DCOMPDATE { get; set; }
-    public int NTYPDURINS { get; set; }
+    public int? NTYPDURINS { get; set; }
 
     [ForeignKey("NTYPDURINS")]
     public Insudb.TABLE5589? TABLE5589NTYPDURINS { get; set; }
-    public int NTYPDURPAY { get; set; }
+    public int? NTYPDURPAY { get; set; }
 
     [ForeignKey("NTYPDURPAY")]
     public Insudb.TABLE5589? TABLE5589NTYPDURPAY { get; set; }

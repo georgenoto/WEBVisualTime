@@ -4,7 +4,7 @@ namespace WEBVisualTime.Entidades.Insudb;
 
 public partial class TABLE5524
 {
-    public int NAFP { get; set; }
+    public long NAFP { get; set; }
     public string? SDESCRIPT { get; set; }
     public string? SSHORT_DES { get; set; }
     public string? SSTATREGT { get; set; }

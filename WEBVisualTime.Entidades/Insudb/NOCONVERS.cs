@@ -6,7 +6,7 @@ public partial class NOCONVERS
 {
     public int NNO_CONVERS { get; set; }
     public string? SDESCRIPT { get; set; }
-    public int NAREAWAIT { get; set; }
+    public int? NAREAWAIT { get; set; }
 
     [ForeignKey("NAREAWAIT")]
     public Insudb.TABLE5603? TABLE5603 { get; set; }

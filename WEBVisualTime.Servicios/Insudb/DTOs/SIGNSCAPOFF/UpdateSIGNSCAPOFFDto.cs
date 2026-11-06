@@ -4,7 +4,7 @@ public class UpdateSIGNSCAPOFFDto
 {
     public int NBRANCH { get; set; }
     public int NOFFICE { get; set; }
-    public int NCURRENCY { get; set; }
+    public long NCURRENCY { get; set; }
     public int NUSERSIGN { get; set; }
     public int NORDSIGN { get; set; }
     public decimal NCAPMINSING { get; set; }

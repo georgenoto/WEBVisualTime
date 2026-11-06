@@ -20,18 +20,18 @@ public class UpdateCLAIM_HISDto
     public decimal? NLOC_AMOUNT { get; set; }
     public DateTime? DOPERDATE { get; set; }
     public string? SORDER_NUM { get; set; }
-    public int NPAY_TYPE { get; set; }
+    public int? NPAY_TYPE { get; set; }
     public DateTime? DPOSTED { get; set; }
     public long? NSERV_ORDER { get; set; }
     public int? NUSERCODE { get; set; }
     public DateTime DCOMPDATE { get; set; }
     public string? SCLIENT { get; set; }
-    public long NBORDEREAUX { get; set; }
-    public int NPAY_FORM { get; set; }
+    public long? NBORDEREAUX { get; set; }
+    public int? NPAY_FORM { get; set; }
     public string? SREINSU_IND { get; set; }
     public string? SCOINSU_IND { get; set; }
     public long? NCASH_ID { get; set; }
-    public int NDOC_TYPE { get; set; }
+    public int? NDOC_TYPE { get; set; }
     public long? NBILL { get; set; }
     public DateTime? DBILL_DATE { get; set; }
     public string? SCO_PAY { get; set; }

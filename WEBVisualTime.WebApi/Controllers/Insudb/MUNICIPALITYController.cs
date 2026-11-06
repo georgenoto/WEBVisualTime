@@ -23,7 +23,7 @@ public class MUNICIPALITYController : ControllerBase
     }
 
 [HttpGet("{id}")]
-    public async Task<ActionResult<MUNICIPALITYDto>> GetById(int id)
+    public async Task<ActionResult<MUNICIPALITYDto>> GetById(long id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -38,7 +38,7 @@ public class MUNICIPALITYController : ControllerBase
     }
 
     [HttpPut("{{id}}")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateMUNICIPALITYDto updateDto)
+    public async Task<IActionResult> Update(long id, [FromBody] UpdateMUNICIPALITYDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
         if (!success) return NotFound();
@@ -46,7 +46,7 @@ public class MUNICIPALITYController : ControllerBase
     }
 
     [HttpDelete("{{id}}")]
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(long id)
     {
         var success = await _service.DeleteAsync(id);
         if (!success) return NotFound();

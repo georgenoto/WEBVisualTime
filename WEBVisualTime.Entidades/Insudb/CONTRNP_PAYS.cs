@@ -6,20 +6,32 @@ public partial class CONTRNP_PAYS
 {
     public int NBRANCH_REI { get; set; }
 
-    [ForeignKey("NBRANCH_REI")]
+    [ForeignKey("NNUMBER, NBRANCH_REI, DEFFECDATE, NTYPE")]
     public Insudb.CONTRNPRO? CONTRNPRONBRANCH_REI { get; set; }
     public DateTime DEFFECDATE { get; set; }
 
-    [ForeignKey("DEFFECDATE")]
-    public Insudb.CONTRNPRO? CONTRNPRODEFFECDATE { get; set; }
+    [NotMapped]
+    public Insudb.CONTRNPRO? CONTRNPRODEFFECDATE
+    {
+        get => CONTRNPRONBRANCH_REI;
+        set => CONTRNPRONBRANCH_REI = value;
+    }
     public int NNUMBER { get; set; }
 
-    [ForeignKey("NNUMBER")]
-    public Insudb.CONTRNPRO? CONTRNPRONNUMBER { get; set; }
+    [NotMapped]
+    public Insudb.CONTRNPRO? CONTRNPRONNUMBER
+    {
+        get => CONTRNPRONBRANCH_REI;
+        set => CONTRNPRONBRANCH_REI = value;
+    }
     public int NTYPE { get; set; }
 
-    [ForeignKey("NTYPE")]
-    public Insudb.CONTRNPRO? CONTRNPRONTYPE { get; set; }
+    [NotMapped]
+    public Insudb.CONTRNPRO? CONTRNPRONTYPE
+    {
+        get => CONTRNPRONBRANCH_REI;
+        set => CONTRNPRONBRANCH_REI = value;
+    }
     public int NMONTH { get; set; }
     public int NYEAR { get; set; }
     public decimal NAMOUNT { get; set; }

@@ -5,7 +5,7 @@ public class UpdateT_CASH_MOVDto
     public long NBORDEREAUX { get; set; }
     public int NSEQUENCE { get; set; }
     public int? NACC_CASH { get; set; }
-    public int NLOCAL { get; set; }
+    public int? NLOCAL { get; set; }
     public int? NCURRENCY { get; set; }
     public decimal? NAMOUNT { get; set; }
     public string? SCARD_NUM { get; set; }

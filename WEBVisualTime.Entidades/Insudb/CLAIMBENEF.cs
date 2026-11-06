@@ -6,33 +6,41 @@ public partial class CLAIMBENEF
 {
     public long NCLAIM { get; set; }
 
-    [ForeignKey("NCLAIM")]
+    [ForeignKey("NCLAIM, NCASE_NUM, NDEMAN_TYPE")]
     public Insudb.CLAIM_CASE? CLAIM_CASENCLAIM { get; set; }
     public int NCASE_NUM { get; set; }
 
-    [ForeignKey("NCASE_NUM")]
-    public Insudb.CLAIM_CASE? CLAIM_CASENCASE_NUM { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_CASE? CLAIM_CASENCASE_NUM
+    {
+        get => CLAIM_CASENCLAIM;
+        set => CLAIM_CASENCLAIM = value;
+    }
     public int NDEMAN_TYPE { get; set; }
 
-    [ForeignKey("NDEMAN_TYPE")]
-    public Insudb.CLAIM_CASE? CLAIM_CASENDEMAN_TYPE { get; set; }
+    [NotMapped]
+    public Insudb.CLAIM_CASE? CLAIM_CASENDEMAN_TYPE
+    {
+        get => CLAIM_CASENCLAIM;
+        set => CLAIM_CASENCLAIM = value;
+    }
     public string SCLIENT { get; set; }
 
     [ForeignKey("SCLIENT")]
     public Insudb.CLIENT? CLIENTSCLIENT { get; set; }
-    public int NBENE_TYPE { get; set; }
+    public int? NBENE_TYPE { get; set; }
 
     [ForeignKey("NBENE_TYPE")]
     public Insudb.TABLE184? TABLE184 { get; set; }
     public int NID { get; set; }
-    public int NOFFICE_PAY { get; set; }
+    public int? NOFFICE_PAY { get; set; }
 
     [ForeignKey("NOFFICE_PAY")]
     public Insudb.TABLE9? TABLE9 { get; set; }
     public DateTime? DCOMPDATE { get; set; }
     public string? SDEMANDANT { get; set; }
     public int? NUSERCODE { get; set; }
-    public int NRELATION { get; set; }
+    public int? NRELATION { get; set; }
 
     [ForeignKey("NRELATION")]
     public Insudb.TABLE15? TABLE15 { get; set; }
@@ -50,17 +58,17 @@ public partial class CLAIMBENEF
     public int? NCOVER { get; set; }
     public int? NCURRENCY { get; set; }
     public string? SPAY_INSTALL { get; set; }
-    public int NOFFICEAGEN_PAY { get; set; }
+    public int? NOFFICEAGEN_PAY { get; set; }
 
     [ForeignKey("NOFFICEAGEN_PAY")]
     public Insudb.TABLE5556? TABLE5556 { get; set; }
-    public int NAGENCY_PAY { get; set; }
+    public int? NAGENCY_PAY { get; set; }
 
     [ForeignKey("NAGENCY_PAY")]
     public Insudb.AGENCIES? AGENCIES { get; set; }
     public long? NNOTENUM { get; set; }
     public DateTime? DSHOWDATE { get; set; }
-    public int NPAYMENTADDRESS { get; set; }
+    public int? NPAYMENTADDRESS { get; set; }
 
     [ForeignKey("NPAYMENTADDRESS")]
     public Insudb.TABLE7801? TABLE7801 { get; set; }

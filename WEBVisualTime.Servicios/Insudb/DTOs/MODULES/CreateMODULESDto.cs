@@ -10,8 +10,8 @@ public class CreateMODULESDto
     public decimal? NPREMIRAT { get; set; }
     public string? STYP_RAT { get; set; }
     public string? SINHERIT { get; set; }
-    public int NGEOGRAPHAREA { get; set; }
-    public int NATTENSYSTEM { get; set; }
+    public int? NGEOGRAPHAREA { get; set; }
+    public int? NATTENSYSTEM { get; set; }
     public long? NMOVEMENT { get; set; }
     public long? NMOVEMENT_NULL { get; set; }
 }
