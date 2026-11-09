@@ -16,9 +16,10 @@ public class TAB_WINPROController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<TAB_WINPRODto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<TAB_WINPRODto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
@@ -34,10 +35,10 @@ public class TAB_WINPROController : ControllerBase
     public async Task<ActionResult<TAB_WINPRODto>> Create([FromBody] CreateTAB_WINPRODto createDto)
     {
         var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.SBRANCHT }, result);
+        return CreatedAtAction(nameof(GetById), new { id = WEBVisualTime.Entidades.Common.RecordKeys.Encode("TAB_WINPRO", result) }, result);
     }
 
-    [HttpPut("{{id}}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(string id, [FromBody] UpdateTAB_WINPRODto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
@@ -45,7 +46,7 @@ public class TAB_WINPROController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);

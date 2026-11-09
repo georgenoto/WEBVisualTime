@@ -111,6 +111,7 @@ public class TAB_MEDBENEFITSController : Controller
     // GET: TAB_MEDBENEFITS/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -170,11 +171,12 @@ public class TAB_MEDBENEFITSController : Controller
     // POST: TAB_MEDBENEFITS/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTAB_MEDBENEFITSDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateTAB_MEDBENEFITSDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCERTYPE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

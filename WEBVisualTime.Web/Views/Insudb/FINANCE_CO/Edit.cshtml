@@ -9,6 +9,7 @@
 <div class="card">
     <div class="card-body">
         <form asp-action="Edit">
+            <input type="hidden" name="id" value="@ViewData["RecordId"]" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3">
                 <label asp-for="NAMOUNT" class="form-label"></label>
@@ -29,7 +30,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="SCLIENT" class="form-label"></label>
-                <select asp-for="SCLIENT" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "CLIENT")" data-current-value="@Model.SCLIENT">
+                <select asp-for="SCLIENT" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "CLIENT")" data-current-value="@Model.SCLIENT">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="SCLIENT" class="text-danger"></span>
@@ -127,7 +128,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NUSERCODE" class="form-label"></label>
-                <select asp-for="NUSERCODE" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE">
+                <select asp-for="NUSERCODE" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NUSERCODE" class="text-danger"></span>

@@ -57,6 +57,7 @@ public class POLICY_WINController : Controller
     // GET: POLICY_WIN/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -81,11 +82,12 @@ public class POLICY_WINController : Controller
     // POST: POLICY_WIN/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdatePOLICY_WINDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdatePOLICY_WINDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCERTYPE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

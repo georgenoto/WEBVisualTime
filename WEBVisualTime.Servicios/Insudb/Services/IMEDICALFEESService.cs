@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IMEDICALFEESService : IService<MEDICALFEESDto, CreateMEDICALFEESDto, UpdateMEDICALFEESDto, int>
+public interface IMEDICALFEESService : IService<MEDICALFEESDto, CreateMEDICALFEESDto, UpdateMEDICALFEESDto, string>
 {
     Task<IEnumerable<MEDICALFEESDto>> FindAsync(Expression<Func<MEDICALFEES, bool>> predicate);
 }

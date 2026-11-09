@@ -21,7 +21,7 @@ public class SPORTService : ISPORTService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<SPORTDto?> GetByIdAsync(int id)
+    public async Task<SPORTDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class SPORTService : ISPORTService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateSPORTDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateSPORTDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class SPORTService : ISPORTService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

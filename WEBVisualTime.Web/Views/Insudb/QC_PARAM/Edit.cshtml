@@ -9,6 +9,7 @@
 <div class="card">
     <div class="card-body">
         <form asp-action="Edit">
+            <input type="hidden" name="id" value="@ViewData["RecordId"]" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="NBRANCH" />
             <input type="hidden" asp-for="NPRODUCT" />
@@ -29,7 +30,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="SROUT_QC" class="form-label"></label>
-                <select asp-for="SROUT_QC" class="form-select cascade-select" data-cascade-parent="NROUTY_QC" data-cascade-url="@Url.Action("GetByNROUTINETYPE", "TAB_ROUTINE")" data-current-value="@Model.SROUT_QC">
+                <select asp-for="SROUT_QC" class="form-select cascade-select" data-cascade-parent="NROUTY_QC" data-cascade-parameter="NROUTINETYPE" data-cascade-url="@Url.Action("GetByNROUTINETYPE", "TAB_ROUTINE")" data-current-value="@Model.SROUT_QC">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="SROUT_QC" class="text-danger"></span>
@@ -43,7 +44,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="SROUT_QCCAP" class="form-label"></label>
-                <select asp-for="SROUT_QCCAP" class="form-select cascade-select" data-cascade-parent="NROUTY_QC" data-cascade-url="@Url.Action("GetByNROUTINETYPE", "TAB_ROUTINE")" data-current-value="@Model.SROUT_QCCAP">
+                <select asp-for="SROUT_QCCAP" class="form-select cascade-select" data-cascade-parent="NROUTY_QC" data-cascade-parameter="NROUTINETYPE" data-cascade-url="@Url.Action("GetByNROUTINETYPE", "TAB_ROUTINE")" data-current-value="@Model.SROUT_QCCAP">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="SROUT_QCCAP" class="text-danger"></span>

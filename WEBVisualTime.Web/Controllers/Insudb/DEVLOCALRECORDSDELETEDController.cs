@@ -22,7 +22,7 @@ public class DEVLOCALRECORDSDELETEDController : Controller
             this, _service, page, q, "~/Views/Insudb/DEVLOCALRECORDSDELETED/Index.cshtml");
 
     // GET: DEVLOCALRECORDSDELETED/Details/{id}
-    public async Task<IActionResult> Details(int id)
+    public async Task<IActionResult> Details(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -49,8 +49,9 @@ public class DEVLOCALRECORDSDELETEDController : Controller
     }
 
     // GET: DEVLOCALRECORDSDELETED/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
+    public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -68,11 +69,12 @@ public class DEVLOCALRECORDSDELETEDController : Controller
     // POST: DEVLOCALRECORDSDELETED/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateDEVLOCALRECORDSDELETEDDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateDEVLOCALRECORDSDELETEDDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.LOCALRECDELID, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }
@@ -80,7 +82,7 @@ public class DEVLOCALRECORDSDELETEDController : Controller
     }
 
     // GET: DEVLOCALRECORDSDELETED/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -90,7 +92,7 @@ public class DEVLOCALRECORDSDELETEDController : Controller
     // POST: DEVLOCALRECORDSDELETED/Delete/{id}
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
+    public async Task<IActionResult> DeleteConfirmed(string id)
     {
         await _service.DeleteAsync(id);
         return RedirectToAction(nameof(Index));

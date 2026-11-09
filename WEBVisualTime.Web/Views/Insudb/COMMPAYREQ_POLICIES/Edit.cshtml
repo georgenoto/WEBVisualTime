@@ -9,6 +9,7 @@
 <div class="card">
     <div class="card-body">
         <form asp-action="Edit">
+            <input type="hidden" name="id" value="@ViewData["RecordId"]" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="NID_COMMPAYREQ" />
             <input type="hidden" asp-for="NCONSEC" />
@@ -74,7 +75,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NINTERMED" class="form-label"></label>
-                <select asp-for="NINTERMED" class="form-select cascade-select" data-cascade-parent="NINTERTYP" data-cascade-url="@Url.Action("GetByNINTERTYP", "INTERMEDIA")" data-current-value="@Model.NINTERMED">
+                <select asp-for="NINTERMED" class="form-select cascade-select" data-cascade-parent="NINTERTYP" data-cascade-parameter="NINTERTYP" data-cascade-url="@Url.Action("GetByNINTERTYP", "INTERMEDIA")" data-current-value="@Model.NINTERMED">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NINTERMED" class="text-danger"></span>

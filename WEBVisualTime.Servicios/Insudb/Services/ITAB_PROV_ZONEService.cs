@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ITAB_PROV_ZONEService : IService<TAB_PROV_ZONEDto, CreateTAB_PROV_ZONEDto, UpdateTAB_PROV_ZONEDto, int>
+public interface ITAB_PROV_ZONEService : IService<TAB_PROV_ZONEDto, CreateTAB_PROV_ZONEDto, UpdateTAB_PROV_ZONEDto, string>
 {
     Task<IEnumerable<TAB_PROV_ZONEDto>> FindAsync(Expression<Func<TAB_PROV_ZONE, bool>> predicate);
 }

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IHOBBYService : IService<HOBBYDto, CreateHOBBYDto, UpdateHOBBYDto, int>
+public interface IHOBBYService : IService<HOBBYDto, CreateHOBBYDto, UpdateHOBBYDto, string>
 {
     Task<IEnumerable<HOBBYDto>> FindAsync(Expression<Func<HOBBY, bool>> predicate);
 }

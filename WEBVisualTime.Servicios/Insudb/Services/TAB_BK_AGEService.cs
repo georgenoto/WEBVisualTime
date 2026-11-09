@@ -21,7 +21,7 @@ public class TAB_BK_AGEService : ITAB_BK_AGEService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<TAB_BK_AGEDto?> GetByIdAsync(long id)
+    public async Task<TAB_BK_AGEDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class TAB_BK_AGEService : ITAB_BK_AGEService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateTAB_BK_AGEDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateTAB_BK_AGEDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class TAB_BK_AGEService : ITAB_BK_AGEService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

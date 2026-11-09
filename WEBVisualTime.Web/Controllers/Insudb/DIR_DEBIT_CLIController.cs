@@ -63,6 +63,7 @@ public class DIR_DEBIT_CLIController : Controller
     // GET: DIR_DEBIT_CLI/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -88,11 +89,12 @@ public class DIR_DEBIT_CLIController : Controller
     // POST: DIR_DEBIT_CLI/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateDIR_DEBIT_CLIDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateDIR_DEBIT_CLIDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCLIENT, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

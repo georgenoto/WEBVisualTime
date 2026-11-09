@@ -13,7 +13,7 @@
             <input type="hidden" asp-for="SKEY" />
             <div class="mb-3">
                 <label asp-for="NBATCH" class="form-label"></label>
-                <select asp-for="NBATCH" class="form-select cascade-select" data-cascade-parent="NUSERCODE" data-cascade-url="@Url.Action("GetByNUSERCODE", "BATCH_PROCESS")" data-current-value="@Model.NBATCH">
+                <select asp-for="NBATCH" class="form-select cascade-select" data-cascade-parent="NUSERCODE" data-cascade-parameter="NUSERCODE" data-cascade-url="@Url.Action("GetByNUSERCODE", "BATCH_PROCESS")" data-current-value="@Model.NBATCH">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NBATCH" class="text-danger"></span>

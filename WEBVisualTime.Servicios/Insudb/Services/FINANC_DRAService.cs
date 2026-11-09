@@ -21,7 +21,7 @@ public class FINANC_DRAService : IFINANC_DRAService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<FINANC_DRADto?> GetByIdAsync(long id)
+    public async Task<FINANC_DRADto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class FINANC_DRAService : IFINANC_DRAService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateFINANC_DRADto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateFINANC_DRADto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class FINANC_DRAService : IFINANC_DRAService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

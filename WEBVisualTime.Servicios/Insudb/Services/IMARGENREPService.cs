@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IMARGENREPService : IService<MARGENREPDto, CreateMARGENREPDto, UpdateMARGENREPDto, int>
+public interface IMARGENREPService : IService<MARGENREPDto, CreateMARGENREPDto, UpdateMARGENREPDto, string>
 {
     Task<IEnumerable<MARGENREPDto>> FindAsync(Expression<Func<MARGENREP, bool>> predicate);
 }

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICLORDER_HISService : IService<CLORDER_HISDto, CreateCLORDER_HISDto, UpdateCLORDER_HISDto, long>
+public interface ICLORDER_HISService : IService<CLORDER_HISDto, CreateCLORDER_HISDto, UpdateCLORDER_HISDto, string>
 {
     Task<IEnumerable<CLORDER_HISDto>> FindAsync(Expression<Func<CLORDER_HIS, bool>> predicate);
 }

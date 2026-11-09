@@ -9,6 +9,7 @@
 <div class="card">
     <div class="card-body">
         <form asp-action="Edit">
+            <input type="hidden" name="id" value="@ViewData["RecordId"]" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="NTYP_ACCO" />
             <input type="hidden" asp-for="STYPE_ACC" />
@@ -157,7 +158,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NBORDEREAUX" class="form-label"></label>
-                <select asp-for="NBORDEREAUX" class="form-select cascade-select" data-cascade-parent="NBANKEXT" data-cascade-url="@Url.Action("GetByNBANK", "COLFORMREF")" data-current-value="@Model.NBORDEREAUX">
+                <select asp-for="NBORDEREAUX" class="form-select cascade-select" data-cascade-parent="NBANKEXT" data-cascade-parameter="NBANK" data-cascade-url="@Url.Action("GetByNBANK", "COLFORMREF")" data-current-value="@Model.NBORDEREAUX">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NBORDEREAUX" class="text-danger"></span>

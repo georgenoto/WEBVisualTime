@@ -21,7 +21,7 @@ public class CLAIM_CASEService : ICLAIM_CASEService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CLAIM_CASEDto?> GetByIdAsync(long id)
+    public async Task<CLAIM_CASEDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CLAIM_CASEService : ICLAIM_CASEService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateCLAIM_CASEDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCLAIM_CASEDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CLAIM_CASEService : ICLAIM_CASEService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -117,6 +117,7 @@ public class COVERController : Controller
     // GET: COVER/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -219,11 +220,12 @@ public class COVERController : Controller
     // POST: COVER/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateCOVERDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateCOVERDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCERTYPE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

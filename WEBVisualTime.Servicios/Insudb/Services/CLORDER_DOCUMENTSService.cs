@@ -21,7 +21,7 @@ public class CLORDER_DOCUMENTSService : ICLORDER_DOCUMENTSService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CLORDER_DOCUMENTSDto?> GetByIdAsync(long id)
+    public async Task<CLORDER_DOCUMENTSDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CLORDER_DOCUMENTSService : ICLORDER_DOCUMENTSService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateCLORDER_DOCUMENTSDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCLORDER_DOCUMENTSDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CLORDER_DOCUMENTSService : ICLORDER_DOCUMENTSService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -16,9 +16,10 @@ public class CLAIM_WINController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<CLAIM_WINDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<CLAIM_WINDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
@@ -37,7 +38,7 @@ public class CLAIM_WINController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = result.NCLAIM }, result);
     }
 
-    [HttpPut("{{id}}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(long id, [FromBody] UpdateCLAIM_WINDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
@@ -45,7 +46,7 @@ public class CLAIM_WINController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(long id)
     {
         var success = await _service.DeleteAsync(id);

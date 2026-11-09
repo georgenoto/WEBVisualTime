@@ -9,6 +9,7 @@
 <div class="card">
     <div class="card-body">
         <form asp-action="Edit">
+            <input type="hidden" name="id" value="@ViewData["RecordId"]" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="NID_COMMPAYREQ" />
             <input type="hidden" asp-for="NCLAIM" />
@@ -17,7 +18,7 @@
             <input type="hidden" asp-for="NORDER_NUM" />
             <div class="mb-3">
                 <label asp-for="NMASTERORDER" class="form-label"></label>
-                <select asp-for="NMASTERORDER" class="form-select cascade-select" data-cascade-parent="NMASTERORDERTYPE" data-cascade-url="@Url.Action("GetByNMASTERORDERTYPE", "MASTERCL_ORDER")" data-current-value="@Model.NMASTERORDER">
+                <select asp-for="NMASTERORDER" class="form-select cascade-select" data-cascade-parent="NMASTERORDERTYPE" data-cascade-parameter="NMASTERORDERTYPE" data-cascade-url="@Url.Action("GetByNMASTERORDERTYPE", "MASTERCL_ORDER")" data-current-value="@Model.NMASTERORDER">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NMASTERORDER" class="text-danger"></span>

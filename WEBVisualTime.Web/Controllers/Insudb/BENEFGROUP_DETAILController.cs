@@ -51,6 +51,7 @@ public class BENEFGROUP_DETAILController : Controller
     // GET: BENEFGROUP_DETAIL/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -68,11 +69,12 @@ public class BENEFGROUP_DETAILController : Controller
     // POST: BENEFGROUP_DETAIL/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateBENEFGROUP_DETAILDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateBENEFGROUP_DETAILDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SBENEFITGROUP, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

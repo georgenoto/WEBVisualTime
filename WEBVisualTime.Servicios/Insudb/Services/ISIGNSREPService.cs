@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ISIGNSREPService : IService<SIGNSREPDto, CreateSIGNSREPDto, UpdateSIGNSREPDto, int>
+public interface ISIGNSREPService : IService<SIGNSREPDto, CreateSIGNSREPDto, UpdateSIGNSREPDto, string>
 {
     Task<IEnumerable<SIGNSREPDto>> FindAsync(Expression<Func<SIGNSREP, bool>> predicate);
 }

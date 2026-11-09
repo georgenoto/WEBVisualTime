@@ -21,7 +21,7 @@ public class CLORDER_ADDITIONALSService : ICLORDER_ADDITIONALSService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CLORDER_ADDITIONALSDto?> GetByIdAsync(long id)
+    public async Task<CLORDER_ADDITIONALSDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CLORDER_ADDITIONALSService : ICLORDER_ADDITIONALSService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateCLORDER_ADDITIONALSDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCLORDER_ADDITIONALSDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CLORDER_ADDITIONALSService : ICLORDER_ADDITIONALSService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

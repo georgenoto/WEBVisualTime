@@ -21,7 +21,7 @@ public class COMMIS_HISService : ICOMMIS_HISService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<COMMIS_HISDto?> GetByIdAsync(long id)
+    public async Task<COMMIS_HISDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class COMMIS_HISService : ICOMMIS_HISService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateCOMMIS_HISDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCOMMIS_HISDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class COMMIS_HISService : ICOMMIS_HISService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

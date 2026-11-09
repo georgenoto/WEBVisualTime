@@ -21,7 +21,7 @@ public class MASSIVE_PART_CONDITIONSService : IMASSIVE_PART_CONDITIONSService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<MASSIVE_PART_CONDITIONSDto?> GetByIdAsync(int id)
+    public async Task<MASSIVE_PART_CONDITIONSDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class MASSIVE_PART_CONDITIONSService : IMASSIVE_PART_CONDITIONSService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateMASSIVE_PART_CONDITIONSDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateMASSIVE_PART_CONDITIONSDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class MASSIVE_PART_CONDITIONSService : IMASSIVE_PART_CONDITIONSService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

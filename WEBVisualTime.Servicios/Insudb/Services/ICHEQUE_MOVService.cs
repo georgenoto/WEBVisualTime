@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICHEQUE_MOVService : IService<CHEQUE_MOVDto, CreateCHEQUE_MOVDto, UpdateCHEQUE_MOVDto, int>
+public interface ICHEQUE_MOVService : IService<CHEQUE_MOVDto, CreateCHEQUE_MOVDto, UpdateCHEQUE_MOVDto, string>
 {
     Task<IEnumerable<CHEQUE_MOVDto>> FindAsync(Expression<Func<CHEQUE_MOV, bool>> predicate);
 }

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IMOVE_ACCService : IService<MOVE_ACCDto, CreateMOVE_ACCDto, UpdateMOVE_ACCDto, int>
+public interface IMOVE_ACCService : IService<MOVE_ACCDto, CreateMOVE_ACCDto, UpdateMOVE_ACCDto, string>
 {
     Task<IEnumerable<MOVE_ACCDto>> FindAsync(Expression<Func<MOVE_ACC, bool>> predicate);
 }

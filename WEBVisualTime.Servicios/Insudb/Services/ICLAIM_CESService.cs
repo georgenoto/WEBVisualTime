@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICLAIM_CESService : IService<CLAIM_CESDto, CreateCLAIM_CESDto, UpdateCLAIM_CESDto, long>
+public interface ICLAIM_CESService : IService<CLAIM_CESDto, CreateCLAIM_CESDto, UpdateCLAIM_CESDto, string>
 {
     Task<IEnumerable<CLAIM_CESDto>> FindAsync(Expression<Func<CLAIM_CES, bool>> predicate);
 }

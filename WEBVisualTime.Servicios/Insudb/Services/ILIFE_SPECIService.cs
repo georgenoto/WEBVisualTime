@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ILIFE_SPECIService : IService<LIFE_SPECIDto, CreateLIFE_SPECIDto, UpdateLIFE_SPECIDto, long>
+public interface ILIFE_SPECIService : IService<LIFE_SPECIDto, CreateLIFE_SPECIDto, UpdateLIFE_SPECIDto, string>
 {
     Task<IEnumerable<LIFE_SPECIDto>> FindAsync(Expression<Func<LIFE_SPECI, bool>> predicate);
 }

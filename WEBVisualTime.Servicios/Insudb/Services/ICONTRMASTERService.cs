@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICONTRMASTERService : IService<CONTRMASTERDto, CreateCONTRMASTERDto, UpdateCONTRMASTERDto, int>
+public interface ICONTRMASTERService : IService<CONTRMASTERDto, CreateCONTRMASTERDto, UpdateCONTRMASTERDto, string>
 {
     Task<IEnumerable<CONTRMASTERDto>> FindAsync(Expression<Func<CONTRMASTER, bool>> predicate);
 }

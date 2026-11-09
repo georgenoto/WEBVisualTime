@@ -16,14 +16,15 @@ public class FINANC_COMController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<FINANC_COMDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<FINANC_COMDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
 [HttpGet("{id}")]
-    public async Task<ActionResult<FINANC_COMDto>> GetById(long id)
+    public async Task<ActionResult<FINANC_COMDto>> GetById(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -34,19 +35,19 @@ public class FINANC_COMController : ControllerBase
     public async Task<ActionResult<FINANC_COMDto>> Create([FromBody] CreateFINANC_COMDto createDto)
     {
         var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.NRECEIPT }, result);
+        return CreatedAtAction(nameof(GetById), new { id = WEBVisualTime.Entidades.Common.RecordKeys.Encode("FINANC_COM", result) }, result);
     }
 
-    [HttpPut("{{id}}")]
-    public async Task<IActionResult> Update(long id, [FromBody] UpdateFINANC_COMDto updateDto)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(string id, [FromBody] UpdateFINANC_COMDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
         if (!success) return NotFound();
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
-    public async Task<IActionResult> Delete(long id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);
         if (!success) return NotFound();

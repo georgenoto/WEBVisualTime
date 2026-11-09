@@ -16,9 +16,10 @@ public class WIN_FILE_GController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<WIN_FILE_GDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<WIN_FILE_GDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
@@ -37,7 +38,7 @@ public class WIN_FILE_GController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = result.SCODISPL }, result);
     }
 
-    [HttpPut("{{id}}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(string id, [FromBody] UpdateWIN_FILE_GDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
@@ -45,7 +46,7 @@ public class WIN_FILE_GController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);

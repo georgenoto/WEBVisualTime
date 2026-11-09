@@ -87,6 +87,7 @@ public class LIFE_DOCUController : Controller
     // GET: LIFE_DOCU/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -130,11 +131,12 @@ public class LIFE_DOCUController : Controller
     // POST: LIFE_DOCU/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateLIFE_DOCUDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateLIFE_DOCUDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCERTYPE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

@@ -21,7 +21,7 @@ public class DET_COMLIFService : IDET_COMLIFService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<DET_COMLIFDto?> GetByIdAsync(int id)
+    public async Task<DET_COMLIFDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class DET_COMLIFService : IDET_COMLIFService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateDET_COMLIFDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateDET_COMLIFDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class DET_COMLIFService : IDET_COMLIFService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IRNULLCONDIService : IService<RNULLCONDIDto, CreateRNULLCONDIDto, UpdateRNULLCONDIDto, int>
+public interface IRNULLCONDIService : IService<RNULLCONDIDto, CreateRNULLCONDIDto, UpdateRNULLCONDIDto, string>
 {
     Task<IEnumerable<RNULLCONDIDto>> FindAsync(Expression<Func<RNULLCONDI, bool>> predicate);
 }

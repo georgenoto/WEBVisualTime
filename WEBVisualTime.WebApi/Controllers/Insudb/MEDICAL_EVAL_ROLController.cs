@@ -16,9 +16,10 @@ public class MEDICAL_EVAL_ROLController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<MEDICAL_EVAL_ROLDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<MEDICAL_EVAL_ROLDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
@@ -34,10 +35,10 @@ public class MEDICAL_EVAL_ROLController : ControllerBase
     public async Task<ActionResult<MEDICAL_EVAL_ROLDto>> Create([FromBody] CreateMEDICAL_EVAL_ROLDto createDto)
     {
         var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.SCERTYPE }, result);
+        return CreatedAtAction(nameof(GetById), new { id = WEBVisualTime.Entidades.Common.RecordKeys.Encode("MEDICAL_EVAL_ROL", result) }, result);
     }
 
-    [HttpPut("{{id}}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(string id, [FromBody] UpdateMEDICAL_EVAL_ROLDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
@@ -45,7 +46,7 @@ public class MEDICAL_EVAL_ROLController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);

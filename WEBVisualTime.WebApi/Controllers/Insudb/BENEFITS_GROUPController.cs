@@ -16,9 +16,10 @@ public class BENEFITS_GROUPController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<BENEFITS_GROUPDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<BENEFITS_GROUPDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
@@ -37,7 +38,7 @@ public class BENEFITS_GROUPController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = result.SBENEFITGROUP }, result);
     }
 
-    [HttpPut("{{id}}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(string id, [FromBody] UpdateBENEFITS_GROUPDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
@@ -45,7 +46,7 @@ public class BENEFITS_GROUPController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);

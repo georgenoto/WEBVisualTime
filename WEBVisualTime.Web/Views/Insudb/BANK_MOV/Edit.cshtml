@@ -9,6 +9,7 @@
 <div class="card">
     <div class="card-body">
         <form asp-action="Edit">
+            <input type="hidden" name="id" value="@ViewData["RecordId"]" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3">
                 <label asp-for="SDEP_NUMBER" class="form-label"></label>
@@ -54,7 +55,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NBORDEREAUX" class="form-label"></label>
-                <select asp-for="NBORDEREAUX" class="form-select cascade-select" data-cascade-parent="NINTERMED" data-cascade-url="@Url.Action("GetByNINTERMED", "COLFORMREF")" data-current-value="@Model.NBORDEREAUX">
+                <select asp-for="NBORDEREAUX" class="form-select cascade-select" data-cascade-parent="NINTERMED" data-cascade-parameter="NINTERMED" data-cascade-url="@Url.Action("GetByNINTERMED", "COLFORMREF")" data-current-value="@Model.NBORDEREAUX">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NBORDEREAUX" class="text-danger"></span>
@@ -88,7 +89,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NINTERMED" class="form-label"></label>
-                <select asp-for="NINTERMED" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "INTERMEDIA")" data-current-value="@Model.NINTERMED">
+                <select asp-for="NINTERMED" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "INTERMEDIA")" data-current-value="@Model.NINTERMED">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NINTERMED" class="text-danger"></span>
@@ -105,7 +106,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NCLAIM" class="form-label"></label>
-                <select asp-for="NCLAIM" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "CLAIM")" data-current-value="@Model.NCLAIM">
+                <select asp-for="NCLAIM" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "CLAIM")" data-current-value="@Model.NCLAIM">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NCLAIM" class="text-danger"></span>
@@ -117,14 +118,14 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NCONTRAT" class="form-label"></label>
-                <select asp-for="NCONTRAT" class="form-select cascade-select" data-cascade-parent="NCLAIM" data-cascade-url="@Url.Action("GetByNCLAIM", "FINANC_DRA")" data-current-value="@Model.NCONTRAT">
+                <select asp-for="NCONTRAT" class="form-select cascade-select" data-cascade-parent="NCLAIM" data-cascade-parameter="NCLAIM" data-cascade-url="@Url.Action("GetByNCLAIM", "FINANC_DRA")" data-current-value="@Model.NCONTRAT">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NCONTRAT" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="NDRAFT" class="form-label"></label>
-                <select asp-for="NDRAFT" class="form-select cascade-select" data-cascade-parent="NCLAIM" data-cascade-url="@Url.Action("GetByNCLAIM", "FINANC_DRA")" data-current-value="@Model.NDRAFT">
+                <select asp-for="NDRAFT" class="form-select cascade-select" data-cascade-parent="NCLAIM" data-cascade-parameter="NCLAIM" data-cascade-url="@Url.Action("GetByNCLAIM", "FINANC_DRA")" data-current-value="@Model.NDRAFT">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NDRAFT" class="text-danger"></span>

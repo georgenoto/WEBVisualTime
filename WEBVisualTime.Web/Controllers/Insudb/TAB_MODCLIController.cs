@@ -51,6 +51,7 @@ public class TAB_MODCLIController : Controller
     // GET: TAB_MODCLI/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -66,11 +67,12 @@ public class TAB_MODCLIController : Controller
     // POST: TAB_MODCLI/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTAB_MODCLIDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateTAB_MODCLIDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SITEM, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IBILLSService : IService<BILLSDto, CreateBILLSDto, UpdateBILLSDto, int>
+public interface IBILLSService : IService<BILLSDto, CreateBILLSDto, UpdateBILLSDto, string>
 {
     Task<IEnumerable<BILLSDto>> FindAsync(Expression<Func<BILLS, bool>> predicate);
 }

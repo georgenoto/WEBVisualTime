@@ -21,7 +21,7 @@ public class CL_COVERService : ICL_COVERService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CL_COVERDto?> GetByIdAsync(long id)
+    public async Task<CL_COVERDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CL_COVERService : ICL_COVERService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateCL_COVERDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCL_COVERDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CL_COVERService : ICL_COVERService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

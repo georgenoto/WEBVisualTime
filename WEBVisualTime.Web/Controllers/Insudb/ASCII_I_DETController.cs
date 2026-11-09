@@ -81,6 +81,7 @@ public class ASCII_I_DETController : Controller
     // GET: ASCII_I_DET/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -113,11 +114,12 @@ public class ASCII_I_DETController : Controller
     // POST: ASCII_I_DET/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateASCII_I_DETDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateASCII_I_DETDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SASCII_NAME, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

@@ -21,7 +21,7 @@ public class CLAIMBENEFService : ICLAIMBENEFService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CLAIMBENEFDto?> GetByIdAsync(long id)
+    public async Task<CLAIMBENEFDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CLAIMBENEFService : ICLAIMBENEFService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateCLAIMBENEFDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCLAIMBENEFDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CLAIMBENEFService : ICLAIMBENEFService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

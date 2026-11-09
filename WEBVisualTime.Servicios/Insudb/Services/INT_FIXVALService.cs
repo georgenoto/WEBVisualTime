@@ -21,7 +21,7 @@ public class INT_FIXVALService : IINT_FIXVALService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<INT_FIXVALDto?> GetByIdAsync(int id)
+    public async Task<INT_FIXVALDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class INT_FIXVALService : IINT_FIXVALService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateINT_FIXVALDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateINT_FIXVALDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class INT_FIXVALService : IINT_FIXVALService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

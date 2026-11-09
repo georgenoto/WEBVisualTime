@@ -21,7 +21,7 @@ public class SELLCHANNEL_PRODService : ISELLCHANNEL_PRODService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<SELLCHANNEL_PRODDto?> GetByIdAsync(DateTime id)
+    public async Task<SELLCHANNEL_PRODDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class SELLCHANNEL_PRODService : ISELLCHANNEL_PRODService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(DateTime id, UpdateSELLCHANNEL_PRODDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateSELLCHANNEL_PRODDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class SELLCHANNEL_PRODService : ISELLCHANNEL_PRODService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(DateTime id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

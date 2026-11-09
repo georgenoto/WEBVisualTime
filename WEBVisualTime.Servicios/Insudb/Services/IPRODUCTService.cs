@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IPRODUCTService : IService<PRODUCTDto, CreatePRODUCTDto, UpdatePRODUCTDto, int>
+public interface IPRODUCTService : IService<PRODUCTDto, CreatePRODUCTDto, UpdatePRODUCTDto, string>
 {
     Task<IEnumerable<PRODUCTDto>> FindAsync(Expression<Func<PRODUCT, bool>> predicate);
 }

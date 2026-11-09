@@ -9,6 +9,7 @@
 <div class="card">
     <div class="card-body">
         <form asp-action="Edit">
+            <input type="hidden" name="id" value="@ViewData["RecordId"]" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="SCERTYPE" />
             <input type="hidden" asp-for="NBRANCH" />
@@ -125,7 +126,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NSITUATION" class="form-label"></label>
-                <select asp-for="NSITUATION" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "SITUATION")" data-current-value="@Model.NSITUATION">
+                <select asp-for="NSITUATION" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "SITUATION")" data-current-value="@Model.NSITUATION">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NSITUATION" class="text-danger"></span>
@@ -394,7 +395,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NCOLLECTOR" class="form-label"></label>
-                <select asp-for="NCOLLECTOR" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "COLLECTOR")" data-current-value="@Model.NCOLLECTOR">
+                <select asp-for="NCOLLECTOR" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "COLLECTOR")" data-current-value="@Model.NCOLLECTOR">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NCOLLECTOR" class="text-danger"></span>
@@ -406,7 +407,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NGROUP_AGREE" class="form-label"></label>
-                <select asp-for="NGROUP_AGREE" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "AGREEMENT")" data-current-value="@Model.NGROUP_AGREE">
+                <select asp-for="NGROUP_AGREE" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "AGREEMENT")" data-current-value="@Model.NGROUP_AGREE">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NGROUP_AGREE" class="text-danger"></span>
@@ -505,7 +506,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NCOD_AGREE" class="form-label"></label>
-                <select asp-for="NCOD_AGREE" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "SITUATION")" data-current-value="@Model.NCOD_AGREE">
+                <select asp-for="NCOD_AGREE" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "SITUATION")" data-current-value="@Model.NCOD_AGREE">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NCOD_AGREE" class="text-danger"></span>

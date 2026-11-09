@@ -63,6 +63,7 @@ public class TAB_WINPROController : Controller
     // GET: TAB_WINPRO/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -83,11 +84,12 @@ public class TAB_WINPROController : Controller
     // POST: TAB_WINPRO/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTAB_WINPRODto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateTAB_WINPRODto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SBRANCHT, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

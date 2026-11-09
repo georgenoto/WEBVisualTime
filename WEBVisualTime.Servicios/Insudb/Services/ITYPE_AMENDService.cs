@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ITYPE_AMENDService : IService<TYPE_AMENDDto, CreateTYPE_AMENDDto, UpdateTYPE_AMENDDto, int>
+public interface ITYPE_AMENDService : IService<TYPE_AMENDDto, CreateTYPE_AMENDDto, UpdateTYPE_AMENDDto, string>
 {
     Task<IEnumerable<TYPE_AMENDDto>> FindAsync(Expression<Func<TYPE_AMEND, bool>> predicate);
 }

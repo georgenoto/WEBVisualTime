@@ -69,6 +69,7 @@ public class BANK_AGREEController : Controller
     // GET: BANK_AGREE/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -92,11 +93,12 @@ public class BANK_AGREEController : Controller
     // POST: BANK_AGREE/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateBANK_AGREEDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateBANK_AGREEDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.STYPE_BANKAGREE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

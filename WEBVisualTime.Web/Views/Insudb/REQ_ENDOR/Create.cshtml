@@ -64,7 +64,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NUSERCODE" class="form-label"></label>
-                <select asp-for="NUSERCODE" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE">
+                <select asp-for="NUSERCODE" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NUSERCODE" class="text-danger"></span>
@@ -115,7 +115,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NUSERCODE_REJECT" class="form-label"></label>
-                <select asp-for="NUSERCODE_REJECT" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE_REJECT">
+                <select asp-for="NUSERCODE_REJECT" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE_REJECT">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NUSERCODE_REJECT" class="text-danger"></span>
@@ -132,7 +132,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NUSERCODE_REQ" class="form-label"></label>
-                <select asp-for="NUSERCODE_REQ" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE_REQ">
+                <select asp-for="NUSERCODE_REQ" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE_REQ">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NUSERCODE_REQ" class="text-danger"></span>

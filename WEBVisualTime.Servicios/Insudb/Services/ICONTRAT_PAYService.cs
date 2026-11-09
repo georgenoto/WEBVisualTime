@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICONTRAT_PAYService : IService<CONTRAT_PAYDto, CreateCONTRAT_PAYDto, UpdateCONTRAT_PAYDto, long>
+public interface ICONTRAT_PAYService : IService<CONTRAT_PAYDto, CreateCONTRAT_PAYDto, UpdateCONTRAT_PAYDto, string>
 {
     Task<IEnumerable<CONTRAT_PAYDto>> FindAsync(Expression<Func<CONTRAT_PAY, bool>> predicate);
 }

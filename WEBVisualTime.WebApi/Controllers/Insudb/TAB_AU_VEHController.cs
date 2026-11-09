@@ -16,9 +16,10 @@ public class TAB_AU_VEHController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<TAB_AU_VEHDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<TAB_AU_VEHDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
@@ -37,7 +38,7 @@ public class TAB_AU_VEHController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = result.SVEHCODE }, result);
     }
 
-    [HttpPut("{{id}}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(string id, [FromBody] UpdateTAB_AU_VEHDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
@@ -45,7 +46,7 @@ public class TAB_AU_VEHController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);

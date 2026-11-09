@@ -46,7 +46,7 @@ public class DET_COMLIFController : Controller
             this, _service, page, q, "~/Views/Insudb/DET_COMLIF/Index.cshtml");
 
     // GET: DET_COMLIF/Details/{id}
-    public async Task<IActionResult> Details(int id)
+    public async Task<IActionResult> Details(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -85,8 +85,9 @@ public class DET_COMLIFController : Controller
     }
 
     // GET: DET_COMLIF/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
+    public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -137,11 +138,12 @@ public class DET_COMLIFController : Controller
     // POST: DET_COMLIF/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateDET_COMLIFDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateDET_COMLIFDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.NCOMTABLI, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }
@@ -155,7 +157,7 @@ public class DET_COMLIFController : Controller
     }
 
     // GET: DET_COMLIF/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -165,7 +167,7 @@ public class DET_COMLIFController : Controller
     // POST: DET_COMLIF/Delete/{id}
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
+    public async Task<IActionResult> DeleteConfirmed(string id)
     {
         await _service.DeleteAsync(id);
         return RedirectToAction(nameof(Index));

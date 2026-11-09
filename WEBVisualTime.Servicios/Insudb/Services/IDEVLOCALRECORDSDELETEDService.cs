@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IDEVLOCALRECORDSDELETEDService : IService<DEVLOCALRECORDSDELETEDDto, CreateDEVLOCALRECORDSDELETEDDto, UpdateDEVLOCALRECORDSDELETEDDto, int>
+public interface IDEVLOCALRECORDSDELETEDService : IService<DEVLOCALRECORDSDELETEDDto, CreateDEVLOCALRECORDSDELETEDDto, UpdateDEVLOCALRECORDSDELETEDDto, string>
 {
     Task<IEnumerable<DEVLOCALRECORDSDELETEDDto>> FindAsync(Expression<Func<DEVLOCALRECORDSDELETED, bool>> predicate);
 }

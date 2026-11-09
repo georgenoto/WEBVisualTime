@@ -16,9 +16,10 @@ public class CLAIM_ACTIONS_SCHEController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<CLAIM_ACTIONS_SCHEDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<CLAIM_ACTIONS_SCHEDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
@@ -34,10 +35,10 @@ public class CLAIM_ACTIONS_SCHEController : ControllerBase
     public async Task<ActionResult<CLAIM_ACTIONS_SCHEDto>> Create([FromBody] CreateCLAIM_ACTIONS_SCHEDto createDto)
     {
         var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.SSCHE_CODE }, result);
+        return CreatedAtAction(nameof(GetById), new { id = WEBVisualTime.Entidades.Common.RecordKeys.Encode("CLAIM_ACTIONS_SCHE", result) }, result);
     }
 
-    [HttpPut("{{id}}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(string id, [FromBody] UpdateCLAIM_ACTIONS_SCHEDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
@@ -45,7 +46,7 @@ public class CLAIM_ACTIONS_SCHEController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);

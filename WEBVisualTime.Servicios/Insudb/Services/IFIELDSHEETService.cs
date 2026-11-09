@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IFIELDSHEETService : IService<FIELDSHEETDto, CreateFIELDSHEETDto, UpdateFIELDSHEETDto, int>
+public interface IFIELDSHEETService : IService<FIELDSHEETDto, CreateFIELDSHEETDto, UpdateFIELDSHEETDto, string>
 {
     Task<IEnumerable<FIELDSHEETDto>> FindAsync(Expression<Func<FIELDSHEET, bool>> predicate);
 }

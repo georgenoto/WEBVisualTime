@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IGROUPVARIABLESService : IService<GROUPVARIABLESDto, CreateGROUPVARIABLESDto, UpdateGROUPVARIABLESDto, int>
+public interface IGROUPVARIABLESService : IService<GROUPVARIABLESDto, CreateGROUPVARIABLESDto, UpdateGROUPVARIABLESDto, string>
 {
     Task<IEnumerable<GROUPVARIABLESDto>> FindAsync(Expression<Func<GROUPVARIABLES, bool>> predicate);
 }

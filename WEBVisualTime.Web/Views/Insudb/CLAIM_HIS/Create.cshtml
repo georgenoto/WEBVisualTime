@@ -118,7 +118,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NBORDEREAUX" class="form-label"></label>
-                <select asp-for="NBORDEREAUX" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "COLFORMREF")" data-current-value="@Model.NBORDEREAUX">
+                <select asp-for="NBORDEREAUX" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "COLFORMREF")" data-current-value="@Model.NBORDEREAUX">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NBORDEREAUX" class="text-danger"></span>

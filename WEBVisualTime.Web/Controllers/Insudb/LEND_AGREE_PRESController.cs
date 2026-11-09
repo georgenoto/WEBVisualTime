@@ -69,6 +69,7 @@ public class LEND_AGREE_PRESController : Controller
     // GET: LEND_AGREE_PRES/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -104,11 +105,12 @@ public class LEND_AGREE_PRESController : Controller
     // POST: LEND_AGREE_PRES/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateLEND_AGREE_PRESDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateLEND_AGREE_PRESDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCERTYPE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

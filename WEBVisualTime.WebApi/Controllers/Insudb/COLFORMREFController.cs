@@ -16,9 +16,10 @@ public class COLFORMREFController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<COLFORMREFDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<COLFORMREFDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
@@ -37,7 +38,7 @@ public class COLFORMREFController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = result.NBORDEREAUX }, result);
     }
 
-    [HttpPut("{{id}}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(long id, [FromBody] UpdateCOLFORMREFDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
@@ -45,7 +46,7 @@ public class COLFORMREFController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(long id)
     {
         var success = await _service.DeleteAsync(id);

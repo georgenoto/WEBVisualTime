@@ -21,7 +21,7 @@ public class CONTRNPROService : ICONTRNPROService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CONTRNPRODto?> GetByIdAsync(int id)
+    public async Task<CONTRNPRODto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CONTRNPROService : ICONTRNPROService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateCONTRNPRODto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCONTRNPRODto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CONTRNPROService : ICONTRNPROService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -21,7 +21,7 @@ public class T_MOVE_ACCService : IT_MOVE_ACCService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<T_MOVE_ACCDto?> GetByIdAsync(long id)
+    public async Task<T_MOVE_ACCDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class T_MOVE_ACCService : IT_MOVE_ACCService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateT_MOVE_ACCDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateT_MOVE_ACCDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class T_MOVE_ACCService : IT_MOVE_ACCService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

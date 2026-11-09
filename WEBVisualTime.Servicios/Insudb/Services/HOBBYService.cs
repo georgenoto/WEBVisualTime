@@ -21,7 +21,7 @@ public class HOBBYService : IHOBBYService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<HOBBYDto?> GetByIdAsync(int id)
+    public async Task<HOBBYDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class HOBBYService : IHOBBYService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateHOBBYDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateHOBBYDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class HOBBYService : IHOBBYService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

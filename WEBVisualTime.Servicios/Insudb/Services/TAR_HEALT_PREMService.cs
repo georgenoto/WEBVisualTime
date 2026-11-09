@@ -21,7 +21,7 @@ public class TAR_HEALT_PREMService : ITAR_HEALT_PREMService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<TAR_HEALT_PREMDto?> GetByIdAsync(int id)
+    public async Task<TAR_HEALT_PREMDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class TAR_HEALT_PREMService : ITAR_HEALT_PREMService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateTAR_HEALT_PREMDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateTAR_HEALT_PREMDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class TAR_HEALT_PREMService : ITAR_HEALT_PREMService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

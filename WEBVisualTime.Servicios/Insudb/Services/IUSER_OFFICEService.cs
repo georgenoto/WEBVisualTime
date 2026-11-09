@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IUSER_OFFICEService : IService<USER_OFFICEDto, CreateUSER_OFFICEDto, UpdateUSER_OFFICEDto, int>
+public interface IUSER_OFFICEService : IService<USER_OFFICEDto, CreateUSER_OFFICEDto, UpdateUSER_OFFICEDto, string>
 {
     Task<IEnumerable<USER_OFFICEDto>> FindAsync(Expression<Func<USER_OFFICE, bool>> predicate);
 }

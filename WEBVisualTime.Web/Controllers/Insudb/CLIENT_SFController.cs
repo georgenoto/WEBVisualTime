@@ -57,6 +57,7 @@ public class CLIENT_SFController : Controller
     // GET: CLIENT_SF/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -91,11 +92,12 @@ public class CLIENT_SFController : Controller
     // POST: CLIENT_SF/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateCLIENT_SFDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateCLIENT_SFDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCLIENT, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

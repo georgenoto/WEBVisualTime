@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ITAB_MATRIX_RHService : IService<TAB_MATRIX_RHDto, CreateTAB_MATRIX_RHDto, UpdateTAB_MATRIX_RHDto, int>
+public interface ITAB_MATRIX_RHService : IService<TAB_MATRIX_RHDto, CreateTAB_MATRIX_RHDto, UpdateTAB_MATRIX_RHDto, string>
 {
     Task<IEnumerable<TAB_MATRIX_RHDto>> FindAsync(Expression<Func<TAB_MATRIX_RH, bool>> predicate);
 }

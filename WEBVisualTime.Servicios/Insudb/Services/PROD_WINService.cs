@@ -21,7 +21,7 @@ public class PROD_WINService : IPROD_WINService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<PROD_WINDto?> GetByIdAsync(int id)
+    public async Task<PROD_WINDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class PROD_WINService : IPROD_WINService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdatePROD_WINDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdatePROD_WINDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class PROD_WINService : IPROD_WINService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IODWA_HELP_TEXTService : IService<ODWA_HELP_TEXTDto, CreateODWA_HELP_TEXTDto, UpdateODWA_HELP_TEXTDto, long>
+public interface IODWA_HELP_TEXTService : IService<ODWA_HELP_TEXTDto, CreateODWA_HELP_TEXTDto, UpdateODWA_HELP_TEXTDto, string>
 {
     Task<IEnumerable<ODWA_HELP_TEXTDto>> FindAsync(Expression<Func<ODWA_HELP_TEXT, bool>> predicate);
 }

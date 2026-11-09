@@ -21,7 +21,7 @@ public class CLAIM_SETT_ORDERService : ICLAIM_SETT_ORDERService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CLAIM_SETT_ORDERDto?> GetByIdAsync(long id)
+    public async Task<CLAIM_SETT_ORDERDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CLAIM_SETT_ORDERService : ICLAIM_SETT_ORDERService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateCLAIM_SETT_ORDERDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCLAIM_SETT_ORDERDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CLAIM_SETT_ORDERService : ICLAIM_SETT_ORDERService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -51,6 +51,7 @@ public class T_PARAM_INTERFACEController : Controller
     // GET: T_PARAM_INTERFACE/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -68,11 +69,12 @@ public class T_PARAM_INTERFACEController : Controller
     // POST: T_PARAM_INTERFACE/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateT_PARAM_INTERFACEDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateT_PARAM_INTERFACEDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SKEY, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

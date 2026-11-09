@@ -21,7 +21,7 @@ public class INTERMED_HISService : IINTERMED_HISService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<INTERMED_HISDto?> GetByIdAsync(long id)
+    public async Task<INTERMED_HISDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class INTERMED_HISService : IINTERMED_HISService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateINTERMED_HISDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateINTERMED_HISDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class INTERMED_HISService : IINTERMED_HISService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

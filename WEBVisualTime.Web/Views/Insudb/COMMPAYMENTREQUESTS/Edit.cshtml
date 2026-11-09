@@ -25,7 +25,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="SCLIENT_HOLDER" class="form-label"></label>
-                <select asp-for="SCLIENT_HOLDER" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "CLIENT")" data-current-value="@Model.SCLIENT_HOLDER">
+                <select asp-for="SCLIENT_HOLDER" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "CLIENT")" data-current-value="@Model.SCLIENT_HOLDER">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="SCLIENT_HOLDER" class="text-danger"></span>
@@ -37,7 +37,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="SCLIENT_INSURED" class="form-label"></label>
-                <select asp-for="SCLIENT_INSURED" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "CLIENT")" data-current-value="@Model.SCLIENT_INSURED">
+                <select asp-for="SCLIENT_INSURED" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "CLIENT")" data-current-value="@Model.SCLIENT_INSURED">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="SCLIENT_INSURED" class="text-danger"></span>
@@ -49,7 +49,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="SCLIENT_AFFECT" class="form-label"></label>
-                <select asp-for="SCLIENT_AFFECT" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "CLIENT")" data-current-value="@Model.SCLIENT_AFFECT">
+                <select asp-for="SCLIENT_AFFECT" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "CLIENT")" data-current-value="@Model.SCLIENT_AFFECT">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="SCLIENT_AFFECT" class="text-danger"></span>
@@ -83,7 +83,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NIDPRECLAIM" class="form-label"></label>
-                <select asp-for="NIDPRECLAIM" class="form-select cascade-select" data-cascade-parent="NUSERCODE_RESPONSIBLE" data-cascade-url="@Url.Action("GetByNUSERCODE", "PRECLAIM")" data-current-value="@Model.NIDPRECLAIM">
+                <select asp-for="NIDPRECLAIM" class="form-select cascade-select" data-cascade-parent="NUSERCODE_RESPONSIBLE" data-cascade-parameter="NUSERCODE" data-cascade-url="@Url.Action("GetByNUSERCODE", "PRECLAIM")" data-current-value="@Model.NIDPRECLAIM">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NIDPRECLAIM" class="text-danger"></span>
@@ -97,7 +97,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NCLAIM" class="form-label"></label>
-                <select asp-for="NCLAIM" class="form-select cascade-select" data-cascade-parent="SCLIENT_HOLDER" data-cascade-url="@Url.Action("GetBySCLIENT", "CLAIM")" data-current-value="@Model.NCLAIM">
+                <select asp-for="NCLAIM" class="form-select cascade-select" data-cascade-parent="SCLIENT_HOLDER" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "CLAIM")" data-current-value="@Model.NCLAIM">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NCLAIM" class="text-danger"></span>
@@ -141,7 +141,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NUSERCODE_RESPONSIBLE" class="form-label"></label>
-                <select asp-for="NUSERCODE_RESPONSIBLE" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE_RESPONSIBLE">
+                <select asp-for="NUSERCODE_RESPONSIBLE" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE_RESPONSIBLE">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NUSERCODE_RESPONSIBLE" class="text-danger"></span>
@@ -237,14 +237,14 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NUSER_AMEND" class="form-label"></label>
-                <select asp-for="NUSER_AMEND" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSER_AMEND">
+                <select asp-for="NUSER_AMEND" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSER_AMEND">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NUSER_AMEND" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="NUSER_DERIVEDBY" class="form-label"></label>
-                <select asp-for="NUSER_DERIVEDBY" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSER_DERIVEDBY">
+                <select asp-for="NUSER_DERIVEDBY" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSER_DERIVEDBY">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NUSER_DERIVEDBY" class="text-danger"></span>
@@ -256,7 +256,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NUSERCODE" class="form-label"></label>
-                <select asp-for="NUSERCODE" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE">
+                <select asp-for="NUSERCODE" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NUSERCODE" class="text-danger"></span>

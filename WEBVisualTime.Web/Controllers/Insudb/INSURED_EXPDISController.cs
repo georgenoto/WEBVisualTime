@@ -69,6 +69,7 @@ public class INSURED_EXPDISController : Controller
     // GET: INSURED_EXPDIS/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -114,11 +115,12 @@ public class INSURED_EXPDISController : Controller
     // POST: INSURED_EXPDIS/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateINSURED_EXPDISDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateINSURED_EXPDISDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCERTYPE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

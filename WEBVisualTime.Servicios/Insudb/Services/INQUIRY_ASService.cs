@@ -21,7 +21,7 @@ public class INQUIRY_ASService : IINQUIRY_ASService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<INQUIRY_ASDto?> GetByIdAsync(int id)
+    public async Task<INQUIRY_ASDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class INQUIRY_ASService : IINQUIRY_ASService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateINQUIRY_ASDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateINQUIRY_ASDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class INQUIRY_ASService : IINQUIRY_ASService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -63,6 +63,7 @@ public class BATCH_PARAM_VALUEController : Controller
     // GET: BATCH_PARAM_VALUE/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -86,11 +87,12 @@ public class BATCH_PARAM_VALUEController : Controller
     // POST: BATCH_PARAM_VALUE/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateBATCH_PARAM_VALUEDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateBATCH_PARAM_VALUEDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SKEY, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

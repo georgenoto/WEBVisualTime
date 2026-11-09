@@ -34,7 +34,7 @@ public class SELLCHANNEL_PRODController : Controller
             this, _service, page, q, "~/Views/Insudb/SELLCHANNEL_PROD/Index.cshtml");
 
     // GET: SELLCHANNEL_PROD/Details/{id}
-    public async Task<IActionResult> Details(DateTime id)
+    public async Task<IActionResult> Details(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -67,8 +67,9 @@ public class SELLCHANNEL_PRODController : Controller
     }
 
     // GET: SELLCHANNEL_PROD/Edit/{id}
-    public async Task<IActionResult> Edit(DateTime id)
+    public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -91,11 +92,12 @@ public class SELLCHANNEL_PRODController : Controller
     // POST: SELLCHANNEL_PROD/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateSELLCHANNEL_PRODDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateSELLCHANNEL_PRODDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.DEFFECDATE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }
@@ -106,7 +108,7 @@ public class SELLCHANNEL_PRODController : Controller
     }
 
     // GET: SELLCHANNEL_PROD/Delete/{id}
-    public async Task<IActionResult> Delete(DateTime id)
+    public async Task<IActionResult> Delete(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -116,7 +118,7 @@ public class SELLCHANNEL_PRODController : Controller
     // POST: SELLCHANNEL_PROD/Delete/{id}
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(DateTime id)
+    public async Task<IActionResult> DeleteConfirmed(string id)
     {
         await _service.DeleteAsync(id);
         return RedirectToAction(nameof(Index));

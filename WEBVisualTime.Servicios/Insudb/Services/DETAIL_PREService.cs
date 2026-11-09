@@ -21,7 +21,7 @@ public class DETAIL_PREService : IDETAIL_PREService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<DETAIL_PREDto?> GetByIdAsync(int id)
+    public async Task<DETAIL_PREDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class DETAIL_PREService : IDETAIL_PREService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateDETAIL_PREDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateDETAIL_PREDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class DETAIL_PREService : IDETAIL_PREService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

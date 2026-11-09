@@ -13,7 +13,7 @@
             <input type="hidden" asp-for="NID" />
             <div class="mb-3">
                 <label asp-for="SASCII_NAME" class="form-label"></label>
-                <select asp-for="SASCII_NAME" class="form-select cascade-select" data-cascade-parent="NBANK_CODE" data-cascade-url="@Url.Action("GetByNBANK_CODE", "ASCII_I_HEAD")" data-current-value="@Model.SASCII_NAME">
+                <select asp-for="SASCII_NAME" class="form-select cascade-select" data-cascade-parent="NBANK_CODE" data-cascade-parameter="NBANK_CODE" data-cascade-url="@Url.Action("GetByNBANK_CODE", "ASCII_I_HEAD")" data-current-value="@Model.SASCII_NAME">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="SASCII_NAME" class="text-danger"></span>

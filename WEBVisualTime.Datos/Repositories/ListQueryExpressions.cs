@@ -14,7 +14,7 @@ internal static class ListQueryExpressions
         Expression<Func<T>> expression = () => value;
         return expression.Body;
     }
-    private static Expression Parameter(Type type, object value)
+    internal static Expression Parameter(Type type, object value)
         => (Expression)CaptureMethod.MakeGenericMethod(type).Invoke(null, new[] { value })!;
 
     public static Expression<Func<T, bool>>? Search<T>(IEntityType entity, string? search)

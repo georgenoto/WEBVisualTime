@@ -63,6 +63,7 @@ public class LEVELSController : Controller
     // GET: LEVELS/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -87,11 +88,12 @@ public class LEVELSController : Controller
     // POST: LEVELS/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateLEVELSDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateLEVELSDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SSCHE_CODE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

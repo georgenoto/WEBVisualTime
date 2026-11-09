@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICLAIMBENEFService : IService<CLAIMBENEFDto, CreateCLAIMBENEFDto, UpdateCLAIMBENEFDto, long>
+public interface ICLAIMBENEFService : IService<CLAIMBENEFDto, CreateCLAIMBENEFDto, UpdateCLAIMBENEFDto, string>
 {
     Task<IEnumerable<CLAIMBENEFDto>> FindAsync(Expression<Func<CLAIMBENEF, bool>> predicate);
 }

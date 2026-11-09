@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICONTR_CESCOVService : IService<CONTR_CESCOVDto, CreateCONTR_CESCOVDto, UpdateCONTR_CESCOVDto, int>
+public interface ICONTR_CESCOVService : IService<CONTR_CESCOVDto, CreateCONTR_CESCOVDto, UpdateCONTR_CESCOVDto, string>
 {
     Task<IEnumerable<CONTR_CESCOVDto>> FindAsync(Expression<Func<CONTR_CESCOV, bool>> predicate);
 }

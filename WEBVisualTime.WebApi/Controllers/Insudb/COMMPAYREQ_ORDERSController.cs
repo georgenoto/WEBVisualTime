@@ -16,14 +16,15 @@ public class COMMPAYREQ_ORDERSController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<COMMPAYREQ_ORDERSDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<COMMPAYREQ_ORDERSDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
 [HttpGet("{id}")]
-    public async Task<ActionResult<COMMPAYREQ_ORDERSDto>> GetById(long id)
+    public async Task<ActionResult<COMMPAYREQ_ORDERSDto>> GetById(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -34,19 +35,19 @@ public class COMMPAYREQ_ORDERSController : ControllerBase
     public async Task<ActionResult<COMMPAYREQ_ORDERSDto>> Create([FromBody] CreateCOMMPAYREQ_ORDERSDto createDto)
     {
         var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.NID_COMMPAYREQ }, result);
+        return CreatedAtAction(nameof(GetById), new { id = WEBVisualTime.Entidades.Common.RecordKeys.Encode("COMMPAYREQ_ORDERS", result) }, result);
     }
 
-    [HttpPut("{{id}}")]
-    public async Task<IActionResult> Update(long id, [FromBody] UpdateCOMMPAYREQ_ORDERSDto updateDto)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(string id, [FromBody] UpdateCOMMPAYREQ_ORDERSDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
         if (!success) return NotFound();
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
-    public async Task<IActionResult> Delete(long id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);
         if (!success) return NotFound();

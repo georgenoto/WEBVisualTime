@@ -21,7 +21,7 @@ public class TAB_PROV_GROUPService : ITAB_PROV_GROUPService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<TAB_PROV_GROUPDto?> GetByIdAsync(int id)
+    public async Task<TAB_PROV_GROUPDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class TAB_PROV_GROUPService : ITAB_PROV_GROUPService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateTAB_PROV_GROUPDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateTAB_PROV_GROUPDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class TAB_PROV_GROUPService : ITAB_PROV_GROUPService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -51,6 +51,7 @@ public class MASS_PROC_SPONSORController : Controller
     // GET: MASS_PROC_SPONSOR/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -98,11 +99,12 @@ public class MASS_PROC_SPONSORController : Controller
     // POST: MASS_PROC_SPONSOR/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateMASS_PROC_SPONSORDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateMASS_PROC_SPONSORDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SKEY, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

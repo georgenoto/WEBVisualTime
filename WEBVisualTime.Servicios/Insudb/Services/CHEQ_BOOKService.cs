@@ -21,7 +21,7 @@ public class CHEQ_BOOKService : ICHEQ_BOOKService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CHEQ_BOOKDto?> GetByIdAsync(int id)
+    public async Task<CHEQ_BOOKDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CHEQ_BOOKService : ICHEQ_BOOKService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateCHEQ_BOOKDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCHEQ_BOOKDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CHEQ_BOOKService : ICHEQ_BOOKService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

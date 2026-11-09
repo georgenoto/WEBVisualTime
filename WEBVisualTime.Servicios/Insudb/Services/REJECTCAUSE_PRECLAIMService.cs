@@ -21,7 +21,7 @@ public class REJECTCAUSE_PRECLAIMService : IREJECTCAUSE_PRECLAIMService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<REJECTCAUSE_PRECLAIMDto?> GetByIdAsync(long id)
+    public async Task<REJECTCAUSE_PRECLAIMDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class REJECTCAUSE_PRECLAIMService : IREJECTCAUSE_PRECLAIMService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateREJECTCAUSE_PRECLAIMDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateREJECTCAUSE_PRECLAIMDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class REJECTCAUSE_PRECLAIMService : IREJECTCAUSE_PRECLAIMService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

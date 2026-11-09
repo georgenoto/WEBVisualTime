@@ -21,7 +21,7 @@ public class QC_PARAMService : IQC_PARAMService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<QC_PARAMDto?> GetByIdAsync(int id)
+    public async Task<QC_PARAMDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class QC_PARAMService : IQC_PARAMService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateQC_PARAMDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateQC_PARAMDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class QC_PARAMService : IQC_PARAMService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

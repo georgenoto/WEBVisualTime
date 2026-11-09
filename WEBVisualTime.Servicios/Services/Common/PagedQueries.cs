@@ -11,6 +11,11 @@ public static class PagedQueries
     {
         pageSize = ListingPolicy.NormalizePageSize(pageSize);
         var result = await repository.GetListPageAsync(page, search, cancellationToken, pageSize);
-        return new(result.Items.Select(map).ToList(), result.TotalCount, result.Page, pageSize);
+        var items = result.Items.Select(map).ToList();
+        return new(items, result.TotalCount, result.Page, pageSize)
+        {
+            RecordKeys = RecordKeys.IsComposite(typeof(TEntity).Name)
+                ? items.Select(item => RecordKeys.Encode(typeof(TEntity).Name, item)).ToArray() : null
+        };
     }
 }

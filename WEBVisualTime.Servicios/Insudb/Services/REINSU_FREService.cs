@@ -21,7 +21,7 @@ public class REINSU_FREService : IREINSU_FREService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<REINSU_FREDto?> GetByIdAsync(DateTime id)
+    public async Task<REINSU_FREDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class REINSU_FREService : IREINSU_FREService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(DateTime id, UpdateREINSU_FREDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateREINSU_FREDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class REINSU_FREService : IREINSU_FREService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(DateTime id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

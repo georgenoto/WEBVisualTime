@@ -21,7 +21,7 @@ public class T_CONCEPTSService : IT_CONCEPTSService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<T_CONCEPTSDto?> GetByIdAsync(long id)
+    public async Task<T_CONCEPTSDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class T_CONCEPTSService : IT_CONCEPTSService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateT_CONCEPTSDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateT_CONCEPTSDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class T_CONCEPTSService : IT_CONCEPTSService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

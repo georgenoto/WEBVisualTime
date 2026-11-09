@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ISEQFOLDERService : IService<SEQFOLDERDto, CreateSEQFOLDERDto, UpdateSEQFOLDERDto, int>
+public interface ISEQFOLDERService : IService<SEQFOLDERDto, CreateSEQFOLDERDto, UpdateSEQFOLDERDto, string>
 {
     Task<IEnumerable<SEQFOLDERDto>> FindAsync(Expression<Func<SEQFOLDER, bool>> predicate);
 }

@@ -21,7 +21,7 @@ public class TABLESHEETService : ITABLESHEETService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<TABLESHEETDto?> GetByIdAsync(int id)
+    public async Task<TABLESHEETDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class TABLESHEETService : ITABLESHEETService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateTABLESHEETDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateTABLESHEETDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class TABLESHEETService : ITABLESHEETService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ITAB_PROV_BKACCOUNTService : IService<TAB_PROV_BKACCOUNTDto, CreateTAB_PROV_BKACCOUNTDto, UpdateTAB_PROV_BKACCOUNTDto, int>
+public interface ITAB_PROV_BKACCOUNTService : IService<TAB_PROV_BKACCOUNTDto, CreateTAB_PROV_BKACCOUNTDto, UpdateTAB_PROV_BKACCOUNTDto, string>
 {
     Task<IEnumerable<TAB_PROV_BKACCOUNTDto>> FindAsync(Expression<Func<TAB_PROV_BKACCOUNT, bool>> predicate);
 }

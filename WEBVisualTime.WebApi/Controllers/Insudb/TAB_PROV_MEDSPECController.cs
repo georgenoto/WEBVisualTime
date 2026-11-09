@@ -16,14 +16,15 @@ public class TAB_PROV_MEDSPECController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<TAB_PROV_MEDSPECDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<TAB_PROV_MEDSPECDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
 [HttpGet("{id}")]
-    public async Task<ActionResult<TAB_PROV_MEDSPECDto>> GetById(int id)
+    public async Task<ActionResult<TAB_PROV_MEDSPECDto>> GetById(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -34,19 +35,19 @@ public class TAB_PROV_MEDSPECController : ControllerBase
     public async Task<ActionResult<TAB_PROV_MEDSPECDto>> Create([FromBody] CreateTAB_PROV_MEDSPECDto createDto)
     {
         var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.NPROVIDER }, result);
+        return CreatedAtAction(nameof(GetById), new { id = WEBVisualTime.Entidades.Common.RecordKeys.Encode("TAB_PROV_MEDSPEC", result) }, result);
     }
 
-    [HttpPut("{{id}}")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateTAB_PROV_MEDSPECDto updateDto)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(string id, [FromBody] UpdateTAB_PROV_MEDSPECDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
         if (!success) return NotFound();
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
-    public async Task<IActionResult> Delete(int id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);
         if (!success) return NotFound();

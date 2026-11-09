@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IROLDOCREQService : IService<ROLDOCREQDto, CreateROLDOCREQDto, UpdateROLDOCREQDto, int>
+public interface IROLDOCREQService : IService<ROLDOCREQDto, CreateROLDOCREQDto, UpdateROLDOCREQDto, string>
 {
     Task<IEnumerable<ROLDOCREQDto>> FindAsync(Expression<Func<ROLDOCREQ, bool>> predicate);
 }

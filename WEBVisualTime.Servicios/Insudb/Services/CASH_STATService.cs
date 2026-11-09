@@ -21,7 +21,7 @@ public class CASH_STATService : ICASH_STATService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CASH_STATDto?> GetByIdAsync(int id)
+    public async Task<CASH_STATDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CASH_STATService : ICASH_STATService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateCASH_STATDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCASH_STATDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CASH_STATService : ICASH_STATService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

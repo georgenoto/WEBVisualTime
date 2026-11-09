@@ -21,7 +21,7 @@ public class DRAFT_HISTService : IDRAFT_HISTService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<DRAFT_HISTDto?> GetByIdAsync(long id)
+    public async Task<DRAFT_HISTDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class DRAFT_HISTService : IDRAFT_HISTService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateDRAFT_HISTDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateDRAFT_HISTDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class DRAFT_HISTService : IDRAFT_HISTService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

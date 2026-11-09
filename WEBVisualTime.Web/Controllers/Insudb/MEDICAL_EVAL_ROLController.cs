@@ -63,6 +63,7 @@ public class MEDICAL_EVAL_ROLController : Controller
     // GET: MEDICAL_EVAL_ROL/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -91,11 +92,12 @@ public class MEDICAL_EVAL_ROLController : Controller
     // POST: MEDICAL_EVAL_ROL/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateMEDICAL_EVAL_ROLDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateMEDICAL_EVAL_ROLDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCERTYPE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

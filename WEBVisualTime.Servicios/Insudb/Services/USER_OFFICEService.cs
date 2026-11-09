@@ -21,7 +21,7 @@ public class USER_OFFICEService : IUSER_OFFICEService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<USER_OFFICEDto?> GetByIdAsync(int id)
+    public async Task<USER_OFFICEDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class USER_OFFICEService : IUSER_OFFICEService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateUSER_OFFICEDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateUSER_OFFICEDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class USER_OFFICEService : IUSER_OFFICEService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

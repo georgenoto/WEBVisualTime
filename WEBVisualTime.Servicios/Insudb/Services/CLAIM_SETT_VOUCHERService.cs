@@ -21,7 +21,7 @@ public class CLAIM_SETT_VOUCHERService : ICLAIM_SETT_VOUCHERService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CLAIM_SETT_VOUCHERDto?> GetByIdAsync(long id)
+    public async Task<CLAIM_SETT_VOUCHERDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CLAIM_SETT_VOUCHERService : ICLAIM_SETT_VOUCHERService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateCLAIM_SETT_VOUCHERDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCLAIM_SETT_VOUCHERDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CLAIM_SETT_VOUCHERService : ICLAIM_SETT_VOUCHERService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IMASTERCL_HISService : IService<MASTERCL_HISDto, CreateMASTERCL_HISDto, UpdateMASTERCL_HISDto, long>
+public interface IMASTERCL_HISService : IService<MASTERCL_HISDto, CreateMASTERCL_HISDto, UpdateMASTERCL_HISDto, string>
 {
     Task<IEnumerable<MASTERCL_HISDto>> FindAsync(Expression<Func<MASTERCL_HIS, bool>> predicate);
 }

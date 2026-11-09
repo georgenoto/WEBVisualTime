@@ -21,7 +21,7 @@ public class LEND_AGREE_PRODService : ILEND_AGREE_PRODService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<LEND_AGREE_PRODDto?> GetByIdAsync(int id)
+    public async Task<LEND_AGREE_PRODDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class LEND_AGREE_PRODService : ILEND_AGREE_PRODService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateLEND_AGREE_PRODDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateLEND_AGREE_PRODDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class LEND_AGREE_PRODService : ILEND_AGREE_PRODService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

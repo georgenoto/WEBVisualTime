@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IINQUIRY_ASService : IService<INQUIRY_ASDto, CreateINQUIRY_ASDto, UpdateINQUIRY_ASDto, int>
+public interface IINQUIRY_ASService : IService<INQUIRY_ASDto, CreateINQUIRY_ASDto, UpdateINQUIRY_ASDto, string>
 {
     Task<IEnumerable<INQUIRY_ASDto>> FindAsync(Expression<Func<INQUIRY_AS, bool>> predicate);
 }

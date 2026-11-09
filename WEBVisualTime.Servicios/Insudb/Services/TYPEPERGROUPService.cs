@@ -21,7 +21,7 @@ public class TYPEPERGROUPService : ITYPEPERGROUPService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<TYPEPERGROUPDto?> GetByIdAsync(int id)
+    public async Task<TYPEPERGROUPDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class TYPEPERGROUPService : ITYPEPERGROUPService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateTYPEPERGROUPDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateTYPEPERGROUPDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class TYPEPERGROUPService : ITYPEPERGROUPService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

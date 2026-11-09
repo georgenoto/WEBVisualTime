@@ -22,7 +22,7 @@ public class BROKER_DETController : Controller
             this, _service, page, q, "~/Views/Insudb/BROKER_DET/Index.cshtml");
 
     // GET: BROKER_DET/Details/{id}
-    public async Task<IActionResult> Details(int id)
+    public async Task<IActionResult> Details(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -49,8 +49,9 @@ public class BROKER_DETController : Controller
     }
 
     // GET: BROKER_DET/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
+    public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -70,11 +71,12 @@ public class BROKER_DETController : Controller
     // POST: BROKER_DET/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateBROKER_DETDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateBROKER_DETDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.NCOMPANY_BR, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }
@@ -82,7 +84,7 @@ public class BROKER_DETController : Controller
     }
 
     // GET: BROKER_DET/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -92,7 +94,7 @@ public class BROKER_DETController : Controller
     // POST: BROKER_DET/Delete/{id}
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
+    public async Task<IActionResult> DeleteConfirmed(string id)
     {
         await _service.DeleteAsync(id);
         return RedirectToAction(nameof(Index));

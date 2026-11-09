@@ -1,0 +1,46 @@
+CONTRATO WEBAPI - ACTUALIZACION DE ARQUITECTURA
+
+GET /api/{modulo}?page=1&pageSize=20&q=criterio
+- Los 1017 listados usan paginacion en el servidor.
+- pageSize predeterminado: 20. Valores admitidos: 1 a 100.
+- Valores de pageSize invalidos vuelven al predeterminado 20.
+- Respuesta JSON: items, totalCount, page, pageSize, totalPages.
+- Para entidades con llave compuesta, recordKeys contiene un identificador
+  completo por elemento, en el mismo orden que items.
+- Cambio de contrato: GET antes devolvia un arreglo completo. Los clientes
+  deben leer items y recorrer paginas. No hay endpoint de descarga ilimitada.
+
+IDENTIFICACION DE REGISTROS
+- Llave simple: se conserva el identificador numerico o texto existente.
+- Llave compuesta: usar sin modificar el elemento correspondiente de recordKeys
+  en GET/PUT/DELETE /api/{modulo}/{id}.
+- Los identificadores compuestos empiezan por ~ y contienen los valores completos
+  en JSON codificado con base64url, incluyendo la entidad y las fechas precisas.
+- Son identificadores publicos de registros; no son credenciales ni estan cifrados.
+- No construirlos a partir de la primera columna; esta ya no identifica la fila.
+- GET por llave inexistente: 404. Llave compuesta incompleta o invalida: 400.
+- POST devuelve 201 y Location con la identificacion completa del registro creado.
+- TABLE8006/TABLE8007 conservan listado de solo lectura y bloqueo de mutaciones.
+
+EJEMPLO DE CLIENTE JAVASCRIPT
+const response = await fetch('/api/ADDRESS?page=1&pageSize=20');
+if (!response.ok) throw new Error('No fue posible consultar las direcciones');
+const page = await response.json();
+const record = page.items[0];
+const id = page.recordKeys[0];
+const detailResponse = await fetch('/api/ADDRESS/' + encodeURIComponent(id));
+
+ERRORES
+- Los fallos no controlados de API usan ProblemDetails con status, title,
+  instance y traceId; las validaciones del modelo usan ValidationProblemDetails.
+- 400: llave o entrada invalida; 404: registro inexistente.
+- 409: conflicto al guardar o modulo de solo lectura.
+- 503: fallo de consulta a la base de datos o tiempo agotado.
+- 500: fallo inesperado; comunicar traceId a soporte.
+- Los detalles internos se registran en el servidor y no se devuelven al cliente.
+
+AUTENTICACION
+Activacion pospuesta por decision del usuario. Las opciones futuras son usuarios
+propios y Windows/Active Directory. Esta entrega no activa proteccion de acceso.
+Antes de conectar clientes externos debe completarse esa etapa y definirse el
+contrato de credenciales/tokens y permisos.

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IPART_CONTRService : IService<PART_CONTRDto, CreatePART_CONTRDto, UpdatePART_CONTRDto, int>
+public interface IPART_CONTRService : IService<PART_CONTRDto, CreatePART_CONTRDto, UpdatePART_CONTRDto, string>
 {
     Task<IEnumerable<PART_CONTRDto>> FindAsync(Expression<Func<PART_CONTR, bool>> predicate);
 }

@@ -72,7 +72,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NUSERCODE" class="form-label"></label>
-                <select asp-for="NUSERCODE" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE">
+                <select asp-for="NUSERCODE" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "USERS")" data-current-value="@Model.NUSERCODE">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NUSERCODE" class="text-danger"></span>
@@ -165,7 +165,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NMASTERORDER" class="form-label"></label>
-                <select asp-for="NMASTERORDER" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "MASTERCL_ORDER")" data-current-value="@Model.NMASTERORDER">
+                <select asp-for="NMASTERORDER" class="form-select cascade-select" data-cascade-parent="NOFFICE" data-cascade-parameter="NOFFICE" data-cascade-url="@Url.Action("GetByNOFFICE", "MASTERCL_ORDER")" data-current-value="@Model.NMASTERORDER">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NMASTERORDER" class="text-danger"></span>

@@ -62,7 +62,9 @@ else
                         @foreach (var column in table.Columns) { <td>@Model.Value(row, column)</td> }
                         @if (table.ReadOnlyReason is null)
                         {
-                            var key = Model.Value(row, table.Key);
+                            var key = WEBVisualTime.Entidades.Common.RecordKeys.IsComposite(table.Name)
+                                ? WEBVisualTime.Entidades.Common.RecordKeys.Encode(table.Name, row)
+                                : Model.Value(row, table.Key);
                             <td class="text-nowrap">
                                 <a asp-action="Edit" asp-route-id="@key" class="btn btn-sm btn-warning">Editar</a>
                                 <a asp-action="Details" asp-route-id="@key" class="btn btn-sm btn-info">Detalles</a>

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICL_M_COVERService : IService<CL_M_COVERDto, CreateCL_M_COVERDto, UpdateCL_M_COVERDto, long>
+public interface ICL_M_COVERService : IService<CL_M_COVERDto, CreateCL_M_COVERDto, UpdateCL_M_COVERDto, string>
 {
     Task<IEnumerable<CL_M_COVERDto>> FindAsync(Expression<Func<CL_M_COVER, bool>> predicate);
 }

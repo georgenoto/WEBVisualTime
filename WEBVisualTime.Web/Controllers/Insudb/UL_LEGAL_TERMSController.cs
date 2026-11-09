@@ -22,7 +22,7 @@ public class UL_LEGAL_TERMSController : Controller
             this, _service, page, q, "~/Views/Insudb/UL_LEGAL_TERMS/Index.cshtml");
 
     // GET: UL_LEGAL_TERMS/Details/{id}
-    public async Task<IActionResult> Details(int id)
+    public async Task<IActionResult> Details(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -49,8 +49,9 @@ public class UL_LEGAL_TERMSController : Controller
     }
 
     // GET: UL_LEGAL_TERMS/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
+    public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -71,11 +72,12 @@ public class UL_LEGAL_TERMSController : Controller
     // POST: UL_LEGAL_TERMS/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateUL_LEGAL_TERMSDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateUL_LEGAL_TERMSDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.NTYPE_SAAPV, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }
@@ -83,7 +85,7 @@ public class UL_LEGAL_TERMSController : Controller
     }
 
     // GET: UL_LEGAL_TERMS/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -93,7 +95,7 @@ public class UL_LEGAL_TERMSController : Controller
     // POST: UL_LEGAL_TERMS/Delete/{id}
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
+    public async Task<IActionResult> DeleteConfirmed(string id)
     {
         await _service.DeleteAsync(id);
         return RedirectToAction(nameof(Index));

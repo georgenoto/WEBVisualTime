@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ITAB_COMPROService : IService<TAB_COMPRODto, CreateTAB_COMPRODto, UpdateTAB_COMPRODto, int>
+public interface ITAB_COMPROService : IService<TAB_COMPRODto, CreateTAB_COMPRODto, UpdateTAB_COMPRODto, string>
 {
     Task<IEnumerable<TAB_COMPRODto>> FindAsync(Expression<Func<TAB_COMPRO, bool>> predicate);
 }

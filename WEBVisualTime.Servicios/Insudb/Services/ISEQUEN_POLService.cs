@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ISEQUEN_POLService : IService<SEQUEN_POLDto, CreateSEQUEN_POLDto, UpdateSEQUEN_POLDto, int>
+public interface ISEQUEN_POLService : IService<SEQUEN_POLDto, CreateSEQUEN_POLDto, UpdateSEQUEN_POLDto, string>
 {
     Task<IEnumerable<SEQUEN_POLDto>> FindAsync(Expression<Func<SEQUEN_POL, bool>> predicate);
 }

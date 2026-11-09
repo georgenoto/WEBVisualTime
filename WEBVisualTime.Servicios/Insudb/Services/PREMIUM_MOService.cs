@@ -21,7 +21,7 @@ public class PREMIUM_MOService : IPREMIUM_MOService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<PREMIUM_MODto?> GetByIdAsync(long id)
+    public async Task<PREMIUM_MODto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class PREMIUM_MOService : IPREMIUM_MOService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdatePREMIUM_MODto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdatePREMIUM_MODto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class PREMIUM_MOService : IPREMIUM_MOService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

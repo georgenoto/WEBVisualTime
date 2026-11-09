@@ -51,6 +51,7 @@ public class RM_REG_TYPESController : Controller
     // GET: RM_REG_TYPES/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -72,11 +73,12 @@ public class RM_REG_TYPESController : Controller
     // POST: RM_REG_TYPES/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateRM_REG_TYPESDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateRM_REG_TYPESDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.PRODUCT, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

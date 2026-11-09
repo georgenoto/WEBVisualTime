@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IRELCONCEPTSService : IService<RELCONCEPTSDto, CreateRELCONCEPTSDto, UpdateRELCONCEPTSDto, long>
+public interface IRELCONCEPTSService : IService<RELCONCEPTSDto, CreateRELCONCEPTSDto, UpdateRELCONCEPTSDto, string>
 {
     Task<IEnumerable<RELCONCEPTSDto>> FindAsync(Expression<Func<RELCONCEPTS, bool>> predicate);
 }

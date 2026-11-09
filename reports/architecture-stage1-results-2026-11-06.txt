@@ -1,0 +1,38 @@
+RESULTADO DE LA PRIMERA ETAPA - MVC Y WEBAPI
+
+Implementado
+- 668 rutas PUT/DELETE corregidas en 334 controladores API especializados.
+- 1017 listados API paginados, con el mismo predeterminado 20 y limite 100 de MVC.
+- 267 entidades con identificacion compuesta completa: servicio, controlador,
+  repositorio, enlaces, formulario de edicion y confirmacion de eliminacion.
+- Los formularios conservan la llave original en id; no la reconstruyen con
+  campos editables o fechas que el navegador podria reformatear.
+- GET por llave usa todos los componentes y SingleOrDefault; no toma la primera
+  coincidencia de la primera columna. Llave incompleta devuelve 400.
+- Respuestas de creacion API contienen Location con el identificador compuesto.
+- MVC muestra errores de operaciones; API devuelve ProblemDetails con traceId.
+- Las entidades ya cargadas con seguimiento conservan actualizaciones por columna;
+  no se invoca DbSet.Update para marcar indiscriminadamente toda la entidad.
+- Un solo registro de 1017 servicios compartido por ambos hosts.
+- Cascadas: parametro de servidor correcto, texto seguro, cancelacion de respuestas
+  antiguas y mensaje de error. Mapeo explicito incorporado en 96 vistas.
+- Contrato API documentado en webapi-contract-2026-11-06.txt.
+
+Verificacion
+- Compilacion: 0 errores. Ultima compilacion: 67 advertencias; persisten NU1603
+  del proveedor Oracle y advertencias previas de metodos sin await.
+- ModelValidation: 10583 comprobaciones, incluidas las 267 llaves, DTO y contratos.
+- CrudSmoke: 93 comprobaciones HTTP.
+- ClientFlow: 22 comprobaciones.
+- ArchitectureFlow: 3355 comprobaciones de cobertura de los 1017 controladores,
+  paginacion, llaves compuestas, edicion MVC, rutas y errores seguros.
+- JavaScript: 11 comprobaciones de cascadas.
+- Total: 14064 comprobaciones. git diff --check sin incidencias.
+- Esta verificacion no consulta ni modifica datos de negocio en Oracle.
+
+Pendiente
+Las etapas 2, 4 y 5 del plan siguen pendientes. Este bloque no elimina todavia
+los Include automaticos de los listados ni las cargas completas de desplegables.
+La activacion del login (etapa 3) fue pospuesta expresamente por el usuario;
+se conservan usuarios propios y Windows/AD como opciones previstas.
+No se han aplicado las propuestas DDL de correccion de llaves en Oracle.

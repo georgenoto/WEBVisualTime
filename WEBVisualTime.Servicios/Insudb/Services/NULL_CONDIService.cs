@@ -21,7 +21,7 @@ public class NULL_CONDIService : INULL_CONDIService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<NULL_CONDIDto?> GetByIdAsync(int id)
+    public async Task<NULL_CONDIDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class NULL_CONDIService : INULL_CONDIService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateNULL_CONDIDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateNULL_CONDIDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class NULL_CONDIService : INULL_CONDIService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

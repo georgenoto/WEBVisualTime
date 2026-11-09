@@ -54,7 +54,7 @@ public class COMMPAYREQ_ORDERSController : Controller
             this, _service, page, q, "~/Views/Insudb/COMMPAYREQ_ORDERS/Index.cshtml");
 
     // GET: COMMPAYREQ_ORDERS/Details/{id}
-    public async Task<IActionResult> Details(long id)
+    public async Task<IActionResult> Details(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -97,8 +97,9 @@ public class COMMPAYREQ_ORDERSController : Controller
     }
 
     // GET: COMMPAYREQ_ORDERS/Edit/{id}
-    public async Task<IActionResult> Edit(long id)
+    public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -134,11 +135,12 @@ public class COMMPAYREQ_ORDERSController : Controller
     // POST: COMMPAYREQ_ORDERS/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateCOMMPAYREQ_ORDERSDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateCOMMPAYREQ_ORDERSDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.NID_COMMPAYREQ, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }
@@ -154,7 +156,7 @@ public class COMMPAYREQ_ORDERSController : Controller
     }
 
     // GET: COMMPAYREQ_ORDERS/Delete/{id}
-    public async Task<IActionResult> Delete(long id)
+    public async Task<IActionResult> Delete(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -164,7 +166,7 @@ public class COMMPAYREQ_ORDERSController : Controller
     // POST: COMMPAYREQ_ORDERS/Delete/{id}
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(long id)
+    public async Task<IActionResult> DeleteConfirmed(string id)
     {
         await _service.DeleteAsync(id);
         return RedirectToAction(nameof(Index));

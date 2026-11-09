@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IRETENTIONCOVService : IService<RETENTIONCOVDto, CreateRETENTIONCOVDto, UpdateRETENTIONCOVDto, int>
+public interface IRETENTIONCOVService : IService<RETENTIONCOVDto, CreateRETENTIONCOVDto, UpdateRETENTIONCOVDto, string>
 {
     Task<IEnumerable<RETENTIONCOVDto>> FindAsync(Expression<Func<RETENTIONCOV, bool>> predicate);
 }

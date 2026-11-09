@@ -63,6 +63,7 @@ public class DISC_XPREMController : Controller
     // GET: DISC_XPREM/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -95,11 +96,12 @@ public class DISC_XPREMController : Controller
     // POST: DISC_XPREM/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateDISC_XPREMDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateDISC_XPREMDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCERTYPE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

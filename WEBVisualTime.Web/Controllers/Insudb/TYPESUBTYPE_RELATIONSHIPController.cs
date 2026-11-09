@@ -69,6 +69,7 @@ public class TYPESUBTYPE_RELATIONSHIPController : Controller
     // GET: TYPESUBTYPE_RELATIONSHIP/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -89,11 +90,12 @@ public class TYPESUBTYPE_RELATIONSHIPController : Controller
     // POST: TYPESUBTYPE_RELATIONSHIP/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTYPESUBTYPE_RELATIONSHIPDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateTYPESUBTYPE_RELATIONSHIPDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.STYPECARE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

@@ -51,6 +51,7 @@ public class SCHEMA_FOLDERController : Controller
     // GET: SCHEMA_FOLDER/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -69,11 +70,12 @@ public class SCHEMA_FOLDERController : Controller
     // POST: SCHEMA_FOLDER/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateSCHEMA_FOLDERDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateSCHEMA_FOLDERDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SSCHE_CODE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

@@ -32,7 +32,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="SCLIENT" class="form-label"></label>
-                <select asp-for="SCLIENT" class="form-select cascade-select" data-cascade-parent="NCOUNTRY" data-cascade-url="@Url.Action("GetByNRESIDENCECOUNTRY", "CLIENT")" data-current-value="@Model.SCLIENT">
+                <select asp-for="SCLIENT" class="form-select cascade-select" data-cascade-parent="NCOUNTRY" data-cascade-parameter="NRESIDENCECOUNTRY" data-cascade-url="@Url.Action("GetByNRESIDENCECOUNTRY", "CLIENT")" data-current-value="@Model.SCLIENT">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="SCLIENT" class="text-danger"></span>
@@ -173,7 +173,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NLOCAL" class="form-label"></label>
-                <select asp-for="NLOCAL" class="form-select cascade-select" data-cascade-parent="NPROVINCE" data-cascade-url="@Url.Action("GetByNPROVINCE", "TAB_LOCAT")" data-current-value="@Model.NLOCAL">
+                <select asp-for="NLOCAL" class="form-select cascade-select" data-cascade-parent="NPROVINCE" data-cascade-parameter="NPROVINCE" data-cascade-url="@Url.Action("GetByNPROVINCE", "TAB_LOCAT")" data-current-value="@Model.NLOCAL">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NLOCAL" class="text-danger"></span>
@@ -190,7 +190,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NMUNICIPALITY" class="form-label"></label>
-                <select asp-for="NMUNICIPALITY" class="form-select cascade-select" data-cascade-parent="NLOCAL" data-cascade-url="@Url.Action("GetByNLOCAL", "MUNICIPALITY")" data-current-value="@Model.NMUNICIPALITY">
+                <select asp-for="NMUNICIPALITY" class="form-select cascade-select" data-cascade-parent="NLOCAL" data-cascade-parameter="NLOCAL" data-cascade-url="@Url.Action("GetByNLOCAL", "MUNICIPALITY")" data-current-value="@Model.NMUNICIPALITY">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NMUNICIPALITY" class="text-danger"></span>

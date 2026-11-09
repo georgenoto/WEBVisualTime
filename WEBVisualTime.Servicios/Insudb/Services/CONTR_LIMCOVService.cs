@@ -21,7 +21,7 @@ public class CONTR_LIMCOVService : ICONTR_LIMCOVService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CONTR_LIMCOVDto?> GetByIdAsync(int id)
+    public async Task<CONTR_LIMCOVDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CONTR_LIMCOVService : ICONTR_LIMCOVService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateCONTR_LIMCOVDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCONTR_LIMCOVDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CONTR_LIMCOVService : ICONTR_LIMCOVService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

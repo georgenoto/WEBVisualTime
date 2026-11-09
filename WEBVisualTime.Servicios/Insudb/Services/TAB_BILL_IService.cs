@@ -21,7 +21,7 @@ public class TAB_BILL_IService : ITAB_BILL_IService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<TAB_BILL_IDto?> GetByIdAsync(int id)
+    public async Task<TAB_BILL_IDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class TAB_BILL_IService : ITAB_BILL_IService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateTAB_BILL_IDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateTAB_BILL_IDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class TAB_BILL_IService : ITAB_BILL_IService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

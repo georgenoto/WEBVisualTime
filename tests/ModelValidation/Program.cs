@@ -143,7 +143,61 @@ void CheckExcludedField<T>(string field) where T:class
 CheckExcludedField<HEALTHCLAIMFORM>("CONTENT");
 CheckExcludedField<MASTERSHEET>("SQUERY_XSL");
 CheckExcludedField<TRACKING>("FACTTIME");
-Console.WriteLine($"PASS: {checks} assertions; {model.GetEntityTypes().Count()} entities; {expected.Count} Oracle-confirmed composite relationships; compatible FK types, no implicit FK columns, aliases and SQL generation. No database connection.");
+var compositeEntities = model.GetEntityTypes().Where(e => e.FindPrimaryKey()!.Properties.Count > 1).ToArray();
+Check(compositeEntities.Length == 267, "Composite key coverage changed; update all contracts deliberately");
+foreach (var entity in compositeEntities)
+{
+    var columns = entity.FindPrimaryKey()!.Properties;
+    Check(RecordKeys.Columns(entity.ClrType.Name).SequenceEqual(columns.Select(p => p.Name)), "Record key metadata differs: " + entity.ClrType.Name);
+    var row = Activator.CreateInstance(entity.ClrType)!;
+    foreach (var column in columns)
+    {
+        object value = column.ClrType == typeof(string) ? "A/B +ñ\" &<>" : column.ClrType == typeof(DateTime)
+            ? new DateTime(2026, 11, 6, 12, 34, 56).AddTicks(1234567) : Convert.ChangeType(7, column.ClrType);
+        column.PropertyInfo!.SetValue(row, value);
+    }
+    var token = RecordKeys.Encode(entity.ClrType.Name, row);
+    Check(token.StartsWith('~') && !token.Contains('/') && !token.Contains('+'), "Key must be URL-safe");
+    var mapping = typeof(WEBVisualTime.Servicios.Insudb.Services.IADDRESSService).Assembly
+        .GetType("WEBVisualTime.Servicios.Insudb.Mappings." + entity.ClrType.Name + "MappingExtensions")!;
+    var keyDto = mapping.GetMethod("ToDto")!.Invoke(null, new[] { row })!;
+    Check(RecordKeys.Encode(entity.ClrType.Name, keyDto) == token, "DTO mapping loses a composite key: " + entity.ClrType.Name);
+    var contract = typeof(WEBVisualTime.Servicios.Insudb.Services.IADDRESSService).Assembly
+        .GetType("WEBVisualTime.Servicios.Insudb.Services.I" + entity.ClrType.Name + "Service")!;
+    Check(contract.GetInterfaces().Single(i => i.IsGenericType).GetGenericArguments()[3] == typeof(string), "Composite service contract must transport the complete key");
+    var method = typeof(KeyQueryExpressions).GetMethod("Match")!.MakeGenericMethod(entity.ClrType);
+    var predicate = (System.Linq.Expressions.LambdaExpression)method.Invoke(null, new[] { entity, (object)token })!;
+    var matches = predicate.Compile();
+    Check((bool)matches.DynamicInvoke(row)!, "Complete key must identify its exact row");
+    foreach (var column in columns)
+    {
+        var original = column.PropertyInfo!.GetValue(row)!;
+        object changed = original is string text ? text + "X" : original is DateTime time ? time.AddTicks(1) : Convert.ChangeType(8, column.ClrType);
+        column.PropertyInfo.SetValue(row, changed);
+        Check(!(bool)matches.DynamicInvoke(row)!, "Key lookup ignored column " + entity.ClrType.Name + "." + column.Name);
+        column.PropertyInfo.SetValue(row, original);
+    }
+    foreach (var invalid in new[] { "7", "~invalid", RecordKeys.Encode(entity.ClrType.Name == "ADDRESS" ? "TAB_BK_AGE" : "ADDRESS", entity.ClrType.Name == "ADDRESS" ? (object)new TAB_BK_AGE { NBANK_CODE = 1, NBK_AGENCY = 1 } : new ADDRESS { NRECOWNER = 1, SKEYADDRESS = "A", DEFFECDATE = DateTime.Today }) })
+    {
+        try { method.Invoke(null, new[] { entity, (object)invalid }); throw new Exception("Incomplete/cross-entity key accepted"); }
+        catch (TargetInvocationException error) when (error.InnerException is RecordKeyException) { checks++; }
+    }
+}
+var exactAddress = new ADDRESS { NRECOWNER = 7, SKEYADDRESS = "A/B", DEFFECDATE = new DateTime(2026, 11, 6) };
+var addressKeyFilter = KeyQueryExpressions.Match<ADDRESS>(model.FindEntityType(typeof(ADDRESS))!, RecordKeys.Encode("ADDRESS", exactAddress));
+var addressKeySql = Statement(context.ADDRESSs.Where(addressKeyFilter).ToQueryString());
+foreach (var column in new[] { "NRECOWNER", "SKEYADDRESS", "DEFFECDATE" })
+    Check(addressKeySql.Contains('"' + column + '"'), "Oracle SQL must include the complete key");
+using (var updates = new AppDbContext(new DbContextOptionsBuilder<AppDbContext>().UseOracle("Data Source=unused;User Id=unused;Password=unused").Options))
+{
+    var row = new TABLE2000 { NAPLY = 999, SDESCRIPT = "Before" };
+    updates.Attach(row);
+    row.SDESCRIPT = "After";
+    new Repository<TABLE2000>(updates).Update(row);
+    updates.ChangeTracker.DetectChanges();
+    Check(updates.Entry(row).Properties.Where(p => p.IsModified).Select(p => p.Metadata.Name).SequenceEqual(new[] { "SDESCRIPT" }), "Updates must modify only changed columns");
+}
+Console.WriteLine($"PASS: {checks} assertions; {model.GetEntityTypes().Count()} entities; {compositeEntities.Length} complete record keys; {expected.Count} Oracle-confirmed composite relationships. No database connection.");
 
 sealed record ExpectedRelationship(string Entity,string Target,string Navigation,string[] ForeignKeys,string[] PrincipalKeys,string Constraint,string[] Aliases);
 sealed record NullableField(string Entity,string Property,string Column);

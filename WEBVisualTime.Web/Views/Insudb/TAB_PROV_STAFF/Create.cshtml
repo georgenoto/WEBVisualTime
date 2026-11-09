@@ -34,7 +34,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NPROVIDER_REL" class="form-label"></label>
-                <select asp-for="NPROVIDER_REL" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "TAB_PROVIDER")" data-current-value="@Model.NPROVIDER_REL">
+                <select asp-for="NPROVIDER_REL" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "TAB_PROVIDER")" data-current-value="@Model.NPROVIDER_REL">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NPROVIDER_REL" class="text-danger"></span>

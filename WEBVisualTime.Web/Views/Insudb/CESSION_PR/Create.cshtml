@@ -31,7 +31,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NCOMPANY" class="form-label"></label>
-                <select asp-for="NCOMPANY" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "COMPANY")" data-current-value="@Model.NCOMPANY">
+                <select asp-for="NCOMPANY" class="form-select cascade-select" data-cascade-parent="SCLIENT" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "COMPANY")" data-current-value="@Model.NCOMPANY">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NCOMPANY" class="text-danger"></span>

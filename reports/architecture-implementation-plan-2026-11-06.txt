@@ -1,0 +1,84 @@
+PLAN DE IMPLEMENTACION - WEBVisualTime MVC Y WEBAPI
+Objetivo: una aplicacion sencilla, rapida y con contratos reutilizables por otros clientes.
+Fecha: 2026-11-06
+
+Reglas de trabajo
+- MVC y WebAPI usan los mismos servicios y reglas de acceso a Oracle.
+- Todo cambio de contrato de API se documenta y prueba por HTTP.
+- No se aplican cambios de datos ni DDL a Oracle como parte de esta actualizacion.
+- Paginacion general: 20 registros; configurable por peticion entre 1 y 100.
+- Priorizar correccion de registros y consultas; conservar formularios de negocio existentes.
+
+ETAPA 1 - INTEGRIDAD Y CONTRATOS (IMPLEMENTADA Y VERIFICADA)
+1. Corregir las 668 rutas PUT/DELETE escapadas en los 334 controladores especializados.
+2. Paginar los 1017 GET de listado de API; mantener paginacion MVC.
+3. Corregir identificacion de las 267 entidades con llave compuesta en repositorio,
+   servicios, rutas, enlaces, formularios y respuestas de creacion de MVC/API.
+   Las llaves incompletas deben producir 400, nunca seleccionar la primera coincidencia.
+4. Respuestas de error comunes para operaciones MVC y ProblemDetails en API,
+   sin exponer SQL ni credenciales, con referencia de soporte.
+5. Evitar marcar todas las columnas como modificadas al actualizar entidades ya seguidas.
+6. Centralizar las 1017 inscripciones de servicios compartidas por ambos hosts.
+7. Corregir desplegables en cascada: parametro correcto, creacion segura del DOM,
+   cancelacion de peticiones antiguas y mensajes de error.
+Aceptacion: compilar ambos hosts y pasar pruebas de contratos, llaves, SQL y HTTP.
+Resultado: compilacion de ambos hosts con 0 errores; 67 advertencias existentes
+en la ultima compilacion incremental. 10583 comprobaciones de modelo/llaves,
+93 de CRUD, 22 de CLIENT, 3355 de contratos/HTTP y 11 de cascadas JavaScript.
+No se ejecutaron escrituras ni DDL contra Oracle. Las pruebas de mutacion usan
+servicios en memoria; el SQL se valida con el proveedor Oracle sin conexion.
+Ejecutar: ./scripts/verify-local.ps1 (construye ambos hosts y verifica las suites).
+
+ETAPA 2 - CONSULTAS Y RENDIMIENTO
+1. Introducir proyecciones SQL de lectura por modulo: columnas visibles y llaves,
+   sin Include automatico de todas las relaciones en los listados.
+2. Definir campos de busqueda por modulo; conservar busqueda existente mientras
+   se migra y contrastar resultados con datos reales.
+3. Crear endpoints paginados de busqueda para desplegables en API y usarlos en MVC.
+4. Migrar primero CLIENT y ADDRESS; extender usando configuracion de cada catalogo.
+5. Medir SQL, tiempos de respuesta y memoria antes/despues. Revisar planes Oracle;
+   proponer indices segun evidencia. DDL en entrega separada para DBA.
+6. Evaluar paginacion por cursor para tablas muy grandes, conservando contrato de pagina.
+7. Contrastar las llaves omitidas en CreateDto/ToEntity con triggers y generacion
+   real de Oracle; completar los contratos de creacion donde la base no genere
+   esas llaves. No asumir que toda llave es autonumerica.
+Aceptacion: resultados equivalentes, limite efectivo en Oracle, menos columnas/joins;
+           mediciones reproducibles, sin atribuir mejoras porcentuales sin medir.
+
+ETAPA 3 - SEGURIDAD (ACTIVACION POSPUESTA POR EL USUARIO)
+Modos acordados: usuarios propios y Windows/Active Directory.
+1. Configurar metodo de identidad por despliegue; separar identidad de permisos.
+2. Usuarios propios: definir almacen, hash moderno y ciclo de vida de contrasenas.
+   APPUSER contiene identificacion/nombre; USERS tiene campos de acceso/bloqueo,
+   cuyo formato y compatibilidad deben verificarse sin exponer contrasenas.
+3. Windows/AD: validar alojamiento IIS/Negotiate y grupos autorizados.
+4. Definir emision/validacion de tokens para clientes externos de API; no usar
+   las llaves de registros como credenciales ni inventar usuarios predeterminados.
+5. Permisos por modulo/operacion, denegacion predeterminada, auditoria de cambios.
+6. Extraer secretos de configuracion local/despliegue y validar opciones al iniciar.
+Dependencias: definicion de almacen de usuarios, grupos/directorio, hospedaje y
+              clientes autorizados. No activar un login sin credenciales administrables.
+Aceptacion: MVC y API rechazan anonimos y permisos insuficientes; pruebas de 401/403,
+           acceso permitido, cierre de sesion y vencimiento de credenciales.
+
+ETAPA 4 - SIMPLIFICACION DE INTERFAZ Y MODULOS
+1. Reemplazar menu completo por modulos funcionales, buscador y favoritos.
+2. Reducir columnas iniciales por pantalla; detalle mantiene informacion ampliada.
+3. Mantener CRUD comun para catalogos y servicios explicitos para negocio.
+4. Aplicar permisos tanto a navegacion MVC como a endpoints API.
+Aceptacion: todas las rutas siguen accesibles segun permiso; menu mas pequeno.
+
+ETAPA 5 - MANTENIMIENTO Y CALIDAD
+1. Dividir configuraciones de AppDbContext por entidad/modulo conservando modelo.
+2. Fijar versiones compatibles de Oracle/EF y eliminar advertencias de restauracion.
+3. Integrar pruebas en la solucion, automatizar compilacion/validaciones y documentar
+   ejecucion desde una copia nueva; revisar referencias actuales a DLL compiladas.
+4. Documentar API, ejemplos de paginacion, llaves compuestas, errores y autenticacion.
+5. Implementar concurrencia optimista y transacciones por operacion de negocio,
+   segun columnas disponibles y requisitos; no inventar versiones de fila en Oracle.
+6. Tramitar con DBA las 17 llaves sin PK/UNIQUE fisica y la restriccion sin validar.
+   TABLE8006 y TABLE8007 permanecen de solo lectura hasta resolver duplicados.
+Aceptacion: modelo Oracle equivalente, pruebas automatizadas y compilacion reproducible.
+
+Estado: este archivo registra el plan completo; no implica que todas las etapas
+esten terminadas. El cierre de cada etapa requiere su evidencia de verificacion.

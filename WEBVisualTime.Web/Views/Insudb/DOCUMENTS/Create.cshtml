@@ -86,7 +86,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NDOC_TYPE" class="form-label"></label>
-                <select asp-for="NDOC_TYPE" class="form-select cascade-select" data-cascade-parent="NUSERCODE" data-cascade-url="@Url.Action("GetByNUSERCODE", "TABLE9217")" data-current-value="@Model.NDOC_TYPE">
+                <select asp-for="NDOC_TYPE" class="form-select cascade-select" data-cascade-parent="NUSERCODE" data-cascade-parameter="NUSERCODE" data-cascade-url="@Url.Action("GetByNUSERCODE", "TABLE9217")" data-current-value="@Model.NDOC_TYPE">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NDOC_TYPE" class="text-danger"></span>

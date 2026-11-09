@@ -21,7 +21,7 @@ public class BRANPROD_ALLOWService : IBRANPROD_ALLOWService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<BRANPROD_ALLOWDto?> GetByIdAsync(long id)
+    public async Task<BRANPROD_ALLOWDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class BRANPROD_ALLOWService : IBRANPROD_ALLOWService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateBRANPROD_ALLOWDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateBRANPROD_ALLOWDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class BRANPROD_ALLOWService : IBRANPROD_ALLOWService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

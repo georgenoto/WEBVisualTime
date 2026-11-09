@@ -16,9 +16,10 @@ public class TYPESUBTYPE_RELATIONSHIPController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<TYPESUBTYPE_RELATIONSHIPDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<TYPESUBTYPE_RELATIONSHIPDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
@@ -34,10 +35,10 @@ public class TYPESUBTYPE_RELATIONSHIPController : ControllerBase
     public async Task<ActionResult<TYPESUBTYPE_RELATIONSHIPDto>> Create([FromBody] CreateTYPESUBTYPE_RELATIONSHIPDto createDto)
     {
         var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.STYPECARE }, result);
+        return CreatedAtAction(nameof(GetById), new { id = WEBVisualTime.Entidades.Common.RecordKeys.Encode("TYPESUBTYPE_RELATIONSHIP", result) }, result);
     }
 
-    [HttpPut("{{id}}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(string id, [FromBody] UpdateTYPESUBTYPE_RELATIONSHIPDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
@@ -45,7 +46,7 @@ public class TYPESUBTYPE_RELATIONSHIPController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);

@@ -22,7 +22,9 @@ public abstract class CrudApiController<TDto, TCreateDto, TUpdateDto, TKey> : Co
         this.key = key;
     }
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<TDto>>> GetAll() => Ok(await service.GetAllAsync());
+    public async Task<ActionResult<PagedResult<TDto>>> GetAll(int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null,
+        CancellationToken cancellationToken = default)
+        => Ok(await service.GetListPageAsync(page, q, cancellationToken, pageSize));
     [HttpGet("{id}")]
     public async Task<ActionResult<TDto>> GetById([FromRoute] TKey id)
     {

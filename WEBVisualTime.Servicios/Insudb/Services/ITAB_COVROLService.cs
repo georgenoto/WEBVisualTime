@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ITAB_COVROLService : IService<TAB_COVROLDto, CreateTAB_COVROLDto, UpdateTAB_COVROLDto, int>
+public interface ITAB_COVROLService : IService<TAB_COVROLDto, CreateTAB_COVROLDto, UpdateTAB_COVROLDto, string>
 {
     Task<IEnumerable<TAB_COVROLDto>> FindAsync(Expression<Func<TAB_COVROL, bool>> predicate);
 }

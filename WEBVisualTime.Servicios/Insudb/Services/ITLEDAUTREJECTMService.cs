@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ITLEDAUTREJECTMService : IService<TLEDAUTREJECTMDto, CreateTLEDAUTREJECTMDto, UpdateTLEDAUTREJECTMDto, int>
+public interface ITLEDAUTREJECTMService : IService<TLEDAUTREJECTMDto, CreateTLEDAUTREJECTMDto, UpdateTLEDAUTREJECTMDto, string>
 {
     Task<IEnumerable<TLEDAUTREJECTMDto>> FindAsync(Expression<Func<TLEDAUTREJECTM, bool>> predicate);
 }

@@ -21,7 +21,7 @@ public class NUMERATORService : INUMERATORService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<NUMERATORDto?> GetByIdAsync(int id)
+    public async Task<NUMERATORDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class NUMERATORService : INUMERATORService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateNUMERATORDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateNUMERATORDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class NUMERATORService : INUMERATORService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

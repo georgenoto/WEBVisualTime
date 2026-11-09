@@ -21,7 +21,7 @@ public class PAY_ORD_CONCEPTSService : IPAY_ORD_CONCEPTSService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<PAY_ORD_CONCEPTSDto?> GetByIdAsync(int id)
+    public async Task<PAY_ORD_CONCEPTSDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class PAY_ORD_CONCEPTSService : IPAY_ORD_CONCEPTSService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdatePAY_ORD_CONCEPTSDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdatePAY_ORD_CONCEPTSDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class PAY_ORD_CONCEPTSService : IPAY_ORD_CONCEPTSService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

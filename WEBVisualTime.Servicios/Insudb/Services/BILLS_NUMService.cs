@@ -21,7 +21,7 @@ public class BILLS_NUMService : IBILLS_NUMService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<BILLS_NUMDto?> GetByIdAsync(int id)
+    public async Task<BILLS_NUMDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class BILLS_NUMService : IBILLS_NUMService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateBILLS_NUMDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateBILLS_NUMDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class BILLS_NUMService : IBILLS_NUMService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

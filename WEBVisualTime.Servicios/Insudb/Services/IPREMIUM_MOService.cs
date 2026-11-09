@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IPREMIUM_MOService : IService<PREMIUM_MODto, CreatePREMIUM_MODto, UpdatePREMIUM_MODto, long>
+public interface IPREMIUM_MOService : IService<PREMIUM_MODto, CreatePREMIUM_MODto, UpdatePREMIUM_MODto, string>
 {
     Task<IEnumerable<PREMIUM_MODto>> FindAsync(Expression<Func<PREMIUM_MO, bool>> predicate);
 }

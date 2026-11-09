@@ -16,14 +16,15 @@ public class CLAIM_VOUCHER_ORDERController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<CLAIM_VOUCHER_ORDERDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<CLAIM_VOUCHER_ORDERDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
 [HttpGet("{id}")]
-    public async Task<ActionResult<CLAIM_VOUCHER_ORDERDto>> GetById(long id)
+    public async Task<ActionResult<CLAIM_VOUCHER_ORDERDto>> GetById(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -34,19 +35,19 @@ public class CLAIM_VOUCHER_ORDERController : ControllerBase
     public async Task<ActionResult<CLAIM_VOUCHER_ORDERDto>> Create([FromBody] CreateCLAIM_VOUCHER_ORDERDto createDto)
     {
         var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.NCLAIM_VOUCHER }, result);
+        return CreatedAtAction(nameof(GetById), new { id = WEBVisualTime.Entidades.Common.RecordKeys.Encode("CLAIM_VOUCHER_ORDER", result) }, result);
     }
 
-    [HttpPut("{{id}}")]
-    public async Task<IActionResult> Update(long id, [FromBody] UpdateCLAIM_VOUCHER_ORDERDto updateDto)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(string id, [FromBody] UpdateCLAIM_VOUCHER_ORDERDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
         if (!success) return NotFound();
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
-    public async Task<IActionResult> Delete(long id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);
         if (!success) return NotFound();

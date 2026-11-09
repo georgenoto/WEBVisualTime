@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICONTRNPROService : IService<CONTRNPRODto, CreateCONTRNPRODto, UpdateCONTRNPRODto, int>
+public interface ICONTRNPROService : IService<CONTRNPRODto, CreateCONTRNPRODto, UpdateCONTRNPRODto, string>
 {
     Task<IEnumerable<CONTRNPRODto>> FindAsync(Expression<Func<CONTRNPRO, bool>> predicate);
 }

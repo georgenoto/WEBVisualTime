@@ -21,7 +21,7 @@ public class HIS_ASC_IIService : IHIS_ASC_IIService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<HIS_ASC_IIDto?> GetByIdAsync(int id)
+    public async Task<HIS_ASC_IIDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class HIS_ASC_IIService : IHIS_ASC_IIService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateHIS_ASC_IIDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateHIS_ASC_IIDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class HIS_ASC_IIService : IHIS_ASC_IIService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

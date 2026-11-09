@@ -51,6 +51,7 @@ public class HEALTHCLAIMFORMController : Controller
     // GET: HEALTHCLAIMFORM/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -72,11 +73,12 @@ public class HEALTHCLAIMFORMController : Controller
     // POST: HEALTHCLAIMFORM/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateHEALTHCLAIMFORMDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateHEALTHCLAIMFORMDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.FORMID, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

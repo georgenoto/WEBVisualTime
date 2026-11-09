@@ -21,7 +21,7 @@ public class EXCHANGEService : IEXCHANGEService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<EXCHANGEDto?> GetByIdAsync(int id)
+    public async Task<EXCHANGEDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class EXCHANGEService : IEXCHANGEService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateEXCHANGEDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateEXCHANGEDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class EXCHANGEService : IEXCHANGEService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

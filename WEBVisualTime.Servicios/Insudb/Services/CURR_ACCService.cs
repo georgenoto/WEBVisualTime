@@ -21,7 +21,7 @@ public class CURR_ACCService : ICURR_ACCService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CURR_ACCDto?> GetByIdAsync(int id)
+    public async Task<CURR_ACCDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CURR_ACCService : ICURR_ACCService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateCURR_ACCDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCURR_ACCDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CURR_ACCService : ICURR_ACCService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -30,7 +30,7 @@ public class REJECTCAUSE_PRECLAIMController : Controller
             this, _service, page, q, "~/Views/Insudb/REJECTCAUSE_PRECLAIM/Index.cshtml");
 
     // GET: REJECTCAUSE_PRECLAIM/Details/{id}
-    public async Task<IActionResult> Details(long id)
+    public async Task<IActionResult> Details(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -61,8 +61,9 @@ public class REJECTCAUSE_PRECLAIMController : Controller
     }
 
     // GET: REJECTCAUSE_PRECLAIM/Edit/{id}
-    public async Task<IActionResult> Edit(long id)
+    public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -82,11 +83,12 @@ public class REJECTCAUSE_PRECLAIMController : Controller
     // POST: REJECTCAUSE_PRECLAIM/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateREJECTCAUSE_PRECLAIMDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateREJECTCAUSE_PRECLAIMDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.NIDPRECLAIM, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }
@@ -96,7 +98,7 @@ public class REJECTCAUSE_PRECLAIMController : Controller
     }
 
     // GET: REJECTCAUSE_PRECLAIM/Delete/{id}
-    public async Task<IActionResult> Delete(long id)
+    public async Task<IActionResult> Delete(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -106,7 +108,7 @@ public class REJECTCAUSE_PRECLAIMController : Controller
     // POST: REJECTCAUSE_PRECLAIM/Delete/{id}
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(long id)
+    public async Task<IActionResult> DeleteConfirmed(string id)
     {
         await _service.DeleteAsync(id);
         return RedirectToAction(nameof(Index));

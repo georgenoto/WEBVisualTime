@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IBUSSKINDService : IService<BUSSKINDDto, CreateBUSSKINDDto, UpdateBUSSKINDDto, int>
+public interface IBUSSKINDService : IService<BUSSKINDDto, CreateBUSSKINDDto, UpdateBUSSKINDDto, string>
 {
     Task<IEnumerable<BUSSKINDDto>> FindAsync(Expression<Func<BUSSKIND, bool>> predicate);
 }

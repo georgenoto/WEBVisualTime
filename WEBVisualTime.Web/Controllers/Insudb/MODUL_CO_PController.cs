@@ -69,6 +69,7 @@ public class MODUL_CO_PController : Controller
     // GET: MODUL_CO_P/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -97,11 +98,12 @@ public class MODUL_CO_PController : Controller
     // POST: MODUL_CO_P/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateMODUL_CO_PDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateMODUL_CO_PDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCERTYPE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

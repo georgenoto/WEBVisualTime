@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICLIALLOCLAService : IService<CLIALLOCLADto, CreateCLIALLOCLADto, UpdateCLIALLOCLADto, int>
+public interface ICLIALLOCLAService : IService<CLIALLOCLADto, CreateCLIALLOCLADto, UpdateCLIALLOCLADto, string>
 {
     Task<IEnumerable<CLIALLOCLADto>> FindAsync(Expression<Func<CLIALLOCLA, bool>> predicate);
 }

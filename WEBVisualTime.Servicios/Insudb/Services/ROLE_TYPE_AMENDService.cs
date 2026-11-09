@@ -21,7 +21,7 @@ public class ROLE_TYPE_AMENDService : IROLE_TYPE_AMENDService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<ROLE_TYPE_AMENDDto?> GetByIdAsync(int id)
+    public async Task<ROLE_TYPE_AMENDDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class ROLE_TYPE_AMENDService : IROLE_TYPE_AMENDService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateROLE_TYPE_AMENDDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateROLE_TYPE_AMENDDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class ROLE_TYPE_AMENDService : IROLE_TYPE_AMENDService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IREPORTMASTERService : IService<REPORTMASTERDto, CreateREPORTMASTERDto, UpdateREPORTMASTERDto, int>
+public interface IREPORTMASTERService : IService<REPORTMASTERDto, CreateREPORTMASTERDto, UpdateREPORTMASTERDto, string>
 {
     Task<IEnumerable<REPORTMASTERDto>> FindAsync(Expression<Func<REPORTMASTER, bool>> predicate);
 }

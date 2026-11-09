@@ -21,7 +21,7 @@ public class CONTRAT_PAYService : ICONTRAT_PAYService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CONTRAT_PAYDto?> GetByIdAsync(long id)
+    public async Task<CONTRAT_PAYDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CONTRAT_PAYService : ICONTRAT_PAYService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateCONTRAT_PAYDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCONTRAT_PAYDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CONTRAT_PAYService : ICONTRAT_PAYService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -1,0 +1,41 @@
+DESPLIEGUE Y OPERACIÓN — CARGAR PRIMAS POR PRODUCTO
+
+El código agrega el menú y el asistente MVC en /CargarPrimas. No ejecuta DDL al arrancar.
+Decisión del usuario: entregar el SQL para ejecución por DBA. No se instala ni habilita contra la conexión actual en esta sesión.
+
+Instalación en ensayo:
+1. Revisar scripts/oracle-carga-primas.sql y ejecutarlo una sola vez con el propietario INSUDB. Las tablas de trabajo son persistentes; una GTT no sirve para reanudar entre conexiones/reinicios. El script no modifica tarifas actuales.
+2. Verificar permisos de la cuenta de la aplicación: SELECT/INSERT/UPDATE en TEMP_VT_PRIMA_IMPORT y TEMP_VT_PRIMA_STAGE; SELECT en catálogos y metadatos ALL_CONSTRAINTS/ALL_CONS_COLUMNS/ALL_TAB_COLUMNS; SELECT/INSERT y permiso de LOCK TABLE en TAR_HEALT_PREM. Verificar PK/UK validada con los 16 campos y tipos reales de importes. No inventar restricciones sin analizar datos existentes.
+3. Configurar CargaPrimas:Habilitado=true en el servidor, o variable CargaPrimas__Habilitado=true. El valor ausente mantiene deshabilitada la carga y el trabajador. El menú siempre aparece, con instrucciones de instalación si está deshabilitado.
+4. Arrancar WEBVisualTime.Web, importar primero la plantilla de muestra y repetir la importación. Esperado para una base sin esas claves: 18 insertados la primera vez y 18 existentes la segunda. Si las tarifas ya existen, se conciliará como existentes; diferencias de prima/estado bloquean el lote completo.
+5. Interrumpir el host durante preparación y reiniciar: debe retomar desde PREPARADOS sin repetir el segmento ya confirmado. Forzar fallo final y comprobar que no haya filas nuevas en destino. Simular desconexión alrededor del commit y consultar estado antes de volver a ejecutar.
+6. Medir con volumen representativo superior a 50.000 tarifas y coordinar ventana de publicación con DBA. La publicación toma un bloqueo exclusivo de TAR_HEALT_PREM para impedir carreras con otros escritores. Si no puede tomarlo, permanece pendiente y vuelve a intentar. No sustituye pruebas de bloqueo/undo en ese entorno.
+
+Operación:
+- Asistente: archivo, roles, regionales, usuario Oracle declarado, revisión paginada y confirmación. Los originales G/H se reemplazan por la selección, igual que la macro.
+- ORIGINAL BLOB conserva el archivo y HUELLA registra SHA-256. DOCUMENTO conserva filas limpias con número de origen. PLAN y PLAN_HASH congelan datos y selección; una confirmación de una revisión antigua se rechaza.
+- Segmentos de 1.000 registros finales en TEMP_VT_PRIMA_STAGE; el checkpoint PREPARADOS y los registros se confirman juntos. ITEM_NO es cero basado, segmento = TRUNC(ITEM_NO/1000)+1. SOURCE_ROW identifica la fila del Excel.
+- La publicación compara por clave completa, rechaza importes o vigencias diferentes y rangos/fechas superpuestos; inserta los faltantes y actualiza estado final en una misma transacción. No anula ni actualiza tarifas anteriores.
+- RESULTADO en staging identifica PREPARADO, INSERTADO o EXISTENTE por registro. Hasta la publicación, INSERTADOS y EXISTENTES permanecen en cero. COMPLETADO significa TOTAL=INSERTADOS+EXISTENTES. El informe JSON resume la carga; el detalle permanece en staging para auditoría.
+- Pausa: espera la transacción actual. Reanudar mantiene segmentos anteriores. Un fallo queda en ERROR con diagnóstico; los detalles técnicos se registran en logs con id de importación. Cerrar el navegador no detiene el proceso. Debe mantenerse al menos una instancia Web activa para procesar la cola.
+- No borre staging ni cabeceras de importaciones activas. No se incorpora purga automática: defina retención y respaldo de originales y auditoría con el responsable del sistema.
+
+Validaciones:
+- Máximo 20 MB comprimidos, 150 MB descomprimidos, 100.000 filas originales y 5.000.000 de tarifas expandidas. Las revisiones muestran 50 tarifas por página.
+- Se usa DATOS IMPORTADOS si existe, de otro modo la primera hoja; encabezados exactos tras normalizar acentos y espacios. Valores .xlsx/.xlsm leídos sin ejecutar macros, enlaces o fórmulas. Fórmulas/errores/booleanos se rechazan en filas de datos.
+- Códigos iniciales, enteros, fechas (incluye sistema 1904), rangos, primas no negativas, diferencia entre nulo y cero, mínimo obligatorio, máximo vacío=mínimo.
+- Las celdas numéricas siguen las 15 cifras significativas de Excel, evitando residuos binarios del XML. El texto numérico usa punto decimal y no admite separadores de miles ambiguos. La escala/precisión de importes y capital se contrasta con Oracle para evitar redondeo silencioso.
+- Claves duplicadas tras reemplazar rol/regional se rechazan, incluso si los importes coinciden. Rangos superpuestos dentro de la entrada se rechazan. Se limita a dos millones de comparaciones de rangos; si se supera, se solicita dividir por módulo/cobertura.
+- Se verifican roles/regionales seleccionados y USERS.NUSERCODE al configurar. Producto, módulo vigente, ámbito y atención se revalidan al publicar. Las restricciones reales de Oracle se aplican durante la publicación, con rollback completo si fallan. La configuración específica de coberturas/monedas y la política de vigencias deben contrastarse con los catálogos del entorno; no se ha supuesto una tabla maestra inexistente en el modelo.
+
+Límites de esta entrega:
+- La autenticación del proyecto sigue pospuesta. NUSERCODE se declara y valida contra USERS; no se presenta como identidad autenticada. Habilitar el módulo solo dentro del acceso controlado del entorno hasta integrar identidad/permisos.
+- La publicación final puede requerir undo y bloqueo considerables. Staging sí es segmentado; publicar por commits parciales al destino rompería la atomicidad acordada.
+- Los controladores/worker de este flujo están en el host MVC. WebApi conserva sus contratos CRUD existentes; no expone aún endpoints externos de importación.
+- No se ejecutó el SQL ni se hicieron pruebas contra Oracle en esta sesión. La compilación y las pruebas locales no acreditan permisos, restricciones, triggers, rendimiento ni recuperación transaccional de una instalación real.
+- Se contrastó además la copia local de metadatos del diagnóstico anterior: clave TAR_HEALT_PREM_PK de 16 campos ENABLED/VALIDATED y capitales/primas NUMBER(18,6). No sustituye la comprobación de metadatos en tiempo de ejecución.
+
+Consultas de seguimiento (usar bind :id):
+SELECT ID,ESTADO,TOTAL,PREPARADOS,INSERTADOS,EXISTENTES,ERROR FROM INSUDB.TEMP_VT_PRIMA_IMPORT WHERE ID=:id;
+SELECT TRUNC(ITEM_NO/1000)+1 SEGMENTO,RESULTADO,COUNT(*) FROM INSUDB.TEMP_VT_PRIMA_STAGE WHERE IMPORT_ID=:id GROUP BY TRUNC(ITEM_NO/1000)+1,RESULTADO ORDER BY 1,2;
+SELECT SOURCE_ROW,ITEM_NO,RESULTADO,NBRANCH,NPRODUCT,NMODULEC,NCOVER,NROLE,NOFFICE,NAGE_INIT,NAGE_END FROM INSUDB.TEMP_VT_PRIMA_STAGE WHERE IMPORT_ID=:id ORDER BY ITEM_NO;

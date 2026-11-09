@@ -21,7 +21,7 @@ public class IMAGESService : IIMAGESService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<IMAGESDto?> GetByIdAsync(long id)
+    public async Task<IMAGESDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class IMAGESService : IIMAGESService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateIMAGESDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateIMAGESDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class IMAGESService : IIMAGESService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

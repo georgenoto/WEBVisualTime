@@ -63,6 +63,7 @@ public class WIN_ACTIONSController : Controller
     // GET: WIN_ACTIONS/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -82,11 +83,12 @@ public class WIN_ACTIONSController : Controller
     // POST: WIN_ACTIONS/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateWIN_ACTIONSDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateWIN_ACTIONSDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCODISPL, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

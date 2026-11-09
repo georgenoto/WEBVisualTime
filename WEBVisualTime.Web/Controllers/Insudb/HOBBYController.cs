@@ -30,7 +30,7 @@ public class HOBBYController : Controller
             this, _service, page, q, "~/Views/Insudb/HOBBY/Index.cshtml");
 
     // GET: HOBBY/Details/{id}
-    public async Task<IActionResult> Details(int id)
+    public async Task<IActionResult> Details(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -61,8 +61,9 @@ public class HOBBYController : Controller
     }
 
     // GET: HOBBY/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
+    public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -81,11 +82,12 @@ public class HOBBYController : Controller
     // POST: HOBBY/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateHOBBYDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateHOBBYDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.NHOBBY, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }
@@ -95,7 +97,7 @@ public class HOBBYController : Controller
     }
 
     // GET: HOBBY/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -105,7 +107,7 @@ public class HOBBYController : Controller
     // POST: HOBBY/Delete/{id}
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
+    public async Task<IActionResult> DeleteConfirmed(string id)
     {
         await _service.DeleteAsync(id);
         return RedirectToAction(nameof(Index));

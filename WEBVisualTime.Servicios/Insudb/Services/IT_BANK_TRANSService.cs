@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IT_BANK_TRANSService : IService<T_BANK_TRANSDto, CreateT_BANK_TRANSDto, UpdateT_BANK_TRANSDto, long>
+public interface IT_BANK_TRANSService : IService<T_BANK_TRANSDto, CreateT_BANK_TRANSDto, UpdateT_BANK_TRANSDto, string>
 {
     Task<IEnumerable<T_BANK_TRANSDto>> FindAsync(Expression<Func<T_BANK_TRANS, bool>> predicate);
 }

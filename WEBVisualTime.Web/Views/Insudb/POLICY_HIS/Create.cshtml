@@ -17,7 +17,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NCLAIM" class="form-label"></label>
-                <select asp-for="NCLAIM" class="form-select cascade-select" data-cascade-parent="SCERTYPE" data-cascade-url="@Url.Action("GetBySCERTYPE", "CLAIM")" data-current-value="@Model.NCLAIM">
+                <select asp-for="NCLAIM" class="form-select cascade-select" data-cascade-parent="SCERTYPE" data-cascade-parameter="SCERTYPE" data-cascade-url="@Url.Action("GetBySCERTYPE", "CLAIM")" data-current-value="@Model.NCLAIM">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NCLAIM" class="text-danger"></span>

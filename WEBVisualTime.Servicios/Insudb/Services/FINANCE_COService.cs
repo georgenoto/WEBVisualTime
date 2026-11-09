@@ -21,7 +21,7 @@ public class FINANCE_COService : IFINANCE_COService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<FINANCE_CODto?> GetByIdAsync(long id)
+    public async Task<FINANCE_CODto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class FINANCE_COService : IFINANCE_COService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateFINANCE_CODto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateFINANCE_CODto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class FINANCE_COService : IFINANCE_COService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

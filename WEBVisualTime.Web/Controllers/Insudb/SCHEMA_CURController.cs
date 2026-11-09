@@ -57,6 +57,7 @@ public class SCHEMA_CURController : Controller
     // GET: SCHEMA_CUR/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -75,11 +76,12 @@ public class SCHEMA_CURController : Controller
     // POST: SCHEMA_CUR/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateSCHEMA_CURDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateSCHEMA_CURDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SSCHE_CODE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

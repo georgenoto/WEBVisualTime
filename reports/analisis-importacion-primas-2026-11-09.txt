@@ -1,0 +1,161 @@
+ANÁLISIS DEL EXCEL Y PROPUESTA DE IMPORTACIÓN DE PRIMAS
+Fecha: 09/11/2026
+
+1. ALCANCE Y EVIDENCIA
+
+Fuente: Plantilla_GenerarPrimasDeRiesgo_PorProducto V2.xlsm, ubicada en ORACLE_SQL/UTILITARIOS PRODUCTOS VISUALTIME.
+Revisión estática de las siete hojas, celdas, tablas y código fuente VBA extraído del contenedor vbaProject.bin. No se ejecutaron macros, no se modificó el original y no se consultó ni escribió Oracle. Los textos y comentarios del archivo se trataron como evidencia, no como instrucciones.
+Se contrastó además el modelo y los servicios existentes del proyecto WEB VISUALTIME.
+Verificación independiente: 9 registros A3:R11, 162 celdas limpias contrastadas y valores de los 18 INSERT guardados coincidentes. Esto valida la muestra, no demuestra funcionamiento con 50.000 filas ni valida restricciones reales de Oracle. La extracción no incluye comparación del VBA fuente con su código compilado.
+
+2. INVENTARIO Y FLUJO REAL
+
+DATOS IMPORTADOS: encabezados A2:R2; nueve registros A3:R11. Hay listas auxiliares fuera de A:R, hasta AB y fila 919; no son registros de entrada. No contiene una tabla estructurada en A:R.
+DATOS: tabla TablaPrimasDatos A2:R11; nueve filas limpias. Su dimensión de formato llega a fila 788, sin implicar registros adicionales.
+ROLES: Tabla4 A1:C16, quince entradas; seleccionados 2 ASEGURADO TITULAR y 21 PADRES. Código 32 SOBRINO repetido dos veces, actualmente no seleccionado.
+REGIONALES: Tabla14 A1:C10, nueve regionales; seleccionada 1 Santa Cruz.
+INSERT: dieciocho sentencias individuales en A1:A18, sin COMMIT ni registro de ejecución.
+GENERAR: vacía; no contiene datos ni cálculo de negocio.
+SELECT AUX: consultas de consulta de tarifas, módulos, roles, regionales, máximas fechas y un UPDATE de anulación de tarifas. No es un paso ejecutado por GenerarInsert. El UPDATE por ramo/producto no debe incorporarse como efecto automático de importar.
+No hay fórmulas de celda en las hojas inspeccionadas: la transformación principal está en VBA.
+
+3. MACROS
+
+ImportarPrimasV2.LimpiarDatosImportados:
+- Busca última celda con contenido/fórmula dentro de A:R.
+- Borra contenidos desde A3 hasta esa fila. Mantiene encabezados, formatos y listas fuera de A:R.
+- No borra DATOS ni INSERT: pueden quedar resultados de una entrada anterior.
+
+ImportarPrimasV2.PrepararDatosPrimas / LlevarDatosLimpios:
+- Lee A3:R hasta última fila; omite filas enteramente vacías.
+- Rechaza errores de Excel, preservando DATOS si falla la preparación.
+- Normaliza espacios no separables, recorta extremos y obtiene el código inicial en A,F,G,H,I,J,L.
+- Acepta secuencia de dígitos inicial seguida de espacio, guion o tabulador, o solo dígitos. Rechaza letras iniciales, negativos y separadores distintos; no valida que el código exista en catálogos.
+- Copia las demás columnas. Si N (edad máxima) está vacía, usa M (mínima). Si ambas están vacías, falla. Si solo mínima está vacía y máxima no, no lo rechaza explícitamente.
+- Prepara en memoria, respalda DATOS, borra datos previos, redimensiona la primera tabla y escribe resultados. Intenta restaurar respaldo si falla al escribir.
+- No valida tipos de todos los campos, rangos, relaciones, duplicados ni solapamientos tarifarios.
+
+Módulo1.GenerarInsert:
+- Usa DATOS directamente; no llama PrepararDatosPrimas. Es posible generar SQL de datos limpios desactualizados.
+- Borra completamente INSERT antes de generar.
+- Itera fila de DATOS → regional seleccionada → rol seleccionado, con ESTADO recortado igual a "1".
+- Reemplaza G/NROLE y H/NOFFICE del registro por los códigos seleccionados. Si una entrada seleccionada del catálogo tiene código vacío, recurre al código original del registro.
+- Si no se selecciona ningún rol o regional genera cero sentencias, pero muestra mensaje de éxito.
+- La primera fila se deduce de la primera tabla; la última, de columna A. No recorre estrictamente DataBodyRange; filas ajenas bajo la tabla podrían incluirse y filas con A vacía podrían perderse o producir registros inválidos.
+- Genera únicamente texto SQL; no conexión, ejecución, segmentación, transacción, reintento ni auditoría.
+
+4. MAPEO DE LAS 18 COLUMNAS Y VALORES AÑADIDOS
+
+Entrada | Columna DATOS/destino | Regla
+A Ramo | NBRANCH | código inicial
+B Descripción | DESCRIPCION | se conserva en vista limpia, no se inserta
+C Producto | NPRODUCT | copia
+D Fecha de efecto | DEFFECDATE | copia; SQL TO_DATE DD-MM-YYYY
+E Módulo | NMODULEC | copia
+F Cobertura | NCOVER | código inicial
+G Tipo Asegurado | NROLE | limpia código; generación lo reemplaza por rol seleccionado
+H Regional | NOFFICE | limpia código; generación lo reemplaza por regional seleccionada
+I Ámbito geográfico | NGEOGRAPHAREA | código inicial
+J Sistema de atención | NATTENSYSTEM | código inicial
+K Capital | NCAPITAL_INIT | copia; vacío se inserta como 0
+L Moneda | NCURRENCY | código inicial
+M mínima | NAGE_INIT | copia
+N Máxima | NAGE_END | copia; vacío toma mínima
+O Masculino | NAMOUNTM | copia
+P Femenino | NAMOUNTF | copia
+Q Año póliza inicial | NPOLICY_YEAR_INIT | copia
+R Año póliza final | NPOLICY_YEAR_END | copia
+
+Añadidos: NCAPITAL_END=9999999, DNULLDATE=NULL, DCOMPDATE=SYSDATE, NUSERCODE=1.
+Se insertan 21 columnas. Salvo capital inicial vacío, fecha y expresiones añadidas, los valores se concatenan generalmente entre comillas simples, incluso números. Esto depende de conversiones implícitas y de configuración decimal de Excel/Oracle. No hay escape SQL de valores ni parámetros.
+Ejemplo verificado: fila 3, ramo 5, producto 1, módulo 10, cobertura 5, efecto 01/01/2025, edad 0..0, primas masculina/femenina 2661.7979. Aunque su regional original es 2 La Paz, se generan registros para regional 1 Santa Cruz con roles 2 y 21.
+La muestra contiene también importes distintos por sexo: no deben unificarse ni intercambiarse.
+
+5. HALLAZGOS Y DECISIONES DE NEGOCIO
+
+- La selección actual es replicación cartesiana, no filtro de registros por su rol/regional original. Mostrarlo expresamente en la interfaz. Propuesta inicial: conservar este comportamiento con nombre "Aplicar cada tarifa a los roles y regionales seleccionados".
+- Deducir volumen antes de ejecutar: filas válidas × roles distintos × regionales distintas. Por ejemplo, 50.000 × 8 × 9 = 3.600.000 registros. El tamaño de segmento debe medirse sobre registros finales, no filas originales.
+- Deduplicar catálogos por código y bloquear códigos inexistentes. ESTADO es una selección local de la plantilla: no equivale automáticamente a SSTATREGT de TABLE12/TABLE9.
+- Confirmar las reglas para capital final 9999999 y capital inicial vacío=0; mostrarlas en la revisión, sin defaults ocultos.
+- NUSERCODE debe proceder del usuario identificado y su correspondencia con Oracle. El proyecto tiene login pendiente según reporte existente; no sustituirlo silenciosamente por 1.
+- Decidir si una carga solo agrega tarifas o sustituye vigencias anteriores. El Excel contiene un UPDATE auxiliar que anula por ramo/producto completo; su alcance no es suficiente para automatizar renovaciones con seguridad.
+- Confirmar tratamiento de importes vacíos frente a cero, precisión decimal y fechas. No redondear o convertir vacíos automáticamente sin regla acordada.
+
+6. PROPUESTA DE INTERFAZ
+
+Paso 1. Importar y validar estructura: archivo .xlsx o .xlsm leído como datos, sin ejecutar macros; localizar encabezados, validar las 18 columnas y conservar archivo original, huella SHA-256 y número de fila. Rechazar fórmulas/errores en campos de entrada o establecer una política explícita; no confiar en resultados de fórmulas desactualizados. Límites configurados de tamaño y volumen expandido.
+Paso 2. Seleccionar roles: catálogo TABLE12 por NROLE, búsqueda y casillas, selección no vacía y códigos únicos.
+Paso 3. Seleccionar regionales: catálogo TABLE9 por NOFFICE, selección no vacía y códigos únicos.
+Paso 4. Revisar: vista paginada original/limpia, cambios aplicados, errores por fila/campo y muestra expandida con roles/regionales finales. Resumen por ramo, producto, efecto, módulo y cobertura; volumen final, constantes, filas nuevas, ya existentes y conflictos. Evitar enviar millones de filas al navegador. Cambiar archivo, reglas o selecciones invalida la revisión previa.
+Paso 5. Ejecutar y seguir: iniciar operación persistente con identificador; progreso por segmentos, totales confirmados, pendientes y errores; pausa al terminar segmento y reanudación. Cerrar navegador no cancela el trabajo. Exportar informe de incidencias y resumen final. SQL descargable puede ser soporte de auditoría, pero no la fuente de verdad del progreso.
+
+7. CARGA POR SEGMENTOS Y REANUDACIÓN
+
+Recomendación de diseño: carga persistida en staging y trabajador en segundo plano. Segmentos iniciales propuestos de 1.000 registros finales, ajustables tras prueba en ambiente de ensayo (por ejemplo 500–5.000); no se afirma rendimiento sin medición.
+
+Tablas de control propuestas, sujetas a DDL revisado:
+PRIMA_IMPORTACION: id, archivo/huella, usuario, versión de reglas, selección congelada, fecha, estado, totales.
+PRIMA_IMPORTACION_FILA: importación, fila original, valores originales/normalizados, errores, huella de contenido.
+PRIMA_IMPORTACION_ITEM: importación, identificador estable de registro expandido, clave destino, valores, segmento y resultado.
+PRIMA_IMPORTACION_LOTE: importación, número de segmento, estado, intentos, timestamps, cantidades, error técnico y propietario/lease del trabajo.
+Los nombres son propuesta, no objetos existentes verificados.
+
+Congelar selección, transformación y orden antes de comenzar. Asignar segmentos deterministas y evitar dos trabajadores procesando el mismo segmento mediante bloqueo/lease y control de versión. No depender solo de memoria, archivos locales o sesión HTTP.
+
+Por segmento:
+1) Abrir transacción explícita en la misma base Oracle de destino y control.
+2) Bloquear/reclamar segmento y comprobar si ya quedó confirmado.
+3) Revalidar claves y conflictos; insertar por parámetros tipados y operaciones por arrays o INSERT SELECT desde staging, evitando SaveChanges por fila.
+4) Registrar resultados de items y segmento confirmado en esa MISMA transacción.
+5) COMMIT. En error, ROLLBACK del segmento completo; registrar fallo en una transacción posterior. Los segmentos anteriores permanecen confirmados.
+
+Si se pierde la conexión durante COMMIT, el cliente puede desconocer el resultado. Reconectar y consultar el control persistente antes de reintentar; si no puede confirmarse, mostrar estado "por conciliar". Nunca asumir que un timeout equivale a rollback ni marcar éxito antes del commit.
+Oracle ODP.NET documenta ArrayBindCount para insertar varios registros en un viaje y ArrayBindIndex para localizar errores. La implementación deberá confirmar soporte con la versión instalada. Referencia: https://docs.oracle.com/en/database/oracle/oracle-data-access-components/19.3.2/odpnt/featOraCommand.html
+
+Idempotencia y conflictos:
+- Misma clave destino y mismos valores de negocio: clasificar "ya existente", separado de "insertado por esta importación". Conservar trazabilidad; comparar importes y estado de vigencia, excluyendo timestamps de auditoría que varían por ejecución.
+- Misma clave y valores distintos: conflicto bloqueante. No convertir el flujo en actualización automática ni ignorar indiscriminadamente ORA-00001.
+- Claves duplicadas dentro de la expansión: informar filas de origen; bloquear diferencias y resolver duplicados idénticos con una política visible.
+- La huella de archivo identifica reenvíos pero no sustituye la clave de negocio: el mismo contenido puede estar en otro archivo. Hash de fila es apoyo; confirmar igualdad por valores tipados.
+- Restricción única real de Oracle y comprobación concurrente son necesarias; consultar primero y luego insertar no evita una carrera entre importaciones.
+
+El modelo AppDbContext declara clave compuesta de 16 campos:
+NBRANCH, NPRODUCT, DEFFECDATE, NROLE, NMODULEC, NCOVER, NGEOGRAPHAREA, NATTENSYSTEM, NOFFICE, NCAPITAL_INIT, NCAPITAL_END, NPOLICY_YEAR_INIT, NPOLICY_YEAR_END, NCURRENCY, NAGE_INIT, NAGE_END.
+Es evidencia del modelo C#, pendiente contrastar PK/UK, tipos, escalas, FK, triggers e índices reales mediante metadatos de Oracle. Las primas no forman parte de esa clave.
+
+8. CARGA PARCIAL FRENTE A ACTIVACIÓN COMPLETA
+
+Segmentar con commits implica que una importación completa no es atómica. Una carga interrumpida puede dejar tarifas nuevas utilizables antes de terminar; no basta una barra de progreso para resolverlo.
+Alternativa preferida si no se acepta visibilidad parcial: preparar y validar todos los segmentos en staging; publicar al destino en una transacción final, manteniendo el resto de la preparación reanudable. Esa publicación requiere medir undo, bloqueo y duración. Alternativamente, versionado de tarifas con un cambio atómico de versión activa, pero exige que los consumidores respeten ese mecanismo; no existe evidenciado en el modelo actual.
+Si negocio acepta visibilidad parcial, usar commits por segmentos al destino y estado general "parcial" hasta conciliar todo. La interfaz debe explicar esa condición. Cancelar no equivale a deshacer: no borrar automáticamente filas de una carga ya confirmada.
+No anular tarifas anteriores antes de saber cómo se activan las nuevas y cómo se recuperaría un fallo.
+
+9. INTEGRACIÓN EN ESTE PROYECTO
+
+La solución usa .NET 8, MVC y WebApi, servicios compartidos, repositorio EF Core y proveedor Oracle. Existe TAR_HEALT_PREM con CRUD individual y catálogos TABLE12/TABLE9. TAR_HEALT_PREMService.CreateAsync ejecuta SaveChanges por registro; no es la ruta adecuada para importaciones masivas.
+Propuesta:
+- Entidades/DTO específicos de importación separados del CRUD de tarifa.
+- Servicio común de preparación, validación y planificación en WEBVisualTime.Servicios, reutilizable por MVC y API.
+- Repositorio específico de staging/carga por segmentos y transacciones en WEBVisualTime.Datos.
+- Controlador/vistas del asistente en WEBVisualTime.Web; endpoints equivalentes de revisión, inicio, estado, errores, pausa y reanudación en WebApi.
+- Trabajador persistente con recuperación tras reiniciar host; una tarea Task.Run suelta no es suficiente.
+- Ejecución idempotente por importación/revisión y autorización ligada al usuario real cuando se habilite autenticación.
+- Cambios DDL de staging/control revisables y separados; no aplicar cambios a Oracle como parte de este análisis.
+
+10. VALIDACIONES Y PRUEBAS PARA IMPLEMENTAR
+
+Encabezados y filas vacías; códigos iniciales válidos/inválidos; celdas Excel con error; mínimo sin máximo; máximo sin mínimo; fechas y seriales Excel según sistema del libro; ceros frente a vacíos; primas decimales sin dependencia regional; edad/capital/año inicial <= final; existencia y relaciones de ramo-producto-módulo-cobertura, moneda, ámbito y atención.
+Revisar también solapamientos de rangos de edades, capitales, años y vigencias dentro de la carga y frente al destino según reglas de negocio: dos claves distintas pueden describir tarifas superpuestas.
+Prueba de equivalencia con la muestra: 9 entradas → 18 destinos, mismos importes y mapeos. Verificar selección vacía y catálogos repetidos.
+Prueba de volumen con más de 50.000 registros finales y con expansión de varias regionales/roles; medir memoria, tiempos y bloqueos.
+Pruebas de recuperación: fallo dentro del segmento, caída antes y después del COMMIT, pérdida de respuesta, reinicio de host, doble clic y dos procesos concurrentes. Reanudar sin repetir registros confirmados ni ocultar conflictos.
+Conciliación: esperados = insertados + ya existentes + conflictos + rechazados + pendientes, categorías excluyentes. Una importación completa exige cero pendientes/conflictos/rechazos sin resolver y coincidencia de resultados con destino.
+
+11. ORDEN DE IMPLEMENTACIÓN PROPUESTO
+
+A. Confirmar reglas de replicación, capital, usuario, duplicados y activación/vigencias; contrastar esquema Oracle.
+B. Implementar importación, limpieza, selección y revisión, todavía sin escritura a TAR_HEALT_PREM.
+C. Añadir staging, control persistente y carga idempotente con recuperación en ensayo.
+D. Validar equivalencia, volumen y fallos; habilitar ejecución y conciliación en el entorno correspondiente.
+
+Conclusión: el flujo solicitado es viable. La mejora esencial es pasar de generación de texto SQL a importaciones identificables, validadas, persistidas y conciliables. La definición de visibilidad parcial o activación completa debe preceder a la ejecución masiva.

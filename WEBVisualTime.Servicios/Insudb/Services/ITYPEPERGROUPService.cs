@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ITYPEPERGROUPService : IService<TYPEPERGROUPDto, CreateTYPEPERGROUPDto, UpdateTYPEPERGROUPDto, int>
+public interface ITYPEPERGROUPService : IService<TYPEPERGROUPDto, CreateTYPEPERGROUPDto, UpdateTYPEPERGROUPDto, string>
 {
     Task<IEnumerable<TYPEPERGROUPDto>> FindAsync(Expression<Func<TYPEPERGROUP, bool>> predicate);
 }

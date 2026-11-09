@@ -9,6 +9,7 @@
 <div class="card">
     <div class="card-body">
         <form asp-action="Edit">
+            <input type="hidden" name="id" value="@ViewData["RecordId"]" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="SCERTYPE" />
             <div class="mb-3">
@@ -118,35 +119,35 @@
             </div>
             <div class="mb-3">
                 <label asp-for="SCERTPAYSURR" class="form-label"></label>
-                <select asp-for="SCERTPAYSURR" class="form-select cascade-select" data-cascade-parent="SCLIPAYSURR" data-cascade-url="@Url.Action("GetBySCLIENT", "CERTIFICAT")" data-current-value="@Model.SCERTPAYSURR">
+                <select asp-for="SCERTPAYSURR" class="form-select cascade-select" data-cascade-parent="SCLIPAYSURR" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "CERTIFICAT")" data-current-value="@Model.SCERTPAYSURR">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="SCERTPAYSURR" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="NBRAPAYSURR" class="form-label"></label>
-                <select asp-for="NBRAPAYSURR" class="form-select cascade-select" data-cascade-parent="SCLIPAYSURR" data-cascade-url="@Url.Action("GetBySCLIENT", "CERTIFICAT")" data-current-value="@Model.NBRAPAYSURR">
+                <select asp-for="NBRAPAYSURR" class="form-select cascade-select" data-cascade-parent="SCLIPAYSURR" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "CERTIFICAT")" data-current-value="@Model.NBRAPAYSURR">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NBRAPAYSURR" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="NPROPAYSURR" class="form-label"></label>
-                <select asp-for="NPROPAYSURR" class="form-select cascade-select" data-cascade-parent="SCLIPAYSURR" data-cascade-url="@Url.Action("GetBySCLIENT", "CERTIFICAT")" data-current-value="@Model.NPROPAYSURR">
+                <select asp-for="NPROPAYSURR" class="form-select cascade-select" data-cascade-parent="SCLIPAYSURR" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "CERTIFICAT")" data-current-value="@Model.NPROPAYSURR">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NPROPAYSURR" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="NPOLPAYSURR" class="form-label"></label>
-                <select asp-for="NPOLPAYSURR" class="form-select cascade-select" data-cascade-parent="SCLIPAYSURR" data-cascade-url="@Url.Action("GetBySCLIENT", "CERTIFICAT")" data-current-value="@Model.NPOLPAYSURR">
+                <select asp-for="NPOLPAYSURR" class="form-select cascade-select" data-cascade-parent="SCLIPAYSURR" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "CERTIFICAT")" data-current-value="@Model.NPOLPAYSURR">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NPOLPAYSURR" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="NCERPAYSURR" class="form-label"></label>
-                <select asp-for="NCERPAYSURR" class="form-select cascade-select" data-cascade-parent="SCLIPAYSURR" data-cascade-url="@Url.Action("GetBySCLIENT", "CERTIFICAT")" data-current-value="@Model.NCERPAYSURR">
+                <select asp-for="NCERPAYSURR" class="form-select cascade-select" data-cascade-parent="SCLIPAYSURR" data-cascade-parameter="SCLIENT" data-cascade-url="@Url.Action("GetBySCLIENT", "CERTIFICAT")" data-current-value="@Model.NCERPAYSURR">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NCERPAYSURR" class="text-danger"></span>

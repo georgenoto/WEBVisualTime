@@ -21,7 +21,7 @@ public class PRODUCT_LIService : IPRODUCT_LIService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<PRODUCT_LIDto?> GetByIdAsync(int id)
+    public async Task<PRODUCT_LIDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class PRODUCT_LIService : IPRODUCT_LIService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdatePRODUCT_LIDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdatePRODUCT_LIDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class PRODUCT_LIService : IPRODUCT_LIService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

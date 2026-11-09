@@ -30,7 +30,7 @@
 </div>
 <div class="mt-3 d-flex gap-2">
     <form asp-action="Delete" method="post">
-        <input type="hidden" name="id" value="@Model.SSCHE_CODE" />
+        <input type="hidden" name="id" value="@(WEBVisualTime.Entidades.Common.RecordKeys.Encode("CLAIM_ACTIONS_SCHE", Model))" />
         <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
     </form>
     <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>

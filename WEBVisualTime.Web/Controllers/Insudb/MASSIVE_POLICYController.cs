@@ -51,6 +51,7 @@ public class MASSIVE_POLICYController : Controller
     // GET: MASSIVE_POLICY/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -214,11 +215,12 @@ public class MASSIVE_POLICYController : Controller
     // POST: MASSIVE_POLICY/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateMASSIVE_POLICYDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateMASSIVE_POLICYDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SKEY, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

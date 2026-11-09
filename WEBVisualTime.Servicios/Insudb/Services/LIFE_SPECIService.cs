@@ -21,7 +21,7 @@ public class LIFE_SPECIService : ILIFE_SPECIService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<LIFE_SPECIDto?> GetByIdAsync(long id)
+    public async Task<LIFE_SPECIDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class LIFE_SPECIService : ILIFE_SPECIService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateLIFE_SPECIDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateLIFE_SPECIDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class LIFE_SPECIService : ILIFE_SPECIService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

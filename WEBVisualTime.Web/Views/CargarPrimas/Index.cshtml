@@ -1,0 +1,17 @@
+@model WEBVisualTime.Web.Models.PrimaImportacionViewModel
+@{ ViewData["Title"]="Cargar Primas Por Producto"; }
+<h1>Cargar Primas Por Producto</h1>
+<p>Importar Excel → Seleccionar roles → Seleccionar regionales → Revisar datos → Cargar y conciliar</p>
+@if(TempData["PrimasError"] is string error){<div class="alert alert-danger" style="white-space:pre-wrap">@error</div>}
+@if(!Model.Habilitado){
+<div class="alert alert-info">El módulo está pendiente de habilitación en este entorno. Instale el script <code>scripts/oracle-carga-primas.sql</code> y configure <code>CargaPrimas:Habilitado=true</code> en el servidor.</div>
+}else{
+<section class="card card-body mb-4"><h2 class="h4">1. Importar Excel</h2>
+<p>Use las 18 columnas A:R de la plantilla. Si existe la hoja DATOS IMPORTADOS se utilizará esa hoja; en otro caso, la primera. Se conservan los códigos y la fila de origen; las macros no se ejecutan.</p>
+<form asp-action="Importar" method="post" enctype="multipart/form-data">
+<label for="archivo" class="form-label">Archivo .xlsx o .xlsm (hasta 20 MB)</label><input class="form-control mb-3" id="archivo" name="archivo" type="file" accept=".xlsx,.xlsm" required />
+<button class="btn btn-primary">Importar y validar</button></form></section>
+<h2 class="h4">Importaciones recientes</h2><div class="table-responsive"><table class="table"><thead><tr><th>Archivo</th><th>Fecha del servidor</th><th>Estado</th><th>Preparados / total</th><th></th></tr></thead><tbody>
+@foreach(var s in Model.Recientes){<tr><td>@s.Archivo</td><td>@s.Creado.ToString("dd/MM/yyyy HH:mm")</td><td>@s.Estado</td><td>@s.Preparados / @s.Total</td><td><a asp-action="@(s.Estado is "BORRADOR" or "REVISADO" ? "Seleccionar":"Progreso")" asp-route-id="@s.Id">Continuar</a></td></tr>}
+</tbody></table></div>
+}

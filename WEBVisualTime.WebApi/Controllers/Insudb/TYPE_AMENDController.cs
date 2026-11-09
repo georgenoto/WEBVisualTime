@@ -16,14 +16,15 @@ public class TYPE_AMENDController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<TYPE_AMENDDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<TYPE_AMENDDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
 [HttpGet("{id}")]
-    public async Task<ActionResult<TYPE_AMENDDto>> GetById(int id)
+    public async Task<ActionResult<TYPE_AMENDDto>> GetById(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -34,19 +35,19 @@ public class TYPE_AMENDController : ControllerBase
     public async Task<ActionResult<TYPE_AMENDDto>> Create([FromBody] CreateTYPE_AMENDDto createDto)
     {
         var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.NBRANCH }, result);
+        return CreatedAtAction(nameof(GetById), new { id = WEBVisualTime.Entidades.Common.RecordKeys.Encode("TYPE_AMEND", result) }, result);
     }
 
-    [HttpPut("{{id}}")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateTYPE_AMENDDto updateDto)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(string id, [FromBody] UpdateTYPE_AMENDDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
         if (!success) return NotFound();
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
-    public async Task<IActionResult> Delete(int id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);
         if (!success) return NotFound();

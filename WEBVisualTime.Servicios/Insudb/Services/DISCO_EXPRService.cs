@@ -21,7 +21,7 @@ public class DISCO_EXPRService : IDISCO_EXPRService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<DISCO_EXPRDto?> GetByIdAsync(int id)
+    public async Task<DISCO_EXPRDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class DISCO_EXPRService : IDISCO_EXPRService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateDISCO_EXPRDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateDISCO_EXPRDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class DISCO_EXPRService : IDISCO_EXPRService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICONTR_LIMCOVService : IService<CONTR_LIMCOVDto, CreateCONTR_LIMCOVDto, UpdateCONTR_LIMCOVDto, int>
+public interface ICONTR_LIMCOVService : IService<CONTR_LIMCOVDto, CreateCONTR_LIMCOVDto, UpdateCONTR_LIMCOVDto, string>
 {
     Task<IEnumerable<CONTR_LIMCOVDto>> FindAsync(Expression<Func<CONTR_LIMCOV, bool>> predicate);
 }

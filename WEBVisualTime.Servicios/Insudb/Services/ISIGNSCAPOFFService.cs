@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ISIGNSCAPOFFService : IService<SIGNSCAPOFFDto, CreateSIGNSCAPOFFDto, UpdateSIGNSCAPOFFDto, int>
+public interface ISIGNSCAPOFFService : IService<SIGNSCAPOFFDto, CreateSIGNSCAPOFFDto, UpdateSIGNSCAPOFFDto, string>
 {
     Task<IEnumerable<SIGNSCAPOFFDto>> FindAsync(Expression<Func<SIGNSCAPOFF, bool>> predicate);
 }

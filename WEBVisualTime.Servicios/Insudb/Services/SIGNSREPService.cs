@@ -21,7 +21,7 @@ public class SIGNSREPService : ISIGNSREPService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<SIGNSREPDto?> GetByIdAsync(int id)
+    public async Task<SIGNSREPDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class SIGNSREPService : ISIGNSREPService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateSIGNSREPDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateSIGNSREPDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class SIGNSREPService : ISIGNSREPService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

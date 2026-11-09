@@ -21,6 +21,6 @@
     </div>
 </div>
 <div class="mt-3">
-    <a asp-action="Edit" asp-route-id="@Model.NSHEET_FATHER" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+    <a asp-action="Edit" asp-route-id="@(WEBVisualTime.Entidades.Common.RecordKeys.Encode("DEPEND_SHEET", Model))" class="btn btn-warning"><i class="bi bi-pencil"></i> Editar</a>
     <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
 </div>

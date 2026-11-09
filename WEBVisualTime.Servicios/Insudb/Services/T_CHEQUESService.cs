@@ -21,7 +21,7 @@ public class T_CHEQUESService : IT_CHEQUESService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<T_CHEQUESDto?> GetByIdAsync(long id)
+    public async Task<T_CHEQUESDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class T_CHEQUESService : IT_CHEQUESService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateT_CHEQUESDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateT_CHEQUESDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class T_CHEQUESService : IT_CHEQUESService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

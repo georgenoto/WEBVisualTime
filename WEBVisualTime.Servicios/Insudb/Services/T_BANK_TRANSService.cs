@@ -21,7 +21,7 @@ public class T_BANK_TRANSService : IT_BANK_TRANSService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<T_BANK_TRANSDto?> GetByIdAsync(long id)
+    public async Task<T_BANK_TRANSDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class T_BANK_TRANSService : IT_BANK_TRANSService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateT_BANK_TRANSDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateT_BANK_TRANSDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class T_BANK_TRANSService : IT_BANK_TRANSService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

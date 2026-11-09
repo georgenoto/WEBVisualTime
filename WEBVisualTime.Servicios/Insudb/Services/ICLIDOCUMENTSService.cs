@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICLIDOCUMENTSService : IService<CLIDOCUMENTSDto, CreateCLIDOCUMENTSDto, UpdateCLIDOCUMENTSDto, int>
+public interface ICLIDOCUMENTSService : IService<CLIDOCUMENTSDto, CreateCLIDOCUMENTSDto, UpdateCLIDOCUMENTSDto, string>
 {
     Task<IEnumerable<CLIDOCUMENTSDto>> FindAsync(Expression<Func<CLIDOCUMENTS, bool>> predicate);
 }

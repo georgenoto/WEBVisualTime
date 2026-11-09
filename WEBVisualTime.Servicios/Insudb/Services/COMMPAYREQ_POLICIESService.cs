@@ -21,7 +21,7 @@ public class COMMPAYREQ_POLICIESService : ICOMMPAYREQ_POLICIESService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<COMMPAYREQ_POLICIESDto?> GetByIdAsync(long id)
+    public async Task<COMMPAYREQ_POLICIESDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class COMMPAYREQ_POLICIESService : ICOMMPAYREQ_POLICIESService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateCOMMPAYREQ_POLICIESDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCOMMPAYREQ_POLICIESDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class COMMPAYREQ_POLICIESService : ICOMMPAYREQ_POLICIESService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

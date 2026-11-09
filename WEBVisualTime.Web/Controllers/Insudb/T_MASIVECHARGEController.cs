@@ -57,6 +57,7 @@ public class T_MASIVECHARGEController : Controller
     // GET: T_MASIVECHARGE/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -78,11 +79,12 @@ public class T_MASIVECHARGEController : Controller
     // POST: T_MASIVECHARGE/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateT_MASIVECHARGEDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateT_MASIVECHARGEDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SKEY, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

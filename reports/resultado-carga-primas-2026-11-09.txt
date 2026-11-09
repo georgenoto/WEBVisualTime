@@ -1,0 +1,36 @@
+RESULTADO DE IMPLEMENTACIÓN — CARGAR PRIMAS POR PRODUCTO
+
+Implementado:
+- Menú principal y asistente MVC en /CargarPrimas.
+- Lector OpenXML .xlsx/.xlsm sin macros; conserva original BLOB, huella y número de fila.
+- Limpieza equivalente a la plantilla, selección de roles/regionales, expansión cartesiana y revisión paginada de todas las columnas de negocio.
+- Validación de duplicados tras expansión, rangos superpuestos, fechas y decimales; contraste dinámico de PK/UK y precisión Oracle.
+- Plan congelado con SHA-256 de revisión para rechazar confirmaciones antiguas.
+- Staging de 1.000 registros finales por transacción con checkpoint persistente.
+- Trabajador recuperable tras reinicio, control de concurrencia por bloqueo de cabecera, pausa y reanudación.
+- Publicación final íntegra a TAR_HEALT_PREM, comparación de existentes/conflictos y conciliación en la misma transacción. Sin anulación automática de tarifas previas.
+- Resultado por item: PREPARADO, INSERTADO o EXISTENTE; informe JSON de resumen, historial y diagnóstico con referencia de importación en logs.
+- SQL para DBA y guía de instalación/operación. La activación está deshabilitada por defecto.
+
+Verificación ejecutada:
+./scripts/build-local.ps1 -Target All -NoRestore
+Resultado: 0 errores; 3820 advertencias en reconstrucción (principalmente nulabilidad previa y versión Oracle NU1603). No se modificaron masivamente archivos previos para eliminarlas.
+./scripts/verify-local.ps1 -NoBuild
+ModelValidation: 10583
+CrudSmoke: 93
+ClientFlow: 22
+ArchitectureFlow: 3355
+PrimaImportacion: 23
+PrimaFlow: 24
+Cascadas JavaScript: 11
+Total: 14111 comprobaciones correctas, sin conexión Oracle.
+Prueba adicional con la plantilla original: PrimaImportacion 26 comprobaciones correctas (incluye tres adicionales de la muestra: nueve filas, dieciocho destinos y primas distintas por sexo).
+Caso de volumen lógico: 50001 filas y 100002 registros finales, con acceso determinista al último item. No es una medición de rendimiento de Oracle.
+Sintaxis de ambos scripts JavaScript comprobada con node --check.
+git diff --check en archivos compartidos modificados: sin incidencias.
+
+Decisión de despliegue del usuario:
+Entregar SQL para ejecución por DBA. No se ejecutó DDL ni se insertaron datos en Oracle. Después de instalar scripts/oracle-carga-primas.sql, habilitar CargaPrimas:Habilitado=true y completar pruebas transaccionales y de volumen en ensayo según reports/despliegue-carga-primas-2026-11-09.txt.
+
+Limitaciones verificables:
+Los servicios Oracle compilan pero su ejecución no fue validada contra una base activa en esta sesión. La configuración de coberturas/monedas y la política de renovación de vigencias siguen necesitando contraste funcional con el entorno. La identidad de carga se declara y valida contra USERS hasta integrar el login pendiente del proyecto. Se conserva el resto del trabajo previo del repositorio.

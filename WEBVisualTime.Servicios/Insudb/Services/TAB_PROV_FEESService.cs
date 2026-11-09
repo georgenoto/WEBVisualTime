@@ -21,7 +21,7 @@ public class TAB_PROV_FEESService : ITAB_PROV_FEESService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<TAB_PROV_FEESDto?> GetByIdAsync(int id)
+    public async Task<TAB_PROV_FEESDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class TAB_PROV_FEESService : ITAB_PROV_FEESService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateTAB_PROV_FEESDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateTAB_PROV_FEESDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class TAB_PROV_FEESService : ITAB_PROV_FEESService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

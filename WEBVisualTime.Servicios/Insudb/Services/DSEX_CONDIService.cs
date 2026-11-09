@@ -21,7 +21,7 @@ public class DSEX_CONDIService : IDSEX_CONDIService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<DSEX_CONDIDto?> GetByIdAsync(int id)
+    public async Task<DSEX_CONDIDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class DSEX_CONDIService : IDSEX_CONDIService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateDSEX_CONDIDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateDSEX_CONDIDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class DSEX_CONDIService : IDSEX_CONDIService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

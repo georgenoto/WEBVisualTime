@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IEXCHANGEService : IService<EXCHANGEDto, CreateEXCHANGEDto, UpdateEXCHANGEDto, int>
+public interface IEXCHANGEService : IService<EXCHANGEDto, CreateEXCHANGEDto, UpdateEXCHANGEDto, string>
 {
     Task<IEnumerable<EXCHANGEDto>> FindAsync(Expression<Func<EXCHANGE, bool>> predicate);
 }

@@ -21,7 +21,7 @@ public class PROV_BRANCHService : IPROV_BRANCHService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<PROV_BRANCHDto?> GetByIdAsync(int id)
+    public async Task<PROV_BRANCHDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class PROV_BRANCHService : IPROV_BRANCHService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdatePROV_BRANCHDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdatePROV_BRANCHDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class PROV_BRANCHService : IPROV_BRANCHService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

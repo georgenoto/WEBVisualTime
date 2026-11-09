@@ -1,0 +1,16 @@
+PLAN DE IMPLEMENTACIÓN — CARGAR PRIMAS POR PRODUCTO
+
+1. Preparar contratos tipados y lector XLSX/XLSM sin ejecutar macros. Validar columnas, códigos, fechas, decimales, rangos y duplicados. Conservar fila de origen.
+2. Crear SQL de tablas de trabajo persistentes en INSUDB (no GLOBAL TEMPORARY TABLE: perderían el avance entre sesiones). Cabecera de importación y staging de tarifas con clave de importación/item.
+3. Implementar repositorio Oracle con parámetros, staging en segmentos de 1.000, checkpoint transaccional y publicación final atómica. Comparar existentes por clave completa y bloquear diferencias. Serializar publicaciones para impedir carreras. No anular tarifas anteriores.
+4. Implementar asistente MVC: archivo, roles, regionales, revisión paginada, confirmación, progreso y reanudación. Añadir acceso principal «Cargar Primas Por Producto».
+5. Añadir trabajador recuperable que retoma importaciones pendientes tras reinicio, sin depender del navegador. Confirmar destino y estado final juntos.
+6. Verificar equivalencia con plantilla, tipos y límites, duplicados tras expansión, compilación y suites locales. Entregar SQL y guía de despliegue. Las pruebas de transacciones reales y el DDL requieren Oracle del entorno de ensayo.
+
+Decisiones de esta implementación:
+- Se replica a todas las combinaciones seleccionadas, como la macro.
+- Capital inicial vacío=0; capital final=9999999, visibles en revisión.
+- Usuario Oracle se solicita explícitamente mientras no exista identidad integrada; se valida contra USERS.NUSERCODE y se registra como declarado, sin simular autenticación.
+- Los segmentos se confirman solo en staging; TAR_HEALT_PREM recibe una publicación final íntegra. Un fallo final revierte todas las inserciones de esa publicación.
+- Reenvíos con misma clave y mismos importes/vigencia se consideran existentes; diferencias bloquean publicación completa.
+- No se aplican DDL ni escrituras en Oracle desde scripts de arranque. Habilitación explícita por configuración tras instalar y verificar tablas de trabajo.

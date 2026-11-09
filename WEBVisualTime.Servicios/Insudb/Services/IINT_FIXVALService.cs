@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IINT_FIXVALService : IService<INT_FIXVALDto, CreateINT_FIXVALDto, UpdateINT_FIXVALDto, int>
+public interface IINT_FIXVALService : IService<INT_FIXVALDto, CreateINT_FIXVALDto, UpdateINT_FIXVALDto, string>
 {
     Task<IEnumerable<INT_FIXVALDto>> FindAsync(Expression<Func<INT_FIXVAL, bool>> predicate);
 }

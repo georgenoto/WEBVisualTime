@@ -21,7 +21,7 @@ public class RELCONCEPTSService : IRELCONCEPTSService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<RELCONCEPTSDto?> GetByIdAsync(long id)
+    public async Task<RELCONCEPTSDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class RELCONCEPTSService : IRELCONCEPTSService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateRELCONCEPTSDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateRELCONCEPTSDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class RELCONCEPTSService : IRELCONCEPTSService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -22,7 +22,7 @@ public class TAB_STATE_SAAPVController : Controller
             this, _service, page, q, "~/Views/Insudb/TAB_STATE_SAAPV/Index.cshtml");
 
     // GET: TAB_STATE_SAAPV/Details/{id}
-    public async Task<IActionResult> Details(int id)
+    public async Task<IActionResult> Details(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -49,8 +49,9 @@ public class TAB_STATE_SAAPVController : Controller
     }
 
     // GET: TAB_STATE_SAAPV/Edit/{id}
-    public async Task<IActionResult> Edit(int id)
+    public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -68,11 +69,12 @@ public class TAB_STATE_SAAPVController : Controller
     // POST: TAB_STATE_SAAPV/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateTAB_STATE_SAAPVDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateTAB_STATE_SAAPVDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.NTYPE_SAAPV, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }
@@ -80,7 +82,7 @@ public class TAB_STATE_SAAPVController : Controller
     }
 
     // GET: TAB_STATE_SAAPV/Delete/{id}
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -90,7 +92,7 @@ public class TAB_STATE_SAAPVController : Controller
     // POST: TAB_STATE_SAAPV/Delete/{id}
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
+    public async Task<IActionResult> DeleteConfirmed(string id)
     {
         await _service.DeleteAsync(id);
         return RedirectToAction(nameof(Index));

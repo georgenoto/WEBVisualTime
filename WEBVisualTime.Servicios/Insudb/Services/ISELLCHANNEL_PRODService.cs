@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ISELLCHANNEL_PRODService : IService<SELLCHANNEL_PRODDto, CreateSELLCHANNEL_PRODDto, UpdateSELLCHANNEL_PRODDto, DateTime>
+public interface ISELLCHANNEL_PRODService : IService<SELLCHANNEL_PRODDto, CreateSELLCHANNEL_PRODDto, UpdateSELLCHANNEL_PRODDto, string>
 {
     Task<IEnumerable<SELLCHANNEL_PRODDto>> FindAsync(Expression<Func<SELLCHANNEL_PROD, bool>> predicate);
 }

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IBROKER_DETService : IService<BROKER_DETDto, CreateBROKER_DETDto, UpdateBROKER_DETDto, int>
+public interface IBROKER_DETService : IService<BROKER_DETDto, CreateBROKER_DETDto, UpdateBROKER_DETDto, string>
 {
     Task<IEnumerable<BROKER_DETDto>> FindAsync(Expression<Func<BROKER_DET, bool>> predicate);
 }

@@ -21,7 +21,7 @@ public class BUSSKINDService : IBUSSKINDService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<BUSSKINDDto?> GetByIdAsync(int id)
+    public async Task<BUSSKINDDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class BUSSKINDService : IBUSSKINDService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateBUSSKINDDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateBUSSKINDDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class BUSSKINDService : IBUSSKINDService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

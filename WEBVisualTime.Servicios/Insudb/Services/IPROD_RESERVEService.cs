@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IPROD_RESERVEService : IService<PROD_RESERVEDto, CreatePROD_RESERVEDto, UpdatePROD_RESERVEDto, int>
+public interface IPROD_RESERVEService : IService<PROD_RESERVEDto, CreatePROD_RESERVEDto, UpdatePROD_RESERVEDto, string>
 {
     Task<IEnumerable<PROD_RESERVEDto>> FindAsync(Expression<Func<PROD_RESERVE, bool>> predicate);
 }

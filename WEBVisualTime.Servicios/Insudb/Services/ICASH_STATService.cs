@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICASH_STATService : IService<CASH_STATDto, CreateCASH_STATDto, UpdateCASH_STATDto, int>
+public interface ICASH_STATService : IService<CASH_STATDto, CreateCASH_STATDto, UpdateCASH_STATDto, string>
 {
     Task<IEnumerable<CASH_STATDto>> FindAsync(Expression<Func<CASH_STAT, bool>> predicate);
 }

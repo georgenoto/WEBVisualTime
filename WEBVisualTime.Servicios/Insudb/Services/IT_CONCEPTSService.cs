@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IT_CONCEPTSService : IService<T_CONCEPTSDto, CreateT_CONCEPTSDto, UpdateT_CONCEPTSDto, long>
+public interface IT_CONCEPTSService : IService<T_CONCEPTSDto, CreateT_CONCEPTSDto, UpdateT_CONCEPTSDto, string>
 {
     Task<IEnumerable<T_CONCEPTSDto>> FindAsync(Expression<Func<T_CONCEPTS, bool>> predicate);
 }

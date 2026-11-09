@@ -69,6 +69,7 @@ public class CRED_CARDController : Controller
     // GET: CRED_CARD/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -94,11 +95,12 @@ public class CRED_CARDController : Controller
     // POST: CRED_CARD/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateCRED_CARDDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateCRED_CARDDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCLIENT, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

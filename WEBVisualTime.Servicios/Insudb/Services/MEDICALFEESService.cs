@@ -21,7 +21,7 @@ public class MEDICALFEESService : IMEDICALFEESService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<MEDICALFEESDto?> GetByIdAsync(int id)
+    public async Task<MEDICALFEESDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class MEDICALFEESService : IMEDICALFEESService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateMEDICALFEESDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateMEDICALFEESDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class MEDICALFEESService : IMEDICALFEESService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

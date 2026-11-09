@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IBRANPROD_ALLOWService : IService<BRANPROD_ALLOWDto, CreateBRANPROD_ALLOWDto, UpdateBRANPROD_ALLOWDto, long>
+public interface IBRANPROD_ALLOWService : IService<BRANPROD_ALLOWDto, CreateBRANPROD_ALLOWDto, UpdateBRANPROD_ALLOWDto, string>
 {
     Task<IEnumerable<BRANPROD_ALLOWDto>> FindAsync(Expression<Func<BRANPROD_ALLOW, bool>> predicate);
 }

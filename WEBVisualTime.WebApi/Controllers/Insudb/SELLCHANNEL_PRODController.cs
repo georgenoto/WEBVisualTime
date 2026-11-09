@@ -16,14 +16,15 @@ public class SELLCHANNEL_PRODController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<SELLCHANNEL_PRODDto>>> GetAll()
+    public async Task<ActionResult<WEBVisualTime.Servicios.Services.Common.PagedResult<SELLCHANNEL_PRODDto>>> GetAll(
+        int page = 1, int pageSize = WEBVisualTime.Entidades.Common.ListingPolicy.DefaultPageSize, string? q = null, CancellationToken cancellationToken = default)
     {
-        var result = await _service.GetAllAsync();
+        var result = await _service.GetListPageAsync(page, q, cancellationToken, pageSize);
         return Ok(result);
     }
 
 [HttpGet("{id}")]
-    public async Task<ActionResult<SELLCHANNEL_PRODDto>> GetById(DateTime id)
+    public async Task<ActionResult<SELLCHANNEL_PRODDto>> GetById(string id)
     {
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
@@ -34,19 +35,19 @@ public class SELLCHANNEL_PRODController : ControllerBase
     public async Task<ActionResult<SELLCHANNEL_PRODDto>> Create([FromBody] CreateSELLCHANNEL_PRODDto createDto)
     {
         var result = await _service.CreateAsync(createDto);
-        return CreatedAtAction(nameof(GetById), new { id = result.DEFFECDATE }, result);
+        return CreatedAtAction(nameof(GetById), new { id = WEBVisualTime.Entidades.Common.RecordKeys.Encode("SELLCHANNEL_PROD", result) }, result);
     }
 
-    [HttpPut("{{id}}")]
-    public async Task<IActionResult> Update(DateTime id, [FromBody] UpdateSELLCHANNEL_PRODDto updateDto)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(string id, [FromBody] UpdateSELLCHANNEL_PRODDto updateDto)
     {
         var success = await _service.UpdateAsync(id, updateDto);
         if (!success) return NotFound();
         return NoContent();
     }
 
-    [HttpDelete("{{id}}")]
-    public async Task<IActionResult> Delete(DateTime id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
         var success = await _service.DeleteAsync(id);
         if (!success) return NotFound();

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IDETAIL_PREService : IService<DETAIL_PREDto, CreateDETAIL_PREDto, UpdateDETAIL_PREDto, int>
+public interface IDETAIL_PREService : IService<DETAIL_PREDto, CreateDETAIL_PREDto, UpdateDETAIL_PREDto, string>
 {
     Task<IEnumerable<DETAIL_PREDto>> FindAsync(Expression<Func<DETAIL_PRE, bool>> predicate);
 }

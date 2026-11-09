@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ITRELDOCService : IService<TRELDOCDto, CreateTRELDOCDto, UpdateTRELDOCDto, long>
+public interface ITRELDOCService : IService<TRELDOCDto, CreateTRELDOCDto, UpdateTRELDOCDto, string>
 {
     Task<IEnumerable<TRELDOCDto>> FindAsync(Expression<Func<TRELDOC, bool>> predicate);
 }

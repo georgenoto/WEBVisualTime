@@ -49,10 +49,10 @@ public class Repository<T> : IRepository<T> where T : class
     public async Task<T?> GetByIdAsync(object id)
     {
         ModelIntegrityRules.EnsureWritable(typeof(T));
-        var keyName = _context.Model.FindEntityType(typeof(T))?.FindPrimaryKey()?.Properties
-            .FirstOrDefault()?.Name ?? "id";
+        var entityType = _context.Model.FindEntityType(typeof(T))!;
+        var predicate = KeyQueryExpressions.Match<T>(entityType, id);
         return await IncludeNavigations(_dbSet)
-            .FirstOrDefaultAsync(e => EF.Property<object>(e, keyName).Equals(id));
+            .SingleOrDefaultAsync(predicate);
     }
 
     public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
@@ -106,7 +106,10 @@ public class Repository<T> : IRepository<T> where T : class
     public void Update(T entity)
     {
         ModelIntegrityRules.EnsureWritable(typeof(T));
-        _dbSet.Update(entity);
+        // Services load the tracked entity in this scope before mapping the changes.
+        // Detached callers must attach explicitly rather than updating a whole graph.
+        if (_context.Entry(entity).State == EntityState.Detached)
+            throw new InvalidOperationException("Load the tracked record before updating it.");
     }
 
     public void Remove(T entity)

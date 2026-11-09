@@ -63,6 +63,7 @@ public class OFF_ACCController : Controller
     // GET: OFF_ACC/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -84,11 +85,12 @@ public class OFF_ACCController : Controller
     // POST: OFF_ACC/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateOFF_ACCDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdateOFF_ACCDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SSCHE_CODE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

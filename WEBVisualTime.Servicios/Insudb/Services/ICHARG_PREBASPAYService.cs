@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICHARG_PREBASPAYService : IService<CHARG_PREBASPAYDto, CreateCHARG_PREBASPAYDto, UpdateCHARG_PREBASPAYDto, int>
+public interface ICHARG_PREBASPAYService : IService<CHARG_PREBASPAYDto, CreateCHARG_PREBASPAYDto, UpdateCHARG_PREBASPAYDto, string>
 {
     Task<IEnumerable<CHARG_PREBASPAYDto>> FindAsync(Expression<Func<CHARG_PREBASPAY, bool>> predicate);
 }

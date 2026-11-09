@@ -21,7 +21,7 @@ public class REINSU_PRIM_HEALTHService : IREINSU_PRIM_HEALTHService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<REINSU_PRIM_HEALTHDto?> GetByIdAsync(int id)
+    public async Task<REINSU_PRIM_HEALTHDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class REINSU_PRIM_HEALTHService : IREINSU_PRIM_HEALTHService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateREINSU_PRIM_HEALTHDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateREINSU_PRIM_HEALTHDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class REINSU_PRIM_HEALTHService : IREINSU_PRIM_HEALTHService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

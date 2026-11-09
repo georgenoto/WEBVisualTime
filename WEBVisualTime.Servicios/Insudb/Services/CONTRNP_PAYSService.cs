@@ -21,7 +21,7 @@ public class CONTRNP_PAYSService : ICONTRNP_PAYSService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<CONTRNP_PAYSDto?> GetByIdAsync(int id)
+    public async Task<CONTRNP_PAYSDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class CONTRNP_PAYSService : ICONTRNP_PAYSService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateCONTRNP_PAYSDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCONTRNP_PAYSDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class CONTRNP_PAYSService : ICONTRNP_PAYSService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

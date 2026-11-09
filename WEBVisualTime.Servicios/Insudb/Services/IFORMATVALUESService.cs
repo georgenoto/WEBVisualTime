@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IFORMATVALUESService : IService<FORMATVALUESDto, CreateFORMATVALUESDto, UpdateFORMATVALUESDto, int>
+public interface IFORMATVALUESService : IService<FORMATVALUESDto, CreateFORMATVALUESDto, UpdateFORMATVALUESDto, string>
 {
     Task<IEnumerable<FORMATVALUESDto>> FindAsync(Expression<Func<FORMATVALUES, bool>> predicate);
 }

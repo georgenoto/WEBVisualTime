@@ -38,6 +38,14 @@ var address = app.Services.GetRequiredService<IServer>().Features.Get<IServerAdd
 using var client = new HttpClient(new HttpClientHandler { AllowAutoRedirect = false, CookieContainer = new CookieContainer() }) { BaseAddress = new Uri(address) };
 var checks = 0;
 void Check(bool condition, string message) { if (!condition) throw new Exception(message); checks++; }
+var apiPage = await client.GetFromJsonAsync<PagedResult<TABLE2000Dto>>("/api/TABLE2000");
+Check(apiPage!.PageSize == 20 && apiPage.Items.Count == 20 && apiPage.TotalCount == 45, "Shared API must return a bounded page and totals");
+var apiNext = await client.GetFromJsonAsync<PagedResult<TABLE2000Dto>>("/api/TABLE2000?page=2");
+Check(!apiPage.Items.Select(x=>x.NAPLY).Intersect(apiNext!.Items.Select(x=>x.NAPLY)).Any(), "API pages must not overlap");
+var apiCustom = await client.GetFromJsonAsync<PagedResult<TABLE2000Dto>>("/api/TABLE2000?pageSize=25");
+Check(apiCustom!.PageSize == 25 && apiCustom.Items.Count == 25, "Shared API custom page size");
+var apiInvalid = await client.GetFromJsonAsync<PagedResult<TABLE2000Dto>>("/api/TABLE2000?pageSize=999");
+Check(apiInvalid!.PageSize == 20, "Shared API invalid size must use the general default");
 async Task<string> Page(string url)
 {
     var response = await client.GetAsync(url);

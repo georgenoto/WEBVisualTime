@@ -21,7 +21,7 @@ public class LATEPAYMENTPENALTYService : ILATEPAYMENTPENALTYService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<LATEPAYMENTPENALTYDto?> GetByIdAsync(int id)
+    public async Task<LATEPAYMENTPENALTYDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class LATEPAYMENTPENALTYService : ILATEPAYMENTPENALTYService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateLATEPAYMENTPENALTYDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateLATEPAYMENTPENALTYDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class LATEPAYMENTPENALTYService : ILATEPAYMENTPENALTYService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

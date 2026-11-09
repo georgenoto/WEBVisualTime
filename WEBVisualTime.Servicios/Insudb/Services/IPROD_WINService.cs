@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IPROD_WINService : IService<PROD_WINDto, CreatePROD_WINDto, UpdatePROD_WINDto, int>
+public interface IPROD_WINService : IService<PROD_WINDto, CreatePROD_WINDto, UpdatePROD_WINDto, string>
 {
     Task<IEnumerable<PROD_WINDto>> FindAsync(Expression<Func<PROD_WIN, bool>> predicate);
 }

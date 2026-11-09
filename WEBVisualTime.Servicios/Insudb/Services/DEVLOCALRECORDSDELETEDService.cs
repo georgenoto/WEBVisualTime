@@ -21,7 +21,7 @@ public class DEVLOCALRECORDSDELETEDService : IDEVLOCALRECORDSDELETEDService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<DEVLOCALRECORDSDELETEDDto?> GetByIdAsync(int id)
+    public async Task<DEVLOCALRECORDSDELETEDDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class DEVLOCALRECORDSDELETEDService : IDEVLOCALRECORDSDELETEDService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateDEVLOCALRECORDSDELETEDDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateDEVLOCALRECORDSDELETEDDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class DEVLOCALRECORDSDELETEDService : IDEVLOCALRECORDSDELETEDService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

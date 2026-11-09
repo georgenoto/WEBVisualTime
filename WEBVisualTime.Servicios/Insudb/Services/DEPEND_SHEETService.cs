@@ -21,7 +21,7 @@ public class DEPEND_SHEETService : IDEPEND_SHEETService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<DEPEND_SHEETDto?> GetByIdAsync(long id)
+    public async Task<DEPEND_SHEETDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class DEPEND_SHEETService : IDEPEND_SHEETService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateDEPEND_SHEETDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateDEPEND_SHEETDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class DEPEND_SHEETService : IDEPEND_SHEETService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

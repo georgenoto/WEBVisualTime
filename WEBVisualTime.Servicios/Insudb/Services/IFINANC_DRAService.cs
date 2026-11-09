@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IFINANC_DRAService : IService<FINANC_DRADto, CreateFINANC_DRADto, UpdateFINANC_DRADto, long>
+public interface IFINANC_DRAService : IService<FINANC_DRADto, CreateFINANC_DRADto, UpdateFINANC_DRADto, string>
 {
     Task<IEnumerable<FINANC_DRADto>> FindAsync(Expression<Func<FINANC_DRA, bool>> predicate);
 }

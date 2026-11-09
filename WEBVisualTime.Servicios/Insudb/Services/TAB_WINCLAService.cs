@@ -21,7 +21,7 @@ public class TAB_WINCLAService : ITAB_WINCLAService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<TAB_WINCLADto?> GetByIdAsync(int id)
+    public async Task<TAB_WINCLADto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class TAB_WINCLAService : ITAB_WINCLAService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateTAB_WINCLADto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateTAB_WINCLADto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class TAB_WINCLAService : ITAB_WINCLAService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -21,7 +21,7 @@ public class REFINAN_DRAService : IREFINAN_DRAService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<REFINAN_DRADto?> GetByIdAsync(long id)
+    public async Task<REFINAN_DRADto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class REFINAN_DRAService : IREFINAN_DRAService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateREFINAN_DRADto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateREFINAN_DRADto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class REFINAN_DRAService : IREFINAN_DRAService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

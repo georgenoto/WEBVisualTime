@@ -21,7 +21,7 @@ public class COV_USEDService : ICOV_USEDService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<COV_USEDDto?> GetByIdAsync(long id)
+    public async Task<COV_USEDDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class COV_USEDService : ICOV_USEDService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(long id, UpdateCOV_USEDDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateCOV_USEDDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class COV_USEDService : ICOV_USEDService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(long id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

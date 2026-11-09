@@ -21,7 +21,7 @@ public class TAB_WINFINService : ITAB_WINFINService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<TAB_WINFINDto?> GetByIdAsync(int id)
+    public async Task<TAB_WINFINDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class TAB_WINFINService : ITAB_WINFINService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateTAB_WINFINDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateTAB_WINFINDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class TAB_WINFINService : ITAB_WINFINService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

@@ -75,6 +75,7 @@ public class PREMIUM_CEController : Controller
     // GET: PREMIUM_CE/Edit/{id}
     public async Task<IActionResult> Edit(string id)
     {
+        ViewData["RecordId"] = id;
         var result = await _service.GetByIdAsync(id);
         if (result == null) return NotFound();
 
@@ -126,11 +127,12 @@ public class PREMIUM_CEController : Controller
     // POST: PREMIUM_CE/Edit/{id}
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdatePREMIUM_CEDto updateDto)
+    public async Task<IActionResult> Edit(string id, UpdatePREMIUM_CEDto updateDto)
     {
+        ViewData["RecordId"] = id;
         if (ModelState.IsValid)
         {
-            var success = await _service.UpdateAsync(updateDto.SCERTYPE, updateDto);
+            var success = await _service.UpdateAsync(id, updateDto);
             if (!success) return NotFound();
             return RedirectToAction(nameof(Index));
         }

@@ -21,7 +21,7 @@ public class TAB_MATRIX_RHService : ITAB_MATRIX_RHService
         return entities.Select(e => e.ToDto());
     }
 
-    public async Task<TAB_MATRIX_RHDto?> GetByIdAsync(int id)
+    public async Task<TAB_MATRIX_RHDto?> GetByIdAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         return entity?.ToDto();
@@ -41,7 +41,7 @@ public class TAB_MATRIX_RHService : ITAB_MATRIX_RHService
         return entity.ToDto();
     }
 
-    public async Task<bool> UpdateAsync(int id, UpdateTAB_MATRIX_RHDto updateDto)
+    public async Task<bool> UpdateAsync(string id, UpdateTAB_MATRIX_RHDto updateDto)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
@@ -52,7 +52,7 @@ public class TAB_MATRIX_RHService : ITAB_MATRIX_RHService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;

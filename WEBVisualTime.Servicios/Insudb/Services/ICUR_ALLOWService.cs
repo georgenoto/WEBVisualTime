@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICUR_ALLOWService : IService<CUR_ALLOWDto, CreateCUR_ALLOWDto, UpdateCUR_ALLOWDto, int>
+public interface ICUR_ALLOWService : IService<CUR_ALLOWDto, CreateCUR_ALLOWDto, UpdateCUR_ALLOWDto, string>
 {
     Task<IEnumerable<CUR_ALLOWDto>> FindAsync(Expression<Func<CUR_ALLOW, bool>> predicate);
 }

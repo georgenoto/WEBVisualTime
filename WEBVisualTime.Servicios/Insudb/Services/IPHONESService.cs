@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IPHONESService : IService<PHONESDto, CreatePHONESDto, UpdatePHONESDto, int>
+public interface IPHONESService : IService<PHONESDto, CreatePHONESDto, UpdatePHONESDto, string>
 {
     Task<IEnumerable<PHONESDto>> FindAsync(Expression<Func<PHONES, bool>> predicate);
 }

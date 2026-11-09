@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface INUMERATORService : IService<NUMERATORDto, CreateNUMERATORDto, UpdateNUMERATORDto, int>
+public interface INUMERATORService : IService<NUMERATORDto, CreateNUMERATORDto, UpdateNUMERATORDto, string>
 {
     Task<IEnumerable<NUMERATORDto>> FindAsync(Expression<Func<NUMERATOR, bool>> predicate);
 }

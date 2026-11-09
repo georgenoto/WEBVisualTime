@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IDRAFT_HISTService : IService<DRAFT_HISTDto, CreateDRAFT_HISTDto, UpdateDRAFT_HISTDto, long>
+public interface IDRAFT_HISTService : IService<DRAFT_HISTDto, CreateDRAFT_HISTDto, UpdateDRAFT_HISTDto, string>
 {
     Task<IEnumerable<DRAFT_HISTDto>> FindAsync(Expression<Func<DRAFT_HIST, bool>> predicate);
 }

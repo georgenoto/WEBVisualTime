@@ -9,6 +9,7 @@
 <div class="card">
     <div class="card-body">
         <form asp-action="Edit">
+            <input type="hidden" name="id" value="@ViewData["RecordId"]" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="NBRANCH" />
             <input type="hidden" asp-for="NCOVER" />
@@ -32,7 +33,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="NCOVERGEN" class="form-label"></label>
-                <select asp-for="NCOVERGEN" class="form-select cascade-select" data-cascade-parent="NBRANCH_EST" data-cascade-url="@Url.Action("GetByNBRANCH_EST", "TAB_LIFCOV")" data-current-value="@Model.NCOVERGEN">
+                <select asp-for="NCOVERGEN" class="form-select cascade-select" data-cascade-parent="NBRANCH_EST" data-cascade-parameter="NBRANCH_EST" data-cascade-url="@Url.Action("GetByNBRANCH_EST", "TAB_LIFCOV")" data-current-value="@Model.NCOVERGEN">
                     <option value="">-- Seleccione --</option>
                 </select>
                 <span asp-validation-for="NCOVERGEN" class="text-danger"></span>

@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface ICLAIM_VOUCHER_ORDERService : IService<CLAIM_VOUCHER_ORDERDto, CreateCLAIM_VOUCHER_ORDERDto, UpdateCLAIM_VOUCHER_ORDERDto, long>
+public interface ICLAIM_VOUCHER_ORDERService : IService<CLAIM_VOUCHER_ORDERDto, CreateCLAIM_VOUCHER_ORDERDto, UpdateCLAIM_VOUCHER_ORDERDto, string>
 {
     Task<IEnumerable<CLAIM_VOUCHER_ORDERDto>> FindAsync(Expression<Func<CLAIM_VOUCHER_ORDER, bool>> predicate);
 }

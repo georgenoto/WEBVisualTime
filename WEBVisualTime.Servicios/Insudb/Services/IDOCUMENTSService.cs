@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IDOCUMENTSService : IService<DOCUMENTSDto, CreateDOCUMENTSDto, UpdateDOCUMENTSDto, long>
+public interface IDOCUMENTSService : IService<DOCUMENTSDto, CreateDOCUMENTSDto, UpdateDOCUMENTSDto, string>
 {
     Task<IEnumerable<DOCUMENTSDto>> FindAsync(Expression<Func<DOCUMENTS, bool>> predicate);
 }

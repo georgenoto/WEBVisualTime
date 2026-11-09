@@ -5,7 +5,7 @@ using WEBVisualTime.Servicios.Services.Common;
 
 namespace WEBVisualTime.Servicios.Insudb.Services;
 
-public interface IPROD_ADDCAPService : IService<PROD_ADDCAPDto, CreatePROD_ADDCAPDto, UpdatePROD_ADDCAPDto, int>
+public interface IPROD_ADDCAPService : IService<PROD_ADDCAPDto, CreatePROD_ADDCAPDto, UpdatePROD_ADDCAPDto, string>
 {
     Task<IEnumerable<PROD_ADDCAPDto>> FindAsync(Expression<Func<PROD_ADDCAP, bool>> predicate);
 }

@@ -1,0 +1,17 @@
+@model WEBVisualTime.Web.Models.PrimaImportacionViewModel
+@{ViewData["Title"]="Revisar primas";var p=Model.Plan!;var pages=(p.Total+49)/50;}
+<h1>4. Revisar datos limpios</h1>
+<p>@p.Documento.Archivo · @p.Documento.Filas.Count filas × @p.Roles.Length roles × @p.Regionales.Length regionales = <strong>@p.Total.ToString("N0") tarifas</strong></p>
+<p>Roles: @string.Join(", ",p.Roles). Regionales: @string.Join(", ",p.Regionales). Usuario Oracle declarado: @p.Usuario.</p>
+<div class="alert alert-info">El rol y la regional originales se reemplazan por la selección. Capital inicial vacío = 0; capital final = 9.999.999. Las tarifas anteriores no se anulan. La preparación se guarda en segmentos de 1.000; la publicación al destino se confirma completa en una transacción final. Los conflictos bloquean la publicación.</div>
+<p>La tabla muestra los registros finales, con la fila de Excel de la que provienen. Los catálogos y conflictos con el destino se comprueban nuevamente al publicar.</p>
+<div class="table-responsive"><table class="table table-sm table-striped"><thead><tr><th>Fila Excel</th><th>Ramo / producto</th><th>Descripción</th><th>Efecto</th><th>Módulo / cobertura</th><th>Rol original → final</th><th>Regional original → final</th><th>Ámbito / atención</th><th>Capital inicial / final</th><th>Moneda</th><th>Edad desde / hasta</th><th>Prima masculina</th><th>Prima femenina</th><th>Año desde / hasta</th></tr></thead><tbody>
+@for(long i=(Model.Pagina-1)*50;i<Math.Min(p.Total,Model.Pagina*50);i++){var x=p.Item(i);var f=x.Fila;
+<tr><td>@f.Fila</td><td>@f.Ramo / @f.Producto</td><td>@f.Descripcion</td><td>@f.Efecto.ToString("dd/MM/yyyy")</td><td>@f.Modulo / @f.Cobertura</td><td>@f.RolOriginal → @x.Rol</td><td>@f.RegionalOriginal → @x.Regional</td><td>@f.Ambito / @f.Atencion</td><td>@f.Capital / 9999999</td><td>@f.Moneda</td><td>@f.EdadDesde / @f.EdadHasta</td><td>@f.Masculino</td><td>@f.Femenino</td><td>@f.AnioDesde / @f.AnioHasta</td></tr>}
+</tbody></table></div>
+<p>Página @Model.Pagina de @pages</p>
+@if(Model.Pagina>1){<a asp-action="Revisar" asp-route-id="@Model.Id" asp-route-pagina="@(Model.Pagina-1)" class="btn btn-outline-secondary">Anterior</a>}
+@if(Model.Pagina<pages){<a asp-action="Revisar" asp-route-id="@Model.Id" asp-route-pagina="@(Model.Pagina+1)" class="btn btn-outline-secondary">Siguiente</a>}
+<form asp-action="Ejecutar" method="post" class="mt-4"><input type="hidden" name="id" value="@Model.Id"/><input type="hidden" name="revision" value="@Model.Revision"/>
+<div class="form-check mb-3"><input type="checkbox" id="confirmar" name="confirmar" value="true" class="form-check-input" required/><label for="confirmar" class="form-check-label">Revisé la selección, los datos y las reglas de capital. Confirmo la carga.</label></div>
+<button class="btn btn-success">Preparar y publicar tarifas</button> <a asp-action="Seleccionar" asp-route-id="@Model.Id" class="btn btn-outline-secondary">Cambiar selección</a></form>
