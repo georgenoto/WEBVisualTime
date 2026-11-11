@@ -9,6 +9,13 @@
 else
 {
     <p>Copie la configuración completa de un módulo base a los destinos seleccionados del mismo producto. Se incluyen históricos e inactivos y se conservan las fechas originales. Ramo: 5.</p>
+    @if (Model.Operacion is not null)
+    {
+        <div class="alert alert-info">Puede añadir o quitar destinos antes de ejecutar. Al guardar se actualizará la revisión.</div>
+        <p>Producto: @Model.Producto — @(Model.Productos.FirstOrDefault(p => p.Codigo == Model.Producto)?.Nombre)</p>
+    }
+    else
+    {
     <form method="get" class="mb-4">
         <label for="producto" class="form-label">Producto</label>
         <select id="producto" name="producto" class="form-select" required>
@@ -17,29 +24,50 @@ else
         </select>
         <button class="btn btn-secondary mt-2">Consultar módulos</button>
     </form>
+    }
     @if (Model.Modulos.Count > 0)
     {
         <form asp-action="Preparar" method="post">
+            @if (Model.Operacion is not null)
+            {
+                <input type="hidden" name="id" value="@Model.Operacion.Id" />
+                <input type="hidden" name="revision" value="@Model.Operacion.Revision" />
+            }
             <input type="hidden" name="producto" value="@Model.Producto" />
             <label for="moduloBase" class="form-label">Módulo base</label>
             <select id="moduloBase" name="moduloBase" class="form-select mb-3" required>
                 <option value="">Seleccione el origen</option>
-                @foreach (var m in Model.Modulos) { <option value="@m.Codigo">@m.Codigo — @m.Nombre</option> }
+                @foreach (var m in Model.Modulos) { <option value="@m.Codigo" selected="@(Model.Operacion?.Plan.Base == m.Codigo)">@m.Codigo — @m.Nombre</option> }
             </select>
             <fieldset class="mb-3"><legend class="fs-5">Módulos destino</legend>
                 @foreach (var m in Model.Modulos)
                 {
-                    <div class="form-check"><input class="form-check-input" type="checkbox" id="dest-@m.Codigo" name="destinos" value="@m.Codigo" /><label class="form-check-label" for="dest-@m.Codigo">@m.Codigo — @m.Nombre</label></div>
+                    <div class="form-check"><input class="form-check-input" type="checkbox" id="dest-@m.Codigo" name="destinos" value="@m.Codigo" checked="@(Model.Operacion?.Plan.Destinos.Contains(m.Codigo) == true)" /><label class="form-check-label" for="dest-@m.Codigo">@m.Codigo — @m.Nombre</label></div>
                 }
             </fieldset>
             <label for="usuario" class="form-label">Código de usuario Oracle responsable</label>
-            <input id="usuario" name="usuario" type="number" min="1" required class="form-control" />
+            <input id="usuario" name="usuario" type="number" min="1" value="@(Model.Operacion?.Plan.Usuario ?? 1)" required class="form-control" />
             <p class="form-text">Usuario declarado, validado contra USERS. No sustituye autenticación.</p>
-            <button class="btn btn-primary">Preparar revisión</button>
+            <button class="btn btn-primary">@(Model.Operacion is null ? "Preparar revisión" : "Guardar cambios y revisar")</button>
+            @if (Model.Operacion is not null) { <a class="btn btn-outline-secondary" asp-action="Operacion" asp-route-id="@Model.Operacion.Id">Cancelar cambios</a> }
         </form>
     }
     <h2 class="h4 mt-4">Operaciones recientes</h2>
-    <ul>@foreach (var id in Model.Recientes) { <li><a asp-action="Operacion" asp-route-id="@id">@id</a></li> }</ul>
+    <div class="table-responsive"><table class="table table-striped">
+        <thead><tr><th>Producto</th><th>Creada</th><th>Fecha de réplica</th><th>Base</th><th>Destinos</th><th>Estado</th><th>Operación</th></tr></thead>
+        <tbody>
+        @foreach (var item in Model.Recientes)
+        {
+            <tr>
+                <td>@item.Plan.Producto — @(Model.Productos.FirstOrDefault(p => p.Codigo == item.Plan.Producto)?.Nombre ?? "Producto sin descripción")</td>
+                <td>@item.Creado.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                <td>@(item.Ejecutado?.ToString("dd/MM/yyyy HH:mm:ss") ?? "Pendiente")</td>
+                <td>@item.Plan.Base</td><td>@string.Join(", ", item.Plan.Destinos)</td><td>@item.Estado</td>
+                <td><a asp-action="Operacion" asp-route-id="@item.Id">Ver detalle</a><br /><small>@item.Id</small></td>
+            </tr>
+        }
+        </tbody>
+    </table></div>
 }
 @section Scripts {
 <script src="~/js/beneficios-seleccion.js" asp-append-version="true"></script>

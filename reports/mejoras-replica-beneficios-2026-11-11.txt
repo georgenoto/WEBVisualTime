@@ -1,0 +1,15 @@
+MEJORAS DE REPLICA — 11/11/2026
+
+1. Volver y modificar selección disponible antes de ejecutar. Conserva producto, base, destinos y usuario. Se puede añadir/quitar destinos, cambiar base y usuario y cancelar sin alterar la revisión actual. Guardar reconstruye preparación y respaldo de la misma operación en una transacción, con nueva revisión; un formulario antiguo no puede ejecutar/editar la versión anterior. Estados iniciados/completados no permiten edición.
+2. Usuario inicial 1, editable, sin eliminar validación USERS.
+3. Historial de 30 operaciones con código/nombre de producto, creación, fecha de publicación confirmada (evento COMPLETADO), base, lista de destinos, estado y acceso al detalle. Fecha de réplica pendiente hasta que existe publicación confirmada. No se añadieron columnas ni DDL.
+4. Retirados botones de pausa y actualización manual. Progreso automático conservado y reintento de errores disponible. Compatibilidad con operaciones antiguas pausadas.
+5. Retirado formulario de restauración de la pantalla completada. Se conserva respaldo y compatibilidad de servicios internos/operaciones antiguas; no se eliminaron respaldos.
+
+VERIFICACION
+Compilación Web con dependencias: 0 errores; 3819 advertencias existentes de nulabilidad/Oracle.
+BeneficioReplica: 22 comprobaciones SQL aisladas correctas.
+BeneficioFlow: 28 comprobaciones HTTP con repositorio simulado correctas. Verifican usuario por defecto, descripción/fechas/escape HTML del historial, CSRF, volver con selección, agregar/quitar destinos, revisión antigua rechazada, edición tras ejecutar bloqueada, progreso automático, reintento y ausencia de restauración en final.
+Sin ejecución de réplica, edición de operaciones reales ni DDL en Oracle durante esta mejora. La reconstrucción transaccional debe verificarse en ensayo Oracle para acreditar bloqueos/rollback del proveedor real. Razor compilado y respuestas HTML verificadas por HTTP, sin revisión visual en navegador.
+
+Para cargar cambios, reiniciar/republicar la aplicación WEB. No volver a ejecutar el script de tablas.

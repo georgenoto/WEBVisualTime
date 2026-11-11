@@ -1,3 +1,9 @@
+ACTUALIZACIÓN 11/11/2026
+La revisión permite «Volver y modificar selección» antes de ejecutar. Conserva base, destinos y usuario. Guardar cambios reconstruye snapshots y cantidades en la MISMA operación, bajo bloqueo de cabecera, con una nueva revisión. Revisiones antiguas y estados ya iniciados no admiten edición. No requiere DDL nuevo.
+Usuario inicial por defecto: 1 (editable y validado en USERS).
+El historial muestra producto/nombre del catálogo, creación, fecha de réplica confirmada desde el evento COMPLETADO, módulo base, destinos y estado. Una operación no publicada muestra fecha de réplica «Pendiente». Las fechas corresponden a SYSDATE de Oracle.
+Se retiran de la interfaz los botones de pausa, actualización manual y restauración. El progreso se actualiza automáticamente; se conserva reintento al fallar y compatibilidad con operaciones antiguas pausadas/restauradas. Los respaldos y servicios internos de recuperación se conservan. Estas indicaciones sustituyen las referencias a esos botones de los puntos 8 y 11 del documento original.
+
 RÉPLICA DE BENEFICIOS — INSTALACIÓN Y OPERACIÓN
 
 1. Revisar scripts/oracle-replica-beneficios.sql con el DBA y ejecutarlo UNA VEZ como INSUDB en ensayo. No cambia MEDBENEFITS_PROD; crea cinco tablas persistentes con snapshots y datos sensibles de configuración. DDL confirma implícitamente: usar una sesión dedicada.

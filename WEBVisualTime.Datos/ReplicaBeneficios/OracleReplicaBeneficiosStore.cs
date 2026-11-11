@@ -45,10 +45,13 @@ public sealed class OracleReplicaBeneficiosStore(AppDbContext db, ILogger<Oracle
     }
     public Task<List<BeneficioOpcion>> ProductosAsync(CancellationToken ct) => Options("SELECT NPRODUCT,MAX(TRIM(SDESCRIPT)) FROM INSUDB.PRODMASTER WHERE NBRANCH=5 GROUP BY NPRODUCT ORDER BY NPRODUCT", ct);
     public Task<List<BeneficioOpcion>> ModulosAsync(int producto, CancellationToken ct) => Options("SELECT NMODULEC,MAX(TRIM(SDESCRIPT)) FROM INSUDB.TAB_MODUL WHERE NBRANCH=5 AND NPRODUCT=:producto GROUP BY NMODULEC ORDER BY NMODULEC", ct, ("producto", producto));
-    public async Task<List<string>> RecientesAsync(CancellationToken ct)
+    public async Task<List<BeneficioResumen>> RecientesAsync(CancellationToken ct)
     {
-        using var c = await Open(ct); using var cmd = Cmd(c, $"SELECT ID FROM {Jobs} ORDER BY CREADO DESC FETCH FIRST 30 ROWS ONLY");
-        using var r = await cmd.ExecuteReaderAsync(ct); var ids = new List<string>(); while (await r.ReadAsync(ct)) ids.Add(r.GetString(0)); return ids;
+        using var c = await Open(ct);
+        using var cmd = Cmd(c, $"SELECT j.ID,j.ESTADO,j.PLAN,j.CREADO,(SELECT MAX(e.FECHA) FROM INSUDB.TEMP_VT_BEN_EVENTO e WHERE e.ID=j.ID AND e.ACCION='COMPLETADO') FROM {Jobs} j ORDER BY j.CREADO DESC FETCH FIRST 30 ROWS ONLY");
+        using var r = await cmd.ExecuteReaderAsync(ct); var result = new List<BeneficioResumen>();
+        while (await r.ReadAsync(ct)) result.Add(new(r.GetString(0), r.GetString(1), JsonSerializer.Deserialize<BeneficioPlan>(r.GetString(2))!, r.GetDateTime(3), r.IsDBNull(4) ? null : r.GetDateTime(4)));
+        return result;
     }
     static async Task Validate(OracleConnection c, BeneficioPlan p, CancellationToken ct)
     {
@@ -72,14 +75,32 @@ public sealed class OracleReplicaBeneficiosStore(AppDbContext db, ILogger<Oracle
         if (Columns.Split(',').Any(col => !types.TryGetValue(col, out var t) || t is not ("NUMBER" or "DATE" or "VARCHAR2" or "CHAR" or "NVARCHAR2" or "NCHAR")))
             throw new ArgumentException("Columnas de beneficios incompatibles con la réplica. Revise tipos Oracle y posibles LOB con el DBA.");
     }
-    public async Task<string> CrearAsync(BeneficioPlan plan, CancellationToken ct)
+    public Task<string> CrearAsync(BeneficioPlan plan, CancellationToken ct) => GuardarRevision(plan, null, null, ct);
+    public async Task EditarAsync(string id, string revision, BeneficioPlan plan, CancellationToken ct)
+    { CheckId(id); await GuardarRevision(plan, id, revision, ct); }
+    async Task<string> GuardarRevision(BeneficioPlan plan, string? existingId, string? revision, CancellationToken ct)
     {
         plan.Validar(); plan = plan with { Destinos = plan.Destinos.Order().ToArray() };
         using var c = await Open(ct); using var tx = c.BeginTransaction(); await Validate(c, plan, ct);
-        var id = Guid.NewGuid().ToString("N"); var a = Args(id, plan);
+        var id = existingId ?? Guid.NewGuid().ToString("N"); var a = Args(id, plan);
+        if (existingId is not null)
+        {
+            using var guard = Cmd(c, $"SELECT ESTADO,REVISION FROM {Jobs} WHERE ID=:id FOR UPDATE NOWAIT", ("id", id));
+            using var r = await guard.ExecuteReaderAsync(ct);
+            if (!await r.ReadAsync(ct) || r.GetString(0) != "REVISADO" || r.GetString(1) != revision)
+                throw new ArgumentException("La revisión cambió o ya se ejecutó. Recargue la operación antes de modificarla.");
+        }
         await Exec(c, $"LOCK TABLE {Target} IN SHARE ROW EXCLUSIVE MODE NOWAIT", ct);
-        await Exec(c, $"INSERT INTO {Jobs}(ID,PLAN,REVISION,ESTADO,CREADO,FECHA_COPIA) VALUES(:id,:plan,:rev,'REVISADO',SYSDATE,SYSDATE)", ct,
-            ("id", id), ("plan", JsonSerializer.Serialize(plan)), ("rev", Convert.ToHexString(RandomNumberGenerator.GetBytes(32))));
+        var revisionArgs = new (string, object?)[] { ("id", id), ("plan", JsonSerializer.Serialize(plan)), ("rev", Convert.ToHexString(RandomNumberGenerator.GetBytes(32))) };
+        if (existingId is null)
+            await Exec(c, $"INSERT INTO {Jobs}(ID,PLAN,REVISION,ESTADO,CREADO,FECHA_COPIA) VALUES(:id,:plan,:rev,'REVISADO',SYSDATE,SYSDATE)", ct, revisionArgs);
+        else
+        {
+            await Exec(c, $"DELETE FROM {Stage} WHERE ID=:id", ct, a);
+            await Exec(c, $"DELETE FROM {Snapshot} WHERE ID=:id", ct, a);
+            await Exec(c, $"DELETE FROM {Dest} WHERE ID=:id", ct, a);
+            await Exec(c, $"UPDATE {Jobs} SET PLAN=:plan,REVISION=:rev,FECHA_COPIA=SYSDATE,PREPARADOS=0,ELIMINADOS=0,ERROR=NULL WHERE ID=:id", ct, revisionArgs);
+        }
         for (var index = 0; index < plan.Destinos.Length; index++)
             await Exec(c, $"INSERT INTO {Dest}(ID,NMODULEC,ORDEN,ANTERIORES) SELECT :id,:m,:orden,COUNT(*) FROM {Target} WHERE NBRANCH=:ramo AND NPRODUCT=:producto AND NMODULEC=:m", ct, [..a, ("m", plan.Destinos[index]), ("orden", index + 1)]);
         var n = await Exec(c, $"INSERT INTO {Snapshot}(ID,TIPO,ITEM_NO,{Columns}) SELECT :id,'BASE',ROW_NUMBER() OVER(ORDER BY DEFFECDATE,NCOVER,NIDMEDBENEF),{Columns} FROM {Target} WHERE NBRANCH=:ramo AND NPRODUCT=:producto AND NMODULEC=:base", ct, a);

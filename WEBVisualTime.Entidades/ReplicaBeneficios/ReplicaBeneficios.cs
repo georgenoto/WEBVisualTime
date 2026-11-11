@@ -11,6 +11,7 @@ public sealed record BeneficioPlan(int Ramo, int Producto, int Base, int[] Desti
             throw new ArgumentException("Seleccione entre 1 y 500 destinos distintos, sin incluir el módulo base.");
     }
 }
+public sealed record BeneficioResumen(string Id, string Estado, BeneficioPlan Plan, DateTime Creado, DateTime? Ejecutado);
 public sealed record BeneficioDestino(int Modulo, long Anteriores);
 public sealed record BeneficioEstado(string Id, string Estado, BeneficioPlan Plan, long BaseFilas, long Total,
     long Preparados, long Eliminados, string? Error, string Revision, List<BeneficioDestino> Destinos);
@@ -18,8 +19,9 @@ public interface IReplicaBeneficiosStore
 {
     Task<List<BeneficioOpcion>> ProductosAsync(CancellationToken ct);
     Task<List<BeneficioOpcion>> ModulosAsync(int producto, CancellationToken ct);
-    Task<List<string>> RecientesAsync(CancellationToken ct);
+    Task<List<BeneficioResumen>> RecientesAsync(CancellationToken ct);
     Task<string> CrearAsync(BeneficioPlan plan, CancellationToken ct);
+    Task EditarAsync(string id, string revision, BeneficioPlan plan, CancellationToken ct);
     Task<BeneficioEstado> EstadoAsync(string id, CancellationToken ct);
     Task AccionAsync(string id, string accion, string? revision, CancellationToken ct);
     Task<bool> ProcesarAsync(CancellationToken ct);

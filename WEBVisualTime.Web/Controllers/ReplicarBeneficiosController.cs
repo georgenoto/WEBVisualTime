@@ -13,23 +13,35 @@ public sealed class ReplicarBeneficiosController(IReplicaBeneficiosStore store, 
         logger.LogError(ex, "Réplica de beneficios {Referencia}", HttpContext.TraceIdentifier);
         TempData["BeneficiosError"] = ex is ArgumentException ? ex.Message : "No se pudo completar la operación. Referencia: " + HttpContext.TraceIdentifier;
     }
-    public async Task<IActionResult> Index(int producto = 0, CancellationToken ct = default)
+    public async Task<IActionResult> Index(int producto = 0, string? id = null, CancellationToken ct = default)
     {
         var m = new ReplicaBeneficiosViewModel { Habilitado = Enabled, Producto = producto };
-        if (Enabled) try { m.Productos = await store.ProductosAsync(ct); m.Recientes = await store.RecientesAsync(ct); if (producto > 0) m.Modulos = await store.ModulosAsync(producto, ct); }
+        if (Enabled) try
+        {
+            if (id is not null)
+            {
+                m.Operacion = await store.EstadoAsync(id, ct);
+                if (m.Operacion.Estado != "REVISADO") return RedirectToAction(nameof(Operacion), new { id });
+                m.Producto = m.Operacion.Plan.Producto;
+            }
+            m.Productos = await store.ProductosAsync(ct); m.Recientes = await store.RecientesAsync(ct);
+            if (m.Producto > 0) m.Modulos = await store.ModulosAsync(m.Producto, ct);
+        }
             catch (Exception ex) when (ex is not OperationCanceledException) { Error(ex); }
         return View(m);
     }
     [HttpPost, ValidateAntiForgeryToken]
-    public async Task<IActionResult> Preparar(int producto, int moduloBase, int[] destinos, int usuario, CancellationToken ct)
+    public async Task<IActionResult> Preparar(int producto, int moduloBase, int[] destinos, int usuario, string? id, string? revision, CancellationToken ct)
     {
         try
         {
             Ensure(); if (!ModelState.IsValid) throw new ArgumentException("Revise los códigos seleccionados.");
-            var id = await store.CrearAsync(new(5, producto, moduloBase, destinos, usuario), ct);
+            var plan = new BeneficioPlan(5, producto, moduloBase, destinos, usuario);
+            if (id is null) id = await store.CrearAsync(plan, ct);
+            else await store.EditarAsync(id, revision ?? "", plan, ct);
             return RedirectToAction(nameof(Operacion), new { id });
         }
-        catch (Exception ex) when (ex is not OperationCanceledException) { Error(ex); return RedirectToAction(nameof(Index), new { producto }); }
+        catch (Exception ex) when (ex is not OperationCanceledException) { Error(ex); return RedirectToAction(nameof(Index), new { producto, id }); }
     }
     public async Task<IActionResult> Operacion(string id, CancellationToken ct)
     {
