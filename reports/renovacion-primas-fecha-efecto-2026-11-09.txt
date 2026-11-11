@@ -1,0 +1,62 @@
+AJUSTE DE CARGA DE PRIMAS — FECHA DE EFECTO Y CIERRE DE VERSIONES
+
+Solicitud: usar una fecha única, por ejemplo 02/01/2026 (2 de enero de 2026), como DEFFECDATE de los registros nuevos y DNULLDATE de las versiones anteriores sustituidas.
+
+Funcionamiento implementado:
+1. En la selección de regionales se solicita Fecha de efecto obligatoria. No se presupone una fecha fija: el operador debe elegirla para cada carga.
+2. La fecha reemplaza la columna D del Excel para todos los registros finales. Se conservan el archivo y las fechas originales en DOCUMENTO/ORIGINAL; la transformación se aplica al generar los items del plan.
+3. La revisión muestra fecha, alcance del cierre y confirmación explícita. La fecha se guarda dentro de PLAN y queda incluida en el hash de revisión; cambiarla obliga a revisar de nuevo.
+4. Los segmentos solo preparan datos en TEMP_VT_PRIMA_STAGE. No cierran tarifas durante esta fase.
+5. En la transacción final, bajo el mismo bloqueo de destino usado antes:
+   - Revalidar catálogos, claves primarias y coherencia de la fecha preparada.
+   - Cerrar las versiones anteriores correspondientes: SET DNULLDATE=FechaEfecto.
+   - Insertar nuevas tarifas con DEFFECDATE=FechaEfecto y DNULLDATE=NULL, o clasificarlas como existentes si coincide su clave primaria, aunque otros valores sean distintos. No sobrescribir importes de claves existentes.
+   - Conciliar, guardar cantidad de tarifas cerradas en PLAN.TarifasAnterioresCerradas y confirmar todo junto con el estado COMPLETADO.
+   Si falla cualquier paso, se revierte tanto el cierre como la inserción.
+
+Alcance exacto del cierre:
+Coincidencia de NBRANCH, NPRODUCT, NROLE, NMODULEC, NCOVER, NGEOGRAPHAREA, NATTENSYSTEM, NOFFICE y NCURRENCY con alguna fila preparada. No se exige igualdad ni cruce de rangos de edad, capital o año de póliza: la nueva versión puede redefinirlos.
+Solo se cierran registros con DEFFECDATE estrictamente anterior a la fecha elegida y DNULLDATE vacío o posterior a esa fecha. Las primas pueden diferir: precisamente se está publicando una nueva versión.
+No se reabren versiones ya anuladas, no se modifican versiones con efecto igual o posterior y no se cierran tarifas ajenas a la selección/filas nuevas.
+Según la corrección solicitada por el usuario, ya no se bloquea por rangos superpuestos ni se exige que los anteriores coincidan con las bandas nuevas. Todos los registros anteriores todavía vigentes de esas combinaciones se cierran, incluso si sus bandas no están en el Excel nuevo. El archivo debe representar la nueva tarifa deseada para las combinaciones seleccionadas.
+Las tarifas nuevas tienen vigencia abierta. Las versiones con fecha igual o posterior se conservan; su presencia no bloquea inserciones con una clave primaria diferente.
+La clave primaria completa de 16 campos continúa siendo el único criterio de duplicidad frente al destino. La restricción Oracle real se verifica al configurar y protege la inserción. Las validaciones de estructura, tipos, catálogos y duplicados dentro de la entrada se mantienen.
+
+Ejemplo:
+Anterior: DEFFECDATE=01/01/2025, DNULLDATE=NULL, combinación/rangos coincidentes.
+Nueva carga: FechaEfecto=02/01/2026.
+Resultado confirmado: anterior DNULLDATE=02/01/2026; nueva DEFFECDATE=02/01/2026 y DNULLDATE=NULL.
+Se aplica la interpretación de fin de vigencia exclusivo que ya utiliza el proceso: DNULLDATE > fecha indica vigente. Confirmar que los consumidores de tarifas apliquen esa misma convención; no se resta un día al valor solicitado.
+
+Para la importación que ya quedó con ERROR:
+- Abrir su progreso y pulsar «Cambiar fecha / selección».
+- La operación borra únicamente su preparación temporal, pone a cero los contadores y vuelve a BORRADOR. Conserva archivo y selección anterior para editar. No modifica TAR_HEALT_PREM.
+- Introducir 02/01/2026, revisar y confirmar nuevamente.
+- «Reanudar carga» conserva el plan anterior y no añade por sí solo una fecha a cargas antiguas.
+- Si está en ejecución, pausarla primero. Las importaciones completadas no se reconfiguran.
+
+Compatibilidad e instalación:
+- No se requieren columnas ni tablas nuevas: fecha y resultado de cierre se almacenan en el CLOB PLAN ya existente.
+- Los planes antiguos sin FechaEfecto mantienen el comportamiento previo (no cierran automáticamente tarifas). Deben revisarse para activar la nueva regla.
+- El usuario de conexión necesita UPDATE sobre INSUDB.TAR_HEALT_PREM, además de los permisos anteriores. Si es propietario ya dispone de él; en otro caso el DBA debe concederlo. No se ejecutó ningún GRANT ni DML contra Oracle en esta sesión.
+- Reiniciar/republicar la aplicación después de compilar. No volver a ejecutar el script CREATE TABLE si ya está instalado.
+- El informe JSON incluye FechaEfecto y TarifasAnterioresCerradas. La pantalla muestra el número de cierres al completar.
+
+Pruebas en ensayo necesarias:
+- Versión anterior abierta y nueva fecha posterior: cerrar anterior e insertar nueva.
+- Repetir mismo archivo/fecha: cero cierres adicionales y nuevas tarifas clasificadas como existentes.
+- Anteriores con DNULLDATE anterior o igual: conservar su fecha de cierre.
+- Combinaciones de roles/regionales no seleccionadas: conservarlas intactas.
+- Misma clave primaria y valores distintos: omitir, clasificar EXISTENTE y conservar los valores guardados.
+- Versión futura con clave diferente: conservarla e insertar la nueva.
+- Rangos distintos (incluido 0–0 anterior frente a 0–99 nuevo): cerrar las versiones anteriores de la combinación e insertar las nuevas bandas.
+- Provocar error después de UPDATE y antes del COMMIT: verificar rollback de ambos cambios.
+- Fallo y reinicio alrededor del COMMIT: consultar estado persistido antes de reintentar.
+
+Verificación local ejecutada:
+- Última compilación de ambos hosts: 0 errores, 2820 advertencias de reconstrucción (nulabilidad/versión Oracle).
+- ModelValidation 10583, CrudSmoke 93, ClientFlow 22, ArchitectureFlow 3355, PrimaImportacion 30, PrimaFlow 35, PrimaPublicacion 21 y cascadas JavaScript 11: 14150 comprobaciones correctas.
+- PrimaPublicacion ejecuta el SQL de publicación real en una base relacional SQLite aislada, adaptando únicamente alias de UPDATE y SYSDATE. Verifica cierre con rangos diferentes, claves existentes con otros importes/fechas de anulación, no duplicación, alcance de nueve dimensiones, historia ya cerrada, versiones futuras y rollback conjunto. Esta prueba no acredita transacciones, permisos ni comportamiento del proveedor Oracle en un entorno real.
+- Las pruebas nuevas verifican fecha uniforme, preservación de la fecha original, rechazo de fecha inválida, duplicados tras reemplazar fechas, compatibilidad con planes anteriores, serialización persistente, formulario obligatorio, cambio de configuración y resultado de cierre en pantalla/informe.
+- node --check del script de progreso y git diff --check: sin errores de sintaxis/espaciado (Git solo advierte normalización LF/CRLF).
+- No se ejecutó DML ni DDL en Oracle. Pendiente verificar transacciones y permisos en ensayo. El intento adicional de leer la plantilla original se omitió porque Excel la mantiene bloqueada; las pruebas sintéticas completas sí finalizaron correctamente.

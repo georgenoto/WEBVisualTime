@@ -20,6 +20,8 @@ builder.Services.AddVisualTimeServices();
 builder.Services.AddScoped<WEBVisualTime.Entidades.ImportacionPrimas.IPrimaImportacionStore, WEBVisualTime.Datos.ImportacionPrimas.OraclePrimaImportacionStore>();
 builder.Services.AddSingleton<WEBVisualTime.Servicios.ImportacionPrimas.PrimaExcelReader>();
 builder.Services.AddHostedService<WEBVisualTime.Web.Infrastructure.PrimaImportacionWorker>();
+builder.Services.AddScoped<WEBVisualTime.Entidades.ReplicaBeneficios.IReplicaBeneficiosStore, WEBVisualTime.Datos.ReplicaBeneficios.OracleReplicaBeneficiosStore>();
+builder.Services.AddHostedService<WEBVisualTime.Web.Infrastructure.ReplicaBeneficiosWorker>();
 
 // 4. Add MVC Controllers and Views
 builder.Services.AddControllersWithViews(options =>

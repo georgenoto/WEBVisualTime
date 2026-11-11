@@ -7,10 +7,12 @@
 <p>Preparados en tablas de trabajo: <strong id="preparados">@s.Preparados</strong> / <span id="total">@s.Total</span></p>
 <progress id="barra" value="@s.Preparados" max="@Math.Max(1,s.Total)" class="w-100" aria-label="Preparación de tarifas"></progress>
 <p>Insertados en destino: <strong id="insertados">@s.Insertados</strong>. Ya existentes: <strong id="existentes">@s.Existentes</strong>.</p>
+@if(Model.Plan?.TarifasAnterioresCerradas is long cerradas){<p>Tarifas anteriores cerradas: <strong>@cerradas</strong>. Fecha de cierre: @Model.Plan.FechaEfecto?.ToString("dd/MM/yyyy").</p>}
 <div id="error" class="alert alert-danger" hidden="@(string.IsNullOrEmpty(s.Error))">@s.Error</div><p id="conexion" role="status"></p>
 <p>Puede cerrar el navegador. Las importaciones en cola se retoman al reiniciar el servidor. Mientras se prepara, TAR_HEALT_PREM no recibe cambios; la publicación final se confirma junto con su resultado.</p>
 </div>
 <form asp-action="Pausar" method="post" id="pausar" hidden="@(s.Estado is not ("EN_COLA" or "PREPARANDO"))"><input type="hidden" name="id" value="@s.Id"/><p>La pausa se aplica al terminar el segmento o la publicación que ya esté en curso.</p><button class="btn btn-outline-primary">Pausar preparación</button></form>
 <form asp-action="Reanudar" method="post" id="reanudar" hidden="@(s.Estado is not ("ERROR" or "PAUSADO"))"><input type="hidden" name="id" value="@s.Id"/><p>Reanudar conserva los segmentos preparados y vuelve a intentar la publicación. Si el archivo necesita correcciones, cree una importación nueva.</p><button class="btn btn-primary">Reanudar carga</button></form>
+<form asp-action="CambiarConfiguracion" method="post" id="cambiar-configuracion" class="mt-3" hidden="@(s.Estado is not ("ERROR" or "PAUSADO"))"><input type="hidden" name="id" value="@s.Id"/><p>Para cambiar la fecha o la selección, se descartará la preparación temporal y deberá revisar nuevamente. El archivo original se conserva; no se modifican tarifas del destino.</p><button class="btn btn-outline-primary">Cambiar fecha / selección</button></form>
 <a asp-action="DescargarInforme" asp-route-id="@s.Id" class="btn btn-outline-secondary mt-3">Descargar informe</a> <a asp-action="Index" class="btn btn-outline-secondary mt-3">Volver a importaciones</a>
 <script src="~/js/primas-progreso.js" asp-append-version="true"></script>

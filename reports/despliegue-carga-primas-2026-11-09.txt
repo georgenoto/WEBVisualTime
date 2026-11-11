@@ -1,5 +1,7 @@
 DESPLIEGUE Y OPERACIÓN — CARGAR PRIMAS POR PRODUCTO
 
+ACTUALIZACIÓN: el flujo solicita Fecha de efecto y cierra versiones anteriores de las combinaciones seleccionadas, independientemente de sus rangos. La duplicidad frente al destino se determina únicamente por la clave primaria completa; las claves existentes se omiten aunque sus valores difieran. Consultar reports/renovacion-primas-fecha-efecto-2026-11-09.txt; estas reglas sustituyen las menciones iniciales de bloqueo por conflictos/solapamientos o ausencia de cierre. Requiere UPDATE en TAR_HEALT_PREM y no necesita DDL adicional.
+
 El código agrega el menú y el asistente MVC en /CargarPrimas. No ejecuta DDL al arrancar.
 Decisión del usuario: entregar el SQL para ejecución por DBA. No se instala ni habilita contra la conexión actual en esta sesión.
 

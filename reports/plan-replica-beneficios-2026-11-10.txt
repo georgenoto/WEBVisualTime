@@ -1,0 +1,11 @@
+PLAN — RÉPLICA DE BENEFICIOS POR PRODUCTO
+
+1. Crear control persistente, destinos, snapshot del origen/respaldo anterior y staging con tipos Oracle heredados mediante CTAS. Instalación manual; no ejecutar DDL al iniciar la aplicación.
+2. Congelar selección y snapshot bajo bloqueo breve. Validar producto, usuario, módulos, clave única real y columnas compatibles con comparación SQL. Conservar históricos, NIDMEDBENEF y fechas; cambiar módulo, usuario y DCOMPDATE.
+3. Preparar segmentos deterministas de 1.000 filas. Confirmar staging y checkpoint juntos. Recuperar tras reinicio por estado persistente y bloqueo de cabecera.
+4. Publicar todos los destinos en una transacción. Revalidar snapshot contra origen y destinos, borrar solo selección, insertar, conciliar contenidos y confirmar COMPLETADO junto al DML.
+5. Recuperación: pausa entre segmentos, reanudación, consulta tras resultado de commit incierto. Restauración del respaldo solo si destinos siguen iguales al resultado publicado; transacción completa.
+6. Asistente MVC: producto, módulo base, destinos, usuario declarado, revisión con cantidades, confirmación, progreso, reanudación y restauración. Feature flag deshabilitada por defecto.
+7. Compilar y probar alcance, equivalencia y rollback con motor relacional local. En ensayo Oracle: PK/UK/FK/triggers, privilegios, volumen, bloqueos, reinicios, pérdida de conexión y commit incierto.
+
+No se alteran las cargas de primas previas. No se ejecuta DDL/DML contra Oracle durante el desarrollo. La restauración no se ejecuta automáticamente. Sin identidad integrada, el código Oracle es declarado y no prueba identidad; habilitar únicamente con el control de acceso del entorno.

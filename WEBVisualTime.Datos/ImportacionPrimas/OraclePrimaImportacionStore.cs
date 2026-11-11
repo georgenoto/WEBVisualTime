@@ -12,10 +12,8 @@ public sealed class OraclePrimaImportacionStore(AppDbContext db, ILogger<OracleP
 {
     const string Jobs = "INSUDB.TEMP_VT_PRIMA_IMPORT";
     const string Stage = "INSUDB.TEMP_VT_PRIMA_STAGE";
-    public const string Columns = "NBRANCH,NPRODUCT,DEFFECDATE,NROLE,NMODULEC,NCOVER,NGEOGRAPHAREA,NATTENSYSTEM,NOFFICE,NCAPITAL_INIT,NCAPITAL_END,NPOLICY_YEAR_INIT,NPOLICY_YEAR_END,NCURRENCY,NAGE_INIT,NAGE_END,NAMOUNTF,NAMOUNTM,DNULLDATE,DCOMPDATE,NUSERCODE";
-    public static readonly string[] Keys = Columns.Split(',').Take(16).ToArray();
-    static string Match => string.Join(" AND ", Keys.Select(k => $"t.{k}=s.{k}"));
-    static string Equal => "DECODE(t.NAMOUNTF,s.NAMOUNTF,1,0)=1 AND DECODE(t.NAMOUNTM,s.NAMOUNTM,1,0)=1 AND DECODE(t.DNULLDATE,s.DNULLDATE,1,0)=1";
+    public const string Columns = PrimaPublicacionSql.Columns;
+    public static readonly string[] Keys = PrimaPublicacionSql.Keys;
     async Task<OracleConnection> Open(CancellationToken ct)
     {
         var c = new OracleConnection(db.Database.GetConnectionString());
@@ -122,6 +120,18 @@ public sealed class OraclePrimaImportacionStore(AppDbContext db, ILogger<OracleP
         Id(id);using var c=await Open(ct);
         await Execute(c,$"UPDATE {Jobs} SET ESTADO='PAUSADO' WHERE ID=:id AND ESTADO IN ('EN_COLA','PREPARANDO')",ct,("id",id));
     }
+    public async Task EditarAsync(string id,CancellationToken ct)
+    {
+        Id(id);using var c=await Open(ct);using var tx=c.BeginTransaction();
+        using(var cmd=Command(c,$"SELECT ESTADO FROM {Jobs} WHERE ID=:id FOR UPDATE NOWAIT",("id",id)))
+        {
+            var state=(await cmd.ExecuteScalarAsync(ct))?.ToString();
+            if(state is not ("ERROR" or "PAUSADO"))throw new ArgumentException("Solo puede cambiar una importación con error o pausada. Las importaciones completadas no se modifican.");
+        }
+        await Execute(c,$"DELETE FROM {Stage} WHERE IMPORT_ID=:id",ct,("id",id));
+        await Execute(c,$"UPDATE {Jobs} SET ESTADO='BORRADOR',PLAN_HASH=NULL,PREPARADOS=0,TOTAL=0,INSERTADOS=0,EXISTENTES=0,ERROR=NULL WHERE ID=:id",ct,("id",id));
+        tx.Commit();
+    }
     static PrimaEstado ReadEstado(System.Data.Common.DbDataReader r) => new(r.GetString(0),r.GetString(1),r.GetString(2),Convert.ToInt64(r.GetValue(3)),Convert.ToInt64(r.GetValue(4)),Convert.ToInt64(r.GetValue(5)),Convert.ToInt64(r.GetValue(6)),r.IsDBNull(7)?null:r.GetString(7),r.GetDateTime(8));
     const string StatusColumns = "ID,ARCHIVO,ESTADO,TOTAL,PREPARADOS,INSERTADOS,EXISTENTES,ERROR,CREADO";
     public async Task<PrimaEstado> EstadoAsync(string id, CancellationToken ct)
@@ -157,7 +167,7 @@ public sealed class OraclePrimaImportacionStore(AppDbContext db, ILogger<OracleP
                     await StageBatch(c, id, plan, start, count, ct);
                     await Execute(c, $"UPDATE {Jobs} SET PREPARADOS=:n,ESTADO='PREPARANDO' WHERE ID=:id", ct, ("id",id),("n",start+count));
                 }
-                else await Publish(c, id, ct);
+                else await Publish(c, id, plan, ct);
                 tx.Commit(); return true;
             }
             catch (OracleException ex) when (ex.Number == 54) { tx.Rollback(); /* Another worker/publication owns the lock. */ }
@@ -198,27 +208,26 @@ public sealed class OraclePrimaImportacionStore(AppDbContext db, ILogger<OracleP
             throw new ArgumentException($"No se pudo preparar el segmento {start/1000+1}, fila Excel {source}. Revise el tipo, precisión y restricciones de Oracle. Ningún registro de este segmento fue confirmado.",ex);
         }
     }
-    static async Task Publish(OracleConnection c,string id,CancellationToken ct)
+    static async Task Publish(OracleConnection c,string id,PrimaPlan plan,CancellationToken ct)
     {
         // Serializes against other imports AND external target writers during compare/insert.
         await Execute(c,"LOCK TABLE INSUDB.TAR_HEALT_PREM IN EXCLUSIVE MODE NOWAIT",ct);
         if(await Count(c,$"SELECT COUNT(*) FROM {Stage} s WHERE s.IMPORT_ID=:id AND (NOT EXISTS(SELECT 1 FROM INSUDB.PRODMASTER p WHERE p.NBRANCH=s.NBRANCH AND p.NPRODUCT=s.NPRODUCT) OR NOT EXISTS(SELECT 1 FROM INSUDB.TAB_MODUL m WHERE m.NBRANCH=s.NBRANCH AND m.NPRODUCT=s.NPRODUCT AND m.NMODULEC=s.NMODULEC AND m.DEFFECDATE<=s.DEFFECDATE AND (m.DNULLDATE IS NULL OR m.DNULLDATE>s.DEFFECDATE)) OR NOT EXISTS(SELECT 1 FROM INSUDB.TABLE12 r WHERE r.NROLE=s.NROLE) OR NOT EXISTS(SELECT 1 FROM INSUDB.TABLE9 o WHERE o.NOFFICE=s.NOFFICE) OR NOT EXISTS(SELECT 1 FROM INSUDB.TABLE9214 a WHERE a.NGEOGRAPHAREA=s.NGEOGRAPHAREA) OR NOT EXISTS(SELECT 1 FROM INSUDB.TABLE9215 a WHERE a.NATTENSYSTEM=s.NATTENSYSTEM) OR NOT EXISTS(SELECT 1 FROM INSUDB.USERS u WHERE u.NUSERCODE=s.NUSERCODE))",ct,("id",id))>0)
             throw new ArgumentException("Existen códigos de producto, módulo vigente, rol, regional, ámbito, atención o usuario que no coinciden con los catálogos. Corrija la entrada y cree otra importación.");
-        var conflicts=await Count(c,$"SELECT COUNT(*) FROM {Stage} s JOIN INSUDB.TAR_HEALT_PREM t ON {Match} WHERE s.IMPORT_ID=:id AND NOT({Equal})",ct,("id",id));
-        if(conflicts>0) throw new ArgumentException($"Publicación bloqueada: {conflicts} coincidencias de clave con primas o vigencia diferentes. No se actualizó ninguna tarifa.");
-        // Catch overlaps even when the 16-part key differs (same dimensions and intersecting ranges).
-        var dimensions=Keys.Where(k=> !new[]{"DEFFECDATE","NCAPITAL_INIT","NCAPITAL_END","NPOLICY_YEAR_INIT","NPOLICY_YEAR_END","NAGE_INIT","NAGE_END"}.Contains(k)).ToArray();
-        var dims=string.Join(" AND ",dimensions.Select(k=>$"t.{k}=s.{k}"));
-        var overlap="t.NAGE_INIT<=s.NAGE_END AND s.NAGE_INIT<=t.NAGE_END AND t.NCAPITAL_INIT<=s.NCAPITAL_END AND s.NCAPITAL_INIT<=t.NCAPITAL_END AND t.NPOLICY_YEAR_INIT<=s.NPOLICY_YEAR_END AND s.NPOLICY_YEAR_INIT<=t.NPOLICY_YEAR_END";
-        var overlaps=await Count(c,$"SELECT COUNT(*) FROM {Stage} s JOIN INSUDB.TAR_HEALT_PREM t ON {dims} AND {overlap} WHERE s.IMPORT_ID=:id AND NOT({Match}) AND (t.DNULLDATE IS NULL OR t.DNULLDATE>s.DEFFECDATE)",ct,("id",id));
-        if(overlaps>0) throw new ArgumentException("Existen tarifas con rangos o vigencias superpuestas. Revise la vigencia anterior antes de publicar; no se anula automáticamente.");
-        var existing=await Count(c,$"SELECT COUNT(*) FROM {Stage} s WHERE s.IMPORT_ID=:id AND EXISTS(SELECT 1 FROM INSUDB.TAR_HEALT_PREM t WHERE {Match})",ct,("id",id));
-        await Execute(c,$"UPDATE {Stage} s SET RESULTADO='EXISTENTE' WHERE s.IMPORT_ID=:id AND EXISTS(SELECT 1 FROM INSUDB.TAR_HEALT_PREM t WHERE {Match})",ct,("id",id));
-        var selected=string.Join(',',Columns.Split(',').Select(k=>k=="DCOMPDATE"?"SYSDATE":"s."+k));
-        var inserted=await Execute(c,$"INSERT INTO INSUDB.TAR_HEALT_PREM({Columns}) SELECT {selected} FROM {Stage} s WHERE s.IMPORT_ID=:id AND NOT EXISTS(SELECT 1 FROM INSUDB.TAR_HEALT_PREM t WHERE {Match})",ct,("id",id));
+        var closed=0;
+        if(plan.FechaEfecto is DateTime fecha)
+        {
+            if(await Count(c,$"SELECT COUNT(*) FROM {Stage} WHERE IMPORT_ID=:id AND DEFFECDATE<>:fecha",ct,("id",id),("fecha",fecha.Date))>0)
+                throw new ArgumentException("Las fechas preparadas no coinciden con la revisión. Cambie fecha/selección para volver a preparar los segmentos.");
+            closed=await Execute(c,PrimaPublicacionSql.Close(Stage),ct,("id",id),("fecha",fecha.Date));
+        }
+        var existing=await Count(c,PrimaPublicacionSql.Existing(Stage),ct,("id",id));
+        await Execute(c,PrimaPublicacionSql.MarkExisting(Stage),ct,("id",id));
+        var inserted=await Execute(c,PrimaPublicacionSql.Insert(Stage),ct,("id",id));
         var total=await Count(c,$"SELECT TOTAL FROM {Jobs} WHERE ID=:id",ct,("id",id));
         if(inserted+existing!=total) throw new ArgumentException("La conciliación no coincide con el total esperado; publicación revertida.");
         await Execute(c,$"UPDATE {Stage} SET RESULTADO='INSERTADO' WHERE IMPORT_ID=:id AND RESULTADO='PREPARADO'",ct,("id",id));
-        await Execute(c,$"UPDATE {Jobs} SET ESTADO='COMPLETADO',INSERTADOS=:n,EXISTENTES=:e,ERROR=NULL WHERE ID=:id",ct,("id",id),("n",inserted),("e",existing));
+        var result=plan with{TarifasAnterioresCerradas=closed};
+        await Execute(c,$"UPDATE {Jobs} SET ESTADO='COMPLETADO',INSERTADOS=:n,EXISTENTES=:e,PLAN=:plan,ERROR=NULL WHERE ID=:id",ct,("id",id),("n",inserted),("e",existing),("plan",JsonSerializer.Serialize(result)));
     }
 }

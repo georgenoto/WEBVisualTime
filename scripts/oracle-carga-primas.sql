@@ -35,6 +35,6 @@ ALTER TABLE INSUDB.TEMP_VT_PRIMA_STAGE ADD CONSTRAINT FK_VT_PRIMA_IMPORT FOREIGN
 CREATE INDEX INSUDB.IX_VT_PRIMA_CLAVE ON INSUDB.TEMP_VT_PRIMA_STAGE
  (IMPORT_ID,NBRANCH,NPRODUCT,NMODULEC,NCOVER,NROLE,NOFFICE,DEFFECDATE);
 -- El usuario de conexión requiere SELECT/INSERT/UPDATE en estas tablas y SELECT/INSERT
--- en TAR_HEALT_PREM, SELECT en catálogos y permiso para bloquear TAR_HEALT_PREM.
+-- y UPDATE en TAR_HEALT_PREM (cierre de vigencias), SELECT en catálogos y permiso para bloquear TAR_HEALT_PREM.
 -- Si no es propietario, revisar con DBA el privilegio necesario para LOCK TABLE.
 -- Verificar PK/UK real de TAR_HEALT_PREM y escalas de importes antes de habilitar.

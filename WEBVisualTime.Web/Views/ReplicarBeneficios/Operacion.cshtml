@@ -1,0 +1,42 @@
+@model WEBVisualTime.Web.Models.ReplicaBeneficiosViewModel
+@{ var s = Model.Operacion!; ViewData["Title"] = "Réplica de beneficios"; var active = s.Estado is "EN_COLA" or "PREPARANDO" or "RESTAURAR"; }
+<h1>Réplica de beneficios</h1>
+@if (TempData["BeneficiosError"] is string error) { <div class="alert alert-danger" role="alert">@error</div> }
+<p>Operación: <code>@s.Id</code></p>
+<p><strong>Estado: @s.Estado</strong> · Producto @s.Plan.Producto · Base @s.Plan.Base · Usuario declarado @s.Plan.Usuario</p>
+<p>Origen: @s.BaseFilas filas. Destinos: @s.Plan.Destinos.Length. Total a copiar: @s.Total.</p>
+<p>Preparación confirmada: @s.Preparados / @s.Total registros. Segmentos: @((s.Preparados + 999) / 1000) / @((s.Total + 999) / 1000).</p>
+<progress class="w-100" value="@s.Preparados" max="@s.Total" aria-label="Preparación de beneficios"></progress>
+@if (s.Error is not null) { <div class="alert alert-danger" role="alert">@s.Error</div> }
+<table class="table"><thead><tr><th>Módulo destino</th><th>Filas anteriores a reemplazar</th><th>Filas de la réplica</th></tr></thead><tbody>
+@foreach (var d in s.Destinos) { <tr><td>@d.Modulo</td><td>@d.Anteriores</td><td>@s.BaseFilas</td></tr> }
+</tbody></table>
+<p>Se conservan históricos, fechas originales y NIDMEDBENEF. Se asignan el usuario declarado y una fecha de copia común. Los módulos no seleccionados se conservan.</p>
+@if (s.Estado == "REVISADO")
+{
+    <form asp-action="Accion" method="post">
+        <input type="hidden" name="id" value="@s.Id" /><input type="hidden" name="revision" value="@s.Revision" /><input type="hidden" name="accion" value="ejecutar" />
+        <label class="d-block mb-3"><input type="checkbox" name="confirmar" value="true" required /> Confirmo reemplazar toda la configuración de los destinos indicados.</label>
+        <button class="btn btn-primary">Ejecutar réplica</button>
+    </form>
+}
+@if (s.Estado is "ERROR" or "PAUSADO" or "ERROR_RESTAURAR" || s.Estado is "EN_COLA" or "PREPARANDO")
+{
+    var action = s.Estado == "ERROR_RESTAURAR" ? "reintentarRestauracion" : s.Estado is "ERROR" or "PAUSADO" ? "reanudar" : "pausar";
+    <form asp-action="Accion" method="post"><input type="hidden" name="id" value="@s.Id" /><input type="hidden" name="accion" value="@action" /><button class="btn btn-secondary">@(action == "pausar" ? "Pausar entre segmentos" : action == "reintentarRestauracion" ? "Reintentar restauración" : "Reanudar desde el avance confirmado")</button></form>
+}
+@if (s.Estado == "COMPLETADO")
+{
+    <div class="alert alert-success">Réplica confirmada en todos los destinos. Filas reemplazadas: @s.Eliminados.</div>
+    <form asp-action="Accion" method="post">
+        <input type="hidden" name="id" value="@s.Id" /><input type="hidden" name="revision" value="@s.Revision" /><input type="hidden" name="accion" value="restaurar" />
+        <label class="d-block"><input type="checkbox" name="confirmar" value="true" required /> Restaurar la configuración anterior de todos estos destinos. Solo será posible si no cambiaron después de la réplica.</label>
+        <button class="btn btn-outline-danger mt-2">Restaurar respaldo</button>
+    </form>
+}
+@if (s.Estado == "RESTAURADO") { <div class="alert alert-success">Configuración anterior restaurada en todos los destinos.</div> }
+@if (active) { <p id="beneficios-progreso" data-url="@Url.Action("Estado", new { id = s.Id })" data-estado="@s.Estado" data-preparados="@s.Preparados">Puede cerrar esta página: el proceso continúa en el servidor. La publicación final se confirma o revierte completa. El progreso se actualiza automáticamente.</p><a class="btn btn-outline-primary" asp-action="Operacion" asp-route-id="@s.Id">Actualizar progreso</a> }
+<div class="mt-4"><a asp-action="Informe" asp-route-id="@s.Id">Descargar informe</a> · <a asp-action="Index">Nueva réplica</a></div>
+@section Scripts {
+    <script src="~/js/beneficios-progreso.js" asp-append-version="true"></script>
+}

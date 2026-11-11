@@ -1,0 +1,5 @@
+HABILITACION SOLICITADA POR USUARIO
+
+El usuario informa haber ejecutado el DDL Oracle. Se configura ReplicaBeneficios:Habilitado=true en WEBVisualTime.Web/appsettings.json. El acceso del menu se llama REPLICAR TABLA DE BENEFICIOS y se encuentra inmediatamente despues de Cargar Primas Por Producto. Las cinco tablas nuevas conservan el prefijo INSUDB.TEMP_VT_BEN_.
+
+Para cargar los assemblies y el menu actualizados en una instancia ya abierta, reiniciar o republicar el host WEB. No se ejecuto ninguna replica ni restauracion como parte de la habilitacion.

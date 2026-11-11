@@ -34,7 +34,7 @@ public sealed class PrimaExcelReader
         if (zip.Entries.Sum(e => e.Length) > 150L * 1024 * 1024) throw new ArgumentException("El archivo descomprimido supera 150 MB.");
         var wb = Xml(zip.GetEntry("xl/workbook.xml") ?? throw new ArgumentException("Libro Excel inválido."));
         var sheets = wb.Descendants(X + "sheet").ToList();
-        var sheet = sheets.FirstOrDefault(e => (string?)e.Attribute("name") == "DATOS IMPORTADOS") ?? sheets.FirstOrDefault()
+        var sheet = sheets.FirstOrDefault(e => (string?)e.Attribute("name") == "DATOS") ?? sheets.FirstOrDefault()
             ?? throw new ArgumentException("No hay hojas para importar.");
         var rid = (string?)sheet.Attribute(XNamespace.Get("http://schemas.openxmlformats.org/officeDocument/2006/relationships") + "id");
         var rel = Xml(zip.GetEntry("xl/_rels/workbook.xml.rels")!).Root!.Elements().Single(e => (string?)e.Attribute("Id") == rid);
@@ -121,11 +121,13 @@ public sealed class PrimaExcelReader
     }
     public static void ValidarPlan(PrimaPlan plan)
     {
+        if (plan.FechaEfecto is DateTime effect && (effect.Year < 1900 || effect.Year > 2200 || effect != effect.Date))
+            throw new ArgumentException("La fecha de efecto debe ser una fecha sin hora entre 1900 y 2200.");
         if (plan.Roles.Length == 0 || plan.Regionales.Length == 0 || plan.Usuario <= 0) throw new ArgumentException("Seleccione al menos un rol, una regional y un usuario Oracle válido.");
         if (plan.Roles.Distinct().Count() != plan.Roles.Length || plan.Regionales.Distinct().Count() != plan.Regionales.Length) throw new ArgumentException("Selección duplicada.");
         if (plan.Total > 5_000_000) throw new ArgumentException("La expansión supera 5.000.000 de registros. Divida el archivo.");
         // Original role/office are intentionally excluded: the selection replaces both.
-        var duplicates = plan.Documento.Filas.GroupBy(f => new { f.Ramo, f.Producto, f.Efecto, f.Modulo, f.Cobertura, f.Ambito, f.Atencion, f.Capital, f.Moneda, f.EdadDesde, f.EdadHasta, f.AnioDesde, f.AnioHasta }).FirstOrDefault(g => g.Count() > 1);
+        var duplicates = plan.Documento.Filas.GroupBy(f => new { f.Ramo, f.Producto, Efecto = plan.FechaEfecto ?? f.Efecto, f.Modulo, f.Cobertura, f.Ambito, f.Atencion, f.Capital, f.Moneda, f.EdadDesde, f.EdadHasta, f.AnioDesde, f.AnioHasta }).FirstOrDefault(g => g.Count() > 1);
         if (duplicates != null) throw new ArgumentException("La expansión produciría claves repetidas. Filas de origen: " + string.Join(", ", duplicates.Take(10).Select(f => f.Fila)));
         long comparisons = 0;
         foreach (var group in plan.Documento.Filas.GroupBy(f => new { f.Ramo, f.Producto, f.Modulo, f.Cobertura, f.Ambito, f.Atencion, f.Moneda }))

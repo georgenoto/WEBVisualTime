@@ -30,8 +30,11 @@ var html=await Get("/CargarPrimas");Check(html.Contains("Cargar Primas Por Produ
 Check(!string.IsNullOrEmpty(Token(html)),"Antiforgery generated");
 var denied=await http.PostAsync("/CargarPrimas/Ejecutar",new FormUrlEncodedContent(new Dictionary<string,string>{{"id",FakeStore.Id}}));Check(denied.StatusCode==HttpStatusCode.BadRequest,"Mutation without antiforgery denied");
 html=await Get("/CargarPrimas/Seleccionar/"+FakeStore.Id);Check(html.Contains("Seleccionar roles")&&html.Contains("Seleccionar regionales")&&html.Contains("NUSERCODE"),"Selection steps");
-html=await Post("Preparar",Token(html),("id",FakeStore.Id),("roles","2"),("roles","21"),("regionales","1"),("usuario","7"));
+html=await Post("Preparar",Token(html),("id",FakeStore.Id),("roles","2"),("roles","21"),("regionales","1"),("usuario","7"),("fechaEfecto","2026-01-02"));
 Check(store.Plan?.Total==120,"Frozen expansion volume");
+Check(store.Plan?.FechaEfecto==new DateTime(2026,1,2)&&html.Contains("02/01/2026")&&html.Contains("DNULLDATE"),"Effective date and renewal scope are explicit in review");
+Check(html.Contains("clave primaria completa de 16 campos")&&html.Contains("aunque cambien los rangos")&&!html.Contains("mismos rangos"),"Review explains primary-key deduplication and closure across different bands");
+Check(store.Plan!.Item(0).Fila.Efecto==new DateTime(2026,1,2)&&store.Doc.Filas[0].Efecto==new DateTime(2025,1,1),"New effective date overrides Excel without changing original");
 Check(html.Contains("120 tarifas")&&html.Contains("Cambiar selección"),"Review and edit link");
 Check(!html.Contains("<script>source</script>")&&html.Contains("&lt;script&gt;source&lt;/script&gt;"),"Spreadsheet descriptions HTML encoded");
 Check(html.Contains("Página 1 de 3"),"Review paginated");
@@ -41,9 +44,16 @@ Check(revision.Length==64,"Review digest");
 html=await Post("Ejecutar",Token(html),("id",FakeStore.Id),("revision",revision),("confirmar","true"));
 Check(store.State=="EN_COLA"&&html.Contains("Carga y conciliación"),"Confirm queues import");
 html=await Post("Pausar",Token(html),("id",FakeStore.Id));Check(store.State=="PAUSADO"&&html.Contains("Reanudar carga"),"Pause");
+html=await Post("CambiarConfiguracion",Token(html),("id",FakeStore.Id));Check(store.State=="BORRADOR"&&html.Contains("2026-01-02"),"Paused import can revise date retaining selection");
+html=await Post("Preparar",Token(html),("id",FakeStore.Id),("roles","2"),("roles","21"),("regionales","1"),("usuario","7"),("fechaEfecto",""));Check(store.State=="BORRADOR","Missing effective date cannot produce a reviewed plan");
+html=await Post("Preparar",Token(html),("id",FakeStore.Id),("roles","2"),("roles","21"),("regionales","1"),("usuario","7"),("fechaEfecto","2026-01-02"));
+store.State="PAUSADO";
 html=await Post("Reanudar",Token(html),("id",FakeStore.Id));Check(store.State=="EN_COLA","Resume");
 var response=await http.GetAsync("/CargarPrimas/Estado/"+FakeStore.Id);Check(response.StatusCode==HttpStatusCode.OK&&(await response.Content.ReadAsStringAsync()).Contains("EN_COLA"),"Polling JSON");
 response=await http.GetAsync("/CargarPrimas/DescargarInforme/"+FakeStore.Id);Check(response.Content.Headers.ContentType?.MediaType=="application/json"&&response.Content.Headers.ContentDisposition?.FileName?.Contains("primas-")==true,"Download report");
+store.Plan=store.Plan! with{TarifasAnterioresCerradas=60};store.State="COMPLETADO";
+html=await Get("/CargarPrimas/Progreso/"+FakeStore.Id);Check(html.Contains("Tarifas anteriores cerradas")&&html.Contains("02/01/2026"),"Completion displays closed versions and effective date");
+response=await http.GetAsync("/CargarPrimas/DescargarInforme/"+FakeStore.Id);var report=await response.Content.ReadAsStringAsync();Check(report.Contains("TarifasAnterioresCerradas")&&report.Contains("2026-01-02"),"Audit report includes renewal result");
 builder.Configuration["CargaPrimas:Habilitado"]="false";
 html=await Get("/CargarPrimas");Check(html.Contains("pendiente de habilitación")&&!html.Contains("enctype=\"multipart/form-data\""),"Disabled module does not permit upload");
 Console.WriteLine($"PrimaFlow: {checks} comprobaciones HTTP correctas.");await app.StopAsync();
@@ -68,5 +78,6 @@ public sealed class FakeStore:IPrimaImportacionStore
  public Task EncolarAsync(string id,string revision,CancellationToken ct){State="EN_COLA";return Task.CompletedTask;}
  public Task ReanudarAsync(string id,CancellationToken ct){State="EN_COLA";return Task.CompletedTask;}
  public Task PausarAsync(string id,CancellationToken ct){State="PAUSADO";return Task.CompletedTask;}
+ public Task EditarAsync(string id,CancellationToken ct){State="BORRADOR";return Task.CompletedTask;}
  public Task<bool> ProcesarSiguienteAsync(CancellationToken ct)=>Task.FromResult(false);
 }

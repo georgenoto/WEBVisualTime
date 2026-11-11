@@ -1,0 +1,27 @@
+RESULTADO DEL DESARROLLO — 10/11/2026
+
+Implementado en la aplicación MVC existente:
+- Entrada principal Replicar beneficios por producto (/ReplicarBeneficios).
+- Selección por catálogo de producto/base/destinos y usuario Oracle declarado, ramo 5.
+- Revisión congelada con cantidades por destino y respaldo anterior; confirmación protegida con token CSRF.
+- Copia de históricos/inactivos y fechas originales. Reemplazo limitado a destinos seleccionados.
+- Preparación persistente por segmentos de 1.000; checkpoint, filas y evento en una transacción.
+- Trabajador recuperable tras reinicio, pausa entre segmentos, reanudación desde checkpoint y progreso automático.
+- Publicación final con bloqueo de escritores, comparación de origen y destinos contra snapshots, borrado/inserción/conciliación/COMPLETADO atómicos.
+- Comparación de contenido y multiplicidad, incluidos nulos; no solo cantidad de registros.
+- Restauración de respaldo transaccional si todos los destinos siguen iguales a lo publicado. Reintento diferenciado de restauración.
+- Registro persistente de eventos y descarga de informe JSON.
+- Script DDL separado, sin ejecución automática. Feature flag deshabilitada en ausencia de configuración.
+
+Verificación local terminada:
+- Compilación All (Web y WebApi): 0 errores, 2820 advertencias de nulabilidad/Oracle del proyecto.
+- Compilación Web final después de los últimos cambios: 0 errores, 3 advertencias NU1603 de resolución de versión Oracle.
+- Suite completa verify-local.ps1 -NoBuild -NoRestore: 14.172 comprobaciones correctas.
+- BeneficioReplica incluye 22 comprobaciones sobre SQL productivo adaptado a SQLite aislado (MINUS → EXCEPT), sin Oracle: planes inválidos, segmentación/reanudación, checkpoint, históricos, auditoría de copia, rollback de publicación/restauración, alcance de producto/módulos, comparación completa y cambios externos.
+- Smoke HTTP de la ruta nueva: 3 comprobaciones correctas (pantalla deshabilitada 200, consulta de estado deshabilitada 404, POST sin CSRF 400).
+- Sintaxis JavaScript de selección/progreso correcta; git diff --check sin errores.
+- El primer arranque de smoke heredó la configuración local de primas y falló por acceso al EventLog de Windows. El arranque de prueba correcto deshabilitó explícitamente ambos workers y ese proveedor de logging solo en argumentos del proceso. No se modificó la configuración operativa.
+
+No se instalaron tablas de control ni se publicaron réplicas en Oracle. Pendiente QA Oracle real descrita en despliegue-replica-beneficios-2026-11-10.txt; no se acredita rendimiento, bloqueos o recuperación real de COMMIT con la base aislada. Sin validación visual en navegador; Razor compilado y ruta deshabilitada verificada por HTTP.
+
+Se conservaron los cambios previos de primas existentes al comenzar. Únicas integraciones compartidas de este trabajo: registro DI/worker en Program.cs, acceso del menú y alta de BeneficioReplica en verify-local.ps1.

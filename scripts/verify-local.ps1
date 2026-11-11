@@ -16,7 +16,7 @@ try {
         & (Join-Path $PSScriptRoot 'build-local.ps1') -Target All -Processors $Processors -NoRestore:$NoRestore
         if ($LASTEXITCODE -ne 0) { throw 'Application build failed.' }
     }
-    foreach ($suite in @('ModelValidation', 'CrudSmoke', 'ClientFlow', 'ArchitectureFlow', 'PrimaImportacion', 'PrimaFlow')) {
+    foreach ($suite in @('ModelValidation', 'CrudSmoke', 'ClientFlow', 'ArchitectureFlow', 'PrimaImportacion', 'PrimaFlow', 'PrimaPublicacion', 'BeneficioReplica')) {
         $projectPath = Join-Path $workspacePath "tests/$suite/$suite.csproj"
         $testArguments = @('run', '--project', $projectPath, '-p:UseSharedCompilation=false', '-p:RunAnalyzersDuringBuild=false')
         if ($NoRestore) { $testArguments += '--no-restore' }

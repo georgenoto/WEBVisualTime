@@ -12,8 +12,10 @@
             document.getElementById('error').textContent = s.error || '';
             document.getElementById('error').hidden = !s.error;
             document.getElementById('reanudar').hidden = !['ERROR', 'PAUSADO'].includes(s.estado);
+            document.getElementById('cambiar-configuracion').hidden = !['ERROR', 'PAUSADO'].includes(s.estado);
             document.getElementById('pausar').hidden = !['EN_COLA', 'PREPARANDO'].includes(s.estado);
             document.getElementById('conexion').textContent = '';
+            if (s.estado === 'COMPLETADO' && root.dataset.estado !== 'COMPLETADO') { window.location.reload(); return; }
             if (['COMPLETADO', 'ERROR', 'PAUSADO', 'BORRADOR', 'REVISADO'].includes(s.estado)) return;
         } catch { document.getElementById('conexion').textContent = 'No se pudo actualizar el progreso. Se volverá a consultar automáticamente.'; }
         setTimeout(poll, 3000);

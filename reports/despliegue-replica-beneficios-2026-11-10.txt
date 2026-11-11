@@ -1,0 +1,27 @@
+RÉPLICA DE BENEFICIOS — INSTALACIÓN Y OPERACIÓN
+
+1. Revisar scripts/oracle-replica-beneficios.sql con el DBA y ejecutarlo UNA VEZ como INSUDB en ensayo. No cambia MEDBENEFITS_PROD; crea cinco tablas persistentes con snapshots y datos sensibles de configuración. DDL confirma implícitamente: usar una sesión dedicada.
+2. La conexión necesita SELECT sobre PRODMASTER, TAB_MODUL, USERS y metadatos ALL_CONSTRAINTS/ALL_CONS_COLUMNS/ALL_TAB_COLUMNS; SELECT/INSERT/DELETE y permiso para LOCK TABLE de MEDBENEFITS_PROD; y SELECT/INSERT/UPDATE/DELETE de tablas TEMP_VT_BEN_*. El propietario INSUDB dispone de sus permisos; con otro usuario el DBA debe ajustar privilegios específicos.
+3. Publicar el host WEB y configurar ReplicaBeneficios:Habilitado=true (variable de entorno ReplicaBeneficios__Habilitado=true). Por defecto está deshabilitado, sin ejecutar DDL ni consultar la cola. El host WebApi no procesa esta cola.
+4. Acceder a /ReplicarBeneficios. Ramo fijo 5. Elegir producto, base, destinos y usuario Oracle declarado. Se valida existencia de módulos, sin filtrar vigencia, como el script original.
+5. Preparar revisión captura origen completo y respaldo de los destinos bajo bloqueo breve de escritores de TODA la tabla. Si está ocupada, no se modifica nada. Revisar cantidades; confirmar reemplazo para iniciar la cola.
+6. Cada segmento prepara hasta 1.000 filas, con checkpoint y evento en la misma transacción. ID + ITEM_NO impide duplicar un item confirmado. Las posiciones son deterministas por orden del destino y item del snapshot.
+7. Al finalizar la preparación, una transacción revalida catálogos y snapshot, borra SOLO destinos seleccionados, inserta staging, compara contenido y confirma COMPLETADO con el resultado. El bloqueo final abarca toda la tabla para proteger frente a escritores externos; medir duración en ensayo. Las lecturas normales siguen disponibles.
+8. La página permite actualizar el progreso, pausar entre segmentos y reanudar un ERROR/PAUSADO. Cerrar navegador no cancela; reiniciar el host permite continuar EN_COLA/PREPARANDO/RESTAURAR automáticamente. Si una acción coincide con segmento/publicación bloqueado, recargar y repetir al terminar esa transacción.
+9. Si falla publicación, su DML se revierte entero y se conserva staging. Si origen o destinos cambiaron desde revisión, no sobreescribirlos: crear una nueva operación. Una revisión obsoleta se conserva como evidencia; no se reutiliza para aceptar cambios externos.
+10. Si el resultado de COMMIT es incierto, se consulta/actualiza condicionalmente en una conexión nueva; un COMPLETADO/RESTAURADO confirmado nunca se cambia a ERROR. Si Oracle sigue inaccesible, el worker registra soporte y volverá a consultar el estado persistente al recuperarse. No reiniciar manualmente desde cero.
+11. Restaurar respaldo requiere confirmación y estado COMPLETADO. Se compara el destino completo con lo publicado, incluidos campos de auditoría; cualquier diferencia bloquea restauración. Se restauran todos los destinos juntos, incluidos los que antes estaban vacíos. No se modifica el módulo base. ERROR_RESTAURAR tiene reintento específico.
+12. El informe JSON conserva selección, revisión y cantidades por módulo. TEMP_VT_BEN_EVENTO registra acciones, segmentos, errores y publicación/restauración confirmadas. Los registros técnicos contienen el identificador de operación.
+
+REGLAS Y LÍMITES
+- Copia íntegra de 34 columnas según el script: históricos/inactivos incluidos; fechas originales y NIDMEDBENEF conservados; NMODULEC, NUSERCODE y DCOMPDATE transformados. DCOMPDATE se fija con SYSDATE al crear la revisión.
+- No cerrar vigencias ni aplicar la renovación de primas.
+- Reemplazo integral por destino; no combinación ni omisión de claves existentes. Los módulos no seleccionados y registros con NMODULEC NULL se conservan.
+- Se comprueba PK/UK real habilitada y validada de seis campos. Columnas de copia deben ser NUMBER/DATE/texto escalar; LOB u otros tipos requieren adaptar la comparación. La instalación y pruebas reales deben revisar también FK/triggers, nulabilidad y columnas adicionales obligatorias.
+- Selección máxima 500 destinos. Volumen total no implica confirmaciones parciales en negocio: la publicación final necesita suficiente UNDO/REDO y espacio. No se garantiza rendimiento sin medir.
+- Las tablas de respaldo y preparación son persistentes y no tienen limpieza automática, para no perder recuperación. Definir retención y purga con DBA, excluyendo operaciones activas y conservando respaldos mientras se permita restaurar.
+- La aplicación existente no tiene identidad integrada. Usuario Oracle declarado se valida en USERS, pero no autentica al operador. Habilitar en el entorno con acceso restringido correspondiente.
+
+VALIDACIÓN DE ENSAYO REQUERIDA ANTES DE USO OPERATIVO
+Validar con Oracle real: triggers y restricciones, copia de datos históricos y decimales, destino vacío, destinos no seleccionados, fallo tras DELETE y antes de COMMIT, caída durante segmento, reinicio de host, dos trabajadores, bloqueo por escritor externo, pérdida de respuesta al COMMIT, cambio concurrente de origen/destinos y restauración con/sin cambios posteriores.
+Las pruebas relacionales locales no acreditan comportamiento del proveedor Oracle, permisos, bloqueos ni durabilidad ante fallos reales.
